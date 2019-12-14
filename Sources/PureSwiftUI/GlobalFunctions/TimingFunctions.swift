@@ -1,5 +1,5 @@
 //
-//  Timing.swift
+//  TimingFunctions.swift
 //  
 //
 //  Created by Adam Fordyce on 09/11/2019.
@@ -8,7 +8,8 @@
 
 import Foundation
 
-public func after<T: UINumericType>(_ time: T, action: @escaping () -> ()) {
+@discardableResult
+public func after<T: UINumericType>(_ time: T, action: @escaping () -> ()) -> Timer {
     Timer.scheduledTimer(withTimeInterval: time.asDouble, repeats: false) { (timer) in
         action()
         timer.invalidate()
