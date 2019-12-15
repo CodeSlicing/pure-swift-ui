@@ -278,6 +278,9 @@ This project adheres to a [semantic versioning](https://semver.org) approach. I'
 
 ## Version History
 
+- 1.0.0 Commit initial code
+- 1.1.0 Update SFSymbols to latest version (1.1 (16))
+
 ## Licensing
 
 This project is licensed under the MIT License - see [here][mit-licence] for details.
