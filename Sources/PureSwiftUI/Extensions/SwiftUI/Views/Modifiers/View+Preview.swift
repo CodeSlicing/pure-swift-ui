@@ -19,7 +19,7 @@ public enum PreviewDeviceName: String, CaseIterable {
     case iPhone_XS = "iPhone Xs"
     case iPhone_XS_Max = "iPhone Xs Max"
     case iPhone_XR = "iPhone Xʀ"
-    case iPad_Mini_4 = "iPad mini 4"
+    case iPad_mini_4 = "iPad mini 4"
     case iPad_Air_2 = "iPad Air 2"
     case iPad_Pro_9_7_inch = "iPad Pro (9.7-inch)"
     case iPad_Pro_12_9_inch = "iPad Pro (12.9-inch)"
