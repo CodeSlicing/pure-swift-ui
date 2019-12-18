@@ -281,6 +281,7 @@ This project adheres to a [semantic versioning](https://semver.org) approach. I'
 - 1.0.0 Commit initial code
 - 1.1.0 Update SFSymbols to latest version (1.1 (16))
 - 1.2.0 Add constants for preview device names and add support for SFSymbolName to UIImage
+- 1.3.0 Add deprecated SFSymbols with availability
 
 ## Licensing
 
