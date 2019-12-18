@@ -99,16 +99,16 @@ public extension View {
     }
     
     //other
-    func greedyWidth() -> some View {
-        frame(maxWidth: .infinity)
+    func greedyWidth(_ alignment: Alignment = .center) -> some View {
+        frame(maxWidth: .infinity, alignment: alignment)
     }
     
-    func greedyHeight() -> some View {
-        frame(maxHeight: .infinity)
+    func greedyHeight(_ alignment: Alignment = .center) -> some View {
+        frame(maxHeight: .infinity, alignment: alignment)
     }
     
-    func greedyFrame() -> some View {
-        frame(maxWidth: .infinity, maxHeight: .infinity)
+    func greedyFrame(_ alignment: Alignment = .center) -> some View {
+        frame(maxWidth: .infinity, maxHeight: .infinity, alignment: alignment)
     }
 }
 
