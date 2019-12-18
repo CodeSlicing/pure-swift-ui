@@ -278,10 +278,10 @@ This project adheres to a [semantic versioning](https://semver.org) approach. I'
 
 ## Version History
 
-- 1.0.0 Commit initial code
-- 1.1.0 Update SFSymbols to latest version (1.1 (16))
-- 1.2.0 Add constants for preview device names and add support for SFSymbolName to UIImage
-- 1.3.0 Add deprecated SFSymbols with availability
+- [1.0.0][tag-1.0.0] Commit initial code
+- [1.1.0][tag-1.1.0] Update SFSymbols to latest version (1.1 (16))
+- [1.2.0][tag-1.2.0] Add constants for preview device names and add support for SFSymbolName to UIImage
+- [1.3.0][tag-1.3.0] Add deprecated SFSymbols with availability
 
 ## Licensing
 
@@ -302,6 +302,15 @@ You can contact me on Twitter [@CodeSlice][codeslice-twitter]. Happy to hear sug
 [swift-ui]: https://developer.apple.com/xcode/swiftui/
 [swift-functions]: https://docs.swift.org/swift-book/LanguageGuide/Functions.html
 [swift-package-installation]: https://medium.com/better-programming/add-swift-package-dependency-to-an-ios-project-with-xcode-11-remote-local-public-private-3a7577fac6b2
+
+<!---
+version links:
+--->
+
+[tag-1.0.0]: https://github.com/CodeSlicing/pure-swift-ui/tree/1.0.0
+[tag-1.1.0]: https://github.com/CodeSlicing/pure-swift-ui/tree/1.1.0
+[tag-1.2.0]: https://github.com/CodeSlicing/pure-swift-ui/tree/1.2.0
+[tag-1.3.0]: https://github.com/CodeSlicing/pure-swift-ui/tree/1.3.0
 
 <!---
  local docs:
