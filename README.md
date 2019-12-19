@@ -283,6 +283,7 @@ This project adheres to a [semantic versioning](https://semver.org) approach. I'
 - [1.2.0][tag-1.2.0] Add constants for preview device names and add support for SFSymbolName to UIImage
 - [1.3.0][tag-1.3.0] Add deprecated SFSymbols with availability
 - [1.4.0][tag-1.4.0] Add alignment to greedy modifiers and Image specific modifiers to SFSymbol
+- [1.5.0][tag-1.5.0] Add numerous modifiers and conditional modifiers including hueRotation, GeometryProxy extensions, Shape specific modifiers, UIScreen and more
 
 ## Licensing
 
@@ -313,6 +314,7 @@ version links:
 [tag-1.2.0]: https://github.com/CodeSlicing/pure-swift-ui/tree/1.2.0
 [tag-1.3.0]: https://github.com/CodeSlicing/pure-swift-ui/tree/1.3.0
 [tag-1.4.0]: https://github.com/CodeSlicing/pure-swift-ui/tree/1.4.0
+[tag-1.5.0]: https://github.com/CodeSlicing/pure-swift-ui/tree/1.5.0
 
 <!---
  local docs:
