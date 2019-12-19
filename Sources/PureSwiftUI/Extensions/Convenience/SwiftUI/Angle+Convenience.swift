@@ -1,5 +1,5 @@
 //
-//  Angle+.swift
+//  Angle+Convenience.swift
 //  
 //
 //  Created by Adam Fordyce on 20/11/2019.

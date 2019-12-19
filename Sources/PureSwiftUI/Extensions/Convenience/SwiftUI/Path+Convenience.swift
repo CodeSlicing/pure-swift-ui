@@ -1,5 +1,5 @@
 //
-//  Path+.swift
+//  Path+Convenience.swift
 //  
 //
 //  Created by Adam Fordyce on 05/11/2019.

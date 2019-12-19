@@ -35,4 +35,11 @@ class CGRectConvenienceExtensionsTests: XCTestCase {
 
         XCTAssertEqual(result, expectedResult)
     }
+    
+    func testClampedSize() {
+        let expectedResult = CGSize(12, 15)
+        let result = CGRect(originX, originY, 0, 20).clampedSize(from: 12, to: 15)
+
+        XCTAssertEqual(result, expectedResult)
+    }
 }

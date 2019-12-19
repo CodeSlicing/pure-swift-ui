@@ -1,5 +1,5 @@
 //
-//  Angle+Tests.swift
+//  Angle+ConvenienceTests.swift
 //  
 //
 //  Created by Adam Fordyce on 27/11/2019.

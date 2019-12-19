@@ -30,11 +30,11 @@ public extension CGRect {
         .init(width / 2 + origin.x, height / 2 + origin.y)
     }
     
-    func clamped<T_FROM: UINumericType, T_TO: UINumericType>(from: T_FROM, to: T_TO) -> CGSize {
-        clamped(from: from.asCGFloat, to: to.asCGFloat)
+    func clampedSize<T_FROM: UINumericType, T_TO: UINumericType>(from: T_FROM, to: T_TO) -> CGSize {
+        clampedSize(from: from.asCGFloat, to: to.asCGFloat)
     }
     
-    func clamped(from: CGFloat, to: CGFloat) -> CGSize {
+    func clampedSize(from: CGFloat, to: CGFloat) -> CGSize {
         .init(self.width.clamped(from: from, to: to), self.height.clamped(from: from, to: to))
     }
 }

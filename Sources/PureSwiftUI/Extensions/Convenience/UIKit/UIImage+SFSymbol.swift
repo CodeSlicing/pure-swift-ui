@@ -6,7 +6,7 @@
 //  Copyright © 2019 Adam Fordyce. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 public extension UIImage {
     
