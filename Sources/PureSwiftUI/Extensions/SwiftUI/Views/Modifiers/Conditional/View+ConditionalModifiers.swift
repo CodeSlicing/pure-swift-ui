@@ -227,33 +227,63 @@ public extension View {
 
 public extension View {
     
-    func rotateIf(_ condition: Bool, _ rotation: Angle) -> some View {
-        self.rotate(condition ? rotation : 0.degrees)
+    func rotateIf(_ condition: Bool, _ rotation: Angle, anchor: UnitPoint = .center) -> some View {
+        self.rotate(condition ? rotation : 0.degrees, anchor: anchor)
     }
     
-    func rotateIfNot(_ condition: Bool, _ rotation: Angle) -> some View {
-        self.rotateIf(!condition, rotation)
+    func rotateIfNot(_ condition: Bool, _ rotation: Angle, anchor: UnitPoint = .center) -> some View {
+        self.rotateIf(!condition, rotation, anchor: anchor)
     }
     
-    func rotate3DIf(_ condition: Bool, _ rotation: Angle, axis: (x: CGFloat, y: CGFloat, z: CGFloat)) -> some View {
-        self.rotate3D(condition ? rotation : 0.degrees, axis)
+    func rotate3DIf(_ condition: Bool, _ rotation: Angle, axis: (x: CGFloat, y: CGFloat, z: CGFloat), anchor: UnitPoint = .center, anchorZ: CGFloat = 0, perspective: CGFloat = 1) -> some View {
+        self.rotate3D(condition ? rotation : 0.degrees, axis, anchor: anchor, anchorZ: anchorZ)
     }
     
-    func rotate3DIfNot(_ condition: Bool, _ rotation: Angle, axis: (x: CGFloat, y: CGFloat, z: CGFloat)) -> some View {
-        self.rotate3DIf(!condition, rotation, axis: axis)
+    func rotate3DIfNot(_ condition: Bool, _ rotation: Angle, axis: (x: CGFloat, y: CGFloat, z: CGFloat), anchor: UnitPoint = .center, anchorZ: CGFloat = 0, perspective: CGFloat = 1) -> some View {
+        self.rotate3DIf(!condition, rotation, axis: axis, anchor: anchor, anchorZ: anchorZ)
     }
+    
+//    func rotate3D(_ angle: Angle, _ axis: (x: CGFloat, y: CGFloat, z: CGFloat), anchor: UnitPoint = .center, anchorZ: CGFloat = 0, perspective: CGFloat = 1) -> some View {
+//        rotation3DEffect(angle, axis: axis, anchor: anchor, anchorZ: anchorZ, perspective: perspective)
+//    }
 }
 
 // MARK: - ----- CONDITIONAL SCALE
 
+private let defaultScaleSize = CGSize(1, 1)
+
 public extension View {
     
-    func scaleIf<T: UINumericType>(_ condition: Bool, _ scaleEffect: T) -> some View {
-        self.scaleEffect(condition ? scaleEffect.asCGFloat : 1)
+    func scaleIf<T: UINumericType>(_ condition: Bool, _ scaleEffect: T, anchor: UnitPoint = .center) -> some View {
+        self.scaleEffect(condition ? scaleEffect.asCGFloat : 1, anchor: anchor)
     }
     
-    func scaleIfNot<T: UINumericType>(_ condition: Bool, _ scaleEffect: T) -> some View {
+    func scaleIfNot<T: UINumericType>(_ condition: Bool, _ scaleEffect: T, anchor: UnitPoint = .center) -> some View {
         self.scaleIf(!condition, scaleEffect)
+    }
+    
+    func scaleIf(_ condition: Bool, _ scaleEffect: CGSize, anchor: UnitPoint = .center) -> some View {
+        self.scaleEffect(condition ? scaleEffect : defaultScaleSize, anchor: anchor)
+    }
+    
+    func scaleIfNot(_ condition: Bool, _ scaleEffect: CGSize, anchor: UnitPoint = .center) -> some View {
+        self.scaleIf(!condition, scaleEffect, anchor: anchor)
+    }
+    
+    func xScaleIf<T: UINumericType>(_ condition: Bool, _ scaleX: T, anchor: UnitPoint = .center) -> some View {
+        scaleEffect(x: condition ? scaleX.asCGFloat : 1, anchor: anchor)
+    }
+    
+    func xScaleIfNot<T: UINumericType>(_ condition: Bool, _ scaleX: T, anchor: UnitPoint = .center) -> some View {
+        xScaleIf(!condition, scaleX, anchor: anchor)
+    }
+    
+    func yScaleIf<T: UINumericType>(_ condition: Bool, _ scaleY: T, anchor: UnitPoint = .center) -> some View {
+        scaleEffect(y: condition ? scaleY.asCGFloat : 1, anchor: anchor)
+    }
+
+    func yScaleIfNot<T: UINumericType>(_ condition: Bool, _ scaleY: T, anchor: UnitPoint = .center) -> some View {
+        yScaleIf(!condition, scaleY, anchor: anchor)
     }
 }
 
@@ -316,5 +346,18 @@ public extension View {
     
     func contentShapeIfNot<S: Shape>(_ condition: Bool, _ shape: S) -> some View {
         contentShapeIf(!condition, shape)
+    }
+}
+
+// MARK: ----- CONDITIONAL HUE ROTATION
+
+public extension View {
+    
+    func hueRotationIf(_ condition: Bool, _ angle: Angle) -> some View {
+        hueRotation(condition ? angle : 0.degrees)
+    }
+    
+    func hueRotationIfNot(_ condition: Bool, _ angle: Angle) -> some View {
+        hueRotationIf(!condition, angle)
     }
 }

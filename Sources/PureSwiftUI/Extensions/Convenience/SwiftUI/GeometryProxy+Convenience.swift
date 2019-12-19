@@ -13,24 +13,16 @@ public extension GeometryProxy {
         size.width
     }
     
-    func width<T: UINumericType>(fraction: T) -> CGFloat {
-        width * fraction.asCGFloat
-    }
-    
-    func width(fraction: CGFloat) -> CGFloat {
-        width * fraction
+    func widthScaled<T: UINumericType>(_ scale: T) -> CGFloat {
+        width * scale.asCGFloat
     }
     
     var height: CGFloat {
         size.height
     }
     
-    func height<T: UINumericType>(fraction: T) -> CGFloat {
-        height * fraction.asCGFloat
-    }
-    
-    func height(fraction: CGFloat) -> CGFloat {
-        height * fraction
+    func heightScaled<T: UINumericType>(_ scale: T) -> CGFloat {
+        height * scale.asCGFloat
     }
     
     var localFrame: CGRect {

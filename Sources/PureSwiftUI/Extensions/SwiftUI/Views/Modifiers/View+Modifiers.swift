@@ -120,12 +120,12 @@ public extension View {
         offset(x: x.asCGFloat, y: y.asCGFloat)
     }
     
-    func xOffset<T: UINumericType>(_ xOffset: T) -> some View {
-        offset(x: xOffset.asCGFloat)
+    func xOffset<T: UINumericType>(_ x: T) -> some View {
+        offset(x: x.asCGFloat)
     }
 
-    func yOffset<T: UINumericType>(_ yOffset: T) -> some View {
-        offset(y: yOffset.asCGFloat)
+    func yOffset<T: UINumericType>(_ y: T) -> some View {
+        offset(y: y.asCGFloat)
     }
     
     //native
@@ -133,12 +133,12 @@ public extension View {
         offset(x: x, y: y)
     }
 
-    func xOffset(_ xOffset: CGFloat) -> some View {
-        offset(x: xOffset)
+    func xOffset(_ x: CGFloat) -> some View {
+        offset(x: x)
     }
 
-    func yOffset(_ yOffset: CGFloat) -> some View {
-        offset(y: yOffset)
+    func yOffset(_ y: CGFloat) -> some View {
+        offset(y: y)
     }
     
     func offset(_ point: CGPoint) -> some View {
@@ -147,6 +147,23 @@ public extension View {
     
     func offset(_ size: CGSize) -> some View {
         offset(x: size.width, y: size.height)
+    }
+}
+
+// MARK: ----- POSITION
+
+public extension View {
+    
+    func position<TX: UINumericType, TY: UINumericType>(_ x: TX, _ y: TY) -> some View {
+        position(x: x.asCGFloat, y: y.asCGFloat)
+    }
+    
+    func xPosition<T: UINumericType>(_ x: T) -> some View {
+        position(x: x.asCGFloat)
+    }
+    
+    func yPosition<T: UINumericType>(_ y: T) -> some View {
+        position(y: y.asCGFloat)
     }
 }
 
@@ -193,8 +210,8 @@ public extension View {
 
 public extension View {
 
-    func rotate(_ angle: Angle) -> some View {
-        rotationEffect(angle)
+    func rotate(_ angle: Angle, anchor: UnitPoint = .center) -> some View {
+        rotationEffect(angle, anchor: anchor)
     }
     
     func rotate3D(_ angle: Angle, _ axis: (x: CGFloat, y: CGFloat, z: CGFloat), anchor: UnitPoint = .center, anchorZ: CGFloat = 0, perspective: CGFloat = 1) -> some View {
@@ -210,16 +227,16 @@ public extension View {
         scaleEffect(scaleFactor.asCGFloat, anchor: anchor)
     }
     
-    func scale<TX: UINumericType, TY: UINumericType>(_ scaleXFactor: TX, _ scaleYFactor: TY, anchor: UnitPoint = .center) -> some View {
-        scaleEffect(x: scaleXFactor.asCGFloat, y: scaleYFactor.asCGFloat, anchor: anchor)
+    func scale<TX: UINumericType, TY: UINumericType>(_ scaleX: TX, _ scaleY: TY, anchor: UnitPoint = .center) -> some View {
+        scaleEffect(x: scaleX.asCGFloat, y: scaleY.asCGFloat, anchor: anchor)
     }
     
-    func xScale<T: UINumericType>(_ scaleXFactor: T, anchor: UnitPoint = .center) -> some View {
-        scaleEffect(x: scaleXFactor.asCGFloat, anchor: anchor)
+    func xScale<T: UINumericType>(_ scaleX: T, anchor: UnitPoint = .center) -> some View {
+        scaleEffect(x: scaleX.asCGFloat, anchor: anchor)
     }
     
-    func yScale<T: UINumericType>(_ scaleYFactor: T, anchor: UnitPoint = .center) -> some View {
-        scaleEffect(x: scaleYFactor.asCGFloat, anchor: anchor)
+    func yScale<T: UINumericType>(_ scaleY: T, anchor: UnitPoint = .center) -> some View {
+        scaleEffect(y: scaleY.asCGFloat, anchor: anchor)
     }
     
     //native
@@ -231,16 +248,15 @@ public extension View {
         scaleEffect(scaleSize, anchor: anchor)
     }
     
-    func scale(_ scaleXFactor: CGFloat, _ scaleYFactor: CGFloat, anchor: UnitPoint = .center) -> some View {
-        scaleEffect(x: scaleXFactor, y: scaleYFactor, anchor: anchor)
+    func scale(_ scaleX: CGFloat, _ scaleY: CGFloat, anchor: UnitPoint = .center) -> some View {
+        scaleEffect(x: scaleX, y: scaleY, anchor: anchor)
     }
     
-    func xScale(_ scaleXFactor: CGFloat, anchor: UnitPoint = .center) -> some View {
-        scaleEffect(x: scaleXFactor, anchor: anchor)
+    func xScale(_ scaleX: CGFloat, anchor: UnitPoint = .center) -> some View {
+        scaleEffect(x: scaleX, anchor: anchor)
     }
     
-    func yScale(_ scaleYFactor: CGFloat, anchor: UnitPoint = .center) -> some View {
-        scaleEffect(x: scaleYFactor, anchor: anchor)
+    func yScale(_ scaleY: CGFloat, anchor: UnitPoint = .center) -> some View {
+        scaleEffect(y: scaleY, anchor: anchor)
     }
-    
 }

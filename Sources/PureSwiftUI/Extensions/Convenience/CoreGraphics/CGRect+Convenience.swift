@@ -37,4 +37,12 @@ public extension CGRect {
     func clampedSize(from: CGFloat, to: CGFloat) -> CGSize {
         .init(self.width.clamped(from: from, to: to), self.height.clamped(from: from, to: to))
     }
+    
+    func widthScaled<T: UINumericType>(_ scale: T) -> CGFloat {
+        width * scale.asCGFloat
+    }
+    
+    func heightScaled<T: UINumericType>(_ scale: T) -> CGFloat {
+        height * scale.asCGFloat
+    }
 }

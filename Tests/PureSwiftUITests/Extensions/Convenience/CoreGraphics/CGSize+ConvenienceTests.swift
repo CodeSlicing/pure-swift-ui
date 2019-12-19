@@ -8,48 +8,44 @@
 import XCTest
 @testable import PureSwiftUI
 
+private let width: CGFloat = 4
+private let height: CGFloat = 5
+private let max: CGFloat = 10
+private let min: CGFloat = 2
+private let defaultSize = CGSize(width, height)
+
 class CGSizeConvenienceExtensionsTests: XCTestCase {
-    
-    let originX: CGFloat = 2
-    let originY: CGFloat = 3
-    let width: CGFloat = 4
-    let height: CGFloat = 5
-    let max: CGFloat = 10
-    let min: CGFloat = 2
-    
+
     func testInit() {
-        let expectedResult = CGSize(width: width, height: height)
         let result = CGSize(width, height)
-        XCTAssertEqual(result, expectedResult)
+        XCTAssertEqual(result, defaultSize)
     }
     
     func testX() {
-        let expectedResult = width
         let result = CGSize(width, height).x
-        XCTAssertEqual(result, expectedResult)
+        XCTAssertEqual(result, width)
     }
     
     func testMidX() {
         let expectedResult = width / 2
-        let result = CGSize(width, height).midX
+        let result = defaultSize.midX
         XCTAssertEqual(result, expectedResult)
     }
 
     func testY() {
-        let expectedResult = height
         let result = CGSize(width, height).y
-        XCTAssertEqual(result, expectedResult)
+        XCTAssertEqual(result, height)
     }
     
     func testMidY() {
         let expectedResult = height / 2
-        let result = CGSize(width, height).midY
+        let result = defaultSize.midY
         XCTAssertEqual(result, expectedResult)
     }
 
     func testAsCGPoint() {
         let expectedResult = CGPoint(width, height)
-        let result = CGSize(width, height).asCGPoint
+        let result = defaultSize.asCGPoint
         
         XCTAssertEqual(result, expectedResult)
     }
@@ -75,6 +71,20 @@ class CGSizeConvenienceExtensionsTests: XCTestCase {
         let mid = (max - min) / 2 + min
         let expectedResult = CGSize(mid, mid)
         let result = CGSize(mid, mid).clamped(from: min, to: max)
+
+        XCTAssertEqual(result, expectedResult)
+    }
+    
+    func testWidthScaled() {
+        let expectedResult = width * 0.5
+        let result = defaultSize.widthScaled(0.5)
+
+        XCTAssertEqual(result, expectedResult)
+    }
+    
+    func testHeightScaled() {
+        let expectedResult = height * 0.5
+        let result = defaultSize.heightScaled(0.5)
 
         XCTAssertEqual(result, expectedResult)
     }

@@ -32,9 +32,17 @@ public extension CGSize {
     var midX: CGFloat {
         width / 2
     }
-    
+
     var midY: CGFloat {
         height / 2
+    }
+    
+    func widthScaled<T: UINumericType>(_ scale: T) -> CGFloat {
+        width * scale.asCGFloat
+    }
+    
+    func heightScaled<T: UINumericType>(_ scale: T) -> CGFloat {
+        height * scale.asCGFloat
     }
     
     func clamped(from: CGFloat, to: CGFloat) -> CGSize {
