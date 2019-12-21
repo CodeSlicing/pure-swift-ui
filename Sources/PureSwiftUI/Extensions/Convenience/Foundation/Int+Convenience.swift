@@ -37,6 +37,10 @@ public extension Int {
         self.isMultiple(of: 2)
     }
     
+    var isOdd: Bool {
+        !isEven
+    }
+    
     func random() -> Int {
         Int.random(in: 0...self)
     }

@@ -1,6 +1,6 @@
 //
 //  View+.swift
-//  
+//
 //
 //  Created by Adam Fordyce on 19/11/2019.
 //  Copyright © 2019 Adam Fordyce. All rights reserved.
@@ -173,6 +173,36 @@ public extension View {
 
     func opacity<T: UINumericType>(_ theOpacity: T) -> some View {
         opacity(theOpacity.asDouble)
+    }
+}
+
+// MARK: ----- BLUR
+
+public extension View {
+
+    func blur<T: UINumericType>(_ radius: T, opaque: Bool = false) -> some View {
+        blur(radius: radius.asCGFloat, opaque: opaque)
+    }
+}
+
+// MARK: ----- IMAGE PROCESSING
+
+public extension View {
+ 
+    func saturation<T: UINumericType>(_ amount: T) -> some View {
+        saturation(amount.asDouble)
+    }
+    
+    func brightness<T: UINumericType>(_ amount: T) -> some View {
+        brightness(amount.asDouble)
+    }
+    
+    func contrast<T: UINumericType>(_ amount: T) -> some View {
+        contrast(amount.asDouble)
+    }
+    
+    func grayscale<T: UINumericType>(_ amount: T) -> some View {
+        grayscale(amount.asDouble)
     }
 }
 

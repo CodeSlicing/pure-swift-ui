@@ -1,56 +1,13 @@
 //
-//  SFSymbol.swift
-//  
+//  Image+Convenience.swift
 //
-//  Created by Adam Fordyce on 07/12/2019.
+//  Created by Adam Fordyce on 20/12/2019.
 //  Copyright © 2019 Adam Fordyce. All rights reserved.
 //
 
-public struct SFSymbol: View {
-    
-    private let image: Image
-    
-    public init(_ sfSymbol: SFSymbolName) {
-        self.init(sfSymbol.rawValue)
-    }
-    
-    public init(_ systemName: String) {
-        self.image = Image(systemName: systemName)
-    }
-    
-    public var body: Image {
-        image
-    }
-}
+import SwiftUI
 
-// MARK: ----- IMAGE MODIFIERS
-
-public extension SFSymbol {
-    
-    func resizable() -> Image {
-        self.image.resizable()
-    }
-    
-    func resizable(capInsets: EdgeInsets = EdgeInsets(), resizingMode: Image.ResizingMode = .stretch) -> Image {
-        self.image.resizable(capInsets: capInsets, resizingMode: resizingMode)
-    }
-    
-    func antialiased(_ isAntialiased: Bool) -> Image {
-        self.image.antialiased(isAntialiased)
-    }
-    
-    func interpolation(_ interpolation: Image.Interpolation) -> Image {
-        self.image.interpolation(interpolation)
-    }
-    
-    func renderingMode(_ renderingMode: Image.TemplateRenderingMode?) -> Image {
-        self.image.renderingMode(renderingMode)
-    }
-}
-
-// MARK: ----- CONVENIENCE FOR RESIZABLE
-
-public extension SFSymbol {
+public extension Image {
 
     func resizedToFit(capInsets: EdgeInsets = EdgeInsets()) -> some View {
         resizable(capInsets: capInsets)

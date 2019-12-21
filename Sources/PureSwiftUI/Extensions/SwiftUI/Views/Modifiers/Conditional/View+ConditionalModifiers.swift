@@ -223,6 +223,69 @@ public extension View {
     }
 }
 
+// MARK: ----- CONDITIONAL BLUR
+
+public extension View {
+    
+    func blurIf<T: UINumericType>(_ condition: Bool, _ radius: T, opaque: Bool = false) -> some View {
+        blur(radius: condition ? radius.asCGFloat : 0, opaque: opaque)
+    }
+    
+    func blurIfNot<T: UINumericType>(_ condition: Bool, _ radius: T, opaque: Bool = false) -> some View {
+        blurIf(!condition, radius, opaque: opaque)
+    }
+}
+
+// MARK: ----- CONDITIONAL HUE ROTATION
+
+public extension View {
+    
+    func hueRotationIf(_ condition: Bool, _ angle: Angle) -> some View {
+        hueRotation(condition ? angle : 0.degrees)
+    }
+    
+    func hueRotationIfNot(_ condition: Bool, _ angle: Angle) -> some View {
+        hueRotationIf(!condition, angle)
+    }
+}
+
+// MARK: ----- CONDITIONAL IMAGE PROCESSING
+
+public extension View {
+ 
+    func saturationIf<T: UINumericType>(_ condition: Bool, _ value: T) -> some View {
+        saturation(condition ? value.asDouble : 1)
+    }
+    
+    func saturationIfNot<T: UINumericType>(_ condition: Bool, _ value: T) -> some View {
+        saturationIf(!condition, value.asDouble)
+    }
+    
+    func brightnessIf<T: UINumericType>(_ condition: Bool, _ amount: T) -> some View {
+        brightness(condition ? amount.asDouble : 0)
+    }
+    
+    func brightnessIfNot<T: UINumericType>(_ condition: Bool, _ amount: T) -> some View {
+        brightnessIf(!condition, amount)
+    }
+    
+    func contrastIf<T: UINumericType>(_ condition: Bool, _ amount: T) -> some View {
+         contrast(condition ? amount.asDouble : 1)
+    }
+    
+    func contrastIfNot<T: UINumericType>(_ condition: Bool, _ amount: T) -> some View {
+        contrastIf(!condition, amount)
+    }
+      
+    func grayscaleIf<T: UINumericType>(_ condition: Bool, _ amount: T) -> some View {
+        grayscale(condition ? amount.asDouble : 0)
+    }
+      
+    func grayscaleIfNot<T: UINumericType>(_ condition: Bool, _ amount: T) -> some View {
+        grayscaleIf(!condition, amount)
+    }
+}
+
 // MARK: - ----- CONDITIONAL ROTATION
 
 public extension View {
@@ -346,18 +409,5 @@ public extension View {
     
     func contentShapeIfNot<S: Shape>(_ condition: Bool, _ shape: S) -> some View {
         contentShapeIf(!condition, shape)
-    }
-}
-
-// MARK: ----- CONDITIONAL HUE ROTATION
-
-public extension View {
-    
-    func hueRotationIf(_ condition: Bool, _ angle: Angle) -> some View {
-        hueRotation(condition ? angle : 0.degrees)
-    }
-    
-    func hueRotationIfNot(_ condition: Bool, _ angle: Angle) -> some View {
-        hueRotationIf(!condition, angle)
     }
 }
