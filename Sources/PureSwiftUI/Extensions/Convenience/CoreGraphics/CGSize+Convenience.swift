@@ -37,6 +37,11 @@ public extension CGSize {
         height / 2
     }
     
+    
+    func scaled<T: UINumericType>(_ scale: T) -> CGSize {
+        .init(width * scale.asCGFloat, height * scale.asCGFloat)
+    }
+    
     func widthScaled<T: UINumericType>(_ scale: T) -> CGFloat {
         width * scale.asCGFloat
     }

@@ -61,41 +61,41 @@ public extension View {
 
 public extension View {
 
-    func width<T: UINumericType>(_ width: T) -> some View {
-        frame(width: width.asCGFloat)
+    func width<T: UINumericType>(_ width: T, _ alignment: Alignment = .center) -> some View {
+        frame(width: width.asCGFloat, alignment: alignment)
     }
   
-    func height<T: UINumericType>(_ height: T) -> some View {
-        frame(height: height.asCGFloat)
+    func height<T: UINumericType>(_ height: T, _ alignment: Alignment = .center) -> some View {
+        frame(height: height.asCGFloat, alignment: alignment)
     }
     
-    func frame<T_LHS: UINumericType, T_LRS: UINumericType>(_ width: T_LHS, _ height: T_LRS) -> some View {
-        frame(width: width.asCGFloat, height: height.asCGFloat)
+    func frame<T_LHS: UINumericType, T_LRS: UINumericType>(_ width: T_LHS, _ height: T_LRS, _ alignment: Alignment = .center) -> some View {
+        frame(width: width.asCGFloat, height: height.asCGFloat, alignment: alignment)
     }
     
-    func frame<T: UINumericType>(_ size: T) -> some View {
-        frame(width: size.asCGFloat, height: size.asCGFloat)
+    func frame<T: UINumericType>(_ size: T, _ alignment: Alignment = .center) -> some View {
+        frame(width: size.asCGFloat, height: size.asCGFloat, alignment: alignment)
     }
     
     // native type
-    func frame(_ size: CGSize) -> some View {
-        frame(size.width, size.height)
+    func frame(_ size: CGSize, _ alignment: Alignment = .center) -> some View {
+        frame(width: size.width, height: size.height, alignment: alignment)
     }
     
-    func width(_ width: CGFloat) -> some View {
-      frame(width: width)
+    func width(_ width: CGFloat, _ alignment: Alignment = .center) -> some View {
+      frame(width: width, alignment: alignment)
     }
 
-    func height(_ height: CGFloat) -> some View {
-      frame(height: height)
+    func height(_ height: CGFloat, _ alignment: Alignment = .center) -> some View {
+      frame(height: height, alignment: alignment)
     }
 
-    func frame(_ width: CGFloat, _ height: CGFloat) -> some View {
-      frame(width: width, height: height)
+    func frame(_ width: CGFloat, _ height: CGFloat, _ alignment: Alignment = .center) -> some View {
+      frame(width: width, height: height, alignment: alignment)
     }
 
-    func frame(_ size: CGFloat) -> some View {
-      frame(width: size, height: size)
+    func frame(_ size: CGFloat, _ alignment: Alignment = .center) -> some View {
+      frame(width: size, height: size, alignment: alignment)
     }
     
     //other
@@ -199,6 +199,15 @@ public extension View {
     
     func grayscale<T: UINumericType>(_ amount: T) -> some View {
         grayscale(amount.asDouble)
+    }
+}
+
+// MARK: ----- SHADOW
+
+public extension View {
+    
+    func shadow<T: UINumericType>(_ theRadius: T) -> some View {
+        shadow(radius: theRadius.asCGFloat)
     }
 }
 

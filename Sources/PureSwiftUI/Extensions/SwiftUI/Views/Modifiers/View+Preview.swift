@@ -2,7 +2,7 @@
 //  View+Preview.swift
 //  
 //
-//  Created by NTB on 16/12/2019.
+//  Created by Adam Fordyce on 16/12/2019.
 //
 
 import SwiftUI
