@@ -285,6 +285,7 @@ This project adheres to a [semantic versioning](https://semver.org) approach. I'
 - [1.4.0][tag-1.4.0] Add alignment to greedy modifiers and Image specific modifiers to SFSymbol
 - [1.5.0][tag-1.5.0] Add numerous modifiers and conditional modifiers including hueRotation, GeometryProxy extensions, Shape specific modifiers, UIScreen and more
 - [1.6.0][tag-1.6.0] Add image processing modifiers and associated conditionals - add convenience modifiers to Image and SFSymbol to perform resizing and aspect ratio modifiers in one step
+- [1.7.0][tag-1.7.0] Add constructor function for SFSymbols and all font types. Alignment parameter for all frame modifiers. Overloads for all font type modifiers on Text. Conditional animation modifier. Align modifier for Text.
 
 ## Licensing
 
@@ -317,6 +318,7 @@ version links:
 [tag-1.4.0]: https://github.com/CodeSlicing/pure-swift-ui/tree/1.4.0
 [tag-1.5.0]: https://github.com/CodeSlicing/pure-swift-ui/tree/1.5.0
 [tag-1.6.0]: https://github.com/CodeSlicing/pure-swift-ui/tree/1.6.0
+[tag-1.7.0]: https://github.com/CodeSlicing/pure-swift-ui/tree/1.7.0
 
 <!---
  local docs:
