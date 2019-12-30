@@ -6,6 +6,8 @@
 //  Copyright © 2019 Adam Fordyce. All rights reserved.
 //
 
+import SwiftUI
+
 public extension RoundedRectangle {
     
     init<T: UINumericType>(_ cornerRadius: T, style: RoundedCornerStyle = .continuous) {

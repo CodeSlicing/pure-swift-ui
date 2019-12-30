@@ -267,11 +267,11 @@ public extension View {
     }
     
     func xScale<T: UINumericType>(_ scaleX: T, anchor: UnitPoint = .center) -> some View {
-        scaleEffect(x: scaleX.asCGFloat, anchor: anchor)
+        scaleEffect(x: scaleX.asCGFloat, y: 1, anchor: anchor)
     }
     
     func yScale<T: UINumericType>(_ scaleY: T, anchor: UnitPoint = .center) -> some View {
-        scaleEffect(y: scaleY.asCGFloat, anchor: anchor)
+        scaleEffect(x: 1, y: scaleY.asCGFloat, anchor: anchor)
     }
     
     //native
@@ -288,10 +288,10 @@ public extension View {
     }
     
     func xScale(_ scaleX: CGFloat, anchor: UnitPoint = .center) -> some View {
-        scaleEffect(x: scaleX, anchor: anchor)
+        scaleEffect(x: scaleX, y: 1, anchor: anchor)
     }
     
     func yScale(_ scaleY: CGFloat, anchor: UnitPoint = .center) -> some View {
-        scaleEffect(y: scaleY, anchor: anchor)
+        scaleEffect(x: 1, y: scaleY, anchor: anchor)
     }
 }

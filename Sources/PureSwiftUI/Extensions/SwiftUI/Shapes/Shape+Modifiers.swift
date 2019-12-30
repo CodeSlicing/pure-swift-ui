@@ -70,11 +70,11 @@ public extension Shape {
     }
     
     func xScale<T: UINumericType>(_ scaleX: T, anchor: UnitPoint = .center) -> ScaledShape<Self> {
-        scale(x: scaleX.asCGFloat, anchor: anchor)
+        scale(x: scaleX.asCGFloat, y: 1, anchor: anchor)
     }
     
     func yScale<T: UINumericType>(_ scaleY: T, anchor: UnitPoint = .center) -> ScaledShape<Self> {
-        scale(y: scaleY.asCGFloat, anchor: anchor)
+        scale(x: 1, y: scaleY.asCGFloat, anchor: anchor)
     }
 }
 

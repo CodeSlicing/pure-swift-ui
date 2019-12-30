@@ -5,7 +5,7 @@
 //  Copyright © 2019 Adam Fordyce. All rights reserved.
 //
 
-import CoreGraphics
+import SwiftUI
 
 private let degreesAsRadiansFactor = Double.pi / 180
 private let radiansAsDegreesFactor = 180 / Double.pi

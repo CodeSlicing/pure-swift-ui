@@ -334,7 +334,7 @@ public extension View {
     }
     
     func xScaleIf<T: UINumericType>(_ condition: Bool, _ scaleX: T, anchor: UnitPoint = .center) -> some View {
-        scaleEffect(x: condition ? scaleX.asCGFloat : 1, anchor: anchor)
+        xScale(condition ? scaleX.asCGFloat : 1, anchor: anchor)
     }
     
     func xScaleIfNot<T: UINumericType>(_ condition: Bool, _ scaleX: T, anchor: UnitPoint = .center) -> some View {
@@ -342,7 +342,7 @@ public extension View {
     }
     
     func yScaleIf<T: UINumericType>(_ condition: Bool, _ scaleY: T, anchor: UnitPoint = .center) -> some View {
-        scaleEffect(y: condition ? scaleY.asCGFloat : 1, anchor: anchor)
+        yScale(condition ? scaleY.asCGFloat : 1, anchor: anchor)
     }
 
     func yScaleIfNot<T: UINumericType>(_ condition: Bool, _ scaleY: T, anchor: UnitPoint = .center) -> some View {
@@ -409,5 +409,26 @@ public extension View {
     
     func contentShapeIfNot<S: Shape>(_ condition: Bool, _ shape: S) -> some View {
         contentShapeIf(!condition, shape)
+    }
+}
+
+// MARK: ----- CONDITIONAL ANIMATION
+
+public extension View {
+    
+    func animationIf(_ condition: Bool, _ theAnimation: Animation? = .default) -> some View {
+        transaction {
+            if condition {
+                $0.animation = theAnimation
+            }
+        }
+    }
+    
+    func withAnimationIf<Result>(_ condition: Bool, _ animation: Animation? = .default, _ body: () throws -> Result) rethrows -> Result {
+        if condition {
+            return try body()
+        } else {
+            return try withAnimation(animation, body)
+        }
     }
 }

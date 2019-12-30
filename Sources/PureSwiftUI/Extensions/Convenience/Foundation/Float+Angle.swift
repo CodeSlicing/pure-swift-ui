@@ -5,7 +5,7 @@
 //  Copyright © 2019 Adam Fordyce. All rights reserved.
 //
 
-import CoreGraphics
+import SwiftUI
 
 public extension Float {
     

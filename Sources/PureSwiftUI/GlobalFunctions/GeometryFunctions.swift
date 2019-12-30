@@ -6,7 +6,7 @@
 //  Copyright © 2019 Adam Fordyce. All rights reserved.
 //
 
-import UIKit
+import SwiftUI
 
 public func xFromAngle<T: UINumericType>(_ angle: Angle, forRadius radius: T) -> CGFloat {
     (angle.sin * radius.asDouble).asCGFloat

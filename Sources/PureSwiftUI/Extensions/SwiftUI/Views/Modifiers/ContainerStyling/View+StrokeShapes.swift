@@ -137,11 +137,11 @@ public extension View {
     func strokeRoundedRectangle<SS: ShapeStyle>(_ content: SS, cornerRadius: CGFloat, strokeStyle: StrokeStyle, style: RoundedCornerStyle = .continuous, strokeType: ShapeStrokeType = .inner, constrainGestures: Bool = true) -> some View {
         strokeShape(RoundedRectangle(cornerRadius: cornerRadius, style: style), content: content, strokeStyle: strokeStyle, strokeType: strokeType, constrainGestures: constrainGestures)
     }
-
+    
     func strokeRoundedRectangleWithColor<TLW: UINumericType>(_ color: Color, cornerRadius: CGFloat, lineWidth: TLW, style: RoundedCornerStyle = .continuous, strokeType: ShapeStrokeType = .inner, constrainGestures: Bool = true) -> some View {
         strokeShape(RoundedRectangle(cornerRadius: cornerRadius, style: style), content: color, lineWidth: lineWidth, strokeType: strokeType, constrainGestures: constrainGestures)
     }
-    
+
     func strokeRoundedRectangleWithColor(_ color: Color, cornerRadius: CGFloat, style: RoundedCornerStyle = .continuous, strokeStyle: StrokeStyle, strokeType: ShapeStrokeType = .inner, constrainGestures: Bool = true) -> some View {
         strokeShape(RoundedRectangle(cornerRadius: cornerRadius, style: style), content: color, strokeStyle: strokeStyle, strokeType: strokeType, constrainGestures: constrainGestures)
     }
