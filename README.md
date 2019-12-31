@@ -286,7 +286,7 @@ This project adheres to a [semantic versioning](https://semver.org) approach. I'
 - [1.5.0][tag-1.5.0] Add numerous modifiers and conditional modifiers including hueRotation, GeometryProxy extensions, Shape specific modifiers, UIScreen and more
 - [1.6.0][tag-1.6.0] Add image processing modifiers and associated conditionals - add convenience modifiers to Image and SFSymbol to perform resizing and aspect ratio modifiers in one step
 - [1.7.0][tag-1.7.0] Add constructor function for SFSymbols and all font types. Alignment parameter for all frame modifiers. Overloads for all font type modifiers on Text. Conditional animation modifier. Align modifier for Text.
-- [1.8.0][tag-1.8.0] 
+- [1.8.0][tag-1.8.0] Add various clip shape modifiers - extensions for stroking with fill - fill styles - default corner style to circular for RoundedRectangle - conditional background modifiers
 
 ## Licensing
 

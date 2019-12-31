@@ -15,3 +15,10 @@ public func after<T: UINumericType>(_ time: T, action: @escaping () -> ()) -> Ti
         timer.invalidate()
     }
 }
+
+@discardableResult
+public func every<T: UINumericType>(_ interval: T, action: @escaping (Timer) -> ()) -> Timer {
+    Timer.scheduledTimer(withTimeInterval: interval.asDouble, repeats: true) { (timer) in
+        action(timer)
+    }
+}

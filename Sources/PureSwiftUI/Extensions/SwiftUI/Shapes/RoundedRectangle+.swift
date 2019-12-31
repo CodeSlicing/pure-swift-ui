@@ -10,15 +10,15 @@ import SwiftUI
 
 public extension RoundedRectangle {
     
-    init<T: UINumericType>(_ cornerRadius: T, style: RoundedCornerStyle = .continuous) {
+    init<T: UINumericType>(_ cornerRadius: T, style: RoundedCornerStyle = .circular) {
         self.init(cornerRadius: cornerRadius.asCGFloat, style: style)
     }
 
-    init(_ cornerSize: CGSize, style: RoundedCornerStyle = .continuous) {
+    init(_ cornerSize: CGSize, style: RoundedCornerStyle = .circular) {
         self.init(cornerSize: cornerSize, style: style)
     }
     
-    init<TW: UINumericType, TH: UINumericType>(_ cornerWidth: TW, _ cornerHeight: TH, style: RoundedCornerStyle = .continuous) {
+    init<TW: UINumericType, TH: UINumericType>(_ cornerWidth: TW, _ cornerHeight: TH, style: RoundedCornerStyle = .circular) {
         self.init(cornerSize: .init(cornerWidth, cornerHeight), style: style)
     }
 }

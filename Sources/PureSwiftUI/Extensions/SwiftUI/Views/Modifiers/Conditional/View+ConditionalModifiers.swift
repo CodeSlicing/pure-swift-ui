@@ -286,6 +286,38 @@ public extension View {
     }
 }
 
+// MARK: ----- BACKGROUND
+
+public extension View {
+    func backgroundIf<T: View>(_ condition: Bool, _ content: T) -> some View {
+        RenderIf(condition) {
+            self.background(content)
+        }.elseRender {
+            self
+        }
+    }
+    
+    func backgroundIfNot<T: View>(_ condition: Bool, _ content: T) -> some View {
+        backgroundIf(!condition, content)
+    }
+    
+    func backgroundIf(_ condition: Bool, _ color: Color) -> some View {
+        background(condition ? color : Color.clear)
+    }
+    
+    func backgroundIfNot(_ condition: Bool, _ color: Color) -> some View {
+        backgroundIf(!condition, color)
+    }
+    
+    func backgroundColorIf(_ condition: Bool, _ color: Color) -> some View {
+        backgroundIf(condition, color)
+    }
+    
+    func backgroundColorIfNot(_ condition: Bool, _ color: Color) -> some View {
+        backgroundIf(!condition, color)
+    }
+}
+
 // MARK: - ----- CONDITIONAL ROTATION
 
 public extension View {

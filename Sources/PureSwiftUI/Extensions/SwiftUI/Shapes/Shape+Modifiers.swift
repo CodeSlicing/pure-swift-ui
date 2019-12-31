@@ -10,12 +10,16 @@ import SwiftUI
 
 public extension Shape {
     
-    func fillColor(_ color: Color) -> some View {
-        fill(color)
+    func fillColor(_ color: Color, style: FillStyle = FillStyle()) -> some View {
+        fill(color, style: style)
     }
 
     func strokeColor(_ color: Color) -> some View {
-        self.stroke(color)
+        stroke(color)
+    }
+    
+    func strokeColor<T: UINumericType>(_ color: Color, lineWidth: T) -> some View {
+        stroke(color, lineWidth: lineWidth.asCGFloat)
     }
 }
 

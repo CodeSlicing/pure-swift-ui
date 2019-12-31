@@ -27,15 +27,15 @@ public extension View {
         cutoutShape(Capsule(), shadowColor: shadowColor, shadowRadius: shadowRadius, shadowStrokeWidth: shadowStrokeWidth, shadowX: shadowX, shadowY: shadowY)
     }
     
-    func cutoutRoundedRectangle<T: UINumericType>(_ cornerRadius: T, style: RoundedCornerStyle = .continuous, shadowColor: Color = .black, shadowRadius: CGFloat = 5, shadowStrokeWidth: CGFloat = 5, shadowX: CGFloat = 0, shadowY: CGFloat = 0, constrainGestures: Bool = true) -> some View {
+    func cutoutRoundedRectangle<T: UINumericType>(_ cornerRadius: T, style: RoundedCornerStyle = .circular, shadowColor: Color = .black, shadowRadius: CGFloat = 5, shadowStrokeWidth: CGFloat = 5, shadowX: CGFloat = 0, shadowY: CGFloat = 0, constrainGestures: Bool = true) -> some View {
         cutoutShape(RoundedRectangle(cornerRadius, style: style), shadowColor: shadowColor, shadowRadius: shadowRadius, shadowStrokeWidth: shadowStrokeWidth, shadowX: shadowX, shadowY: shadowY)
     }
     
-    func cutoutRoundedRectangle<TW: UINumericType, TH: UINumericType>(_ cornerWidth: TW, _ cornerHeight: TH, style: RoundedCornerStyle = .continuous, shadowColor: Color = .black, shadowRadius: CGFloat = 5, shadowStrokeWidth: CGFloat = 5, shadowX: CGFloat = 0, shadowY: CGFloat = 0, constrainGestures: Bool = true) -> some View {
+    func cutoutRoundedRectangle<TW: UINumericType, TH: UINumericType>(_ cornerWidth: TW, _ cornerHeight: TH, style: RoundedCornerStyle = .circular, shadowColor: Color = .black, shadowRadius: CGFloat = 5, shadowStrokeWidth: CGFloat = 5, shadowX: CGFloat = 0, shadowY: CGFloat = 0, constrainGestures: Bool = true) -> some View {
         cutoutShape(RoundedRectangle(cornerWidth, cornerHeight, style: style), shadowColor: shadowColor, shadowRadius: shadowRadius, shadowStrokeWidth: shadowStrokeWidth, shadowX: shadowX, shadowY: shadowY)
     }
     
-    func cutoutRoundedRectangle(cornerSize: CGSize, style: RoundedCornerStyle = .continuous, shadowColor: Color = .black, shadowRadius: CGFloat = 5, shadowStrokeWidth: CGFloat = 5, shadowX: CGFloat = 0, shadowY: CGFloat = 0, constrainGestures: Bool = true) -> some View {
+    func cutoutRoundedRectangle(cornerSize: CGSize, style: RoundedCornerStyle = .circular, shadowColor: Color = .black, shadowRadius: CGFloat = 5, shadowStrokeWidth: CGFloat = 5, shadowX: CGFloat = 0, shadowY: CGFloat = 0, constrainGestures: Bool = true) -> some View {
         cutoutShape(RoundedRectangle(cornerSize, style: style), shadowColor: shadowColor, shadowRadius: shadowRadius, shadowStrokeWidth: shadowStrokeWidth, shadowX: shadowX, shadowY: shadowY)
     }
     
