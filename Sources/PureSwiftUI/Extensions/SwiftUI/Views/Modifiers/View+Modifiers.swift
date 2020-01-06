@@ -21,8 +21,17 @@ public extension View {
 
 public extension View {
 
-    func backgroundColor(_ color: Color) -> some View {
-        background(color)
+    func backgroundColor(_ color: Color,  alignment: Alignment = .center) -> some View {
+        background(color, alignment: alignment)
+    }
+}
+
+// MARK: ----- OVERLAY
+
+public extension View {
+    
+    func overlayColor(_ color: Color, alignment: Alignment = .center) -> some View {
+        overlay(color, alignment: alignment)
     }
 }
 
@@ -32,6 +41,10 @@ public extension View {
     
     func borderColor(_ color: Color) -> some View {
         border(color)
+    }
+    
+    func borderColor<T: UINumericType>(_ color: Color, width: T) -> some View {
+        border(color, width: width.asCGFloat)
     }
 }
 
@@ -154,10 +167,12 @@ public extension View {
         position(x: x.asCGFloat, y: y.asCGFloat)
     }
     
+    @available(*, deprecated, renamed: "position", message: "Can't set x or y positions individually since the underlying implementation defaults to 0 for the other dimension")
     func xPosition<T: UINumericType>(_ x: T) -> some View {
         position(x: x.asCGFloat)
     }
     
+    @available(*, deprecated, renamed: "position", message: "Can't set x or y positions individually since the underlying implementation defaults to 0 for the other dimension")
     func yPosition<T: UINumericType>(_ y: T) -> some View {
         position(y: y.asCGFloat)
     }
@@ -206,12 +221,40 @@ public extension View {
 
 public extension View {
     
+    func shadow<T: UINumericType, TX: UINumericType, TY: UINumericType>(_ theRadius: T, x: TX, y: TY) -> some View {
+        shadow(radius: theRadius.asCGFloat, x: x.asCGFloat, y: y.asCGFloat)
+    }
+    
     func shadow<T: UINumericType>(_ theRadius: T) -> some View {
-        shadow(radius: theRadius.asCGFloat)
+        shadow(theRadius, x: 0, y: 0)
+    }
+    
+    func shadow<T: UINumericType, TX: UINumericType>(_ theRadius: T, x: TX) -> some View {
+        shadow(theRadius, x: x, y: 0)
+    }
+    
+    func shadow<T: UINumericType, TY: UINumericType>(_ theRadius: T, y: TY) -> some View {
+        shadow(theRadius, x: 0, y: y)
+    }
+    
+    func shadow<T: UINumericType, TX: UINumericType, TY: UINumericType>(_ color: Color, _ theRadius: T, x: TX, y: TY) -> some View {
+        shadow(color: color, radius: theRadius.asCGFloat, x: x.asCGFloat, y: y.asCGFloat)
+    }
+    
+    func shadow<T: UINumericType>(_ color: Color, _ theRadius: T) -> some View {
+        shadow(color, theRadius, x: 0, y: 0)
+    }
+    
+    func shadow<T: UINumericType, TX: UINumericType>(_ color: Color, _ theRadius: T, x: TX) -> some View {
+        shadow(color, theRadius, x: x, y: 0)
+    }
+    
+    func shadow<T: UINumericType, TY: UINumericType>(_ color: Color, _ theRadius: T, y: TY) -> some View {
+        shadow(color, theRadius, x: 0, y: y)
     }
 }
 
-// MARK: - ----- PADDING
+// MARK: ------ PADDING
 
 public extension View {
 
@@ -293,5 +336,14 @@ public extension View {
     
     func yScale(_ scaleY: CGFloat, anchor: UnitPoint = .center) -> some View {
         scaleEffect(x: 1, y: scaleY, anchor: anchor)
+    }
+}
+
+// MARK: ----- Z-INDEX
+
+public extension View {
+    
+    func zIndex<T: UINumericType>(_ index: T) -> some View {
+        zIndex(index.asDouble)
     }
 }

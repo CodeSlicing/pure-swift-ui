@@ -38,35 +38,35 @@ public extension View {
 public extension View {
     
     func frameIf<TW: UINumericType, TH: UINumericType>(_ condition: Bool, _ width: TW, _ height: TH) -> some View {
-        self.frame(width: condition ? width.asCGFloat : nil, height: condition ? height.asCGFloat : nil)
+        frame(width: condition ? width.asCGFloat : nil, height: condition ? height.asCGFloat : nil)
     }
     
     func frameIfNot<TW: UINumericType, TH: UINumericType>(_ condition: Bool, _ width: TW, _ height: TH) -> some View {
-        self.frameIf(!condition, width, height)
+        frameIf(!condition, width, height)
     }
     
     func frameIf(_ condition: Bool, _ size: CGSize) -> some View {
-        self.frame(width: condition ? size.width : nil, height: condition ? size.height : nil)
+        frame(width: condition ? size.width : nil, height: condition ? size.height : nil)
     }
     
     func frameIfNot(_ condition: Bool, _ size: CGSize) -> some View {
-        self.frameIf(!condition, size)
+        frameIf(!condition, size)
     }
     
     func widthIf<TW: UINumericType>(_ condition: Bool, _ width: TW) -> some View {
-        self.frame(width: condition ? width.asCGFloat : nil)
+        frame(width: condition ? width.asCGFloat : nil)
     }
     
     func widthIfNot<TW: UINumericType>(_ condition: Bool, _ width: TW) -> some View {
-        self.widthIf(!condition, width)
+        widthIf(!condition, width)
     }
     
     func heightIf<TH: UINumericType>(_ condition: Bool, _ height: TH) -> some View {
-        self.frame(height: condition ? height.asCGFloat : nil)
+        frame(height: condition ? height.asCGFloat : nil)
     }
     
     func heightIfNot<TH: UINumericType>(_ condition: Bool, _ height: TH) -> some View {
-        self.heightIf(!condition, height)
+        heightIf(!condition, height)
     }
 }
 
@@ -75,76 +75,76 @@ public extension View {
 public extension View {
 
     func paddingIf(_ condition: Bool) -> some View {
-        self.padding(condition ? .all : [])
+        padding(condition ? .all : [])
     }
     
     func paddingIfNot(_ condition: Bool) -> some View {
-        self.paddingIf(!condition)
+        paddingIf(!condition)
     }
     
     func paddingIf<T: UINumericType>(_ condition: Bool, _ paddingAmount: T) -> some View {
-        self.paddingIf(condition, paddingAmount.asCGFloat)
+        paddingIf(condition, paddingAmount.asCGFloat)
     }
     
     func paddingIfNot<T: UINumericType>(_ condition: Bool, _ paddingAmount: T) -> some View {
-        self.paddingIf(!condition, paddingAmount)
+        paddingIf(!condition, paddingAmount)
     }
     
     func hPaddingIf(_ condition: Bool) -> some View {
-        self.padding(condition ? .horizontal : [])
+        padding(condition ? .horizontal : [])
     }
 
     func hPaddingIfNot(_ condition: Bool) -> some View {
-        self.hPaddingIf(!condition)
+        hPaddingIf(!condition)
     }
     
     func vPaddingIf(_ condition: Bool) -> some View {
-        self.padding(condition ? .vertical : [])
+        padding(condition ? .vertical : [])
     }
     
     func vPaddingIfNot(_ condition: Bool) -> some View {
-        self.vPaddingIf(!condition)
+        vPaddingIf(!condition)
     }
 
     func hPaddingIf<T: UINumericType>(_ condition: Bool, _ horizontalPadding: T) -> some View {
-        self.hPaddingIf(condition, horizontalPadding.asCGFloat)
+        hPaddingIf(condition, horizontalPadding.asCGFloat)
     }
     
     func hPaddingIfNot<T: UINumericType>(_ condition: Bool, _ horizontalPadding: T) -> some View {
-        self.hPaddingIf(!condition, horizontalPadding)
+        hPaddingIf(!condition, horizontalPadding)
     }
 
     func vPaddingIf<T: UINumericType>(_ condition: Bool, _ verticalPadding: T) -> some View {
-        self.vPaddingIf(condition, verticalPadding.asCGFloat)
+        vPaddingIf(condition, verticalPadding.asCGFloat)
     }
     
     func vPaddingIfNot<T: UINumericType>(_ condition: Bool, _ verticalPadding: T) -> some View {
-        self.vPaddingIf(!condition, verticalPadding)
+        vPaddingIf(!condition, verticalPadding)
     }
 
     //native
     func paddingIf(_ condition: Bool, _ paddingAmount: CGFloat) -> some View {
-        self.padding(condition ? .all : [], paddingAmount)
+        padding(condition ? .all : [], paddingAmount)
     }
     
     func paddingIfNot(_ condition: Bool, _ paddingAmount: CGFloat) -> some View {
-        self.paddingIf(!condition, paddingAmount)
+        paddingIf(!condition, paddingAmount)
     }
     
     func hPaddingIf(_ condition: Bool, _ horizontalPadding: CGFloat) -> some View {
-        self.padding(condition ? .horizontal : [], horizontalPadding)
+        padding(condition ? .horizontal : [], horizontalPadding)
     }
     
     func hPaddingIfNot(_ condition: Bool, _ horizontalPadding: CGFloat) -> some View {
-        self.hPaddingIf(!condition, horizontalPadding)
+        hPaddingIf(!condition, horizontalPadding)
     }
 
     func vPaddingIf(_ condition: Bool, _ verticalPadding: CGFloat) -> some View {
-        self.padding(condition ? .vertical : [], verticalPadding)
+        padding(condition ? .vertical : [], verticalPadding)
     }
     
     func vPaddingIfNot(_ condition: Bool, _ verticalPadding: CGFloat) -> some View {
-        self.vPaddingIf(!condition, verticalPadding)
+        vPaddingIf(!condition, verticalPadding)
     }
 }
 
@@ -153,44 +153,44 @@ public extension View {
 public extension View {
     
     func offsetIf(_ condition: Bool, _ point: CGPoint) -> some View {
-        self.offset(condition ? point : .zero)
+        offset(condition ? point : .zero)
     }
     
     func offsetIfNot(_ condition: Bool, _ point: CGPoint) -> some View {
-        self.offsetIf(!condition, point)
+        offsetIf(!condition, point)
     }
     
     func offsetIf<T_LHS: UINumericType, T_RHS: UINumericType>(_ condition: Bool, _ x: T_LHS, _ y: T_RHS) -> some View {
-        self.offsetIf(condition, x.asCGFloat, y.asCGFloat)
+        offsetIf(condition, x.asCGFloat, y.asCGFloat)
     }
     
     func offsetIfNot<T_LHS: UINumericType, T_RHS: UINumericType>(_ condition: Bool, _ x: T_LHS, _ y: T_RHS) -> some View {
-        self.offsetIf(!condition, x, y)
+        offsetIf(!condition, x, y)
     }
     
     func xOffsetIf<T: UINumericType>(_ condition: Bool, _ xOffset: T) -> some View {
-        self.xOffsetIf(condition, xOffset.asCGFloat)
+        xOffsetIf(condition, xOffset.asCGFloat)
     }
     
     func xOffsetIfNot<T: UINumericType>(_ condition: Bool, _ xOffset: T) -> some View {
-        self.xOffsetIf(!condition, xOffset)
+        xOffsetIf(!condition, xOffset)
     }
     
     func yOffsetIf<T: UINumericType>(_ condition: Bool, _ yOffset: T) -> some View {
-        self.yOffsetIf(condition, yOffset.asCGFloat)
+        yOffsetIf(condition, yOffset.asCGFloat)
     }
     
     func yOffsetIfNot<T: UINumericType>(_ condition: Bool, _ yOffset: T) -> some View {
-        self.yOffsetIf(!condition, yOffset)
+        yOffsetIf(!condition, yOffset)
     }
     
     //native
     func offsetIf(_ condition: Bool, _ x: CGFloat, _ y: CGFloat) -> some View {
-        self.offset(condition ? x : 0, condition ? y : 0)
+        offset(condition ? x : 0, condition ? y : 0)
     }
     
     func offsetIfNot(_ condition: Bool, _ x: CGFloat, _ y: CGFloat) -> some View {
-        self.offsetIf(!condition, x, y)
+        offsetIf(!condition, x, y)
     }
     
     func xOffsetIf(_ condition: Bool, _ xOffset: CGFloat) -> some View {
@@ -198,7 +198,7 @@ public extension View {
     }
     
     func xOffsetIfNot(_ condition: Bool, _ xOffset: CGFloat) -> some View {
-        self.xOffsetIf(!condition, xOffset)
+        xOffsetIf(!condition, xOffset)
     }
     
     func yOffsetIf(_ condition: Bool, _ yOffset: CGFloat) -> some View {
@@ -206,7 +206,7 @@ public extension View {
     }
     
     func yOffsetIfNot(_ condition: Bool, _ yOffset: CGFloat) -> some View {
-        self.yOffsetIf(!condition, yOffset)
+        yOffsetIf(!condition, yOffset)
     }
 }
 
@@ -219,7 +219,7 @@ public extension View {
     }
     
     func opacityIfNot<T: UINumericType>(_ condition: Bool, _ opacity: T) -> some View {
-        self.opacityIf(!condition, opacity)
+        opacityIf(!condition, opacity)
     }
 }
 
@@ -270,7 +270,7 @@ public extension View {
     }
     
     func contrastIf<T: UINumericType>(_ condition: Bool, _ amount: T) -> some View {
-         contrast(condition ? amount.asDouble : 1)
+        contrast(condition ? amount.asDouble : 1)
     }
     
     func contrastIfNot<T: UINumericType>(_ condition: Bool, _ amount: T) -> some View {
@@ -289,32 +289,126 @@ public extension View {
 // MARK: ----- BACKGROUND
 
 public extension View {
-    func backgroundIf<T: View>(_ condition: Bool, _ content: T) -> some View {
+    func backgroundIf<T: View>(_ condition: Bool, _ content: T, alignment: Alignment = .center) -> some View {
         RenderIf(condition) {
-            self.background(content)
+            self.background(content, alignment: alignment)
         }.elseRender {
             self
         }
     }
     
-    func backgroundIfNot<T: View>(_ condition: Bool, _ content: T) -> some View {
-        backgroundIf(!condition, content)
+    func backgroundIfNot<T: View>(_ condition: Bool, _ content: T, alignment: Alignment = .center) -> some View {
+        backgroundIf(!condition, content, alignment: alignment)
     }
     
-    func backgroundIf(_ condition: Bool, _ color: Color) -> some View {
-        background(condition ? color : Color.clear)
+    func backgroundIf(_ condition: Bool, _ color: Color, alignment: Alignment = .center) -> some View {
+        background(condition ? color : Color.clear, alignment: alignment)
     }
     
-    func backgroundIfNot(_ condition: Bool, _ color: Color) -> some View {
-        backgroundIf(!condition, color)
+    func backgroundIfNot(_ condition: Bool, _ color: Color, alignment: Alignment = .center) -> some View {
+        backgroundIf(!condition, color, alignment: alignment)
     }
     
-    func backgroundColorIf(_ condition: Bool, _ color: Color) -> some View {
-        backgroundIf(condition, color)
+    func backgroundColorIf(_ condition: Bool, _ color: Color, alignment: Alignment = .center) -> some View {
+        backgroundIf(condition, color, alignment: alignment)
     }
     
-    func backgroundColorIfNot(_ condition: Bool, _ color: Color) -> some View {
-        backgroundIf(!condition, color)
+    func backgroundColorIfNot(_ condition: Bool, _ color: Color, alignment: Alignment = .center) -> some View {
+        backgroundIf(!condition, color, alignment: alignment)
+    }
+}
+
+// MARK: ----- OVERLAY
+
+public extension View {
+    func overlayIf<T: View>(_ condition: Bool, _ content: T, alignment: Alignment = .center) -> some View {
+        RenderIf(condition) {
+            self.overlay(content, alignment: alignment)
+        }.elseRender {
+            self
+        }
+    }
+    
+    func overlayIfNot<T: View>(_ condition: Bool, _ content: T, alignment: Alignment = .center) -> some View {
+        overlayIf(!condition, content, alignment: alignment)
+    }
+    
+    func overlayIf(_ condition: Bool, _ color: Color, alignment: Alignment = .center) -> some View {
+        overlay(condition ? color : Color.clear, alignment: alignment)
+    }
+    
+    func overlayIfNot(_ condition: Bool, _ color: Color, alignment: Alignment = .center) -> some View {
+        overlayIf(!condition, color, alignment: alignment)
+    }
+    
+    func overlayColorIf(_ condition: Bool, _ color: Color, alignment: Alignment = .center) -> some View {
+        overlayIf(condition, color, alignment: alignment)
+    }
+    
+    func overlayColorIfNot(_ condition: Bool, _ color: Color, alignment: Alignment = .center) -> some View {
+        overlayIf(!condition, color, alignment: alignment)
+    }
+}
+
+// MARK: ----- BORDER
+
+public extension View {
+    
+    func borderIf<SS: ShapeStyle>(_ condition: Bool, _ shapeStyle: SS) -> some View {
+        RenderIf(condition) {
+            self.border(shapeStyle)
+        }.elseRender {
+            self
+        }
+    }
+    
+    func borderIfNot<SS: ShapeStyle>(_ condition: Bool, _ shapeStyle: SS) -> some View {
+        borderIf(!condition, shapeStyle)
+    }
+    
+    func borderIf(_ condition: Bool, _ color: Color) -> some View {
+        border(condition ? color : Color.clear)
+    }
+    
+    func borderIfNot(_ condition: Bool, _ color: Color) -> some View {
+        borderIf(!condition, color)
+    }
+    
+    func borderColorIf(_ condition: Bool, _ color: Color) -> some View {
+        border(condition ? color : Color.clear)
+    }
+    
+    func borderColorIfNot(_ condition: Bool, _ color: Color) -> some View {
+        borderColorIf(!condition, color)
+    }
+    
+    // with width
+    func borderIf<SS: ShapeStyle, T: UINumericType>(_ condition: Bool, _ shapeStyle: SS, width: T) -> some View {
+        RenderIf(condition) {
+            self.border(shapeStyle, width: width.asCGFloat)
+        }.elseRender {
+            self
+        }
+    }
+    
+    func borderIfNot<SS: ShapeStyle, T: UINumericType>(_ condition: Bool, _ shapeStyle: SS, width: T) -> some View {
+        borderIf(!condition, shapeStyle, width: width)
+    }
+    
+    func borderIf<T: UINumericType>(_ condition: Bool, _ color: Color, width: T) -> some View {
+        border(condition ? color : Color.clear, width: width.asCGFloat)
+    }
+    
+    func borderIfNot<T: UINumericType>(_ condition: Bool, _ color: Color, width: T) -> some View {
+        borderIf(!condition, color, width: width)
+    }
+    
+    func borderColorIf<T: UINumericType>(_ condition: Bool, _ color: Color, width: T) -> some View {
+        borderIf(condition, color, width: width)
+    }
+    
+    func borderColorIfNot<T: UINumericType>(_ condition: Bool, _ color: Color, width: T) -> some View {
+        borderIf(!condition, color, width: width)
     }
 }
 
@@ -323,24 +417,20 @@ public extension View {
 public extension View {
     
     func rotateIf(_ condition: Bool, _ rotation: Angle, anchor: UnitPoint = .center) -> some View {
-        self.rotate(condition ? rotation : 0.degrees, anchor: anchor)
+        rotate(condition ? rotation : 0.degrees, anchor: anchor)
     }
     
     func rotateIfNot(_ condition: Bool, _ rotation: Angle, anchor: UnitPoint = .center) -> some View {
-        self.rotateIf(!condition, rotation, anchor: anchor)
+        rotateIf(!condition, rotation, anchor: anchor)
     }
     
     func rotate3DIf(_ condition: Bool, _ rotation: Angle, axis: (x: CGFloat, y: CGFloat, z: CGFloat), anchor: UnitPoint = .center, anchorZ: CGFloat = 0, perspective: CGFloat = 1) -> some View {
-        self.rotate3D(condition ? rotation : 0.degrees, axis, anchor: anchor, anchorZ: anchorZ)
+        rotate3D(condition ? rotation : 0.degrees, axis, anchor: anchor, anchorZ: anchorZ)
     }
     
     func rotate3DIfNot(_ condition: Bool, _ rotation: Angle, axis: (x: CGFloat, y: CGFloat, z: CGFloat), anchor: UnitPoint = .center, anchorZ: CGFloat = 0, perspective: CGFloat = 1) -> some View {
-        self.rotate3DIf(!condition, rotation, axis: axis, anchor: anchor, anchorZ: anchorZ)
+        rotate3DIf(!condition, rotation, axis: axis, anchor: anchor, anchorZ: anchorZ)
     }
-    
-//    func rotate3D(_ angle: Angle, _ axis: (x: CGFloat, y: CGFloat, z: CGFloat), anchor: UnitPoint = .center, anchorZ: CGFloat = 0, perspective: CGFloat = 1) -> some View {
-//        rotation3DEffect(angle, axis: axis, anchor: anchor, anchorZ: anchorZ, perspective: perspective)
-//    }
 }
 
 // MARK: - ----- CONDITIONAL SCALE
@@ -349,20 +439,20 @@ private let defaultScaleSize = CGSize(1, 1)
 
 public extension View {
     
-    func scaleIf<T: UINumericType>(_ condition: Bool, _ scaleEffect: T, anchor: UnitPoint = .center) -> some View {
-        self.scaleEffect(condition ? scaleEffect.asCGFloat : 1, anchor: anchor)
+    func scaleIf<T: UINumericType>(_ condition: Bool, _ scale: T, anchor: UnitPoint = .center) -> some View {
+        self.scaleEffect(condition ? scale.asCGFloat : 1, anchor: anchor)
     }
     
-    func scaleIfNot<T: UINumericType>(_ condition: Bool, _ scaleEffect: T, anchor: UnitPoint = .center) -> some View {
-        self.scaleIf(!condition, scaleEffect)
+    func scaleIfNot<T: UINumericType>(_ condition: Bool, _ scale: T, anchor: UnitPoint = .center) -> some View {
+        scaleIf(!condition, scale)
     }
     
-    func scaleIf(_ condition: Bool, _ scaleEffect: CGSize, anchor: UnitPoint = .center) -> some View {
-        self.scaleEffect(condition ? scaleEffect : defaultScaleSize, anchor: anchor)
+    func scaleIf(_ condition: Bool, _ scale: CGSize, anchor: UnitPoint = .center) -> some View {
+        scaleEffect(condition ? scale : defaultScaleSize, anchor: anchor)
     }
     
-    func scaleIfNot(_ condition: Bool, _ scaleEffect: CGSize, anchor: UnitPoint = .center) -> some View {
-        self.scaleIf(!condition, scaleEffect, anchor: anchor)
+    func scaleIfNot(_ condition: Bool, _ scale: CGSize, anchor: UnitPoint = .center) -> some View {
+        scaleIf(!condition, scale, anchor: anchor)
     }
     
     func xScaleIf<T: UINumericType>(_ condition: Bool, _ scaleX: T, anchor: UnitPoint = .center) -> some View {
@@ -462,5 +552,18 @@ public extension View {
         } else {
             return try withAnimation(animation, body)
         }
+    }
+}
+
+// MARK: ----- DISABLED
+
+public extension View {
+    
+    func disabledIf(_ condition: Bool) -> some View {
+        disabled(condition)
+    }
+    
+    func disabledIfNot(_ condition: Bool) -> some View {
+        disabledIf(!condition)
     }
 }

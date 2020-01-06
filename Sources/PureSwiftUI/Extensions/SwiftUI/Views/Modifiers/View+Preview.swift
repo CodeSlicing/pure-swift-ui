@@ -3,6 +3,7 @@
 //  
 //
 //  Created by Adam Fordyce on 16/12/2019.
+//  Copyright © 2019 Adam Fordyce. All rights reserved.
 //
 
 import SwiftUI
@@ -19,6 +20,8 @@ public enum PreviewDeviceName: String, CaseIterable {
     case iPhone_XS = "iPhone Xs"
     case iPhone_XS_Max = "iPhone Xs Max"
     case iPhone_XR = "iPhone Xʀ"
+    case iPhone_11_Pro = "iPhone 11 Pro"
+    case iPhone_11_Pro_Max = "iPhone 11 Pro Max"
     case iPad_mini_4 = "iPad mini 4"
     case iPad_Air_2 = "iPad Air 2"
     case iPad_Pro_9_7_inch = "iPad Pro (9.7-inch)"
