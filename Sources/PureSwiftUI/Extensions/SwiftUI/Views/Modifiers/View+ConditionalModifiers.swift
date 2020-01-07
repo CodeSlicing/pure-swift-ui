@@ -286,6 +286,17 @@ public extension View {
     }
 }
 
+
+
+// MARK: ----- FOREGROUND
+
+public extension View {
+    
+    func foregroundColorIf(_ condition: Bool, _ color: Color) -> some View {
+        foregroundColor(condition ? color : nil)
+    }
+}
+
 // MARK: ----- BACKGROUND
 
 public extension View {

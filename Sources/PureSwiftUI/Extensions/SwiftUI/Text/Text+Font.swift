@@ -171,12 +171,3 @@ public extension Text {
             .foregroundColor(color)
     }
 }
-
-// MARK: ----- ALIGNMENT
-
-public extension Text {
-    
-    func align(_ alignment: TextAlignment) -> some View {
-        multilineTextAlignment(alignment)
-    }
-}
