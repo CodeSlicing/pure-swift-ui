@@ -37,36 +37,36 @@ public extension View {
 
 public extension View {
     
-    func frameIf<TW: UINumericType, TH: UINumericType>(_ condition: Bool, _ width: TW, _ height: TH) -> some View {
-        frame(width: condition ? width.asCGFloat : nil, height: condition ? height.asCGFloat : nil)
+    func frameIf<TW: UINumericType, TH: UINumericType>(_ condition: Bool, _ width: TW, _ height: TH, alignment: Alignment = .center) -> some View {
+        frame(width: condition ? width.asCGFloat : nil, height: condition ? height.asCGFloat : nil, alignment: alignment)
     }
     
-    func frameIfNot<TW: UINumericType, TH: UINumericType>(_ condition: Bool, _ width: TW, _ height: TH) -> some View {
-        frameIf(!condition, width, height)
+    func frameIfNot<TW: UINumericType, TH: UINumericType>(_ condition: Bool, _ width: TW, _ height: TH, alignment: Alignment = .center) -> some View {
+        frameIf(!condition, width, height, alignment: alignment)
     }
     
-    func frameIf(_ condition: Bool, _ size: CGSize) -> some View {
-        frame(width: condition ? size.width : nil, height: condition ? size.height : nil)
+    func frameIf(_ condition: Bool, _ size: CGSize, alignment: Alignment = .center) -> some View {
+        frame(width: condition ? size.width : nil, height: condition ? size.height : nil, alignment: alignment)
     }
     
-    func frameIfNot(_ condition: Bool, _ size: CGSize) -> some View {
-        frameIf(!condition, size)
+    func frameIfNot(_ condition: Bool, _ size: CGSize, alignment: Alignment = .center) -> some View {
+        frameIf(!condition, size, alignment: alignment)
     }
     
-    func widthIf<TW: UINumericType>(_ condition: Bool, _ width: TW) -> some View {
-        frame(width: condition ? width.asCGFloat : nil)
+    func widthIf<TW: UINumericType>(_ condition: Bool, _ width: TW, alignment: Alignment = .center) -> some View {
+        frame(width: condition ? width.asCGFloat : nil, alignment: alignment)
     }
     
-    func widthIfNot<TW: UINumericType>(_ condition: Bool, _ width: TW) -> some View {
-        widthIf(!condition, width)
+    func widthIfNot<TW: UINumericType>(_ condition: Bool, _ width: TW, alignment: Alignment = .center) -> some View {
+        widthIf(!condition, width, alignment: alignment)
     }
     
-    func heightIf<TH: UINumericType>(_ condition: Bool, _ height: TH) -> some View {
-        frame(height: condition ? height.asCGFloat : nil)
+    func heightIf<TH: UINumericType>(_ condition: Bool, _ height: TH, alignment: Alignment = .center) -> some View {
+        frame(height: condition ? height.asCGFloat : nil, alignment: alignment)
     }
     
-    func heightIfNot<TH: UINumericType>(_ condition: Bool, _ height: TH) -> some View {
-        heightIf(!condition, height)
+    func heightIfNot<TH: UINumericType>(_ condition: Bool, _ height: TH, alignment: Alignment = .center) -> some View {
+        heightIf(!condition, height, alignment: alignment)
     }
 }
 
@@ -295,6 +295,19 @@ public extension View {
     func foregroundColorIf(_ condition: Bool, _ color: Color) -> some View {
         foregroundColor(condition ? color : nil)
     }
+    
+    
+    func foregroundColorIfNot(_ condition: Bool, _ color: Color) -> some View {
+        foregroundColorIf(!condition, color)
+    }
+    
+    func foregroundColorIf(_ condition: Bool, _ colorName: String) -> some View {
+        foregroundColorIf(condition, Color(colorName))
+    }
+    
+    func foregroundColorIfNot(_ condition: Bool, _ colorName: String) -> some View {
+        foregroundColorIfNot(condition, Color(colorName))
+    }
 }
 
 // MARK: ----- BACKGROUND
@@ -327,6 +340,14 @@ public extension View {
     func backgroundColorIfNot(_ condition: Bool, _ color: Color, alignment: Alignment = .center) -> some View {
         backgroundIf(!condition, color, alignment: alignment)
     }
+    
+    func backgroundColorIf(_ condition: Bool, _ colorName: String, alignment: Alignment = .center) -> some View {
+        backgroundColorIf(condition, Color(colorName), alignment: alignment)
+    }
+    
+    func backgroundColorIfNot(_ condition: Bool, _ colorName: String, alignment: Alignment = .center) -> some View {
+        backgroundColorIfNot(condition, Color(colorName), alignment: alignment)
+    }
 }
 
 // MARK: ----- OVERLAY
@@ -358,6 +379,14 @@ public extension View {
     
     func overlayColorIfNot(_ condition: Bool, _ color: Color, alignment: Alignment = .center) -> some View {
         overlayIf(!condition, color, alignment: alignment)
+    }
+        
+    func overlayColorIf(_ condition: Bool, _ colorName: String, alignment: Alignment = .center) -> some View {
+        overlayColorIf(condition, Color(colorName), alignment: alignment)
+    }
+    
+    func overlayColorIfNot(_ condition: Bool, _ colorName: String, alignment: Alignment = .center) -> some View {
+        overlayColorIfNot(condition, Color(colorName), alignment: alignment)
     }
 }
 
@@ -393,6 +422,14 @@ public extension View {
         borderColorIf(!condition, color)
     }
     
+    func borderColorIf(_ condition: Bool, _ colorName: String) -> some View {
+        borderColorIf(condition, Color(colorName))
+    }
+    
+    func borderColorIfNot(_ condition: Bool, _ colorName: String) -> some View {
+        borderColorIfNot(condition, Color(colorName))
+    }
+    
     // with width
     func borderIf<SS: ShapeStyle, T: UINumericType>(_ condition: Bool, _ shapeStyle: SS, width: T) -> some View {
         RenderIf(condition) {
@@ -420,6 +457,14 @@ public extension View {
     
     func borderColorIfNot<T: UINumericType>(_ condition: Bool, _ color: Color, width: T) -> some View {
         borderIf(!condition, color, width: width)
+    }
+    
+    func borderColorIf<T: UINumericType>(_ condition: Bool, _ colorName: String, width: T) -> some View {
+        borderColorIf(condition, Color(colorName), width: width)
+    }
+    
+    func borderColorIfNot<T: UINumericType>(_ condition: Bool, _ colorName: String, width: T) -> some View {
+        borderColorIfNot(condition, Color(colorName), width: width)
     }
 }
 
@@ -557,12 +602,20 @@ public extension View {
         }
     }
     
+    func animationIfNot(_ condition: Bool, _ theAnimation: Animation? = .default) -> some View {
+        animationIf(!condition, theAnimation)
+    }
+    
     func withAnimationIf<Result>(_ condition: Bool, _ animation: Animation? = .default, _ body: () throws -> Result) rethrows -> Result {
         if condition {
             return try body()
         } else {
             return try withAnimation(animation, body)
         }
+    }
+
+    func withAnimationIfNot<Result>(_ condition: Bool, _ animation: Animation? = .default, _ body: () throws -> Result) rethrows -> Result {
+        try withAnimationIf(!condition, animation, body)
     }
 }
 
@@ -576,5 +629,51 @@ public extension View {
     
     func disabledIfNot(_ condition: Bool) -> some View {
         disabledIf(!condition)
+    }
+}
+
+// MARK: ----- Z-INDEX
+
+public extension View {
+    
+    func zIndexIf<T: UINumericType>(_ condition: Bool, _ index: T) -> some View {
+        zIndex(condition ? index.asDouble : 0)
+    }
+    
+    func zIndexIfNot<T: UINumericType>(_ condition: Bool, _ index: T) -> some View {
+        zIndexIf(!condition, index)
+    }
+}
+
+// MARK: ----- ENVIRONMENT
+
+public extension View {
+    
+    func envDarkModeIf(_ condition: Bool) -> some View {
+        environment(\.colorScheme, condition ? .dark : .light)
+    }
+    
+    func envDarkModeIfNot(_ condition: Bool) -> some View {
+        envDarkModeIf(!condition)
+    }
+
+    func envLightModeIf(_ condition: Bool) -> some View {
+        envDarkModeIf(!condition)
+    }
+    
+    func envLightModeIfNot(_ condition: Bool) -> some View {
+        envLightModeIf(!condition)
+    }
+    
+    func envColorSchemeIf(_ condition: Bool, _ scheme: ColorScheme) -> some View {
+        RenderIf(condition) {
+            self.environment(\.colorScheme, scheme)
+        }.elseRender {
+            self
+        }
+    }
+    
+    func envColorSchemeIfNot(_ condition: Bool, _ scheme: ColorScheme) -> some View {
+        envColorSchemeIf(!condition, scheme)
     }
 }

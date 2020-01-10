@@ -45,6 +45,8 @@ public enum PreviewDeviceName: String, CaseIterable {
     case Apple_Watch_Series_4_44mm = "Apple Watch Series 4 - 44mm"
 }
 
+// MARK: ----- PREVIEW DEVICE
+
 public extension View {
     
     func previewDevice(_ previewDeviceName: PreviewDeviceName) -> some View {
@@ -54,5 +56,26 @@ public extension View {
     func previewDevice(_ previewDeviceName: PreviewDeviceName, displayName: String) -> some View {
         previewDevice(PreviewDevice(rawValue: previewDeviceName.rawValue))
             .previewDisplayName(displayName)
+    }
+}
+
+// MARK: ----- LAYOUT
+
+public extension View {
+    
+    func previewSizeThatFits() -> some View {
+        previewLayout(.sizeThatFits)
+    }
+    
+    func previewFixedSize(_ size: CGSize) -> some View {
+        previewLayout(.fixed(width: size.width, height: size.height))
+    }
+    
+    func previewFixedSize<T: UINumericType>(_ size: T) -> some View {
+        previewLayout(.fixed(width: size.asCGFloat, height: size.asCGFloat))
+    }
+    
+    func previewFixedSize<TX: UINumericType, TY: UINumericType>(_ x: TX, _ y: TY) -> some View {
+        previewLayout(.fixed(width: x.asCGFloat, height: y.asCGFloat))
     }
 }

@@ -62,8 +62,12 @@ public extension View {
         clipShapeInternal(RoundedRectangle(cornerRadius, style: cornerStyle), fill: fill, fillStyle: fillStyle, constrainGestures: constrainGestures)
     }
     
-    func clipRoundedRectangle<TW: UINumericType, TH: UINumericType>(_ width: TW, _ height: TH, cornerStyle: RoundedCornerStyle = .circular, constrainGestures: Bool = true) -> some View {
-        clipShapeInternal(RoundedRectangle(width, height, style: cornerStyle), constrainGestures: constrainGestures)
+    func clipRoundedRectangle<T: UINumericType>(_ cornerRadius: T, cornerStyle: RoundedCornerStyle = .circular, fill: Color, fillStyle: FillStyle = FillStyle(), constrainGestures: Bool = true) -> some View {
+        clipShapeInternal(RoundedRectangle(cornerRadius, style: cornerStyle), fill: fill, fillStyle: fillStyle, constrainGestures: constrainGestures)
+    }
+    
+    func clipRoundedRectangle<TW: UINumericType, TH: UINumericType>(_ cornerWidth: TW, _ cornerHeight: TH, cornerStyle: RoundedCornerStyle = .circular, constrainGestures: Bool = true) -> some View {
+        clipShapeInternal(RoundedRectangle(cornerWidth, cornerHeight, style: cornerStyle), constrainGestures: constrainGestures)
     }
     
     func clipRoundedRectangle<TW: UINumericType, TH: UINumericType, SS: ShapeStyle>(_ width: TW, _ height: TH, cornerStyle: RoundedCornerStyle = .circular, fill: SS, fillStyle: FillStyle = FillStyle(), constrainGestures: Bool = true) -> some View {

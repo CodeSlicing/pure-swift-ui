@@ -17,18 +17,35 @@ public extension View {
     }
 }
 
+// MARK: ----- FOREGROUND
+
+public extension View {
+    
+    func foregroundColor(_ colorName: String) -> some View {
+        foregroundColor(Color(colorName))
+    }
+}
+
 // MARK: - ----- BACKGROUND
 
 public extension View {
-
+    
     func backgroundColor(_ color: Color,  alignment: Alignment = .center) -> some View {
         background(color, alignment: alignment)
+    }
+    
+    func backgroundColor(_ colorName: String,  alignment: Alignment = .center) -> some View {
+        background(Color(colorName), alignment: alignment)
     }
 }
 
 // MARK: ----- OVERLAY
 
 public extension View {
+    
+    func overlayColor(_ colorName: String, alignment: Alignment = .center) -> some View {
+        overlay(Color(colorName), alignment: alignment)
+    }
     
     func overlayColor(_ color: Color, alignment: Alignment = .center) -> some View {
         overlay(color, alignment: alignment)
@@ -43,8 +60,16 @@ public extension View {
         border(color)
     }
     
+    func borderColor(_ colorName: String) -> some View {
+        borderColor(Color(colorName))
+    }
+    
     func borderColor<T: UINumericType>(_ color: Color, width: T) -> some View {
         border(color, width: width.asCGFloat)
+    }
+    
+    func borderColor<T: UINumericType>(_ colorName: String, width: T) -> some View {
+        borderColor(Color(colorName), width: width)
     }
 }
 
@@ -221,38 +246,73 @@ public extension View {
 
 public extension View {
     
-    func shadow<T: UINumericType, TX: UINumericType, TY: UINumericType>(_ theRadius: T, x: TX, y: TY) -> some View {
-        shadow(radius: theRadius.asCGFloat, x: x.asCGFloat, y: y.asCGFloat)
+    func shadow<T: UINumericType, TX: UINumericType, TY: UINumericType>(_ radius: T, x: TX, y: TY) -> some View {
+        shadow(radius: radius.asCGFloat, x: x.asCGFloat, y: y.asCGFloat)
     }
     
-    func shadow<T: UINumericType>(_ theRadius: T) -> some View {
-        shadow(theRadius, x: 0, y: 0)
+    func shadow<T: UINumericType>(_ radius: T) -> some View {
+        shadow(radius, x: 0, y: 0)
     }
     
-    func shadow<T: UINumericType, TX: UINumericType>(_ theRadius: T, x: TX) -> some View {
-        shadow(theRadius, x: x, y: 0)
+    func shadow<T: UINumericType, TX: UINumericType>(_ radius: T, x: TX) -> some View {
+        shadow(radius, x: x, y: 0)
     }
     
-    func shadow<T: UINumericType, TY: UINumericType>(_ theRadius: T, y: TY) -> some View {
-        shadow(theRadius, x: 0, y: y)
+    func shadow<T: UINumericType, TY: UINumericType>(_ radius: T, y: TY) -> some View {
+        shadow(radius, x: 0, y: y)
     }
     
-    func shadow<T: UINumericType, TX: UINumericType, TY: UINumericType>(_ color: Color, _ theRadius: T, x: TX, y: TY) -> some View {
-        shadow(color: color, radius: theRadius.asCGFloat, x: x.asCGFloat, y: y.asCGFloat)
+    @available(*, deprecated, renamed: "shadowColor")
+    func shadow<T: UINumericType, TX: UINumericType, TY: UINumericType>(_ color: Color, _ radius: T, x: TX, y: TY) -> some View {
+        shadow(color: color, radius: radius.asCGFloat, x: x.asCGFloat, y: y.asCGFloat)
     }
     
-    func shadow<T: UINumericType>(_ color: Color, _ theRadius: T) -> some View {
-        shadow(color, theRadius, x: 0, y: 0)
+    @available(*, deprecated, renamed: "shadowColor")
+    func shadow<T: UINumericType>(_ color: Color, _ radius: T) -> some View {
+        shadow(color, radius, x: 0, y: 0)
     }
     
-    func shadow<T: UINumericType, TX: UINumericType>(_ color: Color, _ theRadius: T, x: TX) -> some View {
-        shadow(color, theRadius, x: x, y: 0)
+    @available(*, deprecated, renamed: "shadowColor")
+    func shadow<T: UINumericType, TX: UINumericType>(_ color: Color, _ radius: T, x: TX) -> some View {
+        shadow(color, radius, x: x, y: 0)
     }
     
-    func shadow<T: UINumericType, TY: UINumericType>(_ color: Color, _ theRadius: T, y: TY) -> some View {
-        shadow(color, theRadius, x: 0, y: y)
+    @available(*, deprecated, renamed: "shadowColor")
+    func shadow<T: UINumericType, TY: UINumericType>(_ color: Color, _ radius: T, y: TY) -> some View {
+        shadow(color, radius, x: 0, y: y)
     }
-}
+    
+    func shadowColor<T: UINumericType, TX: UINumericType, TY: UINumericType>(_ color: Color, _ radius: T, x: TX, y: TY) -> some View {
+        shadow(color: color, radius: radius.asCGFloat, x: x.asCGFloat, y: y.asCGFloat)
+    }
+    
+    func shadowColor<T: UINumericType>(_ color: Color, _ radius: T) -> some View {
+        shadowColor(color, radius, x: 0, y: 0)
+    }
+    
+    func shadowColor<T: UINumericType, TX: UINumericType>(_ color: Color, _ radius: T, x: TX) -> some View {
+        shadowColor(color, radius, x: x, y: 0)
+    }
+    
+    func shadowColor<T: UINumericType, TY: UINumericType>(_ color: Color, _ radius: T, y: TY) -> some View {
+        shadowColor(color, radius, x: 0, y: y)
+    }
+    
+    func shadowColor<T: UINumericType, TX: UINumericType, TY: UINumericType>(_ colorName: String, _ radius: T, x: TX, y: TY) -> some View {
+        shadowColor(Color(colorName), radius, x: x, y: y)
+    }
+    
+    func shadowColor<T: UINumericType>(_ colorName: String, _ radius: T) -> some View {
+        shadowColor(colorName, radius, x: 0, y: 0)
+    }
+    
+    func shadowColor<T: UINumericType, TX: UINumericType>(_ colorName: String, _ radius: T, x: TX) -> some View {
+        shadowColor(colorName, radius, x: x, y: 0)
+    }
+    
+    func shadowColor<T: UINumericType, TY: UINumericType>(_ colorName: String, _ radius: T, y: TY) -> some View {
+        shadowColor(colorName, radius, x: 0, y: y)
+    }}
 
 // MARK: ------ PADDING
 
@@ -345,5 +405,22 @@ public extension View {
     
     func zIndex<T: UINumericType>(_ index: T) -> some View {
         zIndex(index.asDouble)
+    }
+}
+
+// MARK: ----- ENVIRONMENT
+
+public extension View {
+    
+    func envDarkMode() -> some View {
+        environment(\.colorScheme, .dark)
+    }
+
+    func envLightMode() -> some View {
+        environment(\.colorScheme, .light)
+    }
+    
+    func envColorScheme(_ scheme: ColorScheme) -> some View {
+        environment(\.colorScheme, scheme)
     }
 }

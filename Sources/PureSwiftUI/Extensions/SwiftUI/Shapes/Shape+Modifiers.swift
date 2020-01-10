@@ -21,6 +21,20 @@ public extension Shape {
     func strokeColor<T: UINumericType>(_ color: Color, lineWidth: T) -> some View {
         stroke(color, lineWidth: lineWidth.asCGFloat)
     }
+    
+    // named
+    
+    func fillColor(_ colorName: String, style: FillStyle = FillStyle()) -> some View {
+        fill(Color(colorName), style: style)
+    }
+
+    func strokeColor(_ colorName: String) -> some View {
+        stroke(Color(colorName))
+    }
+    
+    func strokeColor<T: UINumericType>(_ colorName: String, lineWidth: T) -> some View {
+        stroke(Color(colorName), lineWidth: lineWidth.asCGFloat)
+    }
 }
 
 // MARK: ----- OFFSET
@@ -88,5 +102,27 @@ public extension Shape {
 
     func rotate(_ angle: Angle, anchor: UnitPoint = .center) -> RotatedShape<Self> {
         rotation(angle, anchor: anchor)
+    }
+}
+
+// MARK: ----- SIZE
+
+public extension Shape {
+    
+    func size<TW: UINumericType, TH: UINumericType>(_ width: TW, _ height: TH) -> some Shape {
+        size(width: width.asCGFloat, height: height.asCGFloat)
+    }
+
+    func size<T: UINumericType>(_ theSize: T) -> some Shape {
+        size(theSize, theSize)
+    }
+}
+
+// MARK: ----- STROKE
+
+public extension Shape {
+    
+    func stroke<S: ShapeStyle, T: UINumericType>(_ content: S, lineWidth: T) -> some View {
+        stroke(content, lineWidth: lineWidth.asCGFloat)
     }
 }

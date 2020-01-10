@@ -14,19 +14,19 @@ public extension Image {
             .scaledToFit()
     }
 
-    func resizedToFit<T: UINumericType>(width: T, capInsets: EdgeInsets = EdgeInsets()) -> some View {
+    func resizedToFit<T: UINumericType>(width: T, _ alignment: Alignment = .center, capInsets: EdgeInsets = EdgeInsets()) -> some View {
         resizedToFit(capInsets: capInsets)
-            .width(width)
+            .width(width, alignment)
     }
     
-    func resizedToFit<T: UINumericType>(height: T, capInsets: EdgeInsets = EdgeInsets()) -> some View {
+    func resizedToFit<T: UINumericType>(height: T, _ alignment: Alignment = .center, capInsets: EdgeInsets = EdgeInsets()) -> some View {
         resizedToFit(capInsets: capInsets)
-            .height(height)
+            .height(height, alignment)
     }
     
-    func resizedToFit<TW: UINumericType, TH: UINumericType>(_ width: TW, _ height: TH, capInsets: EdgeInsets = EdgeInsets()) -> some View {
+    func resizedToFit<TW: UINumericType, TH: UINumericType>(_ width: TW, _ height: TH, _ alignment: Alignment = .center, capInsets: EdgeInsets = EdgeInsets()) -> some View {
         resizedToFit(capInsets: capInsets)
-            .frame(width, height)
+            .frame(width, height, alignment)
     }
 
     func resizedToFill(capInsets: EdgeInsets = EdgeInsets()) -> some View {
@@ -34,18 +34,18 @@ public extension Image {
             .scaledToFill()
     }
     
-    func resizedToFill<T: UINumericType>(width: T, capInsets: EdgeInsets = EdgeInsets()) -> some View {
+    func resizedToFill<T: UINumericType>(width: T, _ alignment: Alignment = .center, capInsets: EdgeInsets = EdgeInsets()) -> some View {
         resizedToFill(capInsets: capInsets)
-            .width(width)
+            .width(width, alignment)
     }
     
-    func resizedToFill<T: UINumericType>(height: T, capInsets: EdgeInsets = EdgeInsets()) -> some View {
+    func resizedToFill<T: UINumericType>(height: T, _ alignment: Alignment = .center, capInsets: EdgeInsets = EdgeInsets()) -> some View {
         resizedToFill(capInsets: capInsets)
-            .height(height)
+            .height(height, alignment)
     }
 
-    func resizedToFill<TW: UINumericType, TH: UINumericType>(_ width: TW, _ height: TH, capInsets: EdgeInsets = EdgeInsets()) -> some View {
+    func resizedToFill<TW: UINumericType, TH: UINumericType>(_ width: TW, _ height: TH, _ alignment: Alignment = .center, capInsets: EdgeInsets = EdgeInsets()) -> some View {
         resizedToFill(capInsets: capInsets)
-            .frame(width, height)
+            .frame(width, height, alignment)
     }
 }
