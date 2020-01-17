@@ -37,9 +37,8 @@ public extension CGSize {
         height / 2
     }
     
-    
     func scaled<T: UINumericType>(_ scale: T) -> CGSize {
-        .init(width * scale.asCGFloat, height * scale.asCGFloat)
+        .init(widthScaled(scale), heightScaled(scale))
     }
     
     func widthScaled<T: UINumericType>(_ scale: T) -> CGFloat {
@@ -52,5 +51,17 @@ public extension CGSize {
     
     func clamped(from: CGFloat, to: CGFloat) -> CGSize {
         .init(self.width.clamped(from: from, to: to), self.height.clamped(from: from, to: to))
+    }
+}
+
+// MARK: ----- OPERATOR OVERLOADS
+
+public extension CGSize {
+    static func -(lhs: CGSize, rhs: CGSize) -> CGSize {
+        .init(lhs.width - rhs.width, lhs.height - rhs.height)
+    }
+    
+    static func +(lhs: CGSize, rhs: CGSize) -> CGSize {
+        .init(lhs.width + rhs.width, lhs.height + rhs.height)
     }
 }

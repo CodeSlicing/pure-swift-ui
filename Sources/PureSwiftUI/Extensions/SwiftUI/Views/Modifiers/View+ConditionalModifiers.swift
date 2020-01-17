@@ -70,6 +70,19 @@ public extension View {
     }
 }
 
+// MARK: ----- CONDITIONAL CORNER RADIUS
+
+public extension View {
+    
+    func cornerRadiusIf<T: UINumericType>(_ condition: Bool, _ radius: T, antialiased: Bool = true) -> some View {
+        cornerRadius(condition ? radius.asCGFloat : 0, antialiased: antialiased)
+    }
+
+    func cornerRadiusIfNot<T: UINumericType>(_ condition: Bool, _ radius: T, antialiased: Bool = true) -> some View {
+        cornerRadiusIf(!condition, radius, antialiased: antialiased)
+    }
+}
+
 // MARK: - ----- CONDITIONAL PADDING
 
 public extension View {
@@ -503,6 +516,14 @@ public extension View {
         scaleIf(!condition, scale)
     }
     
+    func scaleIf<TX: UINumericType, TY: UINumericType>(_ condition: Bool, _ scaleX: TX, _ scaleY: TY, anchor: UnitPoint = .center) -> some View {
+        scaleIf(condition, CGSize(scaleX, scaleY), anchor: anchor)
+    }
+    
+    func scaleIfNot<TX: UINumericType, TY: UINumericType>(_ condition: Bool, _ scaleX: TX, _ scaleY: TY, anchor: UnitPoint = .center) -> some View {
+        scaleIf(!condition, scaleX, scaleY, anchor: anchor)
+    }
+    
     func scaleIf(_ condition: Bool, _ scale: CGSize, anchor: UnitPoint = .center) -> some View {
         scaleEffect(condition ? scale : defaultScaleSize, anchor: anchor)
     }
@@ -675,5 +696,108 @@ public extension View {
     
     func envColorSchemeIfNot(_ condition: Bool, _ scheme: ColorScheme) -> some View {
         envColorSchemeIf(!condition, scheme)
+    }
+}
+
+// MARK: ----- RELATIVE OFFSET
+
+public extension View {
+    
+    func relativeXOffsetIf<T: UINumericType>(_ condition: Bool, _ xOffset: T) -> some View {
+        modifier(RelativeOffsetViewModifier(condition: condition, relativeOffsetForSizeProvider: RelativeXOffsetProvider(relativeXOffset: xOffset.asCGFloat)))
+    }
+    
+    func relativeXOffsetIfNot<T: UINumericType>(_ condition: Bool, _ xOffset: T) -> some View {
+        relativeXOffsetIf(!condition, xOffset)
+    }
+    
+    func relativeYOffsetIf<T: UINumericType>(_ condition: Bool, _ yOffset: T) -> some View {
+        modifier(RelativeOffsetViewModifier(condition: condition, relativeOffsetForSizeProvider: RelativeYOffsetProvider(relativeYOffset: yOffset.asCGFloat)))
+    }
+    
+    func relativeYOffsetIfNot<T: UINumericType>(_ condition: Bool, _ yOffset: T) -> some View {
+        relativeYOffsetIf(!condition, yOffset)
+    }
+    
+    func relativeOffsetIf<TX: UINumericType, TY: UINumericType>(_ condition: Bool, _ xOffset: TX, _ yOffset: TY) -> some View {
+        modifier(RelativeOffsetViewModifier(condition: condition, relativeOffsetForSizeProvider: RelativeOffsetProvider(relativeOffset: CGPoint(xOffset, yOffset))))
+    }
+    
+    func relativeOffsetIfNot<TX: UINumericType, TY: UINumericType>(_ condition: Bool, _ xOffset: TX, _ yOffset: TY) -> some View {
+        relativeOffsetIf(!condition, xOffset, yOffset)
+    }
+}
+
+// MARK: ----- OFFSET TO POSITION
+
+public extension View {
+    
+    func offsetToPositionIf(_ condition: Bool, _ position: CGPoint, in coordinateSpace: CoordinateSpace = .global, anchor: UnitPoint = .center) -> some View {
+        modifier(OffsetToPositionViewModifier(
+            condition: condition,
+            relativeTo: position,
+            coordinateSpace: coordinateSpace,
+            anchor: anchor,
+            offsetForPositionProvider: OffsetPositionProvider()))
+    }
+
+    func offsetToPositionIfNot(_ condition: Bool, _ position: CGPoint, in coordinateSpace: CoordinateSpace = .global, anchor: UnitPoint = .center) -> some View {
+        offsetToPositionIf(!condition, position, in: coordinateSpace, anchor: anchor)
+    }
+    
+    func offsetToPositionIf<TC: Hashable>(_ condition: Bool, _ position: CGPoint, in coordinateSpaceName: TC, anchor: UnitPoint = .center) -> some View {
+        offsetToPositionIf(condition, position, in: .named(coordinateSpaceName), anchor: anchor)
+    }
+    
+    func offsetToPositionIfNot<TC: Hashable>(_ condition: Bool, _ position: CGPoint, in coordinateSpaceName: TC, anchor: UnitPoint = .center) -> some View {
+        offsetToPositionIf(!condition, position, in: coordinateSpaceName, anchor: anchor)
+    }
+    
+    func offsetToPositionIf<TX: UINumericType, TY: UINumericType>(_ condition: Bool, _ xPosition: TX, _ yPosition: TY, in coordinateSpace: CoordinateSpace = .global, anchor: UnitPoint = .center) -> some View {
+        offsetToPositionIf(condition, CGPoint(xPosition, yPosition), in: coordinateSpace, anchor: anchor)
+    }
+
+    func offsetToPositionIfNot<TX: UINumericType, TY: UINumericType>(_ condition: Bool, _ xPosition: TX, _ yPosition: TY, in coordinateSpace: CoordinateSpace = .global, anchor: UnitPoint = .center) -> some View {
+        offsetToPositionIf(!condition, xPosition, yPosition, in: coordinateSpace, anchor: anchor)
+    }
+
+    func offsetToPositionIf<TX: UINumericType, TY: UINumericType, TC: Hashable>(_ condition: Bool, _ xPosition: TX, _ yPosition: TY, in coordinateSpaceName: TC, anchor: UnitPoint = .center) -> some View {
+        offsetToPositionIf(condition, xPosition, yPosition, in: .named(coordinateSpaceName), anchor: anchor)
+    }
+    
+    func offsetToPositionIfNot<TX: UINumericType, TY: UINumericType, TC: Hashable>(_ condition: Bool, _ xPosition: TX, _ yPosition: TY, in coordinateSpaceName: TC, anchor: UnitPoint = .center) -> some View {
+        offsetToPositionIf(!condition, xPosition, yPosition, in: coordinateSpaceName, anchor: anchor)
+    }
+
+    func xOffsetToXPositionIf<T: UINumericType>(_ condition: Bool, _ xPosition: T, in coordinateSpace: CoordinateSpace = .global, anchor: UnitPoint = .center) -> some View {
+        modifier(OffsetToPositionViewModifier(condition: condition, relativeTo: .init(xPosition, 0), coordinateSpace: coordinateSpace, anchor: anchor, offsetForPositionProvider: XOffsetPositionProvider()))
+    }
+    
+    func xOffsetToXPositionIfNot<T: UINumericType>(_ condition: Bool, _ xPosition: T, in coordinateSpace: CoordinateSpace = .global, anchor: UnitPoint = .center) -> some View {
+        xOffsetToXPositionIf(!condition, xPosition, in: coordinateSpace, anchor: anchor)
+    }
+    
+    func xOffsetToXPositionIf<T: UINumericType, TC: Hashable>(_ condition: Bool, _ xPosition: T, in coordinateSpaceName: TC, anchor: UnitPoint = .center) -> some View {
+        xOffsetToXPositionIf(condition, xPosition, in: .named(coordinateSpaceName), anchor: anchor)
+    }
+    
+    func xOffsetToXPositionIfNot<T: UINumericType, TC: Hashable>(_ condition: Bool, _ xPosition: T, in coordinateSpaceName: TC, anchor: UnitPoint = .center) -> some View {
+        xOffsetToXPositionIf(!condition, xPosition, in: coordinateSpaceName, anchor: anchor)
+    }
+    
+    func yOffsetToYPositionIf<T: UINumericType>(_ condition: Bool, _ yPosition: T, in coordinateSpace: CoordinateSpace = .global, anchor: UnitPoint = .center) -> some View {
+        modifier(OffsetToPositionViewModifier(condition: condition, relativeTo: .init(0, yPosition), coordinateSpace: coordinateSpace, anchor: anchor, offsetForPositionProvider: YOffsetPositionProvider()))
+    }
+    
+    func yOffsetToYPositionIfNot<T: UINumericType>(_ condition: Bool, _ yPosition: T, in coordinateSpace: CoordinateSpace = .global, anchor: UnitPoint = .center) -> some View {
+        yOffsetToYPositionIf(!condition, yPosition, in: coordinateSpace, anchor: anchor)
+    }
+    
+    func yOffsetToYPositionIf<T: UINumericType, TC: Hashable>(_ condition: Bool, _ yPosition: T, in coordinateSpaceName: TC, anchor: UnitPoint = .center) -> some View {
+        yOffsetToYPositionIf(condition, yPosition, in: .named(coordinateSpaceName), anchor: anchor)
+    }
+    
+    func yOffsetToYPositionIfNot<T: UINumericType, TC: Hashable>(_ condition: Bool, _ yPosition: T, in coordinateSpaceName: TC, anchor: UnitPoint = .center) -> some View {
+        yOffsetToYPositionIf(!condition, yPosition, in: coordinateSpaceName, anchor: anchor)
     }
 }

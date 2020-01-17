@@ -73,7 +73,6 @@ public extension View {
     }
 }
 
-
 // MARK: - ----- FONT
 
 public extension View {
@@ -107,7 +106,7 @@ public extension View {
         frame(height: height.asCGFloat, alignment: alignment)
     }
     
-    func frame<T_LHS: UINumericType, T_LRS: UINumericType>(_ width: T_LHS, _ height: T_LRS, _ alignment: Alignment = .center) -> some View {
+    func frame<TW: UINumericType, TH: UINumericType>(_ width: TW, _ height: TH, _ alignment: Alignment = .center) -> some View {
         frame(width: width.asCGFloat, height: height.asCGFloat, alignment: alignment)
     }
     
@@ -424,3 +423,91 @@ public extension View {
         environment(\.colorScheme, scheme)
     }
 }
+
+// MARK: ----- GEOMETRY READER
+
+public extension View {
+    
+    func geometryReader(_ geoCallback: @escaping (GeometryProxy) -> ()) -> some View {
+        geometryReader(id: 1, geoCallback)
+    }
+    
+    func geometryReader<T: Hashable>(id: T, _ geoCallback: @escaping (GeometryProxy) -> ()) -> some View {
+        overlay(GeometryReader { (geo: GeometryProxy) in
+            Color.clear.onAppear {
+                geoCallback(geo)
+            }
+            .id(id)
+        })
+    }
+}
+
+// MARK: ----- RELATIVE OFFSET
+
+public extension View {
+    
+    func relativeXOffset<T: UINumericType>(_ xOffset: T) -> some View {
+        relativeXOffsetIf(true, xOffset)
+    }
+    
+    func relativeYOffset<T: UINumericType>(_ yOffset: T) -> some View {
+        relativeYOffsetIf(true, yOffset)
+    }
+    
+    func relativeOffset<TX: UINumericType, TY: UINumericType>(_ xOffset: TX, _ yOffset: TY) -> some View {
+        relativeOffsetIf(true, xOffset, yOffset)
+    }
+}
+
+// MARK: ----- OFFSET TO POSITION
+
+public extension View {
+
+    /**
+    Offsets the view to an absolute position within the specified coordinate space.
+     - Parameters:
+       - xPosition: required xPosition within coordinate space
+       - yPosition: required yPosition within coordinate space
+       - coordinateSpace: Coordinate space in which to perform the offset
+       - anchor: where to anchor the view being offset
+     - Warning:
+     If you need to specify a named CoordinateSpace, use the method that takes
+     coordinateSpaceName as a String parameter rather than passing .named(...). There is a runtime
+     issue if you try to use .named(coordinateSpace) at the call-site.
+    */
+    func offsetToPosition<TX: UINumericType, TY: UINumericType>(_ xPosition: TX, _ yPosition: TY, in coordinateSpace: CoordinateSpace = .global, anchor: UnitPoint = .center) -> some View {
+        offsetToPositionIf(true, xPosition, yPosition, in: coordinateSpace,
+        anchor: anchor)
+    }
+    
+    func offsetToPosition<TX: UINumericType, TY: UINumericType, TC: Hashable>(_ xPosition: TX, _ yPosition: TY, in coordinateSpaceName: TC, anchor: UnitPoint = .center) -> some View {
+        offsetToPosition(xPosition, yPosition, in: .named(coordinateSpaceName), anchor: anchor)
+    }
+
+    func offsetToPosition(_ position: CGPoint, in coordinateSpace: CoordinateSpace = .global, anchor: UnitPoint = .center) -> some View {
+        offsetToPositionIf(true, position, in: coordinateSpace,
+        anchor: anchor)
+    }
+    
+    func offsetToPosition<TC: Hashable>(_ position: CGPoint, in coordinateSpaceName: TC, anchor: UnitPoint = .center) -> some View {
+        offsetToPosition(position, in: .named(coordinateSpaceName), anchor: anchor)
+    }
+    
+    func xOffsetToXPosition<T: UINumericType>(_ xPosition: T, in coordinateSpace: CoordinateSpace = .global, anchor: UnitPoint = .center) -> some View {
+        xOffsetToXPositionIf(true, xPosition, in: coordinateSpace, anchor: anchor)
+    }
+
+    func xOffsetToXPosition<T: UINumericType, TC: Hashable>(_ xPosition: T, in coordinateSpaceName: TC, anchor: UnitPoint = .center) -> some View {
+         xOffsetToXPosition(xPosition, in: .named(coordinateSpaceName), anchor: anchor)
+    }
+    
+    func yOffsetToYPosition<T: UINumericType>(_ yPosition: T, in coordinateSpace: CoordinateSpace = .global, anchor: UnitPoint = .center) -> some View {
+        yOffsetToYPositionIf(true, yPosition, in: coordinateSpace,
+        anchor: anchor)
+    }
+    
+    func yOffsetToYPosition<T: UINumericType, TC: Hashable>(_ yPosition: T, in coordinateSpaceName: TC, anchor: UnitPoint = .center) -> some View {
+        yOffsetToYPosition(yPosition, in: .named(coordinateSpaceName), anchor: anchor)
+    }
+}
+
