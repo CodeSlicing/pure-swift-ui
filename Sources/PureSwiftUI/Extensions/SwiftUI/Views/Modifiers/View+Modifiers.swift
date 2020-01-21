@@ -77,20 +77,259 @@ public extension View {
 
 public extension View {
     
-    func fontSize<T: UINumericType>(_ size: T, withScaling: Bool = true) -> some View {
-        fontSize(size, name: nil, withScaling: withScaling)
+    func fontSize<T: UINumericType>(_ size: T, weight: Font.Weight? = nil, withScaling: Bool = true) -> some View {
+        fontSize(size, name: nil, weight: weight, withScaling: withScaling)
     }
     
-    func fontSize<T: UINumericType>(_ size: T, name: String? = nil, withScaling: Bool = true) -> some View {
+    func fontSize<T: UINumericType>(_ size: T, name: String? = nil, weight: Font.Weight? = nil, withScaling: Bool = true) -> some View {
         RenderIf(withScaling) {
-            self.scalingFont(size: size, name: name)
+            self.scalingFont(size: size, name: name, weight: weight)
         }.elseRender {
-            RenderIf(name != nil) {
-                self.font(.custom(name!, size: size.asCGFloat))
-            }.elseRender {
-                self.font(.system(size: size.asCGFloat))
+            self.font(self.createFont(name: name, size: size.asCGFloat, weight: weight))
+        }
+    }
+    
+    private func createFont(name: String?, size: CGFloat, weight: Font.Weight?) -> Font {
+        if let name = name {
+            if let weight = weight {
+                return Font.custom(name, size: size).weight(weight)
+            } else {
+                return Font.custom(name, size: size)
+            }
+        } else {
+            if let weight = weight {
+                return Font.system(size: size).weight(weight)
+            } else {
+                return Font.system(size: size)
             }
         }
+    }
+  
+    private func applyInternalFont(_ theFont: Font, _ color: Color? = nil, _ weight: Font.Weight? = nil) -> some View {
+        RenderIf(weight != nil) {
+            self.font(theFont.weight(weight!))
+        }.elseRender {
+            self.font(theFont)
+        }
+        .foregroundColor(color)
+    }
+    
+    // BODY
+    
+    func bodyFont() -> some View {
+        bodyFont(nil, nil)
+    }
+    
+    func bodyFont(_ weight: Font.Weight? = nil) -> some View {
+        bodyFont(nil, weight)
+    }
+
+    func bodyFont(_ color: Color? = nil) -> some View {
+        bodyFont(color, nil)
+    }
+
+    func bodyFont(_ color: Color? = nil, _ weight: Font.Weight? = nil) -> some View {
+        applyInternalFont(.body, color, weight)
+    }
+    
+    // CAPTION
+    
+    func captionFont() -> some View {
+        captionFont(nil, nil)
+    }
+    
+    func captionFont(_ weight: Font.Weight? = nil) -> some View {
+        captionFont(nil, weight)
+    }
+
+    func captionFont(_ color: Color? = nil) -> some View {
+        captionFont(color, nil)
+    }
+
+    func captionFont(_ color: Color? = nil, _ weight: Font.Weight? = nil) -> some View {
+        applyInternalFont(.caption, color, weight)
+    }
+    
+    // CALLOUT
+    
+    func calloutFont() -> some View {
+        calloutFont(nil, nil)
+    }
+    
+    func calloutFont(_ weight: Font.Weight? = nil) -> some View {
+        calloutFont(nil, weight)
+    }
+
+    func calloutFont(_ color: Color? = nil) -> some View {
+        calloutFont(color, nil)
+    }
+
+    func calloutFont(_ color: Color? = nil, _ weight: Font.Weight? = nil) -> some View {
+        applyInternalFont(.callout, color, weight)
+    }
+    
+    // CUSTOM
+    
+    func customFont<T: UINumericType>(_ name: String, _ size: T) -> some View {
+        customFont(name, size, nil, nil)
+    }
+    
+    func customFont<T: UINumericType>(_ name: String, _ size: T, _ weight: Font.Weight? = nil) -> some View {
+        customFont(name, size, nil, weight)
+    }
+
+    func customFont<T: UINumericType>(_ name: String, _ size: T, _ color: Color? = nil) -> some View {
+        customFont(name, size, color, nil)
+    }
+
+    func customFont<T: UINumericType>(_ name: String, _ size: T, _ color: Color? = nil, _ weight: Font.Weight? = nil) -> some View {
+        applyInternalFont(.custom(name, size: size.asCGFloat), color, weight)
+    }
+    
+    // CUSTOM WITH JUST SIZE
+    
+    func customFont<T: UINumericType>(_ size: T) -> some View {
+        customFont(size, nil, nil)
+    }
+    
+    func customFont<T: UINumericType>(_ size: T, _ weight: Font.Weight? = nil) -> some View {
+        customFont(size, nil, weight)
+    }
+
+    func customFont<T: UINumericType>(_ size: T, _ color: Color? = nil) -> some View {
+        customFont(size, color, nil)
+    }
+
+    func customFont<T: UINumericType>(_ size: T, _ color: Color? = nil, _ weight: Font.Weight? = nil) -> some View {
+        applyInternalFont(.system(size: size.asCGFloat), color, weight)
+    }
+    
+    // CUSTOM FONT THAT SCALES
+    
+    func customFontThatScales<T: UINumericType>(_ name: String, _ size: T) -> some View {
+        customFontThatScales(name, size, nil, nil)
+    }
+    
+    func customFontThatScales<T: UINumericType>(_ name: String, _ size: T, _ weight: Font.Weight? = nil) -> some View {
+        customFontThatScales(name, size, nil, weight)
+    }
+
+    func customFontThatScales<T: UINumericType>(_ name: String, _ size: T, _ color: Color? = nil) -> some View {
+        customFontThatScales(name, size, color, nil)
+    }
+
+    func customFontThatScales<T: UINumericType>(_ name: String, _ size: T, _ color: Color? = nil, _ weight: Font.Weight? = nil) -> some View {
+        fontSize(size, name: name, weight: weight)
+            .foregroundColor(color)
+    }
+    
+    // CUSTOM WITH JUST SIZE
+    
+    func customFontThatScales<T: UINumericType>(_ size: T) -> some View {
+        customFontThatScales(size, nil, nil)
+    }
+    
+    func customFontThatScales<T: UINumericType>(_ size: T, _ weight: Font.Weight? = nil) -> some View {
+        customFontThatScales(size, nil, weight)
+    }
+
+    func customFontThatScales<T: UINumericType>(_ size: T, _ color: Color? = nil) -> some View {
+        customFontThatScales(size, color, nil)
+    }
+
+    func customFontThatScales<T: UINumericType>(_ size: T, _ color: Color? = nil, _ weight: Font.Weight? = nil) -> some View {
+        fontSize(size, weight: weight)
+            .foregroundColor(color)
+    }
+    
+    // FOOTNOTE
+    
+    func footnoteFont() -> some View {
+        footnoteFont(nil, nil)
+    }
+    
+    func footnoteFont(_ weight: Font.Weight? = nil) -> some View {
+        footnoteFont(nil, weight)
+    }
+
+    func footnoteFont(_ color: Color? = nil) -> some View {
+        footnoteFont(color, nil)
+    }
+
+    func footnoteFont(_ color: Color? = nil, _ weight: Font.Weight? = nil) -> some View {
+        applyInternalFont(.footnote, color, weight)
+    }
+    
+    // HEADLINE
+    
+    func headlineFont() -> some View {
+        headlineFont(nil, nil)
+    }
+    
+    func headlineFont(_ weight: Font.Weight? = nil) -> some View {
+        headlineFont(nil, weight)
+    }
+
+    func headlineFont(_ color: Color? = nil) -> some View {
+        headlineFont(color, nil)
+    }
+
+    func headlineFont(_ color: Color? = nil, _ weight: Font.Weight? = nil) -> some View {
+        applyInternalFont(.headline, color, weight)
+    }
+    
+    // LARGETITLE
+    
+    func largeTitleFont() -> some View {
+        largeTitleFont(nil, nil)
+    }
+    
+    func largeTitleFont(_ weight: Font.Weight? = nil) -> some View {
+        largeTitleFont(nil, weight)
+    }
+
+    func largeTitleFont(_ color: Color? = nil) -> some View {
+        largeTitleFont(color, nil)
+    }
+
+    func largeTitleFont(_ color: Color? = nil, _ weight: Font.Weight? = nil) -> some View {
+        applyInternalFont(.largeTitle, color, weight)
+    }
+    
+    // SUBHEADLINE
+    
+    func subheadlineFont() -> some View {
+        subheadlineFont(nil, nil)
+    }
+    
+    func subheadlineFont(_ weight: Font.Weight? = nil) -> some View {
+        subheadlineFont(nil, weight)
+    }
+
+    func subheadlineFont(_ color: Color? = nil) -> some View {
+        subheadlineFont(color, nil)
+    }
+
+    func subheadlineFont(_ color: Color? = nil, _ weight: Font.Weight? = nil) -> some View {
+        applyInternalFont(.subheadline, color, weight)
+    }
+
+    // TITLE
+    
+    func titleFont() -> some View {
+        titleFont(nil, nil)
+    }
+    
+    func titleFont(_ weight: Font.Weight? = nil) -> some View {
+        titleFont(nil, weight)
+    }
+
+    func titleFont(_ color: Color? = nil) -> some View {
+        titleFont(color, nil)
+    }
+
+    func titleFont(_ color: Color? = nil, _ weight: Font.Weight? = nil) -> some View {
+        applyInternalFont(.title, color, weight)
     }
 }
 

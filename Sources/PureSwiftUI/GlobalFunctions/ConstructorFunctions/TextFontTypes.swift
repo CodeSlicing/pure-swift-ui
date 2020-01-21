@@ -24,9 +24,7 @@ public func BodyText<S: StringProtocol>(_ content: S, _ weight: Font.Weight? = n
 
 public func BodyText<S: StringProtocol>(_ content: S, _ color: Color? = nil, _ weight: Font.Weight? = nil) -> Text {
     Text(content)
-        .font(.body)
-        .foregroundColor(color)
-        .fontWeight(weight)
+        .bodyFont(color, weight)
 }
 
 // MARK: ----- CALLOUT
@@ -45,9 +43,7 @@ public func CalloutText<S: StringProtocol>(_ content: S, _ weight: Font.Weight? 
 
 public func CalloutText<S: StringProtocol>(_ content: S, _ color: Color? = nil, _ weight: Font.Weight? = nil) -> Text {
     Text(content)
-        .font(.callout)
-        .foregroundColor(color)
-        .fontWeight(weight)
+        .calloutFont(color, weight)
 }
 
 // MARK: ----- CAPTION
@@ -66,9 +62,83 @@ public func CaptionText<S: StringProtocol>(_ content: S, _ weight: Font.Weight? 
 
 public func CaptionText<S: StringProtocol>(_ content: S, _ color: Color? = nil, _ weight: Font.Weight? = nil) -> Text {
     Text(content)
-        .font(.caption)
-        .foregroundColor(color)
-        .fontWeight(weight)
+        .captionFont(color, weight)
+}
+
+// MARK: ----- CUSTOM
+
+public func CustomText<S: StringProtocol, T: UINumericType>(_ content: S, _ name: String, _ size: T) -> Text {
+    CustomText(content, name, size, nil, nil)
+}
+
+public func CustomText<S: StringProtocol, T: UINumericType>(_ content: S, _ name: String, _ size: T, _ weight: Font.Weight? = nil) -> Text {
+    CustomText(content, name, size, nil, weight)
+}
+
+public func CustomText<S: StringProtocol, T: UINumericType>(_ content: S, _ name: String, _ size: T, _ color: Color? = nil) -> Text {
+    CustomText(content, name, size, color, nil)
+}
+
+public func CustomText<S: StringProtocol, T: UINumericType>(_ content: S, _ name: String, _ size: T, _ color: Color? = nil, _ weight: Font.Weight? = nil) -> Text {
+    Text(content)
+        .customFont(name, size, color, weight)
+}
+
+// CUSTOM FONT THAT SCALES
+
+public func CustomTextThatScales<S: StringProtocol, T: UINumericType>(_ content: S, _ name: String, _ size: T) -> some View {
+    CustomTextThatScales(content, name, size, nil, nil)
+}
+
+public func CustomTextThatScales<S: StringProtocol, T: UINumericType>(_ content: S, _ name: String, _ size: T, _ weight: Font.Weight? = nil) -> some View {
+    CustomTextThatScales(content, name, size, nil, weight)
+}
+
+public func CustomTextThatScales<S: StringProtocol, T: UINumericType>(_ content: S, _ name: String, _ size: T, _ color: Color? = nil) -> some View {
+    CustomTextThatScales(content, name, size, color, nil)
+}
+
+public func CustomTextThatScales<S: StringProtocol, T: UINumericType>(_ content: S, _ name: String, _ size: T, _ color: Color? = nil, _ weight: Font.Weight? = nil) -> some View {
+    Text(content)
+        .customFontThatScales(name, size, color, weight)
+}
+
+// MARK: ----- CUSTOM WITH SIZE
+
+public func CustomText<S: StringProtocol, T: UINumericType>(_ content: S, _ size: T) -> Text {
+    CustomText(content, size, nil, nil)
+}
+
+public func CustomText<S: StringProtocol, T: UINumericType>(_ content: S, _ size: T, _ weight: Font.Weight? = nil) -> Text {
+    CustomText(content, size, nil, weight)
+}
+
+public func CustomText<S: StringProtocol, T: UINumericType>(_ content: S, _ size: T, _ color: Color? = nil) -> Text {
+    CustomText(content, size, color, nil)
+}
+
+public func CustomText<S: StringProtocol, T: UINumericType>(_ content: S, _ size: T, _ color: Color? = nil, _ weight: Font.Weight? = nil) -> Text {
+        Text(content)
+            .customFont(size, color, weight)
+}
+
+// CUSTOM FONT SIZE THAT SCALES
+
+public func CustomTextThatScales<S: StringProtocol, T: UINumericType>(_ content: S, _ size: T) -> some View {
+    CustomTextThatScales(content, size, nil, nil)
+}
+
+public func CustomTextThatScales<S: StringProtocol, T: UINumericType>(_ content: S, _ size: T, _ weight: Font.Weight? = nil) -> some View {
+    CustomTextThatScales(content, size, nil, weight)
+}
+
+public func CustomTextThatScales<S: StringProtocol, T: UINumericType>(_ content: S, _ size: T, _ color: Color? = nil) -> some View {
+    CustomTextThatScales(content, size, color, nil)
+}
+
+public func CustomTextThatScales<S: StringProtocol, T: UINumericType>(_ content: S, _ size: T, _ color: Color? = nil, _ weight: Font.Weight? = nil) -> some View {
+        Text(content)
+            .customFontThatScales(size, color, weight)
 }
 
 // MARK: ----- FOOTNOTE
@@ -87,9 +157,7 @@ public func FootnoteText<S: StringProtocol>(_ content: S, _ weight: Font.Weight?
 
 public func FootnoteText<S: StringProtocol>(_ content: S, _ color: Color? = nil, _ weight: Font.Weight? = nil) -> Text {
     Text(content)
-        .font(.footnote)
-        .foregroundColor(color)
-        .fontWeight(weight)
+        .footnoteFont(color, weight)
 }
 
 // MARK: ----- HEADLINE
@@ -108,9 +176,7 @@ public func HeadlineText<S: StringProtocol>(_ content: S, _ weight: Font.Weight?
 
 public func HeadlineText<S: StringProtocol>(_ content: S, _ color: Color? = nil, _ weight: Font.Weight? = nil) -> Text {
     Text(content)
-        .font(.headline)
-        .foregroundColor(color)
-        .fontWeight(weight)
+        .headlineFont(color, weight)
 }
 
 // MARK: ----- LARGETITLE
@@ -129,9 +195,7 @@ public func LargeTitleText<S: StringProtocol>(_ content: S, _ weight: Font.Weigh
 
 public func LargeTitleText<S: StringProtocol>(_ content: S, _ color: Color? = nil, _ weight: Font.Weight? = nil) -> Text {
     Text(content)
-        .font(.largeTitle)
-        .foregroundColor(color)
-        .fontWeight(weight)
+        .largeTitleFont(color, weight)
 }
 
 // MARK: ----- SUBHEADLINE
@@ -150,9 +214,7 @@ public func SubheadlineText<S: StringProtocol>(_ content: S, _ weight: Font.Weig
 
 public func SubheadlineText<S: StringProtocol>(_ content: S, _ color: Color? = nil, _ weight: Font.Weight? = nil) -> Text {
     Text(content)
-        .font(.subheadline)
-        .foregroundColor(color)
-        .fontWeight(weight)
+        .subheadlineFont(color, weight)
 }
 
 // MARK: ----- TITLE
@@ -171,8 +233,6 @@ public func TitleText<S: StringProtocol>(_ content: S, _ weight: Font.Weight? = 
 
 public func TitleText<S: StringProtocol>(_ content: S, _ color: Color? = nil, _ weight: Font.Weight? = nil) -> Text {
     Text(content)
-        .font(.title)
-        .foregroundColor(color)
-        .fontWeight(weight)
+        .titleFont(color, weight)
 }
 

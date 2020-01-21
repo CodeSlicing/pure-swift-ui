@@ -4,9 +4,6 @@
 
 [PureSwiftUI][pure-swift-ui] is a Swift package designed to enhance the experience of writing [SwiftUI][swift-ui] code. An additional goal is to make these changes as intuitive as possible, requiring little to no experience with the package to begin using its advantages in ernest.
 
-## Contents
-
-- [Contents](#contents)
 - [Motivation](#motivation)
 - [TL;DR](#tldr)
 - [Intention Focused Modifiers](#intention-focused-modifiers)
@@ -161,7 +158,7 @@ Going further, stroking and filling shapes is a regular operation that results i
 Text("PureSwiftUI")
     .font(Font.title.bold())
     .foregroundColor(.white)
-    .frame(width: CGFloat(width), height: height)
+    .frame(width: CGFloat(width), height: CGFloat(height))
     .background(Color.red)
     .clipShape(Capsule())
     .overlay(Capsule().stroke(Color.black, lineWidth: 4))
@@ -268,6 +265,7 @@ DialerButton()
 ...
     .offsetToPositionIfNot(showingDialer, phoneButtonPosition)
 ```
+
 Since there's no need to perform any offset calculations, I can simply arrange the dialer buttons how I would do normally, and offset them when required.
 
 Another helpful extension is the `relativeOffset` modifier and the various related signatures. This facilitates offsetting Views based on the size of the View being offset. So you specify a fraction, and the appropriate offset is applied.
@@ -352,23 +350,22 @@ The code for doing that is shown below in both native SwiftUI and [PureSwiftUI][
 // native SwiftUI
 Rectangle()
     .fill(Color.orange)
-    .frame(width: 50, height: 50)
-    .cornerRadius(modified ? 0 : 25)
-    .scaleEffect(x: modified ? 4 : 1, y: modified ? 2 : 1)
+    .frame(width: modified ? 200 : 50, height: modified ? 100 : 50)
+    .clipShape(RoundedRectangle(25))
+    .overlay(RoundedRectangle(25).stroke(Color.black, lineWidth: 5))
     .rotationEffect(.degrees(modified ? 180 : 0))
-    .offset(y: modified ? 300 : 0)
+    .offset(y: modified ? 100 : 0)
     .hueRotation(.degrees(modified ? 360 : 0))
-    .blur(radius: modified ? 2 : 0)
     .opacity(modified ? 0.5 : 1)
 
 // with PureSwiftUI
-Frame(50, .orange)
-    .cornerRadiusIfNot(modified, 25)
-    .scaleIf(modified, 4, 2)
+Color.orange
+    .frameIf(modified, 200, 100)
+    .frameIfNot(modified, 50)
+    .clipRoundedRectangleWithStroke(25, .black, lineWidth: 5)
     .rotateIf(modified, 180.degrees)
-    .yOffsetIf(modified, 300)
+    .yOffsetIf(modified, 100)
     .hueRotationIf(modified, 360.degrees)
-    .blurIf(modified, 2)
     .opacityIf(modified, 0.5)
 ```
 
@@ -485,9 +482,10 @@ This project adheres to a [semantic versioning](https://semver.org) paradigm. I'
 - [1.6.0][tag-1.6.0] Add image processing modifiers and associated conditionals - add convenience modifiers to Image and SFSymbol to perform resizing and aspect ratio modifiers in one step
 - [1.7.0][tag-1.7.0] Add constructor function for SFSymbols and all font types. Alignment parameter for all frame modifiers. Overloads for all font type modifiers on Text. Conditional animation modifier. Align modifier for Text.
 - [1.8.0][tag-1.8.0] Add various clip shape modifiers - extensions for stroking with fill - fill styles - default corner style to circular for RoundedRectangle - conditional background modifiers
-- [1.9.0][tag-1.9.0] Add conditionals for overlays and borders - add iphone 11 preview devices - add shadow modifier overloads
-- [1.10.0][tag-1.10.0] Add Frame concept, color name overloads, env and preview modifiers for convience
+- [1.9.0][tag-1.9.0] Add conditionals for overlays and borders - add iPhone 11 preview devices - add shadow modifier overloads
+- [1.10.0][tag-1.10.0] Add Frame concept, color name overloads, env and preview modifiers for convenience
 - [1.11.0][tag-1.11.0] Add geometryFrame modifier as well as relativeOffset and offsetToPosition modifiers
+- [1.12.0][tag-1.12.0] Add font modifiers for all font styles to Text and View as well as associated constructor functions
 
 ## Licensing
 
@@ -510,11 +508,12 @@ You can contact me on Twitter [@CodeSlice][codeslice-twitter]. Happy to hear sug
 [swift-package-installation]: https://medium.com/better-programming/add-swift-package-dependency-to-an-ios-project-with-xcode-11-remote-local-public-private-3a7577fac6b2
 
 <!---
-gitst:
+gists:
 --->
 
 [gist-offset-to-position-demo]: https://gist.github.com/CodeSlicing/2c5376552fa8c27456925370403caa46
 [gist-relative-offset-demo]: https://gist.github.com/CodeSlicing/6873695fd0113c27d5cdd8591eca9d1d
+
 <!---
 version links:
 --->
@@ -531,6 +530,7 @@ version links:
 [tag-1.9.0]: https://github.com/CodeSlicing/pure-swift-ui/tree/1.9.0
 [tag-1.10.0]: https://github.com/CodeSlicing/pure-swift-ui/tree/1.10.0
 [tag-1.11.0]: https://github.com/CodeSlicing/pure-swift-ui/tree/1.11.0
+[tag-1.12.0]: https://github.com/CodeSlicing/pure-swift-ui/tree/1.12.0
 
 <!---
  local docs:

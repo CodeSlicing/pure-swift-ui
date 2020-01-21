@@ -45,6 +45,14 @@ public extension View {
         frameIf(!condition, width, height, alignment: alignment)
     }
     
+    func frameIf<T: UINumericType>(_ condition: Bool, _ size: T, alignment: Alignment = .center) -> some View {
+        frameIf(condition, size, size, alignment: alignment)
+    }
+    
+    func frameIfNot<T: UINumericType>(_ condition: Bool, _ size: T, alignment: Alignment = .center) -> some View {
+        frameIf(!condition, size, alignment: alignment)
+    }
+    
     func frameIf(_ condition: Bool, _ size: CGSize, alignment: Alignment = .center) -> some View {
         frame(width: condition ? size.width : nil, height: condition ? size.height : nil, alignment: alignment)
     }
