@@ -1,5 +1,7 @@
 <p align="center">
+<a href="https://github.com/CodeSlicing/pure-swift-ui">
 <img src="./Assets/Images/pure-swift-ui-logo.png" width="400" style="padding-bottom: 20px"/>
+</a>
 </p>
 
 [PureSwiftUI][pure-swift-ui] is a Swift package designed to enhance the experience of writing [SwiftUI][swift-ui] code. An additional goal is to make these changes as intuitive as possible, requiring little to no experience with the package to begin using its advantages in ernest.
