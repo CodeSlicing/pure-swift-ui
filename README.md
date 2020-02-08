@@ -20,7 +20,7 @@
 - [Conditional Modifiers](#conditional-modifiers)
 - [Conditional Rendering](#conditional-rendering)
 - [SF Symbols](#sf-symbols)
-- [Path Extensions and Layout Guides](#path-extensions-and-layout-guides)
+- [Layout Guides and Paths](#layout-guides-and-paths)
 - [Preview Extensions](#preview-extensions)
 - [Caveats](#caveats)
 - [Installation](#installation)
@@ -439,7 +439,7 @@ Since all SF symbols are available as constants, there is also the option of usi
 
 Yet another advantage, is that the symbol constants defined in [PureSwiftUI][pure-swift-ui] are aware of deprecation so if a symbol you're using has been superseded by a new symbol name, you will get a warning including a suggestion of what to use instead, assuming one exists.
 
-## Path Extensions and Layout Guides
+## Layout Guides and Paths
 
 [PureSwiftUI][pure-swift-ui] includes a multitude of extensions and utilities for making drawing paths a breeze. So much so that it deserves its own page. See [here][docs-paths] for a detailed explanation of how much your path drawing life can improve.
 

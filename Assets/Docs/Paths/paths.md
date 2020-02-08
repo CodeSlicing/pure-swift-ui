@@ -1,6 +1,8 @@
-# The Path to Victory
+# The Path to Success
 
 Natively, working with paths is a time-consuming task that cannot be referred to as fun. [PureSwiftUI][pure-swift-ui] aims to turn that on its head by providing a huge number of extensions and utilities that make even the most intricate path-drawing tasks a joy.
+
+## Type Extensions
 
 There are several aspects to making this a reality and it starts with extensions on the fundamental types used heavily in path creation, namely `Path`, `CGRect`, `CGSize`, `CGPoint`, `CGVector`, and `Angle`. A lot of time has been spent bringing these types into a sort of *synergy* with a consistent design language that flows naturally between types to the point where you don't have to *know* all the available extensions, but can reasonably guess how they hang together.
 
@@ -171,7 +173,7 @@ Feel free to browse the available extensions for [CGRect][CGRect], [CGSize][CGSi
 
 Holding it all together is [Path][Path] of course, and [PureSwiftUI][pure-swift-ui] provides a plethora of extensions to reduce friction between design and code all working hand in glove with the associated extensions for the CG structs previously mentioned. It's beneficial at this point to talk about the general approach to the API so you don't have to rely on knowing them all in order to reap the benefits:
 
-#### Shapes
+#### Building Blocks
 
 Anything that is described by a `CGRect` like rectangles, rounded-rectangles, and ellipses, will be described as having a containing `CGRect` *or* an origin and a size. And that's it. No argument labels since they don't add additional context. Any specializations like corner radius (for rounded rectangles) will come after this with argument labels. Next is the optional `anchor` argument followed by the `transform` that defaults to the `.identity` transform a la the native SwiftUI API. You can see this in action in the previous example.
 
@@ -310,9 +312,9 @@ Believe it or not, that's all the code you need to generate this result:
 <img src="./complex-layout-guide-combining-demo.png"  style="padding: 10px" width="250px"/>
 </p>
 
-I added the layout guid as an overlay on top of the preview to show how it hangs together.
+I added the layout guide as an overlay on top of the preview to show how it hangs together.
 
-This is just the tip of the iceberg of what you can achieve with a combination of layout guides and the extensions that [PureSwiftUI][pure-swift-ui] provides. In fact, since so much of the raw calculation is removed, you only have to worry about *what* you want to create, rather than *how* you're going to go about creating it. The star on this shield and the detail therein, for example, was extremely simple to create; I just used a couple of polar layouts to get the job done: 
+This is just the tip of the iceberg of what you can achieve with a combination of layout guides and the extensions that [PureSwiftUI][pure-swift-ui] provides. In fact, since so much of the raw calculation is removed, you only have to worry about *what* you want to create, rather than *how* you're going to go about creating it. The star on this shield and the detail therein (not visible on this low-res render) was extremely simple to create; I just used a couple of polar layouts to get the job done:
 
 <p align="center">
 <img src="shield-animation.gif"  style="padding: 10px"/>
@@ -328,7 +330,7 @@ var polar2 = LayoutGuide.polar(rect, rings: 5, segments[.cycle(0.25), .cycle(0.5
 var polar3 = LayoutGuide.polar(rect, rings: 5, segments[.trailing, .bottom])
 ```
 
-**Important:** Layout guides must **not** be declared as constants because they do not do calculate points eagerly. This is why there is no performance penalty in creating grids with high resolutions. Only the points you access will be created and cached, and not until you access them.
+**Important:** Layout guides must **not** be declared as constants because they do not do calculate points eagerly. This is why there is no performance penalty in creating grids with high resolutions. Only the points you access will be created and cached, and not until you access them. So if you try to create a layout guide as a constant, and then use it, the compiler will go mad until you resolve the situation.
 
 ## Visualizing Control Points
 
@@ -357,6 +359,53 @@ Resulting in the following output:
 </p>
 
 So while designing you get a good sense of how to construct your curves and, using the layout guide, can adjust the control points appropriately.
+
+**Important:** Control points are rendered as part of the path itself. If you don't remove them before trying to fill the shape, it will looks extremely funky. In other words, control point visualization should only really be used for design-time work.
+
+Ok, let's do another one. To show just how much I love SwiftUI, we're going to draw a heart. In this case, we're going to use a grid layout guide with 8 columns and 10 rows which we can declare like so:
+
+```swift
+private let gridConfig = LayoutGuideConfig.grid(columns: 8, rows: 10)
+```
+
+And we're going to overlay the shape with a layout guide to make it easy for us:
+
+```swift
+HeartShape()
+    .stroke(style: .init(lineWidth: 2, lineJoin: .round))
+    .layoutGuide(gridConfig)
+    .frame(200)
+
+// for layout guides to be visible, remember to set the layout guide environment state:
+...
+.showLayoutGuides(true)
+...
+```
+
+Then we use the grid to add the four curves we're going to be needing and in just a few minutes end up with:
+
+<p align="center">
+<img src="heart-drawing-cp-demo.png"  style="padding: 10px" width="250px"/>
+</p>
+
+As you can see, as long as you're not using specific spacings in your layout configuration you can refer to points outside the grid - the code for drawing this heart is as simple as this:
+
+```swift
+var grid = gridConfig.layout(in: rect)
+path.move(grid[0, 3])
+path.curve(grid[4, 2], cp1: grid[0, 0], cp2: grid[3, -1], showControlPoints: showControlPoints)
+path.curve(grid[8, 3], cp1: grid[5, -1], cp2: grid[8, 0], showControlPoints: showControlPoints)
+path.curve(rect.bottom, cp1: grid[8, 5], cp2: grid[5, 7], showControlPoints: showControlPoints)
+path.curve(grid[0, 3], cp1: grid[3, 7], cp2: grid[0, 5], showControlPoints: showControlPoints)
+```
+
+Then you fill it with an appropriate color, set `showControlPoints` to `false`, and either remove the layout guide or set the environment state appropriately, and the result is:
+
+<p align="center">
+<img src="heart-drawing-result.png"  style="padding: 10px" width="250px"/>
+</p>
+
+Not bad for just a handful of lines of code!
 
 I hope this guide gives you an idea of the true power of drawing shapes in [PureSwiftUI][pure-swift-ui]. I look forward to seeing what you create.
 
