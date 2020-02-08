@@ -2,6 +2,17 @@
 
 Natively, working with paths is a time-consuming task that cannot be referred to as fun. [PureSwiftUI][pure-swift-ui] aims to turn that on its head by providing a huge number of extensions and utilities that make even the most intricate path-drawing tasks a joy.
 
+  - [Type Extensions](#type-extensions)
+    - [Angle](#angle)
+    - [CGRect](#cgrect)
+    - [CGPoint](#cgpoint)
+    - [Path](#path)
+      - [Building Blocks](#building-blocks)
+      - [Moving the current point and drawing lines](#moving-the-current-point-and-drawing-lines)
+  - [Layout Guides](#layout-guides)
+  - [Visualizing Control Points](#visualizing-control-points)
+  - [Let's Get Things Moving](#lets-get-things-moving)
+
 ## Type Extensions
 
 There are several aspects to making this a reality and it starts with extensions on the fundamental types used heavily in path creation, namely `Path`, `CGRect`, `CGSize`, `CGPoint`, `CGVector`, and `Angle`. A lot of time has been spent bringing these types into a sort of *synergy* with a consistent design language that flows naturally between types to the point where you don't have to *know* all the available extensions, but can reasonably guess how they hang together.
@@ -407,6 +418,22 @@ Then you fill it with an appropriate color, set `showControlPoints` to `false` (
 
 Not bad for just a handful of lines of code!
 
+## Let's Get Things Moving
+
+In addition to everything else, you can declaratively animate points by using a simple function on the `CGPoint` struct, as follows:
+
+```swift
+path.line(point1.to(point2, scale))
+```
+
+Where scale describes where along the line between `point1` and `point2` you want to be. A Value of 0 would be equivalent to `point1` and a value of 1 is equivalent to `point2`. You can use any other value for your needs, but for animation it makes sense to focus on these two extremes. By driving this value off of `animatableData` you can make your paths animatable in impressive ways with virtually no added complexity. For example, I could animate the previous heart shape to a square and back for the following effect:
+
+<p align="center">
+<img src="heart-animation-demo.gif"  style="padding: 10px" height="250px"/>
+</p>
+
+You can find the gist [here][gist-animated-heart], although it's only 20 lines of code for the drawing section.
+
 I hope this guide gives you an idea of the true power of drawing shapes in [PureSwiftUI][pure-swift-ui]. I look forward to seeing what you create.
 
 <!---
@@ -425,3 +452,4 @@ gists:
 --->
 
 [gist-shield]: https://gist.github.com/CodeSlicing/af02bd37dd60252fd39acaf95d28a7d0
+[gist-animated-heart]: https://gist.github.com/CodeSlicing/0f35b7fde16890f28e2f252a75ca0c76

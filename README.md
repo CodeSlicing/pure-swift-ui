@@ -494,6 +494,7 @@ This project adheres to a [semantic versioning](https://semver.org) paradigm. I'
 - [1.11.0][tag-1.11.0] Add geometryFrame modifier as well as relativeOffset and offsetToPosition modifiers
 - [1.12.0][tag-1.12.0] Add font modifiers for all font styles to Text and View as well as associated constructor functions
 - [1.13.0][tag-1.13.0] Add a multitude of extensions to types related to drawing paths as well as layout guides to facilitate easy `Path` construction
+- [1.13.1][tag-1.13.1] Add extension to CGPoint to allow transition to other points by a scale factor for animating paths. Add CG versions of colors to Color.
 
 ## Licensing
 
@@ -540,6 +541,7 @@ version links:
 [tag-1.11.0]: https://github.com/CodeSlicing/pure-swift-ui/tree/1.11.0
 [tag-1.12.0]: https://github.com/CodeSlicing/pure-swift-ui/tree/1.12.0
 [tag-1.13.0]: https://github.com/CodeSlicing/pure-swift-ui/tree/1.13.0
+[tag-1.13.1]: https://github.com/CodeSlicing/pure-swift-ui/tree/1.13.1
 
 <!---
  local docs:

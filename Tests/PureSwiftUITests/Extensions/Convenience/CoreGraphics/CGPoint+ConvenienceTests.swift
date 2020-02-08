@@ -67,6 +67,19 @@ extension CGPointConvenienceExtensionsTests {
     }
 }
 
+// MARK: ----- TO WITH SCALE
+
+extension CGPointConvenienceExtensionsTests {
+    
+    func testToScaled() {
+        let point2 = CGPoint(x * 2, y * 2)
+        XCTAssertEqual(testPoint.to(point2, 0), testPoint)
+        XCTAssertEqual(testPoint.to(point2, 1), point2)
+        XCTAssertEqual(testPoint.to(point2, 0.5), CGPoint(x * 1.5, y * 1.5))
+        XCTAssertEqual(testPoint.to(point2, 2), CGPoint(x * 3, y * 3))
+    }
+}
+
 // MARK: ----- CLAMPED PROPERTIES
 
 extension CGPointConvenienceExtensionsTests {

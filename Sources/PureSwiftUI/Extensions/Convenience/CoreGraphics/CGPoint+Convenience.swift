@@ -127,6 +127,17 @@ public extension CGPoint {
     }
 }
 
+// MARK: ----- TO WITH SCALE
+
+public extension CGPoint {
+
+    func to<T: UINumericType>(_ destination: CGPoint, _ scale: T) -> CGPoint {
+        let deltaX = destination.x - self.x
+        let deltaY = destination.y - self.y
+        return CGPoint(self.x + deltaX * scale, self.y + deltaY * scale)
+    }
+}
+
 // MARK: ----- UTILITIES
 
 // MARK: ----- OFFSET ANCHOR
