@@ -261,7 +261,7 @@ private struct ArrowShape: Shape {
 
 There are several ways to initialize layouts; in this case I'm constructing a layout guide configuration as a grid of two columns and three rows. I am using specific ratios for the columns but splitting into three equidistant rows over the height of the `CGRect`.
 
-The example also demonstrates the use of a **layout guide overlayA**. Layout guide overlays are representations of a layout guides overlaid onto the view or shape you apply the modifier to. This allows you to visualize exactly where the grid points are meaning you can use it as a map on which to draw your shape.
+The example also demonstrates the use of a **layout guide overlay**. Layout guide overlays are representations of a layout guides overlaid onto the view or shape you apply the modifier to. This allows you to visualize exactly where the grid points are meaning you can use it as a map on which to draw your shape.
 
 The advantage of creating a layout guide configuration up front like this is that I can use the same specification to control the layout guide overlay.
 
