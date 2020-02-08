@@ -399,7 +399,7 @@ path.curve(rect.bottom, cp1: grid[8, 5], cp2: grid[5, 7], showControlPoints: sho
 path.curve(grid[0, 3], cp1: grid[3, 7], cp2: grid[0, 5], showControlPoints: showControlPoints)
 ```
 
-Then you fill it with an appropriate color, set `showControlPoints` to `false`, and either remove the layout guide or set the environment state appropriately, and the result is:
+Then you fill it with an appropriate color, set `showControlPoints` to `false` (or remove the parameter since it's optional and defaults to false), and either remove the layout guide or set the environment state appropriately, and the result is:
 
 <p align="center">
 <img src="heart-drawing-result.png"  style="padding: 10px" width="250px"/>
