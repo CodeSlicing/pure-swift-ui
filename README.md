@@ -545,5 +545,5 @@ version links:
  local docs:
 --->
 
-[docs-paths]: ./Assets/Docs/paths.md
+[docs-paths]: ./Assets/Docs/Paths/paths.md
 [mit-licence]: ./Assets/Docs/LICENCE.md
