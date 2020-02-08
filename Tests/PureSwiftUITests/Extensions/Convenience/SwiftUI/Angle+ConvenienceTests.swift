@@ -30,3 +30,30 @@ class AngleConvenienceExtensionsTests: XCTestCase {
         XCTAssertEqual(2.degrees.tan, tan(Angle(degrees: 2.0).radians))
     }
 }
+
+// MARK: ----- STATIC CONSTANTS
+
+extension AngleConvenienceExtensionsTests {
+
+    func testStaticConstants() {
+        XCTAssertEqual(Angle.topLeading, 315.degrees)
+        XCTAssertEqual(Angle.top, 0.degrees)
+        XCTAssertEqual(Angle.topTrailing, 45.degrees)
+        XCTAssertEqual(Angle.trailing, 90.degrees)
+        XCTAssertEqual(Angle.bottomTrailing, 135.degrees)
+        XCTAssertEqual(Angle.bottom, 180.degrees)
+        XCTAssertEqual(Angle.bottomLeading, 225.degrees)
+        XCTAssertEqual(Angle.leading, 270.degrees)
+    }
+}
+
+// MARK: ----- CYCLE
+
+extension AngleConvenienceExtensionsTests {
+
+    func testCycle() {
+        XCTAssertEqual(Angle.cycle(0.25), 90.degrees)
+        XCTAssertEqual(Angle.cycle(0.5), 180.degrees)
+        XCTAssertEqual(Angle.cycle(0.75), 270.degrees)
+    }
+}

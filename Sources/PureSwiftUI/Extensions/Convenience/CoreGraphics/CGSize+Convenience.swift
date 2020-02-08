@@ -9,16 +9,28 @@ import CoreGraphics
 
 public extension CGSize {
     
-    init<TW: UINumericType, TH: UINumericType>(_ width: TW, _ height: TH) {
-        self.init(width.asCGFloat, height.asCGFloat)
-    }
-    
     init(_ width: CGFloat, _ height: CGFloat) {
         self.init(width: width, height: height)
     }
     
+    init<TW: UINumericType, TH: UINumericType>(_ width: TW, _ height: TH) {
+        self.init(width.asCGFloat, height.asCGFloat)
+    }
+    
+    init<T: UINumericType>(_ size: T) {
+        self.init(size, size)
+    }
+    
+    var asCGRect: CGRect {
+        CGRect(width, height)
+    }
+    
     var asCGPoint: CGPoint {
         CGPoint(width, height)
+    }
+
+    var asCGVector: CGVector {
+        CGVector(width, height)
     }
     
     var x: CGFloat {
@@ -30,11 +42,19 @@ public extension CGSize {
     }
     
     var midX: CGFloat {
-        width / 2
+        width * 0.5
     }
-
+    
     var midY: CGFloat {
-        height / 2
+        height * 0.5
+    }
+    
+    var halfWidth: CGFloat {
+        midX
+    }
+ 
+    var halfHeight: CGFloat {
+        midY
     }
     
     func scaled<T: UINumericType>(_ scale: T) -> CGSize {
@@ -57,11 +77,25 @@ public extension CGSize {
 // MARK: ----- OPERATOR OVERLOADS
 
 public extension CGSize {
+    
     static func -(lhs: CGSize, rhs: CGSize) -> CGSize {
         .init(lhs.width - rhs.width, lhs.height - rhs.height)
     }
     
     static func +(lhs: CGSize, rhs: CGSize) -> CGSize {
         .init(lhs.width + rhs.width, lhs.height + rhs.height)
+    }
+}
+
+// MARK: ----- STATIC INITIALISERS
+
+public extension CGSize {
+    
+    static func square(_ size: CGFloat) -> CGSize {
+        CGSize(width: size, height: size)
+    }
+    
+    static func square<T: UINumericType>(_ size: T) -> CGSize {
+        square(size.asCGFloat)
     }
 }
