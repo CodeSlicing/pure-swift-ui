@@ -12,7 +12,7 @@ public struct LayoutGuide {
     private let rect: CGRect
     var origin: CGPoint
     
-    public init(_ coordinator: LayoutCoordinator, rect: CGRect, origin: CGPoint) {
+    init(_ coordinator: LayoutCoordinator, rect: CGRect, origin: CGPoint) {
         self.coordinator = coordinator
         self.origin = origin
         self.rect = rect
@@ -64,7 +64,7 @@ public struct LayoutGuide {
 
 // MARK: ----- GRID PROTOCOL
 
-public protocol LayoutCoordinator {
+protocol LayoutCoordinator {
     
     subscript(origin: CGPoint, x: Int, y: Int) -> CGPoint {get}
     func reframed(_ rect: CGRect) -> LayoutCoordinator
