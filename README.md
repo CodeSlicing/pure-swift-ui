@@ -20,6 +20,7 @@
 - [Conditional Modifiers](#conditional-modifiers)
 - [Conditional Rendering](#conditional-rendering)
 - [SF Symbols](#sf-symbols)
+- [Layout Guides and Paths](#layout-guides-and-paths)
 - [Preview Extensions](#preview-extensions)
 - [Caveats](#caveats)
 - [Installation](#installation)
@@ -37,7 +38,7 @@ We all love `SwiftUI`, and what the engineers at Apple have achieved is nothing 
 To demonstrate some of the advantages, let's say you want to generate the following label:
 
 <p align="center">
-<img width="200" src="./Assets/Images/modifier-example-label.png" alt="Label with white text and a red background and rounded corners rotated slightly clockwise" title="label designed in SwiftUI"/>
+<img width="250" src="./Assets/Images/modifier-example-label.png" alt="Label with white text and a red background and rounded corners rotated slightly clockwise" title="label designed in SwiftUI"/>
 </p>
 
 The code below shows how you would generate this label, including a small offset, comparing the native `SwiftUI` code to that of [PureSwiftUI][pure-swift-ui].
@@ -225,7 +226,7 @@ let height = 100
 
 A common issue when using `GeometryReader` is that it is a view that will grab all available space in the parent, much like `Color`. This means when we wrap a View or element that takes up less space than is offered by the parent in a `GeometryReader` we essentially *change* the layout which of course is undesirable. 
 
-The [PureSwiftUI][pure-swift-ui] to this problem is the `geometryReader` modifier that calls back with the same `GeometryProxy` object that can be probed for sizing or location information specifically for the view in question without affecting the layout, like so:
+The [PureSwiftUI][pure-swift-ui] answer to this problem is the `geometryReader` modifier that calls back with the same `GeometryProxy` object that can be probed for sizing or location information specifically for the view in question without affecting the layout, like so:
 
 ```swift
 Text("What's my size?")
@@ -438,6 +439,10 @@ Since all SF symbols are available as constants, there is also the option of usi
 
 Yet another advantage, is that the symbol constants defined in [PureSwiftUI][pure-swift-ui] are aware of deprecation so if a symbol you're using has been superseded by a new symbol name, you will get a warning including a suggestion of what to use instead, assuming one exists.
 
+## Layout Guides and Paths
+
+[PureSwiftUI][pure-swift-ui] includes a multitude of extensions and utilities for making drawing paths a breeze. So much so that it deserves its own page. See [here][docs-paths] for a detailed explanation of how much your path drawing life can improve.
+
 ## Preview Extensions
 
 As with SF Symbols, this is once again a stringly typed interface that [PureSwiftUI][pure-swift-ui] does away with. Rather than guessing which device strings are accepted, you can pass in a constant to the `previewDevice` modifier like so:
@@ -488,6 +493,9 @@ This project adheres to a [semantic versioning](https://semver.org) paradigm. I'
 - [1.10.0][tag-1.10.0] Add Frame concept, color name overloads, env and preview modifiers for convenience
 - [1.11.0][tag-1.11.0] Add geometryFrame modifier as well as relativeOffset and offsetToPosition modifiers
 - [1.12.0][tag-1.12.0] Add font modifiers for all font styles to Text and View as well as associated constructor functions
+- [1.13.0][tag-1.13.0] Add a multitude of extensions to types related to drawing paths as well as layout guides to facilitate easy `Path` construction
+- [1.13.1][tag-1.13.1] Add extension to CGPoint to allow transition to other points by a scale factor for animating paths. Add CG versions of colors to Color.
+- [1.13.2][tag-1.13.2] Internalized `LayoutGuide` constructor and `LayoutCoordinator` protocol until the internal API finalizes
 
 ## Licensing
 
@@ -533,9 +541,13 @@ version links:
 [tag-1.10.0]: https://github.com/CodeSlicing/pure-swift-ui/tree/1.10.0
 [tag-1.11.0]: https://github.com/CodeSlicing/pure-swift-ui/tree/1.11.0
 [tag-1.12.0]: https://github.com/CodeSlicing/pure-swift-ui/tree/1.12.0
+[tag-1.13.0]: https://github.com/CodeSlicing/pure-swift-ui/tree/1.13.0
+[tag-1.13.1]: https://github.com/CodeSlicing/pure-swift-ui/tree/1.13.1
+[tag-1.13.2]: https://github.com/CodeSlicing/pure-swift-ui/tree/1.13.2
 
 <!---
  local docs:
 --->
 
+[docs-paths]: ./Assets/Docs/Paths/paths.md
 [mit-licence]: ./Assets/Docs/LICENCE.md

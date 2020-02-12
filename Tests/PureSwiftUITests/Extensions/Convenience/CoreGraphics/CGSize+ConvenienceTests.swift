@@ -8,84 +8,107 @@
 import XCTest
 @testable import PureSwiftUI
 
-private let width: CGFloat = 4
-private let height: CGFloat = 5
-private let max: CGFloat = 10
-private let min: CGFloat = 2
-private let defaultSize = CGSize(width, height)
-
 class CGSizeConvenienceExtensionsTests: XCTestCase {
 
+    let width: CGFloat = 4
+    let height: CGFloat = 6
+
+    let max: CGFloat = 10
+    let min: CGFloat = 2
+
+    var halfWidth: CGFloat {
+        width * 0.5
+    }
+    
+    var halfHeight: CGFloat {
+        height * 0.5
+    }
+    
+    var size: CGSize {
+        CGSize(width: width, height: height)
+    }
+}
+
+// MARK: ----- INIT
+
+extension CGSizeConvenienceExtensionsTests {
+    
     func testInit() {
-        let result = CGSize(width, height)
-        XCTAssertEqual(result, defaultSize)
+        XCTAssertEqual(CGSize(width, height), size)
+        XCTAssertEqual(CGSize(width.asInt, height.asInt), size)
+        XCTAssertEqual(CGSize(width), CGSize(width, width))
+    }
+}
+
+// MARK: ----- TYPE COERCION
+
+extension CGSizeConvenienceExtensionsTests {
+
+    func testAsType() {
+        XCTAssertEqual(size.asCGRect, CGRect(0, 0, width, height))
+        XCTAssertEqual(size.asCGPoint, CGPoint(width, height))
+        XCTAssertEqual(size.asCGVector, CGVector(width, height))
+    }
+}
+
+// MARK: ----- DIMENSIONS
+
+extension CGSizeConvenienceExtensionsTests {
+    
+    func testDimensions() {
+        XCTAssertEqual(size.x, width)
+        XCTAssertEqual(size.y, height)
+        XCTAssertEqual(size.midX, halfWidth)
+        XCTAssertEqual(size.midY, halfHeight)
+        XCTAssertEqual(size.halfWidth, halfWidth)
+        XCTAssertEqual(size.halfHeight, halfHeight)
+    }
+}
+
+// MARK: ----- SCALED
+
+extension CGSizeConvenienceExtensionsTests {
+
+    func testScaled() {
+        XCTAssertEqual(size.scaled(0.5), CGSize(halfWidth, halfHeight))
+        XCTAssertEqual(size.widthScaled(0.5), halfWidth)
+        XCTAssertEqual(size.heightScaled(0.5), halfHeight)
+    }
+}
+
+// MARK: ----- CLAMPING
+
+extension CGSizeConvenienceExtensionsTests {
+    
+    func testClamping() {
+        XCTAssertEqual(size.clamped(from: 4.1, to: 5.9), CGSize(4.1, 5.9))
+        XCTAssertEqual(size.clamped(from: 4.1, to: 8), CGSize(4.1, height))
+        XCTAssertEqual(size.clamped(from: 2, to: 5.9), CGSize(width, 5.9))
+        XCTAssertEqual(size.clamped(from: 2, to: 10), size)
+    }
+}
+
+// MARK: ----- OPERATORS
+
+extension CGSizeConvenienceExtensionsTests {
+    
+    func testMinus() {
+        XCTAssertEqual(size - .square(1), CGSize(width - 1, height - 1))
+        XCTAssertEqual(size - size, .zero)
     }
     
-    func testX() {
-        let result = CGSize(width, height).x
-        XCTAssertEqual(result, width)
+    func testPlus() {
+        XCTAssertEqual(size + size, CGSize(width + width, height + height))
+        XCTAssertEqual(size + .square(1), CGSize(width + 1, height + 1))
     }
+}
+
+// MARK: ----- STATIC CONSTRUCTORS
+
+extension CGSizeConvenienceExtensionsTests {
     
-    func testMidX() {
-        let expectedResult = width / 2
-        let result = defaultSize.midX
-        XCTAssertEqual(result, expectedResult)
-    }
-
-    func testY() {
-        let result = CGSize(width, height).y
-        XCTAssertEqual(result, height)
-    }
-    
-    func testMidY() {
-        let expectedResult = height / 2
-        let result = defaultSize.midY
-        XCTAssertEqual(result, expectedResult)
-    }
-
-    func testAsCGPoint() {
-        let expectedResult = CGPoint(width, height)
-        let result = defaultSize.asCGPoint
-        
-        XCTAssertEqual(result, expectedResult)
-    }
-    
-    func testClampedMin() {
-
-        let expectedResult = CGSize(min, min)
-        let result = CGSize(min - 1, min - 1).clamped(from: min, to: max)
-
-        XCTAssertEqual(result, expectedResult)
-    }
-    
-    func testClampedMax() {
-
-        let expectedResult = CGSize(max, max)
-        let result = CGSize(max + 1, max + 1).clamped(from: min, to: max)
-
-        XCTAssertEqual(result, expectedResult)
-    }
-
-    func testClampedMid() {
-
-        let mid = (max - min) / 2 + min
-        let expectedResult = CGSize(mid, mid)
-        let result = CGSize(mid, mid).clamped(from: min, to: max)
-
-        XCTAssertEqual(result, expectedResult)
-    }
-    
-    func testWidthScaled() {
-        let expectedResult = width * 0.5
-        let result = defaultSize.widthScaled(0.5)
-
-        XCTAssertEqual(result, expectedResult)
-    }
-    
-    func testHeightScaled() {
-        let expectedResult = height * 0.5
-        let result = defaultSize.heightScaled(0.5)
-
-        XCTAssertEqual(result, expectedResult)
+    func testSquare() {
+        XCTAssertEqual(CGSize.square(width), CGSize(width))
+        XCTAssertEqual(CGSize.square(width.asInt), CGSize(width))
     }
 }

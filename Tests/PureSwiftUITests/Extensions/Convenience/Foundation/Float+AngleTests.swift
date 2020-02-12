@@ -47,12 +47,12 @@ class FloatAngleExtensionsTests: XCTestCase {
     func testFloatASin() {
         let expectedResult = asin(inverseValue)
         let result = Float(inverseValue).asin.radians
-        assertEquals(result, expectedResult)
+        assertEqual(result, expectedResult)
     }
     
     func testFloatATan() {
         let expectedResult = atan(inverseValue)
         let result = Float(inverseValue).atan.radians
-        assertEquals(result, expectedResult)
+        assertEqual(result, expectedResult)
     }
 }

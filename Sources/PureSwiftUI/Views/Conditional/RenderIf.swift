@@ -18,16 +18,16 @@ public struct RenderIf<IfContent: View>: View {
     }
     
     public var body: some View {
-        Group {
-            if render {
-                ifContent()
-            }
+        if render {
+            return IfContent?.some(ifContent())
+        } else {
+            return IfContent?.none
         }
     }
     
     public func elseRender<ElseContent: View>(@ViewBuilder content elseContent: @escaping () -> ElseContent) -> some View {
-        Group {
-            if (self.render) {
+        Builder {
+            if self.render {
                 ifContent()
             } else {
                 elseContent()
@@ -36,3 +36,15 @@ public struct RenderIf<IfContent: View>: View {
     }
 }
 
+internal struct Builder<Content: View>: View {
+    
+    var content: Content
+    
+    init(@ViewBuilder content: () -> Content) {
+        self.content = content()
+    }
+    
+    var body: some View {
+        content
+    }
+}

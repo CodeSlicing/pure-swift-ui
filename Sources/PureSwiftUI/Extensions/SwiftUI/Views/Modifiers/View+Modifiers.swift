@@ -750,3 +750,15 @@ public extension View {
     }
 }
 
+// MARK: ----- OFFSET WITH ANGLE
+
+public extension View {
+    
+    func offsetFromAngle(baseRotation: Angle, offsetAngle: Angle, forRadius radius: Double) -> some View {
+        offset(x: xFromAngle(baseRotation + offsetAngle, forRadius: radius), y: -yFromAngle(baseRotation + offsetAngle, forRadius: radius))
+    }
+    
+    func offset<T: UINumericType>(radius: T, angle: Angle) -> some View {
+        offset(calcOffset(radius: radius, angle: angle))
+    }
+}
