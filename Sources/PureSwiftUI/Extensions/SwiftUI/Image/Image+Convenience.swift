@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+// MARK: ----- RESIZED TO FIT
+
 public extension Image {
 
     func resizedToFit(capInsets: EdgeInsets = EdgeInsets()) -> some View {
@@ -37,8 +39,14 @@ public extension Image {
     func resizedToFit(_ size: CGSize, _ alignment: Alignment = .center, capInsets: EdgeInsets = EdgeInsets()) -> some View {
         resizedToFit(capInsets: capInsets)
             .frame(size, alignment)
+        
     }
+}
 
+// MARK: ----- RESIZED TO FILL
+
+public extension Image {
+    
     func resizedToFill(capInsets: EdgeInsets = EdgeInsets()) -> some View {
         resizable(capInsets: capInsets)
             .scaledToFill()

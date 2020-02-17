@@ -22,3 +22,12 @@ extension UnitPointConvenienceExtensionsTests {
         XCTAssertEqual(UnitPoint(x, y), UnitPoint(x: x, y: y))
      }
 }
+
+// MARK: ----- COERCION
+
+extension UnitPointConvenienceExtensionsTests {
+    
+    func testAsCGPoint() {
+        XCTAssertEqual(UnitPoint(0.3, 0.5).asCGPoint, CGPoint(0.3, 0.5))
+    }
+}

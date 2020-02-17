@@ -1,5 +1,5 @@
 //
-//  PolarLayout.swift
+//  PolarLayoutCoordinator.swift
 //
 //  Created by Adam Fordyce on 03/02/2020.
 //  Copyright © 2020 Adam Fordyce. All rights reserved.
@@ -7,32 +7,90 @@
 
 private struct PolarLayoutCoordinator: LayoutCoordinator {
 
+    let baseOrigin: CGPoint
+    let baseRect: CGRect
     private let radiusCalculator: RadiusForRingCalculator
     private let angleCalculator: AngleForSegmentCalculator
     
-    init(radiusCalculator: RadiusForRingCalculator, angleCalculator: AngleForSegmentCalculator) {
+    init(origin: CGPoint, rect: CGRect, radiusCalculator: RadiusForRingCalculator, angleCalculator: AngleForSegmentCalculator) {
+        self.baseOrigin = origin
+        self.baseRect = rect
         self.radiusCalculator = radiusCalculator
         self.angleCalculator = angleCalculator
     }
     
-    public subscript(origin: CGPoint, ringIndex: Int, segmentIndex: Int) -> CGPoint {
-        return origin.offset(
+    subscript(ringIndex: Int, segmentIndex: Int) -> CGPoint {
+        baseOrigin.offset(
             radius: radiusCalculator.radiusFor(ringIndex: ringIndex),
             angle: angleCalculator.angleFor(segmentIndex: segmentIndex))
     }
     
-    public var xCount: Int {
+    var xCount: Int {
         radiusCalculator.ringCount
     }
     
-    public var yCount: Int {
+    var yCount: Int {
         angleCalculator.segmentCount
     }
     
-    public func reframed(_ rect: CGRect) -> LayoutCoordinator {
-        PolarLayoutCoordinator(
+    func reframed(into rect: CGRect, originalRect: CGRect, origin: UnitPoint? = nil) -> LayoutCoordinator {
+        let newOrigin = calcOrigin(in: rect, origin: origin ?? .center)
+        let size: CGSize = .square(radiusCalculator.useMaxDimension ? rect.maxDimension : rect.minDimension)
+        
+        return PolarLayoutCoordinator(
+            origin: newOrigin,
+            rect: CGRect(newOrigin.offset(in: size, anchor: .center), size),
             radiusCalculator: radiusCalculator.reframed(rect),
             angleCalculator: angleCalculator.reframed(rect))
+    }
+    
+    func anchorLocation(for anchor: UnitPoint, size: CGSize) -> CGPoint {
+        
+        if anchor == .center {
+            return baseOrigin
+        } else {
+            let virtualRectOrigin = baseOrigin - baseRect.sizeScaled(0.5).asCGPoint
+            return virtualRectOrigin.moveOrigin(in: baseRect.size, origin: anchor)
+        }
+    }
+}
+
+private extension PolarLayoutCoordinator {
+    
+    var topLeading: CGPoint {
+        baseRect.topLeading
+    }
+    
+    var top: CGPoint {
+        baseRect.top
+    }
+    
+    var topTrailing: CGPoint {
+        baseRect.topTrailing
+    }
+    
+    var trailing: CGPoint {
+        baseRect.trailing
+    }
+    
+    var bottomTrailing: CGPoint {
+        baseRect.bottomTrailing
+    }
+    
+    var bottom: CGPoint {
+        baseRect.bottom
+    }
+    
+    var bottomLeading: CGPoint {
+        baseRect.bottomLeading
+    }
+    
+    var leading: CGPoint {
+        baseRect.leading
+    }
+    
+    var center: CGPoint {
+        baseRect.center
     }
 }
 
@@ -40,6 +98,7 @@ private struct PolarLayoutCoordinator: LayoutCoordinator {
 
 private protocol RadiusForRingCalculator {
     
+    var useMaxDimension: Bool {get}
     var ringCount: Int {get}
     func radiusFor(ringIndex: Int) -> CGFloat
     func reframed(_ rect: CGRect) -> RadiusForRingCalculator
@@ -64,13 +123,17 @@ private struct EquidistantRadiusForRingCalculator: RadiusForRingCalculator {
     }
     
     private init(_ rect: CGRect, config: Config) {
-        self.config = config
+        self.config = (config.rings > 0 ? config.rings : 1, config.useMaxDimension)
         let radius = (config.useMaxDimension ? rect.maxDimension : rect.minDimension) / 2
-        self.radiusStep = radius / config.rings.asCGFloat
+        self.radiusStep = radius / self.config.rings.asCGFloat
     }
 
     var ringCount: Int {
         config.rings
+    }
+    
+    var useMaxDimension: Bool {
+        config.useMaxDimension
     }
     
     func radiusFor(ringIndex: Int) -> CGFloat {
@@ -118,6 +181,10 @@ private struct RelativeRadiusForRingCalculator: RadiusForRingCalculator {
         }
     }
     
+    var useMaxDimension: Bool {
+        config.useMaxDimension
+    }
+    
     func reframed(_ rect: CGRect) -> RadiusForRingCalculator {
         RelativeRadiusForRingCalculator(rect, config: config)
     }
@@ -129,7 +196,7 @@ private struct EquidistantAngleForSegmentCalculator: AngleForSegmentCalculator {
     private let segmentSize: Angle
     
     init(segments: Int) {
-        self.segments = segments
+        self.segments = segments > 0 ? segments : 1
         self.segmentSize = (360 / segments.asDouble).degrees
     }
     
@@ -177,13 +244,17 @@ private struct AbsoluteAngleForSegmentCalculator: AngleForSegmentCalculator {
 
 public extension LayoutGuide {
     
-    private static func polarLayout(radiusCalculator: RadiusForRingCalculator, angleCalculator: AngleForSegmentCalculator, rect: CGRect, origin: UnitPoint) -> LayoutGuide {
+    private static func polarLayout(radiusCalculator: RadiusForRingCalculator, angleCalculator: AngleForSegmentCalculator, rect: CGRect, origin: UnitPoint, useMaxDimension: Bool) -> LayoutGuide {
        
+        let origin = calcOrigin(in: rect, origin: origin)
+        let size: CGSize = .square(useMaxDimension ? rect.maxDimension : rect.minDimension)
         let coordinator = PolarLayoutCoordinator(
+            origin: origin,
+            rect: CGRect(origin.offset(in: size, anchor: .center), size),
             radiusCalculator: radiusCalculator,
             angleCalculator: angleCalculator)
         
-        return LayoutGuide(coordinator, rect: rect, origin: calcOrigin(in: rect, origin: origin))
+        return LayoutGuide(coordinator, rect: rect)
     }
     
     /**
@@ -194,7 +265,7 @@ public extension LayoutGuide {
         let radiusCalculator = EquidistantRadiusForRingCalculator(rect, rings: rings, useMaxDimension: useMaxDimension)
         let angleCalculator = EquidistantAngleForSegmentCalculator(segments: segments)
         
-        return polarLayout(radiusCalculator: radiusCalculator, angleCalculator: angleCalculator, rect: rect, origin: origin)
+        return polarLayout(radiusCalculator: radiusCalculator, angleCalculator: angleCalculator, rect: rect, origin: origin, useMaxDimension: useMaxDimension)
     }
     
     /**
@@ -205,7 +276,7 @@ public extension LayoutGuide {
         let radiusCalculator = RelativeRadiusForRingCalculator(rect, rings: rings.map {$0.asCGFloat}, useMaxDimension: useMaxDimension)
         let angleCalculator = EquidistantAngleForSegmentCalculator(segments: segments)
         
-        return polarLayout(radiusCalculator: radiusCalculator, angleCalculator: angleCalculator, rect: rect, origin: origin)
+        return polarLayout(radiusCalculator: radiusCalculator, angleCalculator: angleCalculator, rect: rect, origin: origin, useMaxDimension: useMaxDimension)
     }
     
     /**
@@ -223,7 +294,7 @@ public extension LayoutGuide {
         let radiusCalculator = EquidistantRadiusForRingCalculator(rect, rings: rings, useMaxDimension: useMaxDimension)
         let angleCalculator = AbsoluteAngleForSegmentCalculator(segments: segments)
 
-        return polarLayout(radiusCalculator: radiusCalculator, angleCalculator: angleCalculator, rect: rect, origin: origin)
+        return polarLayout(radiusCalculator: radiusCalculator, angleCalculator: angleCalculator, rect: rect, origin: origin, useMaxDimension: useMaxDimension)
     }
     
     /**
@@ -241,6 +312,8 @@ public extension LayoutGuide {
         let radiusCalculator = RelativeRadiusForRingCalculator(rect, rings: rings.map {$0.asCGFloat}, useMaxDimension: useMaxDimension)
         let angleCalculator = AbsoluteAngleForSegmentCalculator(segments: segments)
 
-        return polarLayout(radiusCalculator: radiusCalculator, angleCalculator: angleCalculator, rect: rect, origin: origin)
+        return polarLayout(radiusCalculator: radiusCalculator, angleCalculator: angleCalculator, rect: rect, origin: origin, useMaxDimension: useMaxDimension)
     }
 }
+
+

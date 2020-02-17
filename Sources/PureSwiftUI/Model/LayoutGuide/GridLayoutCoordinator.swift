@@ -1,33 +1,87 @@
 //
-//  GridLayoutGuide.swift
+//  GridLayoutCoordinator.swift
 //
 //  Created by Adam Fordyce on 03/02/2020.
 //  Copyright © 2020 Adam Fordyce. All rights reserved.
 //
 
 private struct GridLayoutCoordinator: LayoutCoordinator {
-
+    
+    let baseOrigin: CGPoint
+    let baseRect: CGRect
     let xOffsetCalculator: OffsetForIndexCalculator
     let yOffsetCalculator: OffsetForIndexCalculator
     
-    public var xCount: Int {
+    var xCount: Int {
         xOffsetCalculator.indexCount
     }
     
-    public var yCount: Int {
+    var yCount: Int {
         yOffsetCalculator.indexCount
     }
     
-    public subscript(origin: CGPoint, x: Int, y: Int) -> CGPoint {
-        get {
-            origin.offset(CGPoint(x: xOffsetCalculator.offsetFor(index: x), y: yOffsetCalculator.offsetFor(index: y)))
-        }
+    subscript(x: Int, y: Int) -> CGPoint {
+        baseOrigin.offset(CGPoint(x: xOffsetCalculator.offsetFor(index: x), y: yOffsetCalculator.offsetFor(index: y)))
     }
+    
+    func reframed(into rect: CGRect, originalRect: CGRect, origin: UnitPoint? = nil) -> LayoutCoordinator {
+        
+//        let newOrigin = origin == nil ? rect.origin.map(from: originalRect, to: rect) : calcOrigin(in: rect, origin: origin!)
+        let newOrigin = calcOrigin(in: rect, origin: origin ?? .topLeading)
 
-    public func reframed(_ rect: CGRect) -> LayoutCoordinator {
-        GridLayoutCoordinator(
+        let actualRect = CGRect(newOrigin, rect.size)
+        return GridLayoutCoordinator(
+            baseOrigin: newOrigin,
+            baseRect: actualRect,
             xOffsetCalculator: xOffsetCalculator.reframed(rect.width),
             yOffsetCalculator: yOffsetCalculator.reframed(rect.height))
+    }
+    
+    func anchorLocation(for anchor: UnitPoint, size: CGSize) -> CGPoint {
+        if anchor == .topLeading {
+            return baseOrigin
+        } else {
+            return baseOrigin.moveOrigin(in: size, origin: anchor)
+        }
+    }
+}
+
+private extension GridLayoutCoordinator {
+    
+    var topLeading: CGPoint {
+        baseRect.topLeading
+    }
+    
+    var top: CGPoint {
+        baseRect.top
+    }
+    
+    var topTrailing: CGPoint {
+        baseRect.topTrailing
+    }
+    
+    var trailing: CGPoint {
+        baseRect.trailing
+    }
+    
+    var bottomTrailing: CGPoint {
+        baseRect.bottomTrailing
+    }
+    
+    var bottom: CGPoint {
+        baseRect.bottom
+    }
+    
+    var bottomLeading: CGPoint {
+        baseRect.bottomLeading
+    }
+    
+    var leading: CGPoint {
+        baseRect.leading
+    }
+    
+    var center: CGPoint {
+        baseRect.center
     }
 }
 
@@ -48,7 +102,7 @@ private struct EquidistantOffsetForIndexCalculator: OffsetForIndexCalculator {
     private let offsetPerIndex: CGFloat
     
     init(_ size: CGFloat, numSlices: Int) {
-        self.numSlices = numSlices
+        self.numSlices = numSlices > 0 ? numSlices : 1
         self.offsetPerIndex = size / numSlices.asCGFloat
     }
     
@@ -110,10 +164,12 @@ public extension LayoutGuide {
     private static func gridLayout(xOffsetCalculator: OffsetForIndexCalculator, yOffsetCalculator: OffsetForIndexCalculator, rect: CGRect, origin: UnitPoint) -> LayoutGuide {
        
         let coordinator = GridLayoutCoordinator(
+            baseOrigin: calcOrigin(in: rect, origin: origin),
+            baseRect: rect,
             xOffsetCalculator: xOffsetCalculator,
             yOffsetCalculator: yOffsetCalculator)
         
-        return LayoutGuide(coordinator, rect: rect, origin: calcOrigin(in: rect, origin: origin))
+        return LayoutGuide(coordinator, rect: rect)
     }
     
     /**

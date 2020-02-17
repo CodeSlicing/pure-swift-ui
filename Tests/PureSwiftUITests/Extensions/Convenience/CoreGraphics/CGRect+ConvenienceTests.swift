@@ -66,8 +66,22 @@ extension CGRectConvenienceExtensionsTests {
 extension CGRectConvenienceExtensionsTests {
     
     func testRegionWithSize() {
-        XCTAssertEqual(CGRect(rect.bottomTrailing, .square(5), anchor: .bottomTrailing),
-                       CGRect(rect.bottomTrailing.offset(CGPoint(-5, -5)), .square(5)))
+        let expected = CGRect(rect.bottomTrailing.offset(CGPoint(-5, -5)), .square(5))
+        
+        XCTAssertEqual(CGRect(rect.bottomTrailing.x, rect.bottomTrailing.y, 5, 5, anchor: .bottomTrailing), expected)
+        XCTAssertEqual(CGRect(rect.bottomTrailing.x.asInt, rect.bottomTrailing.y, 5, 5, anchor: .bottomTrailing), expected)
+        XCTAssertEqual(CGRect(5, 5, anchor: .bottomTrailing), CGRect(-5, -5, 5, 5))
+        XCTAssertEqual(CGRect(rect.bottomTrailing, .square(5), anchor: .bottomTrailing), expected)
+        XCTAssertEqual(CGRect(rect.bottomTrailing, .square(5), anchor: .bottomTrailing), expected)
+    }
+}
+
+// MARK: ----- STATIC INITIALISERS
+
+extension CGRectConvenienceExtensionsTests {
+    
+    func testStaticInit() {
+        XCTAssertEqual(CGRect.rect(x, y, width, height), rect)
     }
 }
 
@@ -116,6 +130,9 @@ extension CGRectConvenienceExtensionsTests {
         XCTAssertEqual(rect.xScaled(0.5), rect.midX)
         XCTAssertEqual(rect.yScaled(0.5), rect.midY)
         XCTAssertEqual(rect.sizeScaled(0.5), CGSize(width * 0.5, height * 0.5))
+        XCTAssertEqual(rect.sizeScaled(.point(0.5)), CGSize(width * 0.5, height * 0.5))
+        XCTAssertEqual(rect.sizeScaled(.vector(0.5)), CGSize(width * 0.5, height * 0.5))
+        XCTAssertEqual(rect.sizeScaled(.size(0.5)), CGSize(width * 0.5, height * 0.5))
         XCTAssertEqual(rect.sizeScaled(0.1, 0.5), CGSize(width * 0.1, height * 0.5))
     }
 }
@@ -183,16 +200,43 @@ extension CGRectConvenienceExtensionsTests {
     
     func testOffsetAnchor() {
         XCTAssertEqual(rect.offset(anchor: .bottomTrailing), CGRect(x - width, y - height, width, height))
-        XCTAssertEqual(rect.offset(anchor: .init(5, 5)), CGRect(x - 5, y - 5, width, height))
+        XCTAssertEqual(rect.offset(anchor: UnitPoint(-0.5, -0.5)), CGRect(x + 4, y + 5, width, height))
         
-        XCTAssertEqual(rect.offset(x, y), CGRect(CGPoint(x + x, y + y), size))
-        XCTAssertEqual(rect.offset(x.asInt, y), CGRect(CGPoint(x + x, y + y), size))
-        XCTAssertEqual(rect.offset(CGPoint(x, y)), CGRect(CGPoint(x + x, y + y), size))
-        XCTAssertEqual(rect.offset(CGSize(x, y)), CGRect(CGPoint(x + x, y + y), size))
-        XCTAssertEqual(rect.offset(CGVector(x, y)), CGRect(CGPoint(x + x, y + y), size))
+        let expected = CGRect(CGPoint(2 * x, 2 * y), size)
+        XCTAssertEqual(rect.offset(x, y), expected)
+        XCTAssertEqual(rect.offset(x.asInt, y), expected)
+        XCTAssertEqual(rect.offset(CGPoint(x, y)), expected)
+        XCTAssertEqual(rect.offset(CGSize(x, y)), expected)
+        XCTAssertEqual(rect.offset(CGVector(x, y)), expected)
 
         XCTAssertEqual(rect.xOffset(x), CGRect(CGPoint(x + x, y), size))
         XCTAssertEqual(rect.yOffset(y), CGRect(CGPoint(x, y + y), size))
+    }
+}
+
+// MARK: ----- OFFSET WITH FACTOR
+
+extension CGRectConvenienceExtensionsTests {
+    
+    func testOffsetAnchorWithFactor() {
+        XCTAssertEqual(rect.offset(anchor: .bottomTrailing, factor: 0.5), CGRect(x - width * 0.5, y - height * 0.5, width, height))
+        XCTAssertEqual(rect.offset(anchor: .bottomTrailing, factor: .square(0.5)), CGRect(x - width * 0.5, y - height * 0.5, width, height))
+        XCTAssertEqual(rect.offset(anchor: UnitPoint(-0.5, -0.5), factor: 0.5), CGRect(x + 2, y + 2.5, width, height))
+        
+        let expected = CGRect(CGPoint(x + x * 0.5, y + y * 0.5), size)
+        XCTAssertEqual(rect.offset(x, y, factor: 0.5), expected)
+        XCTAssertEqual(rect.offset(x, y, factor: .square(0.5)), expected)
+        XCTAssertEqual(rect.offset(x.asInt, y, factor: 0.5), expected)
+        XCTAssertEqual(rect.offset(x.asInt, y, factor: .square(0.5)), expected)
+        XCTAssertEqual(rect.offset(CGPoint(x, y), factor: 0.5), expected)
+        XCTAssertEqual(rect.offset(CGSize(x, y), factor: 0.5), expected)
+        XCTAssertEqual(rect.offset(CGVector(x, y), factor: 0.5), expected)
+        XCTAssertEqual(rect.offset(CGPoint(x, y), factor: .square(0.5)), expected)
+        XCTAssertEqual(rect.offset(CGSize(x, y), factor: .square(0.5)), expected)
+        XCTAssertEqual(rect.offset(CGVector(x, y), factor: .square(0.5)), expected)
+
+        XCTAssertEqual(rect.xOffset(x, factor: 0.5), CGRect(CGPoint(x + x * 0.5, y), size))
+        XCTAssertEqual(rect.yOffset(y, factor: 0.5), CGRect(CGPoint(x, y + y * 0.5), size))
     }
 }
 

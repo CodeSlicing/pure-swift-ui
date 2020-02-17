@@ -9,18 +9,22 @@ import CoreGraphics
 
 public extension CGSize {
     
-    init(_ width: CGFloat, _ height: CGFloat) {
-        self.init(width: width, height: height)
-    }
-    
-    init<TW: UINumericType, TH: UINumericType>(_ width: TW, _ height: TH) {
-        self.init(width.asCGFloat, height.asCGFloat)
+    init(_ size: CGFloat) {
+        self.init(size, size)
     }
     
     init<T: UINumericType>(_ size: T) {
         self.init(size, size)
     }
     
+    init(_ width: CGFloat, _ height: CGFloat) {
+        self.init(width: width, height: height)
+    }
+    
+    init<TW: UINumericType, TH: UINumericType>(_ width: TW, _ height: TH) {
+        self.init(width: width.asCGFloat, height: height.asCGFloat)
+    }
+
     var asCGRect: CGRect {
         CGRect(width, height)
     }
@@ -31,6 +35,10 @@ public extension CGSize {
 
     var asCGVector: CGVector {
         CGVector(width, height)
+    }
+    
+    var asUnitPoint: UnitPoint {
+        UnitPoint(width, height)
     }
     
     var x: CGFloat {
@@ -57,8 +65,24 @@ public extension CGSize {
         midY
     }
     
+    var minDimension: CGFloat {
+        min(width, height)
+    }
+
+    var maxDimension: CGFloat {
+        max(width, height)
+    }
+    
     func scaled<T: UINumericType>(_ scale: T) -> CGSize {
-        .init(widthScaled(scale), heightScaled(scale))
+        scaled(.square(scale))
+    }
+    
+    func scaled(_ scale: CGSize) -> CGSize {
+        scaled(scale.width, scale.height)
+    }
+    
+    func scaled<TW: UINumericType, TH: UINumericType>(_ widthScale: TW, _ heightScale: TH) -> CGSize {
+        .init(widthScaled(widthScale), heightScaled(heightScale))
     }
     
     func widthScaled<T: UINumericType>(_ scale: T) -> CGFloat {
@@ -91,11 +115,35 @@ public extension CGSize {
 
 public extension CGSize {
     
-    static func square(_ size: CGFloat) -> CGSize {
-        CGSize(width: size, height: size)
+    static func square<T: UINumericType>(_ size: T) -> CGSize {
+        .init(size.asCGFloat)
     }
     
-    static func square<T: UINumericType>(_ size: T) -> CGSize {
-        square(size.asCGFloat)
+    static func width<T: UINumericType>(_ width: T) -> CGSize {
+        .init(width, 0)
+    }
+    
+    static func height<T: UINumericType>(_ height: T) -> CGSize {
+        .init(0, height)
+    }
+    
+    static func size<TW: UINumericType, TH: UINumericType>(_ width: TW, _ height: TH) -> CGSize {
+        .init(width, height)
+    }
+    
+    static func size<T: UINumericType>(_ size: T) -> CGSize {
+        .square(size)
+    }
+}
+
+// MARK: ----- MAP FROM ONE RECT TO ANOTHER
+
+public extension CGSize {
+    
+    func map(from: CGRect, to: CGRect) -> CGSize {
+        let relativeOffsetWidth = from.width == 0 ? width : width / from.width
+        let relativeOffsetHeight = from.height == 0 ? height : height / from.height
+        
+        return CGSize(relativeOffsetWidth * to.width, relativeOffsetHeight * to.height)
     }
 }
