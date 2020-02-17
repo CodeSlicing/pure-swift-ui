@@ -6,6 +6,7 @@ Natively, working with paths is a time-consuming task that cannot be referred to
     - [Angle](#angle)
     - [CGRect](#cgrect)
     - [CGPoint](#cgpoint)
+    - [Static Initializers](#static-initializers)
     - [Path](#path)
       - [Building Blocks](#building-blocks)
       - [Moving the Current Point and Drawing Lines](#moving-the-current-point-and-drawing-lines)
@@ -173,7 +174,24 @@ Which gives you:
 <img src="offset-with-angle-demo.png"  style="padding: 10px" width="250px"/>
 </p>
 
-I cover layout guides and their associated overlays [here][docs-layout-guides]. Feel free to browse the available extensions for [CGRect][CGRect], [CGSize][CGSize], [CGVector][CGVector], and [CGPoint][CGPoint] to see how they tie-in to the architecture.
+I cover layout guides and their associated overlays [here][docs-layout-guides].
+
+Feel free to browse the available extensions for [CGPoint][CGPoint], [CGVector][CGVector], [CGSize][CGSize], and [CGRect][CGRect] to see how they all tie-in to the architecture.
+
+## Static Initializers
+
+For all the types mentioned, there are a handful of static initializers that make code cleaner and more descriptive. For example, it is not uncommon to want to offset something in just the X axis. Of course, You could use the various `xOffset` functions, but you could also pass a `CGPoint` with x value set to the value you want to use and with a y value set to 0. You can use static initializers to do this in a descriptive way:
+
+```swift
+// offset by 10 points in x
+.offset(.x(10))
+// offset vertically by 10 points
+.offset(.y(10))
+// or you could offset with a CGPoint like so
+.offset(.point(20, 10))
+```
+
+So for `CGPoint`, `CGVector`, and `CGSize` you can use static initializers that are named after the properties of the structs in question. `.dx`, `.dy`, and `.vector` for `CGVector`, and `.width`, `.height`, and `.size` for `CGSize`. The advantage goes beyond just code clarity since you also benefit from faster code completion when using statics.
 
 ### Path
 
