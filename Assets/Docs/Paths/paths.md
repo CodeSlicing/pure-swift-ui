@@ -173,9 +173,7 @@ Which gives you:
 <img src="offset-with-angle-demo.png"  style="padding: 10px" width="250px"/>
 </p>
 
-I cover layout guides and their associated overlays [here][docs-layout-guides].
-
-Feel free to browse the available extensions for [CGRect][CGRect], [CGSize][CGSize], [CGVector][CGVector], and [CGPoint][CGPoint] to see how they tie-in to the architecture.
+I cover layout guides and their associated overlays [here][docs-layout-guides]. Feel free to browse the available extensions for [CGRect][CGRect], [CGSize][CGSize], [CGVector][CGVector], and [CGPoint][CGPoint] to see how they tie-in to the architecture.
 
 ### Path
 

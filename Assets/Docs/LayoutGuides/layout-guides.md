@@ -401,7 +401,7 @@ And the result shows how these points move during the animation:
 With simple combinations of these transforms and relatively little effort you can create things like this:
 
 <p align="center">
-<img src="rain-icon-demo.gif"  style="padding: 10px" width="50px"/>
+<img src="rain-icon-demo.gif"  style="padding: 10px" width="120px"/>
 </p>
 
 Where the rain drops are drawn on a grid with a small horizontal offset, the vertical offset is animated, and the whole thing is then rotated:
@@ -418,7 +418,7 @@ The cloud is built on curves where I used [control point visualization](#visuali
 Maybe you want one of those fancy state changing icons when you successfully upload something:
 
 <p align="center">
-<img src="up-to-tick-animation-demo.gif"  style="padding: 10px" width="50px"/>
+<img src="up-to-tick-animation-demo.gif"  style="padding: 10px" width="100px"/>
 </p>
 
 You can achieve this effect with a combination of animating the rotation of the layout guide itself, and [animating the points](#lets-get-things-moving) within the layout guide to change the arrow into a tick. Gist [here][gist-up-arrow-to-tick-icon].
