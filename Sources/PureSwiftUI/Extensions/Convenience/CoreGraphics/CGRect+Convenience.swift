@@ -74,6 +74,10 @@ public extension CGRect {
 
 public extension CGRect {
     
+    static func rect(_ origin: CGPoint, _ size: CGSize) -> CGRect {
+        .init(origin, size)
+    }
+    
     static func rect<TX: UINumericType, TY: UINumericType, TW: UINumericType, TH: UINumericType>(_ x: TX, _ y: TY, _ width: TW, _ height: TH) -> CGRect {
         .init(x, y, width, height)
     }

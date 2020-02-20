@@ -291,7 +291,7 @@ extension CGPointConvenienceExtensionsTests {
 
 extension CGPointConvenienceExtensionsTests {
     
-    func testCalcAngleTo() {
+    func testDeprecatedCalcAngleTo() {
         
         let offsetPoint1 = testPoint.offset(1, -1)
         let offsetPoint2 = testPoint.offset(-1, 1)
@@ -305,19 +305,34 @@ extension CGPointConvenienceExtensionsTests {
         XCTAssertEqual(testPoint.calcAngleTo(offsetPoint2.x, offsetPoint2.y), .bottomLeading)
         XCTAssertEqual(testPoint.calcAngleTo(offsetPoint3.x, offsetPoint3.y), .bottom)
     }
+    
+    func testangleTo() {
+        
+        let offsetPoint1 = testPoint.offset(1, -1)
+        let offsetPoint2 = testPoint.offset(-1, 1)
+        let offsetPoint3 = testPoint.offset(0, 2)
+
+        XCTAssertEqual(testPoint.angleTo(offsetPoint1), .topTrailing)
+        XCTAssertEqual(testPoint.angleTo(offsetPoint2), .bottomLeading)
+        XCTAssertEqual(testPoint.angleTo(offsetPoint3), .bottom)
+        
+        XCTAssertEqual(testPoint.angleTo(offsetPoint1.x, offsetPoint1.y), .topTrailing)
+        XCTAssertEqual(testPoint.angleTo(offsetPoint2.x, offsetPoint2.y), .bottomLeading)
+        XCTAssertEqual(testPoint.angleTo(offsetPoint3.x, offsetPoint3.y), .bottom)
+    }
 }
 
 // MARK: ----- CALC RADIUS TO
 
 extension CGPointConvenienceExtensionsTests {
     
-    func testCalcRadiusTo() {
+    func testDeprecatedCalcRadiusTo() {
         
         let offsetPoint1 = testPoint.offset(1, 0)
         let offsetPoint2 = testPoint.offset(1, 1)
         let offsetPoint3 = testPoint.offset(-1, -1)
         let offsetPoint4 = testPoint.offset(0, -3)
-
+        
         XCTAssertEqual(testPoint.calcRadiusTo(offsetPoint1), 1)
         XCTAssertEqual(testPoint.calcRadiusTo(offsetPoint2), sqrt(2.0))
         XCTAssertEqual(testPoint.calcRadiusTo(offsetPoint3), sqrt(2.0))
@@ -340,7 +355,34 @@ extension CGPointConvenienceExtensionsTests {
         XCTAssertEqual(testPoint.calcSquaredRadiusTo(offsetPoint4.x, offsetPoint4.y), 9)
     }
     
-
+    func testRadiusTo() {
+        
+        let offsetPoint1 = testPoint.offset(1, 0)
+        let offsetPoint2 = testPoint.offset(1, 1)
+        let offsetPoint3 = testPoint.offset(-1, -1)
+        let offsetPoint4 = testPoint.offset(0, -3)
+        
+        XCTAssertEqual(testPoint.radiusTo(offsetPoint1), 1)
+        XCTAssertEqual(testPoint.radiusTo(offsetPoint2), sqrt(2.0))
+        XCTAssertEqual(testPoint.radiusTo(offsetPoint3), sqrt(2.0))
+        XCTAssertEqual(testPoint.radiusTo(offsetPoint4), 3)
+        
+        XCTAssertEqual(testPoint.radiusTo(offsetPoint1.x, offsetPoint1.y), 1)
+        XCTAssertEqual(testPoint.radiusTo(offsetPoint2.x, offsetPoint2.y), sqrt(2.0))
+        XCTAssertEqual(testPoint.radiusTo(offsetPoint3.x, offsetPoint3.y), sqrt(2.0))
+        XCTAssertEqual(testPoint.radiusTo(offsetPoint4.x, offsetPoint4.y), 3)
+        
+        //squared radius
+        XCTAssertEqual(testPoint.squaredRadiusTo(offsetPoint1), 1)
+        XCTAssertEqual(testPoint.squaredRadiusTo(offsetPoint2), 2)
+        XCTAssertEqual(testPoint.squaredRadiusTo(offsetPoint3), 2)
+        XCTAssertEqual(testPoint.squaredRadiusTo(offsetPoint4), 9)
+        
+        XCTAssertEqual(testPoint.squaredRadiusTo(offsetPoint1.x, offsetPoint1.y), 1)
+        XCTAssertEqual(testPoint.squaredRadiusTo(offsetPoint2.x, offsetPoint2.y), 2)
+        XCTAssertEqual(testPoint.squaredRadiusTo(offsetPoint3.x, offsetPoint3.y), 2)
+        XCTAssertEqual(testPoint.squaredRadiusTo(offsetPoint4.x, offsetPoint4.y), 9)
+    }
 }
 
 // MARK: ----- CALC POINT
@@ -451,5 +493,29 @@ extension CGPointConvenienceExtensionsTests {
         XCTAssertEqual(sourceRect.center.map(from: sourceRect, to: destination), destination.center)
         XCTAssertEqual(sourceRect.top.map(from: sourceRect, to: destination), destination.top)
         XCTAssertEqual(sourceRect.bottomTrailing.map(from: sourceRect, to: destination), destination.bottomTrailing)
+    }
+    
+    func testMapForPointWithNoWidth() {
+        let sourceRect = CGRect(20, 30, 0, 40)
+        let destination = CGRect(0, 0, 15, 20)
+        XCTAssertEqual(sourceRect.center.map(from: sourceRect, to: destination), destination.leading)
+        XCTAssertEqual(sourceRect.top.map(from: sourceRect, to: destination), destination.topLeading)
+        XCTAssertEqual(sourceRect.bottomTrailing.map(from: sourceRect, to: destination), destination.bottomLeading)
+    }
+    
+    func testMapForPointWithNoHeight() {
+        let sourceRect = CGRect(20, 30, 24, 0)
+        let destination = CGRect(0, 0, 15, 20)
+        XCTAssertEqual(sourceRect.center.map(from: sourceRect, to: destination), destination.top)
+        XCTAssertEqual(sourceRect.top.map(from: sourceRect, to: destination), destination.top)
+        XCTAssertEqual(sourceRect.bottomTrailing.map(from: sourceRect, to: destination), destination.topTrailing)
+    }
+    
+    func testMapForPointWithNoWidthOrHeight() {
+        let sourceRect = CGRect(20, 30, 0, 0)
+        let destination = CGRect(0, 0, 15, 20)
+        XCTAssertEqual(sourceRect.center.map(from: sourceRect, to: destination), destination.topLeading)
+        XCTAssertEqual(sourceRect.top.map(from: sourceRect, to: destination), destination.topLeading)
+        XCTAssertEqual(sourceRect.bottomTrailing.map(from: sourceRect, to: destination), destination.topLeading)
     }
 }

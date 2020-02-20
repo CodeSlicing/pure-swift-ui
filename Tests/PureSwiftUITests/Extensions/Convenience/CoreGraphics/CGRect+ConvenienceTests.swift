@@ -57,6 +57,11 @@ extension CGRectConvenienceExtensionsTests {
         XCTAssertEqual(CGRect(x.asDouble, y.asFloat, width.asCGFloat, height.asInt), rect)
         XCTAssertEqual(CGRect(width, height), CGRect(0, 0, width, height))
         XCTAssertEqual(CGRect(width.asInt, height.asDouble), CGRect(0, 0, width, height))
+        XCTAssertEqual(CGRect(.point(x, y), .size(width, height)), rect)
+    }
+    
+    func testInitFromAndToPoint() {
+        XCTAssertEqual(CGRect(from: .point(x, y), to: .point(x + width, y + height)), rect)
     }
     
 }
@@ -81,6 +86,7 @@ extension CGRectConvenienceExtensionsTests {
 extension CGRectConvenienceExtensionsTests {
     
     func testStaticInit() {
+        XCTAssertEqual(CGRect.rect(.point(x, y), .size(width, height)), rect)
         XCTAssertEqual(CGRect.rect(x, y, width, height), rect)
     }
 }

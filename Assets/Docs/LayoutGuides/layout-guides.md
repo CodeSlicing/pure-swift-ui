@@ -9,6 +9,7 @@ Ok, brace yourselves because things are about to get a whole lot more awesome.
   - [A Transformative Approach](#a-transformative-approach)
   - [Layout Guide Properties](#layout-guide-properties)
   - [Practical Examples](#practical-examples)
+  - [Putting it all Together](#putting-it-all-together)
 
 ## What is a Layout Guide?
 
@@ -280,7 +281,7 @@ path.line(point1.to(point2, scale))
 Where scale describes where along the line between `point1` and `point2` you want to be. A Value of 0 would be equivalent to `point1` and a value of 1 is equivalent to `point2`. You can use any other value for your needs, but for animation it makes sense to focus on these two extremes. By driving this value off of `animatableData` you can make your paths animatable in impressive ways with virtually no added complexity. For example, I could animate the previous heart shape to a square and back for the following effect:
 
 <p align="center">
-<img src="heart-animation-demo.gif"  style="padding: 10px" height="250px"/>
+<img src="heart-animation-demo.gif"  style="padding: 10px" width="450px"/>
 </p>
 
 You can find the gist [here][gist-animated-heart], although it's only 20 lines of code for the drawing section.
@@ -374,7 +375,7 @@ To produce the following:
 <img src="triangle-animated-all-demo.gif"  style="padding: 10px" width="300px"/>
 </p>
 
-Both the rotation and scaling versions allow you to specify an anchor point for the transform so there really is a lot of flexibility in the effect you want to create.
+Both the rotation and scaling versions allow you to specify an anchor point for the transform so there really is a lot of flexibility in the effect you want to create. It's also worth mentioning that since the transformations are just decorators for other layout guides, there is very little performance penalty involved in utilizing them as much as you like.
 
 ## Layout Guide Properties
 
@@ -423,7 +424,87 @@ Maybe you want one of those fancy state changing icons when you successfully upl
 
 You can achieve this effect with a combination of animating the rotation of the layout guide itself, and [animating the points](#lets-get-things-moving) within the layout guide to change the arrow into a tick. Gist [here][gist-up-arrow-to-tick-icon].
 
+## Putting it all Together
 
+Something that might not be obvious from this discussion is that layout guides don't exist in a vacuum. What I mean by that is that if you are using a layout guide to construct a shape, there's nothing to stop you from referring to points within other layout guides, or other layout guides that are animating! All coordinates in a layout guide give you is a `CGPoint` after all, so even if that point is moving all over the place, it's still well defined and can be used *just like any other point*. 
+
+Here's a more complex example to demonstrate what I mean. Let's say you wanted to construct a train's wheel and a connecting rod for that wheel. In other words, something like this:
+
+<p align="center">
+<img src="train-wheel-demo.gif"  style="padding: 10px" width="300px"/>
+</p>
+
+There's a fair amount going on here, but it is simply constructed using the basic principle of connecting layout guides together and drawing lines between points defined within them. There are about eight different layout guides involved (both grid and polar) describing the various components, and that's fine because layout guides are cheap to create and use. Depending on the complexity of your design, use as many layout guides as you need to make the shape construction as easy as possible.
+
+Going back to the animation, obviously the most interesting part is the connecting rod and crank because this showcases the true power of connected layout guides so let's talk about how that's done.
+
+There are two layout guides involved for the connecting rod and crank, a grid and a polar layout. The polar layout defines the connecting point on the wheel, and the grid layout defines the connecting rod, and here's the trick: the grid layout guide's size and angle of rotation is based on the position of the point in the polar layout guide defining the crank which is itself rotating. That sounds very complicated so I've overlayed the original animation with a few of the layout guides along with the `Shape` canvas to demonstrate:
+
+<p align="center">
+<img src="train-wheel-demo-with-layout-guides.gif"  style="padding: 10px" width="330px"/>
+</p>
+
+So we've got the blue layout guide for the connecting rod, and the green layout guide defining the connecting point. I move the origin point for the blue layout guide so it's outside the main rectangle and then rotate it and size it based on the angle and distance from the origin point to the rotating connecting point on the wheel:
+
+```swift
+// fileprivate layout configs that will be used in multiple shape components
+private let wheelOrigin = UnitPoint(0.75, 0.5)
+private let connectingRodLayoutConfig = LayoutGuideConfig.grid(columns: 1, rows: 1)
+private let wheelCrankLayoutConfig = LayoutGuideConfig.polar(rings: [0.4], segments: 1, origin: wheelOrigin)
+...
+// in connecting rod shape:
+
+// polar layout that defines only one coordinate: the connecting point.
+var polar = wheelCrankLayoutConfig.layout(in: rect)
+    // rotate it by a factor defining the animation
+    .rotated(360.degrees, factor: factor)
+
+// move origin for the connecting rod layout guide outside canvas by a quarter of the width
+let rodOrigin = rect.leading.xOffset(rect.widthScaled(-0.25))
+
+// determine distance between origin and rotating connecting point
+let rodLength = polar.radius(0, 0, origin: rodOrigin)
+
+// determine the angle between origin and rotating connecting point
+let rodAngle = polar.angle(0, 0, origin: rodOrigin)
+
+// create a rectangle containing the connecting rod layout guide with
+// rodOrigin on the leading point and a size determined by the distance 
+// between the origin and rotating connecting point
+let rodRect = CGRect(rodOrigin.yOffset(-rodHeight * 0.5), .size(rodLength, rodHeight))
+
+// layout the guide within this rectangle
+let grid = connectingRodLayoutConfig.layout(in: rodRect)
+    // rotate it by the angle calculated using the leading point as an anchor
+    .rotated(-90.degrees + rodAngle, anchor: .leading)
+
+// then we just draw a rectangle around the layout guide
+path.move(grid.topLeading)
+path.line(grid.topTrailing)
+path.line(grid.bottomTrailing)
+path.line(grid.bottomLeading)
+path.closeSubpath()
+```
+
+And that's as complicated as it gets. Note once again that there is no trigonometry or explicit calculations required - it's pretty much all declarative. The other components are a lot simpler. The spokes of the wheel are done like this:
+
+```swift
+// fileprivate layout config for spokes
+private let wheelOrigin = UnitPoint(0.75, 0.5)
+private let wheelSpokesLayoutConfig = LayoutGuideConfig.polar(rings: [0.1, 0.8], segments: 16, origin: wheelOrigin)
+...
+// then in spokes shape, layout the guide in the canvas
+var polar = wheelSpokesLayoutConfig.layout(in: rect)
+    // rotate it according to the animation factor
+    .rotated(360.degrees, factor: factor)
+
+// then draw lines for each segment
+for segment in 0..<polar.yCount {
+    path.line(from: polar[0, segment], to: polar[1, segment])
+}
+```
+
+It's important to remember that you can have extremely complex designs but they can usually be broken down into simple components that can be represented by layout guides and therefore simple to build. You can check out the full gist [here][gist-animated-train-wheel] where you'll notice that none of the logic for each individual shape exceeds a handful of lines of code.
 
 I hope this guide gives you an idea of the true power of drawing shapes in [PureSwiftUI][pure-swift-ui]. I look forward to seeing what you create.
 
@@ -440,3 +521,4 @@ gists:
 [gist-animated-heart]: https://gist.github.com/CodeSlicing/0f35b7fde16890f28e2f252a75ca0c76
 [gist-rain-icon]: https://gist.github.com/CodeSlicing/e61c2d448d6c5e1e5f849e29e26e6f47
 [gist-up-arrow-to-tick-icon]: https://gist.github.com/CodeSlicing/adf9bdf6539fc00b8043b6613030a821
+[gist-animated-train-wheel]: https://gist.github.com/CodeSlicing/7b01216104d10378a47df0eb8723e0cd

@@ -232,13 +232,11 @@ private func gridLayoutPathProvider(_ gridLayout: LayoutGuide, rect: CGRect) -> 
     var path = Path()
     var layoutCopy = gridLayout
     
-    path.rect(rect)
-
     for x in 0...gridLayout.xCount {
         for y in 0...gridLayout.yCount {
 
-            path.vLine(at: layoutCopy[x, 0], length: rect.height, anchor: .top)
-            path.hLine(at: layoutCopy[0, y], length: rect.width, anchor: .leading)
+            path.line(from: layoutCopy[x, 0], to: layoutCopy[x, layoutCopy.yCount])
+            path.line(from: layoutCopy[0, y], to: layoutCopy[layoutCopy.xCount, y])
         }
     }
     return path

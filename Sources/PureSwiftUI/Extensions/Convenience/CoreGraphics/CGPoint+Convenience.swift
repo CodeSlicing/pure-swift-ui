@@ -391,31 +391,63 @@ public extension CGPoint {
     /**
      This is an expensive calculation so use with care
      */
+    @available(*, deprecated, renamed: "radiusTo")
     func calcRadiusTo(_ point: CGPoint) -> CGFloat {
-        sqrt(calcSquaredRadiusTo(point))
+        sqrt(squaredRadiusTo(point))
     }
 
+    @available(*, deprecated, renamed: "radiusTo")
     func calcRadiusTo<TX: UINumericType, TY: UINumericType>(_ x: TX, _ y: TY) -> CGFloat {
-        calcRadiusTo(CGPoint(x, y))
+        radiusTo(CGPoint(x, y))
     }
     
+    @available(*, deprecated, renamed: "squaredRadiusTo")
     func calcSquaredRadiusTo(_ point: CGPoint) -> CGFloat {
+        squaredRadiusTo(point)
+    }
+    
+    @available(*, deprecated, renamed: "squaredRadiusTo")
+    func calcSquaredRadiusTo<TX: UINumericType, TY: UINumericType>(_ x: TX, _ y: TY) -> CGFloat {
+        squaredRadiusTo(CGPoint(x, y))
+    }
+    
+    @available(*, deprecated, renamed: "angleTo")
+    func calcAngleTo(_ point: CGPoint) -> Angle {
+        angleTo(point)
+    }
+    
+    func calcAngleTo<TX: UINumericType, TY: UINumericType>(_ x: TX, _ y: TY) -> Angle {
+        angleTo(CGPoint(x, y))
+    }
+    
+    /**
+     This is an expensive calculation so use with care
+     */
+    func radiusTo(_ point: CGPoint) -> CGFloat {
+        sqrt(squaredRadiusTo(point))
+    }
+
+    func radiusTo<TX: UINumericType, TY: UINumericType>(_ x: TX, _ y: TY) -> CGFloat {
+        radiusTo(CGPoint(x, y))
+    }
+    
+    func squaredRadiusTo(_ point: CGPoint) -> CGFloat {
         let delta = point - self
         return ((delta.x ** 2) + (delta.y ** 2)).asCGFloat
     }
     
-    func calcSquaredRadiusTo<TX: UINumericType, TY: UINumericType>(_ x: TX, _ y: TY) -> CGFloat {
-        calcSquaredRadiusTo(CGPoint(x, y))
+    func squaredRadiusTo<TX: UINumericType, TY: UINumericType>(_ x: TX, _ y: TY) -> CGFloat {
+        squaredRadiusTo(CGPoint(x, y))
     }
     
-    func calcAngleTo(_ point: CGPoint) -> Angle {
+    func angleTo(_ point: CGPoint) -> Angle {
         let delta = point - self
         let angle = atan2(delta.y, delta.x).radians
         return angle + 90.degrees
     }
     
-    func calcAngleTo<TX: UINumericType, TY: UINumericType>(_ x: TX, _ y: TY) -> Angle {
-        calcAngleTo(CGPoint(x, y))
+    func angleTo<TX: UINumericType, TY: UINumericType>(_ x: TX, _ y: TY) -> Angle {
+        angleTo(CGPoint(x, y))
     }
 }
 
@@ -434,8 +466,8 @@ public extension CGPoint {
     
     func map(from: CGRect, to: CGRect) -> CGPoint {
         
-        let xScale = from.width == 0 ? x : (x - from.origin.x) / from.width
-        let yScale = from.height == 0 ? y : (y - from.origin.y) / from.height
+        let xScale = from.width == 0 ? 0 : (x - from.origin.x) / from.width
+        let yScale = from.height == 0 ? 0 : (y - from.origin.y) / from.height
         
         return CGPoint(to.xScaled(xScale), to.yScaled(yScale))
     }

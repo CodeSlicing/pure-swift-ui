@@ -56,22 +56,42 @@ public struct LayoutGuide {
         coordinator.yCount
     }
     
+    @available(*, deprecated, renamed: "radiusTo")
     public mutating func radius(_ x: Int, _ y: Int, origin: CGPoint) -> CGFloat {
-        origin.calcRadiusTo(self[x, y])
+        radiusTo(x, y, from: origin)
     }
     
-    public mutating func angle(_ x: Int, _ y: Int, origin: CGPoint) -> Angle {
-        origin.calcAngleTo(self[x, y])
-    }
-    
+    @available(*, deprecated, renamed: "radiusTo")
     public mutating func radius(_ x: Int, _ y: Int) -> CGFloat {
-        radius(x, y, origin: coordinator.baseOrigin)
+        radiusTo(x, y, from: coordinator.baseOrigin)
     }
     
+    @available(*, deprecated, renamed: "angleTo")
+    public mutating func angle(_ x: Int, _ y: Int, origin: CGPoint) -> Angle {
+        angleTo(x, y, from: origin)
+    }
+    
+    @available(*, deprecated, renamed: "angleTo")
     public mutating func angle(_ x: Int, _ y: Int) -> Angle {
-        angle(x, y, origin: coordinator.baseOrigin)
+        angleTo(x, y, from: coordinator.baseOrigin)
     }
     
+    public mutating func radiusTo(_ x: Int, _ y: Int, from: CGPoint) -> CGFloat {
+        from.radiusTo(self[x, y])
+    }
+    
+    public mutating func radiusTo(_ x: Int, _ y: Int) -> CGFloat {
+        radiusTo(x, y, from: coordinator.baseOrigin)
+    }
+    
+    public mutating func angleTo(_ x: Int, _ y: Int, from: CGPoint) -> Angle {
+        from.angleTo(self[x, y])
+    }
+    
+    public mutating func angleTo(_ x: Int, _ y: Int) -> Angle {
+        angleTo(x, y, from: coordinator.baseOrigin)
+    }
+
     internal func anchorLocation(for anchor: UnitPoint) -> CGPoint {
         return self.coordinator.anchorLocation(for: anchor, size: rect.size)
     }

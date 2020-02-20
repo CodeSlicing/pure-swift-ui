@@ -54,7 +54,7 @@ extension PolarLayoutGuideTests {
 
 extension PolarLayoutGuideTests {
     
-    func testAngleForPoint() {
+    func testDeprecatedAngleForPoint() {
         var polar = LayoutGuide.polar(rect, rings: 2, segments: 8)
         
         XCTAssertEqual(polar.angle(2, 2), 90.degrees)
@@ -64,13 +64,24 @@ extension PolarLayoutGuideTests {
         XCTAssertEqual(polar.angle(0, 0, origin: rect.bottom), 0.degrees)
         XCTAssertEqual(polar.angle(2, 6, origin: rect.center), 270.degrees)
     }
+    
+    func testAngleForPoint() {
+        var polar = LayoutGuide.polar(rect, rings: 2, segments: 8)
+        
+        XCTAssertEqual(polar.angleTo(2, 2), 90.degrees)
+        XCTAssertEqual(polar.angleTo(1, 4), 180.degrees)
+        
+        XCTAssertEqual(polar.angleTo(2, 2, from: rect.leading), 90.degrees)
+        XCTAssertEqual(polar.angleTo(0, 0, from: rect.bottom), 0.degrees)
+        XCTAssertEqual(polar.angleTo(2, 6, from: rect.center), 270.degrees)
+    }
 }
 
 // MARK: ----- RADIUS FOR POINT
 
 extension PolarLayoutGuideTests {
     
-    func testRadiusForPoint() {
+    func testDeprecatedRadiusForPoint() {
         var polar = LayoutGuide.polar(rect, rings: 2, segments: 8)
         
         XCTAssertEqual(polar.radius(2, 2), rect.halfHeight)
@@ -79,6 +90,17 @@ extension PolarLayoutGuideTests {
         XCTAssertEqual(polar.radius(2, 2, origin: rect.leading), rect.halfWidth + rect.halfHeight)
         XCTAssertEqual(polar.radius(0, 0, origin: rect.bottom), rect.halfHeight)
         XCTAssertEqual(polar.radius(2, 6, origin: rect.center), rect.halfHeight)
+    }
+    
+    func testRadiusForPoint() {
+        var polar = LayoutGuide.polar(rect, rings: 2, segments: 8)
+        
+        XCTAssertEqual(polar.radiusTo(2, 2), rect.halfHeight)
+        XCTAssertEqual(polar.radiusTo(1, 4), rect.heightScaled(0.25))
+        
+        XCTAssertEqual(polar.radiusTo(2, 2, from: rect.leading), rect.halfWidth + rect.halfHeight)
+        XCTAssertEqual(polar.radiusTo(0, 0, from: rect.bottom), rect.halfHeight)
+        XCTAssertEqual(polar.radiusTo(2, 6, from: rect.center), rect.halfHeight)
     }
 }
 
@@ -409,7 +431,7 @@ extension PolarLayoutGuideTests {
 
 extension PolarLayoutGuideTests {
     
-    func testPointsWithReframedOffset() {
+    func testDeprecatedPointsWithReframedOffsetDeprecated() {
         let polar = LayoutGuide.polar(rect, rings: [0, 0.5, 1], segments: [0, 0.5, 1])
         let offset = CGPoint(5, 10)
         

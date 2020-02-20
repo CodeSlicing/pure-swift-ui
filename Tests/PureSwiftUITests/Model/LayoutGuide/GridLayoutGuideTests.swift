@@ -54,7 +54,7 @@ extension GridLayoutGuideTests {
 
 extension GridLayoutGuideTests {
     
-    func testAngleForPoint() {
+    func testDeprecatedAngleForPoint() {
         var grid = LayoutGuide.grid(rect, columns: 10, rows: 6)
         
         XCTAssertEqual(grid.angle(10, 0), 90.degrees)
@@ -65,13 +65,25 @@ extension GridLayoutGuideTests {
         XCTAssertEqual(grid.angle(10, 3, origin: rect.center), 90.degrees)
         XCTAssertEqual(grid.angle(5, 6, origin: rect.center), 180.degrees)
     }
+    
+    func testAngleForPoint() {
+        var grid = LayoutGuide.grid(rect, columns: 10, rows: 6)
+        
+        XCTAssertEqual(grid.angleTo(10, 0), 90.degrees)
+        XCTAssertEqual(grid.angleTo(0, 10), 180.degrees)
+        
+        XCTAssertEqual(grid.angleTo(0, 3, from: rect.center), 270.degrees)
+        XCTAssertEqual(grid.angleTo(5, 0, from: rect.center), 0.degrees)
+        XCTAssertEqual(grid.angleTo(10, 3, from: rect.center), 90.degrees)
+        XCTAssertEqual(grid.angleTo(5, 6, from: rect.center), 180.degrees)
+    }
 }
 
 // MARK: ----- RADIUS FOR POINT
 
 extension GridLayoutGuideTests {
     
-    func testRadiusForPoint() {
+    func testDeprecatedRadiusForPoint() {
         var grid = LayoutGuide.grid(rect, columns: 10, rows: 6)
         
         XCTAssertEqual(grid.radius(10, 0), rect.width)
@@ -83,6 +95,20 @@ extension GridLayoutGuideTests {
         XCTAssertEqual(grid.radius(5, 0, origin: rect.center), rect.halfHeight)
         XCTAssertEqual(grid.radius(10, 3, origin: rect.center), rect.halfWidth)
         XCTAssertEqual(grid.radius(5, 6, origin: rect.center), rect.halfHeight)
+    }
+    
+    func testRadiusForPoint() {
+        var grid = LayoutGuide.grid(rect, columns: 10, rows: 6)
+        
+        XCTAssertEqual(grid.radiusTo(10, 0), rect.width)
+        XCTAssertEqual(grid.radiusTo(0, 6), rect.height)
+        XCTAssertEqual(grid.radiusTo(0, 3), rect.halfHeight)
+        XCTAssertEqual(grid.radiusTo(5, 0), rect.halfWidth)
+        
+        XCTAssertEqual(grid.radiusTo(0, 3, from: rect.center), rect.halfWidth)
+        XCTAssertEqual(grid.radiusTo(5, 0, from: rect.center), rect.halfHeight)
+        XCTAssertEqual(grid.radiusTo(10, 3, from: rect.center), rect.halfWidth)
+        XCTAssertEqual(grid.radiusTo(5, 6, from: rect.center), rect.halfHeight)
     }
 }
 
@@ -399,7 +425,7 @@ extension GridLayoutGuideTests {
 
 extension GridLayoutGuideTests {
     
-    func testPointsWithReframedOffset() {
+    func testDeprecatedPointsWithReframedOffset() {
         let grid = LayoutGuide.grid(rect, columns: [0, 0.5, 1], rows: [0, 0.5, 1])
         let offset = CGPoint(5, 10)
         
