@@ -247,12 +247,12 @@ private func polarLayoutPathProvider(_ gridLayout: LayoutGuide, rect: CGRect) ->
     var layoutCopy = gridLayout
             
     for x in 0...gridLayout.xCount {
-        path.ellipse(layoutCopy.origin, .square(layoutCopy.radius(x, 0) * 2), anchor: .center)
+        path.ellipse(layoutCopy.origin, .square(layoutCopy.radiusTo(x, 0) * 2), anchor: .center)
     }
 
-    let spokeLength = layoutCopy.radius(gridLayout.xCount, 0)
+    let spokeLength = layoutCopy.radiusTo(gridLayout.xCount, 0)
     for y in 0..<gridLayout.yCount {
-        path.line(at: layoutCopy.origin, length: spokeLength, angle: layoutCopy.angle(gridLayout.xCount, y), anchor: .topLeading)
+        path.line(at: layoutCopy.origin, length: spokeLength, angle: layoutCopy.angleTo(gridLayout.xCount, y), anchor: .topLeading)
     }
     return path
 }

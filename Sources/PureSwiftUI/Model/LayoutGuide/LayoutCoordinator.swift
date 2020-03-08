@@ -116,8 +116,8 @@ internal struct RotatedLayoutCoordinator: DecoratingLayoutCoordinator {
     }
     
     func transform(_ point: CGPoint) -> CGPoint {
-        let radiusToPoint = anchorPoint.calcRadiusTo(point)
-        let angleToPoint = anchorPoint.calcAngleTo(point)
+        let radiusToPoint = anchorPoint.radiusTo(point)
+        let angleToPoint = anchorPoint.angleTo(point)
         let resultAngle = angleToPoint + angle
         return anchorPoint.offset(radius: radiusToPoint, angle: resultAngle)
     }

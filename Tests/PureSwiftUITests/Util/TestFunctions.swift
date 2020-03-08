@@ -8,10 +8,13 @@
 import XCTest
 import PureSwiftUI
 
+func assertEqual(_ result: UnitPoint, _ expectedResult: UnitPoint, file: StaticString = #file, line: UInt = #line) {
+    assertEqual(result.asCGPoint, expectedResult.asCGPoint, file: file, line: line)
+}
+
 func assertEqual<TR: UINumericType, TE: UINumericType>(_ result: TR, _ expectedResult: TE, file: StaticString = #file, line: UInt = #line) {
     XCTAssertEqual(result.asDouble, expectedResult.asDouble, accuracy: 0.0001, file: file, line: line)
 }
-
 
 func assertEqual(_ result: Double, _ expectedResult: Double, file: StaticString = #file, line: UInt = #line) {
     XCTAssertEqual(result, expectedResult, accuracy: 0.0001, file: file, line: line)

@@ -124,6 +124,10 @@ public extension CGPoint {
     static func point<T: UINumericType>(_ size: T) -> CGPoint {
         .init(size)
     }
+    
+    static func point<T: UINumericType>(_ radius: T, _ angle: Angle) -> CGPoint {
+        calcOffset(radius: radius, angle: angle)
+    }
 }
 
 // MARK: ----- OPERATOR OVERLOADS

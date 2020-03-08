@@ -57,3 +57,39 @@ public extension Angle {
         (360.0 * scale.asDouble).degrees
     }
 }
+
+// MARK: ----- UNIT POINT CONVERSION
+
+private let maxUnitRadius = sqrt(0.5 * 0.5 + 0.5 * 0.5)
+
+private let unitPointForNamedAngle: [Angle: UnitPoint] = [
+
+    .topLeading: .topLeading,
+    .top: .top,
+    .topTrailing: .topTrailing,
+    .trailing: .trailing,
+    .bottomTrailing: .bottomTrailing,
+    .bottom: .bottom,
+    .bottomLeading: .bottomLeading,
+    .leading: .leading,
+]
+
+public extension Angle {
+    
+    var asUnitPoint: UnitPoint {
+        if let unitPoint = unitPointForNamedAngle[self] {
+            return unitPoint
+        } else {
+            var offset = calcOffset(radius: maxUnitRadius, angle: self)
+
+            if abs(offset.x) > 0.5 {
+                let ratio = 0.5 / abs(offset.x)
+                offset = offset.scaled(ratio)
+            } else if abs(offset.y) > 0.5 {
+                let ratio = 0.5 / abs(offset.y)
+                offset = offset.scaled(ratio)
+            }
+            return offset.offset(.point(0.5, 0.5)).asUnitPoint
+        }
+    }
+}

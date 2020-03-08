@@ -499,7 +499,9 @@ This project adheres to a [semantic versioning](https://semver.org) paradigm. I'
 - [1.13.1][tag-1.13.1] Add extension to CGPoint to allow transition to other points by a scale factor for animating paths. Add CG versions of colors to Color.
 - [1.13.2][tag-1.13.2] Internalized `LayoutGuide` constructor and `LayoutCoordinator` protocol until the internal API finalizes
 - [1.14.0][tag-1.14.0] Add transforms to layout guides for scaling, rotating and offsetting. Add factors to various scaling functions on convenience extensions to support animatable data in shapes. 
-
+- [1.14.1][tag-1.14.1] Add convenience constructors for `CGPoint` and `LinearGradient` and standardize various API calls.
+- [1.14.2][tag-1.14.2] Add static constructor for `CGPoint` and convenience constructor for `LinearGradient` specifying angle with further standardization of API.
+ 
 ## Licensing
 
 This project is licensed under the MIT License - see [here][mit-licence] for details.
@@ -548,6 +550,8 @@ version links:
 [tag-1.13.1]: https://github.com/CodeSlicing/pure-swift-ui/tree/1.13.1
 [tag-1.13.2]: https://github.com/CodeSlicing/pure-swift-ui/tree/1.13.2
 [tag-1.14.0]: https://github.com/CodeSlicing/pure-swift-ui/tree/1.14.0
+[tag-1.14.1]: https://github.com/CodeSlicing/pure-swift-ui/tree/1.14.1
+[tag-1.14.2]: https://github.com/CodeSlicing/pure-swift-ui/tree/1.14.2
 
 <!---
  local docs:

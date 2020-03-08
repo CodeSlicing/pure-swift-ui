@@ -42,6 +42,13 @@ extension CGPointConvenienceExtensionsTests {
         XCTAssertEqual(CGPoint.point(x, y), CGPoint(x, y))
         XCTAssertEqual(CGPoint.point(x), CGPoint(x, x))
     }
+    
+    func testStaticInitWithOffsetAndAngle() {
+        assertEqual(CGPoint.point(x, 90.degrees), CGPoint(x, 0))
+        assertEqual(CGPoint.point(x, 180.degrees), CGPoint(0, x))
+        assertEqual(CGPoint.point(x, 270.degrees), CGPoint(-x, 0))
+        assertEqual(CGPoint.point(x, 360.degrees), CGPoint(0, -x))
+    }
 }
 
 // MARK: ----- TYPE COERCION
@@ -255,8 +262,6 @@ extension CGPointConvenienceExtensionsTests {
 
         assertEqual(testPoint.offset(in: size.asCGVector, anchor: .center), testPoint.offset(-2, -1))
         assertEqual(testPoint.offset(in: size.asCGPoint, anchor: .center), testPoint.offset(-2, -1))
-
-        
     }
 }
 
