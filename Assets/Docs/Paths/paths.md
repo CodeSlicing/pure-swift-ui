@@ -6,12 +6,10 @@ Natively, working with paths is a time-consuming task that cannot be referred to
     - [Angle](#angle)
     - [CGRect](#cgrect)
     - [CGPoint](#cgpoint)
+    - [Static Initializers](#static-initializers)
     - [Path](#path)
       - [Building Blocks](#building-blocks)
-      - [Moving the current point and drawing lines](#moving-the-current-point-and-drawing-lines)
-  - [Layout Guides](#layout-guides)
-  - [Visualizing Control Points](#visualizing-control-points)
-  - [Let's Get Things Moving](#lets-get-things-moving)
+      - [Moving the Current Point and Drawing Lines](#moving-the-current-point-and-drawing-lines)
 
 ## Type Extensions
 
@@ -113,7 +111,7 @@ path.rect(rect.bottomTrailing, size, anchor: .bottomTrailing)
 
 Even is this relatively simple example, it's easy to get lost in the native SwiftUI code. In comparison I don't think it's overstating the point to say that the [PureSwiftUI][pure-swift-ui] version is practically WYSIWYG! The great news is that building paths is like joining *Lego* bricks. As each `CGRect` struct is essentially its own coordinate system, they can be used to not only construct paths, but also to navigate the canvas.
 
-Combining this capability to the power of [layout guides](#layout-guides) opens the door to the true power of the [PureSwiftUI][pure-swift-ui] path construction framework.
+Combining this capability to the power of [layout guides][docs-layout-guides] opens the door to the true power of the [PureSwiftUI][pure-swift-ui] path construction framework.
 
 A couple of other extensions worth mentioning are the `xScaled` and `yScaled` functions because they might not be obvious on first glance. These return the x or y position scaled along the width or height of the `CGRect` in question. So the center of the bottom-right rectangle would be described like so:
 
@@ -176,9 +174,24 @@ Which gives you:
 <img src="offset-with-angle-demo.png"  style="padding: 10px" width="250px"/>
 </p>
 
-We'll go over [layout guides](#layout-guides) and their associated overlays a bit later on.
+I cover layout guides and their associated overlays [here][docs-layout-guides].
 
-Feel free to browse the available extensions for [CGRect][CGRect], [CGSize][CGSize], [CGVector][CGVector], and [CGPoint][CGPoint] to see how they tie in to the architecture.
+Feel free to browse the available extensions for [CGPoint][CGPoint], [CGVector][CGVector], [CGSize][CGSize], and [CGRect][CGRect] to see how they all tie-in to the architecture.
+
+## Static Initializers
+
+For all the types mentioned, there are a handful of static initializers that make code cleaner and more descriptive. For example, it is not uncommon to want to offset something in just the X axis. Of course, You could use the various `xOffset` functions, but you could also pass a `CGPoint` with x value set to the value you want to use and with a y value set to 0. You can use static initializers to do this in a descriptive way:
+
+```swift
+// offset by 10 points in x
+.offset(.x(10))
+// offset vertically by 10 points
+.offset(.y(10))
+// or you could offset with a CGPoint like so
+.offset(.point(20, 10))
+```
+
+So for `CGPoint`, `CGVector`, and `CGSize` you can use static initializers that are named after the properties of the structs in question. `.dx`, `.dy`, and `.vector` for `CGVector`, and `.width`, `.height`, and `.size` for `CGSize`. The advantage goes beyond just code clarity since you also benefit from faster code completion when using statics.
 
 ### Path
 
@@ -188,7 +201,7 @@ Holding it all together is [Path][Path] of course, and [PureSwiftUI][pure-swift-
 
 Anything that is described by a `CGRect` like rectangles, rounded-rectangles, and ellipses, will be described as having a containing `CGRect` *or* an origin and a size. And that's it. No argument labels since they don't add additional context. Any specializations like corner radius (for rounded rectangles) will come after this with argument labels. Next is the optional `anchor` argument followed by the `transform` that defaults to the `.identity` transform a la the native SwiftUI API. You can see this in action in the previous example.
 
-#### Moving the current point and drawing lines
+#### Moving the Current Point and Drawing Lines
 
 These operations have essentially matching APIs. When no argument label is provided, the argument is interpreted as the final destination for the movement or line drawn. For example, to move to the bottom trailing point of the canvas and then draw a line to the top trailing corner you would do the following:
 
@@ -224,217 +237,7 @@ line(at: rect.center, length: 100, angle: 30.degrees, anchor: .center)
 vLine(at: rect.leading, length: rect.height, anchor: .center)
 ```
 
-That covers the majority of the API, but it's worth checking out the source if you want to know more.
-
-## Layout Guides
-
-Ok, brace yourselves because things are about to get a whole lot more awesome.
-
-Layout guides are where the rubber really meets the road, and will make your life *so* much easier. They essentially convert your drawing canvas into an addressable space in either a grid or a polar coordinate system. Once you have your layout you can simply use coordinates to refer to actual points as you're constructing your path. As always a picture paints a thousand words, so let's build an arrow to point you in the right direction.
-
-<p align="center">
-<img src="arrow-demo.png"  style="padding: 10px" width="250px"/>
-</p>
-
-The code to generate this is as follows:
-
-```swift
-let gridConfig = LayoutGuideConfig.grid(columns: [0, 0.7], rows: 3)
-
-struct PathArrowDemo: View {
-    var body: some View {
-        VStack {
-            ArrowShape()
-                .stroke(style: .init(lineWidth: 1, lineJoin: .bevel))
-                .layoutGuide(gridConfig)
-                .frame(150,50)
-        }
-    }
-}
-
-private struct ArrowShape: Shape {
-    
-    func path(in rect: CGRect) -> Path {
-        var path = Path()
-        var grid = gridConfig.layout(in: rect)
-        path.move(grid[0,1])
-        path.line(grid[1,1])
-        path.vLine(rect.top)
-        path.line(rect.trailing)
-        path.line(grid[1,3])
-        path.line(grid[1,2])
-        path.hLine(rect.leading)
-        path.closeSubpath()
-        return path
-    }
-}
-```
-
-There are several ways to initialize layouts; in this case I'm constructing a layout guide configuration as a grid of two columns and three rows. I am using specific ratios for the columns but splitting into three equidistant rows over the height of the `CGRect`.
-
-The example also demonstrates the use of a **layout guide overlay**. Layout guide overlays are representations of a layout guides overlaid onto the view or shape you apply the modifier to. This allows you to visualize exactly where the grid points are meaning you can use it as a map on which to draw your shape.
-
-The advantage of creating a layout guide configuration up front like this is that I can use the same specification to control the layout guide overlay.
-
-If I wanted, though, I could declare them both explicitly thus:
-
-```swift
-...
-SomeShapeOrView()
-    .layoutGuide(.grid(columns: [0, 0.7], rows: 3), color: .blue, lineWidth: 2, opacity: 0.2)
-...
-// and then in the Shape we could create it like so:
-var grid = LayoutGuide.grid(rect, columns: [0, 0.7], rows: 3)
-...
-```
-
-As you can see, we can also control other attributes of the layout guide overlay like its color, line-width, and opacity.
-
-As a bonus, you can control the visibility of these layout guides with an environment variable like so:
-
-```swift
-...
-// this is false by default
-.showLayoutGuides(true)
-// or .environment(\.showLayoutGuides, true)
-```
-
-But there's more...
-
-In addition to referring to points within your bespoke coordinate spaces, you can use these coordinates as a basis for *other* layout guide coordinates. In other words, you move your layout guide around another layout guide by passing in an origin for whatever point you reference, giving you infinite flexibility with minimal complexity. Let's see how you can easily create elaborate designs using this technique:
-
-```swift
-...
-let numSegments = 5
-var layout = LayoutGuide.polar(rect, rings: [0.75], segments: numSegments)
-var layoutSmall = layout.reframed(rect.scaled(0.5, at: rect.center), origin: .center)
-
-for segment in 0..<numSegments {
-    path.move(layoutSmall[0, 0, origin: layout[0, segment]])
-    for smallSegment in 0...numSegments {
-        path.line(layoutSmall[0, smallSegment, origin: layout[0, segment]])
-    }
-}
-...
-```
-Believe it or not, that's all the code you need to generate this result:
-
-<p align="center">
-<img src="./complex-layout-guide-combining-demo.png"  style="padding: 10px" width="250px"/>
-</p>
-
-I added the layout guide as an overlay on top of the preview to show how it hangs together.
-
-This is just the tip of the iceberg of what you can achieve with a combination of layout guides and the extensions that [PureSwiftUI][pure-swift-ui] provides. In fact, since so much of the raw calculation is removed, you only have to worry about *what* you want to create, rather than *how* you're going to go about creating it. The star on this shield and the detail therein (not visible on this low-res render) was extremely simple to create; I just used a couple of polar layouts to get the job done:
-
-<p align="center">
-<img src="shield-animation.gif"  style="padding: 10px"/>
-</p>
-
-You can find the gist [here][gist-shield].
-
-For segments in a polar layout guide, you can specify not only specific ratios (of revolutions), but also specific angles. The following polar layout guides are equivalent:
-
-```swift
-var polar1 = LayoutGuide.polar(rect, rings: 5, segments[0.25, 0.5])
-var polar2 = LayoutGuide.polar(rect, rings: 5, segments[.cycle(0.25), .cycle(0.5)])
-var polar3 = LayoutGuide.polar(rect, rings: 5, segments[.trailing, .bottom])
-```
-
-**Important:** Layout guides must **not** be declared as constants because they do not do calculate points eagerly. This is why there is no performance penalty in creating grids with high resolutions. Only the points you access will be created and cached, and not until you access them. So if you try to create a layout guide as a constant, and then use it, the compiler will go mad until you resolve the situation.
-
-## Visualizing Control Points
-
-One of the more challenging aspects of creating shapes is when you need to deal with control points on a curve. [PureSwiftUI][pure-swift-ui] allows you to see the control points *as you are creating your curve* which takes the guesswork out of the whole endeavor. This works by passing in a boolean to the curve functions. We can build a notch showing control points like this:
-
-```swift
-...
-var grid = LayoutGuide.grid(rect, columns: 20, rows: 4)
-
-path.move(rect.topLeading)
-path.line(grid[4, 0])
-path.curve(grid[7, 2], cp1: grid[6,0], cp2: grid[4,2], showControlPoints: true)
-path.line(grid[13, 2])
-path.curve(grid[16, 0], cp1: grid[16,2], cp2: grid[14,0], showControlPoints: true)
-path.line(rect.topTrailing)
-path.line(rect.bottomTrailing)
-path.line(rect.bottomLeading)
-path.line(rect.topLeading)
-...
-```
-
-Resulting in the following output:
-
-<p align="center">
-<img src="./notch-demo.png"  style="padding: 10px" width="250px"/>
-</p>
-
-So while designing you get a good sense of how to construct your curves and, using the layout guide, can adjust the control points appropriately.
-
-**Important:** Control points are rendered as part of the path itself. If you don't remove them before trying to fill the shape, it will looks extremely funky. In other words, control point visualization should only really be used for design-time work.
-
-Ok, let's do another one. To show just how much I love SwiftUI, we're going to draw a heart. In this case, we're going to use a grid layout guide with 8 columns and 10 rows which we can declare like so:
-
-```swift
-private let gridConfig = LayoutGuideConfig.grid(columns: 8, rows: 10)
-```
-
-And we're going to overlay the shape with a layout guide to make it easy for us:
-
-```swift
-HeartShape()
-    .stroke(style: .init(lineWidth: 2, lineJoin: .round))
-    .layoutGuide(gridConfig)
-    .frame(200)
-
-// for layout guides to be visible, remember to set the layout guide environment state:
-...
-.showLayoutGuides(true)
-...
-```
-
-Then we use the grid to add the four curves we're going to be needing and in just a few minutes end up with:
-
-<p align="center">
-<img src="heart-drawing-cp-demo.png"  style="padding: 10px" width="250px"/>
-</p>
-
-As you can see, as long as you're not using specific spacings in your layout configuration you can refer to points outside the grid - the code for drawing this heart is as simple as this:
-
-```swift
-var grid = gridConfig.layout(in: rect)
-path.move(grid[0, 3])
-path.curve(grid[4, 2], cp1: grid[0, 0], cp2: grid[3, -1], showControlPoints: showControlPoints)
-path.curve(grid[8, 3], cp1: grid[5, -1], cp2: grid[8, 0], showControlPoints: showControlPoints)
-path.curve(rect.bottom, cp1: grid[8, 5], cp2: grid[5, 7], showControlPoints: showControlPoints)
-path.curve(grid[0, 3], cp1: grid[3, 7], cp2: grid[0, 5], showControlPoints: showControlPoints)
-```
-
-Then you fill it with an appropriate color, set `showControlPoints` to `false` (or remove the parameter since it's optional and defaults to false), and either remove the layout guide or set the environment state appropriately, and the result is:
-
-<p align="center">
-<img src="heart-drawing-result.png"  style="padding: 10px" width="250px"/>
-</p>
-
-Not bad for just a handful of lines of code!
-
-## Let's Get Things Moving
-
-In addition to everything else, you can declaratively animate points by using a simple function on the `CGPoint` struct, as follows:
-
-```swift
-path.line(point1.to(point2, scale))
-```
-
-Where scale describes where along the line between `point1` and `point2` you want to be. A Value of 0 would be equivalent to `point1` and a value of 1 is equivalent to `point2`. You can use any other value for your needs, but for animation it makes sense to focus on these two extremes. By driving this value off of `animatableData` you can make your paths animatable in impressive ways with virtually no added complexity. For example, I could animate the previous heart shape to a square and back for the following effect:
-
-<p align="center">
-<img src="heart-animation-demo.gif"  style="padding: 10px" height="250px"/>
-</p>
-
-You can find the gist [here][gist-animated-heart], although it's only 20 lines of code for the drawing section.
-
-I hope this guide gives you an idea of the true power of drawing shapes in [PureSwiftUI][pure-swift-ui]. I look forward to seeing what you create.
+That covers the majority of the API, but I encourage you to check out the source if you want to know more.
 
 <!---
  external links:
@@ -452,4 +255,9 @@ gists:
 --->
 
 [gist-shield]: https://gist.github.com/CodeSlicing/af02bd37dd60252fd39acaf95d28a7d0
-[gist-animated-heart]: https://gist.github.com/CodeSlicing/0f35b7fde16890f28e2f252a75ca0c76
+
+<!---
+ local docs:
+--->
+
+[docs-layout-guides]: ../LayoutGuides/layout-guides.md

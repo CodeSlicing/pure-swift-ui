@@ -34,8 +34,22 @@ class CGVectorConvenienceExtensionsTests: XCTestCase {
 extension CGVectorConvenienceExtensionsTests {
     
     func testInit() {
-        XCTAssertEqual(CGVector(dx, dy), vector)
+        XCTAssertEqual(CGVector(dx.asInt), CGVector(dx, dx))
+        XCTAssertEqual(CGVector(dx.asInt), CGVector(dx, dx))
         XCTAssertEqual(CGVector(dx.asInt, dy.asInt), vector)
+        XCTAssertEqual(CGVector(dx.asInt, dy.asInt), vector)
+    }
+}
+
+// MARK: ----- STATIC INITIALISERS
+
+extension CGVectorConvenienceExtensionsTests {
+    
+    func testStaticInitialisers() {
+        XCTAssertEqual(.dx(dx), CGVector(dx, 0))
+        XCTAssertEqual(.dy(dy), CGVector(0, dy))
+        XCTAssertEqual(.vector(dx, dy), vector)
+        XCTAssertEqual(.vector(dx), CGVector(dx, dx))
     }
 }
 
@@ -47,6 +61,7 @@ extension CGVectorConvenienceExtensionsTests {
         XCTAssertEqual(vector.asCGRect, CGRect(0, 0, dx, dy))
         XCTAssertEqual(vector.asCGPoint, CGPoint(dx, dy))
         XCTAssertEqual(vector.asCGSize, CGSize(dx, dy))
+        XCTAssertEqual(vector.asUnitPoint, UnitPoint(dx, dy))
     }
 }
 
@@ -61,6 +76,8 @@ extension CGVectorConvenienceExtensionsTests {
         XCTAssertEqual(vector.midY, halfHeight)
         XCTAssertEqual(vector.halfWidth, halfWidth)
         XCTAssertEqual(vector.halfHeight, halfHeight)
+        XCTAssertEqual(vector.maxDimension, dy)
+        XCTAssertEqual(vector.minDimension, dx)
     }
 }
 

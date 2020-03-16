@@ -441,7 +441,9 @@ Yet another advantage, is that the symbol constants defined in [PureSwiftUI][pur
 
 ## Layout Guides and Paths
 
-[PureSwiftUI][pure-swift-ui] includes a multitude of extensions and utilities for making drawing paths a breeze. So much so that it deserves its own page. See [here][docs-paths] for a detailed explanation of how much your path drawing life can improve.
+[PureSwiftUI][pure-swift-ui] includes a multitude of extensions and utilities for making drawing paths a breeze, so much so that there are dedicated documents for this topic. See the guide on [paths][docs-paths] for a detailed explanation of the various available extensions to facilitate drawing, and the section on [layout guides][docs-layout-guides] which take the process of shape building to the next level.
+
+It is my hope that the ease with which you can construct complex shapes using [PureSwiftUI][pure-swift-ui]'s layout guides and `Path` extension framework will encourage people to explore their artistic capabilities with constructing paths rather than be turned off by the ubiquitous point calculation logic that appears in most path building example code. Without these hurdles, you really are only limited by you imagination.
 
 ## Preview Extensions
 
@@ -496,7 +498,10 @@ This project adheres to a [semantic versioning](https://semver.org) paradigm. I'
 - [1.13.0][tag-1.13.0] Add a multitude of extensions to types related to drawing paths as well as layout guides to facilitate easy `Path` construction
 - [1.13.1][tag-1.13.1] Add extension to CGPoint to allow transition to other points by a scale factor for animating paths. Add CG versions of colors to Color.
 - [1.13.2][tag-1.13.2] Internalized `LayoutGuide` constructor and `LayoutCoordinator` protocol until the internal API finalizes
-
+- [1.14.0][tag-1.14.0] Add transforms to layout guides for scaling, rotating and offsetting. Add factors to various scaling functions on convenience extensions to support animatable data in shapes. 
+- [1.14.1][tag-1.14.1] Add convenience constructors for `CGPoint` and `LinearGradient` and standardize various API calls.
+- [1.14.2][tag-1.14.2] Add static constructor for `CGPoint` and convenience constructor for `LinearGradient` specifying angle with further standardization of API.
+ 
 ## Licensing
 
 This project is licensed under the MIT License - see [here][mit-licence] for details.
@@ -544,10 +549,14 @@ version links:
 [tag-1.13.0]: https://github.com/CodeSlicing/pure-swift-ui/tree/1.13.0
 [tag-1.13.1]: https://github.com/CodeSlicing/pure-swift-ui/tree/1.13.1
 [tag-1.13.2]: https://github.com/CodeSlicing/pure-swift-ui/tree/1.13.2
+[tag-1.14.0]: https://github.com/CodeSlicing/pure-swift-ui/tree/1.14.0
+[tag-1.14.1]: https://github.com/CodeSlicing/pure-swift-ui/tree/1.14.1
+[tag-1.14.2]: https://github.com/CodeSlicing/pure-swift-ui/tree/1.14.2
 
 <!---
  local docs:
 --->
 
+[docs-layout-guides]: ./Assets/Docs/LayoutGuides/layout-guides.md
 [docs-paths]: ./Assets/Docs/Paths/paths.md
 [mit-licence]: ./Assets/Docs/LICENCE.md

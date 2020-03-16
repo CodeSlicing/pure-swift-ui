@@ -37,6 +37,20 @@ extension CGSizeConvenienceExtensionsTests {
         XCTAssertEqual(CGSize(width, height), size)
         XCTAssertEqual(CGSize(width.asInt, height.asInt), size)
         XCTAssertEqual(CGSize(width), CGSize(width, width))
+        XCTAssertEqual(CGSize(width.asInt), CGSize(width, width))
+    }
+}
+
+// MARK: ----- STATIC INITIALISERS
+
+extension CGSizeConvenienceExtensionsTests {
+    
+    func testStaticInit() {
+        XCTAssertEqual(CGSize.width(width), CGSize(width, 0))
+        XCTAssertEqual(CGSize.height(height), CGSize(0, height))
+        XCTAssertEqual(CGSize.size(width, height), CGSize(width, height))
+        XCTAssertEqual(CGSize.size(width), CGSize(width, width))
+        XCTAssertEqual(CGSize.square(width), CGSize(width, width))
     }
 }
 
@@ -48,6 +62,7 @@ extension CGSizeConvenienceExtensionsTests {
         XCTAssertEqual(size.asCGRect, CGRect(0, 0, width, height))
         XCTAssertEqual(size.asCGPoint, CGPoint(width, height))
         XCTAssertEqual(size.asCGVector, CGVector(width, height))
+        XCTAssertEqual(size.asUnitPoint, UnitPoint(width, height))
     }
 }
 
@@ -71,6 +86,7 @@ extension CGSizeConvenienceExtensionsTests {
 
     func testScaled() {
         XCTAssertEqual(size.scaled(0.5), CGSize(halfWidth, halfHeight))
+        XCTAssertEqual(size.scaled(0.2, 0.7), CGSize(width * 0.2, height * 0.7))
         XCTAssertEqual(size.widthScaled(0.5), halfWidth)
         XCTAssertEqual(size.heightScaled(0.5), halfHeight)
     }
@@ -110,5 +126,17 @@ extension CGSizeConvenienceExtensionsTests {
     func testSquare() {
         XCTAssertEqual(CGSize.square(width), CGSize(width))
         XCTAssertEqual(CGSize.square(width.asInt), CGSize(width))
+    }
+}
+
+// MARK: ----- MAP FROM ONE RECT TO ANOTHER
+
+extension CGSizeConvenienceExtensionsTests {
+    
+    func testMapForSize() {
+        let sourceRect = CGRect(40, 40, width, height)
+        let destination = CGRect(0, 0, 15, 10)
+        XCTAssertEqual(sourceRect.size.map(from: sourceRect, to: destination), destination.size)
+        assertEqual(sourceRect.sizeScaled(0.4).map(from: sourceRect, to: destination), destination.sizeScaled(0.4))
     }
 }

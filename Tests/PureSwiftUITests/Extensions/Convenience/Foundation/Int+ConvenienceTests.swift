@@ -10,6 +10,12 @@ import XCTest
 
 class IntConvenienceExtensionsTests: XCTestCase {
     
+}
+
+// MARK: ----- PROPERTIES
+
+extension IntConvenienceExtensionsTests {
+    
     func testIsPositive() {
 
         XCTAssertTrue(1.isPositive)
@@ -43,9 +49,24 @@ class IntConvenienceExtensionsTests: XCTestCase {
         XCTAssertFalse(1.isEven)
     }
     
+    func testIsOdd() {
+        XCTAssertFalse(2.isOdd)
+        XCTAssertTrue(1.isOdd)
+    }
+    
+    func testRepresentableAs() {
+        XCTAssertEqual(Int(1).asInt, Int(1))
+        XCTAssertEqual(CGFloat(1).asInt, Int(1))
+        XCTAssertEqual(Double(1).asInt, Int(1))
+        XCTAssertEqual(Float(1).asInt, Int(1))
+        XCTAssertEqual(Double(1.4).asInt, Int(1))
+        XCTAssertEqual(Float(1.7).asInt, Int(1))
+        XCTAssertEqual(Float(-1.7).asInt, Int(-1))
+    }
+    
     func testRandom() {
         
-        let value: Double = 10
+        let value = 10
         
         for _ in 0...10 {
             let result = value.random()
@@ -54,5 +75,15 @@ class IntConvenienceExtensionsTests: XCTestCase {
         }
     }
 
+}
+
+// MARK: ----- TYPE COERCION
+
+extension IntConvenienceExtensionsTests {
+    
+    func testAsString() {
+        XCTAssertEqual(1.asString, "1")
+        XCTAssertEqual((-1).asString, "-1")
+    }
 }
 

@@ -70,6 +70,19 @@ public extension CGRect {
     }
 }
 
+// MARK: ----- STATIC INITIALISERS
+
+public extension CGRect {
+    
+    static func rect(_ origin: CGPoint, _ size: CGSize) -> CGRect {
+        .init(origin, size)
+    }
+    
+    static func rect<TX: UINumericType, TY: UINumericType, TW: UINumericType, TH: UINumericType>(_ x: TX, _ y: TY, _ width: TW, _ height: TH) -> CGRect {
+        .init(x, y, width, height)
+    }
+}
+
 // MARK: ----- PROPERTIES
 
 public extension CGRect {
@@ -126,11 +139,11 @@ public extension CGRect {
     }
     
     var minDimension: CGFloat {
-        min(height, width)
+        size.minDimension
     }
 
     var maxDimension: CGFloat {
-        max(height, width)
+        size.maxDimension
     }
 
     func clampedSize<T_FROM: UINumericType, T_TO: UINumericType>(from: T_FROM, to: T_TO) -> CGSize {
@@ -311,5 +324,58 @@ public extension CGRect {
 
     func yOffset<T: UINumericType>(_ y: T) -> CGRect {
         offset(0, y)
+    }
+}
+
+// MARK: ----- OFFSET SCALED
+
+public extension CGRect {
+    
+    func offset<T: UINumericType>(anchor: UnitPoint, factor: T) -> CGRect {
+        CGRect(self.origin.offset(in: size, anchor: anchor, factor: factor), size)
+    }
+    
+    func offset(anchor: UnitPoint, factor: CGSize) -> CGRect {
+        CGRect(self.origin.offset(in: size, anchor: anchor, factor: factor), size)
+    }
+    
+    func offset<TX: UINumericType, TY: UINumericType, TS: UINumericType>(_ x: TX, _ y: TY, factor: TS) -> CGRect {
+        offset(x.asCGFloat * factor.asCGFloat, y.asCGFloat * factor.asCGFloat)
+    }
+    
+    func offset<TX: UINumericType, TY: UINumericType>(_ x: TX, _ y: TY, factor: CGSize) -> CGRect {
+        offset(x.asCGFloat * factor.x, y.asCGFloat * factor.y)
+    }
+    
+    func offset<T: UINumericType>(_ point: CGPoint, factor: T) -> CGRect {
+        offset(point.x, point.y, factor: factor)
+    }
+    
+    func offset(_ point: CGPoint, factor: CGSize) -> CGRect {
+        offset(point.x, point.y, factor: factor)
+    }
+    
+    func offset<T: UINumericType>(_ point: CGSize, factor: T) -> CGRect {
+        offset(point.width, point.height, factor: factor)
+    }
+    
+    func offset(_ point: CGSize, factor: CGSize) -> CGRect {
+        offset(point.width, point.height, factor: factor)
+    }
+    
+    func offset<T: UINumericType>(_ point: CGVector, factor: T) -> CGRect {
+        offset(point.dx, point.dy, factor: factor)
+    }
+    
+    func offset(_ point: CGVector, factor: CGSize) -> CGRect {
+        offset(point.dx, point.dy, factor: factor)
+    }
+
+    func xOffset<T: UINumericType, TS: UINumericType>(_ x: T, factor: TS) -> CGRect {
+        offset(x, 0, factor: factor)
+    }
+
+    func yOffset<T: UINumericType, TS: UINumericType>(_ y: T, factor: TS) -> CGRect {
+        offset(0, y, factor: factor)
     }
 }

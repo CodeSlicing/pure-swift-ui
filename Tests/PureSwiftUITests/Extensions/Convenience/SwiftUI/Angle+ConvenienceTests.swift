@@ -57,3 +57,30 @@ extension AngleConvenienceExtensionsTests {
         XCTAssertEqual(Angle.cycle(0.75), 270.degrees)
     }
 }
+
+// MARK: ----- AS UNIT POINT
+
+extension AngleConvenienceExtensionsTests {
+    
+    func testAsUnitPointForNamedAngles() {
+        XCTAssertEqual(Angle.topLeading.asUnitPoint, .topLeading)
+        XCTAssertEqual(Angle.top.asUnitPoint, .top)
+        XCTAssertEqual(Angle.topTrailing.asUnitPoint, .topTrailing)
+        XCTAssertEqual(Angle.trailing.asUnitPoint, .trailing)
+        XCTAssertEqual(Angle.bottomTrailing.asUnitPoint, .bottomTrailing)
+        XCTAssertEqual(Angle.bottom.asUnitPoint, .bottom)
+        XCTAssertEqual(Angle.bottomLeading.asUnitPoint, .bottomLeading)
+        XCTAssertEqual(Angle.leading.asUnitPoint, .leading)
+    }
+
+    func testAsUnitPoint() {
+        assertEqual((Angle.topLeading + 360.degrees).asUnitPoint, .topLeading)
+        assertEqual((Angle.top + 360.degrees).asUnitPoint, .top)
+        assertEqual((Angle.topTrailing + 360.degrees).asUnitPoint, .topTrailing)
+        assertEqual((Angle.trailing + 360.degrees).asUnitPoint, .trailing)
+        assertEqual((Angle.bottomTrailing + 360.degrees).asUnitPoint, .bottomTrailing)
+        assertEqual((Angle.bottom + 360.degrees).asUnitPoint, .bottom)
+        assertEqual((Angle.bottomLeading + 360.degrees).asUnitPoint, .bottomLeading)
+        assertEqual((Angle.leading + 360.degrees).asUnitPoint, .leading)
+    }
+}

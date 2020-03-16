@@ -755,7 +755,7 @@ public extension View {
 public extension View {
     
     func offsetFromAngle(baseRotation: Angle, offsetAngle: Angle, forRadius radius: Double) -> some View {
-        offset(x: xFromAngle(baseRotation + offsetAngle, forRadius: radius), y: -yFromAngle(baseRotation + offsetAngle, forRadius: radius))
+        offset(x: calcXOffset(radius: radius, angle: baseRotation + offsetAngle), y: -calcYOffset(radius: radius, angle: baseRotation + offsetAngle))
     }
     
     func offset<T: UINumericType>(radius: T, angle: Angle) -> some View {
