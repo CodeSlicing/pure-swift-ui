@@ -7,7 +7,7 @@ Natively, working with paths is a time-consuming task that cannot be referred to
     - [CGRect](#cgrect)
     - [CGPoint](#cgpoint)
     - [Static Initializers](#static-initializers)
-    - [Path](#path)
+  - [Path](#path)
       - [Building Blocks](#building-blocks)
       - [Moving the Current Point and Drawing Lines](#moving-the-current-point-and-drawing-lines)
 

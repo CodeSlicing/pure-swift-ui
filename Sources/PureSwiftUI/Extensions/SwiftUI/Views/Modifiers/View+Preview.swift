@@ -47,35 +47,66 @@ public enum PreviewDeviceName: String, CaseIterable {
 
 // MARK: ----- PREVIEW DEVICE
 
+private struct PreviewDeviceModifier: ViewModifier {
+    
+    let previewDeviceName: PreviewDeviceName
+    let displayName: String
+    
+    init(_ previewDeviceName: PreviewDeviceName, _ displayName: String) {
+        self.previewDeviceName = previewDeviceName
+        self.displayName = displayName
+    }
+    
+    func body(content: Content) -> some View {
+        content
+            .previewDevice(PreviewDevice(rawValue: previewDeviceName.rawValue))
+            .previewDisplayName(displayName)
+    }
+}
+
 public extension View {
     
     func previewDevice(_ previewDeviceName: PreviewDeviceName) -> some View {
-        previewDevice(previewDeviceName, displayName: previewDeviceName.rawValue)
+        modifier(PreviewDeviceModifier(previewDeviceName, previewDeviceName.rawValue))
     }
 
     func previewDevice(_ previewDeviceName: PreviewDeviceName, displayName: String) -> some View {
-        previewDevice(PreviewDevice(rawValue: previewDeviceName.rawValue))
-            .previewDisplayName(displayName)
+        modifier(PreviewDeviceModifier(previewDeviceName, displayName))
     }
 }
 
 // MARK: ----- LAYOUT
 
+private struct PreviewLayoutModifier: ViewModifier {
+    
+    let previewLayout: PreviewLayout
+    
+    init(_ previewLayout: PreviewLayout) {
+        self.previewLayout = previewLayout
+    }
+    
+    func body(content: Content) -> some View {
+        content
+            .previewLayout(previewLayout)
+    }
+}
+
 public extension View {
     
     func previewSizeThatFits() -> some View {
-        previewLayout(.sizeThatFits)
+        modifier(PreviewLayoutModifier(.sizeThatFits))
     }
     
     func previewFixedSize(_ size: CGSize) -> some View {
-        previewLayout(.fixed(width: size.width, height: size.height))
+        modifier(PreviewLayoutModifier(.fixed(width: size.width, height: size.height)))
     }
     
     func previewFixedSize<T: UINumericType>(_ size: T) -> some View {
-        previewLayout(.fixed(width: size.asCGFloat, height: size.asCGFloat))
+        modifier(PreviewLayoutModifier(.fixed(width: size.asCGFloat, height: size.asCGFloat)))
     }
     
     func previewFixedSize<TX: UINumericType, TY: UINumericType>(_ x: TX, _ y: TY) -> some View {
-        previewLayout(.fixed(width: x.asCGFloat, height: y.asCGFloat))
+        modifier(PreviewLayoutModifier(.fixed(width: x.asCGFloat, height: y.asCGFloat)))
     }
 }
+

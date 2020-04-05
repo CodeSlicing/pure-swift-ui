@@ -500,6 +500,14 @@ public extension View {
         shadow(radius, x: 0, y: y)
     }
     
+    func shadow<T: UINumericType>(_ radius: T, offset: CGPoint) -> some View {
+        shadow(radius, x: offset.x, y: offset.y)
+    }
+    
+    func shadow<TR: UINumericType, TO: UINumericType>(_ radius: TR, offset: TO, angle: Angle) -> some View {
+        shadow(radius, offset: .point(offset, angle))
+    }
+
     @available(*, deprecated, renamed: "shadowColor")
     func shadow<T: UINumericType, TX: UINumericType, TY: UINumericType>(_ color: Color, _ radius: T, x: TX, y: TY) -> some View {
         shadow(color: color, radius: radius.asCGFloat, x: x.asCGFloat, y: y.asCGFloat)
@@ -550,7 +558,16 @@ public extension View {
     
     func shadowColor<T: UINumericType, TY: UINumericType>(_ colorName: String, _ radius: T, y: TY) -> some View {
         shadowColor(colorName, radius, x: 0, y: y)
-    }}
+    }
+    
+    func shadowColor<T: UINumericType>(_ colorName: String, _ radius: T, offset: CGPoint) -> some View {
+        shadowColor(colorName, radius, x: offset.x, y: offset.y)
+    }
+    
+    func shadowColor<TR: UINumericType, TO: UINumericType>(_ colorName: String, _ radius: TR, offset: TO, angle: Angle) -> some View {
+        shadowColor(colorName, radius, offset: .point(offset, angle))
+    }
+}
 
 // MARK: ------ PADDING
 
@@ -639,27 +656,32 @@ public extension View {
 
 // MARK: ----- Z-INDEX
 
-public extension View {
+private struct EnvironmentColorSchemeViewModifier: ViewModifier {
     
-    func zIndex<T: UINumericType>(_ index: T) -> some View {
-        zIndex(index.asDouble)
+    let colorScheme: ColorScheme
+    
+    init(_ colorScheme: ColorScheme) {
+        self.colorScheme = colorScheme
+    }
+
+    func body(content: Content) -> some View {
+        content
+            .environment(\.colorScheme, colorScheme)
     }
 }
-
-// MARK: ----- ENVIRONMENT
 
 public extension View {
     
     func envDarkMode() -> some View {
-        environment(\.colorScheme, .dark)
+        modifier(EnvironmentColorSchemeViewModifier(.dark))
     }
 
     func envLightMode() -> some View {
-        environment(\.colorScheme, .light)
+        modifier(EnvironmentColorSchemeViewModifier(.light))
     }
     
     func envColorScheme(_ scheme: ColorScheme) -> some View {
-        environment(\.colorScheme, scheme)
+        modifier(EnvironmentColorSchemeViewModifier(scheme))
     }
 }
 
