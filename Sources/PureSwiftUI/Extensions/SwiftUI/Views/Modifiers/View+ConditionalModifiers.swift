@@ -577,6 +577,22 @@ public extension View {
         shadowIf(!condition, color: color, radius: radius.asCGFloat, x: x.asCGFloat, y: x.asCGFloat)
     }
     
+    func shadowIf<TR: UINumericType>(_ condition: Bool, color: Color? = nil, radius: TR, offset: CGPoint) -> some View {
+        shadowIf(condition, color: color, radius: radius, x: offset.x, y: offset.y)
+    }
+    
+    func shadowIfNot<TR: UINumericType>(_ condition: Bool, color: Color? = nil, radius: TR, offset: CGPoint) -> some View {
+        shadowIfNot(condition, color: color, radius: radius, x: offset.x, y: offset.y)
+    }
+    
+    func shadowIf<TR: UINumericType, T: UINumericType>(_ condition: Bool, color: Color? = nil, radius: TR, offset: T, angle: Angle) -> some View {
+        shadowIf(condition, color: color, radius: radius, offset: .point(offset, angle))
+    }
+    
+    func shadowIfNot<TR: UINumericType, T: UINumericType>(_ condition: Bool, color: Color? = nil, radius: TR, offset: T, angle: Angle) -> some View {
+        shadowIfNot(condition, color: color, radius: radius, offset: .point(offset, angle))
+    }
+
     func shadowIf<TR: UINumericType>(_ condition: Bool, color: Color? = nil, radius: TR) -> some View {
         shadowIf(condition, color: color, radius: radius, x: 0, y: 0)
     }
@@ -676,34 +692,63 @@ public extension View {
 
 // MARK: ----- ENVIRONMENT
 
+private struct EnvironmentDarkModeConditionalViewModifier: ViewModifier {
+    
+    let condition: Bool
+    
+    init(_ condition: Bool) {
+        self.condition = condition
+    }
+
+    func body(content: Content) -> some View {
+        content
+            .environment(\.colorScheme, condition ? .dark : .light)
+    }
+}
+
+private struct EnvironmentColorSchemeConditionalViewModifier: ViewModifier {
+    
+    let colorScheme: ColorScheme
+    let condition: Bool
+    
+    init(_ condition: Bool, _ colorScheme: ColorScheme) {
+        self.condition = condition
+        self.colorScheme = colorScheme
+    }
+
+    func body(content: Content) -> some View {
+        RenderIf(condition) {
+            content.environment(\.colorScheme, self.colorScheme)
+        }.elseRender {
+            content
+        }
+    }
+}
+
 public extension View {
     
     func envDarkModeIf(_ condition: Bool) -> some View {
-        environment(\.colorScheme, condition ? .dark : .light)
+        modifier(EnvironmentDarkModeConditionalViewModifier(condition))
     }
     
     func envDarkModeIfNot(_ condition: Bool) -> some View {
-        envDarkModeIf(!condition)
+        modifier(EnvironmentDarkModeConditionalViewModifier(!condition))
     }
 
     func envLightModeIf(_ condition: Bool) -> some View {
-        envDarkModeIf(!condition)
+        modifier(EnvironmentDarkModeConditionalViewModifier(!condition))
     }
     
     func envLightModeIfNot(_ condition: Bool) -> some View {
-        envLightModeIf(!condition)
+        modifier(EnvironmentDarkModeConditionalViewModifier(condition))
     }
     
-    func envColorSchemeIf(_ condition: Bool, _ scheme: ColorScheme) -> some View {
-        RenderIf(condition) {
-            self.environment(\.colorScheme, scheme)
-        }.elseRender {
-            self
-        }
+    func envColorSchemeIf(_ condition: Bool, _ colorScheme: ColorScheme) -> some View {
+        modifier(EnvironmentColorSchemeConditionalViewModifier(condition, colorScheme))
     }
     
-    func envColorSchemeIfNot(_ condition: Bool, _ scheme: ColorScheme) -> some View {
-        envColorSchemeIf(!condition, scheme)
+    func envColorSchemeIfNot(_ condition: Bool, _ colorScheme: ColorScheme) -> some View {
+        modifier(EnvironmentColorSchemeConditionalViewModifier(!condition, colorScheme))
     }
 }
 
