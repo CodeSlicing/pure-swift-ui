@@ -1,6 +1,6 @@
 //
 //  View+Preview.swift
-//  
+//
 //
 //  Created by Adam Fordyce on 16/12/2019.
 //  Copyright © 2019 Adam Fordyce. All rights reserved.
@@ -47,66 +47,42 @@ public enum PreviewDeviceName: String, CaseIterable {
 
 // MARK: ----- PREVIEW DEVICE
 
-private struct PreviewDeviceModifier: ViewModifier {
-    
-    let previewDeviceName: PreviewDeviceName
-    let displayName: String
-    
-    init(_ previewDeviceName: PreviewDeviceName, _ displayName: String) {
-        self.previewDeviceName = previewDeviceName
-        self.displayName = displayName
-    }
-    
-    func body(content: Content) -> some View {
-        content
-            .previewDevice(PreviewDevice(rawValue: previewDeviceName.rawValue))
-            .previewDisplayName(displayName)
-    }
-}
 
 public extension View {
     
+    @inlinable
     func previewDevice(_ previewDeviceName: PreviewDeviceName) -> some View {
-        modifier(PreviewDeviceModifier(previewDeviceName, previewDeviceName.rawValue))
+        previewDevice(previewDeviceName, displayName: previewDeviceName.rawValue)
     }
 
+    @inlinable
     func previewDevice(_ previewDeviceName: PreviewDeviceName, displayName: String) -> some View {
-        modifier(PreviewDeviceModifier(previewDeviceName, displayName))
+        previewDevice(PreviewDevice(rawValue: previewDeviceName.rawValue))
+            .previewDisplayName(displayName)
     }
 }
 
 // MARK: ----- LAYOUT
 
-private struct PreviewLayoutModifier: ViewModifier {
-    
-    let previewLayout: PreviewLayout
-    
-    init(_ previewLayout: PreviewLayout) {
-        self.previewLayout = previewLayout
-    }
-    
-    func body(content: Content) -> some View {
-        content
-            .previewLayout(previewLayout)
-    }
-}
-
 public extension View {
-    
+
+    @inlinable
     func previewSizeThatFits() -> some View {
-        modifier(PreviewLayoutModifier(.sizeThatFits))
+        previewLayout(.sizeThatFits)
     }
-    
+
+    @inlinable
     func previewFixedSize(_ size: CGSize) -> some View {
-        modifier(PreviewLayoutModifier(.fixed(width: size.width, height: size.height)))
+        previewLayout(.fixed(width: size.width, height: size.height))
     }
-    
+
+    @inlinable
     func previewFixedSize<T: UINumericType>(_ size: T) -> some View {
-        modifier(PreviewLayoutModifier(.fixed(width: size.asCGFloat, height: size.asCGFloat)))
+        previewLayout(.fixed(width: size.asCGFloat, height: size.asCGFloat))
     }
-    
+
+    @inlinable
     func previewFixedSize<TX: UINumericType, TY: UINumericType>(_ x: TX, _ y: TY) -> some View {
-        modifier(PreviewLayoutModifier(.fixed(width: x.asCGFloat, height: y.asCGFloat)))
+        previewLayout(.fixed(width: x.asCGFloat, height: y.asCGFloat))
     }
 }
-

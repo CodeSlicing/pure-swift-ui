@@ -1,8 +1,9 @@
 //
-//  File.swift
-//  
+//  LayoutGuideEnvironment.swift
+//
 //
 //  Created by Adam Fordyce on 04/02/2020.
+//  Copyright © 2020 Adam Fordyce. All rights reserved.
 //
 
 import SwiftUI
@@ -41,10 +42,12 @@ public extension EnvironmentValues {
 
 public extension View {
     
+    @inlinable
     func showLayoutGuides(_ value: Bool) -> some View {
         environment(\.showLayoutGuides, value)
     }
     
+    @inlinable
     func showControlPoints(_ value: Bool) -> some View {
         environment(\.showControlPoints, value)
     }

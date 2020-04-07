@@ -501,6 +501,7 @@ This project adheres to a [semantic versioning](https://semver.org) paradigm. I'
 - [1.14.0][tag-1.14.0] Add transforms to layout guides for scaling, rotating and offsetting. Add factors to various scaling functions on convenience extensions to support animatable data in shapes. 
 - [1.14.1][tag-1.14.1] Add convenience constructors for `CGPoint` and `LinearGradient` and standardize various API calls.
 - [1.14.2][tag-1.14.2] Add static constructor for `CGPoint` and convenience constructor for `LinearGradient` specifying angle with further standardization of API.
+- [1.15.0][tag-1.15.0] Fix for segmentation fault in Xcode 11.4 and Cocoapods support
  
 ## Licensing
 
@@ -552,6 +553,7 @@ version links:
 [tag-1.14.0]: https://github.com/CodeSlicing/pure-swift-ui/tree/1.14.0
 [tag-1.14.1]: https://github.com/CodeSlicing/pure-swift-ui/tree/1.14.1
 [tag-1.14.2]: https://github.com/CodeSlicing/pure-swift-ui/tree/1.14.2
+[tag-1.15.0]: https://github.com/CodeSlicing/pure-swift-ui/tree/1.15.0
 
 <!---
  local docs:

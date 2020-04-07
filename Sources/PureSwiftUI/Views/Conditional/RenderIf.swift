@@ -9,14 +9,15 @@ import SwiftUI
 
 public struct RenderIf<IfContent: View>: View {
     
-    let render: Bool
-    let ifContent: () -> IfContent
+    public let render: Bool
+    public let ifContent: () -> IfContent
 
     public init(_ render: Bool, @ViewBuilder content ifContent: @escaping () -> IfContent) {
         self.render = render
         self.ifContent = ifContent
     }
-    
+
+    @inlinable
     public var body: some View {
         if render {
             return IfContent?.some(ifContent())
@@ -25,8 +26,9 @@ public struct RenderIf<IfContent: View>: View {
         }
     }
     
+    @inlinable
     public func elseRender<ElseContent: View>(@ViewBuilder content elseContent: @escaping () -> ElseContent) -> some View {
-        Builder {
+        RenderIfBuilder {
             if self.render {
                 ifContent()
             } else {
@@ -36,15 +38,15 @@ public struct RenderIf<IfContent: View>: View {
     }
 }
 
-internal struct Builder<Content: View>: View {
+public struct RenderIfBuilder<Content: View>: View {
     
     var content: Content
     
-    init(@ViewBuilder content: () -> Content) {
+    public init(@ViewBuilder content: () -> Content) {
         self.content = content()
     }
     
-    var body: some View {
+    public var body: some View {
         content
     }
 }
