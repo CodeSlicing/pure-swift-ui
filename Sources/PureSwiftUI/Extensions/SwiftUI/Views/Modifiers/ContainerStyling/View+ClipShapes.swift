@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-private struct ClipShapeWithNoFillViewModifier<S: Shape>: ViewModifier {
+struct ClipShapeWithNoFillViewModifier<S: Shape>: ViewModifier {
     
     let shape: S
     let constrainGestures: Bool
@@ -20,7 +20,7 @@ private struct ClipShapeWithNoFillViewModifier<S: Shape>: ViewModifier {
     }
 }
 
-private struct ClipShapeWithFillViewModifier<S: Shape, SS: ShapeStyle>: ViewModifier {
+struct ClipShapeWithFillViewModifier<S: Shape, SS: ShapeStyle>: ViewModifier {
     
     let shape: S
     let fill: SS
