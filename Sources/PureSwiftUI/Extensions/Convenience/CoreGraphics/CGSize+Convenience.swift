@@ -147,3 +147,18 @@ public extension CGSize {
         return CGSize(relativeOffsetWidth * to.width, relativeOffsetHeight * to.height)
     }
 }
+
+// MARK: ----- TO WITH FACTOR
+
+public extension CGSize {
+
+    func to<T: UINumericType>(_ destination: CGSize, _ factor: T) -> CGSize {
+        to(destination, .square(factor))
+    }
+    
+    func to(_ destination: CGSize, _ factor: CGSize) -> CGSize {
+        let deltaX = destination.x - self.x
+        let deltaY = destination.y - self.y
+        return CGSize(self.x + deltaX * factor.x, self.y + deltaY * factor.y)
+    }
+}

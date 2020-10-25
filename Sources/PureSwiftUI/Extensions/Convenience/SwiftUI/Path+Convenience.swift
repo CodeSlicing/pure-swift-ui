@@ -300,11 +300,11 @@ public extension Path {
 
 public extension Path {
     
-    mutating func rect(_ rect: CGRect, anchor: UnitPoint = .topLeading, transform: CGAffineTransform = .identity) {
+    mutating func rect(_ rect: CGRect, anchor: UnitPoint, transform: CGAffineTransform = .identity) {
         self.rect(rect.offset(anchor: anchor), transform: transform)
     }
     
-    mutating func rect(_ origin: CGPoint, _ size: CGSize, anchor: UnitPoint = .topLeading, transform: CGAffineTransform = .identity) {
+    mutating func rect(_ origin: CGPoint, _ size: CGSize, anchor: UnitPoint, transform: CGAffineTransform = .identity) {
         rect(CGRect(origin.offset(in: size, anchor: anchor), size), transform: transform)
     }
 }
@@ -344,15 +344,15 @@ public extension Path {
     }
 }
 
-// MARK: ----- ROUNDED RECT AT WITH CORNER SIZE
+// MARK: ----- ROUNDED RECT WITH CORNER SIZE AND ANCHOR
 
 public extension Path {
     
-    mutating func roundedRect(_ rect: CGRect, cornerSize: CGSize, anchor: UnitPoint = .topLeading, transform: CGAffineTransform = .identity) {
+    mutating func roundedRect(_ rect: CGRect, cornerSize: CGSize, anchor: UnitPoint, transform: CGAffineTransform = .identity) {
         roundedRect(rect.offset(anchor: anchor), cornerSize: cornerSize, transform: transform)
     }
     
-    mutating func roundedRect(_ origin: CGPoint, _ size: CGSize, cornerSize: CGSize, anchor: UnitPoint = .topLeading, transform: CGAffineTransform = .identity) {
+    mutating func roundedRect(_ origin: CGPoint, _ size: CGSize, cornerSize: CGSize, anchor: UnitPoint, transform: CGAffineTransform = .identity) {
         roundedRect(CGRect(origin.offset(in: size, anchor: anchor), size), cornerSize: cornerSize, transform: transform)
     }
 }
@@ -361,11 +361,11 @@ public extension Path {
 
 public extension Path {
     
-    mutating func roundedRect<TR: UINumericType>(_ rect: CGRect, cornerRadius: TR, anchor: UnitPoint = .topLeading, transform: CGAffineTransform = .identity) {
+    mutating func roundedRect<TR: UINumericType>(_ rect: CGRect, cornerRadius: TR, anchor: UnitPoint, transform: CGAffineTransform = .identity) {
         roundedRect(rect.offset(anchor: anchor), cornerSize: .square(cornerRadius), transform: transform)
     }
 
-    mutating func roundedRect<TR: UINumericType>(_ origin: CGPoint, _ size: CGSize, cornerRadius: TR, anchor: UnitPoint = .topLeading, transform: CGAffineTransform = .identity) {
+    mutating func roundedRect<TR: UINumericType>(_ origin: CGPoint, _ size: CGSize, cornerRadius: TR, anchor: UnitPoint, transform: CGAffineTransform = .identity) {
         roundedRect(CGRect(origin.offset(in: size, anchor: anchor), size), cornerSize: .square(cornerRadius), transform: transform)
     }
 }
@@ -387,12 +387,40 @@ public extension Path {
 
 public extension Path {
 
-    mutating func ellipse(_ rect: CGRect, anchor: UnitPoint = .topLeading, transform: CGAffineTransform = .identity) {
+    mutating func ellipse(_ rect: CGRect, anchor: UnitPoint, transform: CGAffineTransform = .identity) {
         ellipse(rect.offset(anchor: anchor), transform: transform)
     }
 
-    mutating func ellipse(_ origin: CGPoint, _ size: CGSize, anchor: UnitPoint = .topLeading, transform: CGAffineTransform = .identity) {
+    mutating func ellipse(_ origin: CGPoint, _ size: CGSize, anchor: UnitPoint, transform: CGAffineTransform = .identity) {
         ellipse(CGRect(origin.offset(in: size, anchor: anchor), size), transform: transform)
+    }
+    
+}
+
+// MARK: ----- CIRCLE
+
+public extension Path {
+    
+    mutating func circle(_ rect: CGRect, transform: CGAffineTransform = .identity) {
+        addEllipse(in: rect, transform: transform)
+    }
+    
+    mutating func circle<TS: UINumericType>(_ origin: CGPoint, _ size: TS, transform: CGAffineTransform = .identity) {
+        circle(origin, size, anchor: .center)
+    }
+}
+
+// MARK: ----- CIRCLE WITH ANCHOR
+
+public extension Path {
+
+    mutating func circle(_ rect: CGRect, anchor: UnitPoint, transform: CGAffineTransform = .identity) {
+        circle(rect.offset(anchor: anchor), transform: transform)
+    }
+
+    mutating func circle<TS: UINumericType>(_ origin: CGPoint, _ size: TS, anchor: UnitPoint, transform: CGAffineTransform = .identity) {
+        let squareCGSize: CGSize = .square(size * 2)
+        circle(CGRect(origin.offset(in: squareCGSize, anchor: anchor), squareCGSize), transform: transform)
     }
     
 }

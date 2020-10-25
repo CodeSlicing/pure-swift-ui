@@ -13,3 +13,12 @@ public extension CGFloat {
         self * CGFloat.random(in: 0...1)
     }
 }
+
+// MARK: ----- TO WITH FACTOR
+
+public extension CGFloat {
+
+    func to<T: UINumericType>(_ destination: CGFloat, _ factor: T) -> CGFloat {
+        CGFloat((destination - self) * factor.asCGFloat)
+    }
+}

@@ -2,6 +2,7 @@
 //  Color+Convenience.swift
 //
 //  Created by Adam Fordyce on 08/02/2020.
+//  Copyright © 2020 Adam Fordyce. All rights reserved.
 //
 
 // MARK: ----- PURE COLORS
@@ -19,4 +20,13 @@ public extension Color {
     static let cgGray = Color(white: 0.5)
     static let cgLightGray = Color(white: 0.667)
     static let cgDarkGray = Color(white: 0.333)
+}
+
+// MARK: ----- OPACITY
+
+public extension Color {
+    
+    func opacity<T: UINumericType>(_ opacity: T) -> Color {
+        self.opacity(opacity.asDouble)
+    }
 }

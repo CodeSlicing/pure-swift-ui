@@ -59,7 +59,7 @@ public extension CGRect {
     }
 }
 
-// MARK: ----- INIT FROM TO POINT
+// MARK: ----- INIT FROM POINT TO POINT
 
 public extension CGRect {
     
@@ -70,9 +70,12 @@ public extension CGRect {
     }
 }
 
-// MARK: ----- STATIC INITIALISERS
-
+// MARK: ----- STATIC INITIALISER
 public extension CGRect {
+    
+    static func rect(from: CGPoint, to: CGPoint) -> CGRect {
+        .init(from: from, to: to)
+    }
     
     static func rect(_ origin: CGPoint, _ size: CGSize) -> CGRect {
         .init(origin, size)
@@ -377,5 +380,21 @@ public extension CGRect {
 
     func yOffset<T: UINumericType, TS: UINumericType>(_ y: T, factor: TS) -> CGRect {
         offset(0, y, factor: factor)
+    }
+}
+
+// MARK: ----- TO WITH FACTOR
+
+public extension CGRect {
+
+    func to<T: UINumericType>(_ destination: CGRect, _ factor: T) -> CGRect {
+        to(destination, .square(factor))
+    }
+    
+    func to(_ destination: CGRect, _ factor: CGSize) -> CGRect {
+        CGRect(
+            from: origin.to(destination.origin, factor),
+            to: bottomTrailing.to(destination.bottomTrailing, factor)
+        )
     }
 }
