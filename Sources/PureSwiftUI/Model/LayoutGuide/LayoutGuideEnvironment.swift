@@ -42,12 +42,10 @@ public extension EnvironmentValues {
 
 public extension View {
     
-    @inlinable
     func showLayoutGuides(_ value: Bool) -> some View {
         environment(\.showLayoutGuides, value)
     }
     
-    @inlinable
     func showControlPoints(_ value: Bool) -> some View {
         environment(\.showControlPoints, value)
     }
