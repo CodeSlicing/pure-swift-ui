@@ -3,6 +3,7 @@
 //  
 //
 //  Created by Adam Fordyce on 04/02/2020.
+//  Copyright © 2020 Adam Fordyce. All rights reserved.
 //
 
 import Foundation
@@ -170,7 +171,51 @@ public extension LayoutGuideConfig {
     }
 }
 
-// MARK: ----- PLANE CONFIGURATIONS
+// MARK: ----- XSCALED
+
+public extension LayoutGuideConfig {
+    
+    func xScaled<T: UINumericType>(_ scale: T, anchor: UnitPoint = .center) -> LayoutGuideConfig {
+        xScaled(scale, anchor: anchor, factor: 1)
+    }
+    
+    func xScaled<TS: UINumericType, TF: UINumericType>(_ scale: TS, anchor: UnitPoint = .center, factor: TF) -> LayoutGuideConfig {
+        scaled(.size(scale, 1), anchor: anchor, factor: factor)
+    }
+}
+
+// MARK: ----- XSCALED FROM TO
+
+public extension LayoutGuideConfig {
+    
+    func xScaled<TFS: UINumericType, TTS: UINumericType, TF: UINumericType>(from fromScale: TFS, to toScale: TTS, anchor: UnitPoint = .center, factor: TF) -> LayoutGuideConfig {
+        scaled(from: .size(fromScale, 1), to: .size(toScale, 1), anchor: anchor, factor: factor)
+    }
+}
+
+// MARK: ----- YSCALED
+
+public extension LayoutGuideConfig {
+    
+    func yScaled<T: UINumericType>(_ scale: T, anchor: UnitPoint = .center) -> LayoutGuideConfig {
+        yScaled(scale, anchor: anchor, factor: 1)
+    }
+    
+    func yScaled<TS: UINumericType, TF: UINumericType>(_ scale: TS, anchor: UnitPoint = .center, factor: TF) -> LayoutGuideConfig {
+        scaled(.size(1, scale), anchor: anchor, factor: factor)
+    }
+}
+
+// MARK: ----- YSCALED FROM TO
+
+public extension LayoutGuideConfig {
+    
+    func yScaled<TFS: UINumericType, TTS: UINumericType, TF: UINumericType>(from fromScale: TFS, to toScale: TTS, anchor: UnitPoint = .center, factor: TF) -> LayoutGuideConfig {
+        scaled(from: .size(1, fromScale), to: .size(1, toScale), anchor: anchor, factor: factor)
+    }
+}
+
+// MARK: ----- GRID CONFIGURATIONS
 
 public extension LayoutGuideConfig {
     

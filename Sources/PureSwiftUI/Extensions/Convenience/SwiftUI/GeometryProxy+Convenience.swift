@@ -25,6 +25,10 @@ public extension GeometryProxy {
         height * scale.asCGFloat
     }
     
+    func sizeScaled<T: UINumericType>(_ scale: T) -> CGSize {
+        size.scaled(scale)
+    }
+    
     var localFrame: CGRect {
         frame(in: .local)
     }

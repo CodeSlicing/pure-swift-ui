@@ -6,7 +6,7 @@
 //  Copyright © 2019 Adam Fordyce. All rights reserved.
 //
 
-public enum SFSymbolName: String, CaseIterable {
+public enum SFSymbolName: String, CaseIterable, Comparable {
     case _0_circle = "0.circle"
     case _0_circle_fill = "0.circle.fill"
     case _0_square = "0.square"
@@ -6740,7 +6740,7 @@ public enum SFSymbolName: String, CaseIterable {
         return localAllCases
     }()
 
-    static func < (lhs: SFSymbolName, rhs: SFSymbolName) -> Bool {
+    public static func < (lhs: SFSymbolName, rhs: SFSymbolName) -> Bool {
         return lhs.rawValue < rhs.rawValue
     }
 }

@@ -335,3 +335,54 @@ public extension LayoutGuide {
     }
 }
 
+// MARK: ----- XSCALED
+
+public extension LayoutGuide {
+        
+    func xScaled<T: UINumericType>(_ scale: T, anchor: UnitPoint = .center) -> LayoutGuide {
+        xScaled(scale, anchor: anchor, factor: 1.asCGFloat)
+    }
+    
+    func xScaled<TS: UINumericType, TF: UINumericType>(_ scale: TS, anchor: UnitPoint = .center, factor: TF) -> LayoutGuide {
+        scaled(.size(scale, 1), anchor: anchor, factor: factor)
+    }
+}
+
+// MARK: ----- XSCALED FROM TO
+
+public extension LayoutGuide {
+        
+    func xScaled<T: UINumericType>(from fromScale: CGFloat, to toScale: CGFloat, anchor: UnitPoint = .center, factor: T) -> LayoutGuide {
+        return xScaled(fromScale.to(toScale, factor), anchor: anchor)
+    }
+    
+    func xScaled<TFS: UINumericType, TTS: UINumericType, TF: UINumericType>(from fromScale: TFS, to toScale: TTS, anchor: UnitPoint = .center, factor: TF) -> LayoutGuide {
+        xScaled(from: fromScale.asCGFloat, to: toScale.asCGFloat, anchor: anchor, factor: factor)
+    }
+}
+
+// MARK: ----- YSCALED
+
+public extension LayoutGuide {
+    
+    func yScaled<T: UINumericType>(_ scale: T, anchor: UnitPoint = .center) -> LayoutGuide {
+        xScaled(scale.asCGFloat, anchor: anchor)
+    }
+    
+    func yScaled<TS: UINumericType, TF: UINumericType>(_ scale: TS, anchor: UnitPoint = .center, factor: TF) -> LayoutGuide {
+        scaled(.size(1, scale), anchor: anchor, factor: factor)
+    }
+}
+
+// MARK: ----- YSCALED FROM TO
+
+public extension LayoutGuide {
+        
+    func yScaled<T: UINumericType>(from fromScale: CGFloat, to toScale: CGFloat, anchor: UnitPoint = .center, factor: T) -> LayoutGuide {
+        return yScaled(fromScale.to(toScale, factor), anchor: anchor)
+    }
+    
+    func yScaled<TFS: UINumericType, TTS: UINumericType, TF: UINumericType>(from fromScale: TFS, to toScale: TTS, anchor: UnitPoint = .center, factor: TF) -> LayoutGuide {
+        yScaled(from: fromScale.asCGFloat, to: toScale.asCGFloat, anchor: anchor, factor: factor)
+    }
+}
