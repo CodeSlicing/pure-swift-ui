@@ -30,3 +30,16 @@ public extension Color {
         self.opacity(opacity.asDouble)
     }
 }
+
+// MARK: ----- STATIC INITIALISERS
+
+public extension Color {
+    
+    static func rgb(_ red: Double, _ green: Double, _ blue: Double) -> Color {
+        Color(red: red / 255, green: green / 255, blue: blue / 255)
+    }
+    
+    static func hsb(_ hue: Double, _ saturation: Double, _ brightness: Double) -> Color {
+        Color(hue: hue, saturation: saturation, brightness: brightness)
+    }
+}
