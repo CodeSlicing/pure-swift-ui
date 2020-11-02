@@ -866,6 +866,44 @@ extension PolarLayoutGuideTests {
         assertEqual(polarScaled[2, 1], rect.center.xOffset(rect.height))
     }
     
+    func testPointsWithXScale() {
+        let polar = LayoutGuide.polar(rect, rings: [0, 0.5, 1], segments: [0, 0.25, 0.5])
+        
+        var polarScaled = polar.xScaled(2, factor: 0)
+        assertEqual(polarScaled[0, 0], rect.center)
+        assertEqual(polarScaled[2, 0], rect.top)
+        assertEqual(polarScaled[2, 1], rect.center.xOffset(rect.halfHeight))
+        
+        polarScaled = polar.xScaled(2, factor: 0.5)
+        assertEqual(polarScaled[0, 0], rect.center)
+        assertEqual(polarScaled[2, 0], rect.top)
+        assertEqual(polarScaled[2, 1], rect.center.xOffset(rect.heightScaled(0.75)))
+        
+        polarScaled = polar.xScaled(2)
+        assertEqual(polarScaled[0, 0], rect.center)
+        assertEqual(polarScaled[2, 0], rect.top)
+        assertEqual(polarScaled[2, 1], rect.center.xOffset(rect.height))
+    }
+
+    func testPointsWithYScale() {
+        let polar = LayoutGuide.polar(rect, rings: [0, 0.5, 1], segments: [0, 0.25, 0.5])
+        
+        var polarScaled = polar.yScaled(2, factor: 0)
+        assertEqual(polarScaled[0, 0], rect.center)
+        assertEqual(polarScaled[2, 0], rect.top)
+        assertEqual(polarScaled[2, 1], rect.center.xOffset(rect.halfHeight))
+        
+        polarScaled = polar.yScaled(2, factor: 0.5)
+        assertEqual(polarScaled[0, 0], rect.center)
+        assertEqual(polarScaled[2, 0], rect.top.yOffset(-rect.heightScaled(0.25)))
+        assertEqual(polarScaled[2, 1], rect.center.xOffset(rect.halfHeight))
+        
+        polarScaled = polar.yScaled(2)
+        assertEqual(polarScaled[0, 0], rect.center)
+        assertEqual(polarScaled[2, 0], rect.top.yOffset(-rect.halfHeight))
+        assertEqual(polarScaled[2, 1], rect.center.xOffset(rect.halfHeight))
+    }
+    
     func testPointsWithScaleWithConfig() {
         let polarConfig = LayoutGuideConfig.polar(rings: [0, 0.5, 1], segments: [0, 0.25, 0.5])
         
@@ -892,6 +930,62 @@ extension PolarLayoutGuideTests {
         assertEqual(polarScaled[0, 0], rect.center)
         assertEqual(polarScaled[2, 0], rect.top.yOffset(-rect.halfHeight))
         assertEqual(polarScaled[2, 1], rect.center.xOffset(rect.height))
+    }
+    
+    func testPointsWithXScaleWithConfig() {
+        let polarConfig = LayoutGuideConfig.polar(rings: [0, 0.5, 1], segments: [0, 0.25, 0.5])
+        
+        var polarScaled = polarConfig
+            .xScaled(2, factor: 0)
+            .layout(in: rect)
+        
+        assertEqual(polarScaled[0, 0], rect.center)
+        assertEqual(polarScaled[2, 0], rect.top)
+        assertEqual(polarScaled[2, 1], rect.center.xOffset(rect.halfHeight))
+        
+        polarScaled = polarConfig
+            .xScaled(2, factor: 0.5)
+            .layout(in: rect)
+        
+        assertEqual(polarScaled[0, 0], rect.center)
+        assertEqual(polarScaled[2, 0], rect.top)
+        assertEqual(polarScaled[2, 1], rect.center.xOffset(rect.heightScaled(0.75)))
+        
+        polarScaled = polarConfig
+            .xScaled(2)
+            .layout(in: rect)
+        
+        assertEqual(polarScaled[0, 0], rect.center)
+        assertEqual(polarScaled[2, 0], rect.top)
+        assertEqual(polarScaled[2, 1], rect.center.xOffset(rect.height))
+    }
+    
+    func testPointsWithYScaleWithConfig() {
+        let polarConfig = LayoutGuideConfig.polar(rings: [0, 0.5, 1], segments: [0, 0.25, 0.5])
+        
+        var polarScaled = polarConfig
+            .yScaled(2, factor: 0)
+            .layout(in: rect)
+        
+        assertEqual(polarScaled[0, 0], rect.center)
+        assertEqual(polarScaled[2, 0], rect.top)
+        assertEqual(polarScaled[2, 1], rect.center.xOffset(rect.halfHeight))
+        
+        polarScaled = polarConfig
+            .yScaled(2, factor: 0.5)
+            .layout(in: rect)
+        
+        assertEqual(polarScaled[0, 0], rect.center)
+        assertEqual(polarScaled[2, 0], rect.top.yOffset(-rect.heightScaled(0.25)))
+        assertEqual(polarScaled[2, 1], rect.center.xOffset(rect.halfHeight))
+        
+        polarScaled = polarConfig
+            .yScaled(2)
+            .layout(in: rect)
+        
+        assertEqual(polarScaled[0, 0], rect.center)
+        assertEqual(polarScaled[2, 0], rect.top.yOffset(-rect.halfHeight))
+        assertEqual(polarScaled[2, 1], rect.center.xOffset(rect.halfHeight))
     }
 
     func testPointsWithScaleForRelativeReframed() {

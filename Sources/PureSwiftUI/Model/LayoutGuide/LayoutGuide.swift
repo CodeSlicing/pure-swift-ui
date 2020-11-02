@@ -8,7 +8,6 @@
 public struct LayoutGuide {
     
     internal var coordinator: LayoutCoordinator
-    private var points: [LayoutKey: CGPoint] = [:]
     public let rect: CGRect
     
     internal init(_ coordinator: LayoutCoordinator, rect: CGRect) {
@@ -17,34 +16,20 @@ public struct LayoutGuide {
     }
     
     var origin: CGPoint {
-        self.coordinator.baseOrigin
+        coordinator.baseOrigin
     }
 
     public subscript(x: Int, y: Int, origin origin: CGPoint) -> CGPoint {
-        mutating get {
-            pointForCoordinates(x, y, origin: origin)
+        get {
+            let point = self[x, y]
+            let delta = origin - coordinator.baseOrigin
+            return point.offset(delta)
         }
     }
 
     public subscript(x: Int, y: Int) -> CGPoint {
-        mutating get {
-            pointForCoordinates(x, y)
-        }
-    }
-    
-    private mutating func pointForCoordinates(_ x: Int, _ y: Int, origin: CGPoint? = nil) -> CGPoint {
-        let originToUse = origin ?? self.coordinator.baseOrigin
-        let key = LayoutKey.from(originToUse, x, y)
-        if let point = points[key] {
-            return point
-        } else {
-            var point = self.coordinator[x, y]
-            if let origin = origin {
-                let delta = origin - self.coordinator.baseOrigin
-                point = point.offset(delta)
-            }
-            points[key] = point
-            return point
+        get {
+            coordinator[x, y]
         }
     }
     
@@ -57,43 +42,43 @@ public struct LayoutGuide {
     }
     
     @available(*, deprecated, renamed: "radiusTo")
-    public mutating func radius(_ x: Int, _ y: Int, origin: CGPoint) -> CGFloat {
+    public func radius(_ x: Int, _ y: Int, origin: CGPoint) -> CGFloat {
         radiusTo(x, y, from: origin)
     }
     
     @available(*, deprecated, renamed: "radiusTo")
-    public mutating func radius(_ x: Int, _ y: Int) -> CGFloat {
+    public func radius(_ x: Int, _ y: Int) -> CGFloat {
         radiusTo(x, y, from: coordinator.baseOrigin)
     }
     
     @available(*, deprecated, renamed: "angleTo")
-    public mutating func angle(_ x: Int, _ y: Int, origin: CGPoint) -> Angle {
+    public func angle(_ x: Int, _ y: Int, origin: CGPoint) -> Angle {
         angleTo(x, y, from: origin)
     }
     
     @available(*, deprecated, renamed: "angleTo")
-    public mutating func angle(_ x: Int, _ y: Int) -> Angle {
+    public func angle(_ x: Int, _ y: Int) -> Angle {
         angleTo(x, y, from: coordinator.baseOrigin)
     }
     
-    public mutating func radiusTo(_ x: Int, _ y: Int, from: CGPoint) -> CGFloat {
+    public func radiusTo(_ x: Int, _ y: Int, from: CGPoint) -> CGFloat {
         from.radiusTo(self[x, y])
     }
     
-    public mutating func radiusTo(_ x: Int, _ y: Int) -> CGFloat {
+    public func radiusTo(_ x: Int, _ y: Int) -> CGFloat {
         radiusTo(x, y, from: coordinator.baseOrigin)
     }
     
-    public mutating func angleTo(_ x: Int, _ y: Int, from: CGPoint) -> Angle {
+    public func angleTo(_ x: Int, _ y: Int, from: CGPoint) -> Angle {
         from.angleTo(self[x, y])
     }
     
-    public mutating func angleTo(_ x: Int, _ y: Int) -> Angle {
+    public func angleTo(_ x: Int, _ y: Int) -> Angle {
         angleTo(x, y, from: coordinator.baseOrigin)
     }
 
     internal func anchorLocation(for anchor: UnitPoint) -> CGPoint {
-        return self.coordinator.anchorLocation(for: anchor, size: rect.size)
+        coordinator.anchorLocation(for: anchor, size: rect.size)
     }
 }
 
@@ -135,30 +120,6 @@ public extension LayoutGuide {
 
     var center: CGPoint {
         coordinator.center
-    }
-}
-
-private struct LayoutKey: Hashable {
-    
-    private let values: (origin: CGPoint, x: Int, y: Int)
-    
-    private init(_ origin: CGPoint, _ x: Int, _ y: Int) {
-        values = (origin, x, y)
-    }
-    
-    static func == (lhs: LayoutKey, rhs: LayoutKey) -> Bool {
-        lhs.values == rhs.values
-    }
-
-    static func from(_ origin: CGPoint, _ x: Int, _ y: Int) -> LayoutKey {
-        return LayoutKey(origin, x, y)
-    }
-    
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(values.origin.x)
-        hasher.combine(values.origin.y)
-        hasher.combine(values.x)
-        hasher.combine(values.y)
     }
 }
 
@@ -366,7 +327,7 @@ public extension LayoutGuide {
 public extension LayoutGuide {
     
     func yScaled<T: UINumericType>(_ scale: T, anchor: UnitPoint = .center) -> LayoutGuide {
-        xScaled(scale.asCGFloat, anchor: anchor)
+        yScaled(scale, anchor: anchor, factor: 1.asCGFloat)
     }
     
     func yScaled<TS: UINumericType, TF: UINumericType>(_ scale: TS, anchor: UnitPoint = .center, factor: TF) -> LayoutGuide {

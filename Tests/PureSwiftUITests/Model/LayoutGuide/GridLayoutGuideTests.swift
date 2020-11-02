@@ -762,6 +762,44 @@ extension GridLayoutGuideTests {
         assertEqual(gridScaled[1, 1], rect.center)
     }
     
+    func testPointsWithXScale() {
+        let grid = LayoutGuide.grid(rect, columns: [0, 0.5, 1], rows: [0, 0.5, 1])
+        
+        var gridScaled = grid.xScaled(2, factor: 0)
+        assertEqual(gridScaled[0, 0], CGPoint(x, y))
+        assertEqual(gridScaled[2, 2], rect.extent)
+        assertEqual(gridScaled[2, 0], rect.topTrailing)
+        
+        gridScaled = grid.xScaled(2, factor: 0.5)
+        assertEqual(gridScaled[1, 0], rect.top)
+        assertEqual(gridScaled[0, 1], rect.leading.xOffset(rect.widthScaled(-0.25)))
+        assertEqual(gridScaled[1, 1], rect.center)
+        
+        gridScaled = grid.xScaled(2)
+        assertEqual(gridScaled[1, 0], rect.top)
+        assertEqual(gridScaled[0, 1], rect.leading.xOffset(-rect.halfWidth))
+        assertEqual(gridScaled[1, 1], rect.center)
+    }
+
+    func testPointsWithYScale() {
+        let grid = LayoutGuide.grid(rect, columns: [0, 0.5, 1], rows: [0, 0.5, 1])
+        
+        var gridScaled = grid.yScaled(2, factor: 0)
+        assertEqual(gridScaled[0, 0], CGPoint(x, y))
+        assertEqual(gridScaled[2, 2], rect.extent)
+        assertEqual(gridScaled[2, 0], rect.topTrailing)
+        
+        gridScaled = grid.yScaled(2, factor: 0.5)
+        assertEqual(gridScaled[1, 0], rect.top.yOffset(rect.heightScaled(-0.25)))
+        assertEqual(gridScaled[0, 1], rect.leading)
+        assertEqual(gridScaled[1, 1], rect.center)
+        
+        gridScaled = grid.yScaled(2)
+        assertEqual(gridScaled[1, 0], rect.top.yOffset(-rect.halfHeight))
+        assertEqual(gridScaled[0, 1], rect.leading)
+        assertEqual(gridScaled[1, 1], rect.center)
+    }
+    
     func testPointsWithScaleWithConfig() {
         let gridConfig = LayoutGuideConfig.grid(columns: [0, 0.5, 1], rows: [0, 0.5, 1])
         
@@ -787,6 +825,62 @@ extension GridLayoutGuideTests {
         
         assertEqual(gridScaled[1, 0], rect.top.yOffset(-rect.halfHeight))
         assertEqual(gridScaled[0, 1], rect.leading.xOffset(-rect.halfWidth))
+        assertEqual(gridScaled[1, 1], rect.center)
+    }
+    
+    func testPointsWithXScaleWithConfig() {
+        let gridConfig = LayoutGuideConfig.grid(columns: [0, 0.5, 1], rows: [0, 0.5, 1])
+        
+        var gridScaled = gridConfig
+            .xScaled(2, factor: 0)
+            .layout(in: rect)
+        
+        assertEqual(gridScaled[0, 0], CGPoint(x, y))
+        assertEqual(gridScaled[2, 2], rect.extent)
+        assertEqual(gridScaled[2, 0], rect.topTrailing)
+        
+        gridScaled = gridConfig
+            .xScaled(2, factor: 0.5)
+            .layout(in: rect)
+        
+        assertEqual(gridScaled[1, 0], rect.top)
+        assertEqual(gridScaled[0, 1], rect.leading.xOffset(rect.widthScaled(-0.25)))
+        assertEqual(gridScaled[1, 1], rect.center)
+        
+        gridScaled = gridConfig
+            .xScaled(2)
+            .layout(in: rect)
+        
+        assertEqual(gridScaled[1, 0], rect.top)
+        assertEqual(gridScaled[0, 1], rect.leading.xOffset(-rect.halfWidth))
+        assertEqual(gridScaled[1, 1], rect.center)
+    }
+    
+    func testPointsWithYScaleWithConfig() {
+        let gridConfig = LayoutGuideConfig.grid(columns: [0, 0.5, 1], rows: [0, 0.5, 1])
+        
+        var gridScaled = gridConfig
+            .yScaled(2, factor: 0)
+            .layout(in: rect)
+        
+        assertEqual(gridScaled[0, 0], CGPoint(x, y))
+        assertEqual(gridScaled[2, 2], rect.extent)
+        assertEqual(gridScaled[2, 0], rect.topTrailing)
+        
+        gridScaled = gridConfig
+            .yScaled(2, factor: 0.5)
+            .layout(in: rect)
+        
+        assertEqual(gridScaled[1, 0], rect.top.yOffset(rect.heightScaled(-0.25)))
+        assertEqual(gridScaled[0, 1], rect.leading)
+        assertEqual(gridScaled[1, 1], rect.center)
+        
+        gridScaled = gridConfig
+            .yScaled(2)
+            .layout(in: rect)
+        
+        assertEqual(gridScaled[1, 0], rect.top.yOffset(-rect.halfHeight))
+        assertEqual(gridScaled[0, 1], rect.leading)
         assertEqual(gridScaled[1, 1], rect.center)
     }
     
@@ -855,6 +949,44 @@ extension GridLayoutGuideTests {
         assertEqual(gridScaled[1, 1], rect.center)
     }
     
+    func testPointsWithXScaleFromTo() {
+        let grid = LayoutGuide.grid(rect, columns: [0, 0.5, 1], rows: [0, 0.5, 1])
+        
+        var gridScaled = grid.xScaled(from: 1, to: 2, factor: 0)
+        assertEqual(gridScaled[0, 0], CGPoint(x, y))
+        assertEqual(gridScaled[2, 2], rect.extent)
+        assertEqual(gridScaled[2, 0], rect.topTrailing)
+        
+        gridScaled = grid.xScaled(from: 1, to: 2, factor: 0.5)
+        assertEqual(gridScaled[1, 0], rect.top)
+        assertEqual(gridScaled[0, 1], rect.leading.xOffset(rect.widthScaled(-0.25)))
+        assertEqual(gridScaled[1, 1], rect.center)
+        
+        gridScaled = grid.xScaled(from: 1, to: 2, factor: 1)
+        assertEqual(gridScaled[1, 0], rect.top)
+        assertEqual(gridScaled[0, 1], rect.leading.xOffset(-rect.halfWidth))
+        assertEqual(gridScaled[1, 1], rect.center)
+    }
+    
+    func testPointsWithYScaleFromTo() {
+        let grid = LayoutGuide.grid(rect, columns: [0, 0.5, 1], rows: [0, 0.5, 1])
+        
+        var gridScaled = grid.yScaled(from: 1, to: 2, factor: 0)
+        assertEqual(gridScaled[0, 0], CGPoint(x, y))
+        assertEqual(gridScaled[2, 2], rect.extent)
+        assertEqual(gridScaled[2, 0], rect.topTrailing)
+        
+        gridScaled = grid.yScaled(from: 1, to: 2, factor: 0.5)
+        assertEqual(gridScaled[1, 0], rect.top.yOffset(rect.heightScaled(-0.25)))
+        assertEqual(gridScaled[0, 1], rect.leading)
+        assertEqual(gridScaled[1, 1], rect.center)
+        
+        gridScaled = grid.yScaled(from: 1, to: 2, factor: 1)
+        assertEqual(gridScaled[1, 0], rect.top.yOffset(-rect.halfHeight))
+        assertEqual(gridScaled[0, 1], rect.leading)
+        assertEqual(gridScaled[1, 1], rect.center)
+    }
+
     func testPointsWithScaleFromToWithConfig() {
         let gridConfig = LayoutGuideConfig.grid(columns: [0, 0.5, 1], rows: [0, 0.5, 1])
         
