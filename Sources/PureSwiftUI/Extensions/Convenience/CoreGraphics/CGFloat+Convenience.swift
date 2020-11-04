@@ -19,6 +19,6 @@ public extension CGFloat {
 public extension CGFloat {
 
     func to<T: UINumericType>(_ destination: CGFloat, _ factor: T) -> CGFloat {
-        CGFloat((destination - self) * factor.asCGFloat)
+        CGFloat(self + (destination - self) * factor.asCGFloat)
     }
 }

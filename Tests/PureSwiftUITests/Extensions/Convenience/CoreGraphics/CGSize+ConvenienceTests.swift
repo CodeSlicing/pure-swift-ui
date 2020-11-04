@@ -140,3 +140,17 @@ extension CGSizeConvenienceExtensionsTests {
         assertEqual(sourceRect.sizeScaled(0.4).map(from: sourceRect, to: destination), destination.sizeScaled(0.4))
     }
 }
+
+// MARK: ----- TO
+
+extension CGSizeConvenienceExtensionsTests {
+    
+    func testToWithFactor() {
+        let valueFrom = CGSize(5, 10)
+        let valueTo = CGSize(10, 20)
+        XCTAssertEqual(valueFrom.to(valueTo, 0), .size(5, 10))
+        XCTAssertEqual(valueFrom.to(valueTo, 0.5), .size(7.5, 15))
+        XCTAssertEqual(valueFrom.to(valueTo, 1), .size(10, 20))
+
+    }
+}

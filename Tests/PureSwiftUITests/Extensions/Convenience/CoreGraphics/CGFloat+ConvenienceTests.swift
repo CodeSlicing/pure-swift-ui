@@ -21,3 +21,16 @@ class CGFloatConvenienceExtensionsTests: XCTestCase {
         }
     }
 }
+
+// MARK: ----- TO
+
+extension CGFloatConvenienceExtensionsTests {
+    
+    func testToWithFactor() {
+        let valueFrom: CGFloat = 5
+        let valueTo: CGFloat = 10
+        XCTAssertEqual(valueFrom.to(valueTo, 0), 5)
+        XCTAssertEqual(valueFrom.to(valueTo, 0.5), 7.5)
+        XCTAssertEqual(valueFrom.to(valueTo, 1), 10)
+    }
+}

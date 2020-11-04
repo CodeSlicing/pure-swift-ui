@@ -71,6 +71,7 @@ public extension CGRect {
 }
 
 // MARK: ----- STATIC INITIALISER
+
 public extension CGRect {
     
     static func rect(from: CGPoint, to: CGPoint) -> CGRect {
