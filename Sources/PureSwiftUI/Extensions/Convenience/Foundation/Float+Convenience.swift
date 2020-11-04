@@ -13,3 +13,24 @@ public extension Float {
         self * Float.random(in: 0...1)
     }
 }
+//
+//// MARK: ----- CONVERSIONS
+//
+//public extension Float {
+//    
+//    var asCGFloat: CGFloat {
+//        CGFloat(self)
+//    }
+//    
+//    var asDouble: Double {
+//        Double(self)
+//    }
+//    
+//    var asInt: Int {
+//        Int(self)
+//    }
+//    
+//    var asFloat: Float {
+//        self
+//    }
+//}

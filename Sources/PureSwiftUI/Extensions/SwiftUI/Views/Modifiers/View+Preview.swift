@@ -72,11 +72,11 @@ public extension View {
         previewLayout(.fixed(width: size.width, height: size.height))
     }
 
-    func previewFixedSize<T: UINumericType>(_ size: T) -> some View {
-        previewLayout(.fixed(width: size.asCGFloat, height: size.asCGFloat))
+    func previewFixedSize(_ size: CGFloat) -> some View {
+        previewLayout(.fixed(width: size, height: size.asCGFloat))
     }
 
-    func previewFixedSize<TX: UINumericType, TY: UINumericType>(_ x: TX, _ y: TY) -> some View {
-        previewLayout(.fixed(width: x.asCGFloat, height: y.asCGFloat))
+    func previewFixedSize(_ x: CGFloat, _ y: CGFloat) -> some View {
+        previewLayout(.fixed(width: x, height: y))
     }
 }

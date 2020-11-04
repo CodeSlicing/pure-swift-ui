@@ -64,11 +64,11 @@ public extension View {
         borderColor(Color(colorName))
     }
     
-    func borderColor<T: UINumericType>(_ color: Color, width: T) -> some View {
-        border(color, width: width.asCGFloat)
+    func borderColor(_ color: Color, width: CGFloat) -> some View {
+        border(color, width: width)
     }
     
-    func borderColor<T: UINumericType>(_ colorName: String, width: T) -> some View {
+    func borderColor(_ colorName: String, width: CGFloat) -> some View {
         borderColor(Color(colorName), width: width)
     }
 }
@@ -77,15 +77,15 @@ public extension View {
 
 public extension View {
     
-    func fontSize<T: UINumericType>(_ size: T, weight: Font.Weight? = nil, withScaling: Bool = true) -> some View {
+    func fontSize(_ size: CGFloat, weight: Font.Weight? = nil, withScaling: Bool = true) -> some View {
         fontSize(size, name: nil, weight: weight, withScaling: withScaling)
     }
     
-    func fontSize<T: UINumericType>(_ size: T, name: String? = nil, weight: Font.Weight? = nil, withScaling: Bool = true) -> some View {
+    func fontSize(_ size: CGFloat, name: String? = nil, weight: Font.Weight? = nil, withScaling: Bool = true) -> some View {
         RenderIf(withScaling) {
             self.scalingFont(size: size, name: name, weight: weight)
         }.elseRender {
-            self.font(self.createFont(name: name, size: size.asCGFloat, weight: weight))
+            self.font(self.createFont(name: name, size: size, weight: weight))
         }
     }
     
@@ -170,74 +170,74 @@ public extension View {
     
     // CUSTOM
     
-    func customFont<T: UINumericType>(_ name: String, _ size: T) -> some View {
+    func customFont(_ name: String, _ size: CGFloat) -> some View {
         customFont(name, size, nil, nil)
     }
     
-    func customFont<T: UINumericType>(_ name: String, _ size: T, _ weight: Font.Weight? = nil) -> some View {
+    func customFont(_ name: String, _ size: CGFloat, _ weight: Font.Weight? = nil) -> some View {
         customFont(name, size, nil, weight)
     }
     
-    func customFont<T: UINumericType>(_ name: String, _ size: T, _ color: Color? = nil) -> some View {
+    func customFont(_ name: String, _ size: CGFloat, _ color: Color? = nil) -> some View {
         customFont(name, size, color, nil)
     }
     
-    func customFont<T: UINumericType>(_ name: String, _ size: T, _ color: Color? = nil, _ weight: Font.Weight? = nil) -> some View {
-        applyInternalFont(.custom(name, size: size.asCGFloat), color, weight)
+    func customFont(_ name: String, _ size: CGFloat, _ color: Color? = nil, _ weight: Font.Weight? = nil) -> some View {
+        applyInternalFont(.custom(name, size: size), color, weight)
     }
     
     // CUSTOM WITH JUST SIZE
     
-    func customFont<T: UINumericType>(_ size: T) -> some View {
+    func customFont(_ size: CGFloat) -> some View {
         customFont(size, nil, nil)
     }
     
-    func customFont<T: UINumericType>(_ size: T, _ weight: Font.Weight? = nil) -> some View {
+    func customFont(_ size: CGFloat, _ weight: Font.Weight? = nil) -> some View {
         customFont(size, nil, weight)
     }
     
-    func customFont<T: UINumericType>(_ size: T, _ color: Color? = nil) -> some View {
+    func customFont(_ size: CGFloat, _ color: Color? = nil) -> some View {
         customFont(size, color, nil)
     }
     
-    func customFont<T: UINumericType>(_ size: T, _ color: Color? = nil, _ weight: Font.Weight? = nil) -> some View {
-        applyInternalFont(.system(size: size.asCGFloat), color, weight)
+    func customFont(_ size: CGFloat, _ color: Color? = nil, _ weight: Font.Weight? = nil) -> some View {
+        applyInternalFont(.system(size: size), color, weight)
     }
     
     // CUSTOM FONT THAT SCALES
     
-    func customFontThatScales<T: UINumericType>(_ name: String, _ size: T) -> some View {
+    func customFontThatScales(_ name: String, _ size: CGFloat) -> some View {
         customFontThatScales(name, size, nil, nil)
     }
     
-    func customFontThatScales<T: UINumericType>(_ name: String, _ size: T, _ weight: Font.Weight? = nil) -> some View {
+    func customFontThatScales(_ name: String, _ size: CGFloat, _ weight: Font.Weight? = nil) -> some View {
         customFontThatScales(name, size, nil, weight)
     }
     
-    func customFontThatScales<T: UINumericType>(_ name: String, _ size: T, _ color: Color? = nil) -> some View {
+    func customFontThatScales(_ name: String, _ size: CGFloat, _ color: Color? = nil) -> some View {
         customFontThatScales(name, size, color, nil)
     }
     
-    func customFontThatScales<T: UINumericType>(_ name: String, _ size: T, _ color: Color? = nil, _ weight: Font.Weight? = nil) -> some View {
+    func customFontThatScales(_ name: String, _ size: CGFloat, _ color: Color? = nil, _ weight: Font.Weight? = nil) -> some View {
         fontSize(size, name: name, weight: weight)
             .foregroundColor(color)
     }
     
     // CUSTOM WITH JUST SIZE
     
-    func customFontThatScales<T: UINumericType>(_ size: T) -> some View {
+    func customFontThatScales(_ size: CGFloat) -> some View {
         customFontThatScales(size, nil, nil)
     }
     
-    func customFontThatScales<T: UINumericType>(_ size: T, _ weight: Font.Weight? = nil) -> some View {
+    func customFontThatScales(_ size: CGFloat, _ weight: Font.Weight? = nil) -> some View {
         customFontThatScales(size, nil, weight)
     }
     
-    func customFontThatScales<T: UINumericType>(_ size: T, _ color: Color? = nil) -> some View {
+    func customFontThatScales(_ size: CGFloat, _ color: Color? = nil) -> some View {
         customFontThatScales(size, color, nil)
     }
     
-    func customFontThatScales<T: UINumericType>(_ size: T, _ color: Color? = nil, _ weight: Font.Weight? = nil) -> some View {
+    func customFontThatScales(_ size: CGFloat, _ color: Color? = nil, _ weight: Font.Weight? = nil) -> some View {
         fontSize(size, weight: weight)
             .foregroundColor(color)
     }
@@ -336,24 +336,7 @@ public extension View {
 // MARK: - ----- FRAME
 
 public extension View {
-    
-    func width<T: UINumericType>(_ width: T, _ alignment: Alignment = .center) -> some View {
-        frame(width: width.asCGFloat, alignment: alignment)
-    }
-    
-    func height<T: UINumericType>(_ height: T, _ alignment: Alignment = .center) -> some View {
-        frame(height: height.asCGFloat, alignment: alignment)
-    }
-    
-    func frame<TW: UINumericType, TH: UINumericType>(_ width: TW, _ height: TH, _ alignment: Alignment = .center) -> some View {
-        frame(width.asCGFloat, height.asCGFloat, alignment)
-    }
 
-    func frame<T: UINumericType>(_ size: T, _ alignment: Alignment = .center) -> some View {
-        frame(width: size.asCGFloat, height: size.asCGFloat, alignment: alignment)
-    }
-    
-    // native type
     func frame(_ size: CGSize, _ alignment: Alignment = .center) -> some View {
         frame(width: size.width, height: size.height, alignment: alignment)
     }
@@ -391,20 +374,7 @@ public extension View {
 // MARK: - ----- OFFSET
 
 public extension View {
-    
-    func offset<T_LHS: UINumericType, T_RHS: UINumericType>(_ x: T_LHS, _ y: T_RHS) -> some View {
-        offset(x: x.asCGFloat, y: y.asCGFloat)
-    }
-    
-    func xOffset<T: UINumericType>(_ x: T) -> some View {
-        offset(x: x.asCGFloat)
-    }
-    
-    func yOffset<T: UINumericType>(_ y: T) -> some View {
-        offset(y: y.asCGFloat)
-    }
-    
-    //native
+
     func offset(_ x: CGFloat, _ y: CGFloat) -> some View {
         offset(x: x, y: y)
     }
@@ -426,27 +396,8 @@ public extension View {
 
 public extension View {
     
-    func position<TX: UINumericType, TY: UINumericType>(_ x: TX, _ y: TY) -> some View {
-        position(x: x.asCGFloat, y: y.asCGFloat)
-    }
-    
-    @available(*, deprecated, renamed: "position", message: "Can't set x or y positions individually since the underlying implementation defaults to 0 for the other dimension")
-    func xPosition<T: UINumericType>(_ x: T) -> some View {
-        position(x: x.asCGFloat)
-    }
-    
-    @available(*, deprecated, renamed: "position", message: "Can't set x or y positions individually since the underlying implementation defaults to 0 for the other dimension")
-    func yPosition<T: UINumericType>(_ y: T) -> some View {
-        position(y: y.asCGFloat)
-    }
-}
-
-// MARK: - ----- OPACITY
-
-public extension View {
-    
-    func opacity<T: UINumericType>(_ theOpacity: T) -> some View {
-        opacity(theOpacity.asDouble)
+    func position(_ x: CGFloat, _ y: CGFloat) -> some View {
+        position(x: x, y: y)
     }
 }
 
@@ -454,8 +405,8 @@ public extension View {
 
 public extension View {
     
-    func blur<T: UINumericType>(_ radius: T, opaque: Bool = false) -> some View {
-        blur(radius: radius.asCGFloat, opaque: opaque)
+    func blur(_ radius: CGFloat, opaque: Bool = false) -> some View {
+        blur(radius: radius, opaque: opaque)
     }
 }
 
@@ -463,19 +414,19 @@ public extension View {
 
 public extension View {
     
-    func saturation<T: UINumericType>(_ amount: T) -> some View {
+    func saturation(_ amount: CGFloat) -> some View {
         saturation(amount.asDouble)
     }
     
-    func brightness<T: UINumericType>(_ amount: T) -> some View {
+    func brightness(_ amount: CGFloat) -> some View {
         brightness(amount.asDouble)
     }
     
-    func contrast<T: UINumericType>(_ amount: T) -> some View {
+    func contrast(_ amount: CGFloat) -> some View {
         contrast(amount.asDouble)
     }
     
-    func grayscale<T: UINumericType>(_ amount: T) -> some View {
+    func grayscale(_ amount: CGFloat) -> some View {
         grayscale(amount.asDouble)
     }
 }
@@ -484,95 +435,75 @@ public extension View {
 
 public extension View {
     
-    func shadow<T: UINumericType, TX: UINumericType, TY: UINumericType>(_ radius: T, x: TX, y: TY) -> some View {
-        shadow(radius: radius.asCGFloat, x: x.asCGFloat, y: y.asCGFloat)
+    func shadow(_ radius: CGFloat, x: CGFloat, y: CGFloat) -> some View {
+        shadow(radius: radius, x: x, y: y)
     }
     
-    func shadow<T: UINumericType>(_ radius: T) -> some View {
+    func shadow(_ radius: CGFloat) -> some View {
         shadow(radius, x: 0, y: 0)
     }
     
-    func shadow<T: UINumericType, TX: UINumericType>(_ radius: T, x: TX) -> some View {
+    func shadow(_ radius: CGFloat, x: CGFloat) -> some View {
         shadow(radius, x: x, y: 0)
     }
     
-    func shadow<T: UINumericType, TY: UINumericType>(_ radius: T, y: TY) -> some View {
+    func shadow(_ radius: CGFloat, y: CGFloat) -> some View {
         shadow(radius, x: 0, y: y)
     }
     
-    func shadow<T: UINumericType>(_ radius: T, offset: CGPoint) -> some View {
+    func shadow(_ radius: CGFloat, offset: CGPoint) -> some View {
         shadow(radius, x: offset.x, y: offset.y)
     }
     
-    func shadow<TR: UINumericType, TO: UINumericType>(_ radius: TR, offset: TO, angle: Angle) -> some View {
+    func shadow(_ radius: CGFloat, offset: CGFloat, angle: Angle) -> some View {
         shadow(radius, offset: .point(offset, angle))
     }
-    
-    @available(*, deprecated, renamed: "shadowColor")
-    func shadow<T: UINumericType, TX: UINumericType, TY: UINumericType>(_ color: Color, _ radius: T, x: TX, y: TY) -> some View {
-        shadow(color: color, radius: radius.asCGFloat, x: x.asCGFloat, y: y.asCGFloat)
+
+    func shadowColor(_ color: Color, _ radius: CGFloat, x: CGFloat, y: CGFloat) -> some View {
+        shadow(color: color, radius: radius, x: x, y: y)
     }
     
-    @available(*, deprecated, renamed: "shadowColor")
-    func shadow<T: UINumericType>(_ color: Color, _ radius: T) -> some View {
-        shadow(color, radius, x: 0, y: 0)
-    }
-    
-    @available(*, deprecated, renamed: "shadowColor")
-    func shadow<T: UINumericType, TX: UINumericType>(_ color: Color, _ radius: T, x: TX) -> some View {
-        shadow(color, radius, x: x, y: 0)
-    }
-    
-    @available(*, deprecated, renamed: "shadowColor")
-    func shadow<T: UINumericType, TY: UINumericType>(_ color: Color, _ radius: T, y: TY) -> some View {
-        shadow(color, radius, x: 0, y: y)
-    }
-    
-    func shadowColor<T: UINumericType, TX: UINumericType, TY: UINumericType>(_ color: Color, _ radius: T, x: TX, y: TY) -> some View {
-        shadow(color: color, radius: radius.asCGFloat, x: x.asCGFloat, y: y.asCGFloat)
-    }
-    
-    func shadowColor<T: UINumericType>(_ color: Color, _ radius: T) -> some View {
+    func shadowColor(_ color: Color, _ radius: CGFloat) -> some View {
         shadowColor(color, radius, x: 0, y: 0)
     }
     
-    func shadowColor<T: UINumericType, TX: UINumericType>(_ color: Color, _ radius: T, x: TX) -> some View {
+    func shadowColor(_ color: Color, _ radius: CGFloat, x: CGFloat) -> some View {
         shadowColor(color, radius, x: x, y: 0)
     }
     
-    func shadowColor<T: UINumericType, TY: UINumericType>(_ color: Color, _ radius: T, y: TY) -> some View {
+    func shadowColor(_ color: Color, _ radius: CGFloat, y: CGFloat) -> some View {
         shadowColor(color, radius, x: 0, y: y)
     }
     
-    func shadowColor<T: UINumericType>(_ color: Color, _ radius: T, offset: CGPoint) -> some View {
+    func shadowColor(_ color: Color, _ radius: CGFloat, offset: CGPoint) -> some View {
         shadowColor(color, radius, x: offset.x, y: offset.y)
     }
     
-    func shadowColor<TR: UINumericType, TO: UINumericType>(_ color: Color, _ radius: TR, offset: TO, angle: Angle) -> some View {
+    func shadowColor(_ color: Color, _ radius: CGFloat, offset: CGFloat, angle: Angle) -> some View {
         shadowColor(color, radius, offset: .point(offset, angle))
     }
     
-    func shadowColor<T: UINumericType, TX: UINumericType, TY: UINumericType>(_ colorName: String, _ radius: T, x: TX, y: TY) -> some View {
+    func shadowColor(_ colorName: String, _ radius: CGFloat, x: CGFloat, y: CGFloat) -> some View {
         shadowColor(Color(colorName), radius, x: x, y: y)
     }
     
-    func shadowColor<T: UINumericType>(_ colorName: String, _ radius: T) -> some View {
+    func shadowColor(_ colorName: String, _ radius: CGFloat) -> some View {
         shadowColor(colorName, radius, x: 0, y: 0)
     }
     
-    func shadowColor<T: UINumericType, TX: UINumericType>(_ colorName: String, _ radius: T, x: TX) -> some View {
+    func shadowColor(_ colorName: String, _ radius: CGFloat, x: CGFloat) -> some View {
         shadowColor(colorName, radius, x: x, y: 0)
     }
     
-    func shadowColor<T: UINumericType, TY: UINumericType>(_ colorName: String, _ radius: T, y: TY) -> some View {
+    func shadowColor(_ colorName: String, _ radius: CGFloat, y: CGFloat) -> some View {
         shadowColor(colorName, radius, x: 0, y: y)
     }
     
-    func shadowColor<T: UINumericType>(_ colorName: String, _ radius: T, offset: CGPoint) -> some View {
+    func shadowColor(_ colorName: String, _ radius: CGFloat, offset: CGPoint) -> some View {
         shadowColor(colorName, radius, x: offset.x, y: offset.y)
     }
     
-    func shadowColor<TR: UINumericType, TO: UINumericType>(_ colorName: String, _ radius: TR, offset: TO, angle: Angle) -> some View {
+    func shadowColor(_ colorName: String, _ radius: CGFloat, offset: CGFloat, angle: Angle) -> some View {
         shadowColor(colorName, radius, offset: .point(offset, angle))
     }
 }
@@ -588,16 +519,7 @@ public extension View {
     func vPadding() -> some View {
         padding(.vertical)
     }
-    
-    func hPadding<T: UINumericType>(_ horizontalPadding: T) -> some View {
-        padding(.horizontal, horizontalPadding.asCGFloat)
-    }
-    
-    func vPadding<T: UINumericType>(_ verticalPadding: T) -> some View {
-        padding(.vertical, verticalPadding.asCGFloat)
-    }
-    
-//    native
+
     func hPadding(_ horizontalPadding: CGFloat) -> some View {
         padding(.horizontal, horizontalPadding)
     }
@@ -623,24 +545,7 @@ public extension View {
 // MARK: - ----- SCALE
 
 public extension View {
-    
-    func scale<T: UINumericType>(_ scaleFactor: T, anchor: UnitPoint = .center) -> some View {
-        scaleEffect(scaleFactor.asCGFloat, anchor: anchor)
-    }
-    
-    func scale<TX: UINumericType, TY: UINumericType>(_ scaleX: TX, _ scaleY: TY, anchor: UnitPoint = .center) -> some View {
-        scaleEffect(x: scaleX.asCGFloat, y: scaleY.asCGFloat, anchor: anchor)
-    }
-    
-    func xScale<T: UINumericType>(_ scaleX: T, anchor: UnitPoint = .center) -> some View {
-        scaleEffect(x: scaleX.asCGFloat, y: 1, anchor: anchor)
-    }
-    
-    func yScale<T: UINumericType>(_ scaleY: T, anchor: UnitPoint = .center) -> some View {
-        scaleEffect(x: 1, y: scaleY.asCGFloat, anchor: anchor)
-    }
-    
-    //native
+
     func scale(_ scaleFactor: CGFloat, anchor: UnitPoint = .center) -> some View {
         scaleEffect(scaleFactor, anchor: anchor)
     }
@@ -666,7 +571,7 @@ public extension View {
 
 public extension View {
     
-    func zIndex<T: UINumericType>(_ index: T) -> some View {
+    func zIndex(_ index: CGFloat) -> some View {
         zIndex(index.asDouble)
     }
 }
@@ -710,15 +615,15 @@ public extension View {
 
 public extension View {
     
-    func relativeXOffset<T: UINumericType>(_ xOffset: T) -> some View {
+    func relativeXOffset(_ xOffset: CGFloat) -> some View {
         relativeXOffsetIf(true, xOffset)
     }
     
-    func relativeYOffset<T: UINumericType>(_ yOffset: T) -> some View {
+    func relativeYOffset(_ yOffset: CGFloat) -> some View {
         relativeYOffsetIf(true, yOffset)
     }
     
-    func relativeOffset<TX: UINumericType, TY: UINumericType>(_ xOffset: TX, _ yOffset: TY) -> some View {
+    func relativeOffset(_ xOffset: CGFloat, _ yOffset: CGFloat) -> some View {
         relativeOffsetIf(true, xOffset, yOffset)
     }
 }
@@ -739,12 +644,12 @@ public extension View {
      coordinateSpaceName as a String parameter rather than passing .named(...). There is a runtime
      issue if you try to use .named(coordinateSpace) at the call-site.
      */
-    func offsetToPosition<TX: UINumericType, TY: UINumericType>(_ xPosition: TX, _ yPosition: TY, in coordinateSpace: CoordinateSpace = .global, anchor: UnitPoint = .center) -> some View {
+    func offsetToPosition(_ xPosition: CGFloat, _ yPosition: CGFloat, in coordinateSpace: CoordinateSpace = .global, anchor: UnitPoint = .center) -> some View {
         offsetToPositionIf(true, xPosition, yPosition, in: coordinateSpace,
                            anchor: anchor)
     }
     
-    func offsetToPosition<TX: UINumericType, TY: UINumericType, TC: Hashable>(_ xPosition: TX, _ yPosition: TY, in coordinateSpaceName: TC, anchor: UnitPoint = .center) -> some View {
+    func offsetToPosition(_ xPosition: CGFloat, _ yPosition: CGFloat, in coordinateSpaceName: String, anchor: UnitPoint = .center) -> some View {
         offsetToPosition(xPosition, yPosition, in: .named(coordinateSpaceName), anchor: anchor)
     }
     
@@ -757,20 +662,20 @@ public extension View {
         offsetToPosition(position, in: .named(coordinateSpaceName), anchor: anchor)
     }
     
-    func xOffsetToXPosition<T: UINumericType>(_ xPosition: T, in coordinateSpace: CoordinateSpace = .global, anchor: UnitPoint = .center) -> some View {
+    func xOffsetToXPosition(_ xPosition: CGFloat, in coordinateSpace: CoordinateSpace = .global, anchor: UnitPoint = .center) -> some View {
         xOffsetToXPositionIf(true, xPosition, in: coordinateSpace, anchor: anchor)
     }
     
-    func xOffsetToXPosition<T: UINumericType, TC: Hashable>(_ xPosition: T, in coordinateSpaceName: TC, anchor: UnitPoint = .center) -> some View {
+    func xOffsetToXPosition<TC: Hashable>(_ xPosition: CGFloat, in coordinateSpaceName: TC, anchor: UnitPoint = .center) -> some View {
         xOffsetToXPosition(xPosition, in: .named(coordinateSpaceName), anchor: anchor)
     }
     
-    func yOffsetToYPosition<T: UINumericType>(_ yPosition: T, in coordinateSpace: CoordinateSpace = .global, anchor: UnitPoint = .center) -> some View {
+    func yOffsetToYPosition(_ yPosition: CGFloat, in coordinateSpace: CoordinateSpace = .global, anchor: UnitPoint = .center) -> some View {
         yOffsetToYPositionIf(true, yPosition, in: coordinateSpace,
                              anchor: anchor)
     }
     
-    func yOffsetToYPosition<T: UINumericType, TC: Hashable>(_ yPosition: T, in coordinateSpaceName: TC, anchor: UnitPoint = .center) -> some View {
+    func yOffsetToYPosition<TC: Hashable>(_ yPosition: CGFloat, in coordinateSpaceName: TC, anchor: UnitPoint = .center) -> some View {
         yOffsetToYPosition(yPosition, in: .named(coordinateSpaceName), anchor: anchor)
     }
 }
@@ -779,11 +684,11 @@ public extension View {
 
 public extension View {
     
-    func offsetFromAngle(baseRotation: Angle, offsetAngle: Angle, forRadius radius: Double) -> some View {
+    func offsetFromAngle(baseRotation: Angle, offsetAngle: Angle, forRadius radius: CGFloat) -> some View {
         offset(x: calcXOffset(radius: radius, angle: baseRotation + offsetAngle), y: -calcYOffset(radius: radius, angle: baseRotation + offsetAngle))
     }
     
-    func offset<T: UINumericType>(radius: T, angle: Angle) -> some View {
+    func offset(radius: CGFloat, angle: Angle) -> some View {
         offset(calcOffset(radius: radius, angle: angle))
     }
 }

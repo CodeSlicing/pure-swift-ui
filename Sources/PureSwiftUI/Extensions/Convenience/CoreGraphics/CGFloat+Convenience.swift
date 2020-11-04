@@ -18,7 +18,28 @@ public extension CGFloat {
 
 public extension CGFloat {
 
-    func to<T: UINumericType>(_ destination: CGFloat, _ factor: T) -> CGFloat {
-        CGFloat(self + (destination - self) * factor.asCGFloat)
+    func to(_ destination: CGFloat, _ factor: CGFloat) -> CGFloat {
+        CGFloat(self + (destination - self) * factor)
     }
 }
+
+//// MARK: ----- CONVERSIONS
+//
+//public extension CGFloat {
+//    
+//    var asInt: Int {
+//        Int(self)
+//    }
+//    
+//    var asDouble: Double {
+//        Double(self)
+//    }
+//    
+//    var asFloat: Float {
+//        Float(self)
+//    }
+//    
+//    var asCGFloat: CGFloat {
+//        self
+//    }
+//}

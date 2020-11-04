@@ -77,23 +77,23 @@ public extension View {
         clipShape(Rectangle(), fill: fill, fillStyle: fillStyle, constrainGestures: constrainGestures)
     }
     
-    func clipRoundedRectangle<T: UINumericType>(_ cornerRadius: T, cornerStyle: RoundedCornerStyle = .circular, constrainGestures: Bool = true) -> some View {
+    func clipRoundedRectangle(_ cornerRadius: CGFloat, cornerStyle: RoundedCornerStyle = .circular, constrainGestures: Bool = true) -> some View {
         clipShape(RoundedRectangle(cornerRadius, style: cornerStyle), constrainGestures: constrainGestures)
     }
     
-    func clipRoundedRectangle<T: UINumericType, SS: ShapeStyle>(_ cornerRadius: T, cornerStyle: RoundedCornerStyle = .circular, fill: SS, fillStyle: FillStyle = FillStyle(), constrainGestures: Bool = true) -> some View {
+    func clipRoundedRectangle<SS: ShapeStyle>(_ cornerRadius: CGFloat, cornerStyle: RoundedCornerStyle = .circular, fill: SS, fillStyle: FillStyle = FillStyle(), constrainGestures: Bool = true) -> some View {
         clipShape(RoundedRectangle(cornerRadius, style: cornerStyle), fill: fill, fillStyle: fillStyle, constrainGestures: constrainGestures)
     }
     
-    func clipRoundedRectangle<T: UINumericType>(_ cornerRadius: T, cornerStyle: RoundedCornerStyle = .circular, fill: Color, fillStyle: FillStyle = FillStyle(), constrainGestures: Bool = true) -> some View {
+    func clipRoundedRectangle(_ cornerRadius: CGFloat, cornerStyle: RoundedCornerStyle = .circular, fill: Color, fillStyle: FillStyle = FillStyle(), constrainGestures: Bool = true) -> some View {
         clipShape(RoundedRectangle(cornerRadius, style: cornerStyle), fill: fill, fillStyle: fillStyle, constrainGestures: constrainGestures)
     }
     
-    func clipRoundedRectangle<TW: UINumericType, TH: UINumericType>(_ cornerWidth: TW, _ cornerHeight: TH, cornerStyle: RoundedCornerStyle = .circular, constrainGestures: Bool = true) -> some View {
+    func clipRoundedRectangle(_ cornerWidth: CGFloat, _ cornerHeight: CGFloat, cornerStyle: RoundedCornerStyle = .circular, constrainGestures: Bool = true) -> some View {
         clipShape(RoundedRectangle(cornerWidth, cornerHeight, style: cornerStyle), constrainGestures: constrainGestures)
     }
     
-    func clipRoundedRectangle<TW: UINumericType, TH: UINumericType, SS: ShapeStyle>(_ width: TW, _ height: TH, cornerStyle: RoundedCornerStyle = .circular, fill: SS, fillStyle: FillStyle = FillStyle(), constrainGestures: Bool = true) -> some View {
+    func clipRoundedRectangle<SS: ShapeStyle>(_ width: CGFloat, _ height: CGFloat, cornerStyle: RoundedCornerStyle = .circular, fill: SS, fillStyle: FillStyle = FillStyle(), constrainGestures: Bool = true) -> some View {
         clipShape(RoundedRectangle(width, height, style: cornerStyle), fill: fill, fillStyle: fillStyle, constrainGestures: constrainGestures)
     }
     

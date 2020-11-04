@@ -36,7 +36,7 @@ public struct DynamicallyScalingFontViewModifier: ViewModifier {
 }
 
 public extension View {
-    func scalingFont<T: UINumericType>(size: T, name: String? = nil, weight: Font.Weight? = nil) -> some View {
-        modifier(DynamicallyScalingFontViewModifier(name: name, size: size.asCGFloat, weight: weight))
+    func scalingFont(size: CGFloat, name: String? = nil, weight: Font.Weight? = nil) -> some View {
+        modifier(DynamicallyScalingFontViewModifier(name: name, size: size, weight: weight))
     }
 }

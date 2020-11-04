@@ -26,10 +26,6 @@ public extension Path {
         move(to: point)
     }
     
-    mutating func move<TX: UINumericType, TY: UINumericType>(_ x: TX, _ y: TY) {
-        move(x.asCGFloat, y.asCGFloat)
-    }
-    
     mutating func move(_ x: CGFloat, _ y: CGFloat) {
         move(CGPoint(x: x, y: y))
     }
@@ -52,21 +48,6 @@ public extension Path {
 // MARK: ----- CONSTRAINED MOVE IN X
 
 public extension Path {
-
-    // mMove
-    @available(*, deprecated, renamed: "hMove")
-    mutating func move<T: UINumericType>(xOffset: T) {
-        hMove(offset: xOffset.asCGFloat)
-    }
-
-    mutating func hMove<T: UINumericType>(offset: T) {
-        hMove(offset: offset.asCGFloat)
-    }
-    
-    @available(*, deprecated, renamed: "hMove")
-    mutating func move(xOffset: CGFloat) {
-        hMove(offset: xOffset)
-    }
 
     mutating func hMove(offset: CGFloat) {
         move(offset: CGPoint(offset, 0))
@@ -91,20 +72,6 @@ public extension Path {
 // MARK: ----- CONSTRAINED MOVE IN Y
 
 public extension Path {
-
-    @available(*, deprecated, renamed: "hMove")
-    mutating func move<T: UINumericType>(yOffset: T) {
-        vMove(offset: yOffset.asCGFloat)
-    }
-    
-    mutating func vMove<T: UINumericType>(offset: T) {
-        vMove(offset: offset.asCGFloat)
-    }
-    
-    @available(*, deprecated, renamed: "vMove")
-    mutating func move(yOffset: CGFloat) {
-        vMove(offset: yOffset)
-    }
     
     mutating func vMove(offset: CGFloat) {
         move(offset: CGPoint(0, offset))
@@ -140,14 +107,6 @@ public extension Path {
         }
     }
     
-    mutating func line<T: UINumericType>(length: T, angle: Angle) {
-        line(length: length.asCGFloat, angle: angle)
-    }
-    
-    mutating func line<TX: UINumericType, TY: UINumericType>(_ x: TX, _ y: TY) {
-        line(x.asCGFloat, y.asCGFloat)
-    }
-    
     mutating func line(_ x: CGFloat, _ y: CGFloat) {
         line(CGPoint(x: x, y: y))
     }
@@ -175,12 +134,7 @@ public extension Path {
 
 public extension Path {
 
-    @available(*, deprecated, renamed: "hLine")
-    mutating func line<T: UINumericType>(xOffset: T) {
-        hLine(offset: xOffset)
-    }
-
-    mutating func hLine<T: UINumericType>(offset: T) {
+    mutating func hLine(offset: CGFloat) {
         line(offset: CGPoint(offset, 0))
     }
 }
@@ -189,7 +143,7 @@ public extension Path {
 
 public extension Path {
     
-    mutating func hLine<T: UINumericType>(_ x: T) {
+    mutating func hLine(_ x: CGFloat) {
         if let currentPoint = currentPoint {
             line(x, currentPoint.y)
         }
@@ -204,12 +158,7 @@ public extension Path {
 
 public extension Path {
 
-    @available(*, deprecated, renamed: "vLine")
-    mutating func line<T: UINumericType>(yOffset: T) {
-        vLine(offset: yOffset)
-    }
-
-    mutating func vLine<T: UINumericType>(offset: T) {
+    mutating func vLine(offset: CGFloat) {
         line(offset: CGPoint(0, offset))
     }
 }
@@ -218,7 +167,7 @@ public extension Path {
 
 public extension Path {
     
-    mutating func vLine<T: UINumericType>(_ y: T) {
+    mutating func vLine(_ y: CGFloat) {
         if let currentPoint = currentPoint {
             line(currentPoint.x, y)
         }
@@ -239,11 +188,11 @@ public extension Path {
         line(origin.offset(vector))
     }
     
-    mutating func hLine<T: UINumericType>(at location: CGPoint, length: T, anchor: UnitPoint = .topLeading) {
+    mutating func hLine(at location: CGPoint, length: CGFloat, anchor: UnitPoint = .topLeading) {
         line(at: location, vector: CGVector(length, 0), anchor: anchor)
     }
     
-    mutating func vLine<T: UINumericType>(at location: CGPoint, length: T, anchor: UnitPoint = .topLeading) {
+    mutating func vLine(at location: CGPoint, length: CGFloat, anchor: UnitPoint = .topLeading) {
         line(at: location, vector: CGVector(0, length), anchor: anchor)
     }
 }
@@ -252,7 +201,7 @@ public extension Path {
 
 public extension Path {
     
-    mutating func line<T: UINumericType>(at location: CGPoint, length: T, angle: Angle, anchor: UnitPoint = .center) {
+    mutating func line(at location: CGPoint, length: CGFloat, angle: Angle, anchor: UnitPoint = .center) {
         let rotatedPoint = location.calcPoint(length: length, angle: angle)
         let delta = rotatedPoint - location
         let origin = location.offset(in: delta, anchor: anchor)
@@ -274,7 +223,7 @@ public extension Path {
 
 public extension Path {
     
-    mutating func line<T: UINumericType>(from: CGPoint, length: T, angle: Angle) {
+    mutating func line(from: CGPoint, length: CGFloat, angle: Angle) {
         line(from: from, to: from.calcPoint(length: length, angle: angle))
     }
 }
@@ -335,11 +284,11 @@ public extension Path {
 
 public extension Path {
     
-    mutating func roundedRect<TR: UINumericType>(_ rect: CGRect, cornerRadius: TR, transform: CGAffineTransform = .identity) {
+    mutating func roundedRect(_ rect: CGRect, cornerRadius: CGFloat, transform: CGAffineTransform = .identity) {
         addRoundedRect(in: rect, cornerSize: .square(cornerRadius), transform: transform)
     }
     
-    mutating func roundedRect<TR: UINumericType>(_ origin: CGPoint, _ size: CGSize, cornerRadius: TR, transform: CGAffineTransform = .identity) {
+    mutating func roundedRect(_ origin: CGPoint, _ size: CGSize, cornerRadius: CGFloat, transform: CGAffineTransform = .identity) {
         roundedRect(CGRect(origin, size), cornerRadius: cornerRadius, transform: transform)
     }
 }
@@ -361,11 +310,11 @@ public extension Path {
 
 public extension Path {
     
-    mutating func roundedRect<TR: UINumericType>(_ rect: CGRect, cornerRadius: TR, anchor: UnitPoint, transform: CGAffineTransform = .identity) {
+    mutating func roundedRect(_ rect: CGRect, cornerRadius: CGFloat, anchor: UnitPoint, transform: CGAffineTransform = .identity) {
         roundedRect(rect.offset(anchor: anchor), cornerSize: .square(cornerRadius), transform: transform)
     }
 
-    mutating func roundedRect<TR: UINumericType>(_ origin: CGPoint, _ size: CGSize, cornerRadius: TR, anchor: UnitPoint, transform: CGAffineTransform = .identity) {
+    mutating func roundedRect(_ origin: CGPoint, _ size: CGSize, cornerRadius: CGFloat, anchor: UnitPoint, transform: CGAffineTransform = .identity) {
         roundedRect(CGRect(origin.offset(in: size, anchor: anchor), size), cornerSize: .square(cornerRadius), transform: transform)
     }
 }
@@ -405,7 +354,7 @@ public extension Path {
         addEllipse(in: rect, transform: transform)
     }
     
-    mutating func circle<TS: UINumericType>(_ origin: CGPoint, _ size: TS, transform: CGAffineTransform = .identity) {
+    mutating func circle(_ origin: CGPoint, _ size: CGFloat, transform: CGAffineTransform = .identity) {
         circle(origin, size, anchor: .center)
     }
 }
@@ -418,7 +367,7 @@ public extension Path {
         circle(rect.offset(anchor: anchor), transform: transform)
     }
 
-    mutating func circle<TS: UINumericType>(_ origin: CGPoint, _ size: TS, anchor: UnitPoint, transform: CGAffineTransform = .identity) {
+    mutating func circle(_ origin: CGPoint, _ size: CGFloat, anchor: UnitPoint, transform: CGAffineTransform = .identity) {
         let squareCGSize: CGSize = .square(size * 2)
         circle(CGRect(origin.offset(in: squareCGSize, anchor: anchor), squareCGSize), transform: transform)
     }
@@ -469,16 +418,11 @@ public extension Path {
 
 public extension Path {
     
-    @available(*, deprecated, renamed: "arc", message: "Use arc without argument label for center")
-    mutating func arc(center: CGPoint, radius: CGFloat, startAngle: Angle, endAngle: Angle, clockwise: Bool = true, transform: CGAffineTransform = .identity) {
+    mutating func arc(_ center: CGPoint, radius: CGFloat, startAngle: Angle, endAngle: Angle, clockwise: Bool = true, transform: CGAffineTransform = .identity) {
         addArc(center: center, radius: radius, startAngle: adjustAngle(startAngle), endAngle: adjustAngle(endAngle), clockwise: !clockwise, transform: transform)
     }
     
-    mutating func arc<TR: UINumericType>(_ center: CGPoint, radius: TR, startAngle: Angle, endAngle: Angle, clockwise: Bool = true, transform: CGAffineTransform = .identity) {
-        addArc(center: center, radius: radius.asCGFloat, startAngle: adjustAngle(startAngle), endAngle: adjustAngle(endAngle), clockwise: !clockwise, transform: transform)
-    }
-    
-    mutating func relativeArc<TR: UINumericType>(_ center: CGPoint, radius: TR, startAngle: Angle, delta: Angle, transform: CGAffineTransform = .identity) {
-        addRelativeArc(center: center, radius: radius.asCGFloat, startAngle: adjustAngle(startAngle), delta: delta, transform: transform)
+    mutating func relativeArc(_ center: CGPoint, radius: CGFloat, startAngle: Angle, delta: Angle, transform: CGAffineTransform = .identity) {
+        addRelativeArc(center: center, radius: radius, startAngle: adjustAngle(startAngle), delta: delta, transform: transform)
     }
 }

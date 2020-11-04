@@ -186,8 +186,8 @@ public extension LayoutGuide {
     /**
      Relative x and equidistant y
      */
-    static func grid<T: UINumericType>(_ rect: CGRect, columns: [T], rows: Int, origin: UnitPoint = .topLeading) -> LayoutGuide {
-        let xOffsetCalculator = RelativeOffsetForIndexCalculator(rect.width, slices: columns.map {$0.asCGFloat})
+    static func grid(_ rect: CGRect, columns: [CGFloat], rows: Int, origin: UnitPoint = .topLeading) -> LayoutGuide {
+        let xOffsetCalculator = RelativeOffsetForIndexCalculator(rect.width, slices: columns)
         let yOffsetCalculator = EquidistantOffsetForIndexCalculator(rect.height, numSlices: rows)
 
         return gridLayout(xOffsetCalculator: xOffsetCalculator, yOffsetCalculator: yOffsetCalculator, rect: rect, origin: origin)
@@ -196,10 +196,10 @@ public extension LayoutGuide {
     /**
      Equidistant x and relative y
      */
-    static func grid<T: UINumericType>(_ rect: CGRect, columns: Int, rows: [T], origin: UnitPoint = .topLeading) -> LayoutGuide {
+    static func grid(_ rect: CGRect, columns: Int, rows: [CGFloat], origin: UnitPoint = .topLeading) -> LayoutGuide {
       
         let xOffsetCalculator = EquidistantOffsetForIndexCalculator(rect.width, numSlices: columns)
-        let yOffsetCalculator = RelativeOffsetForIndexCalculator(rect.height, slices: rows.map {$0.asCGFloat})
+        let yOffsetCalculator = RelativeOffsetForIndexCalculator(rect.height, slices: rows)
 
         return gridLayout(xOffsetCalculator: xOffsetCalculator, yOffsetCalculator: yOffsetCalculator, rect: rect, origin: origin)
     }
@@ -207,10 +207,10 @@ public extension LayoutGuide {
     /**
      Relative x and y
      */
-    static func grid<TX: UINumericType, TY: UINumericType>(_ rect: CGRect, columns: [TX], rows: [TY], origin: UnitPoint = .topLeading) -> LayoutGuide {
+    static func grid(_ rect: CGRect, columns: [CGFloat], rows: [CGFloat], origin: UnitPoint = .topLeading) -> LayoutGuide {
         
-        let xOffsetCalculator = RelativeOffsetForIndexCalculator(rect.width, slices: columns.map {$0.asCGFloat})
-        let yOffsetCalculator = RelativeOffsetForIndexCalculator(rect.height, slices: rows.map {$0.asCGFloat})
+        let xOffsetCalculator = RelativeOffsetForIndexCalculator(rect.width, slices: columns)
+        let yOffsetCalculator = RelativeOffsetForIndexCalculator(rect.height, slices: rows)
         
         return gridLayout(xOffsetCalculator: xOffsetCalculator, yOffsetCalculator: yOffsetCalculator, rect: rect, origin: origin)
     }

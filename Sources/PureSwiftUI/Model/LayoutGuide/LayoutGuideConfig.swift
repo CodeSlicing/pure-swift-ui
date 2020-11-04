@@ -31,7 +31,7 @@ public extension LayoutGuideConfig {
         rotated(angle, anchor: anchor, factor: 1.asCGFloat)
     }
 
-    func rotated<T: UINumericType>(_ angle: Angle, anchor: UnitPoint = .center, factor: T) -> LayoutGuideConfig {
+    func rotated(_ angle: Angle, anchor: UnitPoint = .center, factor: CGFloat) -> LayoutGuideConfig {
         LayoutGuideConfig(layoutProvider: { rect in
             self.layoutProvider(rect).rotated(angle, anchor: anchor, factor: factor)
         }, layoutPathProvider: self.layoutPathProvider)
@@ -42,7 +42,7 @@ public extension LayoutGuideConfig {
 
 public extension LayoutGuideConfig {
     
-    func rotated<T: UINumericType>(from: Angle, to: Angle, anchor: UnitPoint = .center, factor: T) -> LayoutGuideConfig {
+    func rotated(from: Angle, to: Angle, anchor: UnitPoint = .center, factor: CGFloat) -> LayoutGuideConfig {
         LayoutGuideConfig(layoutProvider: { rect in
             self.layoutProvider(rect).rotated(from: from, to: to, anchor: anchor, factor: factor)
         }, layoutPathProvider: self.layoutPathProvider)
@@ -57,17 +57,17 @@ public extension LayoutGuideConfig {
         self.offset(offset, factor: 1.asCGFloat)
     }
     
-    func offset<T: UINumericType>(_ offset: T) -> LayoutGuideConfig {
+    func offset(_ offset: CGFloat) -> LayoutGuideConfig {
         self.offset(.point(offset))
     }
     
-    func offset<T: UINumericType>(_ offset: CGPoint, factor: T) -> LayoutGuideConfig {
+    func offset(_ offset: CGPoint, factor: CGFloat) -> LayoutGuideConfig {
         LayoutGuideConfig(layoutProvider: { rect in
             self.layoutProvider(rect).offset(offset, factor: factor)
         }, layoutPathProvider: self.layoutPathProvider)
     }
     
-    func offset<TS: UINumericType, TF: UINumericType>(_ offset: TS, factor: TF) -> LayoutGuideConfig {
+    func offset(_ offset: CGFloat, factor: CGFloat) -> LayoutGuideConfig {
         self.offset(.point(offset), factor: factor)
     }
 }
@@ -76,14 +76,14 @@ public extension LayoutGuideConfig {
 
 public extension LayoutGuideConfig {
     
-    func offset<T: UINumericType>(from: CGPoint, to: CGPoint, factor: T) -> LayoutGuideConfig {
+    func offset(from: CGPoint, to: CGPoint, factor: CGFloat) -> LayoutGuideConfig {
         LayoutGuideConfig(layoutProvider: { rect in
             self.layoutProvider(rect).offset(from: from, to: to, factor: factor)
         }, layoutPathProvider: self.layoutPathProvider)
     }
     
-    func offset<TFS: UINumericType, TTS: UINumericType, TF: UINumericType>(from: TFS, to: TTS, factor: TF) -> LayoutGuideConfig {
-        self.offset(from: .point(from), to: .point(to), factor: factor)
+    func offset(from: CGSize, to: CGSize, factor: CGFloat) -> LayoutGuideConfig {
+        offset(from: from.asCGPoint, to: to.asCGPoint, factor: factor)
     }
 }
 
@@ -91,11 +91,11 @@ public extension LayoutGuideConfig {
 
 public extension LayoutGuideConfig {
     
-    func xOffset<T: UINumericType>(_ x: T) -> LayoutGuideConfig {
+    func xOffset(_ x: CGFloat) -> LayoutGuideConfig {
         xOffset(x, factor: 1)
     }
     
-    func xOffset<TX: UINumericType, TF: UINumericType>(_ x: TX, factor: TF) -> LayoutGuideConfig {
+    func xOffset(_ x: CGFloat, factor: CGFloat) -> LayoutGuideConfig {
         offset(.x(x), factor: factor)
     }
 }
@@ -104,7 +104,7 @@ public extension LayoutGuideConfig {
 
 public extension LayoutGuideConfig {
     
-    func xOffset<TFX: UINumericType, TTX: UINumericType, TF: UINumericType>(from: TFX, to: TTX, factor: TF) -> LayoutGuideConfig {
+    func xOffset(from: CGFloat, to: CGFloat, factor: CGFloat) -> LayoutGuideConfig {
         let delta = to - from
         return offset(.x(from + delta * factor))
     }
@@ -114,11 +114,11 @@ public extension LayoutGuideConfig {
 
 public extension LayoutGuideConfig {
     
-    func yOffset<T: UINumericType>(_ y: T) -> LayoutGuideConfig {
+    func yOffset(_ y: CGFloat) -> LayoutGuideConfig {
         yOffset(y, factor: 1)
     }
     
-    func yOffset<TX: UINumericType, TF: UINumericType>(_ y: TX, factor: TF) -> LayoutGuideConfig {
+    func yOffset(_ y: CGFloat, factor: CGFloat) -> LayoutGuideConfig {
         offset(.y(y), factor: factor)
     }
 }
@@ -127,7 +127,7 @@ public extension LayoutGuideConfig {
 
 public extension LayoutGuideConfig {
     
-    func yOffset<TFX: UINumericType, TTX: UINumericType, TF: UINumericType>(from: TFX, to: TTX, factor: TF) -> LayoutGuideConfig {
+    func yOffset(from: CGFloat, to: CGFloat, factor: CGFloat) -> LayoutGuideConfig {
         let delta = to - from
         return offset(.y(from + delta * factor))
     }
@@ -141,17 +141,17 @@ public extension LayoutGuideConfig {
         scaled(scale, anchor: anchor, factor: 1.asCGFloat)
     }
     
-    func scaled<T: UINumericType>(_ scale: T, anchor: UnitPoint = .center) -> LayoutGuideConfig {
+    func scaled(_ scale: CGFloat, anchor: UnitPoint = .center) -> LayoutGuideConfig {
         scaled(.square(scale), anchor: anchor)
     }
     
-    func scaled<T: UINumericType>(_ scale: CGSize, anchor: UnitPoint = .center, factor: T) -> LayoutGuideConfig {
+    func scaled(_ scale: CGSize, anchor: UnitPoint = .center, factor: CGFloat) -> LayoutGuideConfig {
         LayoutGuideConfig(layoutProvider: { rect in
             self.layoutProvider(rect).scaled(scale, anchor: anchor, factor: factor)
         }, layoutPathProvider: self.layoutPathProvider)
     }
     
-    func scaled<TS: UINumericType, TF: UINumericType>(_ scale: TS, anchor: UnitPoint = .center, factor: TF) -> LayoutGuideConfig {
+    func scaled(_ scale: CGFloat, anchor: UnitPoint = .center, factor: CGFloat) -> LayoutGuideConfig {
         scaled(.square(scale), anchor: anchor, factor: factor)
     }
 }
@@ -160,13 +160,13 @@ public extension LayoutGuideConfig {
 
 public extension LayoutGuideConfig {
         
-    func scaled<T: UINumericType>(from fromScale: CGSize, to toScale: CGSize, anchor: UnitPoint = .center, factor: T) -> LayoutGuideConfig {
+    func scaled(from fromScale: CGSize, to toScale: CGSize, anchor: UnitPoint = .center, factor: CGFloat) -> LayoutGuideConfig {
         LayoutGuideConfig(layoutProvider: { rect in
             self.layoutProvider(rect).scaled(from: fromScale, to: toScale, anchor: anchor, factor: factor)
         }, layoutPathProvider: self.layoutPathProvider)
     }
     
-    func scaled<TFS: UINumericType, TTS: UINumericType, TF: UINumericType>(from fromScale: TFS, to toScale: TTS, anchor: UnitPoint = .center, factor: TF) -> LayoutGuideConfig {
+    func scaled(from fromScale: CGFloat, to toScale: CGFloat, anchor: UnitPoint = .center, factor: CGFloat) -> LayoutGuideConfig {
         scaled(from: .square(fromScale), to: .square(toScale), anchor: anchor, factor: factor)
     }
 }
@@ -175,11 +175,11 @@ public extension LayoutGuideConfig {
 
 public extension LayoutGuideConfig {
     
-    func xScaled<T: UINumericType>(_ scale: T, anchor: UnitPoint = .center) -> LayoutGuideConfig {
+    func xScaled(_ scale: CGFloat, anchor: UnitPoint = .center) -> LayoutGuideConfig {
         xScaled(scale, anchor: anchor, factor: 1)
     }
     
-    func xScaled<TS: UINumericType, TF: UINumericType>(_ scale: TS, anchor: UnitPoint = .center, factor: TF) -> LayoutGuideConfig {
+    func xScaled(_ scale: CGFloat, anchor: UnitPoint = .center, factor: CGFloat) -> LayoutGuideConfig {
         scaled(.size(scale, 1), anchor: anchor, factor: factor)
     }
 }
@@ -188,7 +188,7 @@ public extension LayoutGuideConfig {
 
 public extension LayoutGuideConfig {
     
-    func xScaled<TFS: UINumericType, TTS: UINumericType, TF: UINumericType>(from fromScale: TFS, to toScale: TTS, anchor: UnitPoint = .center, factor: TF) -> LayoutGuideConfig {
+    func xScaled(from fromScale: CGFloat, to toScale: CGFloat, anchor: UnitPoint = .center, factor: CGFloat) -> LayoutGuideConfig {
         scaled(from: .size(fromScale, 1), to: .size(toScale, 1), anchor: anchor, factor: factor)
     }
 }
@@ -197,11 +197,11 @@ public extension LayoutGuideConfig {
 
 public extension LayoutGuideConfig {
     
-    func yScaled<T: UINumericType>(_ scale: T, anchor: UnitPoint = .center) -> LayoutGuideConfig {
+    func yScaled(_ scale: CGFloat, anchor: UnitPoint = .center) -> LayoutGuideConfig {
         yScaled(scale, anchor: anchor, factor: 1)
     }
     
-    func yScaled<TS: UINumericType, TF: UINumericType>(_ scale: TS, anchor: UnitPoint = .center, factor: TF) -> LayoutGuideConfig {
+    func yScaled(_ scale: CGFloat, anchor: UnitPoint = .center, factor: CGFloat) -> LayoutGuideConfig {
         scaled(.size(1, scale), anchor: anchor, factor: factor)
     }
 }
@@ -210,7 +210,7 @@ public extension LayoutGuideConfig {
 
 public extension LayoutGuideConfig {
     
-    func yScaled<TFS: UINumericType, TTS: UINumericType, TF: UINumericType>(from fromScale: TFS, to toScale: TTS, anchor: UnitPoint = .center, factor: TF) -> LayoutGuideConfig {
+    func yScaled(from fromScale: CGFloat, to toScale: CGFloat, anchor: UnitPoint = .center, factor: CGFloat) -> LayoutGuideConfig {
         scaled(from: .size(1, fromScale), to: .size(1, toScale), anchor: anchor, factor: factor)
     }
 }
@@ -225,19 +225,19 @@ public extension LayoutGuideConfig {
         }, layoutPathProvider: gridLayoutPathProvider)
     }
     
-    static func grid<T: UINumericType>(columns: [T], rows: Int, origin: UnitPoint = .topLeading) -> LayoutGuideConfig {
+    static func grid(columns: [CGFloat], rows: Int, origin: UnitPoint = .topLeading) -> LayoutGuideConfig {
         LayoutGuideConfig(layoutProvider: { rect in
             LayoutGuide.grid(rect, columns: columns, rows: rows, origin: origin)
         }, layoutPathProvider: gridLayoutPathProvider)
     }
     
-    static func grid<T: UINumericType>(columns: Int, rows: [T], origin: UnitPoint = .topLeading) -> LayoutGuideConfig {
+    static func grid(columns: Int, rows: [CGFloat], origin: UnitPoint = .topLeading) -> LayoutGuideConfig {
         LayoutGuideConfig(layoutProvider: { rect in
             LayoutGuide.grid(rect, columns: columns, rows: rows, origin: origin)
         }, layoutPathProvider: gridLayoutPathProvider)
     }
     
-    static func grid<TX: UINumericType, TY: UINumericType>(columns: [TX], rows: [TY], origin: UnitPoint = .topLeading) -> LayoutGuideConfig {
+    static func grid(columns: [CGFloat], rows: [CGFloat], origin: UnitPoint = .topLeading) -> LayoutGuideConfig {
         LayoutGuideConfig(layoutProvider: { rect in
             LayoutGuide.grid(rect, columns: columns, rows: rows, origin: origin)
         }, layoutPathProvider: gridLayoutPathProvider)
@@ -254,19 +254,19 @@ public extension LayoutGuideConfig {
         }, layoutPathProvider: polarLayoutPathProvider)
     }
 
-    static func polar<T: UINumericType>(rings: [T], segments: Int, useMaxDimension: Bool = false, origin: UnitPoint = .center) -> LayoutGuideConfig {
+    static func polar(rings: [CGFloat], segments: Int, useMaxDimension: Bool = false, origin: UnitPoint = .center) -> LayoutGuideConfig {
         LayoutGuideConfig(layoutProvider: { rect in
             LayoutGuide.polar(rect, rings: rings, segments: segments, useMaxDimension: useMaxDimension, origin: origin)
         }, layoutPathProvider: polarLayoutPathProvider)
     }
 
-    static func polar<T: UINumericType>(rings: Int, segments: [T], useMaxDimension: Bool = false, origin: UnitPoint = .center) -> LayoutGuideConfig {
+    static func polar(rings: Int, segments: [CGFloat], useMaxDimension: Bool = false, origin: UnitPoint = .center) -> LayoutGuideConfig {
         LayoutGuideConfig(layoutProvider: { rect in
             LayoutGuide.polar(rect, rings: rings, segments: segments, useMaxDimension: useMaxDimension, origin: origin)
         }, layoutPathProvider: polarLayoutPathProvider)
     }
     
-    static func polar<TX: UINumericType, TY: UINumericType>(rings: [TX], segments: [TY], useMaxDimension: Bool = false, origin: UnitPoint = .center) -> LayoutGuideConfig {
+    static func polar(rings: [CGFloat], segments: [CGFloat], useMaxDimension: Bool = false, origin: UnitPoint = .center) -> LayoutGuideConfig {
         LayoutGuideConfig(layoutProvider: { rect in
             LayoutGuide.polar(rect, rings: rings, segments: segments, useMaxDimension: useMaxDimension, origin: origin)
         }, layoutPathProvider: polarLayoutPathProvider)
@@ -275,7 +275,7 @@ public extension LayoutGuideConfig {
 
 private func gridLayoutPathProvider(_ gridLayout: LayoutGuide, rect: CGRect) -> Path {
     var path = Path()
-    var layoutCopy = gridLayout
+    let layoutCopy = gridLayout
     
     for x in 0...gridLayout.xCount {
         for y in 0...gridLayout.yCount {
@@ -289,7 +289,7 @@ private func gridLayoutPathProvider(_ gridLayout: LayoutGuide, rect: CGRect) -> 
 
 private func polarLayoutPathProvider(_ gridLayout: LayoutGuide, rect: CGRect) -> Path {
     var path = Path()
-    var layoutCopy = gridLayout
+    let layoutCopy = gridLayout
             
     for x in 0...gridLayout.xCount {
         path.ellipse(layoutCopy.origin, .square(layoutCopy.radiusTo(x, 0) * 2), anchor: .center)

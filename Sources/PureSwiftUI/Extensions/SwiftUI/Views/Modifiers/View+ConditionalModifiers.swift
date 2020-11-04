@@ -37,19 +37,19 @@ public extension View {
 
 public extension View {
     
-    func frameIf<TW: UINumericType, TH: UINumericType>(_ condition: Bool, _ width: TW, _ height: TH, alignment: Alignment = .center) -> some View {
-        frame(width: condition ? width.asCGFloat : nil, height: condition ? height.asCGFloat : nil, alignment: alignment)
+    func frameIf(_ condition: Bool, _ width: CGFloat, _ height: CGFloat, alignment: Alignment = .center) -> some View {
+        frame(width: condition ? width : nil, height: condition ? height : nil, alignment: alignment)
     }
     
-    func frameIfNot<TW: UINumericType, TH: UINumericType>(_ condition: Bool, _ width: TW, _ height: TH, alignment: Alignment = .center) -> some View {
+    func frameIfNot(_ condition: Bool, _ width: CGFloat, _ height: CGFloat, alignment: Alignment = .center) -> some View {
         frameIf(!condition, width, height, alignment: alignment)
     }
     
-    func frameIf<T: UINumericType>(_ condition: Bool, _ size: T, alignment: Alignment = .center) -> some View {
+    func frameIf(_ condition: Bool, _ size: CGFloat, alignment: Alignment = .center) -> some View {
         frameIf(condition, size, size, alignment: alignment)
     }
     
-    func frameIfNot<T: UINumericType>(_ condition: Bool, _ size: T, alignment: Alignment = .center) -> some View {
+    func frameIfNot(_ condition: Bool, _ size: CGFloat, alignment: Alignment = .center) -> some View {
         frameIf(!condition, size, alignment: alignment)
     }
     
@@ -61,19 +61,19 @@ public extension View {
         frameIf(!condition, size, alignment: alignment)
     }
     
-    func widthIf<TW: UINumericType>(_ condition: Bool, _ width: TW, alignment: Alignment = .center) -> some View {
-        frame(width: condition ? width.asCGFloat : nil, alignment: alignment)
+    func widthIf(_ condition: Bool, _ width: CGFloat, alignment: Alignment = .center) -> some View {
+        frame(width: condition ? width : nil, alignment: alignment)
     }
     
-    func widthIfNot<TW: UINumericType>(_ condition: Bool, _ width: TW, alignment: Alignment = .center) -> some View {
+    func widthIfNot(_ condition: Bool, _ width: CGFloat, alignment: Alignment = .center) -> some View {
         widthIf(!condition, width, alignment: alignment)
     }
     
-    func heightIf<TH: UINumericType>(_ condition: Bool, _ height: TH, alignment: Alignment = .center) -> some View {
-        frame(height: condition ? height.asCGFloat : nil, alignment: alignment)
+    func heightIf(_ condition: Bool, _ height: CGFloat, alignment: Alignment = .center) -> some View {
+        frame(height: condition ? height : nil, alignment: alignment)
     }
     
-    func heightIfNot<TH: UINumericType>(_ condition: Bool, _ height: TH, alignment: Alignment = .center) -> some View {
+    func heightIfNot(_ condition: Bool, _ height: CGFloat, alignment: Alignment = .center) -> some View {
         heightIf(!condition, height, alignment: alignment)
     }
 }
@@ -82,11 +82,11 @@ public extension View {
 
 public extension View {
     
-    func cornerRadiusIf<T: UINumericType>(_ condition: Bool, _ radius: T, antialiased: Bool = true) -> some View {
-        cornerRadius(condition ? radius.asCGFloat : 0, antialiased: antialiased)
+    func cornerRadiusIf(_ condition: Bool, _ radius: CGFloat, antialiased: Bool = true) -> some View {
+        cornerRadius(condition ? radius : 0, antialiased: antialiased)
     }
 
-    func cornerRadiusIfNot<T: UINumericType>(_ condition: Bool, _ radius: T, antialiased: Bool = true) -> some View {
+    func cornerRadiusIfNot(_ condition: Bool, _ radius: CGFloat, antialiased: Bool = true) -> some View {
         cornerRadiusIf(!condition, radius, antialiased: antialiased)
     }
 }
@@ -103,14 +103,6 @@ public extension View {
         paddingIf(!condition)
     }
     
-    func paddingIf<T: UINumericType>(_ condition: Bool, _ paddingAmount: T) -> some View {
-        paddingIf(condition, paddingAmount.asCGFloat)
-    }
-    
-    func paddingIfNot<T: UINumericType>(_ condition: Bool, _ paddingAmount: T) -> some View {
-        paddingIf(!condition, paddingAmount)
-    }
-    
     func hPaddingIf(_ condition: Bool) -> some View {
         padding(condition ? .horizontal : [])
     }
@@ -125,22 +117,6 @@ public extension View {
     
     func vPaddingIfNot(_ condition: Bool) -> some View {
         vPaddingIf(!condition)
-    }
-
-    func hPaddingIf<T: UINumericType>(_ condition: Bool, _ horizontalPadding: T) -> some View {
-        hPaddingIf(condition, horizontalPadding.asCGFloat)
-    }
-    
-    func hPaddingIfNot<T: UINumericType>(_ condition: Bool, _ horizontalPadding: T) -> some View {
-        hPaddingIf(!condition, horizontalPadding)
-    }
-
-    func vPaddingIf<T: UINumericType>(_ condition: Bool, _ verticalPadding: T) -> some View {
-        vPaddingIf(condition, verticalPadding.asCGFloat)
-    }
-    
-    func vPaddingIfNot<T: UINumericType>(_ condition: Bool, _ verticalPadding: T) -> some View {
-        vPaddingIf(!condition, verticalPadding)
     }
 
     //native
@@ -181,31 +157,6 @@ public extension View {
         offsetIf(!condition, point)
     }
     
-    func offsetIf<T_LHS: UINumericType, T_RHS: UINumericType>(_ condition: Bool, _ x: T_LHS, _ y: T_RHS) -> some View {
-        offsetIf(condition, x.asCGFloat, y.asCGFloat)
-    }
-    
-    func offsetIfNot<T_LHS: UINumericType, T_RHS: UINumericType>(_ condition: Bool, _ x: T_LHS, _ y: T_RHS) -> some View {
-        offsetIf(!condition, x, y)
-    }
-    
-    func xOffsetIf<T: UINumericType>(_ condition: Bool, _ xOffset: T) -> some View {
-        xOffsetIf(condition, xOffset.asCGFloat)
-    }
-    
-    func xOffsetIfNot<T: UINumericType>(_ condition: Bool, _ xOffset: T) -> some View {
-        xOffsetIf(!condition, xOffset)
-    }
-    
-    func yOffsetIf<T: UINumericType>(_ condition: Bool, _ yOffset: T) -> some View {
-        yOffsetIf(condition, yOffset.asCGFloat)
-    }
-    
-    func yOffsetIfNot<T: UINumericType>(_ condition: Bool, _ yOffset: T) -> some View {
-        yOffsetIf(!condition, yOffset)
-    }
-    
-    //native
     func offsetIf(_ condition: Bool, _ x: CGFloat, _ y: CGFloat) -> some View {
         offset(condition ? x : 0, condition ? y : 0)
     }
@@ -235,11 +186,11 @@ public extension View {
 
 public extension View {
     
-    func opacityIf<T: UINumericType>(_ condition: Bool, _ opacity: T) -> some View {
-        self.opacity(condition ? opacity.asDouble : 1)
+    func opacityIf(_ condition: Bool, _ opacity: Double) -> some View {
+        self.opacity(condition ? opacity : 1)
     }
     
-    func opacityIfNot<T: UINumericType>(_ condition: Bool, _ opacity: T) -> some View {
+    func opacityIfNot(_ condition: Bool, _ opacity: Double) -> some View {
         opacityIf(!condition, opacity)
     }
 }
@@ -248,11 +199,11 @@ public extension View {
 
 public extension View {
     
-    func blurIf<T: UINumericType>(_ condition: Bool, _ radius: T, opaque: Bool = false) -> some View {
-        blur(radius: condition ? radius.asCGFloat : 0, opaque: opaque)
+    func blurIf(_ condition: Bool, _ radius: CGFloat, opaque: Bool = false) -> some View {
+        blur(radius: condition ? radius : 0, opaque: opaque)
     }
     
-    func blurIfNot<T: UINumericType>(_ condition: Bool, _ radius: T, opaque: Bool = false) -> some View {
+    func blurIfNot(_ condition: Bool, _ radius: CGFloat, opaque: Bool = false) -> some View {
         blurIf(!condition, radius, opaque: opaque)
     }
 }
@@ -274,35 +225,35 @@ public extension View {
 
 public extension View {
  
-    func saturationIf<T: UINumericType>(_ condition: Bool, _ value: T) -> some View {
-        saturation(condition ? value.asDouble : 1)
+    func saturationIf(_ condition: Bool, _ value: Double) -> some View {
+        saturation(condition ? value : 1)
     }
     
-    func saturationIfNot<T: UINumericType>(_ condition: Bool, _ value: T) -> some View {
-        saturationIf(!condition, value.asDouble)
+    func saturationIfNot(_ condition: Bool, _ value: Double) -> some View {
+        saturationIf(!condition, value)
     }
     
-    func brightnessIf<T: UINumericType>(_ condition: Bool, _ amount: T) -> some View {
-        brightness(condition ? amount.asDouble : 0)
+    func brightnessIf(_ condition: Bool, _ amount: Double) -> some View {
+        brightness(condition ? amount : 0)
     }
     
-    func brightnessIfNot<T: UINumericType>(_ condition: Bool, _ amount: T) -> some View {
+    func brightnessIfNot(_ condition: Bool, _ amount: Double) -> some View {
         brightnessIf(!condition, amount)
     }
     
-    func contrastIf<T: UINumericType>(_ condition: Bool, _ amount: T) -> some View {
-        contrast(condition ? amount.asDouble : 1)
+    func contrastIf(_ condition: Bool, _ amount: Double) -> some View {
+        contrast(condition ? amount : 1)
     }
     
-    func contrastIfNot<T: UINumericType>(_ condition: Bool, _ amount: T) -> some View {
+    func contrastIfNot(_ condition: Bool, _ amount: Double) -> some View {
         contrastIf(!condition, amount)
     }
       
-    func grayscaleIf<T: UINumericType>(_ condition: Bool, _ amount: T) -> some View {
-        grayscale(condition ? amount.asDouble : 0)
+    func grayscaleIf(_ condition: Bool, _ amount: Double) -> some View {
+        grayscale(condition ? amount : 0)
     }
       
-    func grayscaleIfNot<T: UINumericType>(_ condition: Bool, _ amount: T) -> some View {
+    func grayscaleIfNot(_ condition: Bool, _ amount: Double) -> some View {
         grayscaleIf(!condition, amount)
     }
 }
@@ -451,39 +402,39 @@ public extension View {
     }
     
     // with width
-    func borderIf<SS: ShapeStyle, T: UINumericType>(_ condition: Bool, _ shapeStyle: SS, width: T) -> some View {
+    func borderIf<SS: ShapeStyle>(_ condition: Bool, _ shapeStyle: SS, width: CGFloat) -> some View {
         RenderIf(condition) {
-            self.border(shapeStyle, width: width.asCGFloat)
+            self.border(shapeStyle, width: width)
         }.elseRender {
             self
         }
     }
     
-    func borderIfNot<SS: ShapeStyle, T: UINumericType>(_ condition: Bool, _ shapeStyle: SS, width: T) -> some View {
+    func borderIfNot<SS: ShapeStyle>(_ condition: Bool, _ shapeStyle: SS, width: CGFloat) -> some View {
         borderIf(!condition, shapeStyle, width: width)
     }
     
-    func borderIf<T: UINumericType>(_ condition: Bool, _ color: Color, width: T) -> some View {
-        border(condition ? color : Color.clear, width: width.asCGFloat)
+    func borderIf(_ condition: Bool, _ color: Color, width: CGFloat) -> some View {
+        border(condition ? color : Color.clear, width: width)
     }
     
-    func borderIfNot<T: UINumericType>(_ condition: Bool, _ color: Color, width: T) -> some View {
+    func borderIfNot(_ condition: Bool, _ color: Color, width: CGFloat) -> some View {
         borderIf(!condition, color, width: width)
     }
     
-    func borderColorIf<T: UINumericType>(_ condition: Bool, _ color: Color, width: T) -> some View {
+    func borderColorIf(_ condition: Bool, _ color: Color, width: CGFloat) -> some View {
         borderIf(condition, color, width: width)
     }
     
-    func borderColorIfNot<T: UINumericType>(_ condition: Bool, _ color: Color, width: T) -> some View {
+    func borderColorIfNot(_ condition: Bool, _ color: Color, width: CGFloat) -> some View {
         borderIf(!condition, color, width: width)
     }
     
-    func borderColorIf<T: UINumericType>(_ condition: Bool, _ colorName: String, width: T) -> some View {
+    func borderColorIf(_ condition: Bool, _ colorName: String, width: CGFloat) -> some View {
         borderColorIf(condition, Color(colorName), width: width)
     }
     
-    func borderColorIfNot<T: UINumericType>(_ condition: Bool, _ colorName: String, width: T) -> some View {
+    func borderColorIfNot(_ condition: Bool, _ colorName: String, width: CGFloat) -> some View {
         borderColorIfNot(condition, Color(colorName), width: width)
     }
 }
@@ -515,19 +466,19 @@ public let PS_DEFAULT_SCALE_SIZE = CGSize(1, 1)
 
 public extension View {
     
-    func scaleIf<T: UINumericType>(_ condition: Bool, _ scale: T, anchor: UnitPoint = .center) -> some View {
-        self.scaleEffect(condition ? scale.asCGFloat : 1, anchor: anchor)
+    func scaleIf(_ condition: Bool, _ scale: CGFloat, anchor: UnitPoint = .center) -> some View {
+        self.scaleEffect(condition ? scale : 1, anchor: anchor)
     }
     
-    func scaleIfNot<T: UINumericType>(_ condition: Bool, _ scale: T, anchor: UnitPoint = .center) -> some View {
+    func scaleIfNot(_ condition: Bool, _ scale: CGFloat, anchor: UnitPoint = .center) -> some View {
         scaleIf(!condition, scale)
     }
     
-    func scaleIf<TX: UINumericType, TY: UINumericType>(_ condition: Bool, _ scaleX: TX, _ scaleY: TY, anchor: UnitPoint = .center) -> some View {
+    func scaleIf(_ condition: Bool, _ scaleX: CGFloat, _ scaleY: CGFloat, anchor: UnitPoint = .center) -> some View {
         scaleIf(condition, CGSize(scaleX, scaleY), anchor: anchor)
     }
     
-    func scaleIfNot<TX: UINumericType, TY: UINumericType>(_ condition: Bool, _ scaleX: TX, _ scaleY: TY, anchor: UnitPoint = .center) -> some View {
+    func scaleIfNot(_ condition: Bool, _ scaleX: CGFloat, _ scaleY: CGFloat, anchor: UnitPoint = .center) -> some View {
         scaleIf(!condition, scaleX, scaleY, anchor: anchor)
     }
     
@@ -539,19 +490,19 @@ public extension View {
         scaleIf(!condition, scale, anchor: anchor)
     }
     
-    func xScaleIf<T: UINumericType>(_ condition: Bool, _ scaleX: T, anchor: UnitPoint = .center) -> some View {
-        xScale(condition ? scaleX.asCGFloat : 1, anchor: anchor)
+    func xScaleIf(_ condition: Bool, _ scaleX: CGFloat, anchor: UnitPoint = .center) -> some View {
+        xScale(condition ? scaleX : 1, anchor: anchor)
     }
     
-    func xScaleIfNot<T: UINumericType>(_ condition: Bool, _ scaleX: T, anchor: UnitPoint = .center) -> some View {
+    func xScaleIfNot(_ condition: Bool, _ scaleX: CGFloat, anchor: UnitPoint = .center) -> some View {
         xScaleIf(!condition, scaleX, anchor: anchor)
     }
     
-    func yScaleIf<T: UINumericType>(_ condition: Bool, _ scaleY: T, anchor: UnitPoint = .center) -> some View {
-        yScale(condition ? scaleY.asCGFloat : 1, anchor: anchor)
+    func yScaleIf(_ condition: Bool, _ scaleY: CGFloat, anchor: UnitPoint = .center) -> some View {
+        yScale(condition ? scaleY : 1, anchor: anchor)
     }
 
-    func yScaleIfNot<T: UINumericType>(_ condition: Bool, _ scaleY: T, anchor: UnitPoint = .center) -> some View {
+    func yScaleIfNot(_ condition: Bool, _ scaleY: CGFloat, anchor: UnitPoint = .center) -> some View {
         yScaleIf(!condition, scaleY, anchor: anchor)
     }
 }
@@ -568,51 +519,47 @@ public extension View {
         }
     }
     
-    func shadowIf<TR: UINumericType, TX: UINumericType, TY: UINumericType>(_ condition: Bool, color: Color? = nil, radius: TR, x: TX, y: TY) -> some View {
-        shadowIf(condition, color: color, radius: radius.asCGFloat, x: x.asCGFloat, y: x.asCGFloat)
+    func shadowIfNot(_ condition: Bool, color: Color? = nil, radius: CGFloat, x: CGFloat, y: CGFloat) -> some View {
+        shadowIf(!condition, color: color, radius: radius, x: x, y: x)
     }
     
-    func shadowIfNot<TR: UINumericType, TX: UINumericType, TY: UINumericType>(_ condition: Bool, color: Color? = nil, radius: TR, x: TX, y: TY) -> some View {
-        shadowIf(!condition, color: color, radius: radius.asCGFloat, x: x.asCGFloat, y: x.asCGFloat)
-    }
-    
-    func shadowIf<TR: UINumericType>(_ condition: Bool, color: Color? = nil, radius: TR, offset: CGPoint) -> some View {
+    func shadowIf(_ condition: Bool, color: Color? = nil, radius: CGFloat, offset: CGPoint) -> some View {
         shadowIf(condition, color: color, radius: radius, x: offset.x, y: offset.y)
     }
     
-    func shadowIfNot<TR: UINumericType>(_ condition: Bool, color: Color? = nil, radius: TR, offset: CGPoint) -> some View {
+    func shadowIfNot(_ condition: Bool, color: Color? = nil, radius: CGFloat, offset: CGPoint) -> some View {
         shadowIfNot(condition, color: color, radius: radius, x: offset.x, y: offset.y)
     }
     
-    func shadowIf<TR: UINumericType, T: UINumericType>(_ condition: Bool, color: Color? = nil, radius: TR, offset: T, angle: Angle) -> some View {
+    func shadowIf(_ condition: Bool, color: Color? = nil, radius: CGFloat, offset: CGFloat, angle: Angle) -> some View {
         shadowIf(condition, color: color, radius: radius, offset: .point(offset, angle))
     }
     
-    func shadowIfNot<TR: UINumericType, T: UINumericType>(_ condition: Bool, color: Color? = nil, radius: TR, offset: T, angle: Angle) -> some View {
+    func shadowIfNot(_ condition: Bool, color: Color? = nil, radius: CGFloat, offset: CGFloat, angle: Angle) -> some View {
         shadowIfNot(condition, color: color, radius: radius, offset: .point(offset, angle))
     }
 
-    func shadowIf<TR: UINumericType>(_ condition: Bool, color: Color? = nil, radius: TR) -> some View {
+    func shadowIf(_ condition: Bool, color: Color? = nil, radius: CGFloat) -> some View {
         shadowIf(condition, color: color, radius: radius, x: 0, y: 0)
     }
     
-    func shadowIfNot<TR: UINumericType>(_ condition: Bool, color: Color? = nil, radius: TR) -> some View {
+    func shadowIfNot(_ condition: Bool, color: Color? = nil, radius: CGFloat) -> some View {
         shadowIf(!condition, color: color, radius: radius, x: 0, y: 0)
     }
     
-    func shadowIf<TR: UINumericType, TX: UINumericType>(_ condition: Bool, color: Color? = nil, radius: TR, x: TX) -> some View {
+    func shadowIf(_ condition: Bool, color: Color? = nil, radius: CGFloat, x: CGFloat) -> some View {
         shadowIf(condition, color: color, radius: radius, x: x, y: 0)
     }
     
-    func shadowIfNot<TR: UINumericType, TX: UINumericType>(_ condition: Bool, color: Color? = nil, radius: TR, x: TX) -> some View {
+    func shadowIfNot(_ condition: Bool, color: Color? = nil, radius: CGFloat, x: CGFloat) -> some View {
         shadowIf(!condition, color: color, radius: radius, x: x, y: 0)
     }
 
-    func shadowIf<TR: UINumericType, TY: UINumericType>(_ condition: Bool, color: Color? = nil, radius: TR, y: TY) -> some View {
+    func shadowIf(_ condition: Bool, color: Color? = nil, radius: CGFloat, y: CGFloat) -> some View {
         shadowIf(condition, color: color, radius: radius, x: 0, y: y)
     }
     
-    func shadowIfNot<TR: UINumericType, TY: UINumericType>(_ condition: Bool, color: Color? = nil, radius: TR, y: TY) -> some View {
+    func shadowIfNot(_ condition: Bool, color: Color? = nil, radius: CGFloat, y: CGFloat) -> some View {
         shadowIf(!condition, color: color, radius: radius, x: 0, y: y)
     }
 }
@@ -668,11 +615,11 @@ public extension View {
 
 public extension View {
     
-    func zIndexIf<T: UINumericType>(_ condition: Bool, _ index: T) -> some View {
-        zIndex(condition ? index.asDouble : 0)
+    func zIndexIf(_ condition: Bool, _ index: Double) -> some View {
+        zIndex(condition ? index : 0)
     }
     
-    func zIndexIfNot<T: UINumericType>(_ condition: Bool, _ index: T) -> some View {
+    func zIndexIfNot(_ condition: Bool, _ index: Double) -> some View {
         zIndexIf(!condition, index)
     }
 }
@@ -714,27 +661,27 @@ public extension View {
 
 public extension View {
     
-    func relativeXOffsetIf<T: UINumericType>(_ condition: Bool, _ xOffset: T) -> some View {
-        modifier(RelativeOffsetViewModifier(condition: condition, relativeOffsetForSizeProvider: RelativeXOffsetProvider(relativeXOffset: xOffset.asCGFloat)))
+    func relativeXOffsetIf(_ condition: Bool, _ xOffset: CGFloat) -> some View {
+        modifier(RelativeOffsetViewModifier(condition: condition, relativeOffsetForSizeProvider: RelativeXOffsetProvider(relativeXOffset: xOffset)))
     }
     
-    func relativeXOffsetIfNot<T: UINumericType>(_ condition: Bool, _ xOffset: T) -> some View {
+    func relativeXOffsetIfNot(_ condition: Bool, _ xOffset: CGFloat) -> some View {
         relativeXOffsetIf(!condition, xOffset)
     }
     
-    func relativeYOffsetIf<T: UINumericType>(_ condition: Bool, _ yOffset: T) -> some View {
-        modifier(RelativeOffsetViewModifier(condition: condition, relativeOffsetForSizeProvider: RelativeYOffsetProvider(relativeYOffset: yOffset.asCGFloat)))
+    func relativeYOffsetIf(_ condition: Bool, _ yOffset: CGFloat) -> some View {
+        modifier(RelativeOffsetViewModifier(condition: condition, relativeOffsetForSizeProvider: RelativeYOffsetProvider(relativeYOffset: yOffset)))
     }
     
-    func relativeYOffsetIfNot<T: UINumericType>(_ condition: Bool, _ yOffset: T) -> some View {
+    func relativeYOffsetIfNot(_ condition: Bool, _ yOffset: CGFloat) -> some View {
         relativeYOffsetIf(!condition, yOffset)
     }
     
-    func relativeOffsetIf<TX: UINumericType, TY: UINumericType>(_ condition: Bool, _ xOffset: TX, _ yOffset: TY) -> some View {
+    func relativeOffsetIf(_ condition: Bool, _ xOffset: CGFloat, _ yOffset: CGFloat) -> some View {
         modifier(RelativeOffsetViewModifier(condition: condition, relativeOffsetForSizeProvider: RelativeOffsetProvider(relativeOffset: CGPoint(xOffset, yOffset))))
     }
     
-    func relativeOffsetIfNot<TX: UINumericType, TY: UINumericType>(_ condition: Bool, _ xOffset: TX, _ yOffset: TY) -> some View {
+    func relativeOffsetIfNot(_ condition: Bool, _ xOffset: CGFloat, _ yOffset: CGFloat) -> some View {
         relativeOffsetIf(!condition, xOffset, yOffset)
     }
 }
@@ -764,51 +711,51 @@ public extension View {
         offsetToPositionIf(!condition, position, in: coordinateSpaceName, anchor: anchor)
     }
     
-    func offsetToPositionIf<TX: UINumericType, TY: UINumericType>(_ condition: Bool, _ xPosition: TX, _ yPosition: TY, in coordinateSpace: CoordinateSpace = .global, anchor: UnitPoint = .center) -> some View {
+    func offsetToPositionIf(_ condition: Bool, _ xPosition: CGFloat, _ yPosition: CGFloat, in coordinateSpace: CoordinateSpace = .global, anchor: UnitPoint = .center) -> some View {
         offsetToPositionIf(condition, CGPoint(xPosition, yPosition), in: coordinateSpace, anchor: anchor)
     }
 
-    func offsetToPositionIfNot<TX: UINumericType, TY: UINumericType>(_ condition: Bool, _ xPosition: TX, _ yPosition: TY, in coordinateSpace: CoordinateSpace = .global, anchor: UnitPoint = .center) -> some View {
+    func offsetToPositionIfNot(_ condition: Bool, _ xPosition: CGFloat, _ yPosition: CGFloat, in coordinateSpace: CoordinateSpace = .global, anchor: UnitPoint = .center) -> some View {
         offsetToPositionIf(!condition, xPosition, yPosition, in: coordinateSpace, anchor: anchor)
     }
 
-    func offsetToPositionIf<TX: UINumericType, TY: UINumericType, TC: Hashable>(_ condition: Bool, _ xPosition: TX, _ yPosition: TY, in coordinateSpaceName: TC, anchor: UnitPoint = .center) -> some View {
+    func offsetToPositionIf<TC: Hashable>(_ condition: Bool, _ xPosition: CGFloat, _ yPosition: CGFloat, in coordinateSpaceName: TC, anchor: UnitPoint = .center) -> some View {
         offsetToPositionIf(condition, xPosition, yPosition, in: .named(coordinateSpaceName), anchor: anchor)
     }
     
-    func offsetToPositionIfNot<TX: UINumericType, TY: UINumericType, TC: Hashable>(_ condition: Bool, _ xPosition: TX, _ yPosition: TY, in coordinateSpaceName: TC, anchor: UnitPoint = .center) -> some View {
+    func offsetToPositionIfNot<TC: Hashable>(_ condition: Bool, _ xPosition: CGFloat, _ yPosition: CGFloat, in coordinateSpaceName: TC, anchor: UnitPoint = .center) -> some View {
         offsetToPositionIf(!condition, xPosition, yPosition, in: coordinateSpaceName, anchor: anchor)
     }
 
-    func xOffsetToXPositionIf<T: UINumericType>(_ condition: Bool, _ xPosition: T, in coordinateSpace: CoordinateSpace = .global, anchor: UnitPoint = .center) -> some View {
+    func xOffsetToXPositionIf(_ condition: Bool, _ xPosition: CGFloat, in coordinateSpace: CoordinateSpace = .global, anchor: UnitPoint = .center) -> some View {
         modifier(OffsetToPositionViewModifier(condition: condition, relativeTo: .init(xPosition, 0), coordinateSpace: coordinateSpace, anchor: anchor, offsetForPositionProvider: XOffsetPositionProvider()))
     }
     
-    func xOffsetToXPositionIfNot<T: UINumericType>(_ condition: Bool, _ xPosition: T, in coordinateSpace: CoordinateSpace = .global, anchor: UnitPoint = .center) -> some View {
+    func xOffsetToXPositionIfNot(_ condition: Bool, _ xPosition: CGFloat, in coordinateSpace: CoordinateSpace = .global, anchor: UnitPoint = .center) -> some View {
         xOffsetToXPositionIf(!condition, xPosition, in: coordinateSpace, anchor: anchor)
     }
     
-    func xOffsetToXPositionIf<T: UINumericType, TC: Hashable>(_ condition: Bool, _ xPosition: T, in coordinateSpaceName: TC, anchor: UnitPoint = .center) -> some View {
+    func xOffsetToXPositionIf<TC: Hashable>(_ condition: Bool, _ xPosition: CGFloat, in coordinateSpaceName: TC, anchor: UnitPoint = .center) -> some View {
         xOffsetToXPositionIf(condition, xPosition, in: .named(coordinateSpaceName), anchor: anchor)
     }
     
-    func xOffsetToXPositionIfNot<T: UINumericType, TC: Hashable>(_ condition: Bool, _ xPosition: T, in coordinateSpaceName: TC, anchor: UnitPoint = .center) -> some View {
+    func xOffsetToXPositionIfNot<TC: Hashable>(_ condition: Bool, _ xPosition: CGFloat, in coordinateSpaceName: TC, anchor: UnitPoint = .center) -> some View {
         xOffsetToXPositionIf(!condition, xPosition, in: coordinateSpaceName, anchor: anchor)
     }
     
-    func yOffsetToYPositionIf<T: UINumericType>(_ condition: Bool, _ yPosition: T, in coordinateSpace: CoordinateSpace = .global, anchor: UnitPoint = .center) -> some View {
+    func yOffsetToYPositionIf(_ condition: Bool, _ yPosition: CGFloat, in coordinateSpace: CoordinateSpace = .global, anchor: UnitPoint = .center) -> some View {
         modifier(OffsetToPositionViewModifier(condition: condition, relativeTo: .init(0, yPosition), coordinateSpace: coordinateSpace, anchor: anchor, offsetForPositionProvider: YOffsetPositionProvider()))
     }
     
-    func yOffsetToYPositionIfNot<T: UINumericType>(_ condition: Bool, _ yPosition: T, in coordinateSpace: CoordinateSpace = .global, anchor: UnitPoint = .center) -> some View {
+    func yOffsetToYPositionIfNot(_ condition: Bool, _ yPosition: CGFloat, in coordinateSpace: CoordinateSpace = .global, anchor: UnitPoint = .center) -> some View {
         yOffsetToYPositionIf(!condition, yPosition, in: coordinateSpace, anchor: anchor)
     }
     
-    func yOffsetToYPositionIf<T: UINumericType, TC: Hashable>(_ condition: Bool, _ yPosition: T, in coordinateSpaceName: TC, anchor: UnitPoint = .center) -> some View {
+    func yOffsetToYPositionIf<TC: Hashable>(_ condition: Bool, _ yPosition: CGFloat, in coordinateSpaceName: TC, anchor: UnitPoint = .center) -> some View {
         yOffsetToYPositionIf(condition, yPosition, in: .named(coordinateSpaceName), anchor: anchor)
     }
     
-    func yOffsetToYPositionIfNot<T: UINumericType, TC: Hashable>(_ condition: Bool, _ yPosition: T, in coordinateSpaceName: TC, anchor: UnitPoint = .center) -> some View {
+    func yOffsetToYPositionIfNot<TC: Hashable>(_ condition: Bool, _ yPosition: CGFloat, in coordinateSpaceName: TC, anchor: UnitPoint = .center) -> some View {
         yOffsetToYPositionIf(!condition, yPosition, in: coordinateSpaceName, anchor: anchor)
     }
 }

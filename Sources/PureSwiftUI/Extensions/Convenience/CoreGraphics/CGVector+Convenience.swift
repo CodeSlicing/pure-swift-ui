@@ -11,16 +11,8 @@ public extension CGVector {
         self.init(size, size)
     }
     
-    init<T: UINumericType>(_ size: T) {
-        self.init(size.asCGFloat)
-    }
-    
     init(_ dx: CGFloat, _ dy: CGFloat) {
         self.init(dx: dx, dy: dy)
-    }
-
-    init<TX: UINumericType, TY: UINumericType>(_ dx: TX, _ dy: TY) {
-        self.init(dx: dx.asCGFloat, dy: dy.asCGFloat)
     }
 
     var asCGRect: CGRect {
@@ -71,7 +63,7 @@ public extension CGVector {
         max(dx, dy)
     }
     
-    func scaled<T: UINumericType>(_ scale: T) -> CGSize {
+    func scaled(_ scale: CGFloat) -> CGSize {
         scaled(.square(scale))
     }
     
@@ -79,12 +71,12 @@ public extension CGVector {
         .init(widthScaled(scale.width), heightScaled(scale.height))
     }
 
-    func widthScaled<T: UINumericType>(_ scale: T) -> CGFloat {
-        dx * scale.asCGFloat
+    func widthScaled(_ scale: CGFloat) -> CGFloat {
+        dx * scale
     }
 
-    func heightScaled<T: UINumericType>(_ scale: T) -> CGFloat {
-        dy * scale.asCGFloat
+    func heightScaled(_ scale: CGFloat) -> CGFloat {
+        dy * scale
     }
 
     func clamped(from: CGFloat, to: CGFloat) -> CGVector {
@@ -96,19 +88,19 @@ public extension CGVector {
 
 public extension CGVector {
     
-    static func dx<T: UINumericType>(_ dx: T) -> CGVector {
+    static func dx(_ dx: CGFloat) -> CGVector {
         .init(dx, 0)
     }
     
-    static func dy<T: UINumericType>(_ dy: T) -> CGVector {
+    static func dy(_ dy: CGFloat) -> CGVector {
         .init(0, dy)
     }
     
-    static func vector<TDX: UINumericType, TDY: UINumericType>(_ dx: TDX, _ dy: TDY) -> CGVector {
+    static func vector(_ dx: CGFloat, _ dy: CGFloat) -> CGVector {
         .init(dx, dy)
     }
     
-    static func vector<T: UINumericType>(_ size: T) -> CGVector {
+    static func vector(_ size: CGFloat) -> CGVector {
         .init(size)
     }
 }
