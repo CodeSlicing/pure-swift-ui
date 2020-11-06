@@ -9,12 +9,28 @@ import SwiftUI
 
 public extension Angle {
     
-    static func *<T: UINumericType>(lhs: Angle, rhs: T) -> Angle {
-        Angle(degrees: lhs.degrees * rhs.asDouble)
+    static func *(lhs: Angle, rhs: Double) -> Angle {
+        Angle(degrees: lhs.degrees * rhs)
     }
 
-    static func /<T: UINumericType>(lhs: Angle, rhs: T) -> Angle {
-        Angle(degrees: lhs.degrees / rhs.asDouble)
+    static func /(lhs: Angle, rhs: Double) -> Angle {
+        Angle(degrees: lhs.degrees / rhs)
+    }
+    
+    static func *(lhs: Angle, rhs: CGFloat) -> Angle {
+        lhs * rhs.asDouble
+    }
+
+    static func /(lhs: Angle, rhs: CGFloat) -> Angle {
+        lhs / rhs.asDouble
+    }
+    
+    static func *(lhs: Angle, rhs: Int) -> Angle {
+        lhs * rhs.asDouble
+    }
+
+    static func /(lhs: Angle, rhs: Int) -> Angle {
+        lhs / rhs.asDouble
     }
 }
 
@@ -53,14 +69,14 @@ public extension Angle {
 
 public extension Angle {
     
-    static func cycle<T: UINumericType>(_ scale: T) -> Angle {
-        (360.0 * scale.asDouble).degrees
+    static func cycle(_ scale: Double) -> Angle {
+        (360.0 * scale).degrees
     }
 }
 
 // MARK: ----- UNIT POINT CONVERSION
 
-private let maxUnitRadius = sqrt(0.5 * 0.5 + 0.5 * 0.5)
+private let maxUnitRadius = sqrt(0.5 * 0.5 + 0.5 * 0.5).asCGFloat
 
 private let unitPointForNamedAngle: [Angle: UnitPoint] = [
 

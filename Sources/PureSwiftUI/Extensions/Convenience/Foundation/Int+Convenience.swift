@@ -46,4 +46,24 @@ public extension Int {
     }
 }
 
+//// MARK: ----- CONVERSIONS
+//
+//public extension Int {
+//    
+//    var asCGFloat: CGFloat {
+//        CGFloat(self)
+//    }
+//    
+//    var asDouble: Double {
+//        Double(self)
+//    }
+//    
+//    var asFloat: Float {
+//        Float(self)
+//    }
+//    
+//    var asInt: Int {
+//        self
+//    }
+//}
 

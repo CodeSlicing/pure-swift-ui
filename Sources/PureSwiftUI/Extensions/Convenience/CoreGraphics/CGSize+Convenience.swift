@@ -13,16 +13,8 @@ public extension CGSize {
         self.init(size, size)
     }
     
-    init<T: UINumericType>(_ size: T) {
-        self.init(size, size)
-    }
-    
     init(_ width: CGFloat, _ height: CGFloat) {
         self.init(width: width, height: height)
-    }
-    
-    init<TW: UINumericType, TH: UINumericType>(_ width: TW, _ height: TH) {
-        self.init(width: width.asCGFloat, height: height.asCGFloat)
     }
 
     var asCGRect: CGRect {
@@ -73,7 +65,7 @@ public extension CGSize {
         max(width, height)
     }
     
-    func scaled<T: UINumericType>(_ scale: T) -> CGSize {
+    func scaled(_ scale: CGFloat) -> CGSize {
         scaled(.square(scale))
     }
     
@@ -81,15 +73,15 @@ public extension CGSize {
         scaled(scale.width, scale.height)
     }
     
-    func scaled<TW: UINumericType, TH: UINumericType>(_ widthScale: TW, _ heightScale: TH) -> CGSize {
+    func scaled(_ widthScale: CGFloat, _ heightScale: CGFloat) -> CGSize {
         .init(widthScaled(widthScale), heightScaled(heightScale))
     }
     
-    func widthScaled<T: UINumericType>(_ scale: T) -> CGFloat {
+    func widthScaled(_ scale: CGFloat) -> CGFloat {
         width * scale.asCGFloat
     }
     
-    func heightScaled<T: UINumericType>(_ scale: T) -> CGFloat {
+    func heightScaled(_ scale: CGFloat) -> CGFloat {
         height * scale.asCGFloat
     }
     
@@ -115,23 +107,23 @@ public extension CGSize {
 
 public extension CGSize {
     
-    static func square<T: UINumericType>(_ size: T) -> CGSize {
-        .init(size.asCGFloat)
+    static func square(_ size: CGFloat) -> CGSize {
+        .init(size)
     }
     
-    static func width<T: UINumericType>(_ width: T) -> CGSize {
+    static func width(_ width: CGFloat) -> CGSize {
         .init(width, 0)
     }
     
-    static func height<T: UINumericType>(_ height: T) -> CGSize {
+    static func height(_ height: CGFloat) -> CGSize {
         .init(0, height)
     }
     
-    static func size<TW: UINumericType, TH: UINumericType>(_ width: TW, _ height: TH) -> CGSize {
+    static func size(_ width: CGFloat, _ height: CGFloat) -> CGSize {
         .init(width, height)
     }
     
-    static func size<T: UINumericType>(_ size: T) -> CGSize {
+    static func size(_ size: CGFloat) -> CGSize {
         .square(size)
     }
 }
@@ -152,7 +144,7 @@ public extension CGSize {
 
 public extension CGSize {
 
-    func to<T: UINumericType>(_ destination: CGSize, _ factor: T) -> CGSize {
+    func to(_ destination: CGSize, _ factor: CGFloat) -> CGSize {
         to(destination, .square(factor))
     }
     

@@ -24,10 +24,7 @@ extension UIEdgeInsetsConvenienceExtensionsTests {
     
     func testInit() {
         XCTAssertEqual(UIEdgeInsets(width), UIEdgeInsets(top: width, left: width, bottom: width, right: width))
-        XCTAssertEqual(UIEdgeInsets(width.asInt), UIEdgeInsets(top: width, left: width, bottom: width, right: width))
         XCTAssertEqual(UIEdgeInsets(width, height), UIEdgeInsets(top: height, left: width, bottom: height, right: width))
-        XCTAssertEqual(UIEdgeInsets(width.asInt, height), UIEdgeInsets(top: height, left: width, bottom: height, right: width))
         XCTAssertEqual(UIEdgeInsets(top, leading, bottom, trailing), UIEdgeInsets(top: top, left: leading, bottom: bottom, right: trailing))
-        XCTAssertEqual(UIEdgeInsets(top.asInt, leading, bottom, trailing), UIEdgeInsets(top: top, left: leading, bottom: bottom, right: trailing))
     }
 }

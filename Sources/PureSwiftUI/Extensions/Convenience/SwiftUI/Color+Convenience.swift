@@ -22,15 +22,6 @@ public extension Color {
     static let cgDarkGray = Color(white: 0.333)
 }
 
-// MARK: ----- OPACITY
-
-public extension Color {
-    
-    func opacity<T: UINumericType>(_ opacity: T) -> Color {
-        self.opacity(opacity.asDouble)
-    }
-}
-
 // MARK: ----- STATIC INITIALISERS
 
 public extension Color {

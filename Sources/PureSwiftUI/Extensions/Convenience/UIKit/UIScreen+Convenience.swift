@@ -18,11 +18,11 @@ public extension UIScreen {
         main.center
     }
     
-    static func mainWidthScaled<T: UINumericType>(_ scale: T) -> CGFloat {
+    static func mainWidthScaled(_ scale: CGFloat) -> CGFloat {
         main.widthScaled(scale)
     }
 
-    static func mainHeightScaled<T: UINumericType>(_ scale: T) -> CGFloat {
+    static func mainHeightScaled(_ scale: CGFloat) -> CGFloat {
         main.heightScaled(scale)
     }
 
@@ -58,7 +58,7 @@ public extension UIScreen {
         main.maxY
     }
     
-    static func mainSizeScaled<T: UINumericType>(_ scale: T) -> CGSize {
+    static func mainSizeScaled(_ scale: CGFloat) -> CGSize {
         main.size.scaled(scale)
     }
     
@@ -66,12 +66,12 @@ public extension UIScreen {
         main.size
     }
 
-    func widthScaled<T: UINumericType>(_ scale: T) -> CGFloat {
-        width * scale.asCGFloat
+    func widthScaled(_ scale: CGFloat) -> CGFloat {
+        width * scale
     }
     
-    func heightScaled<T: UINumericType>(_ scale: T) -> CGFloat {
-        height * scale.asCGFloat
+    func heightScaled(_ scale: CGFloat) -> CGFloat {
+        height * scale
     }
     
     var origin: CGPoint {

@@ -18,8 +18,8 @@ public extension Shape {
         stroke(color)
     }
     
-    func strokeColor<T: UINumericType>(_ color: Color, lineWidth: T) -> some View {
-        stroke(color, lineWidth: lineWidth.asCGFloat)
+    func strokeColor(_ color: Color, lineWidth: CGFloat) -> some View {
+        stroke(color, lineWidth: lineWidth)
     }
     
     // named
@@ -31,8 +31,8 @@ public extension Shape {
         stroke(Color(colorName))
     }
     
-    func strokeColor<T: UINumericType>(_ colorName: String, lineWidth: T) -> some View {
-        stroke(Color(colorName), lineWidth: lineWidth.asCGFloat)
+    func strokeColor(_ colorName: String, lineWidth: CGFloat) -> some View {
+        stroke(Color(colorName), lineWidth: lineWidth)
     }
 }
 
@@ -40,19 +40,6 @@ public extension Shape {
 
 public extension Shape {
     
-    func offset<T_LHS: UINumericType, T_RHS: UINumericType>(_ x: T_LHS, _ y: T_RHS) -> OffsetShape<Self> {
-        offset(x: x.asCGFloat, y: y.asCGFloat)
-    }
-    
-    func xOffset<T: UINumericType>(_ x: T) -> OffsetShape<Self> {
-        offset(x: x.asCGFloat)
-    }
-
-    func yOffset<T: UINumericType>(_ y: T) -> OffsetShape<Self> {
-        offset(y: y.asCGFloat)
-    }
-    
-    //native
     func offset(_ x: CGFloat, _ y: CGFloat) -> OffsetShape<Self> {
         offset(x: x, y: y)
     }
@@ -78,20 +65,20 @@ public extension Shape {
 
 public extension Shape {
 
-    func scale<T: UINumericType>(_ scaleFactor: T, anchor: UnitPoint = .center) -> ScaledShape<Self> {
-        scale(scaleFactor.asCGFloat, anchor: anchor)
+    func scale(_ scaleFactor: CGFloat, anchor: UnitPoint = .center) -> ScaledShape<Self> {
+        scale(x: scaleFactor, y: scaleFactor, anchor: anchor)
     }
     
-    func scale<TX: UINumericType, TY: UINumericType>(_ scaleX: TX, _ scaleY: TY, anchor: UnitPoint = .center) -> ScaledShape<Self> {
-        scale(x: scaleX.asCGFloat, y: scaleY.asCGFloat, anchor: anchor)
+    func scale(_ scaleX: CGFloat, _ scaleY: CGFloat, anchor: UnitPoint = .center) -> ScaledShape<Self> {
+        scale(x: scaleX, y: scaleY, anchor: anchor)
     }
     
-    func xScale<T: UINumericType>(_ scaleX: T, anchor: UnitPoint = .center) -> ScaledShape<Self> {
-        scale(x: scaleX.asCGFloat, y: 1, anchor: anchor)
+    func xScale(_ scaleX: CGFloat, anchor: UnitPoint = .center) -> ScaledShape<Self> {
+        scale(x: scaleX, y: 1, anchor: anchor)
     }
     
-    func yScale<T: UINumericType>(_ scaleY: T, anchor: UnitPoint = .center) -> ScaledShape<Self> {
-        scale(x: 1, y: scaleY.asCGFloat, anchor: anchor)
+    func yScale(_ scaleY: CGFloat, anchor: UnitPoint = .center) -> ScaledShape<Self> {
+        scale(x: 1, y: scaleY, anchor: anchor)
     }
 }
 
@@ -108,20 +95,11 @@ public extension Shape {
 
 public extension Shape {
     
-    func size<TW: UINumericType, TH: UINumericType>(_ width: TW, _ height: TH) -> some Shape {
-        size(width: width.asCGFloat, height: height.asCGFloat)
+    func size(_ width: CGFloat, _ height: CGFloat) -> some Shape {
+        size(width: width, height: height)
     }
 
-    func size<T: UINumericType>(_ theSize: T) -> some Shape {
+    func size(_ theSize: CGFloat) -> some Shape {
         size(theSize, theSize)
-    }
-}
-
-// MARK: ----- STROKE
-
-public extension Shape {
-    
-    func stroke<S: ShapeStyle, T: UINumericType>(_ content: S, lineWidth: T) -> some View {
-        stroke(content, lineWidth: lineWidth.asCGFloat)
     }
 }

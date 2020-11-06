@@ -24,28 +24,28 @@ private func FrameInternal<Content: View>(width: CGFloat? = nil, height: CGFloat
     FrameInternal(width: width, height: height).background(content, alignment: alignment)
 }
 
-public func Frame<T: UINumericType>(width: T) -> some View {
-    FrameInternal(width: width.asCGFloat)
+public func Frame(width: CGFloat) -> some View {
+    FrameInternal(width: width)
 }
 
-public func Frame<T: UINumericType>(height: T) -> some View {
-    FrameInternal(height: height.asCGFloat)
+public func Frame(height: CGFloat) -> some View {
+    FrameInternal(height: height)
 }
 
-public func Frame<TW: UINumericType, TH: UINumericType>(_ width: TW, _ height: TH) -> some View {
-    FrameInternal(width: width.asCGFloat, height: height.asCGFloat)
+public func Frame(_ width: CGFloat, _ height: CGFloat) -> some View {
+    FrameInternal(width: width, height: height)
 }
 
-public func Frame<T: UINumericType>(width: T, _ color: Color) -> some View {
-    FrameInternal(width: width.asCGFloat, color: color)
+public func Frame(width: CGFloat, _ color: Color) -> some View {
+    FrameInternal(width: width, color: color)
 }
 
-public func Frame<T: UINumericType>(height: T, _ color: Color) -> some View {
-    FrameInternal(height: height.asCGFloat, color: color)
+public func Frame(height: CGFloat, _ color: Color) -> some View {
+    FrameInternal(height: height, color: color)
 }
 
-public func Frame<TW: UINumericType, TH: UINumericType>(_ width: TW, _ height: TH, _ color: Color) -> some View {
-    FrameInternal(width: width.asCGFloat, height: height.asCGFloat, color: color)
+public func Frame(_ width: CGFloat, _ height: CGFloat, _ color: Color) -> some View {
+    FrameInternal(width: width, height: height, color: color)
 }
 
 public func Frame(_ size: CGSize) -> some View {
@@ -56,11 +56,11 @@ public func Frame(_ size: CGSize, _ color: Color) -> some View {
     FrameInternal(width: size.width, height: size.height, color: color)
 }
 
-public func Frame<T: UINumericType>(_ size: T) -> some View {
-    FrameInternal(width: size.asCGFloat, height: size.asCGFloat)
+public func Frame(_ size: CGFloat) -> some View {
+    FrameInternal(width: size, height: size)
 }
 
-public func Frame<T: UINumericType>(_ size: T, _ color: Color) -> some View {
+public func Frame(_ size: CGFloat, _ color: Color) -> some View {
     Frame(size, size, color)
 }
 
@@ -70,40 +70,40 @@ public func Frame(_ size: CGSize, _ colorName: String) -> some View {
     Frame(size, Color(colorName))
 }
 
-public func Frame<T: UINumericType>(_ size: T, _ colorName: String) -> some View {
+public func Frame(_ size: CGFloat, _ colorName: String) -> some View {
     Frame(size, Color(colorName))
 }
 
-public func Frame<T: UINumericType>(width: T, _ colorName: String) -> some View {
-    FrameInternal(width: width.asCGFloat, colorName: colorName)
+public func Frame(width: CGFloat, _ colorName: String) -> some View {
+    FrameInternal(width: width, colorName: colorName)
 }
 
-public func Frame<T: UINumericType>(height: T, _ colorName: String) -> some View {
-    FrameInternal(height: height.asCGFloat, colorName: colorName)
+public func Frame(height: CGFloat, _ colorName: String) -> some View {
+    FrameInternal(height: height, colorName: colorName)
 }
 
-public func Frame<TW: UINumericType, TH: UINumericType>(_ width: TW, _ height: TH, _ colorName: String) -> some View {
-    FrameInternal(width: width.asCGFloat, height: height.asCGFloat, colorName: colorName)
+public func Frame(_ width: CGFloat, _ height: CGFloat, _ colorName: String) -> some View {
+    FrameInternal(width: width, height: height, colorName: colorName)
 }
 
 // with view content
 
-public func Frame<T: UINumericType, Content: View>(_ size: T, _ content: Content, alignment: Alignment = .center) -> some View {
-    FrameInternal(width: size.asCGFloat, height: size.asCGFloat, content: content, alignment: alignment)
+public func Frame<Content: View>(_ size: CGFloat, _ content: Content, alignment: Alignment = .center) -> some View {
+    FrameInternal(width: size, height: size, content: content, alignment: alignment)
 }
 
 public func Frame<Content: View>(_ size: CGSize, _ content: Content, alignment: Alignment = .center) -> some View {
     FrameInternal(width: size.width, height: size.height, content: content, alignment: alignment)
 }
 
-public func Frame<T: UINumericType, Content: View>(width: T, _ content: Content, alignment: Alignment = .center) -> some View {
-    FrameInternal(width: width.asCGFloat, content: content, alignment: alignment)
+public func Frame<Content: View>(width: CGFloat, _ content: Content, alignment: Alignment = .center) -> some View {
+    FrameInternal(width: width, content: content, alignment: alignment)
 }
 
-public func Frame<T: UINumericType, Content: View>(height: T, _ content: Content, alignment: Alignment = .center) -> some View {
-    FrameInternal(height: height.asCGFloat, content: content, alignment: alignment)
+public func Frame<Content: View>(height: CGFloat, _ content: Content, alignment: Alignment = .center) -> some View {
+    FrameInternal(height: height, content: content, alignment: alignment)
 }
 
-public func Frame<TW: UINumericType, TH: UINumericType, Content: View>(_ width: TW, _ height: TH, _ content: Content, alignment: Alignment = .center) -> some View {
-    FrameInternal(width: width.asCGFloat, height: height.asCGFloat, content: content, alignment: alignment)
+public func Frame<Content: View>(_ width: CGFloat, _ height: CGFloat, _ content: Content, alignment: Alignment = .center) -> some View {
+    FrameInternal(width: width, height: height, content: content, alignment: alignment)
 }

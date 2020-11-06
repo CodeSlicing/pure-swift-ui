@@ -12,27 +12,27 @@ import SwiftUI
 
 public extension Shape {
 
-    func offsetIf<T_LHS: UINumericType, T_RHS: UINumericType>(_ condition: Bool, _ x: T_LHS, _ y: T_RHS) -> OffsetShape<Self> {
-        offset(condition ? x.asCGFloat : 0, condition ? y.asCGFloat : 0)
+    func offsetIf(_ condition: Bool, _ x: CGFloat, _ y: CGFloat) -> OffsetShape<Self> {
+        offset(condition ? x : 0, condition ? y : 0)
     }
 
-    func offsetIfNot<T_LHS: UINumericType, T_RHS: UINumericType>(_ condition: Bool, _ x: T_LHS, _ y: T_RHS) -> OffsetShape<Self> {
+    func offsetIfNot(_ condition: Bool, _ x: CGFloat, _ y: CGFloat) -> OffsetShape<Self> {
         offsetIf(!condition, x, y)
     }
 
-    func xOffsetIf<T: UINumericType>(_ condition: Bool, _ x: T) -> OffsetShape<Self> {
-        xOffset(condition ? x.asCGFloat : 0)
+    func xOffsetIf(_ condition: Bool, _ x: CGFloat) -> OffsetShape<Self> {
+        xOffset(condition ? x : 0)
     }
 
-    func xOffsetIfNot<T: UINumericType>(_ condition: Bool, _ x: T) -> OffsetShape<Self> {
+    func xOffsetIfNot(_ condition: Bool, _ x: CGFloat) -> OffsetShape<Self> {
         xOffsetIf(!condition, x)
     }
 
-    func yOffsetIf<T: UINumericType>(_ condition: Bool, _ y: T) -> OffsetShape<Self> {
-        yOffset(condition ? y.asCGFloat : 0)
+    func yOffsetIf(_ condition: Bool, _ y: CGFloat) -> OffsetShape<Self> {
+        yOffset(condition ? y : 0)
     }
 
-    func yOffsetIfNot<T: UINumericType>(_ condition: Bool, _ y: T) -> OffsetShape<Self> {
+    func yOffsetIfNot(_ condition: Bool, _ y: CGFloat) -> OffsetShape<Self> {
         yOffsetIf(!condition, y)
     }
 }
@@ -41,31 +41,35 @@ public extension Shape {
 
 public extension Shape {
 
-    func scaleIf<T: UINumericType>(_ condition: Bool, _ scaleFactor: T, anchor: UnitPoint = .center) -> ScaledShape<Self> {
-        scale(condition ? scaleFactor.asCGFloat : 1, anchor: anchor)
+    func scaleIf(_ condition: Bool, _ scaleFactor: CGFloat, anchor: UnitPoint = .center) -> ScaledShape<Self> {
+        scale(condition ? scaleFactor : 1, anchor: anchor)
     }
 
-    func scaleIfNot<T: UINumericType>(_ condition: Bool, _ scaleFactor: T, anchor: UnitPoint = .center) -> ScaledShape<Self> {
+    func scaleIfNot(_ condition: Bool, _ scaleFactor: CGFloat, anchor: UnitPoint = .center) -> ScaledShape<Self> {
         scaleIf(!condition, scaleFactor, anchor: anchor)
     }
 
-    func scaleIf<TX: UINumericType, TY: UINumericType>(_ condition: Bool, _ scaleX: TX, _ scaleY: TY, anchor: UnitPoint = .center) -> ScaledShape<Self> {
-        scale(x: condition ? scaleX.asCGFloat : 1, y: condition ? scaleY.asCGFloat : 1, anchor: anchor)
+    func scaleIf(_ condition: Bool, _ scaleX: CGFloat, _ scaleY: CGFloat, anchor: UnitPoint = .center) -> ScaledShape<Self> {
+        scale(x: condition ? scaleX : 1, y: condition ? scaleY : 1, anchor: anchor)
     }
 
-    func xScaleIf<T: UINumericType>(_ condition: Bool, _ scaleX: T, anchor: UnitPoint = .center) -> ScaledShape<Self> {
-        xScale(condition ? scaleX.asCGFloat : 1, anchor: anchor)
+    func scaleIfNot(_ condition: Bool, _ scaleX: CGFloat, _ scaleY: CGFloat, anchor: UnitPoint = .center) -> ScaledShape<Self> {
+        scaleIf(!condition, scaleX, scaleY, anchor: anchor)
     }
 
-    func xScaleIfNot<T: UINumericType>(_ condition: Bool, _ scaleX: T, anchor: UnitPoint = .center) -> ScaledShape<Self> {
+    func xScaleIf(_ condition: Bool, _ scaleX: CGFloat, anchor: UnitPoint = .center) -> ScaledShape<Self> {
+        xScale(condition ? scaleX : 1, anchor: anchor)
+    }
+
+    func xScaleIfNot(_ condition: Bool, _ scaleX: CGFloat, anchor: UnitPoint = .center) -> ScaledShape<Self> {
         xScaleIf(!condition, scaleX, anchor: anchor)
     }
 
-    func yScaleIf<T: UINumericType>(_ condition: Bool, _ scaleY: T, anchor: UnitPoint = .center) -> ScaledShape<Self> {
-        yScale(condition ? scaleY.asCGFloat : 1, anchor: anchor)
+    func yScaleIf(_ condition: Bool, _ scaleY: CGFloat, anchor: UnitPoint = .center) -> ScaledShape<Self> {
+        yScale(condition ? scaleY : 1, anchor: anchor)
     }
 
-    func yScaleIfNot<T: UINumericType>(_ condition: Bool, _ scaleY: T, anchor: UnitPoint = .center) -> ScaledShape<Self> {
+    func yScaleIfNot(_ condition: Bool, _ scaleY: CGFloat, anchor: UnitPoint = .center) -> ScaledShape<Self> {
         scaleIf(!condition, scaleY, anchor: anchor)
     }
 }

@@ -54,20 +54,8 @@ extension GridLayoutGuideTests {
 
 extension GridLayoutGuideTests {
     
-    func testDeprecatedAngleForPoint() {
-        var grid = LayoutGuide.grid(rect, columns: 10, rows: 6)
-        
-        XCTAssertEqual(grid.angle(10, 0), 90.degrees)
-        XCTAssertEqual(grid.angle(0, 10), 180.degrees)
-        
-        XCTAssertEqual(grid.angle(0, 3, origin: rect.center), 270.degrees)
-        XCTAssertEqual(grid.angle(5, 0, origin: rect.center), 0.degrees)
-        XCTAssertEqual(grid.angle(10, 3, origin: rect.center), 90.degrees)
-        XCTAssertEqual(grid.angle(5, 6, origin: rect.center), 180.degrees)
-    }
-    
     func testAngleForPoint() {
-        var grid = LayoutGuide.grid(rect, columns: 10, rows: 6)
+        let grid = LayoutGuide.grid(rect, columns: 10, rows: 6)
         
         XCTAssertEqual(grid.angleTo(10, 0), 90.degrees)
         XCTAssertEqual(grid.angleTo(0, 10), 180.degrees)
@@ -83,22 +71,8 @@ extension GridLayoutGuideTests {
 
 extension GridLayoutGuideTests {
     
-    func testDeprecatedRadiusForPoint() {
-        var grid = LayoutGuide.grid(rect, columns: 10, rows: 6)
-        
-        XCTAssertEqual(grid.radius(10, 0), rect.width)
-        XCTAssertEqual(grid.radius(0, 6), rect.height)
-        XCTAssertEqual(grid.radius(0, 3), rect.halfHeight)
-        XCTAssertEqual(grid.radius(5, 0), rect.halfWidth)
-        
-        XCTAssertEqual(grid.radius(0, 3, origin: rect.center), rect.halfWidth)
-        XCTAssertEqual(grid.radius(5, 0, origin: rect.center), rect.halfHeight)
-        XCTAssertEqual(grid.radius(10, 3, origin: rect.center), rect.halfWidth)
-        XCTAssertEqual(grid.radius(5, 6, origin: rect.center), rect.halfHeight)
-    }
-    
     func testRadiusForPoint() {
-        var grid = LayoutGuide.grid(rect, columns: 10, rows: 6)
+        let grid = LayoutGuide.grid(rect, columns: 10, rows: 6)
         
         XCTAssertEqual(grid.radiusTo(10, 0), rect.width)
         XCTAssertEqual(grid.radiusTo(0, 6), rect.height)
@@ -117,7 +91,7 @@ extension GridLayoutGuideTests {
 extension GridLayoutGuideTests {
     
     func testPointsForEquidistant() {
-        var grid = LayoutGuide.grid(rect, columns: 10, rows: 6)
+        let grid = LayoutGuide.grid(rect, columns: 10, rows: 6)
         assertEqual(grid[0, 0], (x, y))
         assertEqual(grid[10, 6], rect.extent)
         assertEqual(grid[10, 0], rect.topTrailing)
@@ -144,7 +118,7 @@ extension GridLayoutGuideTests {
     }
     
     func testPointsForEquidistantWithOrigin() {
-        var grid = LayoutGuide.grid(rect, columns: 10, rows: 6)
+        let grid = LayoutGuide.grid(rect, columns: 10, rows: 6)
         let offsetRect = rect.offset(rect.sizeScaled(0.5))
         assertEqual(grid[0, 0, origin: rect.center], offsetRect.origin)
         assertEqual(grid[10, 6, origin: rect.center], offsetRect.extent)
@@ -158,7 +132,7 @@ extension GridLayoutGuideTests {
     }
     
     func testOutOfBoundsForEquidistant() {
-        var grid = LayoutGuide.grid(rect, columns: 10, rows: 6)
+        let grid = LayoutGuide.grid(rect, columns: 10, rows: 6)
         assertEqual(grid[-10, -6], (x - width, y - height))
         assertEqual(grid[20, 12], CGRect(CGPoint(x, y), rect.sizeScaled(2)).extent)
     }
@@ -169,7 +143,7 @@ extension GridLayoutGuideTests {
 extension GridLayoutGuideTests {
     
     func testPointsForRelative() {
-        var grid = LayoutGuide.grid(rect, columns: [0, 0.5, 1], rows: [0, 0.5, 1])
+        let grid = LayoutGuide.grid(rect, columns: [0, 0.5, 1], rows: [0, 0.5, 1])
         assertEqual(grid[0, 0], (x, y))
         assertEqual(grid[2, 2], rect.extent)
         assertEqual(grid[2, 0], rect.topTrailing)
@@ -196,7 +170,7 @@ extension GridLayoutGuideTests {
     }
     
     func testPointsForRelativeWithOrigin() {
-        var grid = LayoutGuide.grid(rect, columns: [0, 0.5, 1], rows: [0, 0.5, 1])
+        let grid = LayoutGuide.grid(rect, columns: [0, 0.5, 1], rows: [0, 0.5, 1])
         let offsetRect = rect.offset(rect.sizeScaled(0.5))
         assertEqual(grid[0, 0, origin: rect.center], rect.center)
         assertEqual(grid[2, 2, origin: rect.center], offsetRect.extent)
@@ -210,7 +184,7 @@ extension GridLayoutGuideTests {
     }
     
     func testOutOfBoundsForRelative() {
-        var grid = LayoutGuide.grid(rect, columns: [0, 0.5, 1], rows: [0, 0.5, 1])
+        let grid = LayoutGuide.grid(rect, columns: [0, 0.5, 1], rows: [0, 0.5, 1])
         assertEqual(grid[-10, -6], rect.origin)
         assertEqual(grid[6, 6], rect.extent)
     }
@@ -221,7 +195,7 @@ extension GridLayoutGuideTests {
 extension GridLayoutGuideTests {
     
     func testPointsForEquidistantXRelativeY() {
-        var grid = LayoutGuide.grid(rect, columns: 10, rows: [0, 0.5, 1])
+        let grid = LayoutGuide.grid(rect, columns: 10, rows: [0, 0.5, 1])
         assertEqual(grid[0, 0], (x, y))
         assertEqual(grid[10, 2], rect.extent)
         assertEqual(grid[10, 0], rect.topTrailing)
@@ -249,7 +223,7 @@ extension GridLayoutGuideTests {
     }
     
     func testPointsForEquidistantXRelativeYWithOrigin() {
-        var grid = LayoutGuide.grid(rect, columns: 10, rows: [0, 0.5, 1])
+        let grid = LayoutGuide.grid(rect, columns: 10, rows: [0, 0.5, 1])
         let offsetRect = rect.offset(rect.sizeScaled(0.5))
         assertEqual(grid[0, 0, origin: rect.center], offsetRect.origin)
         assertEqual(grid[10, 2, origin: rect.center], offsetRect.extent)
@@ -263,7 +237,7 @@ extension GridLayoutGuideTests {
     }
     
     func testOutOfBoundsForEquidistantXRelativeY() {
-        var grid = LayoutGuide.grid(rect, columns: 10, rows: [0, 0.5, 1])
+        let grid = LayoutGuide.grid(rect, columns: 10, rows: [0, 0.5, 1])
         assertEqual(grid[-10, -6], (x - width, rect.origin.y))
         assertEqual(grid[20, 12], (x + width * 2, rect.extent.y))
     }
@@ -274,7 +248,7 @@ extension GridLayoutGuideTests {
 extension GridLayoutGuideTests {
     
     func testPointsForRelativeXEquidistantY() {
-        var grid = LayoutGuide.grid(rect, columns: [0, 0.5, 1], rows: 6)
+        let grid = LayoutGuide.grid(rect, columns: [0, 0.5, 1], rows: 6)
         assertEqual(grid[0, 0], (x, y))
         assertEqual(grid[2, 6], rect.extent)
         assertEqual(grid[2, 0], rect.topTrailing)
@@ -301,7 +275,7 @@ extension GridLayoutGuideTests {
     }
     
     func testPointsForRelativeXEquidistantYWithOrigin() {
-        var grid = LayoutGuide.grid(rect, columns: [0, 0.5, 1], rows: 6)
+        let grid = LayoutGuide.grid(rect, columns: [0, 0.5, 1], rows: 6)
         let offsetRect = rect.offset(rect.sizeScaled(0.5))
         assertEqual(grid[0, 0, origin: rect.center], offsetRect.origin)
         assertEqual(grid[2, 6, origin: rect.center], offsetRect.extent)
@@ -315,7 +289,7 @@ extension GridLayoutGuideTests {
     }
     
     func testOutOfBoundsForRelativeXEquidistantY() {
-        var grid = LayoutGuide.grid(rect, columns: [0, 0.5, 1], rows: 6)
+        let grid = LayoutGuide.grid(rect, columns: [0, 0.5, 1], rows: 6)
         assertEqual(grid[-10, -6], (x, y - height))
         assertEqual(grid[20, 12], (rect.extent.x, y + height * 2))
     }
@@ -421,31 +395,6 @@ extension GridLayoutGuideTests {
     }
 }
 
-// MARK: ----- REFRAMED WITH OFFSET
-
-extension GridLayoutGuideTests {
-    
-    func testDeprecatedPointsWithReframedOffset() {
-        let grid = LayoutGuide.grid(rect, columns: [0, 0.5, 1], rows: [0, 0.5, 1])
-        let offset = CGPoint(5, 10)
-        
-        var gridReframed = grid.reframed(offset: offset)
-        assertEqual(gridReframed[0, 0], rect.origin.offset(offset))
-        assertEqual(gridReframed[2, 2], rect.extent.offset(offset))
-        assertEqual(gridReframed[2, 0], rect.topTrailing.offset(offset))
-        
-        gridReframed = grid.reframed(offset: offset.asCGSize)
-        assertEqual(gridReframed[0, 0], rect.origin.offset(offset))
-        assertEqual(gridReframed[2, 2], rect.extent.offset(offset))
-        assertEqual(gridReframed[2, 0], rect.topTrailing.offset(offset))
-        
-        gridReframed = grid.reframed(offset: offset.asCGVector)
-        assertEqual(gridReframed[0, 0], rect.origin.offset(offset))
-        assertEqual(gridReframed[2, 2], rect.extent.offset(offset))
-        assertEqual(gridReframed[2, 0], rect.topTrailing.offset(offset))
-    }
-}
-
 // MARK: ----- OFFSET GRID FROM TO
 
 extension GridLayoutGuideTests {
@@ -465,7 +414,7 @@ extension GridLayoutGuideTests {
         assertEqual(gridOffset[1, 1], rect.center + offsetTo.asCGPoint.scaled(0.5))
         assertEqual(gridOffset[2, 1], rect.trailing + offsetTo.asCGPoint.scaled(0.5))
         
-        gridOffset = baseGrid.offset(from: 0, to: 10, factor: 0.5)
+        gridOffset = baseGrid.offset(from: .size(0), to: .size(10), factor: 0.5)
         assertEqual(gridOffset[0, 2], rect.bottomLeading + CGPoint(10).scaled(0.5))
         assertEqual(gridOffset[1, 1], rect.center + CGPoint(10).scaled(0.5))
         assertEqual(gridOffset[2, 1], rect.trailing + CGPoint(10).scaled(0.5))
@@ -498,7 +447,7 @@ extension GridLayoutGuideTests {
         assertEqual(grid[2, 1], rect.trailing + offsetTo.asCGPoint.scaled(0.5))
         
         grid = baseConfig
-            .offset(from: 0, to: 10, factor: 0.5)
+            .offset(from: .point(0), to: .point(10), factor: 0.5)
             .layout(in: rect)
         
         assertEqual(grid[0, 2], rect.bottomLeading + CGPoint(10).scaled(0.5))
@@ -1023,7 +972,7 @@ extension GridLayoutGuideTests {
     func testPropertiesForRotatedAndOffsetGridLayoutFromConfig() {
         let offset = CGPoint(15, 20)
         
-        var grid = LayoutGuideConfig.grid(columns: [0, 0.5, 1], rows: [0, 0.5, 1])
+        let grid = LayoutGuideConfig.grid(columns: [0, 0.5, 1], rows: [0, 0.5, 1])
             .rotated(180.degrees)
             .offset(offset)
             .layout(in: rect)

@@ -8,32 +8,17 @@
 
 import SwiftUI
 
-@available(*, deprecated, renamed: "calcXOffset", message: "Zero degrees moved from 3 o'clock to 12 o'clock")
-public func xFromAngle<T: UINumericType>(_ angle: Angle, forRadius radius: T) -> CGFloat {
-    calcXOffset(radius: radius, angle: angle)
+public func calcXOffset(radius: CGFloat, angle: Angle) -> CGFloat {
+    (angle.sin * abs(radius.asDouble)).asCGFloat
 }
 
-@available(*, deprecated, renamed: "calcYOffset", message: "Zero degrees moved from 3 o'clock to 12 o'clock")
-public func yFromAngle<T: UINumericType>(_ angle: Angle, forRadius radius: T) -> CGFloat {
-    calcYOffset(radius: radius, angle: angle)
+public func calcYOffset(radius: CGFloat, angle: Angle) -> CGFloat {
+    (angle.cos * abs(radius.asDouble) * -1).asCGFloat
 }
 
-@available(*, deprecated, renamed: "calcOffset", message: "Zero degrees moved from 3 o'clock to 12 o'clock")
-public func offsetFromAngle<T: UINumericType>(_ angle: Angle, forRadius radius: T) -> CGPoint {
-    calcOffset(radius: radius, angle: angle)
-}
-
-public func calcXOffset<T: UINumericType>(radius: T, angle: Angle) -> CGFloat {
-    (angle.sin * abs(radius.asCGFloat)).asCGFloat
-}
-
-public func calcYOffset<T: UINumericType>(radius: T, angle: Angle) -> CGFloat {
-    (angle.cos * abs(radius.asCGFloat) * -1).asCGFloat
-}
-
-public func calcOffset<T: UINumericType>(radius: T, angle: Angle) -> CGPoint {
-    let absRadius = abs(radius.asCGFloat)
-    let xOffset = absRadius * angle.sin
-    let yOffset = absRadius * angle.cos *  -1
-    return CGPoint(xOffset, yOffset)
+public func calcOffset(radius: CGFloat, angle: Angle) -> CGPoint {
+    let absRadius = abs(radius.asDouble)
+    let xOffset: Double = absRadius * angle.sin
+    let yOffset: Double = absRadius * angle.cos *  -1
+    return CGPoint(xOffset.asCGFloat, yOffset.asCGFloat)
 }

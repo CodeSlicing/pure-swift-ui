@@ -12,16 +12,8 @@ public extension CGPoint {
         self.init(x: size, y: size)
     }
     
-    init<T: UINumericType>(_ size: T) {
-        self.init(size.asCGFloat)
-    }
-    
     init(_ x: CGFloat, _ y: CGFloat) {
         self.init(x: x, y: y)
-    }
-    
-    init<TX: UINumericType, TY: UINumericType>(_ x: TX, _ y: TY) {
-        self.init(x: x.asCGFloat, y: y.asCGFloat)
     }
     
     var asCGRect: CGRect {
@@ -76,11 +68,11 @@ public extension CGPoint {
         max(x, y)
     }
     
-    func scaled<T: UINumericType>(_ scale: T) -> CGPoint {
+    func scaled(_ scale: CGFloat) -> CGPoint {
         scaled(.square(scale))
     }
     
-    func scaled<TX: UINumericType, TY: UINumericType>(_ xScale: TX, _ yScale: TY) -> CGPoint {
+    func scaled(_ xScale: CGFloat, _ yScale: CGFloat) -> CGPoint {
         CGPoint(xScaled(xScale), yScaled(yScale))
     }
     
@@ -88,16 +80,12 @@ public extension CGPoint {
         scaled(scale.width, scale.height)
     }
     
-    func xScaled<T: UINumericType>(_ scale: T) -> CGFloat {
-        x * scale.asCGFloat
+    func xScaled(_ scale: CGFloat) -> CGFloat {
+        x * scale
     }
     
-    func yScaled<T: UINumericType>(_ scale: T) -> CGFloat {
-        y * scale.asCGFloat
-    }
-    
-    func clamped<T_FROM: UINumericType, T_TO: UINumericType>(from: T_FROM, to: T_TO) -> CGPoint {
-        clamped(from: from.asCGFloat, to: to.asCGFloat)
+    func yScaled(_ scale: CGFloat) -> CGFloat {
+        y * scale
     }
     
     func clamped(from: CGFloat, to: CGFloat) -> CGPoint {
@@ -109,23 +97,23 @@ public extension CGPoint {
 
 public extension CGPoint {
     
-    static func x<T: UINumericType>(_ x: T) -> CGPoint {
+    static func x(_ x: CGFloat) -> CGPoint {
         .init(x, 0)
     }
     
-    static func y<T: UINumericType>(_ y: T) -> CGPoint {
+    static func y(_ y: CGFloat) -> CGPoint {
         .init(0, y)
     }
     
-    static func point<TX: UINumericType, TY: UINumericType>(_ x: TX, _ y: TY) -> CGPoint {
+    static func point(_ x: CGFloat, _ y: CGFloat) -> CGPoint {
         .init(x, y)
     }
     
-    static func point<T: UINumericType>(_ size: T) -> CGPoint {
+    static func point(_ size: CGFloat) -> CGPoint {
         .init(size)
     }
     
-    static func point<T: UINumericType>(_ radius: T, _ angle: Angle) -> CGPoint {
+    static func point(_ radius: CGFloat, _ angle: Angle) -> CGPoint {
         calcOffset(radius: radius, angle: angle)
     }
 }
@@ -151,10 +139,6 @@ public extension CGPoint {
         CGPoint(self.x + x, self.y + y)
     }
     
-    func offset<TX: UINumericType, TY: UINumericType>(_ x: TX, _ y: TY) -> CGPoint {
-        offset(x.asCGFloat, y.asCGFloat)
-    }
-
     func offset(_ offset: CGPoint) -> CGPoint {
         self.offset(offset.x, offset.y)
     }
@@ -167,54 +151,47 @@ public extension CGPoint {
         self.offset(offset.width, offset.height)
     }
     
-    func xOffset<T: UINumericType>(_ xOffset: T) -> CGPoint {
+    func xOffset(_ xOffset: CGFloat) -> CGPoint {
         offset(xOffset, 0)
     }
     
-    func yOffset<T: UINumericType>(_ yOffset: T) -> CGPoint {
+    func yOffset(_ yOffset: CGFloat) -> CGPoint {
         offset(0, yOffset)
     }
     
-    func offset<T: UINumericType>(radius: T, angle: Angle) -> CGPoint {
+    func offset(radius: CGFloat, angle: Angle) -> CGPoint {
         return offset(calcOffset(radius: radius, angle: angle))
     }
 }
 
 // MARK: ----- OFFSET WITH FACTOR
-/**
- Separate extensions so as not to incur performance penalties with a default case of scale == 1
- */
 public extension CGPoint {
     
     func offset(_ x: CGFloat, _ y: CGFloat, factor: CGFloat) -> CGPoint {
         return CGPoint(self.x + x * factor, self.y + y * factor)
     }
     
-    func offset<TX: UINumericType, TY: UINumericType, TS: UINumericType>(_ x: TX, _ y: TY, factor: TS) -> CGPoint {
-        offset(x.asCGFloat, y.asCGFloat, factor: factor.asCGFloat)
-    }
-
-    func offset<T: UINumericType>(_ offset: CGPoint, factor: T) -> CGPoint {
-        self.offset(offset.x, offset.y, factor: factor.asCGFloat)
+    func offset(_ offset: CGPoint, factor: CGFloat) -> CGPoint {
+        self.offset(offset.x, offset.y, factor: factor)
     }
     
-    func offset<T: UINumericType>(_ offset: CGVector, factor: T) -> CGPoint {
-        self.offset(offset.dx, offset.dy, factor: factor.asCGFloat)
+    func offset(_ offset: CGVector, factor: CGFloat) -> CGPoint {
+        self.offset(offset.dx, offset.dy, factor: factor)
     }
     
-    func offset<T: UINumericType>(_ offset: CGSize, factor: T) -> CGPoint {
-        self.offset(offset.width, offset.height, factor: factor.asCGFloat)
+    func offset(_ offset: CGSize, factor: CGFloat) -> CGPoint {
+        self.offset(offset.width, offset.height, factor: factor)
     }
     
-    func xOffset<T: UINumericType, TS: UINumericType>(_ xOffset: T, factor: TS) -> CGPoint {
+    func xOffset(_ xOffset: CGFloat, factor: CGFloat) -> CGPoint {
         offset(xOffset, 0, factor: factor)
     }
     
-    func yOffset<T: UINumericType, TS: UINumericType>(_ yOffset: T, factor: TS) -> CGPoint {
+    func yOffset(_ yOffset: CGFloat, factor: CGFloat) -> CGPoint {
         offset(0, yOffset, factor: factor)
     }
     
-    func offset<T: UINumericType, TS: UINumericType>(radius: T, angle: Angle, factor: TS) -> CGPoint {
+    func offset(radius: CGFloat, angle: Angle, factor: CGFloat) -> CGPoint {
         return offset(calcOffset(radius: radius, angle: angle), factor: factor)
     }
 }
@@ -223,7 +200,7 @@ public extension CGPoint {
 
 public extension CGPoint {
 
-    func to<T: UINumericType>(_ destination: CGPoint, _ factor: T) -> CGPoint {
+    func to(_ destination: CGPoint, _ factor: CGFloat) -> CGPoint {
         to(destination, .square(factor))
     }
     
@@ -277,7 +254,7 @@ public extension CGPoint {
         self.offset(in: vector.asCGSize, anchor: anchor)
     }
     
-    func calcPoint<T: UINumericType>(length: T, angle: Angle) -> CGPoint {
+    func calcPoint(length: CGFloat, angle: Angle) -> CGPoint {
         let offset = calcOffset(radius: length, angle: angle)
         return CGPoint(self.x + offset.x, self.y + offset.y)
     }
@@ -287,19 +264,19 @@ public extension CGPoint {
 
 public extension CGPoint {
     
-    func offset<T: UINumericType>(in size: CGSize, anchor: UnitPoint, factor: T) -> CGPoint {
+    func offset(in size: CGSize, anchor: UnitPoint, factor: CGFloat) -> CGPoint {
         self.offset(getOffset(in: size, anchor: anchor).scaled(factor))
     }
     
-    func offset<T: UINumericType>(in offset: CGPoint, anchor: UnitPoint, factor: T) -> CGPoint {
+    func offset(in offset: CGPoint, anchor: UnitPoint, factor: CGFloat) -> CGPoint {
         self.offset(in: offset.asCGSize, anchor: anchor, factor: factor)
     }
     
-    func offset<T: UINumericType>(in offset: CGVector, anchor: UnitPoint, factor: T) -> CGPoint {
+    func offset(in offset: CGVector, anchor: UnitPoint, factor: CGFloat) -> CGPoint {
         self.offset(in: offset.asCGSize, anchor: anchor, factor: factor)
     }
     
-    func calcPoint<T: UINumericType, TS: UINumericType>(length: T, angle: Angle, factor: TS) -> CGPoint {
+    func calcPoint(length: CGFloat, angle: Angle, factor: CGFloat) -> CGPoint {
         calcPoint(length: length, angle: angle, factor: .square(factor))
     }
     
@@ -315,7 +292,7 @@ public extension CGPoint {
         self.offset(in: offset.asCGSize, anchor: anchor, factor: factor)
     }
     
-    func calcPoint<T: UINumericType>(length: T, angle: Angle, factor: CGSize) -> CGPoint {
+    func calcPoint(length: CGFloat, angle: Angle, factor: CGSize) -> CGPoint {
         let offset = calcOffset(radius: length, angle: angle)
         return CGPoint(self.x + offset.x * factor.width, self.y + offset.y * factor.height)
     }
@@ -363,15 +340,15 @@ public extension CGPoint {
 
 public extension CGPoint {
     
-    func moveOrigin<T: UINumericType>(in size: CGSize, origin: UnitPoint = .topLeading, factor: T) -> CGPoint {
+    func moveOrigin(in size: CGSize, origin: UnitPoint = .topLeading, factor: CGFloat) -> CGPoint {
         moveOrigin(in: size.scaled(factor), origin: origin)
     }
     
-    func moveOrigin<T: UINumericType>(in size: CGPoint, origin: UnitPoint = .topLeading, factor: T) -> CGPoint {
+    func moveOrigin(in size: CGPoint, origin: UnitPoint = .topLeading, factor: CGFloat) -> CGPoint {
         moveOrigin(in: size.asCGSize, origin: origin, factor: factor)
     }
 
-    func moveOrigin<T: UINumericType>(in size: CGVector, origin: UnitPoint = .topLeading, factor: T) -> CGPoint {
+    func moveOrigin(in size: CGVector, origin: UnitPoint = .topLeading, factor: CGFloat) -> CGPoint {
         moveOrigin(in: size.asCGSize, origin: origin, factor: factor)
     }
     
@@ -392,35 +369,7 @@ public extension CGPoint {
 
 public extension CGPoint {
     
-    /**
-     This is an expensive calculation so use with care
-     */
-    @available(*, deprecated, renamed: "radiusTo")
-    func calcRadiusTo(_ point: CGPoint) -> CGFloat {
-        sqrt(squaredRadiusTo(point))
-    }
-
-    @available(*, deprecated, renamed: "radiusTo")
-    func calcRadiusTo<TX: UINumericType, TY: UINumericType>(_ x: TX, _ y: TY) -> CGFloat {
-        radiusTo(CGPoint(x, y))
-    }
-    
-    @available(*, deprecated, renamed: "squaredRadiusTo")
-    func calcSquaredRadiusTo(_ point: CGPoint) -> CGFloat {
-        squaredRadiusTo(point)
-    }
-    
-    @available(*, deprecated, renamed: "squaredRadiusTo")
-    func calcSquaredRadiusTo<TX: UINumericType, TY: UINumericType>(_ x: TX, _ y: TY) -> CGFloat {
-        squaredRadiusTo(CGPoint(x, y))
-    }
-    
-    @available(*, deprecated, renamed: "angleTo")
-    func calcAngleTo(_ point: CGPoint) -> Angle {
-        angleTo(point)
-    }
-    
-    func calcAngleTo<TX: UINumericType, TY: UINumericType>(_ x: TX, _ y: TY) -> Angle {
+    func calcAngleTo(_ x: CGFloat, _ y: CGFloat) -> Angle {
         angleTo(CGPoint(x, y))
     }
     
@@ -431,16 +380,16 @@ public extension CGPoint {
         sqrt(squaredRadiusTo(point))
     }
 
-    func radiusTo<TX: UINumericType, TY: UINumericType>(_ x: TX, _ y: TY) -> CGFloat {
+    func radiusTo(_ x: CGFloat, _ y: CGFloat) -> CGFloat {
         radiusTo(CGPoint(x, y))
     }
     
     func squaredRadiusTo(_ point: CGPoint) -> CGFloat {
         let delta = point - self
-        return ((delta.x ** 2) + (delta.y ** 2)).asCGFloat
+        return ((delta.x ** 2) + (delta.y ** 2))
     }
     
-    func squaredRadiusTo<TX: UINumericType, TY: UINumericType>(_ x: TX, _ y: TY) -> CGFloat {
+    func squaredRadiusTo(_ x: CGFloat, _ y: CGFloat) -> CGFloat {
         squaredRadiusTo(CGPoint(x, y))
     }
     
@@ -450,7 +399,7 @@ public extension CGPoint {
         return angle + 90.degrees
     }
     
-    func angleTo<TX: UINumericType, TY: UINumericType>(_ x: TX, _ y: TY) -> Angle {
+    func angleTo(_ x: CGFloat, _ y: CGFloat) -> Angle {
         angleTo(CGPoint(x, y))
     }
 }
