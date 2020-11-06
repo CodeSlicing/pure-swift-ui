@@ -441,15 +441,6 @@ public extension View {
     }
 }
 
-// MARK: - ----- OPACITY
-
-public extension View {
-    
-    func opacity<T: UINumericType>(_ theOpacity: T) -> some View {
-        opacity(theOpacity.asDouble)
-    }
-}
-
 // MARK: ----- BLUR
 
 public extension View {
