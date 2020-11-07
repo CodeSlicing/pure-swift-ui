@@ -410,27 +410,6 @@ public extension View {
     }
 }
 
-// MARK: ----- IMAGE PROCESSING
-
-public extension View {
-    
-    func saturation(_ amount: CGFloat) -> some View {
-        saturation(amount.asDouble)
-    }
-    
-    func brightness(_ amount: CGFloat) -> some View {
-        brightness(amount.asDouble)
-    }
-    
-    func contrast(_ amount: CGFloat) -> some View {
-        contrast(amount.asDouble)
-    }
-    
-    func grayscale(_ amount: CGFloat) -> some View {
-        grayscale(amount.asDouble)
-    }
-}
-
 // MARK: ----- SHADOW
 
 public extension View {
@@ -546,8 +525,8 @@ public extension View {
 
 public extension View {
 
-    func scale(_ scaleFactor: CGFloat, anchor: UnitPoint = .center) -> some View {
-        scaleEffect(scaleFactor, anchor: anchor)
+    func scale(_ scale: CGFloat, anchor: UnitPoint = .center) -> some View {
+        scaleEffect(scale, anchor: anchor)
     }
     
     func scale(_ scaleSize: CGSize, anchor: UnitPoint = .center) -> some View {
@@ -564,15 +543,6 @@ public extension View {
     
     func yScale(_ scaleY: CGFloat, anchor: UnitPoint = .center) -> some View {
         scaleEffect(x: 1, y: scaleY, anchor: anchor)
-    }
-}
-
-// MARK: ----- Z-INDEX
-
-public extension View {
-    
-    func zIndex(_ index: CGFloat) -> some View {
-        zIndex(index.asDouble)
     }
 }
 

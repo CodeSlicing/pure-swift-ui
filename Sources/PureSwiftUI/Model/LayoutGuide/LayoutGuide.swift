@@ -125,7 +125,7 @@ internal func calcOrigin(in rect: CGRect, origin: UnitPoint = .topLeading) -> CG
 public extension LayoutGuide {
     
     func rotated(_ angle: Angle, anchor: UnitPoint = .center) -> LayoutGuide {
-        rotated(angle, anchor: anchor, factor: 1.asCGFloat)
+        rotated(angle, anchor: anchor, factor: 1)
     }
     
     func rotated(_ angle: Angle, anchor: UnitPoint = .center, factor: CGFloat) -> LayoutGuide {
@@ -148,7 +148,7 @@ public extension LayoutGuide {
 public extension LayoutGuide {
     
     func offset(_ offset: CGPoint) -> LayoutGuide {
-        self.offset(offset, factor: 1.asCGFloat)
+        self.offset(offset, factor: 1)
     }
     
     func offset(_ offset: CGFloat) -> LayoutGuide {
@@ -156,7 +156,7 @@ public extension LayoutGuide {
     }
     
     func offset(_ offset: CGPoint, factor: CGFloat) -> LayoutGuide {
-        LayoutGuide(OffsetLayoutCoordinator(offset: offset.scaled(factor), baseCoordinator: self.coordinator), rect: self.rect)
+        LayoutGuide(OffsetLayoutCoordinator(offset: offset.scaled(factor.asCGFloat), baseCoordinator: self.coordinator), rect: self.rect)
     }
     
     func offset(_ offset: CGFloat, factor: CGFloat) -> LayoutGuide {
@@ -170,7 +170,7 @@ public extension LayoutGuide {
     
     func offset(from: CGPoint, to: CGPoint, factor: CGFloat) -> LayoutGuide {
         let delta = to - from
-        return LayoutGuide(OffsetLayoutCoordinator(offset: from + delta.scaled(factor), baseCoordinator: self.coordinator), rect: self.rect)
+        return LayoutGuide(OffsetLayoutCoordinator(offset: from + delta.scaled(factor.asCGFloat), baseCoordinator: self.coordinator), rect: self.rect)
     }
     
     func offset(from: CGSize, to: CGSize, factor: CGFloat) -> LayoutGuide {
@@ -197,7 +197,7 @@ public extension LayoutGuide {
     
     func xOffset(from: CGFloat, to: CGFloat, factor: CGFloat) -> LayoutGuide {
         let delta = to - from
-        return offset(.x(from + delta * factor))
+        return offset(.x(from + delta * factor.asCGFloat))
     }
 }
 
@@ -220,7 +220,7 @@ public extension LayoutGuide {
     
     func yOffset(from: CGFloat, to: CGFloat, factor: CGFloat) -> LayoutGuide {
         let delta = to - from
-        return offset(.y(from + delta * factor))
+        return offset(.y(from + delta * factor.asCGFloat))
     }
 }
 
@@ -229,7 +229,7 @@ public extension LayoutGuide {
 public extension LayoutGuide {
         
     func scaled(_ scale: CGSize, anchor: UnitPoint = .center) -> LayoutGuide {
-        scaled(scale, anchor: anchor, factor: 1.asCGFloat)
+        scaled(scale, anchor: anchor, factor: 1)
     }
     
     func scaled(_ scale: CGFloat, anchor: UnitPoint = .center) -> LayoutGuide {
@@ -238,7 +238,7 @@ public extension LayoutGuide {
     
     func scaled(_ scale: CGSize, anchor: UnitPoint = .center, factor: CGFloat) -> LayoutGuide {
         let effectiveScale = scale - .square(1)
-        return LayoutGuide(ScaledLayoutCoordinator(scale: .square(1) + effectiveScale.scaled(factor), anchor: anchor, anchorPoint: anchorLocation(for: anchor), baseCoordinator: self.coordinator), rect: self.rect)
+        return LayoutGuide(ScaledLayoutCoordinator(scale: .square(1) + effectiveScale.scaled(factor.asCGFloat), anchor: anchor, anchorPoint: anchorLocation(for: anchor), baseCoordinator: self.coordinator), rect: self.rect)
     }
     
     func scaled(_ scale: CGFloat, anchor: UnitPoint = .center, factor: CGFloat) -> LayoutGuide {
@@ -252,7 +252,7 @@ public extension LayoutGuide {
         
     func scaled(from fromScale: CGSize, to toScale: CGSize, anchor: UnitPoint = .center, factor: CGFloat) -> LayoutGuide {
         let deltaScale = toScale - fromScale
-        return scaled(fromScale + deltaScale.scaled(factor), anchor: anchor)
+        return scaled(fromScale + deltaScale.scaled(factor.asCGFloat), anchor: anchor)
     }
     
     func scaled(from fromScale: CGFloat, to toScale: CGFloat, anchor: UnitPoint = .center, factor: CGFloat) -> LayoutGuide {
@@ -265,7 +265,7 @@ public extension LayoutGuide {
 public extension LayoutGuide {
         
     func xScaled(_ scale: CGFloat, anchor: UnitPoint = .center) -> LayoutGuide {
-        xScaled(scale, anchor: anchor, factor: 1.asCGFloat)
+        xScaled(scale, anchor: anchor, factor: 1)
     }
     
     func xScaled(_ scale: CGFloat, anchor: UnitPoint = .center, factor: CGFloat) -> LayoutGuide {
@@ -287,7 +287,7 @@ public extension LayoutGuide {
 public extension LayoutGuide {
     
     func yScaled(_ scale: CGFloat, anchor: UnitPoint = .center) -> LayoutGuide {
-        yScaled(scale, anchor: anchor, factor: 1.asCGFloat)
+        yScaled(scale, anchor: anchor, factor: 1)
     }
     
     func yScaled(_ scale: CGFloat, anchor: UnitPoint = .center, factor: CGFloat) -> LayoutGuide {

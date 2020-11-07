@@ -41,12 +41,12 @@ public extension Shape {
 
 public extension Shape {
 
-    func scaleIf(_ condition: Bool, _ scaleFactor: CGFloat, anchor: UnitPoint = .center) -> ScaledShape<Self> {
-        scale(condition ? scaleFactor : 1, anchor: anchor)
+    func scaleIf(_ condition: Bool, _ scale: CGFloat, anchor: UnitPoint = .center) -> ScaledShape<Self> {
+        self.scale(condition ? scale : 1, anchor: anchor)
     }
 
-    func scaleIfNot(_ condition: Bool, _ scaleFactor: CGFloat, anchor: UnitPoint = .center) -> ScaledShape<Self> {
-        scaleIf(!condition, scaleFactor, anchor: anchor)
+    func scaleIfNot(_ condition: Bool, _ scale: CGFloat, anchor: UnitPoint = .center) -> ScaledShape<Self> {
+        scaleIf(!condition, scale, anchor: anchor)
     }
 
     func scaleIf(_ condition: Bool, _ scaleX: CGFloat, _ scaleY: CGFloat, anchor: UnitPoint = .center) -> ScaledShape<Self> {

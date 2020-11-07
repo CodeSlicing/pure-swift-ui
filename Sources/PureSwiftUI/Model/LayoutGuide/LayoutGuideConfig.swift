@@ -28,7 +28,7 @@ public struct LayoutGuideConfig: Shape {
 public extension LayoutGuideConfig {
 
     func rotated(_ angle: Angle, anchor: UnitPoint = .center) -> LayoutGuideConfig {
-        rotated(angle, anchor: anchor, factor: 1.asCGFloat)
+        rotated(angle, anchor: anchor, factor: 1)
     }
 
     func rotated(_ angle: Angle, anchor: UnitPoint = .center, factor: CGFloat) -> LayoutGuideConfig {
@@ -54,7 +54,7 @@ public extension LayoutGuideConfig {
 public extension LayoutGuideConfig {
     
     func offset(_ offset: CGPoint) -> LayoutGuideConfig {
-        self.offset(offset, factor: 1.asCGFloat)
+        self.offset(offset, factor: 1)
     }
     
     func offset(_ offset: CGFloat) -> LayoutGuideConfig {
@@ -106,7 +106,7 @@ public extension LayoutGuideConfig {
     
     func xOffset(from: CGFloat, to: CGFloat, factor: CGFloat) -> LayoutGuideConfig {
         let delta = to - from
-        return offset(.x(from + delta * factor))
+        return offset(.x(from + delta * factor.asCGFloat))
     }
 }
 
@@ -129,7 +129,7 @@ public extension LayoutGuideConfig {
     
     func yOffset(from: CGFloat, to: CGFloat, factor: CGFloat) -> LayoutGuideConfig {
         let delta = to - from
-        return offset(.y(from + delta * factor))
+        return offset(.y(from + delta * factor.asCGFloat))
     }
 }
 
@@ -138,7 +138,7 @@ public extension LayoutGuideConfig {
 public extension LayoutGuideConfig {
     
     func scaled(_ scale: CGSize, anchor: UnitPoint = .center) -> LayoutGuideConfig {
-        scaled(scale, anchor: anchor, factor: 1.asCGFloat)
+        scaled(scale, anchor: anchor, factor: 1)
     }
     
     func scaled(_ scale: CGFloat, anchor: UnitPoint = .center) -> LayoutGuideConfig {

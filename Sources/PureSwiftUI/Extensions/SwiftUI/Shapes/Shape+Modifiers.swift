@@ -65,8 +65,8 @@ public extension Shape {
 
 public extension Shape {
 
-    func scale(_ scaleFactor: CGFloat, anchor: UnitPoint = .center) -> ScaledShape<Self> {
-        scale(x: scaleFactor, y: scaleFactor, anchor: anchor)
+    func scale(_ scale: CGFloat, anchor: UnitPoint = .center) -> ScaledShape<Self> {
+        self.scale(x: scale, y: scale, anchor: anchor)
     }
     
     func scale(_ scaleX: CGFloat, _ scaleY: CGFloat, anchor: UnitPoint = .center) -> ScaledShape<Self> {
