@@ -414,20 +414,8 @@ public extension View {
 
 public extension View {
     
-    func shadow(_ radius: CGFloat, x: CGFloat, y: CGFloat) -> some View {
+    func shadow(_ radius: CGFloat, x: CGFloat = 0, y: CGFloat = 0) -> some View {
         shadow(radius: radius, x: x, y: y)
-    }
-    
-    func shadow(_ radius: CGFloat) -> some View {
-        shadow(radius, x: 0, y: 0)
-    }
-    
-    func shadow(_ radius: CGFloat, x: CGFloat) -> some View {
-        shadow(radius, x: x, y: 0)
-    }
-    
-    func shadow(_ radius: CGFloat, y: CGFloat) -> some View {
-        shadow(radius, x: 0, y: y)
     }
     
     func shadow(_ radius: CGFloat, offset: CGPoint) -> some View {
@@ -438,20 +426,8 @@ public extension View {
         shadow(radius, offset: .point(offset, angle))
     }
 
-    func shadowColor(_ color: Color, _ radius: CGFloat, x: CGFloat, y: CGFloat) -> some View {
+    func shadowColor(_ color: Color, _ radius: CGFloat, x: CGFloat = 0, y: CGFloat = 0) -> some View {
         shadow(color: color, radius: radius, x: x, y: y)
-    }
-    
-    func shadowColor(_ color: Color, _ radius: CGFloat) -> some View {
-        shadowColor(color, radius, x: 0, y: 0)
-    }
-    
-    func shadowColor(_ color: Color, _ radius: CGFloat, x: CGFloat) -> some View {
-        shadowColor(color, radius, x: x, y: 0)
-    }
-    
-    func shadowColor(_ color: Color, _ radius: CGFloat, y: CGFloat) -> some View {
-        shadowColor(color, radius, x: 0, y: y)
     }
     
     func shadowColor(_ color: Color, _ radius: CGFloat, offset: CGPoint) -> some View {
@@ -462,20 +438,8 @@ public extension View {
         shadowColor(color, radius, offset: .point(offset, angle))
     }
     
-    func shadowColor(_ colorName: String, _ radius: CGFloat, x: CGFloat, y: CGFloat) -> some View {
+    func shadowColor(_ colorName: String, _ radius: CGFloat, x: CGFloat = 0, y: CGFloat = 0) -> some View {
         shadowColor(Color(colorName), radius, x: x, y: y)
-    }
-    
-    func shadowColor(_ colorName: String, _ radius: CGFloat) -> some View {
-        shadowColor(colorName, radius, x: 0, y: 0)
-    }
-    
-    func shadowColor(_ colorName: String, _ radius: CGFloat, x: CGFloat) -> some View {
-        shadowColor(colorName, radius, x: x, y: 0)
-    }
-    
-    func shadowColor(_ colorName: String, _ radius: CGFloat, y: CGFloat) -> some View {
-        shadowColor(colorName, radius, x: 0, y: y)
     }
     
     func shadowColor(_ colorName: String, _ radius: CGFloat, offset: CGPoint) -> some View {

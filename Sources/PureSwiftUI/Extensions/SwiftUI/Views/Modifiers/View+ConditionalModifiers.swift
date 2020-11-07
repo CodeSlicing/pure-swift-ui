@@ -511,7 +511,7 @@ public extension View {
 
 public extension View {
     
-    func shadowIf(_ condition: Bool, color: Color? = nil, radius: CGFloat, x: CGFloat, y: CGFloat) -> some View {
+    func shadowIf(_ condition: Bool, color: Color? = nil, radius: CGFloat = 0, x: CGFloat = 0, y: CGFloat = 0) -> some View {
         RenderIf(color != nil) {
             self.shadow(color: color!, radius: condition ? radius : 0, x: condition ? x : 0, y: condition ? y : 0)
         }.elseRender {
@@ -519,7 +519,7 @@ public extension View {
         }
     }
     
-    func shadowIfNot(_ condition: Bool, color: Color? = nil, radius: CGFloat, x: CGFloat, y: CGFloat) -> some View {
+    func shadowIfNot(_ condition: Bool, color: Color? = nil, radius: CGFloat, x: CGFloat = 0, y: CGFloat = 0) -> some View {
         shadowIf(!condition, color: color, radius: radius, x: x, y: x)
     }
     
@@ -537,30 +537,6 @@ public extension View {
     
     func shadowIfNot(_ condition: Bool, color: Color? = nil, radius: CGFloat, offset: CGFloat, angle: Angle) -> some View {
         shadowIfNot(condition, color: color, radius: radius, offset: .point(offset, angle))
-    }
-
-    func shadowIf(_ condition: Bool, color: Color? = nil, radius: CGFloat) -> some View {
-        shadowIf(condition, color: color, radius: radius, x: 0, y: 0)
-    }
-    
-    func shadowIfNot(_ condition: Bool, color: Color? = nil, radius: CGFloat) -> some View {
-        shadowIf(!condition, color: color, radius: radius, x: 0, y: 0)
-    }
-    
-    func shadowIf(_ condition: Bool, color: Color? = nil, radius: CGFloat, x: CGFloat) -> some View {
-        shadowIf(condition, color: color, radius: radius, x: x, y: 0)
-    }
-    
-    func shadowIfNot(_ condition: Bool, color: Color? = nil, radius: CGFloat, x: CGFloat) -> some View {
-        shadowIf(!condition, color: color, radius: radius, x: x, y: 0)
-    }
-
-    func shadowIf(_ condition: Bool, color: Color? = nil, radius: CGFloat, y: CGFloat) -> some View {
-        shadowIf(condition, color: color, radius: radius, x: 0, y: y)
-    }
-    
-    func shadowIfNot(_ condition: Bool, color: Color? = nil, radius: CGFloat, y: CGFloat) -> some View {
-        shadowIf(!condition, color: color, radius: radius, x: 0, y: y)
     }
 }
 
