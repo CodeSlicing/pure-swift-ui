@@ -450,27 +450,6 @@ public extension View {
     }
 }
 
-// MARK: ----- IMAGE PROCESSING
-
-public extension View {
-    
-    func saturation<T: UINumericType>(_ amount: T) -> some View {
-        saturation(amount.asDouble)
-    }
-    
-    func brightness<T: UINumericType>(_ amount: T) -> some View {
-        brightness(amount.asDouble)
-    }
-    
-    func contrast<T: UINumericType>(_ amount: T) -> some View {
-        contrast(amount.asDouble)
-    }
-    
-    func grayscale<T: UINumericType>(_ amount: T) -> some View {
-        grayscale(amount.asDouble)
-    }
-}
-
 // MARK: ----- SHADOW
 
 public extension View {
@@ -653,17 +632,8 @@ public extension View {
     }
 }
 
-// MARK: ----- Z-INDEX
-
-public extension View {
-    
-    func zIndex<T: UINumericType>(_ index: T) -> some View {
-        zIndex(index.asDouble)
-    }
-}
-
 // MARK: ----- ENVIRONMENT
-
+    
 public extension View {
     
     func envDarkMode() -> some View {
