@@ -478,7 +478,12 @@ public extension Path {
         addArc(center: center, radius: radius.asCGFloat, startAngle: adjustAngle(startAngle), endAngle: adjustAngle(endAngle), clockwise: !clockwise, transform: transform)
     }
     
+    @available(*, deprecated, renamed: "arc", renamed: "arc")
     mutating func relativeArc<TR: UINumericType>(_ center: CGPoint, radius: TR, startAngle: Angle, delta: Angle, transform: CGAffineTransform = .identity) {
+        addRelativeArc(center: center, radius: radius.asCGFloat, startAngle: adjustAngle(startAngle), delta: delta, transform: transform)
+    }
+    
+    mutating func arc<TR: UINumericType>(_ center: CGPoint, radius: TR, startAngle: Angle, delta: Angle, transform: CGAffineTransform = .identity) {
         addRelativeArc(center: center, radius: radius.asCGFloat, startAngle: adjustAngle(startAngle), delta: delta, transform: transform)
     }
 }
