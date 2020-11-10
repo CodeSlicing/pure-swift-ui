@@ -441,12 +441,47 @@ public extension View {
     }
 }
 
+// MARK: - ----- OPACITY
+
+public extension View {
+    
+    @available(*, deprecated, message: "Use version that takes a Double")
+    func opacity<T: UINumericType>(_ theOpacity: T) -> some View {
+        opacity(theOpacity.asDouble)
+    }
+}
+
 // MARK: ----- BLUR
 
 public extension View {
     
     func blur<T: UINumericType>(_ radius: T, opaque: Bool = false) -> some View {
         blur(radius: radius.asCGFloat, opaque: opaque)
+    }
+}
+
+// MARK: ----- IMAGE PROCESSING
+
+public extension View {
+    
+    @available(*, deprecated, message: "use version that takes a Double explicitly")
+    func saturation<T: UINumericType>(_ amount: T) -> some View {
+        saturation(amount.asDouble)
+    }
+    
+    @available(*, deprecated, message: "use version that takes a Double explicitly")
+    func brightness<T: UINumericType>(_ amount: T) -> some View {
+        brightness(amount.asDouble)
+    }
+    
+    @available(*, deprecated, message: "use version that takes a Double explicitly")
+    func contrast<T: UINumericType>(_ amount: T) -> some View {
+        contrast(amount.asDouble)
+    }
+    
+    @available(*, deprecated, message: "use version that takes a Double explicitly")
+    func grayscale<T: UINumericType>(_ amount: T) -> some View {
+        grayscale(amount.asDouble)
     }
 }
 
@@ -629,6 +664,16 @@ public extension View {
     
     func yScale(_ scaleY: CGFloat, anchor: UnitPoint = .center) -> some View {
         scaleEffect(x: 1, y: scaleY, anchor: anchor)
+    }
+}
+
+// MARK: ----- Z-INDEX
+
+public extension View {
+ 
+    @available(*, deprecated, message: "Use version that takes a Double")
+    func zIndex<T: UINumericType>(_ index: T) -> some View {
+        zIndex(index.asDouble)
     }
 }
 
