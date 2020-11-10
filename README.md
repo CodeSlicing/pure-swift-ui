@@ -503,6 +503,9 @@ This project adheres to a [semantic versioning](https://semver.org) paradigm. I'
 - [1.14.2][tag-1.14.2] Add static constructor for `CGPoint` and convenience constructor for `LinearGradient` specifying angle with further standardization of API.
 - [1.15.0][tag-1.15.0] Fix for segmentation fault in Xcode 11.4 and Cocoapods support
 - [1.15.1][tag-1.15.1] Fix for build failure in XCode 11.5-beta-01
+- [1.16.0][tag-1.16.0] Add convenience extensions for gradients and Colors
+- [1.20.0][tag-1.20.0] Add SFSymbols for Swift 2 and new preview devices in Xcode 12
+- [2.0.0][tag-2.0.0] Refactor for build and runtime performance. Remove UINumericType and remove all deprecated code. This is a breaking change; be aware!
  
 ## Licensing
 
@@ -556,6 +559,9 @@ version links:
 [tag-1.14.2]: https://github.com/CodeSlicing/pure-swift-ui/tree/1.14.2
 [tag-1.15.0]: https://github.com/CodeSlicing/pure-swift-ui/tree/1.15.0
 [tag-1.15.1]: https://github.com/CodeSlicing/pure-swift-ui/tree/1.15.1
+[tag-1.16.0]: https://github.com/CodeSlicing/pure-swift-ui/tree/1.16.0
+[tag-1.20.0]: https://github.com/CodeSlicing/pure-swift-ui/tree/1.20.0
+[tag-2.0.0]: https://github.com/CodeSlicing/pure-swift-ui/tree/2.0.0
 
 <!---
  local docs:
