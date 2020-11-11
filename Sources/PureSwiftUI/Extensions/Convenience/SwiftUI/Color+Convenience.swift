@@ -36,9 +36,13 @@ public extension Color {
 public extension Color {
     
     static func rgb(_ red: Double, _ green: Double, _ blue: Double) -> Color {
-        Color(red: red / 255, green: green / 255, blue: blue / 255)
+        Color(red: red, green: green, blue: blue)
     }
     
+    static func rgb8(_ red: Int, _ green: Int, _ blue: Int) -> Color {
+        Color(red: red.asDouble / 255, green: green.asDouble / 255, blue: blue.asDouble / 255)
+    }
+
     static func hsb(_ hue: Double, _ saturation: Double, _ brightness: Double) -> Color {
         Color(hue: hue, saturation: saturation, brightness: brightness)
     }
