@@ -504,7 +504,7 @@ This project adheres to a [semantic versioning](https://semver.org) paradigm. I'
 - [1.15.0][tag-1.15.0] Fix for segmentation fault in Xcode 11.4 and Cocoapods support
 - [1.15.1][tag-1.15.1] Fix for build failure in XCode 11.5-beta-01
 - [1.16.0][tag-1.16.0] Add convenience extensions for gradients and Colors
-- [1.16.1][tag-1.16.1] Add statix initialiser explicitly for 8 bit Color: rgb8
+- [1.16.1][tag-1.16.1] Add static initialiser explicitly for 8 bit Color: rgb8
  
 ## Licensing
 
