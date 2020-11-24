@@ -350,12 +350,21 @@ public extension Path {
 
 public extension Path {
     
-    mutating func circle(_ rect: CGRect, transform: CGAffineTransform = .identity) {
-        addEllipse(in: rect, transform: transform)
+    mutating func circle(_ rect: CGRect, useMaxDimension: Bool = false, transform: CGAffineTransform = .identity) {
+        circle(rect.center, diameter: useMaxDimension ? rect.maxDimension : rect.minDimension, transform: transform)
     }
     
-    mutating func circle(_ origin: CGPoint, _ size: CGFloat, transform: CGAffineTransform = .identity) {
-        circle(origin, size, anchor: .center)
+    @available(* , deprecated, message: "use function version that takes a named radius argument")
+    mutating func circle(_ origin: CGPoint, _ radius: CGFloat, transform: CGAffineTransform = .identity) {
+        circle(origin, radius: radius, transform: transform)
+    }
+    
+    mutating func circle(_ origin: CGPoint, radius: CGFloat, transform: CGAffineTransform = .identity) {
+        circle(origin, diameter: radius * 2, transform: transform)
+    }
+    
+    mutating func circle(_ origin: CGPoint, diameter: CGFloat, transform: CGAffineTransform = .identity) {
+        circle(origin, diameter: diameter, anchor: .center, transform: transform)
     }
 }
 
@@ -363,15 +372,23 @@ public extension Path {
 
 public extension Path {
 
-    mutating func circle(_ rect: CGRect, anchor: UnitPoint, transform: CGAffineTransform = .identity) {
-        circle(rect.offset(anchor: anchor), transform: transform)
+    mutating func circle(_ rect: CGRect, useMaxDimension: Bool = false, anchor: UnitPoint, transform: CGAffineTransform = .identity) {
+        circle(rect.center, diameter: useMaxDimension ? rect.maxDimension : rect.minDimension, anchor: anchor, transform: transform)
     }
 
-    mutating func circle(_ origin: CGPoint, _ size: CGFloat, anchor: UnitPoint, transform: CGAffineTransform = .identity) {
-        let squareCGSize: CGSize = .square(size * 2)
-        circle(CGRect(origin.offset(in: squareCGSize, anchor: anchor), squareCGSize), transform: transform)
+    @available(* , deprecated, message: "use function version that takes a named radius argument")
+    mutating func circle(_ origin: CGPoint, _ radius: CGFloat, anchor: UnitPoint, transform: CGAffineTransform = .identity) {
+        circle(origin, radius: radius, anchor: anchor, transform: transform)
     }
     
+    mutating func circle(_ origin: CGPoint, radius: CGFloat, anchor: UnitPoint, transform: CGAffineTransform = .identity) {
+        circle(origin, diameter: radius * 2, anchor: anchor, transform: transform)
+    }
+    
+    mutating func circle(_ origin: CGPoint, diameter: CGFloat, anchor: UnitPoint, transform: CGAffineTransform = .identity) {
+        let squareCGSize: CGSize = .square(diameter)
+        addEllipse(in: CGRect(origin.offset(in: squareCGSize, anchor: anchor), squareCGSize), transform: transform)
+    }
 }
 
 // MARK: ----- QUAD CURVE
