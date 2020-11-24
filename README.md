@@ -509,6 +509,7 @@ This project adheres to a [semantic versioning](https://semver.org) paradigm. I'
 - [1.20.1][tag-1.20.1] Add static initialiser explicitly for 8 bit Color: rgb8
 - [2.0.0][tag-2.0.0] Refactor for build and runtime performance. Remove UINumericType and remove all deprecated code. This is a breaking change; be aware!
 - [2.0.1][tag-2.0.1] Add static initialiser explicitly for 8 bit Color: rgb8
+- [2.0.2][tag-2.0.2] Add extensions for drawing circles on Path
 
 ## Licensing
 
@@ -568,6 +569,7 @@ version links:
 [tag-1.20.1]: https://github.com/CodeSlicing/pure-swift-ui/tree/1.20.1
 [tag-2.0.0]: https://github.com/CodeSlicing/pure-swift-ui/tree/2.0.0
 [tag-2.0.1]: https://github.com/CodeSlicing/pure-swift-ui/tree/2.0.1
+[tag-2.0.2]: https://github.com/CodeSlicing/pure-swift-ui/tree/2.0.2
 
 <!---
  local docs:
