@@ -8,10 +8,12 @@
 
 import SwiftUI
 
+@available(macOS 11.0, *)
 public func SFSymbol(_ sfSymbol: SFSymbolName) -> Image {
     Image(systemName: sfSymbol.rawValue)
 }
 
+@available(macOS 11.0, *)
 public func SFSymbol(_ systemName: String) -> Image {
     Image(systemName: systemName)
 }

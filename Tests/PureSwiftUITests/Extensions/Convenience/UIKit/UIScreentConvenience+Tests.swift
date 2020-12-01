@@ -5,6 +5,7 @@
 //  Created by Adam Fordyce on 18/12/2019.
 //
 
+#if canImport(UIKit)
 import XCTest
 @testable import PureSwiftUI
 
@@ -54,3 +55,4 @@ class UIScreenConvenienceExtensionsTests: XCTestCase {
         XCTAssertEqual(UIScreen.main.size, UIScreen.main.bounds.size)
     }
 }
+#endif
