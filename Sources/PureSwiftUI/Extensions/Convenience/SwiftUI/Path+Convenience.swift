@@ -416,22 +416,6 @@ private let controlPointRadius: CGFloat = 4
 
 public extension Path {
     
-    private mutating func addControlPoints(_ cp1: CGPoint, _ cp2: CGPoint, destination: CGPoint)  {
-        if let currentPoint = currentPoint {
-            ellipse(cp1, .square(5), anchor: .center)
-            ellipse(cp2, .square(5), anchor: .center)
-            line(from: cp2, to: destination)
-            line(from: cp1, to: currentPoint)
-        }
-    }
-    
-    mutating func curveOld(_ point: CGPoint, cp1: CGPoint, cp2: CGPoint, showControlPoints: Bool = false) {
-        if showControlPoints {
-            addControlPoints(cp1, cp2, destination: point)
-        }
-        addCurve(to: point, control1: cp1, control2: cp2)
-    }
-    
     private mutating func addControlPoint(_ cp: CGPoint, destination: CGPoint) {
         if let currentPoint = currentPoint {
             
