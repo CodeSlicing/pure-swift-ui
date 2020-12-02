@@ -393,14 +393,9 @@ public extension Path {
 
 // MARK: ----- QUAD CURVE
 
+private let controlPointRadius: CGFloat = 3
+
 public extension Path {
-    
-    private mutating func addControlPoint(_ point: CGPoint)  {
-        if let currentPoint = currentPoint {
-            ellipse(point, .square(5), anchor: .center)
-            line(from: point, to: currentPoint)
-        }
-    }
     
     mutating func quadCurve(_ point: CGPoint, cp: CGPoint, showControlPoints: Bool = false) {
         if showControlPoints {
@@ -412,11 +407,9 @@ public extension Path {
 
 // MARK: ----- CURVE
 
-private let controlPointRadius: CGFloat = 4
-
 public extension Path {
     
-    private mutating func addControlPoint(_ cp: CGPoint, destination: CGPoint) {
+    private mutating func addControlPoint(_ cp: CGPoint) {
         if let currentPoint = currentPoint {
             
             let angleToCp = currentPoint.angleTo(cp)
@@ -430,11 +423,11 @@ public extension Path {
     
     mutating func curve(_ point: CGPoint, cp1: CGPoint, cp2: CGPoint, showControlPoints: Bool = false) {
         if showControlPoints {
-            addControlPoint(cp1, destination: point)
+            addControlPoint(cp1)
         }
         addCurve(to: point, control1: cp1, control2: cp2)
         if showControlPoints {
-            addControlPoint(cp2, destination: point)
+            addControlPoint(cp2)
         }
     }
 }
