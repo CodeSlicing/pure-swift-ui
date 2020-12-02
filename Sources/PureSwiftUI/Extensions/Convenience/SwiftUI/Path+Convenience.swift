@@ -412,6 +412,8 @@ public extension Path {
 
 // MARK: ----- CURVE
 
+private let controlPointRadius: CGFloat = 4
+
 public extension Path {
     
     private mutating func addControlPoints(_ cp1: CGPoint, _ cp2: CGPoint, destination: CGPoint)  {
@@ -423,11 +425,33 @@ public extension Path {
         }
     }
     
-    mutating func curve(_ point: CGPoint, cp1: CGPoint, cp2: CGPoint, showControlPoints: Bool = false) {
+    mutating func curveOld(_ point: CGPoint, cp1: CGPoint, cp2: CGPoint, showControlPoints: Bool = false) {
         if showControlPoints {
             addControlPoints(cp1, cp2, destination: point)
         }
         addCurve(to: point, control1: cp1, control2: cp2)
+    }
+    
+    private mutating func addControlPoint(_ cp: CGPoint, destination: CGPoint) {
+        if let currentPoint = currentPoint {
+            
+            let angleToCp = currentPoint.angleTo(cp)
+            let radiusToCp = currentPoint.radiusTo(cp)
+            
+            line(length: radiusToCp - controlPointRadius, angle: angleToCp)
+            arc(cp, radius: controlPointRadius, startAngle: angleToCp - 180.degrees, delta: 360.degrees)
+            line(currentPoint)
+        }
+    }
+    
+    mutating func curve(_ point: CGPoint, cp1: CGPoint, cp2: CGPoint, showControlPoints: Bool = false) {
+        if showControlPoints {
+            addControlPoint(cp1, destination: point)
+        }
+        addCurve(to: point, control1: cp1, control2: cp2)
+        if showControlPoints {
+            addControlPoint(cp2, destination: point)
+        }
     }
 }
 
