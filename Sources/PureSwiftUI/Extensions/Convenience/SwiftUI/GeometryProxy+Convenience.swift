@@ -13,6 +13,10 @@ public extension GeometryProxy {
         size.width
     }
     
+    var halfWidth: CGFloat {
+        size.halfWidth
+    }
+    
     func widthScaled(_ scale: CGFloat) -> CGFloat {
         width * scale
     }
@@ -21,12 +25,20 @@ public extension GeometryProxy {
         size.height
     }
     
+    var halfHeight: CGFloat {
+        size.halfHeight
+    }
+    
     func heightScaled(_ scale: CGFloat) -> CGFloat {
         height * scale
     }
     
     func sizeScaled(_ scale: CGFloat) -> CGSize {
         size.scaled(scale)
+    }
+    
+    func sizeScaled(_ widthScale: CGFloat, _ heightScale: CGFloat) -> CGSize {
+        size.scaled(widthScale, heightScale)
     }
     
     var localFrame: CGRect {

@@ -64,10 +64,6 @@ public extension Shape {
 // MARK: ----- SCALE
 
 public extension Shape {
-
-    func scale(_ scale: CGFloat, anchor: UnitPoint = .center) -> ScaledShape<Self> {
-        self.scale(x: scale, y: scale, anchor: anchor)
-    }
     
     func scale(_ scaleX: CGFloat, _ scaleY: CGFloat, anchor: UnitPoint = .center) -> ScaledShape<Self> {
         scale(x: scaleX, y: scaleY, anchor: anchor)
