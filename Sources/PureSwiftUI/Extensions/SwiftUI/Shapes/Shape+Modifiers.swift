@@ -51,14 +51,6 @@ public extension Shape {
     func yOffset(_ y: CGFloat) -> OffsetShape<Self> {
         offset(y: y)
     }
-    
-    func offset(_ point: CGPoint) -> OffsetShape<Self> {
-        offset(x: point.x, y: point.y)
-    }
-    
-    func offset(_ size: CGSize) -> OffsetShape<Self> {
-        offset(x: size.width, y: size.height)
-    }
 }
 
 // MARK: ----- SCALE
