@@ -19,20 +19,28 @@ public extension UIScreen {
         main.center
     }
     
-    static func mainWidthScaled(_ scale: CGFloat) -> CGFloat {
-        main.widthScaled(scale)
-    }
-
-    static func mainHeightScaled(_ scale: CGFloat) -> CGFloat {
-        main.heightScaled(scale)
-    }
-
     static var mainWidth: CGFloat {
         main.width
     }
+    
+    static var halfMainWidth: CGFloat {
+        main.size.halfWidth
+    }
 
+    static func mainWidthScaled(_ scale: CGFloat) -> CGFloat {
+        main.widthScaled(scale)
+    }
+    
     static var mainHeight: CGFloat {
         main.height
+    }
+    
+    static var halfMainHeight: CGFloat {
+        main.size.halfHeight
+    }
+    
+    static func mainHeightScaled(_ scale: CGFloat) -> CGFloat {
+        main.heightScaled(scale)
     }
     
     static var mainMidX: CGFloat {
@@ -60,19 +68,19 @@ public extension UIScreen {
     }
     
     static func mainSizeScaled(_ scale: CGFloat) -> CGSize {
-        main.size.scaled(scale)
+        main.sizeScaled(scale)
+    }
+    
+    static func mainSizeScaled(_ widthScale: CGFloat, _ heightScale: CGFloat) -> CGSize {
+        main.sizeScaled(widthScale, heightScale)
     }
     
     static var mainSize: CGSize {
         main.size
     }
-
-    func widthScaled(_ scale: CGFloat) -> CGFloat {
-        width * scale
-    }
     
-    func heightScaled(_ scale: CGFloat) -> CGFloat {
-        height * scale
+    static var mainBounds: CGRect {
+        main.bounds
     }
     
     var origin: CGPoint {
@@ -87,12 +95,36 @@ public extension UIScreen {
         bounds.width
     }
     
+    var halfWidth: CGFloat {
+        bounds.halfWidth
+    }
+    
+    func widthScaled(_ scale: CGFloat) -> CGFloat {
+        width * scale
+    }
+    
     var height: CGFloat {
         bounds.height
     }
     
+    var halfHeight: CGFloat {
+        bounds.halfHeight
+    }
+    
+    func heightScaled(_ scale: CGFloat) -> CGFloat {
+        height * scale
+    }
+
     var size: CGSize {
         bounds.size
+    }
+    
+    func sizeScaled(_ scale: CGFloat) -> CGSize {
+        bounds.size.scaled(scale)
+    }
+    
+    func sizeScaled(_ widthScale: CGFloat, _ heightScale: CGFloat) -> CGSize {
+        bounds.size.scaled(widthScale, heightScale)
     }
     
     var midX: CGFloat {

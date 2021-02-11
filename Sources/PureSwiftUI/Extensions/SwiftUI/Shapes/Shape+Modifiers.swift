@@ -51,23 +51,11 @@ public extension Shape {
     func yOffset(_ y: CGFloat) -> OffsetShape<Self> {
         offset(y: y)
     }
-    
-    func offset(_ point: CGPoint) -> OffsetShape<Self> {
-        offset(x: point.x, y: point.y)
-    }
-    
-    func offset(_ size: CGSize) -> OffsetShape<Self> {
-        offset(x: size.width, y: size.height)
-    }
 }
 
 // MARK: ----- SCALE
 
 public extension Shape {
-
-    func scale(_ scale: CGFloat, anchor: UnitPoint = .center) -> ScaledShape<Self> {
-        self.scale(x: scale, y: scale, anchor: anchor)
-    }
     
     func scale(_ scaleX: CGFloat, _ scaleY: CGFloat, anchor: UnitPoint = .center) -> ScaledShape<Self> {
         scale(x: scaleX, y: scaleY, anchor: anchor)
