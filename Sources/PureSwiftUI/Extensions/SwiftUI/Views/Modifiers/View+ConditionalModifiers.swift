@@ -520,7 +520,7 @@ public extension View {
     }
     
     func shadowIfNot(_ condition: Bool, color: Color? = nil, radius: CGFloat, x: CGFloat = 0, y: CGFloat = 0) -> some View {
-        shadowIf(!condition, color: color, radius: radius, x: x, y: x)
+        shadowIf(!condition, color: color, radius: radius, x: x, y: y)
     }
     
     func shadowIf(_ condition: Bool, color: Color? = nil, radius: CGFloat, offset: CGPoint) -> some View {

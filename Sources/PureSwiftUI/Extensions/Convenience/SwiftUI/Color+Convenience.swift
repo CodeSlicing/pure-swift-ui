@@ -26,15 +26,19 @@ public extension Color {
 
 public extension Color {
     
-    static func rgb(_ red: Double, _ green: Double, _ blue: Double) -> Color {
-        Color(red: red, green: green, blue: blue)
+    static func rgb(_ red: Double, _ green: Double, _ blue: Double, opacity: Double = 1, colorSpace: Color.RGBColorSpace = .sRGB) -> Color {
+        Color(colorSpace, red: red, green: green, blue: blue, opacity: opacity)
     }
     
-    static func rgb8(_ red: Int, _ green: Int, _ blue: Int) -> Color {
-        Color(red: red.asDouble / 255, green: green.asDouble / 255, blue: blue.asDouble / 255)
+    static func rgb8(_ red: Int, _ green: Int, _ blue: Int, opacity: Double = 1, colorSpace: Color.RGBColorSpace = .sRGB) -> Color {
+        Color(colorSpace, red: red.asDouble / 255, green: green.asDouble / 255, blue: blue.asDouble / 255, opacity: opacity)
     }
 
-    static func hsb(_ hue: Double, _ saturation: Double, _ brightness: Double) -> Color {
-        Color(hue: hue, saturation: saturation, brightness: brightness)
+    static func hsb(_ hue: Double, _ saturation: Double, _ brightness: Double, opacity: Double = 1) -> Color {
+        Color(hue: hue, saturation: saturation, brightness: brightness, opacity: opacity)
+    }
+    
+    static func white(_ white: Double, opacity: Double = 1, _ colorSpace: Color.RGBColorSpace = .sRGB) -> Color {
+        Color(colorSpace, white: white, opacity: opacity)
     }
 }
