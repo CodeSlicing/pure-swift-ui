@@ -29,6 +29,10 @@ public extension GeometryProxy {
         size.halfHeight
     }
     
+    var minDimension: CGFloat {
+        size.minDimension
+    }
+    
     func heightScaled(_ scale: CGFloat) -> CGFloat {
         height * scale
     }
