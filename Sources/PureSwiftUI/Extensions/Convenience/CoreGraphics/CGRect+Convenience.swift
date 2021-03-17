@@ -15,11 +15,15 @@ public extension CGRect {
     init(_ x: CGFloat, _ y: CGFloat, _ width: CGFloat, _ height: CGFloat) {
         self.init(origin: CGPoint(x, y), size: CGSize(width, height))
     }
-   
+    
+    init(_ size: CGSize) {
+        self.init(size.width, size.height)
+    }
+    
     init(_ width: CGFloat, _ height: CGFloat) {
         self.init(0, 0, width, height)
     }
-    
+
     init(_ origin: CGPoint, _ size: CGSize) {
         self.init(origin.x, origin.y, size.width, size.height)
     }
@@ -34,10 +38,14 @@ public extension CGRect {
         self.init(origin: CGPoint(x, y).offset(in: size, anchor: anchor), size: CGSize(width, height))
     }
     
+    init(_ size: CGSize, anchor: UnitPoint) {
+        self.init(size.width, size.height, anchor: anchor)
+    }
+    
     init(_ width: CGFloat, _ height: CGFloat, anchor: UnitPoint) {
         self.init(0, 0, width, height, anchor: anchor)
     }
-    
+
     init(_ origin: CGPoint, _ size: CGSize, anchor: UnitPoint) {
         self.init(origin.x, origin.y, size.width, size.height, anchor: anchor)
     }
@@ -62,10 +70,14 @@ public extension CGRect {
         .init(from: from, to: to)
     }
     
+    static func rect(_ size: CGSize) -> CGRect {
+        .init(.zero, size)
+    }
+    
     static func rect(_ origin: CGPoint, _ size: CGSize) -> CGRect {
         .init(origin, size)
     }
-    
+
     static func rect(_ x: CGFloat, _ y: CGFloat, _ width: CGFloat, _ height: CGFloat) -> CGRect {
         .init(x, y, width, height)
     }

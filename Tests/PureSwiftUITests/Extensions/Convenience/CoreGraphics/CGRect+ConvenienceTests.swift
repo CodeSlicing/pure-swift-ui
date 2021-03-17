@@ -56,6 +56,7 @@ extension CGRectConvenienceExtensionsTests {
         XCTAssertEqual(CGRect(x, y, width, height), rect)
         XCTAssertEqual(CGRect(width, height), CGRect(0, 0, width, height))
         XCTAssertEqual(CGRect(.point(x, y), .size(width, height)), rect)
+        XCTAssertEqual(CGRect(.size(width, height)), CGRect(0, 0, width, height))
     }
     
     func testInitFromAndToPoint() {
@@ -74,7 +75,8 @@ extension CGRectConvenienceExtensionsTests {
         XCTAssertEqual(CGRect(rect.bottomTrailing.x, rect.bottomTrailing.y, 5, 5, anchor: .bottomTrailing), expected)
         XCTAssertEqual(CGRect(5, 5, anchor: .bottomTrailing), CGRect(-5, -5, 5, 5))
         XCTAssertEqual(CGRect(rect.bottomTrailing, .square(5), anchor: .bottomTrailing), expected)
-        XCTAssertEqual(CGRect(rect.bottomTrailing, .square(5), anchor: .bottomTrailing), expected)
+
+        XCTAssertEqual(CGRect(.size(5, 10), anchor: .bottomTrailing), CGRect(-5, -10, 5, 10))
     }
 }
 
@@ -83,7 +85,10 @@ extension CGRectConvenienceExtensionsTests {
 extension CGRectConvenienceExtensionsTests {
     
     func testStaticInit() {
+        
+        XCTAssertEqual(CGRect.rect(from: .point(x, y), to: .point(x + width, y + height)), rect)
         XCTAssertEqual(CGRect.rect(.point(x, y), .size(width, height)), rect)
+        XCTAssertEqual(CGRect.rect(.size(width, height)), CGRect(0, 0, width, height))
         XCTAssertEqual(CGRect.rect(x, y, width, height), rect)
     }
 }
@@ -226,6 +231,28 @@ extension CGRectConvenienceExtensionsTests {
 
         XCTAssertEqual(rect.xOffset(x, factor: 0.5), CGRect(CGPoint(x + x * 0.5, y), size))
         XCTAssertEqual(rect.yOffset(y, factor: 0.5), CGRect(CGPoint(x, y + y * 0.5), size))
+    }
+}
+
+// MARK: ----- TO another rect with a factor
+
+extension CGRectConvenienceExtensionsTests {
+    
+    func testToAnotherRectWithFactor() {
+        let endWidth  = width * 2
+        let endHeight = height * 4
+        let startingRect = CGRect(0, 0, width, height)
+        let endingRect = CGRect(x, y, endWidth, endHeight)
+        
+        XCTAssertEqual(startingRect.to(endingRect, 0), startingRect)
+        XCTAssertEqual(startingRect.to(endingRect, 1), endingRect)
+        XCTAssertEqual(startingRect.to(endingRect, 0.5), CGRect(x * 0.5, y * 0.5, width * 1.5, height * 2.5))
+
+        XCTAssertEqual(startingRect.to(endingRect, .size(0, 0)), startingRect)
+        XCTAssertEqual(startingRect.to(endingRect, .size(1, 1)), endingRect)
+        XCTAssertEqual(startingRect.to(endingRect, .size(0, 1)), CGRect(0, y, width, endHeight))
+        XCTAssertEqual(startingRect.to(endingRect, .size(1, 0)), CGRect(x, 0, endWidth, height))
+        XCTAssertEqual(startingRect.to(endingRect, .size(0.5, 0.5)), CGRect(x * 0.5, y * 0.5, width * 1.5, height * 2.5))
     }
 }
 
