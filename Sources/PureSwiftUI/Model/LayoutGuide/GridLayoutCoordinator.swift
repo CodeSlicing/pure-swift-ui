@@ -24,6 +24,38 @@ private struct GridLayoutCoordinator: LayoutCoordinator {
         baseOrigin.offset(CGPoint(x: xOffsetCalculator.offsetFor(index: x), y: yOffsetCalculator.offsetFor(index: y)))
     }
     
+    subscript(x: CGFloat, y: Int) -> CGPoint {
+        baseOrigin.offset(CGPoint(x: xOffsetCalculator.offsetFor(relativeIndex: x), y: yOffsetCalculator.offsetFor(index: y)))
+    }
+    
+    subscript(x: Int, y: CGFloat) -> CGPoint {
+        baseOrigin.offset(CGPoint(x: xOffsetCalculator.offsetFor(index: x), y: yOffsetCalculator.offsetFor(relativeIndex: y)))
+    }
+    
+    subscript(x: CGFloat, y: CGFloat) -> CGPoint {
+        baseOrigin.offset(CGPoint(x: xOffsetCalculator.offsetFor(relativeIndex: x), y: yOffsetCalculator.offsetFor(relativeIndex: y)))
+    }
+
+    subscript(rel x: CGFloat, y: Int) -> CGPoint {
+        baseOrigin.offset(CGPoint(x: xOffsetCalculator.offsetFor(relativeOffset: x), y: yOffsetCalculator.offsetFor(index: y)))
+    }
+
+    subscript(rel x: CGFloat, y: CGFloat) -> CGPoint {
+        baseOrigin.offset(CGPoint(x: xOffsetCalculator.offsetFor(relativeOffset: x), y: yOffsetCalculator.offsetFor(relativeIndex: y)))
+    }
+
+    subscript(x: Int, rel y: CGFloat) -> CGPoint {
+        baseOrigin.offset(CGPoint(x: xOffsetCalculator.offsetFor(index: x), y: yOffsetCalculator.offsetFor(relativeOffset: y)))
+    }
+
+    subscript(x: CGFloat, rel y: CGFloat) -> CGPoint {
+        baseOrigin.offset(CGPoint(x: xOffsetCalculator.offsetFor(relativeIndex: x), y: yOffsetCalculator.offsetFor(relativeOffset: y)))
+    }
+
+    subscript(rel x: CGFloat, rel y: CGFloat) -> CGPoint {
+        baseOrigin.offset(CGPoint(x: xOffsetCalculator.offsetFor(relativeOffset: x), y: yOffsetCalculator.offsetFor(relativeOffset: y)))
+    }
+    
     func reframed(into rect: CGRect, originalRect: CGRect, origin: UnitPoint? = nil) -> LayoutCoordinator {
         
 //        let newOrigin = origin == nil ? rect.origin.map(from: originalRect, to: rect) : calcOrigin(in: rect, origin: origin!)
@@ -89,9 +121,27 @@ private extension GridLayoutCoordinator {
 
 private protocol OffsetForIndexCalculator {
     
+    var size: CGFloat {get}
     var indexCount: Int {get}
     func offsetFor(index: Int) -> CGFloat
     func reframed(_ size: CGFloat) -> OffsetForIndexCalculator
+}
+
+private extension OffsetForIndexCalculator {
+    
+    func offsetFor(relativeOffset: CGFloat) -> CGFloat {
+        size * relativeOffset
+    }
+    
+    func offsetFor(relativeIndex: CGFloat) -> CGFloat {
+        let lowerIndex = relativeIndex.asInt
+        let upperIndex = lowerIndex + 1
+        let lowerOffset = offsetFor(index: lowerIndex)
+        let upperOffset = offsetFor(index: upperIndex)
+        let factor = relativeIndex - lowerIndex.asCGFloat
+        let delta = upperOffset - lowerOffset
+        return lowerOffset + factor * delta
+    }
 }
 
 // MARK: ----- EQUIDISTANT OFFSET FOR INDEX
@@ -100,10 +150,12 @@ private struct EquidistantOffsetForIndexCalculator: OffsetForIndexCalculator {
     
     private let numSlices: Int
     private let offsetPerIndex: CGFloat
+    fileprivate let size: CGFloat
     
     init(_ size: CGFloat, numSlices: Int) {
         self.numSlices = numSlices > 0 ? numSlices : 1
         self.offsetPerIndex = size / numSlices.asCGFloat
+        self.size = size
     }
     
     var indexCount: Int {
@@ -125,7 +177,7 @@ private struct RelativeOffsetForIndexCalculator: OffsetForIndexCalculator {
     
     private let slices: [CGFloat]
     private let offsetSteps: [CGFloat]
-    private let size: CGFloat
+    fileprivate let size: CGFloat
     
     init(_ size: CGFloat, slices: [CGFloat]) {
         

@@ -18,21 +18,115 @@ public struct LayoutGuide {
     var origin: CGPoint {
         coordinator.baseOrigin
     }
-
-    public subscript(x: Int, y: Int, origin origin: CGPoint) -> CGPoint {
-        get {
-            let point = self[x, y]
-            let delta = origin - coordinator.baseOrigin
-            return point.offset(delta)
-        }
-    }
-
+    
     public subscript(x: Int, y: Int) -> CGPoint {
         get {
             coordinator[x, y]
         }
     }
     
+    public subscript(x: Int, y: Int, origin origin: CGPoint) -> CGPoint {
+        get {
+            offsetPoint(self[x, y], to: origin)
+        }
+    }
+    
+    public subscript(x: CGFloat, y: Int) -> CGPoint {
+        get {
+            coordinator[x, y]
+        }
+    }
+    
+    public subscript(x: CGFloat, y: Int, origin origin: CGPoint) -> CGPoint {
+        get {
+            offsetPoint(self[x, y], to: origin)
+        }
+    }
+    
+    public subscript(x: Int, y: CGFloat) -> CGPoint {
+        get {
+            coordinator[x, y]
+        }
+    }
+
+    public subscript(x: Int, y: CGFloat, origin origin: CGPoint) -> CGPoint {
+        get {
+            offsetPoint(self[x, y], to: origin)
+        }
+    }
+    
+    public subscript(x: CGFloat, y: CGFloat) -> CGPoint {
+        get {
+            coordinator[x, y]
+        }
+    }
+
+    public subscript(x: CGFloat, y: CGFloat, origin origin: CGPoint) -> CGPoint {
+        get {
+            offsetPoint(self[x, y], to: origin)
+        }
+    }
+
+    public subscript(rel x: CGFloat, rel y: CGFloat) -> CGPoint {
+        get {
+            coordinator[rel: x, rel: y]
+        }
+    }
+    
+    public subscript(rel x: CGFloat, rel y: CGFloat, origin origin: CGPoint) -> CGPoint {
+        get {
+            offsetPoint(self[rel: x, rel: y], to: origin)
+        }
+    }
+
+    public subscript(rel x: CGFloat, y: Int) -> CGPoint {
+        get {
+            coordinator[rel: x, y]
+        }
+    }
+
+    public subscript(rel x: CGFloat, y: Int, origin origin: CGPoint) -> CGPoint {
+        get {
+            offsetPoint(self[rel: x, y], to: origin)
+        }
+    }
+
+    public subscript(x: Int, rel y: CGFloat) -> CGPoint {
+        get {
+            coordinator[x, rel: y]
+        }
+    }
+
+    public subscript(x: Int, rel y: CGFloat, origin origin: CGPoint) -> CGPoint {
+        get {
+            offsetPoint(self[x, rel: y], to: origin)
+        }
+    }
+
+    public subscript(x: CGFloat, rel y: CGFloat) -> CGPoint {
+        get {
+            coordinator[x, rel: y]
+        }
+    }
+
+    public subscript(x: CGFloat, rel y: CGFloat, origin origin: CGPoint) -> CGPoint {
+        get {
+            offsetPoint(self[x, rel: y], to: origin)
+        }
+    }
+
+    public subscript(rel x: CGFloat, y: CGFloat) -> CGPoint {
+        get {
+            coordinator[rel: x, y]
+        }
+    }
+
+    public subscript(rel x: CGFloat, y: CGFloat, origin origin: CGPoint) -> CGPoint {
+        get {
+            offsetPoint(self[rel: x, y], to: origin)
+        }
+    }
+
     public var xCount: Int {
         coordinator.xCount
     }
@@ -59,6 +153,11 @@ public struct LayoutGuide {
 
     internal func anchorLocation(for anchor: UnitPoint) -> CGPoint {
         coordinator.anchorLocation(for: anchor, size: rect.size)
+    }
+    
+    private func offsetPoint(_ point: CGPoint, to origin: CGPoint) -> CGPoint {
+        let delta = origin - coordinator.baseOrigin
+        return point.offset(delta)
     }
 }
 

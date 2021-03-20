@@ -12,6 +12,14 @@ import SwiftUI
 internal protocol LayoutCoordinator {
     
     subscript(x: Int, y: Int) -> CGPoint {get}
+    subscript(x: CGFloat, y: Int) -> CGPoint {get}
+    subscript(x: Int, y: CGFloat) -> CGPoint {get}
+    subscript(x: CGFloat, y: CGFloat) -> CGPoint {get}
+    subscript(rel x: CGFloat, y: Int) -> CGPoint {get}
+    subscript(rel x: CGFloat, y: CGFloat) -> CGPoint {get}
+    subscript(x: Int, rel y: CGFloat) -> CGPoint {get}
+    subscript(x: CGFloat, rel y: CGFloat) -> CGPoint {get}
+    subscript(rel x: CGFloat, rel y: CGFloat) -> CGPoint {get}
     func reframed(into rect: CGRect, originalRect: CGRect, origin: UnitPoint?) -> LayoutCoordinator
     var xCount: Int {get}
     var yCount: Int {get}
@@ -93,12 +101,48 @@ internal extension DecoratingLayoutCoordinator {
     var yCount: Int {
         baseCoordinator.yCount
     }
+    
+    subscript(x: Int, y: Int) -> CGPoint {
+        transform(self.baseCoordinator[x, y])
+    }
+    
+    subscript(x: CGFloat, y: Int) -> CGPoint {
+        transform(self.baseCoordinator[x, y])
+    }
+    
+    subscript(x: Int, y: CGFloat) -> CGPoint {
+        transform(self.baseCoordinator[x, y])
+    }
+    
+    subscript(x: CGFloat, y: CGFloat) -> CGPoint {
+        transform(self.baseCoordinator[x, y])
+    }
+
+    subscript(rel x: CGFloat, y: Int) -> CGPoint {
+        transform(self.baseCoordinator[rel: x, y])
+    }
+
+    subscript(rel x: CGFloat, y: CGFloat) -> CGPoint {
+        transform(self.baseCoordinator[rel: x, y])
+    }
+
+    subscript(x: Int, rel y: CGFloat) -> CGPoint {
+        transform(self.baseCoordinator[x, rel: y])
+    }
+    
+    subscript(x: CGFloat, rel y: CGFloat) -> CGPoint {
+        transform(self.baseCoordinator[x, rel: y])
+    }
+
+    subscript(rel x: CGFloat, rel y: CGFloat) -> CGPoint {
+        transform(self.baseCoordinator[rel: x, rel: y])
+    }
 }
 
 // MARK: ----- ROTATED LAYOUT COORDINATOR
 
 internal struct RotatedLayoutCoordinator: DecoratingLayoutCoordinator {
-    
+
     let angle: Angle
     let anchor: UnitPoint
     let anchorPoint: CGPoint
@@ -111,10 +155,6 @@ internal struct RotatedLayoutCoordinator: DecoratingLayoutCoordinator {
         self.baseCoordinator = baseCoordinator
     }
     
-    subscript(x: Int, y: Int) -> CGPoint {
-        transform(self.baseCoordinator[x, y])
-    }
-    
     func transform(_ point: CGPoint) -> CGPoint {
         let radiusToPoint = anchorPoint.radiusTo(point)
         let angleToPoint = anchorPoint.angleTo(point)
@@ -125,8 +165,6 @@ internal struct RotatedLayoutCoordinator: DecoratingLayoutCoordinator {
     func reframed(into rect: CGRect, originalRect: CGRect, origin: UnitPoint?) -> LayoutCoordinator {
         
         let reframedBaseCoordinator = baseCoordinator.reframed(into: rect, originalRect: originalRect, origin: origin)
-//        let newAnchorPoint = anchor.map(from: originalRect, to: reframedBaseCoordinator.rect)
-        
         
         let reframedRect = reframedBaseCoordinator.baseRect
         
@@ -146,10 +184,6 @@ internal struct OffsetLayoutCoordinator: DecoratingLayoutCoordinator {
     init(offset: CGPoint, baseCoordinator: LayoutCoordinator) {
         self.offset = offset
         self.baseCoordinator = baseCoordinator
-    }
-    
-    subscript(x: Int, y: Int) -> CGPoint {
-        transform(self.baseCoordinator[x, y])
     }
     
     func transform(_ point: CGPoint) -> CGPoint {
@@ -175,10 +209,6 @@ internal struct ScaledLayoutCoordinator: DecoratingLayoutCoordinator {
         self.anchor = anchor
         self.anchorPoint = anchorPoint
         self.baseCoordinator = baseCoordinator
-    }
-    
-    subscript(x: Int, y: Int) -> CGPoint {
-        transform(self.baseCoordinator[x, y])
     }
     
     func transform(_ point: CGPoint) -> CGPoint {
