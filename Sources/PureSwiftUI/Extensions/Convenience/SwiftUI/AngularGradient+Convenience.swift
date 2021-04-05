@@ -23,4 +23,12 @@ public extension AngularGradient {
     init(_ stops: [GradientStopComponents], center: UnitPoint = .center, angle: Angle) {
         self.init(gradient: Gradient(stops), center: center, angle: adjustAngle(angle))
     }
+    
+    init(_ gradient: Gradient, center: UnitPoint = .center, from: Angle, to: Angle) {
+        self.init(gradient: gradient, center: center, startAngle: adjustAngle(from), endAngle: adjustAngle(to))
+    }
+
+    init(_ gradient: Gradient, center: UnitPoint = .center, angle: Angle) {
+        self.init(gradient: gradient, center: center, angle: adjustAngle(angle))
+    }
 }

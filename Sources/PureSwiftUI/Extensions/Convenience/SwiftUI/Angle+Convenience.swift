@@ -109,3 +109,13 @@ public extension Angle {
         }
     }
 }
+
+// MARK: ----- TO WITH FACTOR
+
+public extension Angle {
+
+    func to(_ destination: Angle, _ factor: CGFloat) -> Angle {
+        let delta = destination.degrees - self.degrees
+        return (self.degrees + delta * factor.asDouble).degrees
+    }
+}

@@ -24,6 +24,24 @@ private struct PolarLayoutCoordinator: LayoutCoordinator {
             radius: radiusCalculator.radiusFor(ringIndex: ringIndex),
             angle: angleCalculator.angleFor(segmentIndex: segmentIndex))
     }
+
+    subscript(rel relativeRadius: CGFloat, segmentIndex: Int) -> CGPoint {
+        baseOrigin.offset(
+            radius: radiusCalculator.radiusFor(relativeRadius: relativeRadius),
+            angle: angleCalculator.angleFor(segmentIndex: segmentIndex))
+    }
+
+    subscript(ringIndex: Int, rel relativeAngle: CGFloat) -> CGPoint {
+        baseOrigin.offset(
+            radius: radiusCalculator.radiusFor(ringIndex: ringIndex),
+            angle: angleCalculator.angleFor(relativeAngle: relativeAngle))
+    }
+
+    subscript(rel relativeRadius: CGFloat, rel relativeAngle: CGFloat) -> CGPoint {
+        baseOrigin.offset(
+            radius: radiusCalculator.radiusFor(relativeRadius: relativeRadius),
+            angle: angleCalculator.angleFor(relativeAngle: relativeAngle))
+    }
     
     var xCount: Int {
         radiusCalculator.ringCount
@@ -98,10 +116,18 @@ private extension PolarLayoutCoordinator {
 
 private protocol RadiusForRingCalculator {
     
+    var radius: CGFloat {get}
     var useMaxDimension: Bool {get}
     var ringCount: Int {get}
     func radiusFor(ringIndex: Int) -> CGFloat
     func reframed(_ rect: CGRect) -> RadiusForRingCalculator
+}
+
+private extension RadiusForRingCalculator {
+    
+    func radiusFor(relativeRadius: CGFloat) -> CGFloat {
+        radius * relativeRadius
+    }
 }
 
 private protocol AngleForSegmentCalculator {
@@ -111,12 +137,20 @@ private protocol AngleForSegmentCalculator {
     func reframed(_ rect: CGRect) -> AngleForSegmentCalculator
 }
 
+private extension AngleForSegmentCalculator {
+    
+    func angleFor(relativeAngle: CGFloat) -> Angle {
+        .cycle(relativeAngle.asDouble)
+    }
+}
+
 private struct EquidistantRadiusForRingCalculator: RadiusForRingCalculator {
 
     private typealias Config = (rings: Int, useMaxDimension: Bool)
     
     private let config: Config
     private let radiusStep: CGFloat
+    fileprivate let radius: CGFloat
 
     init(_ rect: CGRect, rings: Int, useMaxDimension: Bool = false) {
         self.init(rect, config: (rings, useMaxDimension))
@@ -124,7 +158,7 @@ private struct EquidistantRadiusForRingCalculator: RadiusForRingCalculator {
     
     private init(_ rect: CGRect, config: Config) {
         self.config = (config.rings > 0 ? config.rings : 1, config.useMaxDimension)
-        let radius = (config.useMaxDimension ? rect.maxDimension : rect.minDimension) / 2
+        self.radius = (config.useMaxDimension ? rect.maxDimension : rect.minDimension) / 2
         self.radiusStep = radius / self.config.rings.asCGFloat
     }
 
@@ -151,7 +185,7 @@ private struct RelativeRadiusForRingCalculator: RadiusForRingCalculator {
     
     private let config: Config
     private let radiusSteps: [CGFloat]
-    private let radius: CGFloat
+    fileprivate let radius: CGFloat
     
     init(_ rect: CGRect, rings: [CGFloat], useMaxDimension: Bool = false) {
         self.init(rect, config: (rings, useMaxDimension))

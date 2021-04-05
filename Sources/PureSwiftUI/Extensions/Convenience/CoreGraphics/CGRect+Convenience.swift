@@ -162,14 +162,6 @@ public extension CGRect {
 // MARK: ----- SCALED
 
 public extension CGRect {
-    
-    func xScaled(_ scale: CGFloat) -> CGFloat {
-        minX + widthScaled(scale)
-    }
-
-    func yScaled(_ scale: CGFloat) -> CGFloat {
-        minY + heightScaled(scale)
-    }
 
     func sizeScaled(_ scale: CGPoint) -> CGSize {
         CGSize(widthScaled(scale.x), heightScaled(scale.y))
@@ -189,6 +181,61 @@ public extension CGRect {
     
     func sizeScaled(_ xScale: CGFloat, _ yScale: CGFloat) -> CGSize {
         CGSize(widthScaled(xScale), heightScaled(yScale))
+    }
+}
+
+// MARK: ----- RELATIVE
+
+public extension CGRect {
+    
+    @available(*, deprecated, renamed: "relativeX")
+    func xScaled(_ scale: CGFloat) -> CGFloat {
+        minX + widthScaled(scale)
+    }
+
+    @available(*, deprecated, renamed: "relativeY")
+    func yScaled(_ scale: CGFloat) -> CGFloat {
+        minY + heightScaled(scale)
+    }
+    
+    /**
+     Creates a `CGFloat` relative to the x-coordinate space of the `CGRect` on which
+     it is invoked.
+     
+     To be specific, for a `relativeX` parameter value of 0.5, the resulting value
+     will be `rect.minX + 0.5 * rect.width`
+     
+     - Parameter relativeX: The relative x-coordinate of the required value
+     */
+    func relativeX(_ relativeX: CGFloat) -> CGFloat {
+        minX + widthScaled(relativeX)
+    }
+
+    /**
+     Creates a `CGFloat` relative to the y-coordinate space of the `CGRect` on which
+     it is invoked.
+     
+     To be specific, for a `relativeY` parameter value of 0.5, the resulting value
+     will be `rect.minY + 0.5 * rect.height`
+     
+     - Parameter relativeY: The relative y-coordinate of the required value
+     */
+    func relativeY(_ relativeY: CGFloat) -> CGFloat {
+        minY + heightScaled(relativeY)
+    }
+    
+    /**
+     Obtains a `CGPoint` from a `CGRect` relative to the `CGRect` itself taking
+     into account the origin.
+     
+     To be specific, for a `relativeX` paremeter value of 0.5, the resulting x-coordinate
+     of the `CGPoint` will be `rect.minX + 0.5 * rect.width`.
+     
+     - Parameter relativeX: The relative position of the x-coordinate
+     - Parameter relativeY: The relative position of the y-coordinate
+     */
+    subscript(relativeX: CGFloat, relativeY: CGFloat) -> CGPoint {
+        CGPoint(self.relativeX(relativeX), self.relativeY(relativeY))
     }
 }
 

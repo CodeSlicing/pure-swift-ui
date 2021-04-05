@@ -17,4 +17,8 @@ public extension RadialGradient {
     init(_ stops: [GradientStopComponents], center: UnitPoint = .center, from: CGFloat, to: CGFloat) {
         self.init(gradient: Gradient(stops), center: center, startRadius: from, endRadius: to)
     }
+    
+    init(_ gradient: Gradient, center: UnitPoint = .center, from: CGFloat, to: CGFloat) {
+        self.init(gradient: gradient, center: center, startRadius: from, endRadius: to)
+    }
 }
