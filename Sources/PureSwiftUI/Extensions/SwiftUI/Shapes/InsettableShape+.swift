@@ -10,8 +10,7 @@ import SwiftUI
 
 public extension InsettableShape {
     
-    @inlinable
-    func inset<T: UINumericType>(by amount: T) -> some InsettableShape {
-        inset(by: amount.asCGFloat)
+    func inset(_ amount: CGFloat) -> some InsettableShape {
+        inset(by: amount)
     }
 }

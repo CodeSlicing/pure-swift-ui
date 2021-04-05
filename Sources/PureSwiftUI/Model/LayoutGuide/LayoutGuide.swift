@@ -8,7 +8,6 @@
 public struct LayoutGuide {
     
     internal var coordinator: LayoutCoordinator
-    private var points: [LayoutKey: CGPoint] = [:]
     public let rect: CGRect
     
     internal init(_ coordinator: LayoutCoordinator, rect: CGRect) {
@@ -17,37 +16,57 @@ public struct LayoutGuide {
     }
     
     var origin: CGPoint {
-        self.coordinator.baseOrigin
+        coordinator.baseOrigin
     }
-
-    public subscript(x: Int, y: Int, origin origin: CGPoint) -> CGPoint {
-        mutating get {
-            pointForCoordinates(x, y, origin: origin)
-        }
-    }
-
+    
     public subscript(x: Int, y: Int) -> CGPoint {
-        mutating get {
-            pointForCoordinates(x, y)
+        get {
+            coordinator[x, y]
         }
     }
     
-    private mutating func pointForCoordinates(_ x: Int, _ y: Int, origin: CGPoint? = nil) -> CGPoint {
-        let originToUse = origin ?? self.coordinator.baseOrigin
-        let key = LayoutKey.from(originToUse, x, y)
-        if let point = points[key] {
-            return point
-        } else {
-            var point = self.coordinator[x, y]
-            if let origin = origin {
-                let delta = origin - self.coordinator.baseOrigin
-                point = point.offset(delta)
-            }
-            points[key] = point
-            return point
+    public subscript(x: Int, y: Int, origin origin: CGPoint) -> CGPoint {
+        get {
+            offsetPoint(self[x, y], to: origin)
+        }
+    }
+
+    public subscript(rel x: CGFloat, rel y: CGFloat) -> CGPoint {
+        get {
+            coordinator[rel: x, rel: y]
         }
     }
     
+    public subscript(rel x: CGFloat, rel y: CGFloat, origin origin: CGPoint) -> CGPoint {
+        get {
+            offsetPoint(self[rel: x, rel: y], to: origin)
+        }
+    }
+
+    public subscript(rel x: CGFloat, y: Int) -> CGPoint {
+        get {
+            coordinator[rel: x, y]
+        }
+    }
+
+    public subscript(rel x: CGFloat, y: Int, origin origin: CGPoint) -> CGPoint {
+        get {
+            offsetPoint(self[rel: x, y], to: origin)
+        }
+    }
+
+    public subscript(x: Int, rel y: CGFloat) -> CGPoint {
+        get {
+            coordinator[x, rel: y]
+        }
+    }
+
+    public subscript(x: Int, rel y: CGFloat, origin origin: CGPoint) -> CGPoint {
+        get {
+            offsetPoint(self[x, rel: y], to: origin)
+        }
+    }
+
     public var xCount: Int {
         coordinator.xCount
     }
@@ -56,44 +75,29 @@ public struct LayoutGuide {
         coordinator.yCount
     }
     
-    @available(*, deprecated, renamed: "radiusTo")
-    public mutating func radius(_ x: Int, _ y: Int, origin: CGPoint) -> CGFloat {
-        radiusTo(x, y, from: origin)
-    }
-    
-    @available(*, deprecated, renamed: "radiusTo")
-    public mutating func radius(_ x: Int, _ y: Int) -> CGFloat {
-        radiusTo(x, y, from: coordinator.baseOrigin)
-    }
-    
-    @available(*, deprecated, renamed: "angleTo")
-    public mutating func angle(_ x: Int, _ y: Int, origin: CGPoint) -> Angle {
-        angleTo(x, y, from: origin)
-    }
-    
-    @available(*, deprecated, renamed: "angleTo")
-    public mutating func angle(_ x: Int, _ y: Int) -> Angle {
-        angleTo(x, y, from: coordinator.baseOrigin)
-    }
-    
-    public mutating func radiusTo(_ x: Int, _ y: Int, from: CGPoint) -> CGFloat {
+    public func radiusTo(_ x: Int, _ y: Int, from: CGPoint) -> CGFloat {
         from.radiusTo(self[x, y])
     }
     
-    public mutating func radiusTo(_ x: Int, _ y: Int) -> CGFloat {
+    public func radiusTo(_ x: Int, _ y: Int) -> CGFloat {
         radiusTo(x, y, from: coordinator.baseOrigin)
     }
     
-    public mutating func angleTo(_ x: Int, _ y: Int, from: CGPoint) -> Angle {
+    public func angleTo(_ x: Int, _ y: Int, from: CGPoint) -> Angle {
         from.angleTo(self[x, y])
     }
     
-    public mutating func angleTo(_ x: Int, _ y: Int) -> Angle {
+    public func angleTo(_ x: Int, _ y: Int) -> Angle {
         angleTo(x, y, from: coordinator.baseOrigin)
     }
 
     internal func anchorLocation(for anchor: UnitPoint) -> CGPoint {
-        return self.coordinator.anchorLocation(for: anchor, size: rect.size)
+        coordinator.anchorLocation(for: anchor, size: rect.size)
+    }
+    
+    private func offsetPoint(_ point: CGPoint, to origin: CGPoint) -> CGPoint {
+        let delta = origin - coordinator.baseOrigin
+        return point.offset(delta)
     }
 }
 
@@ -138,52 +142,12 @@ public extension LayoutGuide {
     }
 }
 
-private struct LayoutKey: Hashable {
-    
-    private let values: (origin: CGPoint, x: Int, y: Int)
-    
-    private init(_ origin: CGPoint, _ x: Int, _ y: Int) {
-        values = (origin, x, y)
-    }
-    
-    static func == (lhs: LayoutKey, rhs: LayoutKey) -> Bool {
-        lhs.values == rhs.values
-    }
-
-    static func from(_ origin: CGPoint, _ x: Int, _ y: Int) -> LayoutKey {
-        return LayoutKey(origin, x, y)
-    }
-    
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(values.origin.x)
-        hasher.combine(values.origin.y)
-        hasher.combine(values.x)
-        hasher.combine(values.y)
-    }
-}
-
 // MARK: ----- REFRAMING
 
 public extension LayoutGuide {
     
     func reframed(_ rect: CGRect, origin: UnitPoint? = nil) -> LayoutGuide {
         LayoutGuide(coordinator.reframed(into: rect, originalRect: self.rect, origin: origin), rect: rect)
-    }
-    
-    @available(*, deprecated, renamed: "offset")
-    func reframed(offset: CGPoint) -> LayoutGuide {
-        let offsetRect = self.rect.offsetBy(dx: offset.x, dy: offset.y)
-        return LayoutGuide(coordinator.reframed(into: offsetRect, originalRect: self.rect, origin: nil), rect: offsetRect)
-    }
-
-    @available(*, deprecated, renamed: "offset")
-    func reframed(offset: CGSize) -> LayoutGuide {
-        reframed(offset: offset.asCGPoint)
-    }
-    
-    @available(*, deprecated, renamed: "offset")
-    func reframed(offset: CGVector) -> LayoutGuide {
-        reframed(offset: offset.asCGPoint)
     }
 }
 
@@ -200,11 +164,11 @@ internal func calcOrigin(in rect: CGRect, origin: UnitPoint = .topLeading) -> CG
 public extension LayoutGuide {
     
     func rotated(_ angle: Angle, anchor: UnitPoint = .center) -> LayoutGuide {
-        rotated(angle, anchor: anchor, factor: 1.asCGFloat)
+        rotated(angle, anchor: anchor, factor: 1)
     }
     
-    func rotated<T: UINumericType>(_ angle: Angle, anchor: UnitPoint = .center, factor: T) -> LayoutGuide {
-        LayoutGuide(RotatedLayoutCoordinator(angle: angle * factor, anchor: anchor, anchorPoint: anchorLocation(for: anchor), baseCoordinator: self.coordinator), rect: self.rect)
+    func rotated(_ angle: Angle, anchor: UnitPoint = .center, factor: CGFloat) -> LayoutGuide {
+        LayoutGuide(RotatedLayoutCoordinator(angle: angle * factor.asDouble, anchor: anchor, anchorPoint: anchorLocation(for: anchor), baseCoordinator: self.coordinator), rect: self.rect)
     }
 }
 
@@ -212,7 +176,7 @@ public extension LayoutGuide {
 
 public extension LayoutGuide {
     
-    func rotated<T: UINumericType>(from: Angle, to: Angle, anchor: UnitPoint = .center, factor: T) -> LayoutGuide {
+    func rotated(from: Angle, to: Angle, anchor: UnitPoint = .center, factor: CGFloat) -> LayoutGuide {
         let delta = to - from
         return LayoutGuide(RotatedLayoutCoordinator(angle: from + delta * factor, anchor: anchor, anchorPoint: anchorLocation(for: anchor), baseCoordinator: self.coordinator), rect: self.rect)
     }
@@ -223,18 +187,18 @@ public extension LayoutGuide {
 public extension LayoutGuide {
     
     func offset(_ offset: CGPoint) -> LayoutGuide {
-        self.offset(offset, factor: 1.asCGFloat)
+        self.offset(offset, factor: 1)
     }
     
-    func offset<T: UINumericType>(_ offset: T) -> LayoutGuide {
+    func offset(_ offset: CGFloat) -> LayoutGuide {
         self.offset(.point(offset))
     }
     
-    func offset<T: UINumericType>(_ offset: CGPoint, factor: T) -> LayoutGuide {
-        LayoutGuide(OffsetLayoutCoordinator(offset: offset.scaled(factor), baseCoordinator: self.coordinator), rect: self.rect)
+    func offset(_ offset: CGPoint, factor: CGFloat) -> LayoutGuide {
+        LayoutGuide(OffsetLayoutCoordinator(offset: offset.scaled(factor.asCGFloat), baseCoordinator: self.coordinator), rect: self.rect)
     }
     
-    func offset<TS: UINumericType, TF: UINumericType>(_ offset: TS, factor: TF) -> LayoutGuide {
+    func offset(_ offset: CGFloat, factor: CGFloat) -> LayoutGuide {
         self.offset(.point(offset), factor: factor)
     }
 }
@@ -243,13 +207,13 @@ public extension LayoutGuide {
 
 public extension LayoutGuide {
     
-    func offset<T: UINumericType>(from: CGPoint, to: CGPoint, factor: T) -> LayoutGuide {
+    func offset(from: CGPoint, to: CGPoint, factor: CGFloat) -> LayoutGuide {
         let delta = to - from
-        return LayoutGuide(OffsetLayoutCoordinator(offset: from + delta.scaled(factor), baseCoordinator: self.coordinator), rect: self.rect)
+        return LayoutGuide(OffsetLayoutCoordinator(offset: from + delta.scaled(factor.asCGFloat), baseCoordinator: self.coordinator), rect: self.rect)
     }
     
-    func offset<TFS: UINumericType, TTS: UINumericType, TF: UINumericType>(from: TFS, to: TTS, factor: TF) -> LayoutGuide {
-        self.offset(from: .point(from), to: .point(to), factor: factor)
+    func offset(from: CGSize, to: CGSize, factor: CGFloat) -> LayoutGuide {
+        offset(from: from.asCGPoint, to: to.asCGPoint, factor: factor)
     }
 }
 
@@ -257,11 +221,11 @@ public extension LayoutGuide {
 
 public extension LayoutGuide {
     
-    func xOffset<T: UINumericType>(_ x: T) -> LayoutGuide {
+    func xOffset(_ x: CGFloat) -> LayoutGuide {
         xOffset(x, factor: 1)
     }
     
-    func xOffset<TX: UINumericType, TF: UINumericType>(_ x: TX, factor: TF) -> LayoutGuide {
+    func xOffset(_ x: CGFloat, factor: CGFloat) -> LayoutGuide {
         offset(.x(x), factor: factor)
     }
 }
@@ -270,9 +234,9 @@ public extension LayoutGuide {
 
 public extension LayoutGuide {
     
-    func xOffset<TFX: UINumericType, TTX: UINumericType, TF: UINumericType>(from: TFX, to: TTX, factor: TF) -> LayoutGuide {
+    func xOffset(from: CGFloat, to: CGFloat, factor: CGFloat) -> LayoutGuide {
         let delta = to - from
-        return offset(.x(from + delta * factor))
+        return offset(.x(from + delta * factor.asCGFloat))
     }
 }
 
@@ -280,11 +244,11 @@ public extension LayoutGuide {
 
 public extension LayoutGuide {
     
-    func yOffset<T: UINumericType>(_ y: T) -> LayoutGuide {
+    func yOffset(_ y: CGFloat) -> LayoutGuide {
         yOffset(y, factor: 1)
     }
     
-    func yOffset<TX: UINumericType, TF: UINumericType>(_ y: TX, factor: TF) -> LayoutGuide {
+    func yOffset(_ y: CGFloat, factor: CGFloat) -> LayoutGuide {
         offset(.y(y), factor: factor)
     }
 }
@@ -293,9 +257,9 @@ public extension LayoutGuide {
 
 public extension LayoutGuide {
     
-    func yOffset<TFX: UINumericType, TTX: UINumericType, TF: UINumericType>(from: TFX, to: TTX, factor: TF) -> LayoutGuide {
+    func yOffset(from: CGFloat, to: CGFloat, factor: CGFloat) -> LayoutGuide {
         let delta = to - from
-        return offset(.y(from + delta * factor))
+        return offset(.y(from + delta * factor.asCGFloat))
     }
 }
 
@@ -304,19 +268,19 @@ public extension LayoutGuide {
 public extension LayoutGuide {
         
     func scaled(_ scale: CGSize, anchor: UnitPoint = .center) -> LayoutGuide {
-        scaled(scale, anchor: anchor, factor: 1.asCGFloat)
+        scaled(scale, anchor: anchor, factor: 1)
     }
     
-    func scaled<T: UINumericType>(_ scale: T, anchor: UnitPoint = .center) -> LayoutGuide {
+    func scaled(_ scale: CGFloat, anchor: UnitPoint = .center) -> LayoutGuide {
         scaled(.square(scale), anchor: anchor)
     }
     
-    func scaled<T: UINumericType>(_ scale: CGSize, anchor: UnitPoint = .center, factor: T) -> LayoutGuide {
+    func scaled(_ scale: CGSize, anchor: UnitPoint = .center, factor: CGFloat) -> LayoutGuide {
         let effectiveScale = scale - .square(1)
-        return LayoutGuide(ScaledLayoutCoordinator(scale: .square(1) + effectiveScale.scaled(factor), anchor: anchor, anchorPoint: anchorLocation(for: anchor), baseCoordinator: self.coordinator), rect: self.rect)
+        return LayoutGuide(ScaledLayoutCoordinator(scale: .square(1) + effectiveScale.scaled(factor.asCGFloat), anchor: anchor, anchorPoint: anchorLocation(for: anchor), baseCoordinator: self.coordinator), rect: self.rect)
     }
     
-    func scaled<TS: UINumericType, TF: UINumericType>(_ scale: TS, anchor: UnitPoint = .center, factor: TF) -> LayoutGuide {
+    func scaled(_ scale: CGFloat, anchor: UnitPoint = .center, factor: CGFloat) -> LayoutGuide {
         scaled(.square(scale), anchor: anchor, factor: factor)
     }
 }
@@ -325,13 +289,56 @@ public extension LayoutGuide {
 
 public extension LayoutGuide {
         
-    func scaled<T: UINumericType>(from fromScale: CGSize, to toScale: CGSize, anchor: UnitPoint = .center, factor: T) -> LayoutGuide {
+    func scaled(from fromScale: CGSize, to toScale: CGSize, anchor: UnitPoint = .center, factor: CGFloat) -> LayoutGuide {
         let deltaScale = toScale - fromScale
-        return scaled(fromScale + deltaScale.scaled(factor), anchor: anchor)
+        return scaled(fromScale + deltaScale.scaled(factor.asCGFloat), anchor: anchor)
     }
     
-    func scaled<TFS: UINumericType, TTS: UINumericType, TF: UINumericType>(from fromScale: TFS, to toScale: TTS, anchor: UnitPoint = .center, factor: TF) -> LayoutGuide {
+    func scaled(from fromScale: CGFloat, to toScale: CGFloat, anchor: UnitPoint = .center, factor: CGFloat) -> LayoutGuide {
         scaled(from: .square(fromScale), to: .square(toScale), anchor: anchor, factor: factor)
     }
 }
 
+// MARK: ----- XSCALED
+
+public extension LayoutGuide {
+        
+    func xScaled(_ scale: CGFloat, anchor: UnitPoint = .center) -> LayoutGuide {
+        xScaled(scale, anchor: anchor, factor: 1)
+    }
+    
+    func xScaled(_ scale: CGFloat, anchor: UnitPoint = .center, factor: CGFloat) -> LayoutGuide {
+        scaled(.size(scale, 1), anchor: anchor, factor: factor)
+    }
+}
+
+// MARK: ----- XSCALED FROM TO
+
+public extension LayoutGuide {
+        
+    func xScaled(from fromScale: CGFloat, to toScale: CGFloat, anchor: UnitPoint = .center, factor: CGFloat) -> LayoutGuide {
+        xScaled(fromScale.to(toScale, factor), anchor: anchor)
+    }
+}
+
+// MARK: ----- YSCALED
+
+public extension LayoutGuide {
+    
+    func yScaled(_ scale: CGFloat, anchor: UnitPoint = .center) -> LayoutGuide {
+        yScaled(scale, anchor: anchor, factor: 1)
+    }
+    
+    func yScaled(_ scale: CGFloat, anchor: UnitPoint = .center, factor: CGFloat) -> LayoutGuide {
+        scaled(.size(1, scale), anchor: anchor, factor: factor)
+    }
+}
+
+// MARK: ----- YSCALED FROM TO
+
+public extension LayoutGuide {
+        
+    func yScaled(from fromScale: CGFloat, to toScale: CGFloat, anchor: UnitPoint = .center, factor: CGFloat) -> LayoutGuide {
+        return yScaled(fromScale.to(toScale, factor), anchor: anchor)
+    }
+}

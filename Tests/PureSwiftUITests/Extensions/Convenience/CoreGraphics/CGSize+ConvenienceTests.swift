@@ -35,9 +35,7 @@ extension CGSizeConvenienceExtensionsTests {
     
     func testInit() {
         XCTAssertEqual(CGSize(width, height), size)
-        XCTAssertEqual(CGSize(width.asInt, height.asInt), size)
         XCTAssertEqual(CGSize(width), CGSize(width, width))
-        XCTAssertEqual(CGSize(width.asInt), CGSize(width, width))
     }
 }
 
@@ -125,7 +123,6 @@ extension CGSizeConvenienceExtensionsTests {
     
     func testSquare() {
         XCTAssertEqual(CGSize.square(width), CGSize(width))
-        XCTAssertEqual(CGSize.square(width.asInt), CGSize(width))
     }
 }
 
@@ -138,5 +135,19 @@ extension CGSizeConvenienceExtensionsTests {
         let destination = CGRect(0, 0, 15, 10)
         XCTAssertEqual(sourceRect.size.map(from: sourceRect, to: destination), destination.size)
         assertEqual(sourceRect.sizeScaled(0.4).map(from: sourceRect, to: destination), destination.sizeScaled(0.4))
+    }
+}
+
+// MARK: ----- TO
+
+extension CGSizeConvenienceExtensionsTests {
+    
+    func testToWithFactor() {
+        let valueFrom = CGSize(5, 10)
+        let valueTo = CGSize(10, 20)
+        XCTAssertEqual(valueFrom.to(valueTo, 0), .size(5, 10))
+        XCTAssertEqual(valueFrom.to(valueTo, 0.5), .size(7.5, 15))
+        XCTAssertEqual(valueFrom.to(valueTo, 1), .size(10, 20))
+
     }
 }

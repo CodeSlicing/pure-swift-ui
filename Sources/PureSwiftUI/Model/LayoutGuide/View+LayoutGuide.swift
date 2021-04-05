@@ -11,15 +11,15 @@ public extension View {
         modifier(LayoutViewModifier(layoutGuideConfig: layoutGuideConfig, attributes: LayoutOverlayAttributes(color: color)))
     }
     
-    func layoutGuide<TW: UINumericType>(_ layoutGuideConfig: LayoutGuideConfig, color: Color = .gray, lineWidth: TW) -> some View {
+    func layoutGuide(_ layoutGuideConfig: LayoutGuideConfig, color: Color = .gray, lineWidth: CGFloat) -> some View {
         modifier(LayoutViewModifier(layoutGuideConfig: layoutGuideConfig, attributes: LayoutOverlayAttributes(color: color, lineWidth: lineWidth.asCGFloat)))
     }
     
-    func layoutGuide<TO: UINumericType>(_ layoutGuideConfig: LayoutGuideConfig, color: Color = .gray, opacity: TO) -> some View {
+    func layoutGuide(_ layoutGuideConfig: LayoutGuideConfig, color: Color = .gray, opacity: CGFloat) -> some View {
         modifier(LayoutViewModifier(layoutGuideConfig: layoutGuideConfig, attributes: LayoutOverlayAttributes(color: color, opacity: opacity.asDouble)))
     }
     
-    func layoutGuide<TW: UINumericType, TO: UINumericType>(_ layoutGuideConfig: LayoutGuideConfig, color: Color = .gray, lineWidth: TW, opacity: TO) -> some View {
+    func layoutGuide(_ layoutGuideConfig: LayoutGuideConfig, color: Color = .gray, lineWidth: CGFloat, opacity: CGFloat) -> some View {
         modifier(LayoutViewModifier(layoutGuideConfig: layoutGuideConfig, attributes: LayoutOverlayAttributes(color: color, lineWidth: lineWidth.asCGFloat, opacity: opacity.asDouble)))
     }
 }

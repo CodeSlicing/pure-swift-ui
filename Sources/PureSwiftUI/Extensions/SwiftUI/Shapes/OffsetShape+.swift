@@ -14,16 +14,12 @@ public extension OffsetShape {
         self.init(shape: shape, offset: CGSize(width: x, height: y))
     }
     
-    init<TX: UINumericType>(_ shape: Content, x: TX) {
+    init(_ shape: Content, x: CGFloat) {
         self.init(shape, x: x, y: 0)
     }
     
-    init<TY: UINumericType>(_ shape: Content, y: TY) {
+    init(_ shape: Content, y: CGFloat) {
         self.init(shape, x: 0, y: y)
-    }
-    
-    init<TX: UINumericType, TY: UINumericType>(_ shape: Content, x: TX, y: TY) {
-        self.init(shape, x: x.asCGFloat, y: y.asCGFloat)
     }
 }
 

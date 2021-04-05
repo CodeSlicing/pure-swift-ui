@@ -54,19 +54,8 @@ extension PolarLayoutGuideTests {
 
 extension PolarLayoutGuideTests {
     
-    func testDeprecatedAngleForPoint() {
-        var polar = LayoutGuide.polar(rect, rings: 2, segments: 8)
-        
-        XCTAssertEqual(polar.angle(2, 2), 90.degrees)
-        XCTAssertEqual(polar.angle(1, 4), 180.degrees)
-        
-        XCTAssertEqual(polar.angle(2, 2, origin: rect.leading), 90.degrees)
-        XCTAssertEqual(polar.angle(0, 0, origin: rect.bottom), 0.degrees)
-        XCTAssertEqual(polar.angle(2, 6, origin: rect.center), 270.degrees)
-    }
-    
     func testAngleForPoint() {
-        var polar = LayoutGuide.polar(rect, rings: 2, segments: 8)
+        let polar = LayoutGuide.polar(rect, rings: 2, segments: 8)
         
         XCTAssertEqual(polar.angleTo(2, 2), 90.degrees)
         XCTAssertEqual(polar.angleTo(1, 4), 180.degrees)
@@ -81,19 +70,8 @@ extension PolarLayoutGuideTests {
 
 extension PolarLayoutGuideTests {
     
-    func testDeprecatedRadiusForPoint() {
-        var polar = LayoutGuide.polar(rect, rings: 2, segments: 8)
-        
-        XCTAssertEqual(polar.radius(2, 2), rect.halfHeight)
-        XCTAssertEqual(polar.radius(1, 4), rect.heightScaled(0.25))
-        
-        XCTAssertEqual(polar.radius(2, 2, origin: rect.leading), rect.halfWidth + rect.halfHeight)
-        XCTAssertEqual(polar.radius(0, 0, origin: rect.bottom), rect.halfHeight)
-        XCTAssertEqual(polar.radius(2, 6, origin: rect.center), rect.halfHeight)
-    }
-    
     func testRadiusForPoint() {
-        var polar = LayoutGuide.polar(rect, rings: 2, segments: 8)
+        let polar = LayoutGuide.polar(rect, rings: 2, segments: 8)
         
         XCTAssertEqual(polar.radiusTo(2, 2), rect.halfHeight)
         XCTAssertEqual(polar.radiusTo(1, 4), rect.heightScaled(0.25))
@@ -109,7 +87,7 @@ extension PolarLayoutGuideTests {
 extension PolarLayoutGuideTests {
     
     func testPointsForEquidistant() {
-        var polar = LayoutGuide.polar(rect, rings: 6, segments: 8)
+        let polar = LayoutGuide.polar(rect, rings: 6, segments: 8)
         assertEqual(polar[0, 0], (rect.center))
         assertEqual(polar[6, 2], rect.center.xOffset(rect.halfHeight))
         assertEqual(polar[6, 4], rect.bottom)
@@ -119,7 +97,7 @@ extension PolarLayoutGuideTests {
     }
     
     func testPointsForEquidistantUsingMaxDimension() {
-        var polar = LayoutGuide.polar(rect, rings: 6, segments: 8, useMaxDimension: true)
+        let polar = LayoutGuide.polar(rect, rings: 6, segments: 8, useMaxDimension: true)
         assertEqual(polar[0, 0], (rect.center))
         assertEqual(polar[6, 2], rect.trailing)
         assertEqual(polar[6, 4], rect.center.yOffset(rect.halfWidth))
@@ -140,7 +118,7 @@ extension PolarLayoutGuideTests {
     }
     
     func testPointsForEquidistantWithOrigin() {
-        var grid = LayoutGuide.polar(rect, rings: 6, segments: 8)
+        let grid = LayoutGuide.polar(rect, rings: 6, segments: 8)
         let offsetRect = CGRect(bottomRightRect.center, rect.size, anchor: .center)
         assertEqual(grid[0, 0, origin: bottomRightRect.center], offsetRect.center)
         assertEqual(grid[6, 2, origin: bottomRightRect.center], offsetRect.center.xOffset(offsetRect.halfHeight))
@@ -151,9 +129,59 @@ extension PolarLayoutGuideTests {
     }
     
     func testOutOfBoundsForEquidistant() {
-        var polar = LayoutGuide.polar(rect, rings: 5, segments: 8)
+        let polar = LayoutGuide.polar(rect, rings: 5, segments: 8)
         assertEqual(polar[5, -8], rect.top)
         assertEqual(polar[10, -8], rect.top.yOffset(-rect.halfHeight))
+    }
+}
+
+// MARK: ----- EQUIDISTANT POINT TESTS WITH RELATIVE COORDINATES
+
+extension PolarLayoutGuideTests {
+    
+    func testPointsForEquidistantForRelativeCoordinates() {
+        let polar = LayoutGuide.polar(rect, rings: 6, segments: 8)
+        assertEqual(polar[rel: 0, rel: 0], (rect.center))
+        assertEqual(polar[rel: 1, rel: 0.25], rect.center.xOffset(rect.halfHeight))
+        assertEqual(polar[rel: 1, 4], rect.bottom)
+        assertEqual(polar[rel: 1, rel: 0.75], rect.center.xOffset(-rect.halfHeight))
+        assertEqual(polar[rel: 1, rel: 1], rect.top)
+        assertEqual(polar[3, rel: 0.25], (rect.center.x + rect.heightScaled(0.25), rect.center.y))
+    }
+
+    func testPointsForEquidistantUsingMaxDimensionForRelativeCoordinates() {
+        let polar = LayoutGuide.polar(rect, rings: 6, segments: 8, useMaxDimension: true)
+        assertEqual(polar[rel: 0, rel: 0],      (rect.center))
+        assertEqual(polar[rel: 1, rel: 0.25],   rect.trailing)
+        assertEqual(polar[rel: 1, 4],    rect.center.yOffset(rect.halfWidth))
+        assertEqual(polar[rel: 1, rel: 0.75],   rect.leading)
+        assertEqual(polar[6, rel: 1],      rect.center.yOffset(-rect.halfWidth))
+        assertEqual(polar[rel: 0.5, rel: 0.25], rect.center.xOffset(rect.widthScaled(0.25)))
+    }
+
+    func testPointsForEquidistantReframedForRelativeCoordinates() {
+        var polar = LayoutGuide.polar(rect, rings: 6, segments: 8)
+        polar = polar.reframed(bottomRightRect, origin: .center)
+        assertEqual(polar[rel: 0, rel: 0],      (bottomRightRect.center))
+        assertEqual(polar[6, rel: 0.25],   bottomRightRect.center.xOffset(bottomRightRect.halfHeight))
+        assertEqual(polar[rel: 1, 4],    bottomRightRect.bottom)
+        assertEqual(polar[rel: 1, 6],   bottomRightRect.center.xOffset(-bottomRightRect.halfHeight))
+        assertEqual(polar[6, rel: 1],      bottomRightRect.top)
+        assertEqual(polar[rel: 0.5, rel: 0.25], (bottomRightRect.center.x + bottomRightRect.heightScaled(0.25), bottomRightRect.center.y))
+    }
+
+    func testPointsForEquidistantWithOriginForRelativeCoordinates() {
+        let grid = LayoutGuide.polar(rect, rings: 6, segments: 8)
+        let offsetRect = CGRect(bottomRightRect.center, rect.size, anchor: .center)
+        assertEqual(grid[rel: 0, 0, origin: bottomRightRect.center], offsetRect.center)
+        assertEqual(grid[6, rel: 0.25, origin: bottomRightRect.center], offsetRect.center.xOffset(offsetRect.halfHeight))
+        assertEqual(grid[rel: 1, rel: 0.5, origin: bottomRightRect.center], offsetRect.bottom)
+    }
+
+    func testOutOfBoundsForEquidistantForRelativeCoordinates() {
+        let polar = LayoutGuide.polar(rect, rings: 5, segments: 8)
+        assertEqual(polar[rel: 1, rel: -1], rect.top)
+        assertEqual(polar[rel: 2, rel: -1], rect.top.yOffset(-rect.halfHeight))
     }
 }
 
@@ -162,7 +190,7 @@ extension PolarLayoutGuideTests {
 extension PolarLayoutGuideTests {
     
     func testPointsForRelative() {
-        var polar = LayoutGuide.polar(rect, rings: [0, 0.5, 1], segments: [0, 0.25, 0.5])
+        let polar = LayoutGuide.polar(rect, rings: [0, 0.5, 1], segments: [0, 0.25, 0.5])
         assertEqual(polar[0, 0], rect.center)
         assertEqual(polar[2, 1], rect.center.xOffset(rect.halfHeight))
         assertEqual(polar[2, 2], rect.bottom)
@@ -170,7 +198,7 @@ extension PolarLayoutGuideTests {
     }
     
     func testPointsForRelativeUsingMaxDimension() {
-        var polar = LayoutGuide.polar(rect, rings: [0, 0.5, 1], segments: [0, 0.25, 0.5], useMaxDimension: true)
+        let polar = LayoutGuide.polar(rect, rings: [0, 0.5, 1], segments: [0, 0.25, 0.5], useMaxDimension: true)
         assertEqual(polar[0, 0], rect.center)
         assertEqual(polar[2, 1], rect.trailing)
         assertEqual(polar[2, 2], rect.center.yOffset(rect.halfWidth))
@@ -187,7 +215,7 @@ extension PolarLayoutGuideTests {
     }
     
     func testPointsForRelativeWithOrigin() {
-        var polar = LayoutGuide.polar(rect, rings: [0, 0.5, 1], segments: [0, 0.25, 0.5])
+        let polar = LayoutGuide.polar(rect, rings: [0, 0.5, 1], segments: [0, 0.25, 0.5])
         let offsetRect = CGRect(bottomRightRect.center, rect.size, anchor: .center)
         assertEqual(polar[0, 0, origin: bottomRightRect.center], offsetRect.center)
         assertEqual(polar[2, 1, origin: bottomRightRect.center], offsetRect.center.xOffset(offsetRect.halfHeight))
@@ -196,16 +224,16 @@ extension PolarLayoutGuideTests {
     }
     
     func testOutOfBoundsForRelative() {
-        var polar = LayoutGuide.polar(rect, rings: [0, 0.5, 1], segments: [0, 0.25, 0.5])
+        let polar = LayoutGuide.polar(rect, rings: [0, 0.5, 1], segments: [0, 0.25, 0.5])
         assertEqual(polar[5, -8], rect.top)
         assertEqual(polar[10, 8], rect.bottom)
     }
     
     func testPointsForRelativeIsEquivalentToAbsolute() {
-        let rings = [0, 0.5, 1]
-        var polarRelative = LayoutGuide.polar(rect, rings: rings, segments: [0, 0.25, 0.5])
-        var polarAbsolute = LayoutGuide.polar(rect, rings: rings, segments: [.cycle(0), .cycle(0.25), .cycle(0.5)])
-        var polarAbsoluteDegrees = LayoutGuide.polar(rect, rings: rings, segments: [0.degrees, 90.degrees, 180.degrees])
+        let rings: [CGFloat] = [0, 0.5, 1]
+        let polarRelative = LayoutGuide.polar(rect, rings: rings, segments: [0, 0.25, 0.5])
+        let polarAbsolute = LayoutGuide.polar(rect, rings: rings, segments: [.cycle(0), .cycle(0.25), .cycle(0.5)])
+        let polarAbsoluteDegrees = LayoutGuide.polar(rect, rings: rings, segments: [0.degrees, 90.degrees, 180.degrees])
         for ring in 0..<rings.count {
             for segment in 0..<3 {
                 assertEqual(polarRelative[ring, segment], polarAbsolute[ring, segment])
@@ -215,12 +243,56 @@ extension PolarLayoutGuideTests {
     }
 }
 
+// MARK: ----- RELATIVE POINT TESTS WITH RELATIVE COORDINATES
+
+extension PolarLayoutGuideTests {
+    
+    func testPointsForRelativeForRelativeCoordinates() {
+        let polar = LayoutGuide.polar(rect, rings: [0, 0.5, 1], segments: [0, 0.25, 0.5])
+        assertEqual(polar[rel: 0, rel: 0],    rect.center)
+        assertEqual(polar[rel: 1, 1], rect.center.xOffset(rect.halfHeight))
+        assertEqual(polar[2, rel: 0.5],  rect.bottom)
+        assertEqual(polar[rel: 0, rel: 1],    rect.center)
+    }
+
+    func testPointsForRelativeUsingMaxDimensionForRelativeCoordinates() {
+        let polar = LayoutGuide.polar(rect, rings: [0, 0.5, 1], segments: [0, 0.25, 0.5], useMaxDimension: true)
+        assertEqual(polar[rel: 0, rel: 0],    rect.center)
+        assertEqual(polar[rel: 1, 1], rect.trailing)
+        assertEqual(polar[rel: 1.0, rel: 0.5],  rect.center.yOffset(rect.halfWidth))
+        assertEqual(polar[rel: 0.5, rel: 0.5],    rect.center.yOffset(rect.widthScaled(0.25)))
+    }
+
+    func testPointsForRelativeReframedForRelativeCoordinates() {
+        var polar = LayoutGuide.polar(rect, rings: [0, 0.5, 1], segments: [0, 0.25, 0.5])
+        polar = polar.reframed(bottomRightRect, origin: .center)
+        assertEqual(polar[rel: 0, rel: 0], bottomRightRect.center)
+        assertEqual(polar[rel: 1, 1], bottomRightRect.center.xOffset(bottomRightRect.halfHeight))
+        assertEqual(polar[2, rel: 0.5], bottomRightRect.bottom)
+        assertEqual(polar[rel: 0, rel: 0.5], bottomRightRect.center)
+    }
+
+    func testPointsForRelativeWithOriginForRelativeCoordinates() {
+        let polar = LayoutGuide.polar(rect, rings: [0, 0.5, 1], segments: [0, 0.25, 0.5])
+        let offsetRect = CGRect(bottomRightRect.center, rect.size, anchor: .center)
+        assertEqual(polar[rel: 0, rel: 0, origin: bottomRightRect.center], offsetRect.center)
+        assertEqual(polar[2, rel: 0.25, origin: bottomRightRect.center], offsetRect.center.xOffset(offsetRect.halfHeight))
+        assertEqual(polar[rel: 1, rel: 0.5, origin: bottomRightRect.center], offsetRect.bottom)
+    }
+
+    func testOutOfBoundsForRelativeForRelativeCoordinates() {
+        let polar = LayoutGuide.polar(rect, rings: [0, 0.5, 1], segments: [0, 0.25, 0.5])
+        assertEqual(polar[rel: 2, rel: 2], rect.top.yOffset(-rect.halfHeight))
+    }
+
+}
+
 // MARK: ----- EQUIDISTANT RING RELATIVE SEGMENT POINT TESTS
 
 extension PolarLayoutGuideTests {
     
     func testPointsForEquidistantRingRelativeSegment() {
-        var polar = LayoutGuide.polar(rect, rings: 6, segments: [0, 0.25, 0.5])
+        let polar = LayoutGuide.polar(rect, rings: 6, segments: [0, 0.25, 0.5])
         assertEqual(polar[0, 0], rect.center)
         assertEqual(polar[6, 1], rect.center.xOffset(rect.halfHeight))
         assertEqual(polar[6, 2], rect.bottom)
@@ -239,7 +311,7 @@ extension PolarLayoutGuideTests {
     }
     
     func testPointsForEquidistantRingRelativeSegmentWithOrigin() {
-        var polar = LayoutGuide.polar(rect, rings: 6, segments: [0, 0.25, 0.5])
+        let polar = LayoutGuide.polar(rect, rings: 6, segments: [0, 0.25, 0.5])
         let offsetRect = CGRect(bottomRightRect.center, rect.size, anchor: .center)
         assertEqual(polar[0, 0, origin: bottomRightRect.center], offsetRect.center)
         assertEqual(polar[6, 1, origin: bottomRightRect.center], offsetRect.center.xOffset(offsetRect.halfHeight))
@@ -249,16 +321,16 @@ extension PolarLayoutGuideTests {
     }
     
     func testOutOfBoundsForEquidistantRingRelativeSegment() {
-        var polar = LayoutGuide.polar(rect, rings: 5, segments: [0, 0.25, 0.5])
+        let polar = LayoutGuide.polar(rect, rings: 5, segments: [0, 0.25, 0.5])
         assertEqual(polar[5, -8], rect.top)
         assertEqual(polar[10, 8], rect.bottom.yOffset(rect.halfHeight))
     }
     
     func testPointsForEquidistantRingRelativeIsEquivalentToAbsolute() {
         let rings = 5
-        var polarRelative = LayoutGuide.polar(rect, rings: rings, segments: [0, 0.25, 0.5])
-        var polarAbsolute = LayoutGuide.polar(rect, rings: rings, segments: [.cycle(0), .cycle(0.25), .cycle(0.5)])
-        var polarAbsoluteDegrees = LayoutGuide.polar(rect, rings: rings, segments: [0.degrees, 90.degrees, 180.degrees])
+        let polarRelative = LayoutGuide.polar(rect, rings: rings, segments: [0, 0.25, 0.5])
+        let polarAbsolute = LayoutGuide.polar(rect, rings: rings, segments: [.cycle(0), .cycle(0.25), .cycle(0.5)])
+        let polarAbsoluteDegrees = LayoutGuide.polar(rect, rings: rings, segments: [0.degrees, 90.degrees, 180.degrees])
         for ring in 0..<rings {
             for segment in 0..<3 {
                 assertEqual(polarRelative[ring, segment], polarAbsolute[ring, segment])
@@ -274,7 +346,7 @@ extension PolarLayoutGuideTests {
 extension PolarLayoutGuideTests {
     
     func testPointsForRelativeRingEquidistantSegment() {
-        var polar = LayoutGuide.polar(rect, rings: [0, 0.5, 1], segments: 8)
+        let polar = LayoutGuide.polar(rect, rings: [0, 0.5, 1], segments: 8)
         assertEqual(polar[0, 0], rect.center)
         assertEqual(polar[2, 2], rect.center.xOffset(rect.halfHeight))
         assertEqual(polar[2, 4], rect.bottom)
@@ -291,7 +363,7 @@ extension PolarLayoutGuideTests {
     }
     
     func testPointsForRelativeRingEquidistantSegmentWithOrigin() {
-        var polar = LayoutGuide.polar(rect, rings: [0, 0.5, 1], segments: 8)
+        let polar = LayoutGuide.polar(rect, rings: [0, 0.5, 1], segments: 8)
         let offsetRect = CGRect(bottomRightRect.center, rect.size, anchor: .center)
         assertEqual(polar[0, 0, origin: bottomRightRect.center], offsetRect.center)
         assertEqual(polar[2, 2, origin: bottomRightRect.center], offsetRect.center.xOffset(offsetRect.halfHeight))
@@ -300,7 +372,7 @@ extension PolarLayoutGuideTests {
     }
     
     func testOutOfBoundsForRelativeRingEquidistantSegment() {
-        var polar = LayoutGuide.polar(rect, rings: [0, 0.5, 1], segments: 8)
+        let polar = LayoutGuide.polar(rect, rings: [0, 0.5, 1], segments: 8)
         assertEqual(polar[5, -8], rect.top)
         assertEqual(polar[10, 8], rect.top)
     }
@@ -427,31 +499,6 @@ extension PolarLayoutGuideTests {
     }
 }
 
-// MARK: ----- REFRAMED WITH OFFSET
-
-extension PolarLayoutGuideTests {
-    
-    func testDeprecatedPointsWithReframedOffsetDeprecated() {
-        let polar = LayoutGuide.polar(rect, rings: [0, 0.5, 1], segments: [0, 0.5, 1])
-        let offset = CGPoint(5, 10)
-        
-        var polarOffset = polar.reframed(offset: offset)
-        assertEqual(polarOffset[0, 0], rect.center.offset(offset))
-        assertEqual(polarOffset[2, 0], rect.top.offset(offset))
-        assertEqual(polarOffset[2, 1], rect.bottom.offset(offset))
-        
-        polarOffset = polar.reframed(offset: offset.asCGSize)
-        assertEqual(polarOffset[0, 0], rect.center.offset(offset))
-        assertEqual(polarOffset[2, 0], rect.top.offset(offset))
-        assertEqual(polarOffset[2, 1], rect.bottom.offset(offset))
-        
-        polarOffset = polar.reframed(offset: offset.asCGVector)
-        assertEqual(polarOffset[0, 0], rect.center.offset(offset))
-        assertEqual(polarOffset[2, 0], rect.top.offset(offset))
-        assertEqual(polarOffset[2, 1], rect.bottom.offset(offset))
-    }
-}
-
 // MARK: ----- OFFSET FROM AND TO POLAR LAYOUT GUIDE
 
 extension PolarLayoutGuideTests {
@@ -470,8 +517,7 @@ extension PolarLayoutGuideTests {
         assertEqual(polarOffset[0, 0], rect.center + offsetTo.asCGPoint.scaled(0.5))
         assertEqual(polarOffset[2, 0], rect.top + offsetTo.asCGPoint.scaled(0.5))
         assertEqual(polarOffset[2, 1], rect.center.xOffset(rect.halfHeight) + offsetTo.asCGPoint.scaled(0.5))
-        
-        polarOffset = polar.offset(from: 0, to: 10, factor: 0.5)
+        polarOffset = polar.offset(from: .point(0), to: .point(10), factor: 0.5)
         assertEqual(polarOffset[0, 0], rect.center + CGPoint(10).scaled(0.5))
         assertEqual(polarOffset[2, 0], rect.top + CGPoint(10).scaled(0.5))
         assertEqual(polarOffset[2, 1], rect.center.xOffset(rect.halfHeight) + CGPoint(10).scaled(0.5))
@@ -504,7 +550,7 @@ extension PolarLayoutGuideTests {
         assertEqual(polarOffset[2, 1], rect.center.xOffset(rect.halfHeight) + offsetTo.asCGPoint.scaled(0.5))
         
         polarOffset = polarConfig
-            .offset(from: 0, to: 10, factor: 0.5)
+            .offset(from: .point(0), to: .point(10), factor: 0.5)
             .layout(in: rect)
         
         assertEqual(polarOffset[0, 0], rect.center + CGPoint(10).scaled(0.5))
@@ -738,7 +784,6 @@ extension PolarLayoutGuideTests {
         
         assertEqual(polarRotated[0, 0], rect.center)
         assertEqual(polarRotated[2, 0], rect.center.xOffset(rect.halfHeight))
-        assertEqual(polarRotated[2, 1], rect.bottom)
         
         polarRotated = polarConfig
             .rotated(180.degrees)
@@ -866,6 +911,44 @@ extension PolarLayoutGuideTests {
         assertEqual(polarScaled[2, 1], rect.center.xOffset(rect.height))
     }
     
+    func testPointsWithXScale() {
+        let polar = LayoutGuide.polar(rect, rings: [0, 0.5, 1], segments: [0, 0.25, 0.5])
+        
+        var polarScaled = polar.xScaled(2, factor: 0)
+        assertEqual(polarScaled[0, 0], rect.center)
+        assertEqual(polarScaled[2, 0], rect.top)
+        assertEqual(polarScaled[2, 1], rect.center.xOffset(rect.halfHeight))
+        
+        polarScaled = polar.xScaled(2, factor: 0.5)
+        assertEqual(polarScaled[0, 0], rect.center)
+        assertEqual(polarScaled[2, 0], rect.top)
+        assertEqual(polarScaled[2, 1], rect.center.xOffset(rect.heightScaled(0.75)))
+        
+        polarScaled = polar.xScaled(2)
+        assertEqual(polarScaled[0, 0], rect.center)
+        assertEqual(polarScaled[2, 0], rect.top)
+        assertEqual(polarScaled[2, 1], rect.center.xOffset(rect.height))
+    }
+
+    func testPointsWithYScale() {
+        let polar = LayoutGuide.polar(rect, rings: [0, 0.5, 1], segments: [0, 0.25, 0.5])
+        
+        var polarScaled = polar.yScaled(2, factor: 0)
+        assertEqual(polarScaled[0, 0], rect.center)
+        assertEqual(polarScaled[2, 0], rect.top)
+        assertEqual(polarScaled[2, 1], rect.center.xOffset(rect.halfHeight))
+        
+        polarScaled = polar.yScaled(2, factor: 0.5)
+        assertEqual(polarScaled[0, 0], rect.center)
+        assertEqual(polarScaled[2, 0], rect.top.yOffset(-rect.heightScaled(0.25)))
+        assertEqual(polarScaled[2, 1], rect.center.xOffset(rect.halfHeight))
+        
+        polarScaled = polar.yScaled(2)
+        assertEqual(polarScaled[0, 0], rect.center)
+        assertEqual(polarScaled[2, 0], rect.top.yOffset(-rect.halfHeight))
+        assertEqual(polarScaled[2, 1], rect.center.xOffset(rect.halfHeight))
+    }
+    
     func testPointsWithScaleWithConfig() {
         let polarConfig = LayoutGuideConfig.polar(rings: [0, 0.5, 1], segments: [0, 0.25, 0.5])
         
@@ -892,6 +975,62 @@ extension PolarLayoutGuideTests {
         assertEqual(polarScaled[0, 0], rect.center)
         assertEqual(polarScaled[2, 0], rect.top.yOffset(-rect.halfHeight))
         assertEqual(polarScaled[2, 1], rect.center.xOffset(rect.height))
+    }
+    
+    func testPointsWithXScaleWithConfig() {
+        let polarConfig = LayoutGuideConfig.polar(rings: [0, 0.5, 1], segments: [0, 0.25, 0.5])
+        
+        var polarScaled = polarConfig
+            .xScaled(2, factor: 0)
+            .layout(in: rect)
+        
+        assertEqual(polarScaled[0, 0], rect.center)
+        assertEqual(polarScaled[2, 0], rect.top)
+        assertEqual(polarScaled[2, 1], rect.center.xOffset(rect.halfHeight))
+        
+        polarScaled = polarConfig
+            .xScaled(2, factor: 0.5)
+            .layout(in: rect)
+        
+        assertEqual(polarScaled[0, 0], rect.center)
+        assertEqual(polarScaled[2, 0], rect.top)
+        assertEqual(polarScaled[2, 1], rect.center.xOffset(rect.heightScaled(0.75)))
+        
+        polarScaled = polarConfig
+            .xScaled(2)
+            .layout(in: rect)
+        
+        assertEqual(polarScaled[0, 0], rect.center)
+        assertEqual(polarScaled[2, 0], rect.top)
+        assertEqual(polarScaled[2, 1], rect.center.xOffset(rect.height))
+    }
+    
+    func testPointsWithYScaleWithConfig() {
+        let polarConfig = LayoutGuideConfig.polar(rings: [0, 0.5, 1], segments: [0, 0.25, 0.5])
+        
+        var polarScaled = polarConfig
+            .yScaled(2, factor: 0)
+            .layout(in: rect)
+        
+        assertEqual(polarScaled[0, 0], rect.center)
+        assertEqual(polarScaled[2, 0], rect.top)
+        assertEqual(polarScaled[2, 1], rect.center.xOffset(rect.halfHeight))
+        
+        polarScaled = polarConfig
+            .yScaled(2, factor: 0.5)
+            .layout(in: rect)
+        
+        assertEqual(polarScaled[0, 0], rect.center)
+        assertEqual(polarScaled[2, 0], rect.top.yOffset(-rect.heightScaled(0.25)))
+        assertEqual(polarScaled[2, 1], rect.center.xOffset(rect.halfHeight))
+        
+        polarScaled = polarConfig
+            .yScaled(2)
+            .layout(in: rect)
+        
+        assertEqual(polarScaled[0, 0], rect.center)
+        assertEqual(polarScaled[2, 0], rect.top.yOffset(-rect.halfHeight))
+        assertEqual(polarScaled[2, 1], rect.center.xOffset(rect.halfHeight))
     }
 
     func testPointsWithScaleForRelativeReframed() {
@@ -1002,6 +1141,9 @@ extension PolarLayoutGuideTests {
         assertEqual(polarTransformed[0, 0], rect.center)
         assertEqual(polarTransformed[2, 0], rect.top)
         assertEqual(polarTransformed[2, 1], rect.center.xOffset(rect.halfHeight))
+        assertEqual(polarTransformed[rel: 0, 0], polarTransformed[0, 0])
+        assertEqual(polarTransformed[2, rel: 0], polarTransformed[2, 0])
+        assertEqual(polarTransformed[rel: 1, rel: 0.25], polarTransformed[2, 1])
         
         polarTransformed = polar
             .rotated(180.degrees, factor: 0.5)
@@ -1010,6 +1152,9 @@ extension PolarLayoutGuideTests {
         assertEqual(polarTransformed[0, 0], rect.center + offset.scaled(0.5).asCGPoint)
         assertEqual(polarTransformed[2, 0], rect.center.xOffset(rect.halfHeight) + offset.scaled(0.5).asCGPoint)
         assertEqual(polarTransformed[2, 1], rect.bottom + offset.scaled(0.5).asCGPoint)
+        assertEqual(polarTransformed[rel: 0, 0], polarTransformed[0, 0])
+        assertEqual(polarTransformed[2, rel: 0], polarTransformed[2, 0])
+        assertEqual(polarTransformed[rel: 1, rel: 0.25], polarTransformed[2, 1])
         
         polarTransformed = polar
             .rotated(180.degrees)
@@ -1018,6 +1163,9 @@ extension PolarLayoutGuideTests {
         assertEqual(polarTransformed[0, 0], rect.center + offset.asCGPoint)
         assertEqual(polarTransformed[2, 0], rect.bottom + offset.asCGPoint)
         assertEqual(polarTransformed[2, 1], rect.center.xOffset(-rect.halfHeight) + offset.asCGPoint)
+        assertEqual(polarTransformed[rel: 0, 0], polarTransformed[0, 0])
+        assertEqual(polarTransformed[2, rel: 0], polarTransformed[2, 0])
+        assertEqual(polarTransformed[rel: 1, rel: 0.25], polarTransformed[2, 1])
     }
     
     func testPointsWithRotationAndOffsetWithConfig() {
@@ -1032,6 +1180,9 @@ extension PolarLayoutGuideTests {
         assertEqual(polarTransformed[0, 0], rect.center)
         assertEqual(polarTransformed[2, 0], rect.top)
         assertEqual(polarTransformed[2, 1], rect.center.xOffset(rect.halfHeight))
+        assertEqual(polarTransformed[rel: 0, 0], polarTransformed[0, 0])
+        assertEqual(polarTransformed[2, rel: 0], polarTransformed[2, 0])
+        assertEqual(polarTransformed[rel: 1, rel: 0.25], polarTransformed[2, 1])
         
         polarTransformed = polarConfig
             .rotated(180.degrees, factor: 0.5)
@@ -1041,6 +1192,9 @@ extension PolarLayoutGuideTests {
         assertEqual(polarTransformed[0, 0], rect.center + offset.scaled(0.5).asCGPoint)
         assertEqual(polarTransformed[2, 0], rect.center.xOffset(rect.halfHeight) + offset.scaled(0.5).asCGPoint)
         assertEqual(polarTransformed[2, 1], rect.bottom + offset.scaled(0.5).asCGPoint)
+        assertEqual(polarTransformed[rel: 0, 0], polarTransformed[0, 0])
+        assertEqual(polarTransformed[2, rel: 0], polarTransformed[2, 0])
+        assertEqual(polarTransformed[rel: 1, rel: 0.25], polarTransformed[2, 1])
         
         polarTransformed = polarConfig
             .rotated(180.degrees)
@@ -1050,6 +1204,9 @@ extension PolarLayoutGuideTests {
         assertEqual(polarTransformed[0, 0], rect.center + offset.asCGPoint)
         assertEqual(polarTransformed[2, 0], rect.bottom + offset.asCGPoint)
         assertEqual(polarTransformed[2, 1], rect.center.xOffset(-rect.halfHeight) + offset.asCGPoint)
+        assertEqual(polarTransformed[rel: 0, 0], polarTransformed[0, 0])
+        assertEqual(polarTransformed[2, rel: 0], polarTransformed[2, 0])
+        assertEqual(polarTransformed[rel: 1, rel: 0.25], polarTransformed[2, 1])
     }
 }
 
@@ -1120,7 +1277,7 @@ extension PolarLayoutGuideTests {
     func testPointsWithOffsetAndRotationFromConfig() {
         let offset = CGPoint(5, 0)
         
-        var polar = LayoutGuideConfig.polar(rings: [0, 0.5, 1], segments: [0, 0.25, 0.5])
+        let polar = LayoutGuideConfig.polar(rings: [0, 0.5, 1], segments: [0, 0.25, 0.5])
             .offset(offset)
             .rotated(180.degrees)
             .layout(in: rect)

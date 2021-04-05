@@ -25,11 +25,8 @@ extension EdgeInsetsConvenienceExtensionsTests {
     
     func testInit() {
         XCTAssertEqual(EdgeInsets(size), EdgeInsets(top: size, leading: size, bottom: size, trailing: size))
-        XCTAssertEqual(EdgeInsets(size.asInt), EdgeInsets(top: size, leading: size, bottom: size, trailing: size))
         XCTAssertEqual(EdgeInsets(width, height), EdgeInsets(top: height, leading: width, bottom: height, trailing: width))
-        XCTAssertEqual(EdgeInsets(width.asInt, height), EdgeInsets(top: height, leading: width, bottom: height, trailing: width))
         XCTAssertEqual(EdgeInsets(top, leading, bottom, trailing), EdgeInsets(top: top, leading: leading, bottom: bottom, trailing: trailing))
-        XCTAssertEqual(EdgeInsets(top.asInt, leading.asCGFloat, bottom.asFloat, trailing.asDouble), EdgeInsets(top: top, leading: leading, bottom: bottom, trailing: trailing))
     }
 }
 

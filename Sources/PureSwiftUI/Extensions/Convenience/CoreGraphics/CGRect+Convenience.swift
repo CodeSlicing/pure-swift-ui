@@ -16,18 +16,14 @@ public extension CGRect {
         self.init(origin: CGPoint(x, y), size: CGSize(width, height))
     }
     
-    init<TX: UINumericType, TY: UINumericType, TW: UINumericType, TH: UINumericType>(_ x: TX, _ y: TY, _ width: TW, _ height: TH) {
-        self.init(x.asCGFloat, y.asCGFloat, width.asCGFloat, height.asCGFloat)
+    init(_ size: CGSize) {
+        self.init(size.width, size.height)
     }
-
+    
     init(_ width: CGFloat, _ height: CGFloat) {
         self.init(0, 0, width, height)
     }
-    
-    init<TW: UINumericType, TH: UINumericType>(_ width: TW, _ height: TH) {
-        self.init(width.asCGFloat, height.asCGFloat)
-    }
-    
+
     init(_ origin: CGPoint, _ size: CGSize) {
         self.init(origin.x, origin.y, size.width, size.height)
     }
@@ -42,24 +38,20 @@ public extension CGRect {
         self.init(origin: CGPoint(x, y).offset(in: size, anchor: anchor), size: CGSize(width, height))
     }
     
-    init<TX: UINumericType, TY: UINumericType, TW: UINumericType, TH: UINumericType>(_ x: TX, _ y: TY, _ width: TW, _ height: TH, anchor: UnitPoint) {
-        self.init(x.asCGFloat, y.asCGFloat, width.asCGFloat, height.asCGFloat, anchor: anchor)
+    init(_ size: CGSize, anchor: UnitPoint) {
+        self.init(size.width, size.height, anchor: anchor)
     }
-
+    
     init(_ width: CGFloat, _ height: CGFloat, anchor: UnitPoint) {
         self.init(0, 0, width, height, anchor: anchor)
     }
-    
-    init<TW: UINumericType, TH: UINumericType>(_ width: TW, _ height: TH, anchor: UnitPoint) {
-        self.init(width.asCGFloat, height.asCGFloat, anchor: anchor)
-    }
-    
+
     init(_ origin: CGPoint, _ size: CGSize, anchor: UnitPoint) {
         self.init(origin.x, origin.y, size.width, size.height, anchor: anchor)
     }
 }
 
-// MARK: ----- INIT FROM TO POINT
+// MARK: ----- INIT FROM POINT TO POINT
 
 public extension CGRect {
     
@@ -70,15 +62,23 @@ public extension CGRect {
     }
 }
 
-// MARK: ----- STATIC INITIALISERS
+// MARK: ----- STATIC INITIALISER
 
 public extension CGRect {
+    
+    static func rect(from: CGPoint, to: CGPoint) -> CGRect {
+        .init(from: from, to: to)
+    }
+    
+    static func rect(_ size: CGSize) -> CGRect {
+        .init(.zero, size)
+    }
     
     static func rect(_ origin: CGPoint, _ size: CGSize) -> CGRect {
         .init(origin, size)
     }
-    
-    static func rect<TX: UINumericType, TY: UINumericType, TW: UINumericType, TH: UINumericType>(_ x: TX, _ y: TY, _ width: TW, _ height: TH) -> CGRect {
+
+    static func rect(_ x: CGFloat, _ y: CGFloat, _ width: CGFloat, _ height: CGFloat) -> CGRect {
         .init(x, y, width, height)
     }
 }
@@ -145,35 +145,23 @@ public extension CGRect {
     var maxDimension: CGFloat {
         size.maxDimension
     }
-
-    func clampedSize<T_FROM: UINumericType, T_TO: UINumericType>(from: T_FROM, to: T_TO) -> CGSize {
-        clampedSize(from: from.asCGFloat, to: to.asCGFloat)
-    }
     
     func clampedSize(from: CGFloat, to: CGFloat) -> CGSize {
         .init(self.width.clamped(from: from, to: to), self.height.clamped(from: from, to: to))
     }
     
-    func widthScaled<T: UINumericType>(_ scale: T) -> CGFloat {
-        width * scale.asCGFloat
+    func widthScaled(_ scale: CGFloat) -> CGFloat {
+        width * scale
     }
     
-    func heightScaled<T: UINumericType>(_ scale: T) -> CGFloat {
-        height * scale.asCGFloat
+    func heightScaled(_ scale: CGFloat) -> CGFloat {
+        height * scale
     }
 }
 
 // MARK: ----- SCALED
 
 public extension CGRect {
-    
-    func xScaled<T: UINumericType>(_ scale: T) -> CGFloat {
-        minX + widthScaled(scale)
-    }
-
-    func yScaled<T: UINumericType>(_ scale: T) -> CGFloat {
-        minY + heightScaled(scale)
-    }
 
     func sizeScaled(_ scale: CGPoint) -> CGSize {
         CGSize(widthScaled(scale.x), heightScaled(scale.y))
@@ -187,12 +175,67 @@ public extension CGRect {
         CGSize(widthScaled(scale.width), heightScaled(scale.height))
     }
     
-    func sizeScaled<T: UINumericType>(_ scale: T) -> CGSize {
+    func sizeScaled(_ scale: CGFloat) -> CGSize {
         CGSize(widthScaled(scale), heightScaled(scale))
     }
     
-    func sizeScaled<TX: UINumericType, TY: UINumericType>(_ xScale: TX, _ yScale: TY) -> CGSize {
+    func sizeScaled(_ xScale: CGFloat, _ yScale: CGFloat) -> CGSize {
         CGSize(widthScaled(xScale), heightScaled(yScale))
+    }
+}
+
+// MARK: ----- RELATIVE
+
+public extension CGRect {
+    
+    @available(*, deprecated, renamed: "relativeX")
+    func xScaled(_ scale: CGFloat) -> CGFloat {
+        minX + widthScaled(scale)
+    }
+
+    @available(*, deprecated, renamed: "relativeY")
+    func yScaled(_ scale: CGFloat) -> CGFloat {
+        minY + heightScaled(scale)
+    }
+    
+    /**
+     Creates a `CGFloat` relative to the x-coordinate space of the `CGRect` on which
+     it is invoked.
+     
+     To be specific, for a `relativeX` parameter value of 0.5, the resulting value
+     will be `rect.minX + 0.5 * rect.width`
+     
+     - Parameter relativeX: The relative x-coordinate of the required value
+     */
+    func relativeX(_ relativeX: CGFloat) -> CGFloat {
+        minX + widthScaled(relativeX)
+    }
+
+    /**
+     Creates a `CGFloat` relative to the y-coordinate space of the `CGRect` on which
+     it is invoked.
+     
+     To be specific, for a `relativeY` parameter value of 0.5, the resulting value
+     will be `rect.minY + 0.5 * rect.height`
+     
+     - Parameter relativeY: The relative y-coordinate of the required value
+     */
+    func relativeY(_ relativeY: CGFloat) -> CGFloat {
+        minY + heightScaled(relativeY)
+    }
+    
+    /**
+     Obtains a `CGPoint` from a `CGRect` relative to the `CGRect` itself taking
+     into account the origin.
+     
+     To be specific, for a `relativeX` paremeter value of 0.5, the resulting x-coordinate
+     of the `CGPoint` will be `rect.minX + 0.5 * rect.width`.
+     
+     - Parameter relativeX: The relative position of the x-coordinate
+     - Parameter relativeY: The relative position of the y-coordinate
+     */
+    subscript(relativeX: CGFloat, relativeY: CGFloat) -> CGPoint {
+        CGPoint(self.relativeX(relativeX), self.relativeY(relativeY))
     }
 }
 
@@ -204,14 +247,6 @@ public extension CGRect {
         inset(by: UIEdgeInsets(top: top, left: leading, bottom: bottom, right: trailing))
     }
 
-    func inset<T_TOP: UINumericType, T_LEADING: UINumericType, T_BOTTOM: UINumericType, T_TRAILING: UINumericType>(_ top: T_TOP, _ leading: T_LEADING, _ bottom: T_BOTTOM, _ trailing: T_TRAILING) -> CGRect {
-        inset(top.asCGFloat, leading.asCGFloat, bottom.asCGFloat, trailing.asCGFloat)
-    }
-
-    func inset<T: UINumericType>(_ edges: Edge.Set, _ size: T) -> CGRect {
-        inset(edges, size.asCGFloat)
-    }
-
     func inset(_ edges: Edge.Set, _ size: CGFloat) -> CGRect {
         inset(edges.inset(.top, size), edges.inset(.leading, size), edges.inset(.bottom, size), edges.inset(.trailing, size))
     }
@@ -220,56 +255,28 @@ public extension CGRect {
         inset(size, 0, 0, 0)
     }
     
-    func insetTop<T: UINumericType>(_ size: T) -> CGRect {
-        insetTop(size.asCGFloat)
-    }
-    
     func insetLeading(_ size: CGFloat) -> CGRect {
         inset(0, size, 0, 0)
-    }
-
-    func insetLeading<T: UINumericType>(_ size: T) -> CGRect {
-        insetLeading(size.asCGFloat)
     }
 
     func insetBottom(_ size: CGFloat) -> CGRect {
         inset(0, 0, size, 0)
     }
 
-    func insetBottom<T: UINumericType>(_ size: T) -> CGRect {
-        insetBottom(size.asCGFloat)
-    }
-
     func insetTrailing(_ size: CGFloat) -> CGRect {
         inset(0, 0, 0, size)
-    }
-
-    func insetTrailing<T: UINumericType>(_ size: T) -> CGRect {
-        insetTrailing(size.asCGFloat)
     }
 
     func hInset(_ size: CGFloat) -> CGRect {
         inset(0, size, 0, size)
     }
     
-    func hInset<T: UINumericType>(_ size: T) -> CGRect {
-        hInset(size.asCGFloat)
-    }
-    
     func vInset(_ size: CGFloat) -> CGRect {
         inset(size, 0, size, 0)
     }
     
-    func vInset<T: UINumericType>(_ size: T) -> CGRect {
-        vInset(size.asCGFloat)
-    }
-    
     func inset(_ size: CGFloat) -> CGRect {
         inset(size, size, size, size)
-    }
-
-    func inset<T: UINumericType>(_ size: T) -> CGRect {
-        inset(size.asCGFloat)
     }
 }
 
@@ -281,15 +288,15 @@ public extension CGRect {
         CGRect(location, sizeScaled(scale), anchor: anchor)
     }
 
-    func scaled<T: UINumericType>(_ scale: T, at location: CGPoint, anchor: UnitPoint = .topLeading) -> CGRect {
+    func scaled(_ scale: CGFloat, at location: CGPoint, anchor: UnitPoint = .topLeading) -> CGRect {
         scaled(.square(scale), at: location, anchor: anchor)
     }
 
-    func xScaled<T: UINumericType>(_ scale: T, at location: CGPoint, anchor: UnitPoint = .topLeading) -> CGRect {
+    func xScaled(_ scale: CGFloat, at location: CGPoint, anchor: UnitPoint = .topLeading) -> CGRect {
         scaled(CGSize(scale, 1), at: location, anchor: anchor)
     }
 
-    func yScaled<T: UINumericType>(_ scale: T, at location: CGPoint, anchor: UnitPoint = .topLeading) -> CGRect {
+    func yScaled(_ scale:CGFloat, at location: CGPoint, anchor: UnitPoint = .topLeading) -> CGRect {
         scaled(CGSize(1, scale), at: location, anchor: anchor)
     }
 }
@@ -302,8 +309,8 @@ public extension CGRect {
         CGRect(self.origin.offset(in: size, anchor: anchor), size)
     }
     
-    func offset<TX: UINumericType, TY: UINumericType>(_ x: TX, _ y: TY) -> CGRect {
-        offsetBy(dx: x.asCGFloat, dy: y.asCGFloat)
+    func offset(_ x: CGFloat, _ y: CGFloat) -> CGRect {
+        offsetBy(dx: x, dy: y)
     }
     
     func offset(_ point: CGPoint) -> CGRect {
@@ -318,11 +325,11 @@ public extension CGRect {
         offset(point.dx, point.dy)
     }
 
-    func xOffset<T: UINumericType>(_ x: T) -> CGRect {
+    func xOffset(_ x: CGFloat) -> CGRect {
         offset(x, 0)
     }
 
-    func yOffset<T: UINumericType>(_ y: T) -> CGRect {
+    func yOffset(_ y: CGFloat) -> CGRect {
         offset(0, y)
     }
 }
@@ -331,7 +338,7 @@ public extension CGRect {
 
 public extension CGRect {
     
-    func offset<T: UINumericType>(anchor: UnitPoint, factor: T) -> CGRect {
+    func offset(anchor: UnitPoint, factor: CGFloat) -> CGRect {
         CGRect(self.origin.offset(in: size, anchor: anchor, factor: factor), size)
     }
     
@@ -339,15 +346,15 @@ public extension CGRect {
         CGRect(self.origin.offset(in: size, anchor: anchor, factor: factor), size)
     }
     
-    func offset<TX: UINumericType, TY: UINumericType, TS: UINumericType>(_ x: TX, _ y: TY, factor: TS) -> CGRect {
-        offset(x.asCGFloat * factor.asCGFloat, y.asCGFloat * factor.asCGFloat)
+    func offset(_ x: CGFloat, _ y: CGFloat, factor: CGFloat) -> CGRect {
+        offset(x * factor, y * factor)
     }
     
-    func offset<TX: UINumericType, TY: UINumericType>(_ x: TX, _ y: TY, factor: CGSize) -> CGRect {
-        offset(x.asCGFloat * factor.x, y.asCGFloat * factor.y)
+    func offset(_ x: CGFloat, _ y: CGFloat, factor: CGSize) -> CGRect {
+        offset(x * factor.x, y * factor.y)
     }
     
-    func offset<T: UINumericType>(_ point: CGPoint, factor: T) -> CGRect {
+    func offset(_ point: CGPoint, factor: CGFloat) -> CGRect {
         offset(point.x, point.y, factor: factor)
     }
     
@@ -355,7 +362,7 @@ public extension CGRect {
         offset(point.x, point.y, factor: factor)
     }
     
-    func offset<T: UINumericType>(_ point: CGSize, factor: T) -> CGRect {
+    func offset(_ point: CGSize, factor: CGFloat) -> CGRect {
         offset(point.width, point.height, factor: factor)
     }
     
@@ -363,7 +370,7 @@ public extension CGRect {
         offset(point.width, point.height, factor: factor)
     }
     
-    func offset<T: UINumericType>(_ point: CGVector, factor: T) -> CGRect {
+    func offset(_ point: CGVector, factor: CGFloat) -> CGRect {
         offset(point.dx, point.dy, factor: factor)
     }
     
@@ -371,11 +378,27 @@ public extension CGRect {
         offset(point.dx, point.dy, factor: factor)
     }
 
-    func xOffset<T: UINumericType, TS: UINumericType>(_ x: T, factor: TS) -> CGRect {
+    func xOffset(_ x: CGFloat, factor: CGFloat) -> CGRect {
         offset(x, 0, factor: factor)
     }
 
-    func yOffset<T: UINumericType, TS: UINumericType>(_ y: T, factor: TS) -> CGRect {
+    func yOffset(_ y: CGFloat, factor: CGFloat) -> CGRect {
         offset(0, y, factor: factor)
+    }
+}
+
+// MARK: ----- TO WITH FACTOR
+
+public extension CGRect {
+
+    func to(_ destination: CGRect, _ factor: CGFloat) -> CGRect {
+        to(destination, .square(factor))
+    }
+    
+    func to(_ destination: CGRect, _ factor: CGSize) -> CGRect {
+        CGRect(
+            from: origin.to(destination.origin, factor),
+            to: bottomTrailing.to(destination.bottomTrailing, factor)
+        )
     }
 }

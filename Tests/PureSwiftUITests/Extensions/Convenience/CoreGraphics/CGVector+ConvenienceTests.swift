@@ -34,10 +34,7 @@ class CGVectorConvenienceExtensionsTests: XCTestCase {
 extension CGVectorConvenienceExtensionsTests {
     
     func testInit() {
-        XCTAssertEqual(CGVector(dx.asInt), CGVector(dx, dx))
-        XCTAssertEqual(CGVector(dx.asInt), CGVector(dx, dx))
-        XCTAssertEqual(CGVector(dx.asInt, dy.asInt), vector)
-        XCTAssertEqual(CGVector(dx.asInt, dy.asInt), vector)
+        XCTAssertEqual(CGVector(dx, dy), vector)
     }
 }
 

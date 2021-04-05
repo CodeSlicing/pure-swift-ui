@@ -10,8 +10,8 @@ import Foundation
 
 public extension UnitPoint {
     
-    init<TX: UINumericType, TY: UINumericType>(_ x: TX, _ y: TY) {
-        self.init(x: x.asCGFloat, y: y.asCGFloat)
+    init(_ x: CGFloat, _ y: CGFloat) {
+        self.init(x: x, y: y)
     }
     
     var asCGPoint: CGPoint {

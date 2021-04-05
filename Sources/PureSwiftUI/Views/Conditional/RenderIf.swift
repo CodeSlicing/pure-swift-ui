@@ -17,7 +17,6 @@ public struct RenderIf<IfContent: View>: View {
         self.ifContent = ifContent
     }
 
-    @inlinable
     public var body: some View {
         if render {
             return IfContent?.some(ifContent())
@@ -26,7 +25,6 @@ public struct RenderIf<IfContent: View>: View {
         }
     }
     
-    @inlinable
     public func elseRender<ElseContent: View>(@ViewBuilder content elseContent: @escaping () -> ElseContent) -> some View {
         RenderIfBuilder {
             if self.render {

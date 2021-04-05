@@ -503,14 +503,26 @@ This project adheres to a [semantic versioning](https://semver.org) paradigm. I'
 - [1.14.2][tag-1.14.2] Add static constructor for `CGPoint` and convenience constructor for `LinearGradient` specifying angle with further standardization of API.
 - [1.15.0][tag-1.15.0] Fix for segmentation fault in Xcode 11.4 and Cocoapods support
 - [1.15.1][tag-1.15.1] Fix for build failure in XCode 11.5-beta-01
- 
+- [1.16.0][tag-1.16.0] Add convenience extensions for gradients and Colors
+- [1.16.1][tag-1.16.1] Add static initialiser explicitly for 8 bit `Color`: rgb8
+- [1.20.0][tag-1.20.0] Add SFSymbols for Swift 2 and new preview devices in Xcode 12
+- [1.20.1][tag-1.20.1] Add static initialiser explicitly for 8 bit `Color`: rgb8
+- [2.0.0][tag-2.0.0] Refactor for build and runtime performance. Remove `UINumericType` and remove all deprecated code. This is a breaking change; be aware!
+- [2.0.1][tag-2.0.1] Add static initialiser explicitly for 8 bit `Color`: rgb8
+- [2.0.2][tag-2.0.2] Add extensions for drawing circles on `Path`
+- [2.0.3][tag-2.0.3] Updated logic for showing control points so paths display well for closed sub-paths when either stroked or filled 
+- [2.0.4][tag-2.0.4] Resolve ambiguity with native offset modifier on shape 
+- [2.0.5][tag-2.0.5] Fix `shadowIfNot` when using explicity y-offset 
+- [2.0.6][tag-2.0.6] Add static initialisers and convenience functions to `CGRect` and `GeometryProxy`
+- [2.1.0][tag-2.1.0] Add relative coordinate functionality to layout guides
+
 ## Licensing
 
 This project is licensed under the MIT License - see [here][mit-licence] for details.
 
 ## Contact
 
-You can contact me on Twitter [@CodeSlice][codeslice-twitter]. Happy to hear suggestions for improving the package, or feature suggestions. I've probably made a few boo boos along the way, so I'm open to course correction. I won't be open-sourcing the project for the moment since I simply don't have time to administer PRs at this point, though I do intend to do so in the future if there's enough interest.
+You can contact me on Twitter [@CodeSlice][codeslice-twitter]. Happy to hear suggestions for improving the package, or feature requests. I've probably made a few boo boos along the way, so I'm open to course correction. I won't be open-sourcing the project for the moment since I simply don't have time to administer PRs at this point, though I do intend to do so in the future if there's enough interest.
 
 <!---
  external links:
@@ -556,6 +568,18 @@ version links:
 [tag-1.14.2]: https://github.com/CodeSlicing/pure-swift-ui/tree/1.14.2
 [tag-1.15.0]: https://github.com/CodeSlicing/pure-swift-ui/tree/1.15.0
 [tag-1.15.1]: https://github.com/CodeSlicing/pure-swift-ui/tree/1.15.1
+[tag-1.16.0]: https://github.com/CodeSlicing/pure-swift-ui/tree/1.16.0
+[tag-1.16.1]: https://github.com/CodeSlicing/pure-swift-ui/tree/1.16.1
+[tag-1.20.0]: https://github.com/CodeSlicing/pure-swift-ui/tree/1.20.0
+[tag-1.20.1]: https://github.com/CodeSlicing/pure-swift-ui/tree/1.20.1
+[tag-2.0.0]: https://github.com/CodeSlicing/pure-swift-ui/tree/2.0.0
+[tag-2.0.1]: https://github.com/CodeSlicing/pure-swift-ui/tree/2.0.1
+[tag-2.0.2]: https://github.com/CodeSlicing/pure-swift-ui/tree/2.0.2
+[tag-2.0.3]: https://github.com/CodeSlicing/pure-swift-ui/tree/2.0.3
+[tag-2.0.4]: https://github.com/CodeSlicing/pure-swift-ui/tree/2.0.4
+[tag-2.0.5]: https://github.com/CodeSlicing/pure-swift-ui/tree/2.0.5
+[tag-2.0.6]: https://github.com/CodeSlicing/pure-swift-ui/tree/2.0.6
+[tag-2.1.0]: https://github.com/CodeSlicing/pure-swift-ui/tree/2.1.0
 
 <!---
  local docs:

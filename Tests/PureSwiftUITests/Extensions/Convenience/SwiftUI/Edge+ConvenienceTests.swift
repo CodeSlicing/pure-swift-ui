@@ -19,13 +19,9 @@ extension EdgeSetConvenienceExtensionsTests {
     
     func testInset() {
         XCTAssertEqual(Edge.Set.horizontal.inset(.horizontal, size), size)
-        XCTAssertEqual(Edge.Set.horizontal.inset(.horizontal, size.asInt), size)
         XCTAssertEqual(Edge.Set.horizontal.inset(.vertical, size), 0)
-        XCTAssertEqual(Edge.Set.horizontal.inset(.vertical, size.asInt), 0)
 
         XCTAssertEqual(Edge.Set.horizontal.hInset(size), size)
-        XCTAssertEqual(Edge.Set.horizontal.hInset(size.asInt), size)
         XCTAssertEqual(Edge.Set.horizontal.vInset(size), 0)
-        XCTAssertEqual(Edge.Set.horizontal.vInset(size.asInt), 0)
     }
 }

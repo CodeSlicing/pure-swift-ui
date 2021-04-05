@@ -26,9 +26,7 @@ extension CGPointConvenienceExtensionsTests {
     
       func testInit() {
         XCTAssertEqual(CGPoint(x), CGPoint(x: x, y: x))
-        XCTAssertEqual(CGPoint(x.asInt), CGPoint(x: x, y: x))
         XCTAssertEqual(CGPoint(x, y), testPoint)
-        XCTAssertEqual(CGPoint(x.asInt, y), testPoint)
       }
 }
 
@@ -115,7 +113,6 @@ extension CGPointConvenienceExtensionsTests {
         let offset = CGPoint(10, 20)
         let expectedOffset = CGPoint(testPoint.x + offset.x, testPoint.y + offset.y)
         XCTAssertEqual(testPoint.offset(offset.x, offset.y), expectedOffset)
-        XCTAssertEqual(testPoint.offset(offset.x.asInt, offset.y), expectedOffset)
         XCTAssertEqual(testPoint.offset(offset), expectedOffset)
         XCTAssertEqual(testPoint.offset(offset.asCGVector), expectedOffset)
         XCTAssertEqual(testPoint.offset(offset.asCGSize), expectedOffset)
@@ -140,7 +137,6 @@ extension CGPointConvenienceExtensionsTests {
         let expectedOffset = CGPoint(testPoint.x + offset.x, testPoint.y + offset.y)
         let expectedHalfOffset = CGPoint(testPoint.x + offset.x * 0.5, testPoint.y + offset.y * 0.5)
         XCTAssertEqual(testPoint.offset(offset.x, offset.y, factor: 0), testPoint)
-        XCTAssertEqual(testPoint.offset(offset.x.asInt, offset.y, factor: 0), testPoint)
         XCTAssertEqual(testPoint.offset(offset, factor: 0), testPoint)
         XCTAssertEqual(testPoint.offset(offset.asCGVector, factor: 0), testPoint)
         XCTAssertEqual(testPoint.offset(offset.asCGSize, factor: 0), testPoint)
@@ -148,7 +144,6 @@ extension CGPointConvenienceExtensionsTests {
         XCTAssertEqual(testPoint.yOffset(offset.y, factor: 0), testPoint)
         
         XCTAssertEqual(testPoint.offset(offset.x, offset.y, factor: 0.5), expectedHalfOffset)
-        XCTAssertEqual(testPoint.offset(offset.x.asInt, offset.y, factor: 0.5), expectedHalfOffset)
         XCTAssertEqual(testPoint.offset(offset, factor: 0.5), expectedHalfOffset)
         XCTAssertEqual(testPoint.offset(offset.asCGVector, factor: 0.5), expectedHalfOffset)
         XCTAssertEqual(testPoint.offset(offset.asCGSize, factor: 0.5), expectedHalfOffset)
@@ -156,7 +151,6 @@ extension CGPointConvenienceExtensionsTests {
         XCTAssertEqual(testPoint.yOffset(offset.y, factor: 0.5), CGPoint(testPoint.x, expectedHalfOffset.y))
         
         XCTAssertEqual(testPoint.offset(offset.x, offset.y, factor: 1), expectedOffset)
-        XCTAssertEqual(testPoint.offset(offset.x.asInt, offset.y, factor: 1), expectedOffset)
         XCTAssertEqual(testPoint.offset(offset, factor: 1), expectedOffset)
         XCTAssertEqual(testPoint.offset(offset.asCGVector, factor: 1), expectedOffset)
         XCTAssertEqual(testPoint.offset(offset.asCGSize, factor: 1), expectedOffset)
@@ -211,20 +205,16 @@ extension CGPointConvenienceExtensionsTests {
     
         let expectedResult = CGPoint(min, min)
         let result = CGPoint(min - 1, min - 1).clamped(from: min, to: max)
-        let result2 = CGPoint(min - 1, min - 1).clamped(from: min.asInt, to: max)
 
         XCTAssertEqual(result, expectedResult)
-        XCTAssertEqual(result2, expectedResult)
     }
 
     func testClampedMax() {
     
         let expectedResult = CGPoint(max, max)
         let result = CGPoint(max + 1, max + 1).clamped(from: min, to: max)
-        let result2 = CGPoint(max + 1, max + 1).clamped(from: min.asInt, to: max)
 
         XCTAssertEqual(result, expectedResult)
-        XCTAssertEqual(result2, expectedResult)
     }
 
     func testClampedMid() {
@@ -232,10 +222,8 @@ extension CGPointConvenienceExtensionsTests {
         let mid = (max - min) / 2 + min
         let expectedResult = CGPoint(mid, mid)
         let result = CGPoint(mid, mid).clamped(from: min, to: max)
-        let result2 = CGPoint(mid, mid).clamped(from: min.asInt, to: max)
 
         XCTAssertEqual(result, expectedResult)
-        XCTAssertEqual(result2, expectedResult)
     }
 }
 
@@ -296,21 +284,6 @@ extension CGPointConvenienceExtensionsTests {
 
 extension CGPointConvenienceExtensionsTests {
     
-    func testDeprecatedCalcAngleTo() {
-        
-        let offsetPoint1 = testPoint.offset(1, -1)
-        let offsetPoint2 = testPoint.offset(-1, 1)
-        let offsetPoint3 = testPoint.offset(0, 2)
-
-        XCTAssertEqual(testPoint.calcAngleTo(offsetPoint1), .topTrailing)
-        XCTAssertEqual(testPoint.calcAngleTo(offsetPoint2), .bottomLeading)
-        XCTAssertEqual(testPoint.calcAngleTo(offsetPoint3), .bottom)
-        
-        XCTAssertEqual(testPoint.calcAngleTo(offsetPoint1.x, offsetPoint1.y), .topTrailing)
-        XCTAssertEqual(testPoint.calcAngleTo(offsetPoint2.x, offsetPoint2.y), .bottomLeading)
-        XCTAssertEqual(testPoint.calcAngleTo(offsetPoint3.x, offsetPoint3.y), .bottom)
-    }
-    
     func testangleTo() {
         
         let offsetPoint1 = testPoint.offset(1, -1)
@@ -330,35 +303,6 @@ extension CGPointConvenienceExtensionsTests {
 // MARK: ----- CALC RADIUS TO
 
 extension CGPointConvenienceExtensionsTests {
-    
-    func testDeprecatedCalcRadiusTo() {
-        
-        let offsetPoint1 = testPoint.offset(1, 0)
-        let offsetPoint2 = testPoint.offset(1, 1)
-        let offsetPoint3 = testPoint.offset(-1, -1)
-        let offsetPoint4 = testPoint.offset(0, -3)
-        
-        XCTAssertEqual(testPoint.calcRadiusTo(offsetPoint1), 1)
-        XCTAssertEqual(testPoint.calcRadiusTo(offsetPoint2), sqrt(2.0))
-        XCTAssertEqual(testPoint.calcRadiusTo(offsetPoint3), sqrt(2.0))
-        XCTAssertEqual(testPoint.calcRadiusTo(offsetPoint4), 3)
-        
-        XCTAssertEqual(testPoint.calcRadiusTo(offsetPoint1.x, offsetPoint1.y), 1)
-        XCTAssertEqual(testPoint.calcRadiusTo(offsetPoint2.x, offsetPoint2.y), sqrt(2.0))
-        XCTAssertEqual(testPoint.calcRadiusTo(offsetPoint3.x, offsetPoint3.y), sqrt(2.0))
-        XCTAssertEqual(testPoint.calcRadiusTo(offsetPoint4.x, offsetPoint4.y), 3)
-        
-        //squared radius
-        XCTAssertEqual(testPoint.calcSquaredRadiusTo(offsetPoint1), 1)
-        XCTAssertEqual(testPoint.calcSquaredRadiusTo(offsetPoint2), 2)
-        XCTAssertEqual(testPoint.calcSquaredRadiusTo(offsetPoint3), 2)
-        XCTAssertEqual(testPoint.calcSquaredRadiusTo(offsetPoint4), 9)
-        
-        XCTAssertEqual(testPoint.calcSquaredRadiusTo(offsetPoint1.x, offsetPoint1.y), 1)
-        XCTAssertEqual(testPoint.calcSquaredRadiusTo(offsetPoint2.x, offsetPoint2.y), 2)
-        XCTAssertEqual(testPoint.calcSquaredRadiusTo(offsetPoint3.x, offsetPoint3.y), 2)
-        XCTAssertEqual(testPoint.calcSquaredRadiusTo(offsetPoint4.x, offsetPoint4.y), 9)
-    }
     
     func testRadiusTo() {
         

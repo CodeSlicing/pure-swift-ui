@@ -67,76 +67,76 @@ public func CaptionText<S: StringProtocol>(_ content: S, _ color: Color? = nil, 
 
 // MARK: ----- CUSTOM
 
-public func CustomText<S: StringProtocol, T: UINumericType>(_ content: S, _ name: String, _ size: T) -> Text {
+public func CustomText<S: StringProtocol>(_ content: S, _ name: String, _ size: CGFloat) -> Text {
     CustomText(content, name, size, nil, nil)
 }
 
-public func CustomText<S: StringProtocol, T: UINumericType>(_ content: S, _ name: String, _ size: T, _ weight: Font.Weight? = nil) -> Text {
+public func CustomText<S: StringProtocol>(_ content: S, _ name: String, _ size: CGFloat, _ weight: Font.Weight? = nil) -> Text {
     CustomText(content, name, size, nil, weight)
 }
 
-public func CustomText<S: StringProtocol, T: UINumericType>(_ content: S, _ name: String, _ size: T, _ color: Color? = nil) -> Text {
+public func CustomText<S: StringProtocol>(_ content: S, _ name: String, _ size: CGFloat, _ color: Color? = nil) -> Text {
     CustomText(content, name, size, color, nil)
 }
 
-public func CustomText<S: StringProtocol, T: UINumericType>(_ content: S, _ name: String, _ size: T, _ color: Color? = nil, _ weight: Font.Weight? = nil) -> Text {
+public func CustomText<S: StringProtocol>(_ content: S, _ name: String, _ size: CGFloat, _ color: Color? = nil, _ weight: Font.Weight? = nil) -> Text {
     Text(content)
         .customFont(name, size, color, weight)
 }
 
 // CUSTOM FONT THAT SCALES
 
-public func CustomTextThatScales<S: StringProtocol, T: UINumericType>(_ content: S, _ name: String, _ size: T) -> some View {
+public func CustomTextThatScales<S: StringProtocol>(_ content: S, _ name: String, _ size: CGFloat) -> some View {
     CustomTextThatScales(content, name, size, nil, nil)
 }
 
-public func CustomTextThatScales<S: StringProtocol, T: UINumericType>(_ content: S, _ name: String, _ size: T, _ weight: Font.Weight? = nil) -> some View {
+public func CustomTextThatScales<S: StringProtocol>(_ content: S, _ name: String, _ size: CGFloat, _ weight: Font.Weight? = nil) -> some View {
     CustomTextThatScales(content, name, size, nil, weight)
 }
 
-public func CustomTextThatScales<S: StringProtocol, T: UINumericType>(_ content: S, _ name: String, _ size: T, _ color: Color? = nil) -> some View {
+public func CustomTextThatScales<S: StringProtocol>(_ content: S, _ name: String, _ size: CGFloat, _ color: Color? = nil) -> some View {
     CustomTextThatScales(content, name, size, color, nil)
 }
 
-public func CustomTextThatScales<S: StringProtocol, T: UINumericType>(_ content: S, _ name: String, _ size: T, _ color: Color? = nil, _ weight: Font.Weight? = nil) -> some View {
+public func CustomTextThatScales<S: StringProtocol>(_ content: S, _ name: String, _ size: CGFloat, _ color: Color? = nil, _ weight: Font.Weight? = nil) -> some View {
     Text(content)
         .customFontThatScales(name, size, color, weight)
 }
 
 // MARK: ----- CUSTOM WITH SIZE
 
-public func CustomText<S: StringProtocol, T: UINumericType>(_ content: S, _ size: T) -> Text {
+public func CustomText<S: StringProtocol>(_ content: S, _ size: CGFloat) -> Text {
     CustomText(content, size, nil, nil)
 }
 
-public func CustomText<S: StringProtocol, T: UINumericType>(_ content: S, _ size: T, _ weight: Font.Weight? = nil) -> Text {
+public func CustomText<S: StringProtocol>(_ content: S, _ size: CGFloat, _ weight: Font.Weight? = nil) -> Text {
     CustomText(content, size, nil, weight)
 }
 
-public func CustomText<S: StringProtocol, T: UINumericType>(_ content: S, _ size: T, _ color: Color? = nil) -> Text {
+public func CustomText<S: StringProtocol>(_ content: S, _ size: CGFloat, _ color: Color? = nil) -> Text {
     CustomText(content, size, color, nil)
 }
 
-public func CustomText<S: StringProtocol, T: UINumericType>(_ content: S, _ size: T, _ color: Color? = nil, _ weight: Font.Weight? = nil) -> Text {
+public func CustomText<S: StringProtocol>(_ content: S, _ size: CGFloat, _ color: Color? = nil, _ weight: Font.Weight? = nil) -> Text {
         Text(content)
             .customFont(size, color, weight)
 }
 
 // CUSTOM FONT SIZE THAT SCALES
 
-public func CustomTextThatScales<S: StringProtocol, T: UINumericType>(_ content: S, _ size: T) -> some View {
+public func CustomTextThatScales<S: StringProtocol>(_ content: S, _ size: CGFloat) -> some View {
     CustomTextThatScales(content, size, nil, nil)
 }
 
-public func CustomTextThatScales<S: StringProtocol, T: UINumericType>(_ content: S, _ size: T, _ weight: Font.Weight? = nil) -> some View {
+public func CustomTextThatScales<S: StringProtocol>(_ content: S, _ size: CGFloat, _ weight: Font.Weight? = nil) -> some View {
     CustomTextThatScales(content, size, nil, weight)
 }
 
-public func CustomTextThatScales<S: StringProtocol, T: UINumericType>(_ content: S, _ size: T, _ color: Color? = nil) -> some View {
+public func CustomTextThatScales<S: StringProtocol>(_ content: S, _ size: CGFloat, _ color: Color? = nil) -> some View {
     CustomTextThatScales(content, size, color, nil)
 }
 
-public func CustomTextThatScales<S: StringProtocol, T: UINumericType>(_ content: S, _ size: T, _ color: Color? = nil, _ weight: Font.Weight? = nil) -> some View {
+public func CustomTextThatScales<S: StringProtocol>(_ content: S, _ size: CGFloat, _ color: Color? = nil, _ weight: Font.Weight? = nil) -> some View {
         Text(content)
             .customFontThatScales(size, color, weight)
 }
