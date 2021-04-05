@@ -13,7 +13,6 @@
   - [Image Resizing](#image-resizing)
   - [Clip Shapes and Strokes](#clip-shapes-and-strokes)
   - [Frame](#frame)
-- [Type Coercion](#type-coercion)
 - [Navigating Coordinate Spaces](#navigating-coordinate-spaces)
   - [GeometryReader Modifier](#geometryreader-modifier)
   - [Offsets and Absolute Positioning](#offsets-and-absolute-positioning)
@@ -46,13 +45,13 @@ The code below shows how you would generate this label, including a small offset
 ```swift
 //...
 
-private let width: Double = 200
-private let height: Int = 100
-private let xOffset: Int = 10
-private let yOffset: Double = 10
-private let rotation: Int = 20
-private let scale: Double = 1.1
-private let opacity: Float = 0.9
+private let width: CGFloat = 200
+private let height: CGFloat = 100
+private let xOffset: CGFloat = 10
+private let yOffset: CGFloat = 10
+private let rotation: CGFloat = 20
+private let scale: CGFloat = 1.1
+private let opacity: Double = 0.9
 
 //...
 
@@ -61,14 +60,14 @@ private let opacity: Float = 0.9
 Text("PureSwiftUI")
     .font(Font.title.bold())
     .foregroundColor(.white)
-    .frame(width: CGFloat(width), height: height)
+    .frame(width: width, height: height)
     .background(Color.red)
     .clipShape(Capsule())
     .overlay(Capsule().stroke(Color.black, lineWidth: 4))
-    .rotationEffect(.degrees(Double(rotation)))
-    .offset(x: CGFloat(xOffset), y: CGFloat(yOffset))
-    .scaleEffect(CGFloat(scale))
-    .opacity(Double(opacity))
+    .rotationEffect(.degrees(rotation))
+    .offset(x: xOffset, y: yOffset)
+    .scaleEffect(scale)
+    .opacity(opacity)
 
 // with PureSwiftUI
 
@@ -203,23 +202,6 @@ Frame(100, 60, .blue)
 
 The same argument types can be passed to `Frame` that can be passed to the `frame` modifier extensions so it's extremely flexible, descriptive, and concise.
 
-## Type Coercion
-
-Coercing variables can also lead to obfuscated design. In many common use-cases, with [PureSwiftUI][pure-swift-ui] you don’t have to worry about passing specifically typed parameters. As long as your variable is an `Int`, `Double`, `Float`, or `CGFloat`, you’re fine. In most cases you can mix types in the same modifier.
-
-```swift
-let width: Double = 200
-let height = 100
-
-//...
-
-// native SwiftUI
-.frame(width: CGFloat(width), height: CGFloat(height))
-
-// PureSwiftUI
-.frame(width, height)
-```
-
 ## Navigating Coordinate Spaces
 
 ### GeometryReader Modifier
@@ -266,7 +248,7 @@ You can find a gist for this [here][gist-offset-to-position-demo] but the import
 ```swift
 DialerButton()
 ...
-    .offsetToPositionIfNot(showingDialer, phoneButtonPosition)
+.offsetToPositionIfNot(showingDialer, phoneButtonPosition)
 ```
 
 Since there's no need to perform any offset calculations, I can simply arrange the dialer buttons how I would do normally, and offset them when required.
