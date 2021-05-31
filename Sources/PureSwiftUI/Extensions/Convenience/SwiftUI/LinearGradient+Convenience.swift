@@ -45,3 +45,24 @@ public extension LinearGradient {
         self.init(stops, to: to)
     }
 }
+
+
+public extension LinearGradient {
+    
+    init(_ gradient: Gradient, from: UnitPoint, to: UnitPoint) {
+        self.init(gradient: gradient, startPoint: from, endPoint: to)
+    }
+    
+    init(_ gradient: Gradient, to: UnitPoint) {
+        self.init(gradient, from: to.inverted(), to: to)
+    }
+    
+    init(_ gradient: Gradient, from: UnitPoint) {
+        self.init(gradient, from: from, to: from.inverted())
+    }
+    
+    init(_ gradient: Gradient, angle: Angle) {
+        let to = angle.asUnitPoint
+        self.init(gradient, to: to)
+    }
+}

@@ -22,24 +22,3 @@ public extension CGFloat {
         CGFloat(self + (destination - self) * factor)
     }
 }
-
-//// MARK: ----- CONVERSIONS
-//
-//public extension CGFloat {
-//    
-//    var asInt: Int {
-//        Int(self)
-//    }
-//    
-//    var asDouble: Double {
-//        Double(self)
-//    }
-//    
-//    var asFloat: Float {
-//        Float(self)
-//    }
-//    
-//    var asCGFloat: CGFloat {
-//        self
-//    }
-//}

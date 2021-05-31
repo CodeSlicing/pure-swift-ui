@@ -84,3 +84,24 @@ extension AngleConvenienceExtensionsTests {
         assertEqual((Angle.leading + 360.degrees).asUnitPoint, .leading)
     }
 }
+
+// MARK: ----- TO
+
+extension AngleConvenienceExtensionsTests {
+    
+    func testToAngleInDegreesWithFactor() {
+        let angeFrom = 5.degrees
+        let angleTo = 10.degrees
+        XCTAssertEqual(angeFrom.to(angleTo, 0), 5.degrees)
+        XCTAssertEqual(angeFrom.to(angleTo, 0.5), 7.5.degrees)
+        XCTAssertEqual(angeFrom.to(angleTo, 1), 10.degrees)
+    }
+    
+    func testToAngleInRadiansWithFactor() {
+        let angeFrom = 5.radians
+        let angleTo = 10.radians
+        XCTAssertEqual(angeFrom.to(angleTo, 0), 5.radians)
+        XCTAssertEqual(angeFrom.to(angleTo, 0.5), 7.5.radians)
+        XCTAssertEqual(angeFrom.to(angleTo, 1), 10.radians)
+    }
+}

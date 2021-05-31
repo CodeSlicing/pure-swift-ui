@@ -135,13 +135,39 @@ extension CGRectConvenienceExtensionsTests {
     func testScaled() {
         XCTAssertEqual(rect.widthScaled(0.5), width * 0.5)
         XCTAssertEqual(rect.heightScaled(0.5), height * 0.5)
-        XCTAssertEqual(rect.xScaled(0.5), rect.midX)
-        XCTAssertEqual(rect.yScaled(0.5), rect.midY)
         XCTAssertEqual(rect.sizeScaled(0.5), CGSize(width * 0.5, height * 0.5))
         XCTAssertEqual(rect.sizeScaled(.point(0.5)), CGSize(width * 0.5, height * 0.5))
         XCTAssertEqual(rect.sizeScaled(.vector(0.5)), CGSize(width * 0.5, height * 0.5))
         XCTAssertEqual(rect.sizeScaled(.size(0.5)), CGSize(width * 0.5, height * 0.5))
         XCTAssertEqual(rect.sizeScaled(0.1, 0.5), CGSize(width * 0.1, height * 0.5))
+    }
+}
+
+// MARK: ----- RELATIVE
+
+extension CGRectConvenienceExtensionsTests {
+    
+    func testRelative() {
+        XCTAssertEqual(rect.xScaled(0.5), rect.midX)
+        XCTAssertEqual(rect.yScaled(0.5), rect.midY)
+        XCTAssertEqual(rect.relativeX(0.5), rect.midX)
+        XCTAssertEqual(rect.relativeY(0.5), rect.midY)
+        XCTAssertEqual(rect.relativeX(0), rect.minX)
+        XCTAssertEqual(rect.relativeY(0), rect.minY)
+        XCTAssertEqual(rect.relativeX(1), rect.maxX)
+        XCTAssertEqual(rect.relativeY(1), rect.maxY)
+        XCTAssertEqual(rect.relativeX(0.75), rect.minX + rect.widthScaled(0.75))
+        XCTAssertEqual(rect.relativeY(0.75), rect.minY + rect.heightScaled(0.75))
+    }
+    
+    func testRelativeSubscript() {
+        XCTAssertEqual(rect[0, 0], rect.origin)
+        XCTAssertEqual(rect[1, 1], rect.extent)
+        XCTAssertEqual(rect[1, 1], rect.bottomTrailing)
+        XCTAssertEqual(rect[0.5, 0.5], rect.center)
+        XCTAssertEqual(rect[0, 0.5], rect.leading)
+        XCTAssertEqual(rect[0.5, 1], rect.bottom)
+        XCTAssertEqual(rect[0.25, 0.75], CGPoint(rect.relativeX(0.25), rect.relativeY(0.75)))
     }
 }
 
