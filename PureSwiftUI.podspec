@@ -11,6 +11,9 @@ We all love SwiftUI, and what the engineers at Apple have achieved is nothing sh
   spec.social_media_url   = "https://twitter.com/CodeSlice"
   
   spec.ios.deployment_target = "13.0"
+  spec.macos.deployment_target = "10.15"
+  spec.tvos.deployment_target = "13.0"
+  spec.watchos.deployment_target = "6.0"
   
   spec.source = { :git => "https://github.com/CodeSlicing/pure-swift-ui.git", :tag => "#{spec.version}" }
 

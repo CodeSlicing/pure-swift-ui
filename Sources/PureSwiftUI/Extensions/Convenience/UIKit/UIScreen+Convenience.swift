@@ -6,6 +6,7 @@
 //  Copyright © 2019 Adam Fordyce. All rights reserved.
 //
 
+#if canImport(UIKit) && !os(watchOS)
 import UIKit
 
 public extension UIScreen {
@@ -150,3 +151,4 @@ public extension UIScreen {
         bounds.maxY
     }
 }
+#endif

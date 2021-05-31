@@ -8,6 +8,8 @@
 
 import SwiftUI
 
+// MARK: ----- FILL AND STROKE
+
 public extension Shape {
     
     func fillColor(_ color: Color, style: FillStyle = FillStyle()) -> some View {
@@ -17,12 +19,16 @@ public extension Shape {
     func strokeColor(_ color: Color) -> some View {
         stroke(color)
     }
-    
+
+    func strokeColor(_ color: Color, style: StrokeStyle) -> some View {
+        stroke(color, style: style)
+    }
+
     func strokeColor(_ color: Color, lineWidth: CGFloat) -> some View {
         stroke(color, lineWidth: lineWidth)
     }
     
-    // named
+    // named color
     func fillColor(_ colorName: String, style: FillStyle = FillStyle()) -> some View {
         fill(Color(colorName), style: style)
     }
@@ -30,9 +36,35 @@ public extension Shape {
     func strokeColor(_ colorName: String) -> some View {
         stroke(Color(colorName))
     }
-    
+
+    func strokeColor(_ colorName: String, style: StrokeStyle) -> some View {
+        stroke(Color(colorName), style: style)
+    }
+
     func strokeColor(_ colorName: String, lineWidth: CGFloat) -> some View {
         stroke(Color(colorName), lineWidth: lineWidth)
+    }
+}
+
+// MARK: ----- EOFILL
+
+public extension Shape {
+    
+    func eoFill<S: ShapeStyle>(_ content: S, antialiased: Bool = true) -> some View {
+        fill(content, style: .init(eoFill: true, antialiased: antialiased))
+    }
+    
+    func eoFill(antialiased: Bool = true) -> some View {
+        fill(style: .init(eoFill: true, antialiased: antialiased))
+    }
+    
+    func eoFillColor(_ color: Color, antialiased: Bool = true) -> some View {
+        eoFill(color, antialiased: antialiased)
+    }
+    
+    // named color
+    func eoFillColor(_ colorName: String, antialiased: Bool = true) -> some View {
+        eoFill(Color(colorName), antialiased: antialiased)
     }
 }
 

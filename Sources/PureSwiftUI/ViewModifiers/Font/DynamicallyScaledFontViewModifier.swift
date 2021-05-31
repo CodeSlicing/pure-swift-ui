@@ -14,7 +14,11 @@ public struct DynamicallyScalingFontViewModifier: ViewModifier {
     var weight: Font.Weight?
 
     public func body(content: Content) -> some View {
+        #if os(macOS)
+        let scaledSize = CGFloat(17)
+        #else
         let scaledSize = UIFontMetrics.default.scaledValue(for: size)
+        #endif
         return content.font(createFont(scaledSize: scaledSize))
     }
     
