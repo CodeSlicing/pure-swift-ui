@@ -9,26 +9,26 @@
 public extension AngularGradient {
     
     init(_ colors: [Color], center: UnitPoint = .center, from: Angle, to: Angle) {
-        self.init(gradient: Gradient(colors), center: center, startAngle: adjustAngle(from), endAngle: adjustAngle(to))
+        self.init(gradient: Gradient(colors), center: center, startAngle: normaliseAngle(from), endAngle: normaliseAngle(to))
     }
 
     init(_ colors: [Color], center: UnitPoint = .center, angle: Angle) {
-        self.init(gradient: Gradient(colors), center: center, angle: adjustAngle(angle))
+        self.init(gradient: Gradient(colors), center: center, angle: normaliseAngle(angle))
     }
     
     init(_ stops: [GradientStopComponents], center: UnitPoint = .center, from: Angle, to: Angle) {
-        self.init(gradient: Gradient(stops), center: center, startAngle: adjustAngle(from), endAngle: adjustAngle(to))
+        self.init(gradient: Gradient(stops), center: center, startAngle: normaliseAngle(from), endAngle: normaliseAngle(to))
     }
 
     init(_ stops: [GradientStopComponents], center: UnitPoint = .center, angle: Angle) {
-        self.init(gradient: Gradient(stops), center: center, angle: adjustAngle(angle))
+        self.init(gradient: Gradient(stops), center: center, angle: normaliseAngle(angle))
     }
     
     init(_ gradient: Gradient, center: UnitPoint = .center, from: Angle, to: Angle) {
-        self.init(gradient: gradient, center: center, startAngle: adjustAngle(from), endAngle: adjustAngle(to))
+        self.init(gradient: gradient, center: center, startAngle: normaliseAngle(from), endAngle: normaliseAngle(to))
     }
 
     init(_ gradient: Gradient, center: UnitPoint = .center, angle: Angle) {
-        self.init(gradient: gradient, center: center, angle: adjustAngle(angle))
+        self.init(gradient: gradient, center: center, angle: normaliseAngle(angle))
     }
 }

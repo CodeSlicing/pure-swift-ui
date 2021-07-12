@@ -12,10 +12,10 @@ import SwiftUI
 
 public extension View {
     
-    func modifierIf<T: ViewModifier>(_ condition: Bool, _ modifier: T) -> some View {
-        RenderIf(condition) {
+    @ViewBuilder func modifierIf<T: ViewModifier>(_ condition: Bool, _ modifier: T) -> some View {
+        if condition {
             self.modifier(modifier)
-        }.elseRender {
+        } else {
             self
         }
     }
@@ -24,10 +24,10 @@ public extension View {
         modifierIf(!condition, modifier)
     }
     
-    func modifierIfElse<T_IF: ViewModifier, T_ELSE: ViewModifier>(_ condition: Bool, _ modifierIf: T_IF, _ modifierElse: T_ELSE) -> some View {
-        RenderIf(condition) {
+    @ViewBuilder func modifierIfElse<T_IF: ViewModifier, T_ELSE: ViewModifier>(_ condition: Bool, _ modifierIf: T_IF, _ modifierElse: T_ELSE) -> some View {
+        if condition {
             self.modifier(modifierIf)
-        }.elseRender {
+        } else {
             self.modifier(modifierElse)
         }
     }
@@ -283,10 +283,10 @@ public extension View {
 
 public extension View {
     
-    func backgroundIf<T: View>(_ condition: Bool, _ content: T, alignment: Alignment = .center) -> some View {
-        RenderIf(condition) {
+    @ViewBuilder func backgroundIf<T: View>(_ condition: Bool, _ content: T, alignment: Alignment = .center) -> some View {
+        if condition {
             self.background(content, alignment: alignment)
-        }.elseRender {
+        } else {
             self
         }
     }
@@ -324,10 +324,10 @@ public extension View {
 
 public extension View {
     
-    func overlayIf<T: View>(_ condition: Bool, _ content: T, alignment: Alignment = .center) -> some View {
-        RenderIf(condition) {
+    @ViewBuilder func overlayIf<T: View>(_ condition: Bool, _ content: T, alignment: Alignment = .center) -> some View {
+        if condition {
             self.overlay(content, alignment: alignment)
-        }.elseRender {
+        } else {
             self
         }
     }
@@ -365,10 +365,10 @@ public extension View {
 
 public extension View {
     
-    func borderIf<SS: ShapeStyle>(_ condition: Bool, _ shapeStyle: SS) -> some View {
-        RenderIf(condition) {
+    @ViewBuilder func borderIf<SS: ShapeStyle>(_ condition: Bool, _ shapeStyle: SS) -> some View {
+        if condition {
             self.border(shapeStyle)
-        }.elseRender {
+        } else {
             self
         }
     }
@@ -402,10 +402,10 @@ public extension View {
     }
     
     // with width
-    func borderIf<SS: ShapeStyle>(_ condition: Bool, _ shapeStyle: SS, width: CGFloat) -> some View {
-        RenderIf(condition) {
+    @ViewBuilder func borderIf<SS: ShapeStyle>(_ condition: Bool, _ shapeStyle: SS, width: CGFloat) -> some View {
+        if condition {
             self.border(shapeStyle, width: width)
-        }.elseRender {
+        } else {
             self
         }
     }
@@ -511,10 +511,10 @@ public extension View {
 
 public extension View {
     
-    func shadowIf(_ condition: Bool, color: Color? = nil, radius: CGFloat = 0, x: CGFloat = 0, y: CGFloat = 0) -> some View {
-        RenderIf(color != nil) {
+    @ViewBuilder func shadowIf(_ condition: Bool, color: Color? = nil, radius: CGFloat = 0, x: CGFloat = 0, y: CGFloat = 0) -> some View {
+        if color != nil {
             self.shadow(color: color!, radius: condition ? radius : 0, x: condition ? x : 0, y: condition ? y : 0)
-        }.elseRender {
+        } else {
             self.shadow(radius: condition ? radius : 0, x: condition ? x : 0, y: condition ? y : 0)
         }
     }
@@ -544,10 +544,10 @@ public extension View {
 
 public extension View {
     
-    func contentShapeIf<S: Shape>(_ condition: Bool, _ shape: S) -> some View {
-        RenderIf(condition) {
+    @ViewBuilder func contentShapeIf<S: Shape>(_ condition: Bool, _ shape: S) -> some View {
+        if condition {
             self.contentShape(shape)
-        }.elseRender {
+        } else {
             self
         }
     }
@@ -620,10 +620,10 @@ public extension View {
         envLightModeIf(!condition)
     }
     
-    func envColorSchemeIf(_ condition: Bool, _ colorScheme: ColorScheme) -> some View {
-        RenderIf(condition) {
+    @ViewBuilder func envColorSchemeIf(_ condition: Bool, _ colorScheme: ColorScheme) -> some View {
+        if condition {
             self.environment(\.colorScheme, colorScheme)
-        }.elseRender {
+        } else {
             self
         }
     }

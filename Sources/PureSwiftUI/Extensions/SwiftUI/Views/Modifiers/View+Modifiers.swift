@@ -81,10 +81,10 @@ public extension View {
         fontSize(size, name: nil, weight: weight, withScaling: withScaling)
     }
     
-    func fontSize(_ size: CGFloat, name: String? = nil, weight: Font.Weight? = nil, withScaling: Bool = true) -> some View {
-        RenderIf(withScaling) {
+    @ViewBuilder func fontSize(_ size: CGFloat, name: String? = nil, weight: Font.Weight? = nil, withScaling: Bool = true) -> some View {
+        if withScaling {
             self.scalingFont(size: size, name: name, weight: weight)
-        }.elseRender {
+        } else {
             self.font(self.createFont(name: name, size: size, weight: weight))
         }
     }
@@ -448,6 +448,7 @@ public extension View {
     
     func shadowColor(_ colorName: String, _ radius: CGFloat, offset: CGFloat, angle: Angle) -> some View {
         shadowColor(colorName, radius, offset: .point(offset, angle))
+//        shadowColor(colorName, radius, offset: .point(offset, angle))
     }
 }
 

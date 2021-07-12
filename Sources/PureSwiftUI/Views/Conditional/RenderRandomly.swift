@@ -16,17 +16,17 @@ public struct RenderRandomly<IfContent>: View where IfContent: View {
         self.ifContent = content
     }
     
-    public var body: some View {
-        RenderIf(render) {
+    @ViewBuilder public var body: some View {
+        if render {
             self.ifContent()
         }
     }
     
-    public func elseRender<ElseContent: View>(@ViewBuilder content elseContent: @escaping () -> ElseContent) -> some View {
+    @ViewBuilder public func elseRender<ElseContent: View>(@ViewBuilder content elseContent: @escaping () -> ElseContent) -> some View {
 
-        RenderIf(render) {
+        if render {
             self.ifContent()
-        }.elseRender {
+        } else {
             elseContent()
         }
     }

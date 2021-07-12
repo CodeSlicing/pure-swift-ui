@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "pure-swift-ui-design",
+        "repositoryURL": "https://github.com/CodeSlicing/pure-swift-ui-design.git",
+        "state": {
+          "branch": null,
+          "revision": "ef08d1f98e1696da930e6a988c9a3a8d55253c0c",
+          "version": "1.0.0-beta-1"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
