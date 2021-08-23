@@ -32,6 +32,13 @@ class IntAngleExtensionsTests: XCTestCase {
         XCTAssertEqual(result, expectedResult)
     }
     
+    func testIntAsCycles() {
+        XCTAssertEqual(1.cycles, Angle.degrees(360))
+        XCTAssertEqual(2.cycles, Angle.degrees(720))
+        XCTAssertEqual(-1.cycles, Angle.degrees(-360))
+        XCTAssertEqual(0.cycles, Angle.degrees(0))
+    }
+    
     func testIntAsRadians() {
         let expectedResult = Angle.radians(radiansValue)
         let result = Int(radiansValue).radians

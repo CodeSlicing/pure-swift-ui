@@ -26,6 +26,13 @@ class FloatAngleExtensionsTests: XCTestCase {
         XCTAssertEqual(result, expectedResult)
     }
     
+    func testFloatAsCycles() {
+        XCTAssertEqual(Float(0).cycles, Angle.degrees(0))
+        XCTAssertEqual(Float(0.5).cycles, Angle.degrees(180))
+        XCTAssertEqual(Float(1.0).cycles, Angle.degrees(360))
+        XCTAssertEqual(Float(-0.75).cycles, Angle.degrees(-270))
+    }
+    
     func testFloatDegreesAsRadians() {
         let expectedResult = Angle.radians(Angle.degrees(degreesValue).radians)
         let result = Float(degreesValue).degreesAsRadians

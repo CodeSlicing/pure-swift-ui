@@ -55,6 +55,21 @@ extension AngleConvenienceExtensionsTests {
         XCTAssertEqual(Angle.cycle(0.25), 90.degrees)
         XCTAssertEqual(Angle.cycle(0.5), 180.degrees)
         XCTAssertEqual(Angle.cycle(0.75), 270.degrees)
+        XCTAssertEqual(Angle.cycle(-0.75), -270.degrees)
+    }
+    
+    func testCycles() {
+        XCTAssertEqual(Angle.cycles(0.25), 90.degrees)
+        XCTAssertEqual(Angle.cycles(0.5), 180.degrees)
+        XCTAssertEqual(Angle.cycles(0.75), 270.degrees)
+        XCTAssertEqual(Angle.cycles(-0.75), -270.degrees)
+    }
+    
+    func testCyclesProperty() {
+        XCTAssertEqual(Angle.cycles(0.25).cycles, 0.25)
+        XCTAssertEqual(Angle.cycles(0.5).cycles, 0.5)
+        XCTAssertEqual(Angle.cycles(0.75).cycles, 0.75)
+        XCTAssertEqual(Angle.cycles(-0.75).cycles, -0.75)
     }
 }
 

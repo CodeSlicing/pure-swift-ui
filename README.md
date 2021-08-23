@@ -498,6 +498,7 @@ This project adheres to a [semantic versioning](https://semver.org) paradigm. I'
 - [2.0.6][tag-2.0.6] Add static initialisers and convenience functions to `CGRect` and `GeometryProxy`
 - [2.1.0][tag-2.1.0] Add relative coordinate functionality to layout guides
 - [2.1.1][tag-2.1.1] Add eoFill to Shape and add overloads for strokeColor to accept style argument
+- [2.1.2][tag-2.1.2] Add cycles as a first class angle type with conversion functions and properties supporting it
 
 ## Licensing
 
@@ -564,6 +565,7 @@ version links:
 [tag-2.0.6]: https://github.com/CodeSlicing/pure-swift-ui/tree/2.0.6
 [tag-2.1.0]: https://github.com/CodeSlicing/pure-swift-ui/tree/2.1.0
 [tag-2.1.1]: https://github.com/CodeSlicing/pure-swift-ui/tree/2.1.1
+[tag-2.1.2]: https://github.com/CodeSlicing/pure-swift-ui/tree/2.1.2
 
 <!---
  local docs:

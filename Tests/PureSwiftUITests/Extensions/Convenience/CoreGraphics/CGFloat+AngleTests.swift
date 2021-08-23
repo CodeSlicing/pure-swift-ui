@@ -26,6 +26,13 @@ class CGFloatAngleExtensionsTests: XCTestCase {
         XCTAssertEqual(result, expectedResult)
     }
     
+    func testCGFloatAsCycles() {
+        XCTAssertEqual(CGFloat(0).cycles, Angle.cycles(0))
+        XCTAssertEqual(CGFloat(0.5).cycles, Angle.cycles(0.5))
+        XCTAssertEqual(CGFloat(1.0).cycles, Angle.cycles(1.0))
+        XCTAssertEqual(CGFloat(-0.75).cycles, Angle.cycles(-0.75))
+    }
+
     func testCGFloatDegreesAsRadians() {
         let expectedResult = Angle.radians(Angle.degrees(degreesValue).radians)
         let result = CGFloat(degreesValue).degreesAsRadians
@@ -37,7 +44,7 @@ class CGFloatAngleExtensionsTests: XCTestCase {
         let result = CGFloat(radiansValue).radiansAsDegrees
         XCTAssertEqual(result, expectedResult)
     }
-    
+
     func testCGFloatACos() {
         let expectedResult = acos(inverseValue)
         let result = CGFloat(inverseValue).acos.radians

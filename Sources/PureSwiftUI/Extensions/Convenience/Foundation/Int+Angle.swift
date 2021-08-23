@@ -25,6 +25,14 @@ public extension Int {
         .radians(asDouble)
     }
     
+    var cycle: Angle {
+        .cycles(asDouble)
+    }
+    
+    var cycles: Angle {
+        .cycles(asDouble)
+    }
+    
     var degreesAsRadians: Angle {
         asDouble.degreesAsRadians
     }

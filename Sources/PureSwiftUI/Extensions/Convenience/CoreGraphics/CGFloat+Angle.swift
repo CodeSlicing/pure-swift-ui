@@ -17,6 +17,10 @@ public extension CGFloat {
         .radians(asDouble)
     }
     
+    var cycles: Angle {
+        .cycles(asDouble)
+    }
+    
     var degreesAsRadians: Angle {
         asDouble.degreesAsRadians
     }

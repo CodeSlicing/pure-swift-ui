@@ -26,6 +26,13 @@ class DoubleAngleExtensionsTests: XCTestCase {
         XCTAssertEqual(result, expectedResult)
     }
     
+    func testDoubleAsCycles() {
+        XCTAssertEqual(Double(0).cycles, Angle.degrees(0))
+        XCTAssertEqual(Double(0.5).cycles, Angle.degrees(180))
+        XCTAssertEqual(Double(1.0).cycles, Angle.degrees(360))
+        XCTAssertEqual(Double(-0.75).cycles, Angle.degrees(-270))
+    }
+    
     func testDoubleDegreesAsRadians() {
         let expectedResult = Angle.radians(Angle.degrees(degreesValue).radians)
         let result = Double(degreesValue).degreesAsRadians
