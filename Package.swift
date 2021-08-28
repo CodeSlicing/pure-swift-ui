@@ -11,7 +11,7 @@ let package = Package(
             targets: ["PureSwiftUI"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/CodeSlicing/pure-swift-ui-design.git", .exact("1.0.0-beta-1")),
+        .package(url: "https://github.com/CodeSlicing/pure-swift-ui-design.git", .exact("1.0.0-beta-2")),
     ],
     targets: [
         .target(
