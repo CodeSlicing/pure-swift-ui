@@ -517,7 +517,7 @@ You can contact me on Twitter [@CodeSlice][codeslice-twitter]. Happy to hear sug
 [codeslice-twitter]: https://twitter.com/CodeSlice
 [swift-ui]: https://developer.apple.com/xcode/swiftui/
 [swift-functions]: https://docs.swift.org/swift-book/LanguageGuide/Functions.html
-[swift-package-installation]: https://medium.com/better-programming/add-swift-package-dependency-to-an-ios-project-with-xcode-11-remote-local-public-private-3a7577fac6b2
+[swift-package-installation]: https://developer.apple.com/documentation/swift_packages/adding_package_dependencies_to_your_app
 
 <!---
 gists:
