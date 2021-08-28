@@ -272,10 +272,10 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case _9_circle_fill = "9.circle.fill"
     case _9_square = "9.square"
     case _9_square_fill = "9.square.fill"
-    @available(iOS, deprecated: 15.0, renamed: "textformat_size_larger")
-    @available(macOS, deprecated: 12.0, renamed: "textformat_size_larger")
-    @available(tvOS, deprecated: 15.0, renamed: "textformat_size_larger")
-    @available(watchOS, deprecated: 8.0, renamed: "textformat_size_larger")
+    @available(iOS, deprecated: 15.0, renamed: "character")
+    @available(macOS, deprecated: 12.0, renamed: "character")
+    @available(tvOS, deprecated: 15.0, renamed: "character")
+    @available(watchOS, deprecated: 8.0, renamed: "character")
     case a = "a"
     @available(iOS, deprecated: 15.0, renamed: "character_book_closed")
     @available(macOS, deprecated: 12.0, renamed: "character_book_closed")
@@ -350,20 +350,20 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case archivebox_circle_fill = "archivebox.circle.fill"
     case archivebox_fill = "archivebox.fill"
-    @available(iOS, deprecated: 15.0, renamed: "arrow_triangle_2_circlepath")
-    @available(macOS, deprecated: 12.0, renamed: "arrow_triangle_2_circlepath")
-    @available(tvOS, deprecated: 15.0, renamed: "arrow_triangle_2_circlepath")
-    @available(watchOS, deprecated: 8.0, renamed: "arrow_triangle_2_circlepath")
+    @available(iOS, deprecated: 14.0, renamed: "arrow_triangle_2_circlepath")
+    @available(macOS, deprecated: 11.0, renamed: "arrow_triangle_2_circlepath")
+    @available(tvOS, deprecated: 14.0, renamed: "arrow_triangle_2_circlepath")
+    @available(watchOS, deprecated: 7.0, renamed: "arrow_triangle_2_circlepath")
     case arrow_2_circlepath = "arrow.2.circlepath"
-    @available(iOS, deprecated: 15.0, renamed: "arrow_triangle_2_circlepath_circle")
-    @available(macOS, deprecated: 12.0, renamed: "arrow_triangle_2_circlepath_circle")
-    @available(tvOS, deprecated: 15.0, renamed: "arrow_triangle_2_circlepath_circle")
-    @available(watchOS, deprecated: 8.0, renamed: "arrow_triangle_2_circlepath_circle")
+    @available(iOS, deprecated: 14.0, renamed: "arrow_triangle_2_circlepath_circle")
+    @available(macOS, deprecated: 11.0, renamed: "arrow_triangle_2_circlepath_circle")
+    @available(tvOS, deprecated: 14.0, renamed: "arrow_triangle_2_circlepath_circle")
+    @available(watchOS, deprecated: 7.0, renamed: "arrow_triangle_2_circlepath_circle")
     case arrow_2_circlepath_circle = "arrow.2.circlepath.circle"
-    @available(iOS, deprecated: 15.0, renamed: "arrow_triangle_2_circlepath_circle_fill")
-    @available(macOS, deprecated: 12.0, renamed: "arrow_triangle_2_circlepath_circle_fill")
-    @available(tvOS, deprecated: 15.0, renamed: "arrow_triangle_2_circlepath_circle_fill")
-    @available(watchOS, deprecated: 8.0, renamed: "arrow_triangle_2_circlepath_circle_fill")
+    @available(iOS, deprecated: 14.0, renamed: "arrow_triangle_2_circlepath_circle_fill")
+    @available(macOS, deprecated: 11.0, renamed: "arrow_triangle_2_circlepath_circle_fill")
+    @available(tvOS, deprecated: 14.0, renamed: "arrow_triangle_2_circlepath_circle_fill")
+    @available(watchOS, deprecated: 7.0, renamed: "arrow_triangle_2_circlepath_circle_fill")
     case arrow_2_circlepath_circle_fill = "arrow.2.circlepath.circle.fill"
     case arrow_2_squarepath = "arrow.2.squarepath"
     case arrow_3_trianglepath = "arrow.3.trianglepath"
@@ -383,10 +383,10 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case arrow_backward_to_line_circle = "arrow.backward.to.line.circle"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case arrow_backward_to_line_circle_fill = "arrow.backward.to.line.circle.fill"
-    @available(iOS, deprecated: 15.0, renamed: "arrow_triangle_branch")
-    @available(macOS, deprecated: 12.0, renamed: "arrow_triangle_branch")
-    @available(tvOS, deprecated: 15.0, renamed: "arrow_triangle_branch")
-    @available(watchOS, deprecated: 8.0, renamed: "arrow_triangle_branch")
+    @available(iOS, deprecated: 14.0, renamed: "arrow_triangle_branch")
+    @available(macOS, deprecated: 11.0, renamed: "arrow_triangle_branch")
+    @available(tvOS, deprecated: 14.0, renamed: "arrow_triangle_branch")
+    @available(watchOS, deprecated: 7.0, renamed: "arrow_triangle_branch")
     case arrow_branch = "arrow.branch"
     case arrow_clockwise = "arrow.clockwise"
     case arrow_clockwise_circle = "arrow.clockwise.circle"
@@ -518,38 +518,38 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case arrow_left_to_line_circle_fill = "arrow.left.to.line.circle.fill"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case arrow_left_to_line_compact = "arrow.left.to.line.compact"
-    @available(iOS, deprecated: 15.0, renamed: "arrow_triangle_merge")
-    @available(macOS, deprecated: 12.0, renamed: "arrow_triangle_merge")
-    @available(tvOS, deprecated: 15.0, renamed: "arrow_triangle_merge")
-    @available(watchOS, deprecated: 8.0, renamed: "arrow_triangle_merge")
+    @available(iOS, deprecated: 14.0, renamed: "arrow_triangle_merge")
+    @available(macOS, deprecated: 11.0, renamed: "arrow_triangle_merge")
+    @available(tvOS, deprecated: 14.0, renamed: "arrow_triangle_merge")
+    @available(watchOS, deprecated: 7.0, renamed: "arrow_triangle_merge")
     case arrow_merge = "arrow.merge"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case arrow_rectanglepath = "arrow.rectanglepath"
     case arrow_right = "arrow.right"
-    @available(iOS, deprecated: 15.0, renamed: "arrow_left_arrow_right")
-    @available(macOS, deprecated: 12.0, renamed: "arrow_left_arrow_right")
-    @available(tvOS, deprecated: 15.0, renamed: "arrow_left_arrow_right")
-    @available(watchOS, deprecated: 8.0, renamed: "arrow_left_arrow_right")
+    @available(iOS, deprecated: 14.0, renamed: "arrow_left_arrow_right")
+    @available(macOS, deprecated: 11.0, renamed: "arrow_left_arrow_right")
+    @available(tvOS, deprecated: 14.0, renamed: "arrow_left_arrow_right")
+    @available(watchOS, deprecated: 7.0, renamed: "arrow_left_arrow_right")
     case arrow_right_arrow_left = "arrow.right.arrow.left"
-    @available(iOS, deprecated: 15.0, renamed: "arrow_left_arrow_right_circle")
-    @available(macOS, deprecated: 12.0, renamed: "arrow_left_arrow_right_circle")
-    @available(tvOS, deprecated: 15.0, renamed: "arrow_left_arrow_right_circle")
-    @available(watchOS, deprecated: 8.0, renamed: "arrow_left_arrow_right_circle")
+    @available(iOS, deprecated: 14.0, renamed: "arrow_left_arrow_right_circle")
+    @available(macOS, deprecated: 11.0, renamed: "arrow_left_arrow_right_circle")
+    @available(tvOS, deprecated: 14.0, renamed: "arrow_left_arrow_right_circle")
+    @available(watchOS, deprecated: 7.0, renamed: "arrow_left_arrow_right_circle")
     case arrow_right_arrow_left_circle = "arrow.right.arrow.left.circle"
-    @available(iOS, deprecated: 15.0, renamed: "arrow_left_arrow_right_circle_fill")
-    @available(macOS, deprecated: 12.0, renamed: "arrow_left_arrow_right_circle_fill")
-    @available(tvOS, deprecated: 15.0, renamed: "arrow_left_arrow_right_circle_fill")
-    @available(watchOS, deprecated: 8.0, renamed: "arrow_left_arrow_right_circle_fill")
+    @available(iOS, deprecated: 14.0, renamed: "arrow_left_arrow_right_circle_fill")
+    @available(macOS, deprecated: 11.0, renamed: "arrow_left_arrow_right_circle_fill")
+    @available(tvOS, deprecated: 14.0, renamed: "arrow_left_arrow_right_circle_fill")
+    @available(watchOS, deprecated: 7.0, renamed: "arrow_left_arrow_right_circle_fill")
     case arrow_right_arrow_left_circle_fill = "arrow.right.arrow.left.circle.fill"
-    @available(iOS, deprecated: 15.0, renamed: "arrow_left_arrow_right_square")
-    @available(macOS, deprecated: 12.0, renamed: "arrow_left_arrow_right_square")
-    @available(tvOS, deprecated: 15.0, renamed: "arrow_left_arrow_right_square")
-    @available(watchOS, deprecated: 8.0, renamed: "arrow_left_arrow_right_square")
+    @available(iOS, deprecated: 14.0, renamed: "arrow_left_arrow_right_square")
+    @available(macOS, deprecated: 11.0, renamed: "arrow_left_arrow_right_square")
+    @available(tvOS, deprecated: 14.0, renamed: "arrow_left_arrow_right_square")
+    @available(watchOS, deprecated: 7.0, renamed: "arrow_left_arrow_right_square")
     case arrow_right_arrow_left_square = "arrow.right.arrow.left.square"
-    @available(iOS, deprecated: 15.0, renamed: "arrow_left_arrow_right_square_fill")
-    @available(macOS, deprecated: 12.0, renamed: "arrow_left_arrow_right_square_fill")
-    @available(tvOS, deprecated: 15.0, renamed: "arrow_left_arrow_right_square_fill")
-    @available(watchOS, deprecated: 8.0, renamed: "arrow_left_arrow_right_square_fill")
+    @available(iOS, deprecated: 14.0, renamed: "arrow_left_arrow_right_square_fill")
+    @available(macOS, deprecated: 11.0, renamed: "arrow_left_arrow_right_square_fill")
+    @available(tvOS, deprecated: 14.0, renamed: "arrow_left_arrow_right_square_fill")
+    @available(watchOS, deprecated: 7.0, renamed: "arrow_left_arrow_right_square_fill")
     case arrow_right_arrow_left_square_fill = "arrow.right.arrow.left.square.fill"
     case arrow_right_circle = "arrow.right.circle"
     case arrow_right_circle_fill = "arrow.right.circle.fill"
@@ -569,10 +569,10 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case arrow_right_to_line_circle_fill = "arrow.right.to.line.circle.fill"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case arrow_right_to_line_compact = "arrow.right.to.line.compact"
-    @available(iOS, deprecated: 15.0, renamed: "arrow_triangle_swap")
-    @available(macOS, deprecated: 12.0, renamed: "arrow_triangle_swap")
-    @available(tvOS, deprecated: 15.0, renamed: "arrow_triangle_swap")
-    @available(watchOS, deprecated: 8.0, renamed: "arrow_triangle_swap")
+    @available(iOS, deprecated: 14.0, renamed: "arrow_triangle_swap")
+    @available(macOS, deprecated: 11.0, renamed: "arrow_triangle_swap")
+    @available(tvOS, deprecated: 14.0, renamed: "arrow_triangle_swap")
+    @available(watchOS, deprecated: 7.0, renamed: "arrow_triangle_swap")
     case arrow_swap = "arrow.swap"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case arrow_triangle_2_circlepath = "arrow.triangle.2.circlepath"
@@ -702,15 +702,15 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case arrow_up_right_and_arrow_down_left_rectangle_fill = "arrow.up.right.and.arrow.down.left.rectangle.fill"
     case arrow_up_right_circle = "arrow.up.right.circle"
     case arrow_up_right_circle_fill = "arrow.up.right.circle.fill"
-    @available(iOS, deprecated: 15.0, renamed: "arrow_triangle_turn_up_right_diamond")
-    @available(macOS, deprecated: 12.0, renamed: "arrow_triangle_turn_up_right_diamond")
-    @available(tvOS, deprecated: 15.0, renamed: "arrow_triangle_turn_up_right_diamond")
-    @available(watchOS, deprecated: 8.0, renamed: "arrow_triangle_turn_up_right_diamond")
+    @available(iOS, deprecated: 14.0, renamed: "arrow_triangle_turn_up_right_diamond")
+    @available(macOS, deprecated: 11.0, renamed: "arrow_triangle_turn_up_right_diamond")
+    @available(tvOS, deprecated: 14.0, renamed: "arrow_triangle_turn_up_right_diamond")
+    @available(watchOS, deprecated: 7.0, renamed: "arrow_triangle_turn_up_right_diamond")
     case arrow_up_right_diamond = "arrow.up.right.diamond"
-    @available(iOS, deprecated: 15.0, renamed: "arrow_triangle_turn_up_right_diamond_fill")
-    @available(macOS, deprecated: 12.0, renamed: "arrow_triangle_turn_up_right_diamond_fill")
-    @available(tvOS, deprecated: 15.0, renamed: "arrow_triangle_turn_up_right_diamond_fill")
-    @available(watchOS, deprecated: 8.0, renamed: "arrow_triangle_turn_up_right_diamond_fill")
+    @available(iOS, deprecated: 14.0, renamed: "arrow_triangle_turn_up_right_diamond_fill")
+    @available(macOS, deprecated: 11.0, renamed: "arrow_triangle_turn_up_right_diamond_fill")
+    @available(tvOS, deprecated: 14.0, renamed: "arrow_triangle_turn_up_right_diamond_fill")
+    @available(watchOS, deprecated: 7.0, renamed: "arrow_triangle_turn_up_right_diamond_fill")
     case arrow_up_right_diamond_fill = "arrow.up.right.diamond.fill"
     case arrow_up_right_square = "arrow.up.right.square"
     case arrow_up_right_square_fill = "arrow.up.right.square.fill"
@@ -992,15 +992,15 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case bicycle_circle = "bicycle.circle"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case bicycle_circle_fill = "bicycle.circle.fill"
-    @available(iOS, deprecated: 15.0, renamed: "xmark_bin")
-    @available(macOS, deprecated: 12.0, renamed: "xmark_bin")
-    @available(tvOS, deprecated: 15.0, renamed: "xmark_bin")
-    @available(watchOS, deprecated: 8.0, renamed: "xmark_bin")
+    @available(iOS, deprecated: 14.0, renamed: "xmark_bin")
+    @available(macOS, deprecated: 11.0, renamed: "xmark_bin")
+    @available(tvOS, deprecated: 14.0, renamed: "xmark_bin")
+    @available(watchOS, deprecated: 7.0, renamed: "xmark_bin")
     case bin_xmark = "bin.xmark"
-    @available(iOS, deprecated: 15.0, renamed: "xmark_bin_fill")
-    @available(macOS, deprecated: 12.0, renamed: "xmark_bin_fill")
-    @available(tvOS, deprecated: 15.0, renamed: "xmark_bin_fill")
-    @available(watchOS, deprecated: 8.0, renamed: "xmark_bin_fill")
+    @available(iOS, deprecated: 14.0, renamed: "xmark_bin_fill")
+    @available(macOS, deprecated: 11.0, renamed: "xmark_bin_fill")
+    @available(tvOS, deprecated: 14.0, renamed: "xmark_bin_fill")
+    @available(watchOS, deprecated: 7.0, renamed: "xmark_bin_fill")
     case bin_xmark_fill = "bin.xmark.fill"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case binoculars = "binoculars"
@@ -1207,15 +1207,15 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case camera_metering_unknown = "camera.metering.unknown"
     case camera_on_rectangle = "camera.on.rectangle"
     case camera_on_rectangle_fill = "camera.on.rectangle.fill"
-    @available(iOS, deprecated: 15.0, renamed: "arrow_triangle_2_circlepath_camera")
-    @available(macOS, deprecated: 12.0, renamed: "arrow_triangle_2_circlepath_camera")
-    @available(tvOS, deprecated: 15.0, renamed: "arrow_triangle_2_circlepath_camera")
-    @available(watchOS, deprecated: 8.0, renamed: "arrow_triangle_2_circlepath_camera")
+    @available(iOS, deprecated: 14.0, renamed: "arrow_triangle_2_circlepath_camera")
+    @available(macOS, deprecated: 11.0, renamed: "arrow_triangle_2_circlepath_camera")
+    @available(tvOS, deprecated: 14.0, renamed: "arrow_triangle_2_circlepath_camera")
+    @available(watchOS, deprecated: 7.0, renamed: "arrow_triangle_2_circlepath_camera")
     case camera_rotate = "camera.rotate"
-    @available(iOS, deprecated: 15.0, renamed: "arrow_triangle_2_circlepath_camera_fill")
-    @available(macOS, deprecated: 12.0, renamed: "arrow_triangle_2_circlepath_camera_fill")
-    @available(tvOS, deprecated: 15.0, renamed: "arrow_triangle_2_circlepath_camera_fill")
-    @available(watchOS, deprecated: 8.0, renamed: "arrow_triangle_2_circlepath_camera_fill")
+    @available(iOS, deprecated: 14.0, renamed: "arrow_triangle_2_circlepath_camera_fill")
+    @available(macOS, deprecated: 11.0, renamed: "arrow_triangle_2_circlepath_camera_fill")
+    @available(tvOS, deprecated: 14.0, renamed: "arrow_triangle_2_circlepath_camera_fill")
+    @available(watchOS, deprecated: 7.0, renamed: "arrow_triangle_2_circlepath_camera_fill")
     case camera_rotate_fill = "camera.rotate.fill"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case camera_shutter_button = "camera.shutter.button"
@@ -1423,10 +1423,10 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case circle_bottomhalf_fill = "circle.bottomhalf.fill"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case circle_bottomhalf_filled = "circle.bottomhalf.filled"
-    @available(iOS, deprecated: 15.0, renamed: "sleep")
-    @available(macOS, deprecated: 12.0, renamed: "sleep")
-    @available(tvOS, deprecated: 15.0, renamed: "sleep")
-    @available(watchOS, deprecated: 8.0, renamed: "sleep")
+    @available(iOS, deprecated: 14.0, renamed: "sleep")
+    @available(macOS, deprecated: 11.0, renamed: "sleep")
+    @available(tvOS, deprecated: 14.0, renamed: "sleep")
+    @available(watchOS, deprecated: 7.0, renamed: "sleep")
     case circle_bottomthird_split = "circle.bottomthird.split"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case circle_circle = "circle.circle"
@@ -1474,15 +1474,15 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case circle_grid_cross_right_fill = "circle.grid.cross.right.fill"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case circle_grid_cross_up_fill = "circle.grid.cross.up.fill"
-    @available(iOS, deprecated: 15.0, renamed: "circles_hexagongrid")
-    @available(macOS, deprecated: 12.0, renamed: "circles_hexagongrid")
-    @available(tvOS, deprecated: 15.0, renamed: "circles_hexagongrid")
-    @available(watchOS, deprecated: 8.0, renamed: "circles_hexagongrid")
+    @available(iOS, deprecated: 14.0, renamed: "circle_hexagongrid")
+    @available(macOS, deprecated: 11.0, renamed: "circle_hexagongrid")
+    @available(tvOS, deprecated: 14.0, renamed: "circle_hexagongrid")
+    @available(watchOS, deprecated: 7.0, renamed: "circle_hexagongrid")
     case circle_grid_hex = "circle.grid.hex"
-    @available(iOS, deprecated: 15.0, renamed: "circles_hexagongrid_fill")
-    @available(macOS, deprecated: 12.0, renamed: "circles_hexagongrid_fill")
-    @available(tvOS, deprecated: 15.0, renamed: "circles_hexagongrid_fill")
-    @available(watchOS, deprecated: 8.0, renamed: "circles_hexagongrid_fill")
+    @available(iOS, deprecated: 14.0, renamed: "circle_hexagongrid_fill")
+    @available(macOS, deprecated: 11.0, renamed: "circle_hexagongrid_fill")
+    @available(tvOS, deprecated: 14.0, renamed: "circle_hexagongrid_fill")
+    @available(watchOS, deprecated: 7.0, renamed: "circle_hexagongrid_fill")
     case circle_grid_hex_fill = "circle.grid.hex.fill"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case circle_hexagongrid = "circle.hexagongrid"
@@ -1498,10 +1498,10 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case circle_hexagonpath_fill = "circle.hexagonpath.fill"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case circle_inset_filled = "circle.inset.filled"
-    @available(iOS, deprecated: 15.0, renamed: "circle_righthalf_filled")
-    @available(macOS, deprecated: 12.0, renamed: "circle_righthalf_filled")
-    @available(tvOS, deprecated: 15.0, renamed: "circle_righthalf_filled")
-    @available(watchOS, deprecated: 8.0, renamed: "circle_righthalf_filled")
+    @available(iOS, deprecated: 15.0, renamed: "circle_lefthalf_filled")
+    @available(macOS, deprecated: 12.0, renamed: "circle_lefthalf_filled")
+    @available(tvOS, deprecated: 15.0, renamed: "circle_lefthalf_filled")
+    @available(watchOS, deprecated: 8.0, renamed: "circle_lefthalf_filled")
     case circle_lefthalf_fill = "circle.lefthalf.fill"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case circle_lefthalf_filled = "circle.lefthalf.filled"
@@ -1670,15 +1670,15 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case cruzeirosign_square = "cruzeirosign.square"
     case cruzeirosign_square_fill = "cruzeirosign.square.fill"
     case cube = "cube"
-    @available(iOS, deprecated: 15.0, renamed: "shippingbox")
-    @available(macOS, deprecated: 12.0, renamed: "shippingbox")
-    @available(tvOS, deprecated: 15.0, renamed: "shippingbox")
-    @available(watchOS, deprecated: 8.0, renamed: "shippingbox")
+    @available(iOS, deprecated: 14.0, renamed: "shippingbox")
+    @available(macOS, deprecated: 11.0, renamed: "shippingbox")
+    @available(tvOS, deprecated: 14.0, renamed: "shippingbox")
+    @available(watchOS, deprecated: 7.0, renamed: "shippingbox")
     case cube_box = "cube.box"
-    @available(iOS, deprecated: 15.0, renamed: "shippingbox_fill")
-    @available(macOS, deprecated: 12.0, renamed: "shippingbox_fill")
-    @available(tvOS, deprecated: 15.0, renamed: "shippingbox_fill")
-    @available(watchOS, deprecated: 8.0, renamed: "shippingbox_fill")
+    @available(iOS, deprecated: 14.0, renamed: "shippingbox_fill")
+    @available(macOS, deprecated: 11.0, renamed: "shippingbox_fill")
+    @available(tvOS, deprecated: 14.0, renamed: "shippingbox_fill")
+    @available(watchOS, deprecated: 7.0, renamed: "shippingbox_fill")
     case cube_box_fill = "cube.box.fill"
     case cube_fill = "cube.fill"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
@@ -1691,10 +1691,10 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case curlybraces_square = "curlybraces.square"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case curlybraces_square_fill = "curlybraces.square.fill"
-    @available(iOS, deprecated: 15.0, renamed: "cursorarrow_rays")
-    @available(macOS, deprecated: 12.0, renamed: "cursorarrow_rays")
-    @available(tvOS, deprecated: 15.0, renamed: "cursorarrow_rays")
-    @available(watchOS, deprecated: 8.0, renamed: "cursorarrow_rays")
+    @available(iOS, deprecated: 14.0, renamed: "cursorarrow_rays")
+    @available(macOS, deprecated: 11.0, renamed: "cursorarrow_rays")
+    @available(tvOS, deprecated: 14.0, renamed: "cursorarrow_rays")
+    @available(watchOS, deprecated: 7.0, renamed: "cursorarrow_rays")
     case cursor_rays = "cursor.rays"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case cursorarrow = "cursorarrow"
@@ -1749,15 +1749,15 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case desktopcomputer_and_arrow_down = "desktopcomputer.and.arrow.down"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case desktopcomputer_trianglebadge_exclamationmark = "desktopcomputer.trianglebadge.exclamationmark"
-    @available(iOS, deprecated: 15.0, renamed: "dial_min")
-    @available(macOS, deprecated: 12.0, renamed: "dial_min")
-    @available(tvOS, deprecated: 15.0, renamed: "dial_min")
-    @available(watchOS, deprecated: 8.0, renamed: "dial_min")
+    @available(iOS, deprecated: 14.0, renamed: "dial_min")
+    @available(macOS, deprecated: 11.0, renamed: "dial_min")
+    @available(tvOS, deprecated: 14.0, renamed: "dial_min")
+    @available(watchOS, deprecated: 7.0, renamed: "dial_min")
     case dial = "dial"
-    @available(iOS, deprecated: 15.0, renamed: "dial_min_fill")
-    @available(macOS, deprecated: 12.0, renamed: "dial_min_fill")
-    @available(tvOS, deprecated: 15.0, renamed: "dial_min_fill")
-    @available(watchOS, deprecated: 8.0, renamed: "dial_min_fill")
+    @available(iOS, deprecated: 14.0, renamed: "dial_min_fill")
+    @available(macOS, deprecated: 11.0, renamed: "dial_min_fill")
+    @available(tvOS, deprecated: 14.0, renamed: "dial_min_fill")
+    @available(watchOS, deprecated: 7.0, renamed: "dial_min_fill")
     case dial_fill = "dial.fill"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case dial_max = "dial.max"
@@ -1946,15 +1946,15 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case eject_circle_fill = "eject.circle.fill"
     case eject_fill = "eject.fill"
-    @available(iOS, deprecated: 15.0, renamed: "ellipsis_bubble")
-    @available(macOS, deprecated: 12.0, renamed: "ellipsis_bubble")
-    @available(tvOS, deprecated: 15.0, renamed: "ellipsis_bubble")
-    @available(watchOS, deprecated: 8.0, renamed: "ellipsis_bubble")
+    @available(iOS, deprecated: 14.0, renamed: "ellipsis_bubble")
+    @available(macOS, deprecated: 11.0, renamed: "ellipsis_bubble")
+    @available(tvOS, deprecated: 14.0, renamed: "ellipsis_bubble")
+    @available(watchOS, deprecated: 7.0, renamed: "ellipsis_bubble")
     case ellipses_bubble = "ellipses.bubble"
-    @available(iOS, deprecated: 15.0, renamed: "ellipsis_bubble_fill")
-    @available(macOS, deprecated: 12.0, renamed: "ellipsis_bubble_fill")
-    @available(tvOS, deprecated: 15.0, renamed: "ellipsis_bubble_fill")
-    @available(watchOS, deprecated: 8.0, renamed: "ellipsis_bubble_fill")
+    @available(iOS, deprecated: 14.0, renamed: "ellipsis_bubble_fill")
+    @available(macOS, deprecated: 11.0, renamed: "ellipsis_bubble_fill")
+    @available(tvOS, deprecated: 14.0, renamed: "ellipsis_bubble_fill")
+    @available(watchOS, deprecated: 7.0, renamed: "ellipsis_bubble_fill")
     case ellipses_bubble_fill = "ellipses.bubble.fill"
     case ellipsis = "ellipsis"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
@@ -2198,15 +2198,15 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case flame_fill = "flame.fill"
     case flashlight_off_fill = "flashlight.off.fill"
     case flashlight_on_fill = "flashlight.on.fill"
-    @available(iOS, deprecated: 15.0, renamed: "arrow_left_and_right_righttriangle_left_righttriangle_right")
-    @available(macOS, deprecated: 12.0, renamed: "arrow_left_and_right_righttriangle_left_righttriangle_right")
-    @available(tvOS, deprecated: 15.0, renamed: "arrow_left_and_right_righttriangle_left_righttriangle_right")
-    @available(watchOS, deprecated: 8.0, renamed: "arrow_left_and_right_righttriangle_left_righttriangle_right")
+    @available(iOS, deprecated: 14.0, renamed: "arrow_left_and_right_righttriangle_left_righttriangle_right")
+    @available(macOS, deprecated: 11.0, renamed: "arrow_left_and_right_righttriangle_left_righttriangle_right")
+    @available(tvOS, deprecated: 14.0, renamed: "arrow_left_and_right_righttriangle_left_righttriangle_right")
+    @available(watchOS, deprecated: 7.0, renamed: "arrow_left_and_right_righttriangle_left_righttriangle_right")
     case flip_horizontal = "flip.horizontal"
-    @available(iOS, deprecated: 15.0, renamed: "arrow_left_and_right_righttriangle_left_righttriangle_right_fill")
-    @available(macOS, deprecated: 12.0, renamed: "arrow_left_and_right_righttriangle_left_righttriangle_right_fill")
-    @available(tvOS, deprecated: 15.0, renamed: "arrow_left_and_right_righttriangle_left_righttriangle_right_fill")
-    @available(watchOS, deprecated: 8.0, renamed: "arrow_left_and_right_righttriangle_left_righttriangle_right_fill")
+    @available(iOS, deprecated: 14.0, renamed: "arrow_left_and_right_righttriangle_left_righttriangle_right_fill")
+    @available(macOS, deprecated: 11.0, renamed: "arrow_left_and_right_righttriangle_left_righttriangle_right_fill")
+    @available(tvOS, deprecated: 14.0, renamed: "arrow_left_and_right_righttriangle_left_righttriangle_right_fill")
+    @available(watchOS, deprecated: 7.0, renamed: "arrow_left_and_right_righttriangle_left_righttriangle_right_fill")
     case flip_horizontal_fill = "flip.horizontal.fill"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case flipphone = "flipphone"
@@ -2339,164 +2339,164 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case globe_europe_africa_fill = "globe.europe.africa.fill"
     case gobackward = "gobackward"
     case gobackward_10 = "gobackward.10"
-    @available(iOS, deprecated: 15.0, renamed: "mic")
-    @available(macOS, deprecated: 12.0, renamed: "mic")
-    @available(tvOS, deprecated: 15.0, renamed: "mic")
-    @available(watchOS, deprecated: 8.0, renamed: "mic")
+    @available(iOS, deprecated: 14.0,  message: "No replacement available")
+    @available(macOS, deprecated: 11.0,  message: "No replacement available")
+    @available(tvOS, deprecated: 14.0,  message: "No replacement available")
+    @available(watchOS, deprecated: 7.0,  message: "No replacement available")
     case gobackward_10_ar = "gobackward.10.ar"
-    @available(iOS, deprecated: 15.0,  message: "No replacement available")
-    @available(macOS, deprecated: 12.0,  message: "No replacement available")
-    @available(tvOS, deprecated: 15.0,  message: "No replacement available")
-    @available(watchOS, deprecated: 8.0,  message: "No replacement available")
+    @available(iOS, deprecated: 14.0,  message: "No replacement available")
+    @available(macOS, deprecated: 11.0,  message: "No replacement available")
+    @available(tvOS, deprecated: 14.0,  message: "No replacement available")
+    @available(watchOS, deprecated: 7.0,  message: "No replacement available")
     case gobackward_10_hi = "gobackward.10.hi"
     case gobackward_15 = "gobackward.15"
-    @available(iOS, deprecated: 15.0,  message: "No replacement available")
-    @available(macOS, deprecated: 12.0,  message: "No replacement available")
-    @available(tvOS, deprecated: 15.0,  message: "No replacement available")
-    @available(watchOS, deprecated: 8.0,  message: "No replacement available")
+    @available(iOS, deprecated: 14.0,  message: "No replacement available")
+    @available(macOS, deprecated: 11.0,  message: "No replacement available")
+    @available(tvOS, deprecated: 14.0,  message: "No replacement available")
+    @available(watchOS, deprecated: 7.0,  message: "No replacement available")
     case gobackward_15_ar = "gobackward.15.ar"
-    @available(iOS, deprecated: 15.0,  message: "No replacement available")
-    @available(macOS, deprecated: 12.0,  message: "No replacement available")
-    @available(tvOS, deprecated: 15.0,  message: "No replacement available")
-    @available(watchOS, deprecated: 8.0,  message: "No replacement available")
+    @available(iOS, deprecated: 14.0,  message: "No replacement available")
+    @available(macOS, deprecated: 11.0,  message: "No replacement available")
+    @available(tvOS, deprecated: 14.0,  message: "No replacement available")
+    @available(watchOS, deprecated: 7.0,  message: "No replacement available")
     case gobackward_15_hi = "gobackward.15.hi"
     case gobackward_30 = "gobackward.30"
-    @available(iOS, deprecated: 15.0,  message: "No replacement available")
-    @available(macOS, deprecated: 12.0,  message: "No replacement available")
-    @available(tvOS, deprecated: 15.0,  message: "No replacement available")
-    @available(watchOS, deprecated: 8.0,  message: "No replacement available")
+    @available(iOS, deprecated: 14.0,  message: "No replacement available")
+    @available(macOS, deprecated: 11.0,  message: "No replacement available")
+    @available(tvOS, deprecated: 14.0,  message: "No replacement available")
+    @available(watchOS, deprecated: 7.0,  message: "No replacement available")
     case gobackward_30_ar = "gobackward.30.ar"
-    @available(iOS, deprecated: 15.0,  message: "No replacement available")
-    @available(macOS, deprecated: 12.0,  message: "No replacement available")
-    @available(tvOS, deprecated: 15.0,  message: "No replacement available")
-    @available(watchOS, deprecated: 8.0,  message: "No replacement available")
+    @available(iOS, deprecated: 14.0,  message: "No replacement available")
+    @available(macOS, deprecated: 11.0,  message: "No replacement available")
+    @available(tvOS, deprecated: 14.0,  message: "No replacement available")
+    @available(watchOS, deprecated: 7.0,  message: "No replacement available")
     case gobackward_30_hi = "gobackward.30.hi"
     case gobackward_45 = "gobackward.45"
-    @available(iOS, deprecated: 15.0,  message: "No replacement available")
-    @available(macOS, deprecated: 12.0,  message: "No replacement available")
-    @available(tvOS, deprecated: 15.0,  message: "No replacement available")
-    @available(watchOS, deprecated: 8.0,  message: "No replacement available")
+    @available(iOS, deprecated: 14.0,  message: "No replacement available")
+    @available(macOS, deprecated: 11.0,  message: "No replacement available")
+    @available(tvOS, deprecated: 14.0,  message: "No replacement available")
+    @available(watchOS, deprecated: 7.0,  message: "No replacement available")
     case gobackward_45_ar = "gobackward.45.ar"
-    @available(iOS, deprecated: 15.0,  message: "No replacement available")
-    @available(macOS, deprecated: 12.0,  message: "No replacement available")
-    @available(tvOS, deprecated: 15.0,  message: "No replacement available")
-    @available(watchOS, deprecated: 8.0,  message: "No replacement available")
+    @available(iOS, deprecated: 14.0,  message: "No replacement available")
+    @available(macOS, deprecated: 11.0,  message: "No replacement available")
+    @available(tvOS, deprecated: 14.0,  message: "No replacement available")
+    @available(watchOS, deprecated: 7.0,  message: "No replacement available")
     case gobackward_45_hi = "gobackward.45.hi"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case gobackward_5 = "gobackward.5"
     case gobackward_60 = "gobackward.60"
-    @available(iOS, deprecated: 15.0,  message: "No replacement available")
-    @available(macOS, deprecated: 12.0,  message: "No replacement available")
-    @available(tvOS, deprecated: 15.0,  message: "No replacement available")
-    @available(watchOS, deprecated: 8.0,  message: "No replacement available")
+    @available(iOS, deprecated: 14.0,  message: "No replacement available")
+    @available(macOS, deprecated: 11.0,  message: "No replacement available")
+    @available(tvOS, deprecated: 14.0,  message: "No replacement available")
+    @available(watchOS, deprecated: 7.0,  message: "No replacement available")
     case gobackward_60_ar = "gobackward.60.ar"
-    @available(iOS, deprecated: 15.0,  message: "No replacement available")
-    @available(macOS, deprecated: 12.0,  message: "No replacement available")
-    @available(tvOS, deprecated: 15.0,  message: "No replacement available")
-    @available(watchOS, deprecated: 8.0,  message: "No replacement available")
+    @available(iOS, deprecated: 14.0,  message: "No replacement available")
+    @available(macOS, deprecated: 11.0,  message: "No replacement available")
+    @available(tvOS, deprecated: 14.0,  message: "No replacement available")
+    @available(watchOS, deprecated: 7.0,  message: "No replacement available")
     case gobackward_60_hi = "gobackward.60.hi"
     case gobackward_75 = "gobackward.75"
-    @available(iOS, deprecated: 15.0,  message: "No replacement available")
-    @available(macOS, deprecated: 12.0,  message: "No replacement available")
-    @available(tvOS, deprecated: 15.0,  message: "No replacement available")
-    @available(watchOS, deprecated: 8.0,  message: "No replacement available")
+    @available(iOS, deprecated: 14.0,  message: "No replacement available")
+    @available(macOS, deprecated: 11.0,  message: "No replacement available")
+    @available(tvOS, deprecated: 14.0,  message: "No replacement available")
+    @available(watchOS, deprecated: 7.0,  message: "No replacement available")
     case gobackward_75_ar = "gobackward.75.ar"
-    @available(iOS, deprecated: 15.0,  message: "No replacement available")
-    @available(macOS, deprecated: 12.0,  message: "No replacement available")
-    @available(tvOS, deprecated: 15.0,  message: "No replacement available")
-    @available(watchOS, deprecated: 8.0,  message: "No replacement available")
+    @available(iOS, deprecated: 14.0,  message: "No replacement available")
+    @available(macOS, deprecated: 11.0,  message: "No replacement available")
+    @available(tvOS, deprecated: 14.0,  message: "No replacement available")
+    @available(watchOS, deprecated: 7.0,  message: "No replacement available")
     case gobackward_75_hi = "gobackward.75.hi"
     case gobackward_90 = "gobackward.90"
-    @available(iOS, deprecated: 15.0,  message: "No replacement available")
-    @available(macOS, deprecated: 12.0,  message: "No replacement available")
-    @available(tvOS, deprecated: 15.0,  message: "No replacement available")
-    @available(watchOS, deprecated: 8.0,  message: "No replacement available")
+    @available(iOS, deprecated: 14.0,  message: "No replacement available")
+    @available(macOS, deprecated: 11.0,  message: "No replacement available")
+    @available(tvOS, deprecated: 14.0,  message: "No replacement available")
+    @available(watchOS, deprecated: 7.0,  message: "No replacement available")
     case gobackward_90_ar = "gobackward.90.ar"
-    @available(iOS, deprecated: 15.0,  message: "No replacement available")
-    @available(macOS, deprecated: 12.0,  message: "No replacement available")
-    @available(tvOS, deprecated: 15.0,  message: "No replacement available")
-    @available(watchOS, deprecated: 8.0,  message: "No replacement available")
+    @available(iOS, deprecated: 14.0,  message: "No replacement available")
+    @available(macOS, deprecated: 11.0,  message: "No replacement available")
+    @available(tvOS, deprecated: 14.0,  message: "No replacement available")
+    @available(watchOS, deprecated: 7.0,  message: "No replacement available")
     case gobackward_90_hi = "gobackward.90.hi"
     case gobackward_minus = "gobackward.minus"
     case goforward = "goforward"
     case goforward_10 = "goforward.10"
-    @available(iOS, deprecated: 15.0,  message: "No replacement available")
-    @available(macOS, deprecated: 12.0,  message: "No replacement available")
-    @available(tvOS, deprecated: 15.0,  message: "No replacement available")
-    @available(watchOS, deprecated: 8.0,  message: "No replacement available")
+    @available(iOS, deprecated: 14.0,  message: "No replacement available")
+    @available(macOS, deprecated: 11.0,  message: "No replacement available")
+    @available(tvOS, deprecated: 14.0,  message: "No replacement available")
+    @available(watchOS, deprecated: 7.0,  message: "No replacement available")
     case goforward_10_ar = "goforward.10.ar"
-    @available(iOS, deprecated: 15.0,  message: "No replacement available")
-    @available(macOS, deprecated: 12.0,  message: "No replacement available")
-    @available(tvOS, deprecated: 15.0,  message: "No replacement available")
-    @available(watchOS, deprecated: 8.0,  message: "No replacement available")
+    @available(iOS, deprecated: 14.0,  message: "No replacement available")
+    @available(macOS, deprecated: 11.0,  message: "No replacement available")
+    @available(tvOS, deprecated: 14.0,  message: "No replacement available")
+    @available(watchOS, deprecated: 7.0,  message: "No replacement available")
     case goforward_10_hi = "goforward.10.hi"
     case goforward_15 = "goforward.15"
-    @available(iOS, deprecated: 15.0,  message: "No replacement available")
-    @available(macOS, deprecated: 12.0,  message: "No replacement available")
-    @available(tvOS, deprecated: 15.0,  message: "No replacement available")
-    @available(watchOS, deprecated: 8.0,  message: "No replacement available")
+    @available(iOS, deprecated: 14.0,  message: "No replacement available")
+    @available(macOS, deprecated: 11.0,  message: "No replacement available")
+    @available(tvOS, deprecated: 14.0,  message: "No replacement available")
+    @available(watchOS, deprecated: 7.0,  message: "No replacement available")
     case goforward_15_ar = "goforward.15.ar"
-    @available(iOS, deprecated: 15.0,  message: "No replacement available")
-    @available(macOS, deprecated: 12.0,  message: "No replacement available")
-    @available(tvOS, deprecated: 15.0,  message: "No replacement available")
-    @available(watchOS, deprecated: 8.0,  message: "No replacement available")
+    @available(iOS, deprecated: 14.0,  message: "No replacement available")
+    @available(macOS, deprecated: 11.0,  message: "No replacement available")
+    @available(tvOS, deprecated: 14.0,  message: "No replacement available")
+    @available(watchOS, deprecated: 7.0,  message: "No replacement available")
     case goforward_15_hi = "goforward.15.hi"
     case goforward_30 = "goforward.30"
-    @available(iOS, deprecated: 15.0,  message: "No replacement available")
-    @available(macOS, deprecated: 12.0,  message: "No replacement available")
-    @available(tvOS, deprecated: 15.0,  message: "No replacement available")
-    @available(watchOS, deprecated: 8.0,  message: "No replacement available")
+    @available(iOS, deprecated: 14.0,  message: "No replacement available")
+    @available(macOS, deprecated: 11.0,  message: "No replacement available")
+    @available(tvOS, deprecated: 14.0,  message: "No replacement available")
+    @available(watchOS, deprecated: 7.0,  message: "No replacement available")
     case goforward_30_ar = "goforward.30.ar"
-    @available(iOS, deprecated: 15.0,  message: "No replacement available")
-    @available(macOS, deprecated: 12.0,  message: "No replacement available")
-    @available(tvOS, deprecated: 15.0,  message: "No replacement available")
-    @available(watchOS, deprecated: 8.0,  message: "No replacement available")
+    @available(iOS, deprecated: 14.0,  message: "No replacement available")
+    @available(macOS, deprecated: 11.0,  message: "No replacement available")
+    @available(tvOS, deprecated: 14.0,  message: "No replacement available")
+    @available(watchOS, deprecated: 7.0,  message: "No replacement available")
     case goforward_30_hi = "goforward.30.hi"
     case goforward_45 = "goforward.45"
-    @available(iOS, deprecated: 15.0,  message: "No replacement available")
-    @available(macOS, deprecated: 12.0,  message: "No replacement available")
-    @available(tvOS, deprecated: 15.0,  message: "No replacement available")
-    @available(watchOS, deprecated: 8.0,  message: "No replacement available")
+    @available(iOS, deprecated: 14.0,  message: "No replacement available")
+    @available(macOS, deprecated: 11.0,  message: "No replacement available")
+    @available(tvOS, deprecated: 14.0,  message: "No replacement available")
+    @available(watchOS, deprecated: 7.0,  message: "No replacement available")
     case goforward_45_ar = "goforward.45.ar"
-    @available(iOS, deprecated: 15.0,  message: "No replacement available")
-    @available(macOS, deprecated: 12.0,  message: "No replacement available")
-    @available(tvOS, deprecated: 15.0,  message: "No replacement available")
-    @available(watchOS, deprecated: 8.0,  message: "No replacement available")
+    @available(iOS, deprecated: 14.0,  message: "No replacement available")
+    @available(macOS, deprecated: 11.0,  message: "No replacement available")
+    @available(tvOS, deprecated: 14.0,  message: "No replacement available")
+    @available(watchOS, deprecated: 7.0,  message: "No replacement available")
     case goforward_45_hi = "goforward.45.hi"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case goforward_5 = "goforward.5"
     case goforward_60 = "goforward.60"
-    @available(iOS, deprecated: 15.0,  message: "No replacement available")
-    @available(macOS, deprecated: 12.0,  message: "No replacement available")
-    @available(tvOS, deprecated: 15.0,  message: "No replacement available")
-    @available(watchOS, deprecated: 8.0,  message: "No replacement available")
+    @available(iOS, deprecated: 14.0,  message: "No replacement available")
+    @available(macOS, deprecated: 11.0,  message: "No replacement available")
+    @available(tvOS, deprecated: 14.0,  message: "No replacement available")
+    @available(watchOS, deprecated: 7.0,  message: "No replacement available")
     case goforward_60_ar = "goforward.60.ar"
-    @available(iOS, deprecated: 15.0,  message: "No replacement available")
-    @available(macOS, deprecated: 12.0,  message: "No replacement available")
-    @available(tvOS, deprecated: 15.0,  message: "No replacement available")
-    @available(watchOS, deprecated: 8.0,  message: "No replacement available")
+    @available(iOS, deprecated: 14.0,  message: "No replacement available")
+    @available(macOS, deprecated: 11.0,  message: "No replacement available")
+    @available(tvOS, deprecated: 14.0,  message: "No replacement available")
+    @available(watchOS, deprecated: 7.0,  message: "No replacement available")
     case goforward_60_hi = "goforward.60.hi"
     case goforward_75 = "goforward.75"
-    @available(iOS, deprecated: 15.0,  message: "No replacement available")
-    @available(macOS, deprecated: 12.0,  message: "No replacement available")
-    @available(tvOS, deprecated: 15.0,  message: "No replacement available")
-    @available(watchOS, deprecated: 8.0,  message: "No replacement available")
+    @available(iOS, deprecated: 14.0,  message: "No replacement available")
+    @available(macOS, deprecated: 11.0,  message: "No replacement available")
+    @available(tvOS, deprecated: 14.0,  message: "No replacement available")
+    @available(watchOS, deprecated: 7.0,  message: "No replacement available")
     case goforward_75_ar = "goforward.75.ar"
-    @available(iOS, deprecated: 15.0,  message: "No replacement available")
-    @available(macOS, deprecated: 12.0,  message: "No replacement available")
-    @available(tvOS, deprecated: 15.0,  message: "No replacement available")
-    @available(watchOS, deprecated: 8.0,  message: "No replacement available")
+    @available(iOS, deprecated: 14.0,  message: "No replacement available")
+    @available(macOS, deprecated: 11.0,  message: "No replacement available")
+    @available(tvOS, deprecated: 14.0,  message: "No replacement available")
+    @available(watchOS, deprecated: 7.0,  message: "No replacement available")
     case goforward_75_hi = "goforward.75.hi"
     case goforward_90 = "goforward.90"
-    @available(iOS, deprecated: 15.0,  message: "No replacement available")
-    @available(macOS, deprecated: 12.0,  message: "No replacement available")
-    @available(tvOS, deprecated: 15.0,  message: "No replacement available")
-    @available(watchOS, deprecated: 8.0,  message: "No replacement available")
+    @available(iOS, deprecated: 14.0,  message: "No replacement available")
+    @available(macOS, deprecated: 11.0,  message: "No replacement available")
+    @available(tvOS, deprecated: 14.0,  message: "No replacement available")
+    @available(watchOS, deprecated: 7.0,  message: "No replacement available")
     case goforward_90_ar = "goforward.90.ar"
-    @available(iOS, deprecated: 15.0,  message: "No replacement available")
-    @available(macOS, deprecated: 12.0,  message: "No replacement available")
-    @available(tvOS, deprecated: 15.0,  message: "No replacement available")
-    @available(watchOS, deprecated: 8.0,  message: "No replacement available")
+    @available(iOS, deprecated: 14.0,  message: "No replacement available")
+    @available(macOS, deprecated: 11.0,  message: "No replacement available")
+    @available(tvOS, deprecated: 14.0,  message: "No replacement available")
+    @available(watchOS, deprecated: 7.0,  message: "No replacement available")
     case goforward_90_hi = "goforward.90.hi"
     case goforward_plus = "goforward.plus"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
@@ -2720,6 +2720,10 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case ipad_and_arrow_forward = "ipad.and.arrow.forward"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
+    case ipad_badge_play = "ipad.badge.play"
+    @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
+    case ipad_landscape_badge_play = "ipad.landscape.badge.play"
+    @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case ipad_rear_camera = "ipad.rear.camera"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case iphone_and_arrow_forward = "iphone.and.arrow.forward"
@@ -2864,10 +2868,10 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case lb_rectangle_roundedbottom_fill = "lb.rectangle.roundedbottom.fill"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case leaf = "leaf"
-    @available(iOS, deprecated: 15.0, renamed: "leaf_arrow_triangle_circlepath")
-    @available(macOS, deprecated: 12.0, renamed: "leaf_arrow_triangle_circlepath")
-    @available(tvOS, deprecated: 15.0, renamed: "leaf_arrow_triangle_circlepath")
-    @available(watchOS, deprecated: 8.0, renamed: "leaf_arrow_triangle_circlepath")
+    @available(iOS, deprecated: 14.0, renamed: "leaf_arrow_triangle_circlepath")
+    @available(macOS, deprecated: 11.0, renamed: "leaf_arrow_triangle_circlepath")
+    @available(tvOS, deprecated: 14.0, renamed: "leaf_arrow_triangle_circlepath")
+    @available(watchOS, deprecated: 7.0, renamed: "leaf_arrow_triangle_circlepath")
     case leaf_arrow_circlepath = "leaf.arrow.circlepath"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case leaf_arrow_triangle_circlepath = "leaf.arrow.triangle.circlepath"
@@ -3239,15 +3243,15 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case multiply_circle_fill = "multiply.circle.fill"
     case multiply_square = "multiply.square"
     case multiply_square_fill = "multiply.square.fill"
-    @available(iOS, deprecated: 15.0, renamed: "music_note_house")
-    @available(macOS, deprecated: 12.0, renamed: "music_note_house")
-    @available(tvOS, deprecated: 15.0, renamed: "music_note_house")
-    @available(watchOS, deprecated: 8.0, renamed: "music_note_house")
+    @available(iOS, deprecated: 14.0, renamed: "music_note_house")
+    @available(macOS, deprecated: 11.0, renamed: "music_note_house")
+    @available(tvOS, deprecated: 14.0, renamed: "music_note_house")
+    @available(watchOS, deprecated: 7.0, renamed: "music_note_house")
     case music_house = "music.house"
-    @available(iOS, deprecated: 15.0, renamed: "music_note_house_fill")
-    @available(macOS, deprecated: 12.0, renamed: "music_note_house_fill")
-    @available(tvOS, deprecated: 15.0, renamed: "music_note_house_fill")
-    @available(watchOS, deprecated: 8.0, renamed: "music_note_house_fill")
+    @available(iOS, deprecated: 14.0, renamed: "music_note_house_fill")
+    @available(macOS, deprecated: 11.0, renamed: "music_note_house_fill")
+    @available(tvOS, deprecated: 14.0, renamed: "music_note_house_fill")
+    @available(watchOS, deprecated: 7.0, renamed: "music_note_house_fill")
     case music_house_fill = "music.house.fill"
     case music_mic = "music.mic"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
@@ -3380,10 +3384,10 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case paperplane_circle_fill = "paperplane.circle.fill"
     case paperplane_fill = "paperplane.fill"
-    @available(iOS, deprecated: 15.0, renamed: "paragraphsign")
-    @available(macOS, deprecated: 12.0, renamed: "paragraphsign")
-    @available(tvOS, deprecated: 15.0, renamed: "paragraphsign")
-    @available(watchOS, deprecated: 8.0, renamed: "paragraphsign")
+    @available(iOS, deprecated: 14.0, renamed: "paragraphsign")
+    @available(macOS, deprecated: 11.0, renamed: "paragraphsign")
+    @available(tvOS, deprecated: 14.0, renamed: "paragraphsign")
+    @available(watchOS, deprecated: 7.0, renamed: "paragraphsign")
     case paragraph = "paragraph"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case paragraphsign = "paragraphsign"
@@ -3414,10 +3418,10 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case peacesign = "peacesign"
     case pencil = "pencil"
-    @available(iOS, deprecated: 15.0, renamed: "rectangle_and_pencil_and_ellipsis")
-    @available(macOS, deprecated: 12.0, renamed: "rectangle_and_pencil_and_ellipsis")
-    @available(tvOS, deprecated: 15.0, renamed: "rectangle_and_pencil_and_ellipsis")
-    @available(watchOS, deprecated: 8.0, renamed: "rectangle_and_pencil_and_ellipsis")
+    @available(iOS, deprecated: 14.0, renamed: "rectangle_and_pencil_and_ellipsis")
+    @available(macOS, deprecated: 11.0, renamed: "rectangle_and_pencil_and_ellipsis")
+    @available(tvOS, deprecated: 14.0, renamed: "rectangle_and_pencil_and_ellipsis")
+    @available(watchOS, deprecated: 7.0, renamed: "rectangle_and_pencil_and_ellipsis")
     case pencil_and_ellipsis_rectangle = "pencil.and.ellipsis.rectangle"
     case pencil_and_outline = "pencil.and.outline"
     case pencil_circle = "pencil.circle"
@@ -3474,16 +3478,16 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case person_badge_clock_fill = "person.badge.clock.fill"
     case person_badge_minus = "person.badge.minus"
-    @available(iOS, deprecated: 15.0, renamed: "person_fill_badge_minus")
-    @available(macOS, deprecated: 12.0, renamed: "person_fill_badge_minus")
-    @available(tvOS, deprecated: 15.0, renamed: "person_fill_badge_minus")
-    @available(watchOS, deprecated: 8.0, renamed: "person_fill_badge_minus")
+    @available(iOS, deprecated: 14.0, renamed: "person_fill_badge_minus")
+    @available(macOS, deprecated: 11.0, renamed: "person_fill_badge_minus")
+    @available(tvOS, deprecated: 14.0, renamed: "person_fill_badge_minus")
+    @available(watchOS, deprecated: 7.0, renamed: "person_fill_badge_minus")
     case person_badge_minus_fill = "person.badge.minus.fill"
     case person_badge_plus = "person.badge.plus"
-    @available(iOS, deprecated: 15.0, renamed: "person_fill_badge_plus")
-    @available(macOS, deprecated: 12.0, renamed: "person_fill_badge_plus")
-    @available(tvOS, deprecated: 15.0, renamed: "person_fill_badge_plus")
-    @available(watchOS, deprecated: 8.0, renamed: "person_fill_badge_plus")
+    @available(iOS, deprecated: 14.0, renamed: "person_fill_badge_plus")
+    @available(macOS, deprecated: 11.0, renamed: "person_fill_badge_plus")
+    @available(tvOS, deprecated: 14.0, renamed: "person_fill_badge_plus")
+    @available(watchOS, deprecated: 7.0, renamed: "person_fill_badge_plus")
     case person_badge_plus_fill = "person.badge.plus.fill"
     case person_circle = "person.circle"
     case person_circle_fill = "person.circle.fill"
@@ -3497,10 +3501,10 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case person_crop_circle_badge_clock = "person.crop.circle.badge.clock"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case person_crop_circle_badge_clock_fill = "person.crop.circle.badge.clock.fill"
-    @available(iOS, deprecated: 15.0, renamed: "person_crop_circle_badge_exclamationmark")
-    @available(macOS, deprecated: 12.0, renamed: "person_crop_circle_badge_exclamationmark")
-    @available(tvOS, deprecated: 15.0, renamed: "person_crop_circle_badge_exclamationmark")
-    @available(watchOS, deprecated: 8.0, renamed: "person_crop_circle_badge_exclamationmark")
+    @available(iOS, deprecated: 14.0, renamed: "person_crop_circle_badge_exclamationmark")
+    @available(macOS, deprecated: 11.0, renamed: "person_crop_circle_badge_exclamationmark")
+    @available(tvOS, deprecated: 14.0, renamed: "person_crop_circle_badge_exclamationmark")
+    @available(watchOS, deprecated: 7.0, renamed: "person_crop_circle_badge_exclamationmark")
     case person_crop_circle_badge_exclam = "person.crop.circle.badge.exclam"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case person_crop_circle_badge_exclamationmark = "person.crop.circle.badge.exclamationmark"
@@ -3521,10 +3525,10 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case person_crop_circle_badge_xmark = "person.crop.circle.badge.xmark"
     case person_crop_circle_fill = "person.crop.circle.fill"
     case person_crop_circle_fill_badge_checkmark = "person.crop.circle.fill.badge.checkmark"
-    @available(iOS, deprecated: 15.0, renamed: "person_crop_circle_fill_badge_exclamationmark")
-    @available(macOS, deprecated: 12.0, renamed: "person_crop_circle_fill_badge_exclamationmark")
-    @available(tvOS, deprecated: 15.0, renamed: "person_crop_circle_fill_badge_exclamationmark")
-    @available(watchOS, deprecated: 8.0, renamed: "person_crop_circle_fill_badge_exclamationmark")
+    @available(iOS, deprecated: 14.0, renamed: "person_crop_circle_fill_badge_exclamationmark")
+    @available(macOS, deprecated: 11.0, renamed: "person_crop_circle_fill_badge_exclamationmark")
+    @available(tvOS, deprecated: 14.0, renamed: "person_crop_circle_fill_badge_exclamationmark")
+    @available(watchOS, deprecated: 7.0, renamed: "person_crop_circle_fill_badge_exclamationmark")
     case person_crop_circle_fill_badge_exclam = "person.crop.circle.fill.badge.exclam"
     @available(iOS, deprecated: 15.0, renamed: "person_crop_circle_badge_exclamationmark_fill")
     @available(macOS, deprecated: 12.0, renamed: "person_crop_circle_badge_exclamationmark_fill")
@@ -3910,15 +3914,15 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case radio = "radio"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case radio_fill = "radio.fill"
-    @available(iOS, deprecated: 15.0, renamed: "wave_3_left")
-    @available(macOS, deprecated: 12.0, renamed: "wave_3_left")
-    @available(tvOS, deprecated: 15.0, renamed: "wave_3_left")
-    @available(watchOS, deprecated: 8.0, renamed: "wave_3_left")
+    @available(iOS, deprecated: 14.0, renamed: "wave_3_left")
+    @available(macOS, deprecated: 11.0, renamed: "wave_3_left")
+    @available(tvOS, deprecated: 14.0, renamed: "wave_3_left")
+    @available(watchOS, deprecated: 7.0, renamed: "wave_3_left")
     case radiowaves_left = "radiowaves.left"
-    @available(iOS, deprecated: 15.0, renamed: "wave_3_right")
-    @available(macOS, deprecated: 12.0, renamed: "wave_3_right")
-    @available(tvOS, deprecated: 15.0, renamed: "wave_3_right")
-    @available(watchOS, deprecated: 8.0, renamed: "wave_3_right")
+    @available(iOS, deprecated: 14.0, renamed: "wave_3_right")
+    @available(macOS, deprecated: 11.0, renamed: "wave_3_right")
+    @available(tvOS, deprecated: 14.0, renamed: "wave_3_right")
+    @available(watchOS, deprecated: 7.0, renamed: "wave_3_right")
     case radiowaves_right = "radiowaves.right"
     case rays = "rays"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
@@ -4005,10 +4009,10 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case rectangle_dashed_and_paperclip = "rectangle.dashed.and.paperclip"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case rectangle_dashed_badge_record = "rectangle.dashed.badge.record"
-    @available(iOS, deprecated: 15.0, renamed: "dock_rectangle")
-    @available(macOS, deprecated: 12.0, renamed: "dock_rectangle")
-    @available(tvOS, deprecated: 15.0, renamed: "dock_rectangle")
-    @available(watchOS, deprecated: 8.0, renamed: "dock_rectangle")
+    @available(iOS, deprecated: 14.0, renamed: "dock_rectangle")
+    @available(macOS, deprecated: 11.0, renamed: "dock_rectangle")
+    @available(tvOS, deprecated: 14.0, renamed: "dock_rectangle")
+    @available(watchOS, deprecated: 7.0, renamed: "dock_rectangle")
     case rectangle_dock = "rectangle.dock"
     case rectangle_expand_vertical = "rectangle.expand.vertical"
     case rectangle_fill = "rectangle.fill"
@@ -4119,10 +4123,10 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case rectangle_lefthalf_inset_filled = "rectangle.lefthalf.inset.filled"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case rectangle_lefthalf_inset_filled_arrow_left = "rectangle.lefthalf.inset.filled.arrow.left"
-    @available(iOS, deprecated: 15.0, renamed: "rectangle_leftthird_inset_filled")
-    @available(macOS, deprecated: 12.0, renamed: "rectangle_leftthird_inset_filled")
-    @available(tvOS, deprecated: 15.0, renamed: "rectangle_leftthird_inset_filled")
-    @available(watchOS, deprecated: 8.0, renamed: "rectangle_leftthird_inset_filled")
+    @available(iOS, deprecated: 15.0, renamed: "rectangle_leadingthird_inset_filled")
+    @available(macOS, deprecated: 12.0, renamed: "rectangle_leadingthird_inset_filled")
+    @available(tvOS, deprecated: 15.0, renamed: "rectangle_leadingthird_inset_filled")
+    @available(watchOS, deprecated: 8.0, renamed: "rectangle_leadingthird_inset_filled")
     case rectangle_leftthird_inset_fill = "rectangle.leftthird.inset.fill"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case rectangle_leftthird_inset_filled = "rectangle.leftthird.inset.filled"
@@ -4429,25 +4433,25 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case shekelsign_square = "shekelsign.square"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case shekelsign_square_fill = "shekelsign.square.fill"
-    @available(iOS, deprecated: 15.0, renamed: "shekelsign_circle")
-    @available(macOS, deprecated: 12.0, renamed: "shekelsign_circle")
-    @available(tvOS, deprecated: 15.0, renamed: "shekelsign_circle")
-    @available(watchOS, deprecated: 8.0, renamed: "shekelsign_circle")
+    @available(iOS, deprecated: 14.0, renamed: "shekelsign_circle")
+    @available(macOS, deprecated: 11.0, renamed: "shekelsign_circle")
+    @available(tvOS, deprecated: 14.0, renamed: "shekelsign_circle")
+    @available(watchOS, deprecated: 7.0, renamed: "shekelsign_circle")
     case sheqelsign_circle = "sheqelsign.circle"
-    @available(iOS, deprecated: 15.0, renamed: "shekelsign_circle_fill")
-    @available(macOS, deprecated: 12.0, renamed: "shekelsign_circle_fill")
-    @available(tvOS, deprecated: 15.0, renamed: "shekelsign_circle_fill")
-    @available(watchOS, deprecated: 8.0, renamed: "shekelsign_circle_fill")
+    @available(iOS, deprecated: 14.0, renamed: "shekelsign_circle_fill")
+    @available(macOS, deprecated: 11.0, renamed: "shekelsign_circle_fill")
+    @available(tvOS, deprecated: 14.0, renamed: "shekelsign_circle_fill")
+    @available(watchOS, deprecated: 7.0, renamed: "shekelsign_circle_fill")
     case sheqelsign_circle_fill = "sheqelsign.circle.fill"
-    @available(iOS, deprecated: 15.0, renamed: "shekelsign_square")
-    @available(macOS, deprecated: 12.0, renamed: "shekelsign_square")
-    @available(tvOS, deprecated: 15.0, renamed: "shekelsign_square")
-    @available(watchOS, deprecated: 8.0, renamed: "shekelsign_square")
+    @available(iOS, deprecated: 14.0, renamed: "shekelsign_square")
+    @available(macOS, deprecated: 11.0, renamed: "shekelsign_square")
+    @available(tvOS, deprecated: 14.0, renamed: "shekelsign_square")
+    @available(watchOS, deprecated: 7.0, renamed: "shekelsign_square")
     case sheqelsign_square = "sheqelsign.square"
-    @available(iOS, deprecated: 15.0, renamed: "shekelsign_square_fill")
-    @available(macOS, deprecated: 12.0, renamed: "shekelsign_square_fill")
-    @available(tvOS, deprecated: 15.0, renamed: "shekelsign_square_fill")
-    @available(watchOS, deprecated: 8.0, renamed: "shekelsign_square_fill")
+    @available(iOS, deprecated: 14.0, renamed: "shekelsign_square_fill")
+    @available(macOS, deprecated: 11.0, renamed: "shekelsign_square_fill")
+    @available(tvOS, deprecated: 14.0, renamed: "shekelsign_square_fill")
+    @available(watchOS, deprecated: 7.0, renamed: "shekelsign_square_fill")
     case sheqelsign_square_fill = "sheqelsign.square.fill"
     case shield = "shield"
     case shield_fill = "shield.fill"
@@ -4533,15 +4537,15 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case smallcircle_circle_fill = "smallcircle.circle.fill"
     case smallcircle_fill_circle = "smallcircle.fill.circle"
     case smallcircle_fill_circle_fill = "smallcircle.fill.circle.fill"
-    @available(iOS, deprecated: 15.0, renamed: "face_smiling")
-    @available(macOS, deprecated: 12.0, renamed: "face_smiling")
-    @available(tvOS, deprecated: 15.0, renamed: "face_smiling")
-    @available(watchOS, deprecated: 8.0, renamed: "face_smiling")
+    @available(iOS, deprecated: 14.0, renamed: "face_smiling")
+    @available(macOS, deprecated: 11.0, renamed: "face_smiling")
+    @available(tvOS, deprecated: 14.0, renamed: "face_smiling")
+    @available(watchOS, deprecated: 7.0, renamed: "face_smiling")
     case smiley = "smiley"
-    @available(iOS, deprecated: 15.0, renamed: "face_smiling_fill")
-    @available(macOS, deprecated: 12.0, renamed: "face_smiling_fill")
-    @available(tvOS, deprecated: 15.0, renamed: "face_smiling_fill")
-    @available(watchOS, deprecated: 8.0, renamed: "face_smiling_fill")
+    @available(iOS, deprecated: 14.0, renamed: "face_smiling_fill")
+    @available(macOS, deprecated: 11.0, renamed: "face_smiling_fill")
+    @available(tvOS, deprecated: 14.0, renamed: "face_smiling_fill")
+    @available(watchOS, deprecated: 7.0, renamed: "face_smiling_fill")
     case smiley_fill = "smiley.fill"
     case smoke = "smoke"
     case smoke_fill = "smoke.fill"
@@ -4571,35 +4575,35 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case sparkles_tv_fill = "sparkles.tv.fill"
     case speaker = "speaker"
-    @available(iOS, deprecated: 15.0, renamed: "speaker_wave_1")
-    @available(macOS, deprecated: 12.0, renamed: "speaker_wave_1")
-    @available(tvOS, deprecated: 15.0, renamed: "speaker_wave_1")
-    @available(watchOS, deprecated: 8.0, renamed: "speaker_wave_1")
+    @available(iOS, deprecated: 14.0, renamed: "speaker_wave_1")
+    @available(macOS, deprecated: 11.0, renamed: "speaker_wave_1")
+    @available(tvOS, deprecated: 14.0, renamed: "speaker_wave_1")
+    @available(watchOS, deprecated: 7.0, renamed: "speaker_wave_1")
     case speaker_1 = "speaker.1"
-    @available(iOS, deprecated: 15.0, renamed: "speaker_wave_1_fill")
-    @available(macOS, deprecated: 12.0, renamed: "speaker_wave_1_fill")
-    @available(tvOS, deprecated: 15.0, renamed: "speaker_wave_1_fill")
-    @available(watchOS, deprecated: 8.0, renamed: "speaker_wave_1_fill")
+    @available(iOS, deprecated: 14.0, renamed: "speaker_wave_1_fill")
+    @available(macOS, deprecated: 11.0, renamed: "speaker_wave_1_fill")
+    @available(tvOS, deprecated: 14.0, renamed: "speaker_wave_1_fill")
+    @available(watchOS, deprecated: 7.0, renamed: "speaker_wave_1_fill")
     case speaker_1_fill = "speaker.1.fill"
-    @available(iOS, deprecated: 15.0, renamed: "speaker_wave_2")
-    @available(macOS, deprecated: 12.0, renamed: "speaker_wave_2")
-    @available(tvOS, deprecated: 15.0, renamed: "speaker_wave_2")
-    @available(watchOS, deprecated: 8.0, renamed: "speaker_wave_2")
+    @available(iOS, deprecated: 14.0, renamed: "speaker_wave_2")
+    @available(macOS, deprecated: 11.0, renamed: "speaker_wave_2")
+    @available(tvOS, deprecated: 14.0, renamed: "speaker_wave_2")
+    @available(watchOS, deprecated: 7.0, renamed: "speaker_wave_2")
     case speaker_2 = "speaker.2"
-    @available(iOS, deprecated: 15.0, renamed: "speaker_wave_2_fill")
-    @available(macOS, deprecated: 12.0, renamed: "speaker_wave_2_fill")
-    @available(tvOS, deprecated: 15.0, renamed: "speaker_wave_2_fill")
-    @available(watchOS, deprecated: 8.0, renamed: "speaker_wave_2_fill")
+    @available(iOS, deprecated: 14.0, renamed: "speaker_wave_2_fill")
+    @available(macOS, deprecated: 11.0, renamed: "speaker_wave_2_fill")
+    @available(tvOS, deprecated: 14.0, renamed: "speaker_wave_2_fill")
+    @available(watchOS, deprecated: 7.0, renamed: "speaker_wave_2_fill")
     case speaker_2_fill = "speaker.2.fill"
-    @available(iOS, deprecated: 15.0, renamed: "speaker_wave_3")
-    @available(macOS, deprecated: 12.0, renamed: "speaker_wave_3")
-    @available(tvOS, deprecated: 15.0, renamed: "speaker_wave_3")
-    @available(watchOS, deprecated: 8.0, renamed: "speaker_wave_3")
+    @available(iOS, deprecated: 14.0, renamed: "speaker_wave_3")
+    @available(macOS, deprecated: 11.0, renamed: "speaker_wave_3")
+    @available(tvOS, deprecated: 14.0, renamed: "speaker_wave_3")
+    @available(watchOS, deprecated: 7.0, renamed: "speaker_wave_3")
     case speaker_3 = "speaker.3"
-    @available(iOS, deprecated: 15.0, renamed: "speaker_wave_3_fill")
-    @available(macOS, deprecated: 12.0, renamed: "speaker_wave_3_fill")
-    @available(tvOS, deprecated: 15.0, renamed: "speaker_wave_3_fill")
-    @available(watchOS, deprecated: 8.0, renamed: "speaker_wave_3_fill")
+    @available(iOS, deprecated: 14.0, renamed: "speaker_wave_3_fill")
+    @available(macOS, deprecated: 11.0, renamed: "speaker_wave_3_fill")
+    @available(tvOS, deprecated: 14.0, renamed: "speaker_wave_3_fill")
+    @available(watchOS, deprecated: 7.0, renamed: "speaker_wave_3_fill")
     case speaker_3_fill = "speaker.3.fill"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case speaker_badge_exclamationmark = "speaker.badge.exclamationmark"
@@ -4841,10 +4845,10 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case square_split_diagonal_fill = "square.split.diagonal.fill"
     case square_stack = "square.stack"
-    @available(iOS, deprecated: 15.0, renamed: "square_stack_3d_forward_dottedline")
-    @available(macOS, deprecated: 12.0, renamed: "square_stack_3d_forward_dottedline")
-    @available(tvOS, deprecated: 15.0, renamed: "square_stack_3d_forward_dottedline")
-    @available(watchOS, deprecated: 8.0, renamed: "square_stack_3d_forward_dottedline")
+    @available(iOS, deprecated: 14.0, renamed: "square_stack_3d_forward_dottedline")
+    @available(macOS, deprecated: 11.0, renamed: "square_stack_3d_forward_dottedline")
+    @available(tvOS, deprecated: 14.0, renamed: "square_stack_3d_forward_dottedline")
+    @available(watchOS, deprecated: 7.0, renamed: "square_stack_3d_forward_dottedline")
     case square_stack_3d_down_dottedline = "square.stack.3d.down.dottedline"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case square_stack_3d_down_forward = "square.stack.3d.down.forward"
@@ -4908,10 +4912,10 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case star_leadinghalf_fill = "star.leadinghalf.fill"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case star_leadinghalf_filled = "star.leadinghalf.filled"
-    @available(iOS, deprecated: 15.0, renamed: "star_leadinghalf_fill")
-    @available(macOS, deprecated: 12.0, renamed: "star_leadinghalf_fill")
-    @available(tvOS, deprecated: 15.0, renamed: "star_leadinghalf_fill")
-    @available(watchOS, deprecated: 8.0, renamed: "star_leadinghalf_fill")
+    @available(iOS, deprecated: 14.0, renamed: "star_leadinghalf_fill")
+    @available(macOS, deprecated: 11.0, renamed: "star_leadinghalf_fill")
+    @available(tvOS, deprecated: 14.0, renamed: "star_leadinghalf_fill")
+    @available(watchOS, deprecated: 7.0, renamed: "star_leadinghalf_fill")
     case star_lefthalf_fill = "star.lefthalf.fill"
     case star_slash = "star.slash"
     case star_slash_fill = "star.slash.fill"
@@ -4992,25 +4996,25 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case t_circle_fill = "t.circle.fill"
     case t_square = "t.square"
     case t_square_fill = "t.square.fill"
-    @available(iOS, deprecated: 15.0, renamed: "tablecells")
-    @available(macOS, deprecated: 12.0, renamed: "tablecells")
-    @available(tvOS, deprecated: 15.0, renamed: "tablecells")
-    @available(watchOS, deprecated: 8.0, renamed: "tablecells")
+    @available(iOS, deprecated: 14.0, renamed: "tablecells")
+    @available(macOS, deprecated: 11.0, renamed: "tablecells")
+    @available(tvOS, deprecated: 14.0, renamed: "tablecells")
+    @available(watchOS, deprecated: 7.0, renamed: "tablecells")
     case table = "table"
-    @available(iOS, deprecated: 15.0, renamed: "tablecells_badge_ellipsis")
-    @available(macOS, deprecated: 12.0, renamed: "tablecells_badge_ellipsis")
-    @available(tvOS, deprecated: 15.0, renamed: "tablecells_badge_ellipsis")
-    @available(watchOS, deprecated: 8.0, renamed: "tablecells_badge_ellipsis")
+    @available(iOS, deprecated: 14.0, renamed: "tablecells_badge_ellipsis")
+    @available(macOS, deprecated: 11.0, renamed: "tablecells_badge_ellipsis")
+    @available(tvOS, deprecated: 14.0, renamed: "tablecells_badge_ellipsis")
+    @available(watchOS, deprecated: 7.0, renamed: "tablecells_badge_ellipsis")
     case table_badge_more = "table.badge.more"
-    @available(iOS, deprecated: 15.0, renamed: "tablecells_badge_ellipsis_fill")
-    @available(macOS, deprecated: 12.0, renamed: "tablecells_badge_ellipsis_fill")
-    @available(tvOS, deprecated: 15.0, renamed: "tablecells_badge_ellipsis_fill")
-    @available(watchOS, deprecated: 8.0, renamed: "tablecells_badge_ellipsis_fill")
+    @available(iOS, deprecated: 14.0, renamed: "tablecells_badge_ellipsis_fill")
+    @available(macOS, deprecated: 11.0, renamed: "tablecells_badge_ellipsis_fill")
+    @available(tvOS, deprecated: 14.0, renamed: "tablecells_badge_ellipsis_fill")
+    @available(watchOS, deprecated: 7.0, renamed: "tablecells_badge_ellipsis_fill")
     case table_badge_more_fill = "table.badge.more.fill"
-    @available(iOS, deprecated: 15.0, renamed: "tablecells_fill")
-    @available(macOS, deprecated: 12.0, renamed: "tablecells_fill")
-    @available(tvOS, deprecated: 15.0, renamed: "tablecells_fill")
-    @available(watchOS, deprecated: 8.0, renamed: "tablecells_fill")
+    @available(iOS, deprecated: 14.0, renamed: "tablecells_fill")
+    @available(macOS, deprecated: 11.0, renamed: "tablecells_fill")
+    @available(tvOS, deprecated: 14.0, renamed: "tablecells_fill")
+    @available(watchOS, deprecated: 7.0, renamed: "tablecells_fill")
     case table_fill = "table.fill"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case tablecells = "tablecells"
@@ -5540,7 +5544,7 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case 🍏applelogo = "applelogo"
 
-    // This symbol may not be modified and may only be used to refer to Apple's Markup feature
+    // This symbol may not be modified and may only be used to refer to Apple Pencil
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case 🍏applepencil = "applepencil"
 
@@ -5925,10 +5929,6 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case 🍏ipad_and_iphone = "ipad.and.iphone"
 
     // This symbol may not be modified and may only be used to refer to Apple's iPad
-    @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
-    case 🍏ipad_badge_play = "ipad.badge.play"
-
-    // This symbol may not be modified and may only be used to refer to Apple's iPad
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case 🍏ipad_homebutton = "ipad.homebutton"
 
@@ -5947,10 +5947,6 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     // This symbol may not be modified and may only be used to refer to Apple's iPad
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case 🍏ipad_landscape = "ipad.landscape"
-
-    // This symbol may not be modified and may only be used to refer to Apple's iPad
-    @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
-    case 🍏ipad_landscape_badge_play = "ipad.landscape.badge.play"
 
     // This symbol may not be modified and may only be used to refer to Apple's iPhone
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
@@ -6040,11 +6036,11 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case 🍏iphone_slash_circle_fill = "iphone.slash.circle.fill"
 
-    // This symbol may not be modified and may only be used to refer to Apple's iPhone
+    // This symbol may not be modified and may only be used to refer to Apple's Smart Battery Case
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case 🍏iphone_smartbatterycase_gen1 = "iphone.smartbatterycase.gen1"
 
-    // This symbol may not be modified and may only be used to refer to Apple's iPhone
+    // This symbol may not be modified and may only be used to refer to Apple's Smart Battery Case
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case 🍏iphone_smartbatterycase_gen2 = "iphone.smartbatterycase.gen2"
 
@@ -6316,10 +6312,10 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case 🍏video_badge_plus = "video.badge.plus"
 
     // This symbol may not be modified and may only be used to refer to Apple's FaceTime app
-    @available(iOS, deprecated: 15.0, renamed: "🍏video_fill_badge_plus")
-    @available(macOS, deprecated: 12.0, renamed: "🍏video_fill_badge_plus")
-    @available(tvOS, deprecated: 15.0, renamed: "🍏video_fill_badge_plus")
-    @available(watchOS, deprecated: 8.0, renamed: "🍏video_fill_badge_plus")
+    @available(iOS, deprecated: 14.0, renamed: "🍏video_fill_badge_plus")
+    @available(macOS, deprecated: 11.0, renamed: "🍏video_fill_badge_plus")
+    @available(tvOS, deprecated: 14.0, renamed: "🍏video_fill_badge_plus")
+    @available(watchOS, deprecated: 7.0, renamed: "🍏video_fill_badge_plus")
     case 🍏video_badge_plus_fill = "video.badge.plus.fill"
 
     // This symbol may not be modified and may only be used to refer to Apple's FaceTime app
@@ -9165,10 +9161,10 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
             localAllCases.append(infinity_circle_fill)
             localAllCases.append(ipad_and_arrow_forward)
             localAllCases.append(🍏ipad_and_iphone)
-            localAllCases.append(🍏ipad_badge_play)
+            localAllCases.append(ipad_badge_play)
             localAllCases.append(🍏ipad_homebutton_badge_play)
             localAllCases.append(🍏ipad_homebutton_landscape_badge_play)
-            localAllCases.append(🍏ipad_landscape_badge_play)
+            localAllCases.append(ipad_landscape_badge_play)
             localAllCases.append(ipad_rear_camera)
             localAllCases.append(iphone_and_arrow_forward)
             localAllCases.append(🍏iphone_badge_play)
