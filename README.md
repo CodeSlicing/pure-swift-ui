@@ -19,7 +19,6 @@
 - [Conditional Modifiers](#conditional-modifiers)
 - [Conditional Rendering](#conditional-rendering)
 - [SF Symbols](#sf-symbols)
-- [Layout Guides and Paths](#layout-guides-and-paths)
 - [Preview Extensions](#preview-extensions)
 - [Caveats](#caveats)
 - [Installation](#installation)
@@ -421,12 +420,6 @@ Since all SF symbols are available as constants, there is also the option of usi
 
 Yet another advantage, is that the symbol constants defined in [PureSwiftUI][pure-swift-ui] are aware of deprecation so if a symbol you're using has been superseded by a new symbol name, you will get a warning including a suggestion of what to use instead, assuming one exists.
 
-## Layout Guides and Paths
-
-[PureSwiftUI][pure-swift-ui] includes a multitude of extensions and utilities for making drawing paths a breeze, so much so that there are dedicated documents for this topic. See the guide on [paths][docs-paths] for a detailed explanation of the various available extensions to facilitate drawing, and the section on [layout guides][docs-layout-guides] which take the process of shape building to the next level.
-
-It is my hope that the ease with which you can construct complex shapes using [PureSwiftUI][pure-swift-ui]'s layout guides and `Path` extension framework will encourage people to explore their artistic capabilities with constructing paths rather than be turned off by the ubiquitous point calculation logic that appears in most path building example code. Without these hurdles, you really are only limited by you imagination.
-
 ## Preview Extensions
 
 As with SF Symbols, this is once again a stringly typed interface that [PureSwiftUI][pure-swift-ui] does away with. Rather than guessing which device strings are accepted, you can pass in a constant to the `previewDevice` modifier like so:
@@ -446,10 +439,6 @@ MyView.envDarkMode()
 MyView.envDarkModeIf(condition) // or envDarkModeIfNot
 ```
 
-## Caveats
-
-Although [PureSwiftUI][pure-swift-ui] exports `SwiftUI` - meaning you don't need to import `SwiftUI` at the top of your views for compilation - unfortunately at the time of writing previews do not work if you are not explicitly importing `SwiftUI`. Hopefully this will be addressed in a future release.
-
 ## Installation
 
 The `pure-swift-ui` package can be found at:
@@ -460,7 +449,7 @@ Instructions for installing swift packages can be found [here][swift-package-ins
 
 ## Versioning
 
-This project adheres to a [semantic versioning](https://semver.org) paradigm. I'm sure a lot will change after WW20, so that's probably when version 2.0.0+ will appear.
+This project adheres to a [semantic versioning](https://semver.org) paradigm, so breaking changes will be reserved for major version updates. 
 
 ## Version History
 
@@ -512,6 +501,7 @@ You can contact me on Twitter [@CodeSlice][codeslice-twitter]. Happy to hear sug
 --->
 
 [pure-swift-ui]: https://github.com/CodeSlicing/pure-swift-ui
+[pure-swift-ui-design]: https://github.com/CodeSlicing/pure-swift-ui-design
 [sf-symbols]: https://developer.apple.com/design/human-interface-guidelines/sf-symbols/overview/
 [sf-symbols-reference]: https://sfsymbols.com
 [codeslice-twitter]: https://twitter.com/CodeSlice
