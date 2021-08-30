@@ -241,14 +241,11 @@ public extension CGRect {
 
 // MARK: ----- INSET
 
+#if !os(macOS)
 public extension CGRect {
 
     func inset(_ top: CGFloat, _ leading: CGFloat, _ bottom: CGFloat, _ trailing: CGFloat) -> CGRect {
-      #if os(macOS)
-      return self
-      #else
       return inset(by: UIEdgeInsets(top: top, left: leading, bottom: bottom, right: trailing))
-      #endif
     }
 
     func inset(_ edges: Edge.Set, _ size: CGFloat) -> CGRect {
@@ -283,6 +280,7 @@ public extension CGRect {
         inset(size, size, size, size)
     }
 }
+#endif
 
 // MARK: ----- REGION
 
