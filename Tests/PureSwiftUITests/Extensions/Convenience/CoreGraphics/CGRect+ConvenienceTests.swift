@@ -173,6 +173,7 @@ extension CGRectConvenienceExtensionsTests {
 
 // MARK: ----- INSET
 
+#if !os(macOS)
 extension CGRectConvenienceExtensionsTests {
     
     func testInset() {
@@ -200,6 +201,7 @@ extension CGRectConvenienceExtensionsTests {
         XCTAssertEqual(rect.inset(topInset), rect.inset(.all, topInset))
     }
 }
+#endif
 
 // MARK: ----- SCALE
 
