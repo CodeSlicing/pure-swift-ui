@@ -5,6 +5,7 @@
 //  Copyright © 2019 Adam Fordyce. All rights reserved.
 //
 
+#if !os(macOS)
 import Foundation
 
 public struct DynamicallyScalingFontViewModifier: ViewModifier {
@@ -40,3 +41,4 @@ public extension View {
         modifier(DynamicallyScalingFontViewModifier(name: name, size: size, weight: weight))
     }
 }
+#endif

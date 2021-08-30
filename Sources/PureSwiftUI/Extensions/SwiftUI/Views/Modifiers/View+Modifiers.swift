@@ -77,6 +77,16 @@ public extension View {
 
 public extension View {
     
+    #if os(macOS)
+    func fontSize(_ size: CGFloat, weight: Font.Weight? = nil) -> some View {
+        fontSize(size, name: nil, weight: weight)
+    }
+
+    func fontSize(_ size: CGFloat, name: String? = nil, weight: Font.Weight? = nil) -> some View {
+        self.font(self.createFont(name: name, size: size, weight: weight))
+    }
+
+    #else
     func fontSize(_ size: CGFloat, weight: Font.Weight? = nil, withScaling: Bool = true) -> some View {
         fontSize(size, name: nil, weight: weight, withScaling: withScaling)
     }
@@ -88,6 +98,7 @@ public extension View {
             self.font(self.createFont(name: name, size: size, weight: weight))
         }
     }
+    #endif
     
     private func createFont(name: String?, size: CGFloat, weight: Font.Weight?) -> Font {
         if let name = name {

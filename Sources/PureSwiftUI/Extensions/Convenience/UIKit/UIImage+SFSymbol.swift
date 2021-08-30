@@ -6,6 +6,7 @@
 //  Copyright © 2019 Adam Fordyce. All rights reserved.
 //
 
+#if canImport(UIKit)
 import UIKit
 
 public extension UIImage {
@@ -14,3 +15,4 @@ public extension UIImage {
         self.init(systemName: sfSymbol.rawValue)
     }
 }
+#endif
