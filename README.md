@@ -439,6 +439,29 @@ MyView.envDarkMode()
 MyView.envDarkModeIf(condition) // or envDarkModeIfNot
 ```
 
+## Caveats
+
+From verison 3.0.0 onwards, angles will be following the native definitions for what it means to be zero degrees. In other words, zero degrees moving forwards will be pointing to the right, just like the native implementation. 
+
+**This is a breaking change from version 2 so be careful to ensure that all calls involving the below are modified to take this into account**
+
+This affects the `AngularGradient` initialisers as well as the calls to `arc` on `Path`. 
+
+### Utility functions affected by this change:
+
+`angleTo` on `CGPoint` will now report the angle in accordance to the new angle orientation.
+calcOffset(radius:angle:), calcXoffset(radius:andle:), and calcYOffset(radius:angle:) will also calculate the offset assuming the angle is relative to 0 degrees being to the right. 
+
+### Mitigation:
+
+There are various function overloads and properties that make this transition easier and you can even continue to work with the current orientation if you find it easier to reason like this (although this will require a change to existing code to take advantage of it):
+
+`fromTop` on `Angle` will convert the angle to being relative to the top, so you can pass `90.degrees.fromTop` for example as an argument to `AngularGradient` or `arc` on `Path`. If doing this, however, do not use the `startAngleFromTop` for variants. 
+
+In addition to this, `AngularGradient` and `arc` on `Path` are defined with appropriate `startAngleFromTop` or `angleFromTop` arguments which do what they say. 
+
+The semantic constants `top`, `bottom`, `topTrailing` etc defined on `Angle` now represent the angles based on the native orientation. So `bottom` is defined as `90.degrees` for example. These constants can therfore be passed in to the aforementioned `startAngle` arguments (not the `fromTop` variants) and will result in the expected behaviour. 
+
 ## Installation
 
 The `pure-swift-ui` package can be found at:
