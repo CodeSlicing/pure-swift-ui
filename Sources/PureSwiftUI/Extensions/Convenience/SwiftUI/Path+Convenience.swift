@@ -443,4 +443,8 @@ public extension Path {
     mutating func arc(_ center: CGPoint, radius: CGFloat, startAngle: Angle, delta: Angle, transform: CGAffineTransform = .identity) {
         addRelativeArc(center: center, radius: radius, startAngle: adjustAngle(startAngle), delta: delta, transform: transform)
     }
+    
+    mutating func arc(_ tangent1End: CGPoint, _ tangent2End: CGPoint, radius: CGFloat, transform: CGAffineTransform = .identity) {
+        addArc(tangent1End: tangent1End, tangent2End: tangent2End, radius: radius, transform: transform)
+    }
 }
