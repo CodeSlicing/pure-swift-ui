@@ -22,6 +22,17 @@ class CGFloatConvenienceExtensionsTests: XCTestCase {
     }
 }
 
+// MARK: ----- PROPERTIES
+
+extension CGFloatConvenienceExtensionsTests {
+    
+    func testAbs() {
+        XCTAssertEqual((-10).asCGFloat.abs, 10)
+        XCTAssertEqual(0.asCGFloat.abs, 0)
+        XCTAssertEqual(10.asCGFloat.abs, 10)
+    }
+}
+
 // MARK: ----- TO
 
 extension CGFloatConvenienceExtensionsTests {

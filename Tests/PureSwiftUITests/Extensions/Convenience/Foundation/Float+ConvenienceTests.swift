@@ -29,3 +29,13 @@ class FloatConvenienceExtensionsTests: XCTestCase {
     }
 }
 
+// MARK: ----- PROPERTIES
+
+extension FloatConvenienceExtensionsTests {
+    
+    func testAbs() {
+        XCTAssertEqual((-10).asFloat.abs, 10)
+        XCTAssertEqual(0.asFloat.abs, 0)
+        XCTAssertEqual(10.asFloat.abs, 10)
+    }
+}

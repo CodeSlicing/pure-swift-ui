@@ -41,6 +41,10 @@ public extension Int {
         !isEven
     }
     
+    var abs: Int {
+         Swift.abs(self)
+    }
+    
     func random() -> Int {
         Int.random(in: 0...self)
     }
