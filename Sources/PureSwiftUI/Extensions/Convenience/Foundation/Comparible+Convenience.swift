@@ -7,6 +7,24 @@
 
 public extension Comparable {
     
+    func clamped(min: Self) -> Self {
+        clamped(min: min, max: self)
+    }
+    
+    func clamped(max: Self) -> Self {
+        clamped(min: self, max: max)
+    }
+    
+    func clamped(min: Self, max: Self) -> Self {
+        if (self > max) {
+            return max
+        } else if (self < min) {
+            return min
+        }
+        return self
+    }
+    
+    @available(*, deprecated, renamed: "clamped(min:max:)")
     func clamped(from: Self, to: Self) -> Self {
         if (self > to) {
             return to

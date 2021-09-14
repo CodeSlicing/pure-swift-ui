@@ -63,7 +63,13 @@ extension IntConvenienceExtensionsTests {
         XCTAssertEqual(Float(1.7).asInt, Int(1))
         XCTAssertEqual(Float(-1.7).asInt, Int(-1))
     }
-    
+
+    func testAbs() {
+        XCTAssertEqual((-10).abs, 10)
+        XCTAssertEqual(0.abs, 0)
+        XCTAssertEqual(10.abs, 10)
+    }
+
     func testRandom() {
         
         let value = 10

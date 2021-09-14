@@ -7,6 +7,17 @@
 
 import CoreGraphics
 
+// MARK: ----- PROPERTIES
+
+public extension CGFloat {
+    
+    var abs: CGFloat {
+        Swift.abs(self)
+    }
+}
+
+// MARK: ----- UTILITY FUNCTIONS
+
 public extension CGFloat {
     
     func random() -> CGFloat {

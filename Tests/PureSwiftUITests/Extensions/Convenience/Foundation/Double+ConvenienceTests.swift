@@ -22,3 +22,13 @@ class DoubleConvenienceExtensionsTests: XCTestCase {
     }
 }
 
+// MARK: ----- PROPERTIES
+
+extension DoubleConvenienceExtensionsTests {
+    
+    func testAbs() {
+        XCTAssertEqual((-10).asDouble.abs, 10)
+        XCTAssertEqual(0.asDouble.abs, 0)
+        XCTAssertEqual(10.asDouble.abs, 10)
+    }
+}

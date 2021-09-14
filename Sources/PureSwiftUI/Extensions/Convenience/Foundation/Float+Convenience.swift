@@ -7,6 +7,15 @@
 
 import CoreGraphics
 
+// MARK: ----- PROPERTIES
+
+public extension Float {
+    
+    var abs: Float {
+        Swift.abs(self)
+    }
+}
+
 public extension Float {
     
     func random() -> Float {

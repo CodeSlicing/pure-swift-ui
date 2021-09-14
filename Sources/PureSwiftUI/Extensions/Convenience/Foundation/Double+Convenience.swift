@@ -7,6 +7,15 @@
 
 import CoreGraphics
 
+// MARK: ----- PROPERTIES
+
+public extension Double {
+    
+    var abs: Double {
+        Swift.abs(self)
+    }
+}
+
 public extension Double {
     
     func random() -> Double {
