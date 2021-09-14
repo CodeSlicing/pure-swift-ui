@@ -6,11 +6,9 @@
 //
 
 import XCTest
-@testable import PureSwiftUIDesign
+@testable import PureSwiftUI
 
 class ComparibleConvenienceExtensionsTests: XCTestCase {
-    
-    func testClamped() {
 
     func testFrom() {
         XCTAssertEqual(2, 2.clamped(min: 0))
