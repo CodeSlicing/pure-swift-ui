@@ -1,5 +1,5 @@
 //
-//  Comparible+Convenience.swift
+//  Comparable+Convenience.swift
 //  
 //  Created by Adam Fordyce on 05/11/2019.
 //  Copyright © 2019 Adam Fordyce. All rights reserved.

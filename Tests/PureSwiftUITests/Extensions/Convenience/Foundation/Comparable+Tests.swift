@@ -1,5 +1,5 @@
 //
-//  Comparible+Tests.swift
+//  Comparable+Tests.swift
 //
 //
 //  Created by Adam Fordyce on 27/11/2019.
@@ -8,7 +8,7 @@
 import XCTest
 @testable import PureSwiftUI
 
-class ComparibleConvenienceExtensionsTests: XCTestCase {
+class ComparableConvenienceExtensionsTests: XCTestCase {
     
     func testFrom() {
         XCTAssertEqual(2, 2.clamped(min: 0))
