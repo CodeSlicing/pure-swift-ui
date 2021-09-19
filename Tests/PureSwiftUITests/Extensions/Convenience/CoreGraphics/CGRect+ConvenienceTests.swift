@@ -120,9 +120,17 @@ extension CGRectConvenienceExtensionsTests {
 
 extension CGRectConvenienceExtensionsTests {
     
-    func testClampedSize() {
+    @available(*, deprecated)
+    func testClampedSizeDeprecated() {
         let expectedResult = CGSize(maxX, maxY)
         let result = CGRect(x, y, 0, 20).clampedSize(from: maxX, to: maxY)
+        
+        XCTAssertEqual(result, expectedResult)
+    }
+    
+    func testClampedSize() {
+        let expectedResult = CGSize(maxX, maxY)
+        let result = CGRect(x, y, 0, 20).clampedSize(min: maxX, max: maxY)
         
         XCTAssertEqual(result, expectedResult)
     }
@@ -141,15 +149,29 @@ extension CGRectConvenienceExtensionsTests {
         XCTAssertEqual(rect.sizeScaled(.size(0.5)), CGSize(width * 0.5, height * 0.5))
         XCTAssertEqual(rect.sizeScaled(0.1, 0.5), CGSize(width * 0.1, height * 0.5))
     }
+    
+    @available(*, deprecated)
+    func testScaledXY() {
+        XCTAssertEqual(rect.xScaled(0.5), rect.midX)
+        XCTAssertEqual(rect.yScaled(0.5), rect.midY)
+        XCTAssertEqual(rect.xScaled(0.5), rect.midX)
+        XCTAssertEqual(rect.yScaled(0.5), rect.midY)
+        XCTAssertEqual(rect.xScaled(0), rect.minX)
+        XCTAssertEqual(rect.yScaled(0), rect.minY)
+        XCTAssertEqual(rect.xScaled(1), rect.maxX)
+        XCTAssertEqual(rect.yScaled(1), rect.maxY)
+        XCTAssertEqual(rect.xScaled(0.75), rect.minX + rect.widthScaled(0.75))
+        XCTAssertEqual(rect.yScaled(0.75), rect.minY + rect.heightScaled(0.75))
+    }
 }
 
 // MARK: ----- RELATIVE
 
 extension CGRectConvenienceExtensionsTests {
-    
+
     func testRelative() {
-        XCTAssertEqual(rect.xScaled(0.5), rect.midX)
-        XCTAssertEqual(rect.yScaled(0.5), rect.midY)
+        XCTAssertEqual(rect.relativeX(0.5), rect.midX)
+        XCTAssertEqual(rect.relativeY(0.5), rect.midY)
         XCTAssertEqual(rect.relativeX(0.5), rect.midX)
         XCTAssertEqual(rect.relativeY(0.5), rect.midY)
         XCTAssertEqual(rect.relativeX(0), rect.minX)

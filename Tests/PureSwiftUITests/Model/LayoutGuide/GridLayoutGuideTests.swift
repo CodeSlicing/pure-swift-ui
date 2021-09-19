@@ -1391,8 +1391,8 @@ extension GridLayoutGuideTests {
         assertEqual(grid.anchorLocation(for: .leading), rect.leading)
         assertEqual(grid.anchorLocation(for: .center), rect.center)
         
-        assertEqual(grid.anchorLocation(for: UnitPoint(0.25, 0.5)), CGPoint(rect.xScaled(0.25), rect.yScaled(0.5)))
-        assertEqual(grid.anchorLocation(for: UnitPoint(0.75, 0.75)), CGPoint(rect.xScaled(0.75), rect.yScaled(0.75)))
+        assertEqual(grid.anchorLocation(for: UnitPoint(0.25, 0.5)), CGPoint(rect.relativeX(0.25), rect.relativeY(0.5)))
+        assertEqual(grid.anchorLocation(for: UnitPoint(0.75, 0.75)), CGPoint(rect.relativeX(0.75), rect.relativeY(0.75)))
 
     }
 }

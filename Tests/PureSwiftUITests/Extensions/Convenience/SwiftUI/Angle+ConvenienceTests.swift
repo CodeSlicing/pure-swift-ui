@@ -51,6 +51,7 @@ extension AngleConvenienceExtensionsTests {
 
 extension AngleConvenienceExtensionsTests {
 
+    @available(*, deprecated)
     func testCycle() {
         XCTAssertEqual(Angle.cycle(0.25), 90.degrees)
         XCTAssertEqual(Angle.cycle(0.5), 180.degrees)

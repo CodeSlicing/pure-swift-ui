@@ -500,6 +500,8 @@ This project adheres to a [semantic versioning](https://semver.org) paradigm. I'
 - [2.1.1][tag-2.1.1] Add `eoFill` to Shape and add overloads for `strokeColor` to accept style argument
 - [2.1.2][tag-2.1.2] Add `cycles` as a first class angle type with conversion functions and properties supporting it
 - [2.1.3][tag-2.1.3] Add `GeometryReaderStack` and lines and shapes extensions to `Path` as well as `abs` property to major numerical types
+- [2.1.4][tag-2.1.4] Update clamping API and associated tests
+
 
 ## Licensing
 
@@ -568,6 +570,7 @@ version links:
 [tag-2.1.1]: https://github.com/CodeSlicing/pure-swift-ui/tree/2.1.1
 [tag-2.1.2]: https://github.com/CodeSlicing/pure-swift-ui/tree/2.1.2
 [tag-2.1.3]: https://github.com/CodeSlicing/pure-swift-ui/tree/2.1.3
+[tag-2.1.4]: https://github.com/CodeSlicing/pure-swift-ui/tree/2.1.4
 
 <!---
  local docs:

@@ -26,8 +26,9 @@ public extension FloatingPoint {
         return isPositive ? 0 : self
     }
     
+    @available(*, deprecated, renamed: "clamped(max:abs:)")
     func clamped(to: Self, spanZero: Bool = false) -> Self {
-        self.clamped(from: spanZero ? -to : 0, to: to)
+        self.clamped(max: to, abs: spanZero)
     }
 }
 

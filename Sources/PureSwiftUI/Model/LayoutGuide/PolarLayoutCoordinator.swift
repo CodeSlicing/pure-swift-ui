@@ -140,7 +140,7 @@ private protocol AngleForSegmentCalculator {
 private extension AngleForSegmentCalculator {
     
     func angleFor(relativeAngle: CGFloat) -> Angle {
-        .cycle(relativeAngle.asDouble)
+        .cycles(relativeAngle.asDouble)
     }
 }
 
@@ -317,7 +317,7 @@ public extension LayoutGuide {
      Equidistant rings and relative segments
      */
     static func polar(_ rect: CGRect, rings: Int, segments: [CGFloat], useMaxDimension: Bool = false, origin: UnitPoint = .center) -> LayoutGuide {
-        polar(rect, rings: rings, segments: segments.map { .cycle($0.asDouble) }, useMaxDimension: useMaxDimension, origin: origin)
+        polar(rect, rings: rings, segments: segments.map { .cycles($0.asDouble) }, useMaxDimension: useMaxDimension, origin: origin)
     }
     
     /**
@@ -335,7 +335,7 @@ public extension LayoutGuide {
      Relative rings and relative segments
      */
     static func polar(_ rect: CGRect, rings: [CGFloat], segments: [CGFloat], useMaxDimension: Bool = false, origin: UnitPoint = .center) -> LayoutGuide {
-        polar(rect, rings: rings, segments: segments.map { .cycle($0.asDouble) }, useMaxDimension: useMaxDimension, origin: origin)
+        polar(rect, rings: rings, segments: segments.map { .cycles($0.asDouble) }, useMaxDimension: useMaxDimension, origin: origin)
     }
 
     /**

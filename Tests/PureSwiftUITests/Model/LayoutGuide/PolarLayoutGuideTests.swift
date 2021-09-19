@@ -232,7 +232,7 @@ extension PolarLayoutGuideTests {
     func testPointsForRelativeIsEquivalentToAbsolute() {
         let rings: [CGFloat] = [0, 0.5, 1]
         let polarRelative = LayoutGuide.polar(rect, rings: rings, segments: [0, 0.25, 0.5])
-        let polarAbsolute = LayoutGuide.polar(rect, rings: rings, segments: [.cycle(0), .cycle(0.25), .cycle(0.5)])
+        let polarAbsolute = LayoutGuide.polar(rect, rings: rings, segments: [.cycles(0), .cycles(0.25), .cycles(0.5)])
         let polarAbsoluteDegrees = LayoutGuide.polar(rect, rings: rings, segments: [0.degrees, 90.degrees, 180.degrees])
         for ring in 0..<rings.count {
             for segment in 0..<3 {
@@ -329,7 +329,7 @@ extension PolarLayoutGuideTests {
     func testPointsForEquidistantRingRelativeIsEquivalentToAbsolute() {
         let rings = 5
         let polarRelative = LayoutGuide.polar(rect, rings: rings, segments: [0, 0.25, 0.5])
-        let polarAbsolute = LayoutGuide.polar(rect, rings: rings, segments: [.cycle(0), .cycle(0.25), .cycle(0.5)])
+        let polarAbsolute = LayoutGuide.polar(rect, rings: rings, segments: [.cycles(0), .cycles(0.25), .cycles(0.5)])
         let polarAbsoluteDegrees = LayoutGuide.polar(rect, rings: rings, segments: [0.degrees, 90.degrees, 180.degrees])
         for ring in 0..<rings {
             for segment in 0..<3 {
@@ -1465,7 +1465,7 @@ extension PolarLayoutGuideTests {
         assertEqual(polar.anchorLocation(for: .leading), polarRect.leading)
         assertEqual(polar.anchorLocation(for: .center), polarRect.center)
         
-        assertEqual(polar.anchorLocation(for: UnitPoint(0.25, 0.5)), CGPoint(polarRect.xScaled(0.25), polarRect.yScaled(0.5)))
-        assertEqual(polar.anchorLocation(for: UnitPoint(0.75, 0.75)), CGPoint(polarRect.xScaled(0.75), polarRect.yScaled(0.75)))
+        assertEqual(polar.anchorLocation(for: UnitPoint(0.25, 0.5)), CGPoint(polarRect.relativeX(0.25), polarRect.relativeY(0.5)))
+        assertEqual(polar.anchorLocation(for: UnitPoint(0.75, 0.75)), CGPoint(polarRect.relativeX(0.75), polarRect.relativeY(0.75)))
     }
 }

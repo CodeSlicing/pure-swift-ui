@@ -201,7 +201,8 @@ extension CGPointConvenienceExtensionsTests {
 
 extension CGPointConvenienceExtensionsTests {
     
-    func testClampedMin() {
+    @available(*, deprecated)
+    func testClampedMinDeprecated() {
     
         let expectedResult = CGPoint(min, min)
         let result = CGPoint(min - 1, min - 1).clamped(from: min, to: max)
@@ -209,10 +210,37 @@ extension CGPointConvenienceExtensionsTests {
         XCTAssertEqual(result, expectedResult)
     }
 
-    func testClampedMax() {
+    @available(*, deprecated)
+    func testClampedMaxDeprecated() {
     
         let expectedResult = CGPoint(max, max)
         let result = CGPoint(max + 1, max + 1).clamped(from: min, to: max)
+
+        XCTAssertEqual(result, expectedResult)
+    }
+
+    @available(*, deprecated)
+    func testClampedMidDeprecated() {
+    
+        let mid = (max - min) / 2 + min
+        let expectedResult = CGPoint(mid, mid)
+        let result = CGPoint(mid, mid).clamped(from: min, to: max)
+
+        XCTAssertEqual(result, expectedResult)
+    }
+    
+    func testClampedMin() {
+    
+        let expectedResult = CGPoint(min, min)
+        let result = CGPoint(min - 1, min - 1).clamped(min: min, max: max)
+
+        XCTAssertEqual(result, expectedResult)
+    }
+
+    func testClampedMax() {
+    
+        let expectedResult = CGPoint(max, max)
+        let result = CGPoint(max + 1, max + 1).clamped(min: min, max: max)
 
         XCTAssertEqual(result, expectedResult)
     }
@@ -221,7 +249,7 @@ extension CGPointConvenienceExtensionsTests {
     
         let mid = (max - min) / 2 + min
         let expectedResult = CGPoint(mid, mid)
-        let result = CGPoint(mid, mid).clamped(from: min, to: max)
+        let result = CGPoint(mid, mid).clamped(min: min, max: max)
 
         XCTAssertEqual(result, expectedResult)
     }

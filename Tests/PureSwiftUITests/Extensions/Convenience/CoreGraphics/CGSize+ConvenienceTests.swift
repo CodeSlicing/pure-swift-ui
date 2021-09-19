@@ -94,11 +94,19 @@ extension CGSizeConvenienceExtensionsTests {
 
 extension CGSizeConvenienceExtensionsTests {
     
-    func testClamping() {
+    @available(*, deprecated)
+    func testClampingDeprecated() {
         XCTAssertEqual(size.clamped(from: 4.1, to: 5.9), CGSize(4.1, 5.9))
         XCTAssertEqual(size.clamped(from: 4.1, to: 8), CGSize(4.1, height))
         XCTAssertEqual(size.clamped(from: 2, to: 5.9), CGSize(width, 5.9))
         XCTAssertEqual(size.clamped(from: 2, to: 10), size)
+    }
+
+    func testClamping() {
+        XCTAssertEqual(size.clamped(min: 4.1, max: 5.9), CGSize(4.1, 5.9))
+        XCTAssertEqual(size.clamped(min: 4.1, max: 8), CGSize(4.1, height))
+        XCTAssertEqual(size.clamped(min: 2, max: 5.9), CGSize(width, 5.9))
+        XCTAssertEqual(size.clamped(min: 2, max: 10), size)
     }
 }
 
