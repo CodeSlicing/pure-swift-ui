@@ -1,6 +1,6 @@
 //
 //  Int+Tests.swift
-//  
+//
 //
 //  Created by Adam Fordyce on 27/11/2019.
 //
@@ -38,9 +38,10 @@ extension IntConvenienceExtensionsTests {
         XCTAssertEqual(-1, (-1).clampedNegative)
     }
     
+    @available(*, deprecated)
     func testClampedTo() {
         XCTAssertEqual(1, 3.clamped(to: 1))
-        XCTAssertEqual(0, (-1).clamped(to: 1))
+        XCTAssertEqual(-1, (-1).clamped(to: 1))
         XCTAssertEqual(-1, (-1).clamped(to: 1, spanZero: true))
     }
     
@@ -63,6 +64,8 @@ extension IntConvenienceExtensionsTests {
         XCTAssertEqual(Float(1.7).asInt, Int(1))
         XCTAssertEqual(Float(-1.7).asInt, Int(-1))
     }
+    
+    // MARK: ----- PROPERTIES
 
     func testAbs() {
         XCTAssertEqual((-10).abs, 10)

@@ -27,16 +27,18 @@ class FloatingPointConvenienceExtensionsTests: XCTestCase {
         XCTAssertEqual(1.0.clampedPositive, 1.0)
     }
     
+    @available(*, deprecated)
     func testClamped() {
         XCTAssertEqual(2.clamped(from: 5, to: 10), 5.0)
         XCTAssertEqual(10.clamped(from: 0, to: 5), 5.0)
-        XCTAssertEqual(-20.clamped(from: -5, to: 5), -5.0)
+        XCTAssertEqual((-20).clamped(from: -5, to: 5), -5.0)
     }
     
+    @available(*, deprecated)
     func testClampedTo() {
         XCTAssertEqual(10.clamped(to: 5), 5.0)
-        XCTAssertEqual(-10.clamped(to: -5, spanZero: true), 5.0)
-        XCTAssertEqual(-20.clamped(to: 5, spanZero: false), -5.0)
+        XCTAssertEqual((-10).clamped(to: -5, spanZero: true), -5.0)
+        XCTAssertEqual((-20).clamped(to: 5, spanZero: false), -20.0)
     }
     
     func testClampNegative() {

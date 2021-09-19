@@ -15,6 +15,14 @@ public extension Comparable {
         clamped(min: self, max: max)
     }
     
+    func clamped(max: Self, abs clampAbsoluteValue: Bool) -> Self where Self: SignedNumeric {
+        if clampAbsoluteValue {
+            return clamped(min: -abs(max), max: abs(max))
+        } else {
+            return clamped(max: max)
+        }
+    }
+
     func clamped(min: Self, max: Self) -> Self {
         if (self > max) {
             return max

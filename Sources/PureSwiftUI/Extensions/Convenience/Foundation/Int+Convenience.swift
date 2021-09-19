@@ -13,8 +13,9 @@ public extension Int {
         String(self)
     }
     
+    @available(*, deprecated, renamed: "clamped(max:abs:)")
     func clamped(to: Int, spanZero: Bool = false) -> Int {
-        self.clamped(from: spanZero ? -to : 0, to: to)
+        self.clamped(max: to, abs: spanZero)
     }
 
     var isPositive: Bool {

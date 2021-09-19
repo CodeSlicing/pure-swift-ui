@@ -146,8 +146,13 @@ public extension CGRect {
         size.maxDimension
     }
     
+    func clampedSize(min: CGFloat, max: CGFloat) -> CGSize {
+        .init(self.width.clamped(min: min, max: max), self.height.clamped(min: min, max: max))
+    }
+    
+    @available(*, deprecated, renamed: "clampedSize(min:max:)")
     func clampedSize(from: CGFloat, to: CGFloat) -> CGSize {
-        .init(self.width.clamped(from: from, to: to), self.height.clamped(from: from, to: to))
+        .init(self.width.clamped(min: from, max: to), self.height.clamped(min: from, max: to))
     }
     
     func widthScaled(_ scale: CGFloat) -> CGFloat {
