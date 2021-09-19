@@ -12,7 +12,7 @@ public extension AngularGradient {
         self.init(gradient: Gradient(colors), center: center, startAngle: startAngle, endAngle: endAngle)
     }
 
-    init(_ colors: [Color], center: UnitPoint = .center, angle: Angle) {
+    init(_ colors: [Color], center: UnitPoint = .center, angle: Angle = .trailing) {
         self.init(gradient: Gradient(colors), center: center, angle: angle)
     }
 
@@ -20,7 +20,7 @@ public extension AngularGradient {
         self.init(gradient: Gradient(stops), center: center, startAngle: startAngle, endAngle: endAngle)
     }
 
-    init(_ stops: [GradientStopComponents], center: UnitPoint = .center, angle: Angle) {
+    init(_ stops: [GradientStopComponents], center: UnitPoint = .center, angle: Angle = .trailing) {
         self.init(gradient: Gradient(stops), center: center, angle: angle)
     }
     
@@ -28,7 +28,7 @@ public extension AngularGradient {
         self.init(gradient: gradient, center: center, startAngle: startAngle, endAngle: endAngle)
     }
 
-    init(_ gradient: Gradient, center: UnitPoint = .center, angle: Angle) {
+    init(_ gradient: Gradient, center: UnitPoint = .center, angle: Angle = .trailing) {
         self.init(gradient: gradient, center: center, angle: angle)
     }
     
