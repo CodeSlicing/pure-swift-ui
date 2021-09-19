@@ -1,5 +1,5 @@
 //
-//  Comparible+Tests.swift
+//  Comparable+Tests.swift
 //
 //
 //  Created by Adam Fordyce on 27/11/2019.
