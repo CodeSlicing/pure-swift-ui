@@ -8,7 +8,7 @@
 import XCTest
 @testable import PureSwiftUI
 
-class ComparibleConvenienceExtensionsTests: XCTestCase {
+class ComparableConvenienceExtensionsTests: XCTestCase {
     
     func testFrom() {
         XCTAssertEqual(2, 2.clamped(min: 0))
