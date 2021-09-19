@@ -85,6 +85,11 @@ public extension CGSize {
         height * scale.asCGFloat
     }
     
+    func clamped(min: CGFloat, max: CGFloat) -> CGSize {
+        .init(self.width.clamped(min: min, max: max), self.height.clamped(min: min, max: max))
+    }
+    
+    @available(*, deprecated, renamed: "clamped(min:max:)")
     func clamped(from: CGFloat, to: CGFloat) -> CGSize {
         .init(self.width.clamped(min: from, max: to), self.height.clamped(min: from, max: to))
     }
