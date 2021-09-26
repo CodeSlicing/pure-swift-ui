@@ -20,7 +20,10 @@
 - [Conditional Rendering](#conditional-rendering)
 - [SF Symbols](#sf-symbols)
 - [Preview Extensions](#preview-extensions)
+- [PureSwiftUIDesign](#pureswiftuidesign)
 - [Caveats](#caveats)
+  - [Utility functions affected by this change](#utility-functions-affected-by-this-change)
+  - [Mitigation](#mitigation)
 - [Installation](#installation)
 - [Versioning](#versioning)
 - [Version History](#version-history)
@@ -439,20 +442,24 @@ MyView.envDarkMode()
 MyView.envDarkModeIf(condition) // or envDarkModeIfNot
 ```
 
+## PureSwiftUIDesign
+
+[PureSwiftUI][pure-swift-ui] also brings layout guides and a huge collection of extensions to `Path` that make the process of creating shapes in [SwiftUI][swift-ui] a truly enjoyabale one. They are part of a package that is also available stand-alone called [PureSwifUIDesign][pure-swift-ui-design]. 
+
 ## Caveats
 
-From verison 3.0.0 onwards, angles will be following the native definitions for what it means to be zero degrees. In other words, zero degrees moving forwards will be pointing to the right, just like the native implementation. 
+From version 3.0.0 onwards, angles will be following the native definitions for what it means to be zero degrees. In other words, zero degrees moving forwards will be pointing to the right, just like the native implementation.
 
-**This is a breaking change from version 2 so be careful to ensure that all calls involving the below are modified to take this into account**
+***This is a breaking change from version 2 so be careful to ensure that all calls involving the below are modified to take this into account***
 
-This affects the `AngularGradient` initialisers as well as the calls to `arc` on `Path`. 
+This affects the `AngularGradient` initialisers as well as the calls to `arc` on `Path`.
 
-### Utility functions affected by this change:
+### Utility functions affected by this change
 
 `angleTo` on `CGPoint` will now report the angle in accordance to the new angle orientation.
-calcOffset(radius:angle:), calcXoffset(radius:andle:), and calcYOffset(radius:angle:) will also calculate the offset assuming the angle is relative to 0 degrees being to the right. 
+`calcOffset(radius:angle:)`, `calcXOffset(radius:angle:)`, and `calcYOffset(radius:angle:)` will also calculate the offset assuming the angle is relative to 0 degrees being to the right.
 
-### Mitigation:
+### Mitigation
 
 There are various function overloads and properties that make this transition easier and you can even continue to work with the current orientation if you find it easier to reason like this (although this will require a change to existing code to take advantage of it):
 
@@ -460,7 +467,7 @@ There are various function overloads and properties that make this transition ea
 
 In addition to this, `AngularGradient` and `arc` on `Path` are defined with appropriate `startAngleFromTop` or `angleFromTop` arguments which do what they say. 
 
-The semantic constants `top`, `bottom`, `topTrailing` etc defined on `Angle` now represent the angles based on the native orientation. So `bottom` is defined as `90.degrees` for example. These constants can therfore be passed in to the aforementioned `startAngle` arguments (not the `fromTop` variants) and will result in the expected behaviour. 
+The semantic constants `top`, `bottom`, `topTrailing` etc defined on `Angle` now represent the angles based on the native orientation. So `bottom` is defined as `90.degrees` for example. These constants can therefor be passed in to the aforementioned `startAngle` arguments (not the `fromTop` variants) and will result in the expected behaviour.
 
 ## Installation
 
@@ -472,7 +479,7 @@ Instructions for installing swift packages can be found [here][swift-package-ins
 
 ## Versioning
 
-This project adheres to a [semantic versioning](https://semver.org) paradigm, so breaking changes will be reserved for major version updates. 
+This project adheres to a [semantic versioning](https://semver.org) paradigm, so breaking changes will be reserved for major version updates.
 
 ## Version History
 
@@ -586,6 +593,4 @@ version links:
  local docs:
 --->
 
-[docs-layout-guides]: ./Assets/Docs/LayoutGuides/layout-guides.md
-[docs-paths]: ./Assets/Docs/Paths/paths.md
 [mit-licence]: ./Assets/Docs/LICENCE.md
