@@ -10,7 +10,7 @@ public struct GeometryReaderStack<Content>: View where Content: View {
     
     private let alignment: Alignment
     
-    init(alignment: Alignment = .center, @ViewBuilder content: @escaping (GeometryProxy) -> Content) {
+    public init(alignment: Alignment = .center, @ViewBuilder content: @escaping (GeometryProxy) -> Content) {
         self.alignment = alignment
         self.content = content
     }
