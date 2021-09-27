@@ -17,10 +17,8 @@ public struct GeometryReaderStack<Content>: View where Content: View {
     
     public var body: some View {
         GeometryReader { (geo: GeometryProxy) in
-            ZStack(alignment: alignment) {
-                Color.clear
-                content(geo)
-            }
+            Color.clear
+                .overlay(content(geo), alignment: alignment)
         }
     }
 }
@@ -37,21 +35,36 @@ struct CenteredGeometryReader_Previews: PreviewProvider {
                             Text("I'm not centered")
                             Text("by default 😭")
                         }
+                        .padding()
+                        .background(Color.blue.opacity(0.5))
                     }
                     GeometryReaderStack { (geo: GeometryProxy) in
                         VStack {
-                            Text("I'm centered by default in a")
-                            Text("GeometryReaderStack! 🥳")
+                            Text("I'm centered by default")
+                            Text("in a GeometryReaderStack! 🥳")
                         }
+                        .padding()
+                        .background(Color.blue.opacity(0.5))
                     }
                     GeometryReaderStack(alignment: .trailing) { (geo: GeometryProxy) in
                         VStack {
-                            Text("I'm trail edge aligned in a")
-                            Text("GeometryReaderStack! 😎")
+                            Text("I'm trailing edge aligned")
+                            Text("in a GeometryReaderStack! 😎")
                         }
+                        .padding()
+                        .background(Color.blue.opacity(0.5))
+                    }
+                    GeometryReaderStack(alignment: .bottomTrailing) { (geo: GeometryProxy) in
+                        VStack {
+                            Text("I'm bottom trailing edge aligned")
+                            Text("with content larger than the bounds of the frame").fixedSize()
+                            Text("in a GeometryReaderStack! 🤔")
+                        }
+                        .padding()
+                        .background(Color.blue.opacity(0.5))
                     }
                 }
-                .frame(300, 200)
+                .frame(350, 200)
                 .border(Color.black)
             }
             .edgesIgnoringSafeArea(.all)
@@ -60,7 +73,8 @@ struct CenteredGeometryReader_Previews: PreviewProvider {
 
     static var previews: some View {
         CenteredGeometryReader_Harness()
-            .previewDevice(.iPhone_12_Pro_Max)
+            .padding(100)
+            .previewSizeThatFits()
     }
 }
 
