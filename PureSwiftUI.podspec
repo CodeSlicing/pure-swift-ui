@@ -22,7 +22,4 @@ We all love SwiftUI, and what the engineers at Apple have achieved is nothing sh
     spec.framework  = "SwiftUI"
   
     spec.dependency = "PureSwiftUIDesign", { :git => 'https://github.com/CodeSlicing/pure-swift-ui-design.git', :tag => '1.0.0-beta-5' }
-
-    end
-
 end
