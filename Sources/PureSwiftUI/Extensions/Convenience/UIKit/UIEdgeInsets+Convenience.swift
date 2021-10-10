@@ -5,6 +5,7 @@
 //  Created by Adam Fordyce on 02/02/2020.
 //
 
+#if canImport(UIKit)
 import Foundation
 
 public extension UIEdgeInsets {
@@ -21,3 +22,4 @@ public extension UIEdgeInsets {
         self.init(top: top, left: leading, bottom: bottom, right: trailing)
     }
 }
+#endif

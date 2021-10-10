@@ -25,12 +25,12 @@ private struct StrokeShapeWithLineWidthViewModifier<IS: InsettableShape, SS: Sha
     
     func body(content: Content) -> some View {
         RenderIf(strokeType == .inner) {
-            content.overlay(self.shape.strokeBorder(self.shapeContent, lineWidth: self.lineWidth))
+            content.overlay(shape.strokeBorder(shapeContent, lineWidth: lineWidth))
         }.elseRender {
-            RenderIf(self.strokeType == .outer) {
-                content.overlay(self.shape.inset(by: -self.lineWidth).strokeBorder(self.shapeContent, lineWidth: self.lineWidth.asCGFloat))
+            RenderIf(strokeType == .outer) {
+                content.overlay(shape.inset(by: -lineWidth).strokeBorder(shapeContent, lineWidth: lineWidth.asCGFloat))
             }.elseRender {
-                content.overlay(self.shape.stroke(self.shapeContent, lineWidth: self.lineWidth))
+                content.overlay(shape.stroke(shapeContent, lineWidth: lineWidth))
             }
         }
         .contentShapeIf(constrainGestures, shape)
@@ -47,12 +47,12 @@ private struct StrokeShapeWithStrokeStyleViewModifier<IS: InsettableShape, SS: S
     
     func body(content: Content) -> some View {
         RenderIf(strokeType == .inner) {
-            content.overlay(self.shape.strokeBorder(self.shapeContent, style: self.strokeStyle))
+            content.overlay(shape.strokeBorder(shapeContent, style: strokeStyle))
         }.elseRender {
-            RenderIf(self.strokeType == .outer) {
-                content.overlay(self.shape.inset(by: -self.strokeStyle.lineWidth).strokeBorder(self.shapeContent, style: self.strokeStyle))
+            RenderIf(strokeType == .outer) {
+                content.overlay(shape.inset(by: -strokeStyle.lineWidth).strokeBorder(shapeContent, style: strokeStyle))
             }.elseRender {
-                content.overlay(self.shape.stroke(self.shapeContent, style: self.strokeStyle))
+                content.overlay(shape.stroke(shapeContent, style: strokeStyle))
             }
         }
         .contentShapeIf(constrainGestures, shape)

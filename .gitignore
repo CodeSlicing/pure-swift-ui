@@ -91,3 +91,6 @@ iOSInjectionProject/
 
 # project specific
 Resources/
+**/.DS_Store
+Package.resolved
+Package.resolved

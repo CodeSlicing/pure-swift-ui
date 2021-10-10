@@ -15,8 +15,8 @@ public struct RenderedIf: ViewModifier {
         self.condition = condition
     }
     
-    public func body(content: Content) -> some View {
-        RenderIf(condition) {
+    @ViewBuilder public func body(content: Content) -> some View {
+        if condition {
             content
         }
     }

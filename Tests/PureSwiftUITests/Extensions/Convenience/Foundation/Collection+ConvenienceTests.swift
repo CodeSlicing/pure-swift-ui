@@ -6,7 +6,6 @@
 //
 
 import XCTest
-@testable import PureSwiftUI
 
 class CollectionConvenienceTests: XCTestCase {
     
@@ -19,5 +18,6 @@ extension CollectionConvenienceTests {
     
     func testIsNotEmpty() {
         XCTAssertTrue([1].isNotEmpty)
+        XCTAssertFalse([].isNotEmpty)
     }
 }

@@ -11,9 +11,10 @@ import XCTest
 class MathOperatorsTests: XCTestCase {
 
     func testPowForDouble() {
-        let expectedResult: Double = 256
-        let result = Double(4) ** Double(4)
-         XCTAssertEqual(result, expectedResult)
+        XCTAssertEqual(Double(4) ** Double(4), 256)
+        XCTAssertEqual(CGFloat(4) ** CGFloat(2), 16)
+        XCTAssertEqual(5.asDouble ** 0, 1)
+        XCTAssertEqual(5.asCGFloat ** 0, 1)
     }
     
 }

@@ -19,9 +19,11 @@
 - [Conditional Modifiers](#conditional-modifiers)
 - [Conditional Rendering](#conditional-rendering)
 - [SF Symbols](#sf-symbols)
-- [Layout Guides and Paths](#layout-guides-and-paths)
 - [Preview Extensions](#preview-extensions)
+- [PureSwiftUIDesign](#pureswiftuidesign)
 - [Caveats](#caveats)
+  - [Utility functions affected by this change](#utility-functions-affected-by-this-change)
+  - [Mitigation](#mitigation)
 - [Installation](#installation)
 - [Versioning](#versioning)
 - [Version History](#version-history)
@@ -421,12 +423,6 @@ Since all SF symbols are available as constants, there is also the option of usi
 
 Yet another advantage, is that the symbol constants defined in [PureSwiftUI][pure-swift-ui] are aware of deprecation so if a symbol you're using has been superseded by a new symbol name, you will get a warning including a suggestion of what to use instead, assuming one exists.
 
-## Layout Guides and Paths
-
-[PureSwiftUI][pure-swift-ui] includes a multitude of extensions and utilities for making drawing paths a breeze, so much so that there are dedicated documents for this topic. See the guide on [paths][docs-paths] for a detailed explanation of the various available extensions to facilitate drawing, and the section on [layout guides][docs-layout-guides] which take the process of shape building to the next level.
-
-It is my hope that the ease with which you can construct complex shapes using [PureSwiftUI][pure-swift-ui]'s layout guides and `Path` extension framework will encourage people to explore their artistic capabilities with constructing paths rather than be turned off by the ubiquitous point calculation logic that appears in most path building example code. Without these hurdles, you really are only limited by you imagination.
-
 ## Preview Extensions
 
 As with SF Symbols, this is once again a stringly typed interface that [PureSwiftUI][pure-swift-ui] does away with. Rather than guessing which device strings are accepted, you can pass in a constant to the `previewDevice` modifier like so:
@@ -446,9 +442,32 @@ MyView.envDarkMode()
 MyView.envDarkModeIf(condition) // or envDarkModeIfNot
 ```
 
+## PureSwiftUIDesign
+
+[PureSwiftUI][pure-swift-ui] also brings layout guides and a huge collection of extensions to `Path` that make the process of creating shapes in [SwiftUI][swift-ui] a truly enjoyabale one. They are part of a package that is also available stand-alone called [PureSwifUIDesign][pure-swift-ui-design]. 
+
 ## Caveats
 
-Although [PureSwiftUI][pure-swift-ui] exports `SwiftUI` - meaning you don't need to import `SwiftUI` at the top of your views for compilation - unfortunately at the time of writing previews do not work if you are not explicitly importing `SwiftUI`. Hopefully this will be addressed in a future release.
+From version 3.0.0 onwards, angles will be following the native definitions for what it means to be zero degrees. In other words, zero degrees moving forwards will be pointing to the right, just like the native implementation.
+
+***This is a breaking change from version 2 so be careful to ensure that all calls involving the below are modified to take this into account***
+
+This affects the `AngularGradient` initialisers as well as the calls to `arc` on `Path`.
+
+### Utility functions affected by this change
+
+`angleTo` on `CGPoint` will now report the angle in accordance to the new angle orientation.
+`calcOffset(radius:angle:)`, `calcXOffset(radius:angle:)`, and `calcYOffset(radius:angle:)` will also calculate the offset assuming the angle is relative to 0 degrees being to the right.
+
+### Mitigation
+
+There are various function overloads and properties that make this transition easier and you can even continue to work with the current orientation if you find it easier to reason like this (although this will require a change to existing code to take advantage of it):
+
+`fromTop` on `Angle` will convert the angle to being relative to the top, so you can pass `90.degrees.fromTop` for example as an argument to `AngularGradient` or `arc` on `Path`. If doing this, however, do not use the `startAngleFromTop` for variants. 
+
+In addition to this, `AngularGradient` and `arc` on `Path` are defined with appropriate `startAngleFromTop` or `angleFromTop` arguments which do what they say. 
+
+The semantic constants `top`, `bottom`, `topTrailing` etc defined on `Angle` now represent the angles based on the native orientation. So `bottom` is defined as `90.degrees` for example. These constants can therefor be passed in to the aforementioned `startAngle` arguments (not the `fromTop` variants) and will result in the expected behaviour.
 
 ## Installation
 
@@ -460,7 +479,7 @@ Instructions for installing swift packages can be found [here][swift-package-ins
 
 ## Versioning
 
-This project adheres to a [semantic versioning](https://semver.org) paradigm. I'm sure a lot will change after WW20, so that's probably when version 2.0.0+ will appear.
+This project adheres to a [semantic versioning](https://semver.org) paradigm, so breaking changes will be reserved for major version updates.
 
 ## Version History
 
@@ -498,7 +517,8 @@ This project adheres to a [semantic versioning](https://semver.org) paradigm. I'
 - [2.0.6][tag-2.0.6] Add static initialisers and convenience functions to `CGRect` and `GeometryProxy`
 - [2.1.0][tag-2.1.0] Add relative coordinate functionality to layout guides
 - [2.1.1][tag-2.1.1] Add eoFill to Shape and add overloads for strokeColor to accept style argument
-- [2.1.2][tag-2.1.2] Add cycles as a first class angle type with conversion functions and properties supporting it
+- [2.1.2][tag-2.1.2] Add `cycles` as a first class angle type with conversion functions and properties supporting it
+- [2.1.3][tag-2.1.3] Add `GeometryReaderStack` and lines and shapes extensions to `Path` as well as `abs` property to major numerical types
 
 ## Licensing
 
@@ -513,6 +533,7 @@ You can contact me on Twitter [@CodeSlice][codeslice-twitter]. Happy to hear sug
 --->
 
 [pure-swift-ui]: https://github.com/CodeSlicing/pure-swift-ui
+[pure-swift-ui-design]: https://github.com/CodeSlicing/pure-swift-ui-design
 [sf-symbols]: https://developer.apple.com/design/human-interface-guidelines/sf-symbols/overview/
 [sf-symbols-reference]: https://sfsymbols.com
 [codeslice-twitter]: https://twitter.com/CodeSlice
@@ -566,11 +587,10 @@ version links:
 [tag-2.1.0]: https://github.com/CodeSlicing/pure-swift-ui/tree/2.1.0
 [tag-2.1.1]: https://github.com/CodeSlicing/pure-swift-ui/tree/2.1.1
 [tag-2.1.2]: https://github.com/CodeSlicing/pure-swift-ui/tree/2.1.2
+[tag-2.1.3]: https://github.com/CodeSlicing/pure-swift-ui/tree/2.1.3
 
 <!---
  local docs:
 --->
 
-[docs-layout-guides]: ./Assets/Docs/LayoutGuides/layout-guides.md
-[docs-paths]: ./Assets/Docs/Paths/paths.md
 [mit-licence]: ./Assets/Docs/LICENCE.md

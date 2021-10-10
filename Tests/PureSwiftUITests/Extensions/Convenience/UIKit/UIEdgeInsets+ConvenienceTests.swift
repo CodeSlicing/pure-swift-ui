@@ -5,6 +5,7 @@
 //  Created by Adam Fordyce on 06/02/2020.
 //
 
+#if canImport(UIKit)
 import XCTest
 @testable import PureSwiftUI
 
@@ -28,3 +29,4 @@ extension UIEdgeInsetsConvenienceExtensionsTests {
         XCTAssertEqual(UIEdgeInsets(top, leading, bottom, trailing), UIEdgeInsets(top: top, left: leading, bottom: bottom, right: trailing))
     }
 }
+#endif

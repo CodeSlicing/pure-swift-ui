@@ -77,17 +77,28 @@ public extension View {
 
 public extension View {
     
+    #if os(macOS)
+    func fontSize(_ size: CGFloat, weight: Font.Weight? = nil) -> some View {
+        fontSize(size, name: nil, weight: weight)
+    }
+
+    func fontSize(_ size: CGFloat, name: String? = nil, weight: Font.Weight? = nil) -> some View {
+        self.font(self.createFont(name: name, size: size, weight: weight))
+    }
+
+    #else
     func fontSize(_ size: CGFloat, weight: Font.Weight? = nil, withScaling: Bool = true) -> some View {
         fontSize(size, name: nil, weight: weight, withScaling: withScaling)
     }
     
-    func fontSize(_ size: CGFloat, name: String? = nil, weight: Font.Weight? = nil, withScaling: Bool = true) -> some View {
-        RenderIf(withScaling) {
+    @ViewBuilder func fontSize(_ size: CGFloat, name: String? = nil, weight: Font.Weight? = nil, withScaling: Bool = true) -> some View {
+        if withScaling {
             self.scalingFont(size: size, name: name, weight: weight)
-        }.elseRender {
+        } else {
             self.font(self.createFont(name: name, size: size, weight: weight))
         }
     }
+    #endif
     
     private func createFont(name: String?, size: CGFloat, weight: Font.Weight?) -> Font {
         if let name = name {
@@ -448,6 +459,7 @@ public extension View {
     
     func shadowColor(_ colorName: String, _ radius: CGFloat, offset: CGFloat, angle: Angle) -> some View {
         shadowColor(colorName, radius, offset: .point(offset, angle))
+//        shadowColor(colorName, radius, offset: .point(offset, angle))
     }
 }
 
