@@ -502,7 +502,7 @@ This project adheres to a [semantic versioning](https://semver.org) paradigm. I'
 - [2.1.3][tag-2.1.3] Add `GeometryReaderStack` and lines and shapes extensions to `Path` as well as `abs` property to major numerical types
 - [2.1.4][tag-2.1.4] Update clamping API and associated tests
 - [2.1.5][tag-2.1.5] Fix `GeometryReaderStack` alignment where contents extend beyond frame
-- [2.3.0][tag-2.3.0] Updates for SF Symbols 3, and updated preview devices. 
+- [2.3.0][tag-2.3.0] Update for SF Symbols 3, update preview devices, and add multi-platform support
 
 
 ## Licensing
