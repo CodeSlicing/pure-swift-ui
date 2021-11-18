@@ -1088,6 +1088,8 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case bolt_horizontal_circle = "bolt.horizontal.circle"
     case bolt_horizontal_circle_fill = "bolt.horizontal.circle.fill"
     case bolt_horizontal_fill = "bolt.horizontal.fill"
+    @available(iOS 15.1, macOS 12.1, tvOS 15.1, watchOS 8.1, *)
+    case bolt_ring_closed = "bolt.ring.closed"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case bolt_shield = "bolt.shield"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
@@ -3852,6 +3854,14 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case platter_2_filled_iphone = "platter.2.filled.iphone"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case platter_2_filled_iphone_landscape = "platter.2.filled.iphone.landscape"
+    @available(iOS 15.1, macOS 12.1, tvOS 15.1, watchOS 8.1, *)
+    case platter_filled_bottom_and_arrow_down_iphone = "platter.filled.bottom.and.arrow.down.iphone"
+    @available(iOS 15.1, macOS 12.1, tvOS 15.1, watchOS 8.1, *)
+    case platter_filled_bottom_iphone = "platter.filled.bottom.iphone"
+    @available(iOS 15.1, macOS 12.1, tvOS 15.1, watchOS 8.1, *)
+    case platter_filled_top_and_arrow_up_iphone = "platter.filled.top.and.arrow.up.iphone"
+    @available(iOS 15.1, macOS 12.1, tvOS 15.1, watchOS 8.1, *)
+    case platter_filled_top_iphone = "platter.filled.top.iphone"
     case play = "play"
     case play_circle = "play.circle"
     case play_circle_fill = "play.circle.fill"
@@ -4876,6 +4886,14 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case square_2_stack_3d_top_fill = "square.2.stack.3d.top.fill"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case square_2_stack_3d_top_filled = "square.2.stack.3d.top.filled"
+    @available(iOS 15.1, macOS 12.1, tvOS 15.1, watchOS 8.1, *)
+    case square_3_layers_3d_down_backward = "square.3.layers.3d.down.backward"
+    @available(iOS 15.1, macOS 12.1, tvOS 15.1, watchOS 8.1, *)
+    case square_3_layers_3d_down_forward = "square.3.layers.3d.down.forward"
+    @available(iOS 15.1, macOS 12.1, tvOS 15.1, watchOS 8.1, *)
+    case square_3_layers_3d_down_left = "square.3.layers.3d.down.left"
+    @available(iOS 15.1, macOS 12.1, tvOS 15.1, watchOS 8.1, *)
+    case square_3_layers_3d_down_right = "square.3.layers.3d.down.right"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case square_3_stack_3d = "square.3.stack.3d"
     @available(iOS, deprecated: 15.0, renamed: "square_3_stack_3d_bottom_filled")
@@ -5353,7 +5371,23 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case text_cursor = "text.cursor"
     case text_insert = "text.insert"
     case text_justify = "text.justify"
+    @available(iOS 15.1, macOS 12.1, tvOS 15.1, watchOS 8.1, *)
+    case text_justify_leading = "text.justify.leading"
+    @available(iOS 15.1, macOS 12.1, tvOS 15.1, watchOS 8.1, *)
+    case text_justify_left = "text.justify.left"
+    @available(iOS 15.1, macOS 12.1, tvOS 15.1, watchOS 8.1, *)
+    case text_justify_right = "text.justify.right"
+    @available(iOS 15.1, macOS 12.1, tvOS 15.1, watchOS 8.1, *)
+    case text_justify_trailing = "text.justify.trailing"
+    @available(iOS, deprecated: 15.1, renamed: "text_justify_left")
+    @available(macOS, deprecated: 12.1, renamed: "text_justify_left")
+    @available(tvOS, deprecated: 15.1, renamed: "text_justify_left")
+    @available(watchOS, deprecated: 8.1, renamed: "text_justify_left")
     case text_justifyleft = "text.justifyleft"
+    @available(iOS, deprecated: 15.1, renamed: "text_justify_right")
+    @available(macOS, deprecated: 12.1, renamed: "text_justify_right")
+    @available(tvOS, deprecated: 15.1, renamed: "text_justify_right")
+    @available(watchOS, deprecated: 8.1, renamed: "text_justify_right")
     case text_justifyright = "text.justifyright"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case text_magnifyingglass = "text.magnifyingglass"
@@ -8090,8 +8124,6 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
         localAllCases.append(text_bubble_fill)
         localAllCases.append(text_insert)
         localAllCases.append(text_justify)
-        localAllCases.append(text_justifyleft)
-        localAllCases.append(text_justifyright)
         localAllCases.append(text_quote)
         localAllCases.append(textformat)
         localAllCases.append(textformat_123)
@@ -9971,6 +10003,22 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
             localAllCases.append(wifi_square_fill)
             localAllCases.append(xmark_app)
             localAllCases.append(xmark_app_fill)
+        }
+
+        if #available(iOS 15.1, macOS 12.1, tvOS 15.1, watchOS 8.1, *) {
+            localAllCases.append(bolt_ring_closed)
+            localAllCases.append(platter_filled_bottom_and_arrow_down_iphone)
+            localAllCases.append(platter_filled_bottom_iphone)
+            localAllCases.append(platter_filled_top_and_arrow_up_iphone)
+            localAllCases.append(platter_filled_top_iphone)
+            localAllCases.append(square_3_layers_3d_down_backward)
+            localAllCases.append(square_3_layers_3d_down_forward)
+            localAllCases.append(square_3_layers_3d_down_left)
+            localAllCases.append(square_3_layers_3d_down_right)
+            localAllCases.append(text_justify_leading)
+            localAllCases.append(text_justify_left)
+            localAllCases.append(text_justify_right)
+            localAllCases.append(text_justify_trailing)
         }
         localAllCases.sort()
         return localAllCases
