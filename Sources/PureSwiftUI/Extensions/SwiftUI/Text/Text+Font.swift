@@ -52,7 +52,29 @@ public extension Text {
     func captionFont(_ color: Color? = nil, _ weight: Font.Weight? = nil) -> Text {
         applyInternalFont(.caption, color, weight)
     }
-    
+
+    // CAPTION 2
+
+    @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
+    func caption2Font() -> Text {
+        caption2Font(nil, nil)
+    }
+
+    @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
+    func caption2Font(_ weight: Font.Weight? = nil) -> Text {
+        caption2Font(nil, weight)
+    }
+
+    @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
+    func caption2Font(_ color: Color? = nil) -> Text {
+        caption2Font(color, nil)
+    }
+
+    @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
+    func caption2Font(_ color: Color? = nil, _ weight: Font.Weight? = nil) -> Text {
+        applyInternalFont(.caption2, color, weight)
+    }
+
     // CALLOUT
     
     func calloutFont() -> Text {
@@ -195,5 +217,49 @@ public extension Text {
 
     func titleFont(_ color: Color? = nil, _ weight: Font.Weight? = nil) -> Text {
         applyInternalFont(.title, color, weight)
+    }
+
+    // TITLE 2
+
+    @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
+    func title2Font() -> Text {
+        title2Font(nil, nil)
+    }
+
+    @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
+    func title2Font(_ weight: Font.Weight? = nil) -> Text {
+        title2Font(nil, weight)
+    }
+
+    @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
+    func title2Font(_ color: Color? = nil) -> Text {
+        title2Font(color, nil)
+    }
+
+    @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
+    func title2Font(_ color: Color? = nil, _ weight: Font.Weight? = nil) -> Text {
+        applyInternalFont(.title2, color, weight)
+    }
+
+    // TITLE 3
+
+    @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
+    func title3Font() -> Text {
+        title3Font(nil, nil)
+    }
+
+    @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
+    func title3Font(_ weight: Font.Weight? = nil) -> Text {
+        title3Font(nil, weight)
+    }
+
+    @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
+    func title3Font(_ color: Color? = nil) -> Text {
+        title3Font(color, nil)
+    }
+
+    @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
+    func title3Font(_ color: Color? = nil, _ weight: Font.Weight? = nil) -> Text {
+        applyInternalFont(.title3, color, weight)
     }
 }
