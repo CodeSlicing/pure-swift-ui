@@ -262,8 +262,12 @@ public extension View {
 
 public extension View {
     
-    func foregroundColorIf(_ condition: Bool, _ color: Color) -> some View {
-        foregroundColor(condition ? color : nil)
+    @ViewBuilder func foregroundColorIf(_ condition: Bool, _ color: @autoclosure () -> Color) -> some View {
+        if condition {
+            foregroundColor(color())
+        } else {
+            self
+        }
     }
     
     func foregroundColorIfNot(_ condition: Bool, _ color: Color) -> some View {

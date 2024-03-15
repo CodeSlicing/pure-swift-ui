@@ -122,7 +122,7 @@ public extension View {
         }.elseRender {
             self.font(theFont)
         }
-        .foregroundColor(color)
+        .foregroundColorIf(color != nil, color!)
     }
     
     // BODY

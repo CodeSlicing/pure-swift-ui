@@ -1,6 +1,6 @@
 //
 //  SFSymbolName.swift
-//  
+//
 //
 //  Created by Adam Fordyce on 07/12/2019.
 //  Copyright © 2019 Adam Fordyce. All rights reserved.
@@ -295,6 +295,20 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case a_square_fill = "a.square.fill"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case abc = "abc"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case abs_brakesignal = "abs.brakesignal"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case air_conditioner_horizontal = "air.conditioner.horizontal"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case air_conditioner_horizontal_fill = "air.conditioner.horizontal.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case air_conditioner_vertical = "air.conditioner.vertical"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case air_conditioner_vertical_fill = "air.conditioner.vertical.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case air_purifier = "air.purifier"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case air_purifier_fill = "air.purifier.fill"
     case airplane = "airplane"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case airplane_arrival = "airplane.arrival"
@@ -306,6 +320,10 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case airplane_departure = "airplane.departure"
     case alarm = "alarm"
     case alarm_fill = "alarm.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case alarm_waves_left_and_right = "alarm.waves.left.and.right"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case alarm_waves_left_and_right_fill = "alarm.waves.left.and.right.fill"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case align_horizontal_center = "align.horizontal.center"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
@@ -332,11 +350,15 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case align_vertical_top_fill = "align.vertical.top.fill"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case allergens = "allergens"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case allergens_fill = "allergens.fill"
     case alt = "alt"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case alternatingcurrent = "alternatingcurrent"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case amplifier = "amplifier"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case angle = "angle"
     case ant = "ant"
     case ant_circle = "ant.circle"
     case ant_circle_fill = "ant.circle.fill"
@@ -423,6 +445,8 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case arrow_counterclockwise_circle = "arrow.counterclockwise.circle"
     case arrow_counterclockwise_circle_fill = "arrow.counterclockwise.circle.fill"
     case arrow_down = "arrow.down"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case arrow_down_and_line_horizontal_and_arrow_up = "arrow.down.and.line.horizontal.and.arrow.up"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case arrow_down_app = "arrow.down.app"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
@@ -507,6 +531,8 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case arrow_forward_to_line_circle_fill = "arrow.forward.to.line.circle.fill"
     case arrow_left = "arrow.left"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case arrow_left_and_line_vertical_and_arrow_right = "arrow.left.and.line.vertical.and.arrow.right"
     case arrow_left_and_right = "arrow.left.and.right"
     case arrow_left_and_right_circle = "arrow.left.and.right.circle"
     case arrow_left_and_right_circle_fill = "arrow.left.and.right.circle.fill"
@@ -516,6 +542,8 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case arrow_left_and_right_righttriangle_left_righttriangle_right_fill = "arrow.left.and.right.righttriangle.left.righttriangle.right.fill"
     case arrow_left_and_right_square = "arrow.left.and.right.square"
     case arrow_left_and_right_square_fill = "arrow.left.and.right.square.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case arrow_left_and_right_text_vertical = "arrow.left.and.right.text.vertical"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case arrow_left_arrow_right = "arrow.left.arrow.right"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
@@ -550,6 +578,8 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case arrow_rectanglepath = "arrow.rectanglepath"
     case arrow_right = "arrow.right"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case arrow_right_and_line_vertical_and_arrow_left = "arrow.right.and.line.vertical.and.arrow.left"
     @available(iOS, deprecated: 14.0, renamed: "arrow_left_arrow_right")
     @available(macOS, deprecated: 11.0, renamed: "arrow_left_arrow_right")
     @available(tvOS, deprecated: 14.0, renamed: "arrow_left_arrow_right")
@@ -644,6 +674,8 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case arrow_up_and_down = "arrow.up.and.down"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case arrow_up_and_down_and_arrow_left_and_right = "arrow.up.and.down.and.arrow.left.and.right"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case arrow_up_and_down_and_sparkles = "arrow.up.and.down.and.sparkles"
     case arrow_up_and_down_circle = "arrow.up.and.down.circle"
     case arrow_up_and_down_circle_fill = "arrow.up.and.down.circle.fill"
     @available(iOS, deprecated: 15.0, renamed: "arrow_up_and_down_righttriangle_up_righttriangle_down_fill")
@@ -657,6 +689,10 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case arrow_up_and_down_righttriangle_up_righttriangle_down_fill = "arrow.up.and.down.righttriangle.up.righttriangle.down.fill"
     case arrow_up_and_down_square = "arrow.up.and.down.square"
     case arrow_up_and_down_square_fill = "arrow.up.and.down.square.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case arrow_up_and_down_text_horizontal = "arrow.up.and.down.text.horizontal"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case arrow_up_and_line_horizontal_and_arrow_down = "arrow.up.and.line.horizontal.and.arrow.down"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case arrow_up_and_person_rectangle_portrait = "arrow.up.and.person.rectangle.portrait"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
@@ -687,6 +723,8 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case arrow_up_bin = "arrow.up.bin"
     case arrow_up_bin_fill = "arrow.up.bin.fill"
     case arrow_up_circle = "arrow.up.circle"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case arrow_up_circle_badge_clock = "arrow.up.circle.badge.clock"
     case arrow_up_circle_fill = "arrow.up.circle.fill"
     case arrow_up_doc = "arrow.up.doc"
     case arrow_up_doc_fill = "arrow.up.doc.fill"
@@ -800,6 +838,10 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case arrow_uturn_up_circle_fill = "arrow.uturn.up.circle.fill"
     case arrow_uturn_up_square = "arrow.uturn.up.square"
     case arrow_uturn_up_square_fill = "arrow.uturn.up.square.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case arrowshape_backward = "arrowshape.backward"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case arrowshape_backward_fill = "arrowshape.backward.fill"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case arrowshape_bounce_forward = "arrowshape.bounce.forward"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
@@ -808,6 +850,18 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case arrowshape_bounce_right = "arrowshape.bounce.right"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case arrowshape_bounce_right_fill = "arrowshape.bounce.right.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case arrowshape_forward = "arrowshape.forward"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case arrowshape_forward_fill = "arrowshape.forward.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case arrowshape_left = "arrowshape.left"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case arrowshape_left_fill = "arrowshape.left.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case arrowshape_right = "arrowshape.right"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case arrowshape_right_fill = "arrowshape.right.fill"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case arrowshape_turn_up_backward = "arrowshape.turn.up.backward"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
@@ -818,6 +872,10 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case arrowshape_turn_up_backward_2_circle_fill = "arrowshape.turn.up.backward.2.circle.fill"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case arrowshape_turn_up_backward_2_fill = "arrowshape.turn.up.backward.2.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case arrowshape_turn_up_backward_badge_clock = "arrowshape.turn.up.backward.badge.clock"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case arrowshape_turn_up_backward_badge_clock_fill = "arrowshape.turn.up.backward.badge.clock.fill"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case arrowshape_turn_up_backward_circle = "arrowshape.turn.up.backward.circle"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
@@ -935,14 +993,24 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case at_circle_fill = "at.circle.fill"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case atom = "atom"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case australsign = "australsign"
     case australsign_circle = "australsign.circle"
     case australsign_circle_fill = "australsign.circle.fill"
     case australsign_square = "australsign.square"
     case australsign_square_fill = "australsign.square.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case av_remote = "av.remote"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case av_remote_fill = "av.remote.fill"
     case b_circle = "b.circle"
     case b_circle_fill = "b.circle.fill"
     case b_square = "b.square"
     case b_square_fill = "b.square.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case backpack = "backpack"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case backpack_fill = "backpack.fill"
     case backward = "backward"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case backward_circle = "backward.circle"
@@ -951,6 +1019,10 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case backward_end = "backward.end"
     case backward_end_alt = "backward.end.alt"
     case backward_end_alt_fill = "backward.end.alt.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case backward_end_circle = "backward.end.circle"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case backward_end_circle_fill = "backward.end.circle.fill"
     case backward_end_fill = "backward.end.fill"
     case backward_fill = "backward.fill"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
@@ -963,6 +1035,8 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case bag = "bag"
     case bag_badge_minus = "bag.badge.minus"
     case bag_badge_plus = "bag.badge.plus"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case bag_badge_questionmark = "bag.badge.questionmark"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case bag_circle = "bag.circle"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
@@ -970,10 +1044,22 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case bag_fill = "bag.fill"
     case bag_fill_badge_minus = "bag.fill.badge.minus"
     case bag_fill_badge_plus = "bag.fill.badge.plus"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case bag_fill_badge_questionmark = "bag.fill.badge.questionmark"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case bahtsign = "bahtsign"
     case bahtsign_circle = "bahtsign.circle"
     case bahtsign_circle_fill = "bahtsign.circle.fill"
     case bahtsign_square = "bahtsign.square"
     case bahtsign_square_fill = "bahtsign.square.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case balloon = "balloon"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case balloon_2 = "balloon.2"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case balloon_2_fill = "balloon.2.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case balloon_fill = "balloon.fill"
     case bandage = "bandage"
     case bandage_fill = "bandage.fill"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
@@ -984,15 +1070,49 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case barcode_viewfinder = "barcode.viewfinder"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case barometer = "barometer"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case baseball = "baseball"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case baseball_circle = "baseball.circle"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case baseball_circle_fill = "baseball.circle.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case baseball_diamond_bases = "baseball.diamond.bases"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case baseball_fill = "baseball.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case basket = "basket"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case basket_fill = "basket.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case basketball = "basketball"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case basketball_circle = "basketball.circle"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case basketball_circle_fill = "basketball.circle.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case basketball_fill = "basketball.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case bathtub = "bathtub"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case bathtub_fill = "bathtub.fill"
     case battery_0 = "battery.0"
     case battery_100 = "battery.100"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case battery_100_bolt = "battery.100.bolt"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case battery_100_circle = "battery.100.circle"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case battery_100_circle_fill = "battery.100.circle.fill"
     case battery_25 = "battery.25"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case battery_50 = "battery.50"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case battery_75 = "battery.75"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case beach_umbrella = "beach.umbrella"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case beach_umbrella_fill = "beach.umbrella.fill"
     case bed_double = "bed.double"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case bed_double_circle = "bed.double.circle"
@@ -1004,6 +1124,10 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case bell_and_waveform = "bell.and.waveform"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case bell_and_waveform_fill = "bell.and.waveform.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case bell_and_waves_left_and_right = "bell.and.waves.left.and.right"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case bell_and_waves_left_and_right_fill = "bell.and.waves.left.and.right.fill"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case bell_badge = "bell.badge"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
@@ -1045,20 +1169,44 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case binoculars = "binoculars"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case binoculars_fill = "binoculars.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case bird = "bird"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case bird_fill = "bird.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case birthday_cake = "birthday.cake"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case birthday_cake_fill = "birthday.cake.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case bitcoinsign = "bitcoinsign"
     case bitcoinsign_circle = "bitcoinsign.circle"
     case bitcoinsign_circle_fill = "bitcoinsign.circle.fill"
     case bitcoinsign_square = "bitcoinsign.square"
     case bitcoinsign_square_fill = "bitcoinsign.square.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case blinds_horizontal_closed = "blinds.horizontal.closed"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case blinds_horizontal_open = "blinds.horizontal.open"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case blinds_vertical_closed = "blinds.vertical.closed"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case blinds_vertical_open = "blinds.vertical.open"
     case bold = "bold"
     case bold_italic_underline = "bold.italic.underline"
     case bold_underline = "bold.underline"
     case bolt = "bolt"
     case bolt_badge_a = "bolt.badge.a"
     case bolt_badge_a_fill = "bolt.badge.a.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case bolt_badge_clock = "bolt.badge.clock"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case bolt_badge_clock_fill = "bolt.badge.clock.fill"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case bolt_batteryblock = "bolt.batteryblock"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case bolt_batteryblock_fill = "bolt.batteryblock.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case bolt_brakesignal = "bolt.brakesignal"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case bolt_car = "bolt.car"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
@@ -1138,10 +1286,24 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case books_vertical_circle_fill = "books.vertical.circle.fill"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case books_vertical_fill = "books.vertical.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case box_truck = "box.truck"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case box_truck_badge_clock = "box.truck.badge.clock"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case box_truck_badge_clock_fill = "box.truck.badge.clock.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case box_truck_fill = "box.truck.fill"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case brain = "brain"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case brain_head_profile = "brain.head.profile"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case brakesignal = "brakesignal"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case brakesignal_dashed = "brakesignal.dashed"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case brazilianrealsign = "brazilianrealsign"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case brazilianrealsign_circle = "brazilianrealsign.circle"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
@@ -1178,6 +1340,10 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case bubble_right_circle_fill = "bubble.right.circle.fill"
     case bubble_right_fill = "bubble.right.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case bubbles_and_sparkles = "bubbles.and.sparkles"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case bubbles_and_sparkles_fill = "bubbles.and.sparkles.fill"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case building = "building"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
@@ -1209,10 +1375,20 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case bus_doubledecker_fill = "bus.doubledecker.fill"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case bus_fill = "bus.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case button_programmable = "button.programmable"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case button_programmable_square = "button.programmable.square"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case button_programmable_square_fill = "button.programmable.square.fill"
     case c_circle = "c.circle"
     case c_circle_fill = "c.circle.fill"
     case c_square = "c.square"
     case c_square_fill = "c.square.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case cabinet = "cabinet"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case cabinet_fill = "cabinet.fill"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case cable_connector = "cable.connector"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
@@ -1250,6 +1426,12 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case camera_fill_badge_ellipsis = "camera.fill.badge.ellipsis"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case camera_filters = "camera.filters"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case camera_macro = "camera.macro"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case camera_macro_circle = "camera.macro.circle"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case camera_macro_circle_fill = "camera.macro.circle.fill"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case camera_metering_center_weighted = "camera.metering.center.weighted"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
@@ -1329,9 +1511,23 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case car_ferry_fill = "car.ferry.fill"
     case car_fill = "car.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case carbon_dioxide_cloud = "carbon.dioxide.cloud"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case carbon_dioxide_cloud_fill = "carbon.dioxide.cloud.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case carbon_monoxide_cloud = "carbon.monoxide.cloud"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case carbon_monoxide_cloud_fill = "carbon.monoxide.cloud.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case carrot = "carrot"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case carrot_fill = "carrot.fill"
     case cart = "cart"
     case cart_badge_minus = "cart.badge.minus"
     case cart_badge_plus = "cart.badge.plus"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case cart_badge_questionmark = "cart.badge.questionmark"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case cart_circle = "cart.circle"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
@@ -1339,18 +1535,38 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case cart_fill = "cart.fill"
     case cart_fill_badge_minus = "cart.fill.badge.minus"
     case cart_fill_badge_plus = "cart.fill.badge.plus"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case cart_fill_badge_questionmark = "cart.fill.badge.questionmark"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case `case` = "case"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case case_fill = "case.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case cedisign = "cedisign"
     case cedisign_circle = "cedisign.circle"
     case cedisign_circle_fill = "cedisign.circle.fill"
     case cedisign_square = "cedisign.square"
     case cedisign_square_fill = "cedisign.square.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case cellularbars = "cellularbars"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case centsign = "centsign"
     case centsign_circle = "centsign.circle"
     case centsign_circle_fill = "centsign.circle.fill"
     case centsign_square = "centsign.square"
     case centsign_square_fill = "centsign.square.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case chair = "chair"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case chair_fill = "chair.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case chair_lounge = "chair.lounge"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case chair_lounge_fill = "chair.lounge.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case chandelier = "chandelier"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case chandelier_fill = "chandelier.fill"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case character = "character"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
@@ -1363,6 +1579,12 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case character_bubble_fill = "character.bubble.fill"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case character_cursor_ibeam = "character.cursor.ibeam"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case character_duployan = "character.duployan"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case character_phonetic = "character.phonetic"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case character_sutton = "character.sutton"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case character_textbox = "character.textbox"
     case chart_bar = "chart.bar"
@@ -1373,6 +1595,18 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case chart_bar_fill = "chart.bar.fill"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case chart_bar_xaxis = "chart.bar.xaxis"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case chart_line_downtrend_xyaxis = "chart.line.downtrend.xyaxis"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case chart_line_downtrend_xyaxis_circle = "chart.line.downtrend.xyaxis.circle"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case chart_line_downtrend_xyaxis_circle_fill = "chart.line.downtrend.xyaxis.circle.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case chart_line_flattrend_xyaxis = "chart.line.flattrend.xyaxis"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case chart_line_flattrend_xyaxis_circle = "chart.line.flattrend.xyaxis.circle"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case chart_line_flattrend_xyaxis_circle_fill = "chart.line.flattrend.xyaxis.circle.fill"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case chart_line_uptrend_xyaxis = "chart.line.uptrend.xyaxis"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
@@ -1389,12 +1623,24 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case checkerboard_shield = "checkerboard.shield"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case checklist = "checklist"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case checklist_checked = "checklist.checked"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case checklist_unchecked = "checklist.unchecked"
     case checkmark = "checkmark"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case checkmark_bubble = "checkmark.bubble"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case checkmark_bubble_fill = "checkmark.bubble.fill"
     case checkmark_circle = "checkmark.circle"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case checkmark_circle_badge_questionmark = "checkmark.circle.badge.questionmark"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case checkmark_circle_badge_questionmark_fill = "checkmark.circle.badge.questionmark.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case checkmark_circle_badge_xmark = "checkmark.circle.badge.xmark"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case checkmark_circle_badge_xmark_fill = "checkmark.circle.badge.xmark.fill"
     case checkmark_circle_fill = "checkmark.circle.fill"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case checkmark_circle_trianglebadge_exclamationmark = "checkmark.circle.trianglebadge.exclamationmark"
@@ -1426,6 +1672,8 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case chevron_backward_square = "chevron.backward.square"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case chevron_backward_square_fill = "chevron.backward.square.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case chevron_backward_to_line = "chevron.backward.to.line"
     case chevron_compact_down = "chevron.compact.down"
     case chevron_compact_left = "chevron.compact.left"
     case chevron_compact_right = "chevron.compact.right"
@@ -1447,6 +1695,8 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case chevron_forward_square = "chevron.forward.square"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case chevron_forward_square_fill = "chevron.forward.square.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case chevron_forward_to_line = "chevron.forward.to.line"
     case chevron_left = "chevron.left"
     case chevron_left_2 = "chevron.left.2"
     case chevron_left_circle = "chevron.left.circle"
@@ -1460,12 +1710,16 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case chevron_left_slash_chevron_right = "chevron.left.slash.chevron.right"
     case chevron_left_square = "chevron.left.square"
     case chevron_left_square_fill = "chevron.left.square.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case chevron_left_to_line = "chevron.left.to.line"
     case chevron_right = "chevron.right"
     case chevron_right_2 = "chevron.right.2"
     case chevron_right_circle = "chevron.right.circle"
     case chevron_right_circle_fill = "chevron.right.circle.fill"
     case chevron_right_square = "chevron.right.square"
     case chevron_right_square_fill = "chevron.right.square.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case chevron_right_to_line = "chevron.right.to.line"
     case chevron_up = "chevron.up"
     case chevron_up_chevron_down = "chevron.up.chevron.down"
     case chevron_up_circle = "chevron.up.circle"
@@ -1502,6 +1756,8 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case circle_dashed_inset_fill = "circle.dashed.inset.fill"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case circle_dashed_inset_filled = "circle.dashed.inset.filled"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case circle_dashed_rectangle = "circle.dashed.rectangle"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case circle_dotted = "circle.dotted"
     case circle_fill = "circle.fill"
@@ -1510,6 +1766,8 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     @available(tvOS, deprecated: 15.0, renamed: "circle_square_fill")
     @available(watchOS, deprecated: 8.0, renamed: "circle_square_fill")
     case circle_fill_square_fill = "circle.fill.square.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case circle_filled_pattern_diagonalline_rectangle = "circle.filled.pattern.diagonalline.rectangle"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case circle_grid_2x1 = "circle.grid.2x1"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
@@ -1589,6 +1847,10 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case circle_lefthalf_fill = "circle.lefthalf.fill"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case circle_lefthalf_filled = "circle.lefthalf.filled"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case circle_rectangle_dashed = "circle.rectangle.dashed"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case circle_rectangle_filled_pattern_diagonalline = "circle.rectangle.filled.pattern.diagonalline"
     @available(iOS, deprecated: 15.0, renamed: "circle_righthalf_filled")
     @available(macOS, deprecated: 12.0, renamed: "circle_righthalf_filled")
     @available(tvOS, deprecated: 15.0, renamed: "circle_righthalf_filled")
@@ -1641,11 +1903,17 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case circles_hexagonpath_fill = "circles.hexagonpath.fill"
     case clear = "clear"
     case clear_fill = "clear.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case clipboard = "clipboard"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case clipboard_fill = "clipboard.fill"
     case clock = "clock"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case clock_arrow_2_circlepath = "clock.arrow.2.circlepath"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case clock_arrow_circlepath = "clock.arrow.circlepath"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case clock_badge = "clock.badge"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case clock_badge_checkmark = "clock.badge.checkmark"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
@@ -1654,6 +1922,16 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case clock_badge_exclamationmark = "clock.badge.exclamationmark"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case clock_badge_exclamationmark_fill = "clock.badge.exclamationmark.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case clock_badge_fill = "clock.badge.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case clock_badge_questionmark = "clock.badge.questionmark"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case clock_badge_questionmark_fill = "clock.badge.questionmark.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case clock_badge_xmark = "clock.badge.xmark"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case clock_badge_xmark_fill = "clock.badge.xmark.fill"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case clock_circle = "clock.circle"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
@@ -1661,36 +1939,102 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case clock_fill = "clock.fill"
     case cloud = "cloud"
     case cloud_bolt = "cloud.bolt"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case cloud_bolt_circle = "cloud.bolt.circle"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case cloud_bolt_circle_fill = "cloud.bolt.circle.fill"
     case cloud_bolt_fill = "cloud.bolt.fill"
     case cloud_bolt_rain = "cloud.bolt.rain"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case cloud_bolt_rain_circle = "cloud.bolt.rain.circle"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case cloud_bolt_rain_circle_fill = "cloud.bolt.rain.circle.fill"
     case cloud_bolt_rain_fill = "cloud.bolt.rain.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case cloud_circle = "cloud.circle"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case cloud_circle_fill = "cloud.circle.fill"
     case cloud_drizzle = "cloud.drizzle"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case cloud_drizzle_circle = "cloud.drizzle.circle"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case cloud_drizzle_circle_fill = "cloud.drizzle.circle.fill"
     case cloud_drizzle_fill = "cloud.drizzle.fill"
     case cloud_fill = "cloud.fill"
     case cloud_fog = "cloud.fog"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case cloud_fog_circle = "cloud.fog.circle"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case cloud_fog_circle_fill = "cloud.fog.circle.fill"
     case cloud_fog_fill = "cloud.fog.fill"
     case cloud_hail = "cloud.hail"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case cloud_hail_circle = "cloud.hail.circle"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case cloud_hail_circle_fill = "cloud.hail.circle.fill"
     case cloud_hail_fill = "cloud.hail.fill"
     case cloud_heavyrain = "cloud.heavyrain"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case cloud_heavyrain_circle = "cloud.heavyrain.circle"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case cloud_heavyrain_circle_fill = "cloud.heavyrain.circle.fill"
     case cloud_heavyrain_fill = "cloud.heavyrain.fill"
     case cloud_moon = "cloud.moon"
     case cloud_moon_bolt = "cloud.moon.bolt"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case cloud_moon_bolt_circle = "cloud.moon.bolt.circle"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case cloud_moon_bolt_circle_fill = "cloud.moon.bolt.circle.fill"
     case cloud_moon_bolt_fill = "cloud.moon.bolt.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case cloud_moon_circle = "cloud.moon.circle"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case cloud_moon_circle_fill = "cloud.moon.circle.fill"
     case cloud_moon_fill = "cloud.moon.fill"
     case cloud_moon_rain = "cloud.moon.rain"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case cloud_moon_rain_circle = "cloud.moon.rain.circle"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case cloud_moon_rain_circle_fill = "cloud.moon.rain.circle.fill"
     case cloud_moon_rain_fill = "cloud.moon.rain.fill"
     case cloud_rain = "cloud.rain"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case cloud_rain_circle = "cloud.rain.circle"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case cloud_rain_circle_fill = "cloud.rain.circle.fill"
     case cloud_rain_fill = "cloud.rain.fill"
     case cloud_sleet = "cloud.sleet"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case cloud_sleet_circle = "cloud.sleet.circle"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case cloud_sleet_circle_fill = "cloud.sleet.circle.fill"
     case cloud_sleet_fill = "cloud.sleet.fill"
     case cloud_snow = "cloud.snow"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case cloud_snow_circle = "cloud.snow.circle"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case cloud_snow_circle_fill = "cloud.snow.circle.fill"
     case cloud_snow_fill = "cloud.snow.fill"
     case cloud_sun = "cloud.sun"
     case cloud_sun_bolt = "cloud.sun.bolt"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case cloud_sun_bolt_circle = "cloud.sun.bolt.circle"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case cloud_sun_bolt_circle_fill = "cloud.sun.bolt.circle.fill"
     case cloud_sun_bolt_fill = "cloud.sun.bolt.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case cloud_sun_circle = "cloud.sun.circle"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case cloud_sun_circle_fill = "cloud.sun.circle.fill"
     case cloud_sun_fill = "cloud.sun.fill"
     case cloud_sun_rain = "cloud.sun.rain"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case cloud_sun_rain_circle = "cloud.sun.rain.circle"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case cloud_sun_rain_circle_fill = "cloud.sun.rain.circle.fill"
     case cloud_sun_rain_fill = "cloud.sun.rain.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case coloncurrencysign = "coloncurrencysign"
     case coloncurrencysign_circle = "coloncurrencysign.circle"
     case coloncurrencysign_circle_fill = "coloncurrencysign.circle.fill"
     case coloncurrencysign_square = "coloncurrencysign.square"
@@ -1708,6 +2052,8 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case command_square = "command.square"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case command_square_fill = "command.square.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case compass_drawing = "compass.drawing"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case computermouse = "computermouse"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
@@ -1716,9 +2062,17 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case cone = "cone"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case cone_fill = "cone.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case contact_sensor = "contact.sensor"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case contact_sensor_fill = "contact.sensor.fill"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case contextualmenu_and_cursorarrow = "contextualmenu.and.cursorarrow"
     case control = "control"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case cooktop = "cooktop"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case cooktop_fill = "cooktop.fill"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case cpu = "cpu"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
@@ -1733,6 +2087,16 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case creditcard_fill = "creditcard.fill"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case creditcard_trianglebadge_exclamationmark = "creditcard.trianglebadge.exclamationmark"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case creditcard_viewfinder = "creditcard.viewfinder"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case cricket_ball = "cricket.ball"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case cricket_ball_circle = "cricket.ball.circle"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case cricket_ball_circle_fill = "cricket.ball.circle.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case cricket_ball_fill = "cricket.ball.fill"
     case crop = "crop"
     case crop_rotate = "crop.rotate"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
@@ -1755,6 +2119,8 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case crown = "crown"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case crown_fill = "crown.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case cruzeirosign = "cruzeirosign"
     case cruzeirosign_circle = "cruzeirosign.circle"
     case cruzeirosign_circle_fill = "cruzeirosign.circle.fill"
     case cruzeirosign_square = "cruzeirosign.square"
@@ -1808,6 +2174,12 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case cursorarrow_rays = "cursorarrow.rays"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case cursorarrow_square = "cursorarrow.square"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case cursorarrow_square_fill = "cursorarrow.square.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case curtains_closed = "curtains.closed"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case curtains_open = "curtains.open"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case cylinder = "cylinder"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
@@ -1822,6 +2194,10 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case d_square_fill = "d.square.fill"
     case decrease_indent = "decrease.indent"
     case decrease_quotelevel = "decrease.quotelevel"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case dehumidifier = "dehumidifier"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case dehumidifier_fill = "dehumidifier.fill"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case delete_backward = "delete.backward"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
@@ -1853,13 +2229,37 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     @available(tvOS, deprecated: 14.0, renamed: "dial_min_fill")
     @available(watchOS, deprecated: 7.0, renamed: "dial_min_fill")
     case dial_fill = "dial.fill"
-    @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case dial_high = "dial.high"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case dial_high_fill = "dial.high.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case dial_low = "dial.low"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case dial_low_fill = "dial.low.fill"
+    @available(iOS, deprecated: 16.0, renamed: "dial_high")
+    @available(macOS, deprecated: 13.0, renamed: "dial_high")
+    @available(tvOS, deprecated: 16.0, renamed: "dial_high")
+    @available(watchOS, deprecated: 9.0, renamed: "dial_high")
     case dial_max = "dial.max"
-    @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
+    @available(iOS, deprecated: 16.0, renamed: "dial_high_fill")
+    @available(macOS, deprecated: 13.0, renamed: "dial_high_fill")
+    @available(tvOS, deprecated: 16.0, renamed: "dial_high_fill")
+    @available(watchOS, deprecated: 9.0, renamed: "dial_high_fill")
     case dial_max_fill = "dial.max.fill"
-    @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case dial_medium = "dial.medium"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case dial_medium_fill = "dial.medium.fill"
+    @available(iOS, deprecated: 16.0, renamed: "dial_low")
+    @available(macOS, deprecated: 13.0, renamed: "dial_low")
+    @available(tvOS, deprecated: 16.0, renamed: "dial_low")
+    @available(watchOS, deprecated: 9.0, renamed: "dial_low")
     case dial_min = "dial.min"
-    @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
+    @available(iOS, deprecated: 16.0, renamed: "dial_low_fill")
+    @available(macOS, deprecated: 13.0, renamed: "dial_low_fill")
+    @available(tvOS, deprecated: 16.0, renamed: "dial_low_fill")
+    @available(watchOS, deprecated: 9.0, renamed: "dial_low_fill")
     case dial_min_fill = "dial.min.fill"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case diamond = "diamond"
@@ -1909,6 +2309,10 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case die_face_6_fill = "die.face.6.fill"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case directcurrent = "directcurrent"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case dishwasher = "dishwasher"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case dishwasher_fill = "dishwasher.fill"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case display = "display"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
@@ -1917,6 +2321,30 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case display_and_arrow_down = "display.and.arrow.down"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case display_trianglebadge_exclamationmark = "display.trianglebadge.exclamationmark"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case distribute_horizontal_center = "distribute.horizontal.center"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case distribute_horizontal_center_fill = "distribute.horizontal.center.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case distribute_horizontal_left = "distribute.horizontal.left"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case distribute_horizontal_left_fill = "distribute.horizontal.left.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case distribute_horizontal_right = "distribute.horizontal.right"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case distribute_horizontal_right_fill = "distribute.horizontal.right.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case distribute_vertical_bottom = "distribute.vertical.bottom"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case distribute_vertical_bottom_fill = "distribute.vertical.bottom.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case distribute_vertical_center = "distribute.vertical.center"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case distribute_vertical_center_fill = "distribute.vertical.center.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case distribute_vertical_top = "distribute.vertical.top"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case distribute_vertical_top_fill = "distribute.vertical.top.fill"
     case divide = "divide"
     case divide_circle = "divide.circle"
     case divide_circle_fill = "divide.circle.fill"
@@ -1926,6 +2354,10 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case doc_append = "doc.append"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case doc_append_fill = "doc.append.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case doc_badge_arrow_up = "doc.badge.arrow.up"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case doc_badge_arrow_up_fill = "doc.badge.arrow.up.fill"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case doc_badge_ellipsis = "doc.badge.ellipsis"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
@@ -1984,14 +2416,56 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case dock_arrow_up_rectangle = "dock.arrow.up.rectangle"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case dock_rectangle = "dock.rectangle"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case dollarsign = "dollarsign"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case dollarsign_arrow_circlepath = "dollarsign.arrow.circlepath"
     case dollarsign_circle = "dollarsign.circle"
     case dollarsign_circle_fill = "dollarsign.circle.fill"
     case dollarsign_square = "dollarsign.square"
     case dollarsign_square_fill = "dollarsign.square.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case dongsign = "dongsign"
     case dongsign_circle = "dongsign.circle"
     case dongsign_circle_fill = "dongsign.circle.fill"
     case dongsign_square = "dongsign.square"
     case dongsign_square_fill = "dongsign.square.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case door_french_closed = "door.french.closed"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case door_french_open = "door.french.open"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case door_garage_closed = "door.garage.closed"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case door_garage_closed_trianglebadge_exclamationmark = "door.garage.closed.trianglebadge.exclamationmark"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case door_garage_double_bay_closed = "door.garage.double.bay.closed"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case door_garage_double_bay_closed_trianglebadge_exclamationmark = "door.garage.double.bay.closed.trianglebadge.exclamationmark"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case door_garage_double_bay_open = "door.garage.double.bay.open"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case door_garage_double_bay_open_trianglebadge_exclamationmark = "door.garage.double.bay.open.trianglebadge.exclamationmark"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case door_garage_open = "door.garage.open"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case door_garage_open_trianglebadge_exclamationmark = "door.garage.open.trianglebadge.exclamationmark"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case door_left_hand_closed = "door.left.hand.closed"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case door_left_hand_open = "door.left.hand.open"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case door_right_hand_closed = "door.right.hand.closed"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case door_right_hand_open = "door.right.hand.open"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case door_sliding_left_hand_closed = "door.sliding.left.hand.closed"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case door_sliding_left_hand_open = "door.sliding.left.hand.open"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case door_sliding_right_hand_closed = "door.sliding.right.hand.closed"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case door_sliding_right_hand_open = "door.sliding.right.hand.open"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case dot_arrowtriangles_up_right_down_left_circle = "dot.arrowtriangles.up.right.down.left.circle"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
@@ -2016,6 +2490,8 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case dot_squareshape_split_2x2 = "dot.squareshape.split.2x2"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case dot_viewfinder = "dot.viewfinder"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case dots_and_line_vertical_and_cursorarrow_rectangle = "dots.and.line.vertical.and.cursorarrow.rectangle"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case dpad = "dpad"
     @available(iOS, deprecated: 15.0, renamed: "dpad_down_filled")
@@ -2054,10 +2530,30 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case drop_circle = "drop.circle"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case drop_circle_fill = "drop.circle.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case drop_degreesign = "drop.degreesign"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case drop_degreesign_fill = "drop.degreesign.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case drop_degreesign_slash = "drop.degreesign.slash"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case drop_degreesign_slash_fill = "drop.degreesign.slash.fill"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case drop_fill = "drop.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case drop_keypad_rectangle = "drop.keypad.rectangle"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case drop_keypad_rectangle_fill = "drop.keypad.rectangle.fill"
     case drop_triangle = "drop.triangle"
     case drop_triangle_fill = "drop.triangle.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case dryer = "dryer"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case dryer_fill = "dryer.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case dumbbell = "dumbbell"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case dumbbell_fill = "dumbbell.fill"
     case e_circle = "e.circle"
     case e_circle_fill = "e.circle.fill"
     case e_square = "e.square"
@@ -2110,6 +2606,14 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case ellipsis_vertical_bubble = "ellipsis.vertical.bubble"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case ellipsis_vertical_bubble_fill = "ellipsis.vertical.bubble.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case entry_lever_keypad = "entry.lever.keypad"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case entry_lever_keypad_fill = "entry.lever.keypad.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case entry_lever_keypad_trianglebadge_exclamationmark = "entry.lever.keypad.trianglebadge.exclamationmark"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case entry_lever_keypad_trianglebadge_exclamationmark_fill = "entry.lever.keypad.trianglebadge.exclamationmark.fill"
     case envelope = "envelope"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case envelope_arrow_triangle_branch = "envelope.arrow.triangle.branch"
@@ -2135,17 +2639,29 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     @available(watchOS, deprecated: 8.0, renamed: "envelope_badge_shield_half_filled_fill")
     case envelope_fill_badge_shield_trailinghalf_fill = "envelope.fill.badge.shield.trailinghalf.fill"
     case envelope_open = "envelope.open"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case envelope_open_badge_clock = "envelope.open.badge.clock"
     case envelope_open_fill = "envelope.open.fill"
     case equal = "equal"
     case equal_circle = "equal.circle"
     case equal_circle_fill = "equal.circle.fill"
     case equal_square = "equal.square"
     case equal_square_fill = "equal.square.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case eraser = "eraser"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case eraser_fill = "eraser.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case eraser_line_dashed = "eraser.line.dashed"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case eraser_line_dashed_fill = "eraser.line.dashed.fill"
     case escape = "escape"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case esim = "esim"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case esim_fill = "esim.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case eurosign = "eurosign"
     case eurosign_circle = "eurosign.circle"
     case eurosign_circle_fill = "eurosign.circle.fill"
     case eurosign_square = "eurosign.square"
@@ -2159,6 +2675,8 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case exclamationmark_arrow_circlepath = "exclamationmark.arrow.circlepath"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case exclamationmark_arrow_triangle_2_circlepath = "exclamationmark.arrow.triangle.2.circlepath"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case exclamationmark_brakesignal = "exclamationmark.brakesignal"
     case exclamationmark_bubble = "exclamationmark.bubble"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case exclamationmark_bubble_circle = "exclamationmark.bubble.circle"
@@ -2167,8 +2685,14 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case exclamationmark_bubble_fill = "exclamationmark.bubble.fill"
     case exclamationmark_circle = "exclamationmark.circle"
     case exclamationmark_circle_fill = "exclamationmark.circle.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case exclamationmark_lock = "exclamationmark.lock"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case exclamationmark_lock_fill = "exclamationmark.lock.fill"
     case exclamationmark_octagon = "exclamationmark.octagon"
     case exclamationmark_octagon_fill = "exclamationmark.octagon.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case exclamationmark_questionmark = "exclamationmark.questionmark"
     case exclamationmark_shield = "exclamationmark.shield"
     case exclamationmark_shield_fill = "exclamationmark.shield.fill"
     case exclamationmark_square = "exclamationmark.square"
@@ -2179,6 +2703,8 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case externaldrive = "externaldrive"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case externaldrive_badge_checkmark = "externaldrive.badge.checkmark"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case externaldrive_badge_exclamationmark = "externaldrive.badge.exclamationmark"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case externaldrive_badge_icloud = "externaldrive.badge.icloud"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
@@ -2187,6 +2713,8 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case externaldrive_badge_person_crop = "externaldrive.badge.person.crop"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case externaldrive_badge_plus = "externaldrive.badge.plus"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case externaldrive_badge_questionmark = "externaldrive.badge.questionmark"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case externaldrive_badge_timemachine = "externaldrive.badge.timemachine"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
@@ -2201,6 +2729,8 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case externaldrive_fill = "externaldrive.fill"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case externaldrive_fill_badge_checkmark = "externaldrive.fill.badge.checkmark"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case externaldrive_fill_badge_exclamationmark = "externaldrive.fill.badge.exclamationmark"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case externaldrive_fill_badge_icloud = "externaldrive.fill.badge.icloud"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
@@ -2209,12 +2739,18 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case externaldrive_fill_badge_person_crop = "externaldrive.fill.badge.person.crop"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case externaldrive_fill_badge_plus = "externaldrive.fill.badge.plus"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case externaldrive_fill_badge_questionmark = "externaldrive.fill.badge.questionmark"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case externaldrive_fill_badge_timemachine = "externaldrive.fill.badge.timemachine"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case externaldrive_fill_badge_wifi = "externaldrive.fill.badge.wifi"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case externaldrive_fill_badge_xmark = "externaldrive.fill.badge.xmark"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case externaldrive_fill_trianglebadge_exclamationmark = "externaldrive.fill.trianglebadge.exclamationmark"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case externaldrive_trianglebadge_exclamationmark = "externaldrive.trianglebadge.exclamationmark"
     case eye = "eye"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case eye_circle = "eye.circle"
@@ -2258,18 +2794,49 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case face_dashed_fill = "face.dashed.fill"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case face_smiling = "face.smiling"
-    @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
+    @available(iOS, deprecated: 16.0, renamed: "face_smiling_inverse")
+    @available(macOS, deprecated: 13.0, renamed: "face_smiling_inverse")
+    @available(tvOS, deprecated: 16.0, renamed: "face_smiling_inverse")
+    @available(watchOS, deprecated: 9.0, renamed: "face_smiling_inverse")
     case face_smiling_fill = "face.smiling.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case face_smiling_inverse = "face.smiling.inverse"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case facemask = "facemask"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case facemask_fill = "facemask.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case fan_and_light_ceiling = "fan.and.light.ceiling"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case fan_and_light_ceiling_fill = "fan.and.light.ceiling.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case fan_ceiling = "fan.ceiling"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case fan_ceiling_fill = "fan.ceiling.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case fan_desk = "fan.desk"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case fan_desk_fill = "fan.desk.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case fan_floor = "fan.floor"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case fan_floor_fill = "fan.floor.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case fan_oscillation = "fan.oscillation"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case fan_oscillation_fill = "fan.oscillation.fill"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case fanblades = "fanblades"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case fanblades_fill = "fanblades.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case fanblades_slash = "fanblades.slash"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case fanblades_slash_fill = "fanblades.slash.fill"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case faxmachine = "faxmachine"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case faxmachine_fill = "faxmachine.fill"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case ferry = "ferry"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
@@ -2281,28 +2848,200 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case fiberchannel = "fiberchannel"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case fibrechannel = "fibrechannel"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_2_and_child_holdinghands = "figure.2.and.child.holdinghands"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_2_arms_open = "figure.2.arms.open"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_american_football = "figure.american.football"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_and_child_holdinghands = "figure.and.child.holdinghands"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_archery = "figure.archery"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_arms_open = "figure.arms.open"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_australian_football = "figure.australian.football"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_badminton = "figure.badminton"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_barre = "figure.barre"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_baseball = "figure.baseball"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_basketball = "figure.basketball"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_bowling = "figure.bowling"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_boxing = "figure.boxing"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_climbing = "figure.climbing"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_cooldown = "figure.cooldown"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_core_training = "figure.core.training"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_cricket = "figure.cricket"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_cross_training = "figure.cross.training"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_curling = "figure.curling"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_dance = "figure.dance"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_disc_sports = "figure.disc.sports"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_dress_line_vertical_figure = "figure.dress.line.vertical.figure"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_elliptical = "figure.elliptical"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_equestrian_sports = "figure.equestrian.sports"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_fall = "figure.fall"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_fall_circle = "figure.fall.circle"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_fall_circle_fill = "figure.fall.circle.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_fencing = "figure.fencing"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_fishing = "figure.fishing"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_flexibility = "figure.flexibility"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_golf = "figure.golf"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_gymnastics = "figure.gymnastics"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_hand_cycling = "figure.hand.cycling"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_handball = "figure.handball"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_highintensity_intervaltraining = "figure.highintensity.intervaltraining"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_hiking = "figure.hiking"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_hockey = "figure.hockey"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_hunting = "figure.hunting"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_indoor_cycle = "figure.indoor.cycle"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_jumprope = "figure.jumprope"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_kickboxing = "figure.kickboxing"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_lacrosse = "figure.lacrosse"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_martial_arts = "figure.martial.arts"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_mind_and_body = "figure.mind.and.body"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_mixed_cardio = "figure.mixed.cardio"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_open_water_swim = "figure.open.water.swim"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_outdoor_cycle = "figure.outdoor.cycle"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_pickleball = "figure.pickleball"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_pilates = "figure.pilates"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_play = "figure.play"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_pool_swim = "figure.pool.swim"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_racquetball = "figure.racquetball"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case figure_roll = "figure.roll"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_roll_runningpace = "figure.roll.runningpace"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_rolling = "figure.rolling"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_rower = "figure.rower"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_rugby = "figure.rugby"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_run = "figure.run"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_run_circle = "figure.run.circle"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_run_circle_fill = "figure.run.circle.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_sailing = "figure.sailing"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_skating = "figure.skating"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_skiing_crosscountry = "figure.skiing.crosscountry"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_skiing_downhill = "figure.skiing.downhill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_snowboarding = "figure.snowboarding"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_soccer = "figure.soccer"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_socialdance = "figure.socialdance"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_softball = "figure.softball"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_squash = "figure.squash"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_stair_stepper = "figure.stair.stepper"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_stairs = "figure.stairs"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case figure_stand = "figure.stand"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case figure_stand_line_dotted_figure_stand = "figure.stand.line.dotted.figure.stand"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_step_training = "figure.step.training"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_strengthtraining_functional = "figure.strengthtraining.functional"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_strengthtraining_traditional = "figure.strengthtraining.traditional"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_surfing = "figure.surfing"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_table_tennis = "figure.table.tennis"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_taichi = "figure.taichi"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_tennis = "figure.tennis"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_track_and_field = "figure.track.and.field"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_volleyball = "figure.volleyball"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case figure_walk = "figure.walk"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_walk_arrival = "figure.walk.arrival"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case figure_walk_circle = "figure.walk.circle"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case figure_walk_circle_fill = "figure.walk.circle.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_walk_departure = "figure.walk.departure"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case figure_walk_diamond = "figure.walk.diamond"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case figure_walk_diamond_fill = "figure.walk.diamond.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_walk_motion = "figure.walk.motion"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_water_fitness = "figure.water.fitness"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_waterpolo = "figure.waterpolo"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case figure_wave = "figure.wave"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case figure_wave_circle = "figure.wave.circle"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case figure_wave_circle_fill = "figure.wave.circle.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_wrestling = "figure.wrestling"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case figure_yoga = "figure.yoga"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case filemenu_and_cursorarrow = "filemenu.and.cursorarrow"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
@@ -2313,9 +3052,29 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case film_circle_fill = "film.circle.fill"
     case film_fill = "film.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case film_stack = "film.stack"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case film_stack_fill = "film.stack.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case fireplace = "fireplace"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case fireplace_fill = "fireplace.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case firewall = "firewall"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case firewall_fill = "firewall.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case fish = "fish"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case fish_fill = "fish.fill"
     case flag = "flag"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case flag_2_crossed = "flag.2.crossed"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case flag_2_crossed_circle = "flag.2.crossed.circle"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case flag_2_crossed_circle_fill = "flag.2.crossed.circle.fill"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case flag_2_crossed_fill = "flag.2.crossed.fill"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
@@ -2324,6 +3083,10 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case flag_badge_ellipsis = "flag.badge.ellipsis"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case flag_badge_ellipsis_fill = "flag.badge.ellipsis.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case flag_checkered = "flag.checkered"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case flag_checkered_2_crossed = "flag.checkered.2.crossed"
     case flag_circle = "flag.circle"
     case flag_circle_fill = "flag.circle.fill"
     case flag_fill = "flag.fill"
@@ -2347,6 +3110,10 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case flame_fill = "flame.fill"
     case flashlight_off_fill = "flashlight.off.fill"
     case flashlight_on_fill = "flashlight.on.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case fleuron = "fleuron"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case fleuron_fill = "fleuron.fill"
     @available(iOS, deprecated: 14.0, renamed: "arrow_left_and_right_righttriangle_left_righttriangle_right")
     @available(macOS, deprecated: 11.0, renamed: "arrow_left_and_right_righttriangle_left_righttriangle_right")
     @available(tvOS, deprecated: 14.0, renamed: "arrow_left_and_right_righttriangle_left_righttriangle_right")
@@ -2359,12 +3126,16 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case flip_horizontal_fill = "flip.horizontal.fill"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case flipphone = "flipphone"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case florinsign = "florinsign"
     case florinsign_circle = "florinsign.circle"
     case florinsign_circle_fill = "florinsign.circle.fill"
     case florinsign_square = "florinsign.square"
     case florinsign_square_fill = "florinsign.square.fill"
     case flowchart = "flowchart"
     case flowchart_fill = "flowchart.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case fluid_brakesignal = "fluid.brakesignal"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case fn = "fn"
     case folder = "folder"
@@ -2395,6 +3166,14 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case folder_fill_badge_plus = "folder.fill.badge.plus"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case folder_fill_badge_questionmark = "folder.fill.badge.questionmark"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case football = "football"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case football_circle = "football.circle"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case football_circle_fill = "football.circle.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case football_fill = "football.fill"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case fork_knife = "fork.knife"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
@@ -2409,16 +3188,30 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case forward_end = "forward.end"
     case forward_end_alt = "forward.end.alt"
     case forward_end_alt_fill = "forward.end.alt.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case forward_end_circle = "forward.end.circle"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case forward_end_circle_fill = "forward.end.circle.fill"
     case forward_end_fill = "forward.end.fill"
     case forward_fill = "forward.fill"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case forward_frame = "forward.frame"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case forward_frame_fill = "forward.frame.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case fossil_shell = "fossil.shell"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case fossil_shell_fill = "fossil.shell.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case francsign = "francsign"
     case francsign_circle = "francsign.circle"
     case francsign_circle_fill = "francsign.circle.fill"
     case francsign_square = "francsign.square"
     case francsign_square_fill = "francsign.square.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case frying_pan = "frying.pan"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case frying_pan_fill = "frying.pan.fill"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case fuelpump = "fuelpump"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
@@ -2435,10 +3228,34 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case g_square_fill = "g.square.fill"
     case gamecontroller = "gamecontroller"
     case gamecontroller_fill = "gamecontroller.fill"
+    @available(iOS, deprecated: 16.0, renamed: "gauge_medium")
+    @available(macOS, deprecated: 13.0, renamed: "gauge_medium")
+    @available(tvOS, deprecated: 16.0, renamed: "gauge_medium")
+    @available(watchOS, deprecated: 9.0, renamed: "gauge_medium")
     case gauge = "gauge"
+    @available(iOS, deprecated: 16.0, renamed: "gauge_medium_badge_minus")
+    @available(macOS, deprecated: 13.0, renamed: "gauge_medium_badge_minus")
+    @available(tvOS, deprecated: 16.0, renamed: "gauge_medium_badge_minus")
+    @available(watchOS, deprecated: 9.0, renamed: "gauge_medium_badge_minus")
     case gauge_badge_minus = "gauge.badge.minus"
+    @available(iOS, deprecated: 16.0, renamed: "gauge_medium_badge_plus")
+    @available(macOS, deprecated: 13.0, renamed: "gauge_medium_badge_plus")
+    @available(tvOS, deprecated: 16.0, renamed: "gauge_medium_badge_plus")
+    @available(watchOS, deprecated: 9.0, renamed: "gauge_medium_badge_plus")
     case gauge_badge_plus = "gauge.badge.plus"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case gauge_high = "gauge.high"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case gauge_low = "gauge.low"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case gauge_medium = "gauge.medium"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case gauge_medium_badge_minus = "gauge.medium.badge.minus"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case gauge_medium_badge_plus = "gauge.medium.badge.plus"
     case gear = "gear"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case gear_badge = "gear.badge"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case gear_badge_checkmark = "gear.badge.checkmark"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
@@ -2455,6 +3272,8 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case gearshape_2 = "gearshape.2"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case gearshape_2_fill = "gearshape.2.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case gearshape_arrow_triangle_2_circlepath = "gearshape.arrow.triangle.2.circlepath"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case gearshape_circle = "gearshape.circle"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
@@ -2482,6 +3301,14 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case globe_asia_australia_fill = "globe.asia.australia.fill"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case globe_badge_chevron_backward = "globe.badge.chevron.backward"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case globe_central_south_asia = "globe.central.south.asia"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case globe_central_south_asia_fill = "globe.central.south.asia.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case globe_desk = "globe.desk"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case globe_desk_fill = "globe.desk.fill"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case globe_europe_africa = "globe.europe.africa"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
@@ -2668,6 +3495,8 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case grid = "grid"
     case grid_circle = "grid.circle"
     case grid_circle_fill = "grid.circle.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case guaranisign = "guaranisign"
     case guaranisign_circle = "guaranisign.circle"
     case guaranisign_circle_fill = "guaranisign.circle.fill"
     case guaranisign_square = "guaranisign.square"
@@ -2724,6 +3553,10 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case hand_raised_circle_fill = "hand.raised.circle.fill"
     case hand_raised_fill = "hand.raised.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case hand_raised_fingers_spread = "hand.raised.fingers.spread"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case hand_raised_fingers_spread_fill = "hand.raised.fingers.spread.fill"
     case hand_raised_slash = "hand.raised.slash"
     case hand_raised_slash_fill = "hand.raised.slash.fill"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
@@ -2764,6 +3597,14 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case hands_sparkles_fill = "hands.sparkles.fill"
     case hare = "hare"
     case hare_fill = "hare.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case headlight_high_beam = "headlight.high.beam"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case headlight_high_beam_fill = "headlight.high.beam.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case headlight_low_beam = "headlight.low.beam"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case headlight_low_beam_fill = "headlight.low.beam.fill"
     case headphones = "headphones"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case headphones_circle = "headphones.circle"
@@ -2774,8 +3615,14 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     @available(tvOS, deprecated: 15.0, renamed: "hearingdevice_ear")
     @available(watchOS, deprecated: 8.0, renamed: "hearingdevice_ear")
     case hearingaid_ear = "hearingaid.ear"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case hearingdevice_and_signal_meter = "hearingdevice.and.signal.meter"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case hearingdevice_and_signal_meter_fill = "hearingdevice.and.signal.meter.fill"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case hearingdevice_ear = "hearingdevice.ear"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case hearingdevice_ear_fill = "hearingdevice.ear.fill"
     case heart = "heart"
     case heart_circle = "heart.circle"
     case heart_circle_fill = "heart.circle.fill"
@@ -2796,6 +3643,10 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case heart_text_square = "heart.text.square"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case heart_text_square_fill = "heart.text.square.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case heater_vertical = "heater.vertical"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case heater_vertical_fill = "heater.vertical.fill"
     case helm = "helm"
     case hexagon = "hexagon"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
@@ -2807,6 +3658,10 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case hexagon_righthalf_filled = "hexagon.righthalf.filled"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case hexagon_tophalf_filled = "hexagon.tophalf.filled"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case hifireceiver = "hifireceiver"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case hifireceiver_fill = "hifireceiver.fill"
     case hifispeaker = "hifispeaker"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case hifispeaker_2 = "hifispeaker.2"
@@ -2815,6 +3670,16 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case hifispeaker_fill = "hifispeaker.fill"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case highlighter = "highlighter"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case hockey_puck = "hockey.puck"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case hockey_puck_circle = "hockey.puck.circle"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case hockey_puck_circle_fill = "hockey.puck.circle.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case hockey_puck_fill = "hockey.puck.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case hold_brakesignal = "hold.brakesignal"
     case hourglass = "hourglass"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case hourglass_badge_plus = "hourglass.badge.plus"
@@ -2842,21 +3707,37 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case house_circle_fill = "house.circle.fill"
     case house_fill = "house.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case hryvniasign = "hryvniasign"
     case hryvniasign_circle = "hryvniasign.circle"
     case hryvniasign_circle_fill = "hryvniasign.circle.fill"
     case hryvniasign_square = "hryvniasign.square"
     case hryvniasign_square_fill = "hryvniasign.square.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case humidifier = "humidifier"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case humidifier_and_droplets = "humidifier.and.droplets"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case humidifier_and_droplets_fill = "humidifier.and.droplets.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case humidifier_fill = "humidifier.fill"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case humidity = "humidity"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case humidity_fill = "humidity.fill"
     case hurricane = "hurricane"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case hurricane_circle = "hurricane.circle"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case hurricane_circle_fill = "hurricane.circle.fill"
     case i_circle = "i.circle"
     case i_circle_fill = "i.circle.fill"
     case i_square = "i.square"
     case i_square_fill = "i.square.fill"
     case increase_indent = "increase.indent"
     case increase_quotelevel = "increase.quotelevel"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case indianrupeesign = "indianrupeesign"
     case indianrupeesign_circle = "indianrupeesign.circle"
     case indianrupeesign_circle_fill = "indianrupeesign.circle.fill"
     case indianrupeesign_square = "indianrupeesign.square"
@@ -2868,8 +3749,16 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case infinity_circle_fill = "infinity.circle.fill"
     case info = "info"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case info_bubble = "info.bubble"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case info_bubble_fill = "info.bubble.fill"
     case info_circle = "info.circle"
     case info_circle_fill = "info.circle.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case info_square = "info.square"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case info_square_fill = "info.square.fill"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case internaldrive = "internaldrive"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
@@ -2910,20 +3799,38 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case key = "key"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case key_fill = "key.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case key_viewfinder = "key.viewfinder"
     case keyboard = "keyboard"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case keyboard_badge_ellipsis = "keyboard.badge.ellipsis"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case keyboard_badge_ellipsis_fill = "keyboard.badge.ellipsis.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case keyboard_badge_eye = "keyboard.badge.eye"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case keyboard_badge_eye_fill = "keyboard.badge.eye.fill"
     case keyboard_chevron_compact_down = "keyboard.chevron.compact.down"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case keyboard_chevron_compact_down_fill = "keyboard.chevron.compact.down.fill"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case keyboard_chevron_compact_left = "keyboard.chevron.compact.left"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case keyboard_chevron_compact_left_fill = "keyboard.chevron.compact.left.fill"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case keyboard_fill = "keyboard.fill"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case keyboard_macwindow = "keyboard.macwindow"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case keyboard_onehanded_left = "keyboard.onehanded.left"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case keyboard_onehanded_left_fill = "keyboard.onehanded.left.fill"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case keyboard_onehanded_right = "keyboard.onehanded.right"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case keyboard_onehanded_right_fill = "keyboard.onehanded.right.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case kipsign = "kipsign"
     case kipsign_circle = "kipsign.circle"
     case kipsign_circle_fill = "kipsign.circle.fill"
     case kipsign_square = "kipsign.square"
@@ -2982,6 +3889,24 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case ladybug = "ladybug"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case ladybug_fill = "ladybug.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case lamp_ceiling = "lamp.ceiling"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case lamp_ceiling_fill = "lamp.ceiling.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case lamp_ceiling_inverse = "lamp.ceiling.inverse"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case lamp_desk = "lamp.desk"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case lamp_desk_fill = "lamp.desk.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case lamp_floor = "lamp.floor"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case lamp_floor_fill = "lamp.floor.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case lamp_table = "lamp.table"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case lamp_table_fill = "lamp.table.fill"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case lanyardcard = "lanyardcard"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
@@ -2997,6 +3922,8 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     @available(tvOS, deprecated: 15.0, renamed: "circle_inset_filled")
     @available(watchOS, deprecated: 8.0, renamed: "circle_inset_filled")
     case largecircle_fill_circle = "largecircle.fill.circle"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case larisign = "larisign"
     case larisign_circle = "larisign.circle"
     case larisign_circle_fill = "larisign.circle.fill"
     case larisign_square = "larisign.square"
@@ -3013,6 +3940,10 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case latch_2_case = "latch.2.case"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case latch_2_case_fill = "latch.2.case.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case laurel_leading = "laurel.leading"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case laurel_trailing = "laurel.trailing"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case lb_rectangle_roundedbottom = "lb.rectangle.roundedbottom"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
@@ -3045,16 +3976,82 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case lifepreserver = "lifepreserver"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case lifepreserver_fill = "lifepreserver.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case light_beacon_max = "light.beacon.max"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case light_beacon_max_fill = "light.beacon.max.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case light_beacon_min = "light.beacon.min"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case light_beacon_min_fill = "light.beacon.min.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case light_cylindrical_ceiling = "light.cylindrical.ceiling"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case light_cylindrical_ceiling_fill = "light.cylindrical.ceiling.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case light_cylindrical_ceiling_inverse = "light.cylindrical.ceiling.inverse"
     case light_max = "light.max"
     case light_min = "light.min"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case light_panel = "light.panel"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case light_panel_fill = "light.panel.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case light_recessed = "light.recessed"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case light_recessed_3 = "light.recessed.3"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case light_recessed_3_fill = "light.recessed.3.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case light_recessed_3_inverse = "light.recessed.3.inverse"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case light_recessed_fill = "light.recessed.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case light_recessed_inverse = "light.recessed.inverse"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case light_ribbon = "light.ribbon"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case light_ribbon_fill = "light.ribbon.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case light_strip_2 = "light.strip.2"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case light_strip_2_fill = "light.strip.2.fill"
     case lightbulb = "lightbulb"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case lightbulb_2 = "lightbulb.2"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case lightbulb_2_fill = "lightbulb.2.fill"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case lightbulb_circle = "lightbulb.circle"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case lightbulb_circle_fill = "lightbulb.circle.fill"
     case lightbulb_fill = "lightbulb.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case lightbulb_led = "lightbulb.led"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case lightbulb_led_fill = "lightbulb.led.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case lightbulb_led_wide = "lightbulb.led.wide"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case lightbulb_led_wide_fill = "lightbulb.led.wide.fill"
     case lightbulb_slash = "lightbulb.slash"
     case lightbulb_slash_fill = "lightbulb.slash.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case lightswitch_off = "lightswitch.off"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case lightswitch_off_fill = "lightswitch.off.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case lightswitch_off_square = "lightswitch.off.square"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case lightswitch_off_square_fill = "lightswitch.off.square.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case lightswitch_on = "lightswitch.on"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case lightswitch_on_fill = "lightswitch.on.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case lightswitch_on_square = "lightswitch.on.square"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case lightswitch_on_square_fill = "lightswitch.on.square.fill"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case line_2_horizontal_decrease_circle = "line.2.horizontal.decrease.circle"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
@@ -3130,6 +4127,8 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case link_badge_plus = "link.badge.plus"
     case link_circle = "link.circle"
     case link_circle_fill = "link.circle.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case lirasign = "lirasign"
     case lirasign_circle = "lirasign.circle"
     case lirasign_circle_fill = "lirasign.circle.fill"
     case lirasign_square = "lirasign.square"
@@ -3142,6 +4141,10 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case list_bullet_circle = "list.bullet.circle"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case list_bullet_circle_fill = "list.bullet.circle.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case list_bullet_clipboard = "list.bullet.clipboard"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case list_bullet_clipboard_fill = "list.bullet.clipboard.fill"
     case list_bullet_indent = "list.bullet.indent"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case list_bullet_rectangle = "list.bullet.rectangle"
@@ -3151,6 +4154,10 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case list_bullet_rectangle_portrait = "list.bullet.rectangle.portrait"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case list_bullet_rectangle_portrait_fill = "list.bullet.rectangle.portrait.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case list_clipboard = "list.clipboard"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case list_clipboard_fill = "list.clipboard.fill"
     case list_dash = "list.dash"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case list_dash_header_rectangle = "list.dash.header.rectangle"
@@ -3159,6 +4166,10 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case list_star = "list.star"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case list_triangle = "list.triangle"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case lizard = "lizard"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case lizard_fill = "lizard.fill"
     case location = "location"
     case location_circle = "location.circle"
     case location_circle_fill = "location.circle.fill"
@@ -3176,6 +4187,10 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case location_north_line = "location.north.line"
     case location_north_line_fill = "location.north.line.fill"
     case location_slash = "location.slash"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case location_slash_circle = "location.slash.circle"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case location_slash_circle_fill = "location.slash.circle.fill"
     case location_slash_fill = "location.slash.fill"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case location_square = "location.square"
@@ -3213,6 +4228,10 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case lock_open_iphone = "lock.open.iphone"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case lock_open_laptopcomputer = "lock.open.laptopcomputer"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case lock_open_trianglebadge_exclamationmark = "lock.open.trianglebadge.exclamationmark"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case lock_open_trianglebadge_exclamationmark_fill = "lock.open.trianglebadge.exclamationmark.fill"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case lock_rectangle = "lock.rectangle"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
@@ -3226,6 +4245,10 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case lock_rectangle_stack_fill = "lock.rectangle.stack.fill"
     case lock_rotation = "lock.rotation"
+    @available(iOS, deprecated: 16.0,  message: "No replacement available")
+    @available(macOS, deprecated: 13.0,  message: "No replacement available")
+    @available(tvOS, deprecated: 16.0,  message: "No replacement available")
+    @available(watchOS, deprecated: 9.0,  message: "No replacement available")
     case lock_rotation_open = "lock.rotation.open"
     case lock_shield = "lock.shield"
     case lock_shield_fill = "lock.shield.fill"
@@ -3239,6 +4262,10 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case lock_square_stack = "lock.square.stack"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case lock_square_stack_fill = "lock.square.stack.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case lock_trianglebadge_exclamationmark = "lock.trianglebadge.exclamationmark"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case lock_trianglebadge_exclamationmark_fill = "lock.trianglebadge.exclamationmark.fill"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case loupe = "loupe"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
@@ -3275,6 +4302,8 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case mail_stack = "mail.stack"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case mail_stack_fill = "mail.stack.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case manatsign = "manatsign"
     case manatsign_circle = "manatsign.circle"
     case manatsign_circle_fill = "manatsign.circle.fill"
     case manatsign_square = "manatsign.square"
@@ -3298,8 +4327,16 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case mappin_square = "mappin.square"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case mappin_square_fill = "mappin.square.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case medal = "medal"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case medal_fill = "medal.fill"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case mediastick = "mediastick"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case medical_thermometer = "medical.thermometer"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case medical_thermometer_fill = "medical.thermometer.fill"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case megaphone = "megaphone"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
@@ -3329,13 +4366,21 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case metronome_fill = "metronome.fill"
     case mic = "mic"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case mic_and_signal_meter = "mic.and.signal.meter"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case mic_and_signal_meter_fill = "mic.and.signal.meter.fill"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case mic_badge_plus = "mic.badge.plus"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case mic_badge_xmark = "mic.badge.xmark"
     case mic_circle = "mic.circle"
     case mic_circle_fill = "mic.circle.fill"
     case mic_fill = "mic.fill"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case mic_fill_badge_plus = "mic.fill.badge.plus"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case mic_fill_badge_xmark = "mic.fill.badge.xmark"
     case mic_slash = "mic.slash"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case mic_slash_circle = "mic.slash.circle"
@@ -3346,6 +4391,20 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case mic_square = "mic.square"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case mic_square_fill = "mic.square.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case microbe = "microbe"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case microbe_circle = "microbe.circle"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case microbe_circle_fill = "microbe.circle.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case microbe_fill = "microbe.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case microwave = "microwave"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case microwave_fill = "microwave.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case millsign = "millsign"
     case millsign_circle = "millsign.circle"
     case millsign_circle_fill = "millsign.circle.fill"
     case millsign_square = "millsign.square"
@@ -3377,14 +4436,62 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case minus_slash_plus = "minus.slash.plus"
     case minus_square = "minus.square"
     case minus_square_fill = "minus.square.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case mirror_side_left = "mirror.side.left"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case mirror_side_right = "mirror.side.right"
     case moon = "moon"
     case moon_circle = "moon.circle"
     case moon_circle_fill = "moon.circle.fill"
     case moon_fill = "moon.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case moon_haze = "moon.haze"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case moon_haze_circle = "moon.haze.circle"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case moon_haze_circle_fill = "moon.haze.circle.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case moon_haze_fill = "moon.haze.fill"
     case moon_stars = "moon.stars"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case moon_stars_circle = "moon.stars.circle"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case moon_stars_circle_fill = "moon.stars.circle.fill"
     case moon_stars_fill = "moon.stars.fill"
     case moon_zzz = "moon.zzz"
     case moon_zzz_fill = "moon.zzz.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case moonphase_first_quarter = "moonphase.first.quarter"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case moonphase_first_quarter_inverse = "moonphase.first.quarter.inverse"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case moonphase_full_moon = "moonphase.full.moon"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case moonphase_full_moon_inverse = "moonphase.full.moon.inverse"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case moonphase_last_quarter = "moonphase.last.quarter"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case moonphase_last_quarter_inverse = "moonphase.last.quarter.inverse"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case moonphase_new_moon = "moonphase.new.moon"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case moonphase_new_moon_inverse = "moonphase.new.moon.inverse"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case moonphase_waning_crescent = "moonphase.waning.crescent"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case moonphase_waning_crescent_inverse = "moonphase.waning.crescent.inverse"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case moonphase_waning_gibbous = "moonphase.waning.gibbous"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case moonphase_waning_gibbous_inverse = "moonphase.waning.gibbous.inverse"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case moonphase_waxing_crescent = "moonphase.waxing.crescent"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case moonphase_waxing_crescent_inverse = "moonphase.waxing.crescent.inverse"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case moonphase_waxing_gibbous = "moonphase.waxing.gibbous"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case moonphase_waxing_gibbous_inverse = "moonphase.waxing.gibbous.inverse"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case mosaic = "mosaic"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
@@ -3439,6 +4546,8 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case n_circle_fill = "n.circle.fill"
     case n_square = "n.square"
     case n_square_fill = "n.square.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case nairasign = "nairasign"
     case nairasign_circle = "nairasign.circle"
     case nairasign_circle_fill = "nairasign.circle.fill"
     case nairasign_square = "nairasign.square"
@@ -3460,6 +4569,10 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case nose_fill = "nose.fill"
     case nosign = "nosign"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case nosign_app = "nosign.app"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case nosign_app_fill = "nosign.app.fill"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case note = "note"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
@@ -3471,10 +4584,14 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case number_circle_fill = "number.circle.fill"
     case number_square = "number.square"
     case number_square_fill = "number.square.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case numbersign = "numbersign"
     case o_circle = "o.circle"
     case o_circle_fill = "o.circle.fill"
     case o_square = "o.square"
     case o_square_fill = "o.square.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case oar_2_crossed = "oar.2.crossed"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case octagon = "octagon"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
@@ -3489,6 +4606,8 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case octagon_tophalf_filled = "octagon.tophalf.filled"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case opticaldisc = "opticaldisc"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case opticaldisc_fill = "opticaldisc.fill"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case opticaldiscdrive = "opticaldiscdrive"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
@@ -3522,6 +4641,10 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case oval_righthalf_filled = "oval.righthalf.filled"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case oval_tophalf_filled = "oval.tophalf.filled"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case oven = "oven"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case oven_fill = "oven.fill"
     case p_circle = "p.circle"
     case p_circle_fill = "p.circle.fill"
     case p_square = "p.square"
@@ -3558,12 +4681,24 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case paragraphsign = "paragraphsign"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case parentheses = "parentheses"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case parkinglight = "parkinglight"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case parkinglight_fill = "parkinglight.fill"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case parkingsign = "parkingsign"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case parkingsign_brakesignal = "parkingsign.brakesignal"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case parkingsign_brakesignal_slash = "parkingsign.brakesignal.slash"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case parkingsign_circle = "parkingsign.circle"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case parkingsign_circle_fill = "parkingsign.circle.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case party_popper = "party.popper"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case party_popper_fill = "party.popper.fill"
     case pause = "pause"
     case pause_circle = "pause.circle"
     case pause_circle_fill = "pause.circle.fill"
@@ -3582,6 +4717,10 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case pc = "pc"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case peacesign = "peacesign"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case pedestrian_gate_closed = "pedestrian.gate.closed"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case pedestrian_gate_open = "pedestrian.gate.open"
     case pencil = "pencil"
     @available(iOS, deprecated: 14.0, renamed: "rectangle_and_pencil_and_ellipsis")
     @available(macOS, deprecated: 11.0, renamed: "rectangle_and_pencil_and_ellipsis")
@@ -3589,8 +4728,14 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     @available(watchOS, deprecated: 7.0, renamed: "rectangle_and_pencil_and_ellipsis")
     case pencil_and_ellipsis_rectangle = "pencil.and.ellipsis.rectangle"
     case pencil_and_outline = "pencil.and.outline"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case pencil_and_ruler = "pencil.and.ruler"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case pencil_and_ruler_fill = "pencil.and.ruler.fill"
     case pencil_circle = "pencil.circle"
     case pencil_circle_fill = "pencil.circle.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case pencil_line = "pencil.line"
     case pencil_slash = "pencil.slash"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case pentagon = "pentagon"
@@ -3607,6 +4752,10 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case percent = "percent"
     case person = "person"
     case person_2 = "person.2"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case person_2_badge_gearshape = "person.2.badge.gearshape"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case person_2_badge_gearshape_fill = "person.2.badge.gearshape.fill"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case person_2_circle = "person.2.circle"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
@@ -3616,6 +4765,12 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case person_2_crop_square_stack_fill = "person.2.crop.square.stack.fill"
     case person_2_fill = "person.2.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case person_2_gobackward = "person.2.gobackward"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case person_2_slash = "person.2.slash"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case person_2_slash_fill = "person.2.slash.fill"
     @available(iOS, deprecated: 15.0, renamed: "person_2_crop_square_stack")
     @available(macOS, deprecated: 12.0, renamed: "person_2_crop_square_stack")
     @available(tvOS, deprecated: 15.0, renamed: "person_2_crop_square_stack")
@@ -3638,6 +4793,8 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case person_3_sequence_fill = "person.3.sequence.fill"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case person_and_arrow_left_and_arrow_right = "person.and.arrow.left.and.arrow.right"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case person_and_background_dotted = "person.and.background.dotted"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case person_badge_clock = "person.badge.clock"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
@@ -3654,6 +4811,14 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     @available(tvOS, deprecated: 14.0, renamed: "person_fill_badge_plus")
     @available(watchOS, deprecated: 7.0, renamed: "person_fill_badge_plus")
     case person_badge_plus_fill = "person.badge.plus.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case person_badge_shield_checkmark = "person.badge.shield.checkmark"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case person_badge_shield_checkmark_fill = "person.badge.shield.checkmark.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case person_bust = "person.bust"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case person_bust_fill = "person.bust.fill"
     case person_circle = "person.circle"
     case person_circle_fill = "person.circle.fill"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
@@ -3709,6 +4874,10 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case person_crop_circle_fill_badge_questionmark = "person.crop.circle.fill.badge.questionmark"
     case person_crop_circle_fill_badge_xmark = "person.crop.circle.fill.badge.xmark"
     case person_crop_rectangle = "person.crop.rectangle"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case person_crop_rectangle_badge_plus = "person.crop.rectangle.badge.plus"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case person_crop_rectangle_badge_plus_fill = "person.crop.rectangle.badge.plus.fill"
     case person_crop_rectangle_fill = "person.crop.rectangle.fill"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case person_crop_rectangle_stack = "person.crop.rectangle.stack"
@@ -3746,6 +4915,10 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case person_fill_viewfinder = "person.fill.viewfinder"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case person_fill_xmark = "person.fill.xmark"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case person_line_dotted_person = "person.line.dotted.person"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case person_line_dotted_person_fill = "person.line.dotted.person.fill"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case person_text_rectangle = "person.text.rectangle"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
@@ -3760,10 +4933,14 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case personalhotspot_circle_fill = "personalhotspot.circle.fill"
     case perspective = "perspective"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case pesetasign = "pesetasign"
     case pesetasign_circle = "pesetasign.circle"
     case pesetasign_circle_fill = "pesetasign.circle.fill"
     case pesetasign_square = "pesetasign.square"
     case pesetasign_square_fill = "pesetasign.square.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case pesosign = "pesosign"
     case pesosign_circle = "pesosign.circle"
     case pesosign_circle_fill = "pesosign.circle.fill"
     case pesosign_square = "pesosign.square"
@@ -3774,8 +4951,20 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case phone_and_waveform_fill = "phone.and.waveform.fill"
     case phone_arrow_down_left = "phone.arrow.down.left"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case phone_arrow_down_left_fill = "phone.arrow.down.left.fill"
     case phone_arrow_right = "phone.arrow.right"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case phone_arrow_right_fill = "phone.arrow.right.fill"
     case phone_arrow_up_right = "phone.arrow.up.right"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case phone_arrow_up_right_circle = "phone.arrow.up.right.circle"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case phone_arrow_up_right_circle_fill = "phone.arrow.up.right.circle.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case phone_arrow_up_right_fill = "phone.arrow.up.right.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case phone_badge_checkmark = "phone.badge.checkmark"
     case phone_badge_plus = "phone.badge.plus"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case phone_bubble_left = "phone.bubble.left"
@@ -3785,16 +4974,37 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case phone_circle_fill = "phone.circle.fill"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case phone_connection = "phone.connection"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case phone_connection_fill = "phone.connection.fill"
     case phone_down = "phone.down"
     case phone_down_circle = "phone.down.circle"
     case phone_down_circle_fill = "phone.down.circle.fill"
     case phone_down_fill = "phone.down.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case phone_down_waves_left_and_right = "phone.down.waves.left.and.right"
     case phone_fill = "phone.fill"
+    @available(iOS, deprecated: 16.0, renamed: "phone_arrow_down_left_fill")
+    @available(macOS, deprecated: 13.0, renamed: "phone_arrow_down_left_fill")
+    @available(tvOS, deprecated: 16.0, renamed: "phone_arrow_down_left_fill")
+    @available(watchOS, deprecated: 9.0, renamed: "phone_arrow_down_left_fill")
     case phone_fill_arrow_down_left = "phone.fill.arrow.down.left"
+    @available(iOS, deprecated: 16.0, renamed: "phone_arrow_right_fill")
+    @available(macOS, deprecated: 13.0, renamed: "phone_arrow_right_fill")
+    @available(tvOS, deprecated: 16.0, renamed: "phone_arrow_right_fill")
+    @available(watchOS, deprecated: 9.0, renamed: "phone_arrow_right_fill")
     case phone_fill_arrow_right = "phone.fill.arrow.right"
+    @available(iOS, deprecated: 16.0, renamed: "phone_arrow_up_right_fill")
+    @available(macOS, deprecated: 13.0, renamed: "phone_arrow_up_right_fill")
+    @available(tvOS, deprecated: 16.0, renamed: "phone_arrow_up_right_fill")
+    @available(watchOS, deprecated: 9.0, renamed: "phone_arrow_up_right_fill")
     case phone_fill_arrow_up_right = "phone.fill.arrow.up.right"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case phone_fill_badge_checkmark = "phone.fill.badge.checkmark"
     case phone_fill_badge_plus = "phone.fill.badge.plus"
-    @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
+    @available(iOS, deprecated: 16.0, renamed: "phone_connection_fill")
+    @available(macOS, deprecated: 13.0, renamed: "phone_connection_fill")
+    @available(tvOS, deprecated: 16.0, renamed: "phone_connection_fill")
+    @available(watchOS, deprecated: 9.0, renamed: "phone_connection_fill")
     case phone_fill_connection = "phone.fill.connection"
     case photo = "photo"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
@@ -3808,12 +5018,24 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case photo_on_rectangle = "photo.on.rectangle"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case photo_on_rectangle_angled = "photo.on.rectangle.angled"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case photo_stack = "photo.stack"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case photo_stack_fill = "photo.stack.fill"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case photo_tv = "photo.tv"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case pianokeys = "pianokeys"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case pianokeys_inverse = "pianokeys.inverse"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case pill = "pill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case pill_circle = "pill.circle"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case pill_circle_fill = "pill.circle.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case pill_fill = "pill.fill"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case pills = "pills"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
@@ -3844,6 +5066,10 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case pip_remove = "pip.remove"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case pip_swap = "pip.swap"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case pipe_and_drop = "pipe.and.drop"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case pipe_and_drop_fill = "pipe.and.drop.fill"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case placeholdertext_fill = "placeholdertext.fill"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
@@ -3865,7 +5091,13 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case play = "play"
     case play_circle = "play.circle"
     case play_circle_fill = "play.circle.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case play_desktopcomputer = "play.desktopcomputer"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case play_display = "play.display"
     case play_fill = "play.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case play_laptopcomputer = "play.laptopcomputer"
     case play_rectangle = "play.rectangle"
     case play_rectangle_fill = "play.rectangle.fill"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
@@ -3889,6 +5121,10 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case play_tv_fill = "play.tv.fill"
     case playpause = "playpause"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case playpause_circle = "playpause.circle"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case playpause_circle_fill = "playpause.circle.fill"
     case playpause_fill = "playpause.fill"
     case plus = "plus"
     case plus_app = "plus.app"
@@ -3954,6 +5190,14 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case point_topleft_down_curvedto_point_bottomright_up_fill = "point.topleft.down.curvedto.point.bottomright.up.fill"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case point_topleft_down_curvedto_point_filled_bottomright_up = "point.topleft.down.curvedto.point.filled.bottomright.up"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case popcorn = "popcorn"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case popcorn_circle = "popcorn.circle"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case popcorn_circle_fill = "popcorn.circle.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case popcorn_fill = "popcorn.fill"
     case power = "power"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case power_circle = "power.circle"
@@ -3965,6 +5209,130 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case poweroff = "poweroff"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case poweron = "poweron"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case poweroutlet_strip = "poweroutlet.strip"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case poweroutlet_strip_fill = "poweroutlet.strip.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case poweroutlet_type_a = "poweroutlet.type.a"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case poweroutlet_type_a_fill = "poweroutlet.type.a.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case poweroutlet_type_a_square = "poweroutlet.type.a.square"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case poweroutlet_type_a_square_fill = "poweroutlet.type.a.square.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case poweroutlet_type_b = "poweroutlet.type.b"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case poweroutlet_type_b_fill = "poweroutlet.type.b.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case poweroutlet_type_b_square = "poweroutlet.type.b.square"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case poweroutlet_type_b_square_fill = "poweroutlet.type.b.square.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case poweroutlet_type_c = "poweroutlet.type.c"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case poweroutlet_type_c_fill = "poweroutlet.type.c.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case poweroutlet_type_c_square = "poweroutlet.type.c.square"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case poweroutlet_type_c_square_fill = "poweroutlet.type.c.square.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case poweroutlet_type_d = "poweroutlet.type.d"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case poweroutlet_type_d_fill = "poweroutlet.type.d.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case poweroutlet_type_d_square = "poweroutlet.type.d.square"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case poweroutlet_type_d_square_fill = "poweroutlet.type.d.square.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case poweroutlet_type_e = "poweroutlet.type.e"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case poweroutlet_type_e_fill = "poweroutlet.type.e.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case poweroutlet_type_e_square = "poweroutlet.type.e.square"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case poweroutlet_type_e_square_fill = "poweroutlet.type.e.square.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case poweroutlet_type_f = "poweroutlet.type.f"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case poweroutlet_type_f_fill = "poweroutlet.type.f.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case poweroutlet_type_f_square = "poweroutlet.type.f.square"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case poweroutlet_type_f_square_fill = "poweroutlet.type.f.square.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case poweroutlet_type_g = "poweroutlet.type.g"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case poweroutlet_type_g_fill = "poweroutlet.type.g.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case poweroutlet_type_g_square = "poweroutlet.type.g.square"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case poweroutlet_type_g_square_fill = "poweroutlet.type.g.square.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case poweroutlet_type_h = "poweroutlet.type.h"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case poweroutlet_type_h_fill = "poweroutlet.type.h.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case poweroutlet_type_h_square = "poweroutlet.type.h.square"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case poweroutlet_type_h_square_fill = "poweroutlet.type.h.square.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case poweroutlet_type_i = "poweroutlet.type.i"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case poweroutlet_type_i_fill = "poweroutlet.type.i.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case poweroutlet_type_i_square = "poweroutlet.type.i.square"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case poweroutlet_type_i_square_fill = "poweroutlet.type.i.square.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case poweroutlet_type_j = "poweroutlet.type.j"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case poweroutlet_type_j_fill = "poweroutlet.type.j.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case poweroutlet_type_j_square = "poweroutlet.type.j.square"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case poweroutlet_type_j_square_fill = "poweroutlet.type.j.square.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case poweroutlet_type_k = "poweroutlet.type.k"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case poweroutlet_type_k_fill = "poweroutlet.type.k.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case poweroutlet_type_k_square = "poweroutlet.type.k.square"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case poweroutlet_type_k_square_fill = "poweroutlet.type.k.square.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case poweroutlet_type_l = "poweroutlet.type.l"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case poweroutlet_type_l_fill = "poweroutlet.type.l.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case poweroutlet_type_l_square = "poweroutlet.type.l.square"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case poweroutlet_type_l_square_fill = "poweroutlet.type.l.square.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case poweroutlet_type_m = "poweroutlet.type.m"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case poweroutlet_type_m_fill = "poweroutlet.type.m.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case poweroutlet_type_m_square = "poweroutlet.type.m.square"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case poweroutlet_type_m_square_fill = "poweroutlet.type.m.square.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case poweroutlet_type_n = "poweroutlet.type.n"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case poweroutlet_type_n_fill = "poweroutlet.type.n.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case poweroutlet_type_n_square = "poweroutlet.type.n.square"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case poweroutlet_type_n_square_fill = "poweroutlet.type.n.square.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case poweroutlet_type_o = "poweroutlet.type.o"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case poweroutlet_type_o_fill = "poweroutlet.type.o.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case poweroutlet_type_o_square = "poweroutlet.type.o.square"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case poweroutlet_type_o_square_fill = "poweroutlet.type.o.square.fill"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case powerplug = "powerplug"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
@@ -4020,6 +5388,10 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case questionmark_app_dashed = "questionmark.app.dashed"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case questionmark_app_fill = "questionmark.app.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case questionmark_bubble = "questionmark.bubble"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case questionmark_bubble_fill = "questionmark.bubble.fill"
     case questionmark_circle = "questionmark.circle"
     case questionmark_circle_fill = "questionmark.circle.fill"
     case questionmark_diamond = "questionmark.diamond"
@@ -4038,6 +5410,8 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case quote_closing = "quote.closing"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case quote_opening = "quote.opening"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case quotelevel = "quotelevel"
     case r_circle = "r.circle"
     case r_circle_fill = "r.circle.fill"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
@@ -4121,6 +5495,10 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case record_circle_fill = "record.circle.fill"
     case recordingtape = "recordingtape"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case recordingtape_circle = "recordingtape.circle"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case recordingtape_circle_fill = "recordingtape.circle.fill"
     case rectangle = "rectangle"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case rectangle_2_swap = "rectangle.2.swap"
@@ -4293,6 +5671,8 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case rectangle_inset_topright_filled = "rectangle.inset.topright.filled"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case rectangle_inset_toptrailing_filled = "rectangle.inset.toptrailing.filled"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case rectangle_leadinghalf_filled = "rectangle.leadinghalf.filled"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case rectangle_leadinghalf_inset_filled = "rectangle.leadinghalf.inset.filled"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
@@ -4347,6 +5727,10 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case rectangle_on_rectangle_square_fill = "rectangle.on.rectangle.square.fill"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case rectangle_portrait = "rectangle.portrait"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case rectangle_portrait_and_arrow_forward = "rectangle.portrait.and.arrow.forward"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case rectangle_portrait_and_arrow_forward_fill = "rectangle.portrait.and.arrow.forward.fill"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case rectangle_portrait_and_arrow_right = "rectangle.portrait.and.arrow.right"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
@@ -4387,6 +5771,10 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case rectangle_portrait_leftthird_inset_filled = "rectangle.portrait.leftthird.inset.filled"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case rectangle_portrait_on_rectangle_portrait = "rectangle.portrait.on.rectangle.portrait"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case rectangle_portrait_on_rectangle_portrait_angled = "rectangle.portrait.on.rectangle.portrait.angled"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case rectangle_portrait_on_rectangle_portrait_angled_fill = "rectangle.portrait.on.rectangle.portrait.angled.fill"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case rectangle_portrait_on_rectangle_portrait_fill = "rectangle.portrait.on.rectangle.portrait.fill"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
@@ -4523,12 +5911,18 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case rectangle_tophalf_inset_filled = "rectangle.tophalf.inset.filled"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case rectangle_topthird_inset_filled = "rectangle.topthird.inset.filled"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case rectangle_trailinghalf_filled = "rectangle.trailinghalf.filled"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case rectangle_trailinghalf_inset_filled = "rectangle.trailinghalf.inset.filled"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case rectangle_trailinghalf_inset_filled_arrow_trailing = "rectangle.trailinghalf.inset.filled.arrow.trailing"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case rectangle_trailingthird_inset_filled = "rectangle.trailingthird.inset.filled"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case refrigerator = "refrigerator"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case refrigerator_fill = "refrigerator.fill"
     case `repeat` = "repeat"
     case repeat_1 = "repeat.1"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
@@ -4552,6 +5946,20 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case return_right = "return.right"
     case rhombus = "rhombus"
     case rhombus_fill = "rhombus.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case road_lanes = "road.lanes"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case road_lanes_curved_left = "road.lanes.curved.left"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case road_lanes_curved_right = "road.lanes.curved.right"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case roller_shade_closed = "roller.shade.closed"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case roller_shade_open = "roller.shade.open"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case roman_shade_closed = "roman.shade.closed"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case roman_shade_open = "roman.shade.open"
     case rosette = "rosette"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case rotate_3d = "rotate.3d"
@@ -4563,6 +5971,8 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case rt_rectangle_roundedtop = "rt.rectangle.roundedtop"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case rt_rectangle_roundedtop_fill = "rt.rectangle.roundedtop.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case rublesign = "rublesign"
     case rublesign_circle = "rublesign.circle"
     case rublesign_circle_fill = "rublesign.circle.fill"
     case rublesign_square = "rublesign.square"
@@ -4571,6 +5981,8 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case ruler = "ruler"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case ruler_fill = "ruler.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case rupeesign = "rupeesign"
     case rupeesign_circle = "rupeesign.circle"
     case rupeesign_circle_fill = "rupeesign.circle.fill"
     case rupeesign_square = "rupeesign.square"
@@ -4579,6 +5991,10 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case s_circle_fill = "s.circle.fill"
     case s_square = "s.square"
     case s_square_fill = "s.square.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case sailboat = "sailboat"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case sailboat_fill = "sailboat.fill"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case scale_3d = "scale.3d"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
@@ -4618,6 +6034,10 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case seal_fill = "seal.fill"
     case selection_pin_in_out = "selection.pin.in.out"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case sensor = "sensor"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case sensor_fill = "sensor.fill"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case sensor_tag_radiowaves_forward = "sensor.tag.radiowaves.forward"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
@@ -4626,6 +6046,8 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case server_rack = "server.rack"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case shadow = "shadow"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case shekelsign = "shekelsign"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case shekelsign_circle = "shekelsign.circle"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
@@ -4678,12 +6100,30 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case shift_fill = "shift.fill"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case shippingbox = "shippingbox"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case shippingbox_and_arrow_backward = "shippingbox.and.arrow.backward"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case shippingbox_and_arrow_backward_fill = "shippingbox.and.arrow.backward.fill"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case shippingbox_circle = "shippingbox.circle"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case shippingbox_circle_fill = "shippingbox.circle.fill"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case shippingbox_fill = "shippingbox.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case shoeprints_fill = "shoeprints.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case shower = "shower"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case shower_fill = "shower.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case shower_handheld = "shower.handheld"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case shower_handheld_fill = "shower.handheld.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case shower_sidejet = "shower.sidejet"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case shower_sidejet_fill = "shower.sidejet.fill"
     case shuffle = "shuffle"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case shuffle_circle = "shuffle.circle"
@@ -4720,6 +6160,10 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case simcard_2_fill = "simcard.2.fill"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case simcard_fill = "simcard.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case sink = "sink"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case sink_fill = "sink.fill"
     case skew = "skew"
     case slash_circle = "slash.circle"
     case slash_circle_fill = "slash.circle.fill"
@@ -4729,10 +6173,18 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case sleep_circle = "sleep.circle"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case sleep_circle_fill = "sleep.circle.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case slider_horizontal_2_gobackward = "slider.horizontal.2.gobackward"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case slider_horizontal_2_rectangle_and_arrow_triangle_2_circlepath = "slider.horizontal.2.rectangle.and.arrow.triangle.2.circlepath"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case slider_horizontal_2_square_badge_arrow_down = "slider.horizontal.2.square.badge.arrow.down"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case slider_horizontal_2_square_on_square = "slider.horizontal.2.square.on.square"
     case slider_horizontal_3 = "slider.horizontal.3"
     case slider_horizontal_below_rectangle = "slider.horizontal.below.rectangle"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case slider_horizontal_below_square_and_square_filled = "slider.horizontal.below.square.and.square.filled"
     @available(iOS, deprecated: 15.0, renamed: "slider_horizontal_below_square_filled_and_square")
     @available(macOS, deprecated: 12.0, renamed: "slider_horizontal_below_square_filled_and_square")
     @available(tvOS, deprecated: 15.0, renamed: "slider_horizontal_below_square_filled_and_square")
@@ -4770,6 +6222,10 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     @available(watchOS, deprecated: 7.0, renamed: "face_smiling_fill")
     case smiley_fill = "smiley.fill"
     case smoke = "smoke"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case smoke_circle = "smoke.circle"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case smoke_circle_fill = "smoke.circle.fill"
     case smoke_fill = "smoke.fill"
     @available(iOS, deprecated: 15.0, renamed: "snowflake")
     @available(macOS, deprecated: 12.0, renamed: "snowflake")
@@ -4782,6 +6238,24 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case snowflake_circle = "snowflake.circle"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case snowflake_circle_fill = "snowflake.circle.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case soccerball = "soccerball"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case soccerball_circle = "soccerball.circle"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case soccerball_circle_fill = "soccerball.circle.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case soccerball_circle_fill_inverse = "soccerball.circle.fill.inverse"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case soccerball_circle_inverse = "soccerball.circle.inverse"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case soccerball_inverse = "soccerball.inverse"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case sofa = "sofa"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case sofa_fill = "sofa.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case space = "space"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case sparkle = "sparkle"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
@@ -4842,18 +6316,34 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case speaker_circle_fill = "speaker.circle.fill"
     case speaker_fill = "speaker.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case speaker_minus = "speaker.minus"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case speaker_minus_fill = "speaker.minus.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case speaker_plus = "speaker.plus"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case speaker_plus_fill = "speaker.plus.fill"
     case speaker_slash = "speaker.slash"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case speaker_slash_circle = "speaker.slash.circle"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case speaker_slash_circle_fill = "speaker.slash.circle.fill"
     case speaker_slash_fill = "speaker.slash.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case speaker_square = "speaker.square"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case speaker_square_fill = "speaker.square.fill"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case speaker_wave_1 = "speaker.wave.1"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case speaker_wave_1_fill = "speaker.wave.1.fill"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case speaker_wave_2 = "speaker.wave.2"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case speaker_wave_2_bubble_left = "speaker.wave.2.bubble.left"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case speaker_wave_2_bubble_left_fill = "speaker.wave.2.bubble.left.fill"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case speaker_wave_2_circle = "speaker.wave.2.circle"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
@@ -4867,55 +6357,112 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case speaker_zzz = "speaker.zzz"
     case speaker_zzz_fill = "speaker.zzz.fill"
     case speedometer = "speedometer"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case spigot = "spigot"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case spigot_fill = "spigot.fill"
     case sportscourt = "sportscourt"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case sportscourt_circle = "sportscourt.circle"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case sportscourt_circle_fill = "sportscourt.circle.fill"
     case sportscourt_fill = "sportscourt.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case sprinkler = "sprinkler"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case sprinkler_and_droplets = "sprinkler.and.droplets"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case sprinkler_and_droplets_fill = "sprinkler.and.droplets.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case sprinkler_fill = "sprinkler.fill"
     case square = "square"
-    @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case square_2_layers_3d = "square.2.layers.3d"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case square_2_layers_3d_bottom_filled = "square.2.layers.3d.bottom.filled"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case square_2_layers_3d_top_filled = "square.2.layers.3d.top.filled"
+    @available(iOS, deprecated: 16.0, renamed: "square_2_layers_3d")
+    @available(macOS, deprecated: 13.0, renamed: "square_2_layers_3d")
+    @available(tvOS, deprecated: 16.0, renamed: "square_2_layers_3d")
+    @available(watchOS, deprecated: 9.0, renamed: "square_2_layers_3d")
     case square_2_stack_3d = "square.2.stack.3d"
     @available(iOS, deprecated: 15.0, renamed: "square_2_stack_3d_bottom_filled")
     @available(macOS, deprecated: 12.0, renamed: "square_2_stack_3d_bottom_filled")
     @available(tvOS, deprecated: 15.0, renamed: "square_2_stack_3d_bottom_filled")
     @available(watchOS, deprecated: 8.0, renamed: "square_2_stack_3d_bottom_filled")
     case square_2_stack_3d_bottom_fill = "square.2.stack.3d.bottom.fill"
-    @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
+    @available(iOS, deprecated: 16.0, renamed: "square_2_layers_3d_bottom_filled")
+    @available(macOS, deprecated: 13.0, renamed: "square_2_layers_3d_bottom_filled")
+    @available(tvOS, deprecated: 16.0, renamed: "square_2_layers_3d_bottom_filled")
+    @available(watchOS, deprecated: 9.0, renamed: "square_2_layers_3d_bottom_filled")
     case square_2_stack_3d_bottom_filled = "square.2.stack.3d.bottom.filled"
     @available(iOS, deprecated: 15.0, renamed: "square_2_stack_3d_top_filled")
     @available(macOS, deprecated: 12.0, renamed: "square_2_stack_3d_top_filled")
     @available(tvOS, deprecated: 15.0, renamed: "square_2_stack_3d_top_filled")
     @available(watchOS, deprecated: 8.0, renamed: "square_2_stack_3d_top_filled")
     case square_2_stack_3d_top_fill = "square.2.stack.3d.top.fill"
-    @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
+    @available(iOS, deprecated: 16.0, renamed: "square_2_layers_3d_top_filled")
+    @available(macOS, deprecated: 13.0, renamed: "square_2_layers_3d_top_filled")
+    @available(tvOS, deprecated: 16.0, renamed: "square_2_layers_3d_top_filled")
+    @available(watchOS, deprecated: 9.0, renamed: "square_2_layers_3d_top_filled")
     case square_2_stack_3d_top_filled = "square.2.stack.3d.top.filled"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case square_3_layers_3d = "square.3.layers.3d"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case square_3_layers_3d_bottom_filled = "square.3.layers.3d.bottom.filled"
     @available(iOS 15.1, macOS 12.1, tvOS 15.1, watchOS 8.1, *)
     case square_3_layers_3d_down_backward = "square.3.layers.3d.down.backward"
     @available(iOS 15.1, macOS 12.1, tvOS 15.1, watchOS 8.1, *)
     case square_3_layers_3d_down_forward = "square.3.layers.3d.down.forward"
     @available(iOS 15.1, macOS 12.1, tvOS 15.1, watchOS 8.1, *)
     case square_3_layers_3d_down_left = "square.3.layers.3d.down.left"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case square_3_layers_3d_down_left_slash = "square.3.layers.3d.down.left.slash"
     @available(iOS 15.1, macOS 12.1, tvOS 15.1, watchOS 8.1, *)
     case square_3_layers_3d_down_right = "square.3.layers.3d.down.right"
-    @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case square_3_layers_3d_down_right_slash = "square.3.layers.3d.down.right.slash"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case square_3_layers_3d_middle_filled = "square.3.layers.3d.middle.filled"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case square_3_layers_3d_slash = "square.3.layers.3d.slash"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case square_3_layers_3d_top_filled = "square.3.layers.3d.top.filled"
+    @available(iOS, deprecated: 16.0, renamed: "square_3_layers_3d")
+    @available(macOS, deprecated: 13.0, renamed: "square_3_layers_3d")
+    @available(tvOS, deprecated: 16.0, renamed: "square_3_layers_3d")
+    @available(watchOS, deprecated: 9.0, renamed: "square_3_layers_3d")
     case square_3_stack_3d = "square.3.stack.3d"
     @available(iOS, deprecated: 15.0, renamed: "square_3_stack_3d_bottom_filled")
     @available(macOS, deprecated: 12.0, renamed: "square_3_stack_3d_bottom_filled")
     @available(tvOS, deprecated: 15.0, renamed: "square_3_stack_3d_bottom_filled")
     @available(watchOS, deprecated: 8.0, renamed: "square_3_stack_3d_bottom_filled")
     case square_3_stack_3d_bottom_fill = "square.3.stack.3d.bottom.fill"
-    @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
+    @available(iOS, deprecated: 16.0, renamed: "square_3_layers_3d_bottom_filled")
+    @available(macOS, deprecated: 13.0, renamed: "square_3_layers_3d_bottom_filled")
+    @available(tvOS, deprecated: 16.0, renamed: "square_3_layers_3d_bottom_filled")
+    @available(watchOS, deprecated: 9.0, renamed: "square_3_layers_3d_bottom_filled")
     case square_3_stack_3d_bottom_filled = "square.3.stack.3d.bottom.filled"
     @available(iOS, deprecated: 15.0, renamed: "square_3_stack_3d_middle_filled")
     @available(macOS, deprecated: 12.0, renamed: "square_3_stack_3d_middle_filled")
     @available(tvOS, deprecated: 15.0, renamed: "square_3_stack_3d_middle_filled")
     @available(watchOS, deprecated: 8.0, renamed: "square_3_stack_3d_middle_filled")
     case square_3_stack_3d_middle_fill = "square.3.stack.3d.middle.fill"
-    @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
+    @available(iOS, deprecated: 16.0, renamed: "square_3_layers_3d_middle_filled")
+    @available(macOS, deprecated: 13.0, renamed: "square_3_layers_3d_middle_filled")
+    @available(tvOS, deprecated: 16.0, renamed: "square_3_layers_3d_middle_filled")
+    @available(watchOS, deprecated: 9.0, renamed: "square_3_layers_3d_middle_filled")
     case square_3_stack_3d_middle_filled = "square.3.stack.3d.middle.filled"
     @available(iOS, deprecated: 15.0, renamed: "square_3_stack_3d_top_filled")
     @available(macOS, deprecated: 12.0, renamed: "square_3_stack_3d_top_filled")
     @available(tvOS, deprecated: 15.0, renamed: "square_3_stack_3d_top_filled")
     @available(watchOS, deprecated: 8.0, renamed: "square_3_stack_3d_top_filled")
     case square_3_stack_3d_top_fill = "square.3.stack.3d.top.fill"
-    @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
+    @available(iOS, deprecated: 16.0, renamed: "square_3_layers_3d_top_filled")
+    @available(macOS, deprecated: 13.0, renamed: "square_3_layers_3d_top_filled")
+    @available(tvOS, deprecated: 16.0, renamed: "square_3_layers_3d_top_filled")
+    @available(watchOS, deprecated: 9.0, renamed: "square_3_layers_3d_top_filled")
     case square_3_stack_3d_top_filled = "square.3.stack.3d.top.filled"
     case square_and_arrow_down = "square.and.arrow.down"
     case square_and_arrow_down_fill = "square.and.arrow.down.fill"
@@ -4944,6 +6491,10 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case square_and_line_vertical_and_square_filled = "square.and.line.vertical.and.square.filled"
     case square_and_pencil = "square.and.pencil"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case square_and_pencil_circle = "square.and.pencil.circle"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case square_and_pencil_circle_fill = "square.and.pencil.circle.fill"
     @available(iOS, deprecated: 15.0, renamed: "square_bottomhalf_filled")
     @available(macOS, deprecated: 12.0, renamed: "square_bottomhalf_filled")
     @available(tvOS, deprecated: 15.0, renamed: "square_bottomhalf_filled")
@@ -4951,6 +6502,8 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case square_bottomhalf_fill = "square.bottomhalf.fill"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case square_bottomhalf_filled = "square.bottomhalf.filled"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case square_bottomthird_inset_filled = "square.bottomthird.inset.filled"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case square_circle = "square.circle"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
@@ -4964,6 +6517,8 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case square_dashed_inset_fill = "square.dashed.inset.fill"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case square_dashed_inset_filled = "square.dashed.inset.filled"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case square_dotted = "square.dotted"
     case square_fill = "square.fill"
     @available(iOS, deprecated: 15.0, renamed: "square_filled_and_line_vertical_and_square")
     @available(macOS, deprecated: 12.0, renamed: "square_filled_and_line_vertical_and_square")
@@ -5084,6 +6639,8 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case square_grid_4x3_fill = "square.grid.4x3.fill"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case square_inset_filled = "square.inset.filled"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case square_leadingthird_inset_filled = "square.leadingthird.inset.filled"
     @available(iOS, deprecated: 15.0, renamed: "square_lefthalf_filled")
     @available(macOS, deprecated: 12.0, renamed: "square_lefthalf_filled")
     @available(tvOS, deprecated: 15.0, renamed: "square_lefthalf_filled")
@@ -5091,10 +6648,18 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case square_lefthalf_fill = "square.lefthalf.fill"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case square_lefthalf_filled = "square.lefthalf.filled"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case square_leftthird_inset_filled = "square.leftthird.inset.filled"
     case square_on_circle = "square.on.circle"
     case square_on_square = "square.on.square"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case square_on_square_badge_person_crop = "square.on.square.badge.person.crop"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case square_on_square_badge_person_crop_fill = "square.on.square.badge.person.crop.fill"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case square_on_square_dashed = "square.on.square.dashed"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case square_on_square_intersection_dashed = "square.on.square.intersection.dashed"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case square_on_square_squareshape_controlhandles = "square.on.square.squareshape.controlhandles"
     @available(iOS, deprecated: 15.0, renamed: "square_righthalf_filled")
@@ -5104,6 +6669,8 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case square_righthalf_fill = "square.righthalf.fill"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case square_righthalf_filled = "square.righthalf.filled"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case square_rightthird_inset_filled = "square.rightthird.inset.filled"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case square_slash = "square.slash"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
@@ -5162,13 +6729,21 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case square_tophalf_fill = "square.tophalf.fill"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case square_tophalf_filled = "square.tophalf.filled"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case square_topthird_inset_filled = "square.topthird.inset.filled"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case square_trailingthird_inset_filled = "square.trailingthird.inset.filled"
     case squares_below_rectangle = "squares.below.rectangle"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case squares_leading_rectangle = "squares.leading.rectangle"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case squareshape = "squareshape"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case squareshape_controlhandles_on_squareshape_controlhandles = "squareshape.controlhandles.on.squareshape.controlhandles"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case squareshape_dashed_squareshape = "squareshape.dashed.squareshape"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case squareshape_dotted_split_2x2 = "squareshape.dotted.split.2x2"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case squareshape_fill = "squareshape.fill"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
@@ -5179,6 +6754,8 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case squareshape_split_3x3 = "squareshape.split.3x3"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case squareshape_squareshape_dashed = "squareshape.squareshape.dashed"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case stairs = "stairs"
     case star = "star"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case star_bubble = "star.bubble"
@@ -5205,12 +6782,18 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case star_square = "star.square"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case star_square_fill = "star.square.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case star_square_on_square = "star.square.on.square"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case star_square_on_square_fill = "star.square.on.square.fill"
     case staroflife = "staroflife"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case staroflife_circle = "staroflife.circle"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case staroflife_circle_fill = "staroflife.circle.fill"
     case staroflife_fill = "staroflife.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case sterlingsign = "sterlingsign"
     case sterlingsign_circle = "sterlingsign.circle"
     case sterlingsign_circle_fill = "sterlingsign.circle.fill"
     case sterlingsign_square = "sterlingsign.square"
@@ -5227,6 +6810,10 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case stop_fill = "stop.fill"
     case stopwatch = "stopwatch"
     case stopwatch_fill = "stopwatch.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case stove = "stove"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case stove_fill = "stove.fill"
     case strikethrough = "strikethrough"
     case studentdesk = "studentdesk"
     case suit_club = "suit.club"
@@ -5248,11 +6835,23 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case sum = "sum"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case sun_and_horizon = "sun.and.horizon"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case sun_and_horizon_circle = "sun.and.horizon.circle"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case sun_and_horizon_circle_fill = "sun.and.horizon.circle.fill"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case sun_and_horizon_fill = "sun.and.horizon.fill"
     case sun_dust = "sun.dust"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case sun_dust_circle = "sun.dust.circle"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case sun_dust_circle_fill = "sun.dust.circle.fill"
     case sun_dust_fill = "sun.dust.fill"
     case sun_haze = "sun.haze"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case sun_haze_circle = "sun.haze.circle"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case sun_haze_circle_fill = "sun.haze.circle.fill"
     case sun_haze_fill = "sun.haze.fill"
     case sun_max = "sun.max"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
@@ -5260,14 +6859,42 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case sun_max_circle_fill = "sun.max.circle.fill"
     case sun_max_fill = "sun.max.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case sun_max_trianglebadge_exclamationmark = "sun.max.trianglebadge.exclamationmark"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case sun_max_trianglebadge_exclamationmark_fill = "sun.max.trianglebadge.exclamationmark.fill"
     case sun_min = "sun.min"
     case sun_min_fill = "sun.min.fill"
     case sunrise = "sunrise"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case sunrise_circle = "sunrise.circle"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case sunrise_circle_fill = "sunrise.circle.fill"
     case sunrise_fill = "sunrise.fill"
     case sunset = "sunset"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case sunset_circle = "sunset.circle"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case sunset_circle_fill = "sunset.circle.fill"
     case sunset_fill = "sunset.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case swatchpalette = "swatchpalette"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case swatchpalette_fill = "swatchpalette.fill"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case switch_2 = "switch.2"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case switch_programmable = "switch.programmable"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case switch_programmable_fill = "switch.programmable.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case switch_programmable_square = "switch.programmable.square"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case switch_programmable_square_fill = "switch.programmable.square.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case syringe = "syringe"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case syringe_fill = "syringe.fill"
     @available(iOS, deprecated: 15.0, renamed: "character_bubble")
     @available(macOS, deprecated: 12.0, renamed: "character_bubble")
     @available(tvOS, deprecated: 15.0, renamed: "character_bubble")
@@ -5302,6 +6929,10 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     @available(tvOS, deprecated: 14.0, renamed: "tablecells_fill")
     @available(watchOS, deprecated: 7.0, renamed: "tablecells_fill")
     case table_fill = "table.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case table_furniture = "table.furniture"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case table_furniture_fill = "table.furniture.fill"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case tablecells = "tablecells"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
@@ -5333,10 +6964,34 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case takeoutbag_and_cup_and_straw_fill = "takeoutbag.and.cup.and.straw.fill"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case target = "target"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case teddybear = "teddybear"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case teddybear_fill = "teddybear.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case tengesign = "tengesign"
     case tengesign_circle = "tengesign.circle"
     case tengesign_circle_fill = "tengesign.circle.fill"
     case tengesign_square = "tengesign.square"
     case tengesign_square_fill = "tengesign.square.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case tennis_racket = "tennis.racket"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case tennis_racket_circle = "tennis.racket.circle"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case tennis_racket_circle_fill = "tennis.racket.circle.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case tennisball = "tennisball"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case tennisball_circle = "tennisball.circle"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case tennisball_circle_fill = "tennisball.circle.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case tennisball_fill = "tennisball.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case tent = "tent"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case tent_fill = "tent.fill"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case terminal = "terminal"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
@@ -5389,6 +7044,10 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     @available(tvOS, deprecated: 15.1, renamed: "text_justify_right")
     @available(watchOS, deprecated: 8.1, renamed: "text_justify_right")
     case text_justifyright = "text.justifyright"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case text_line_first_and_arrowtriangle_forward = "text.line.first.and.arrowtriangle.forward"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case text_line_last_and_arrowtriangle_forward = "text.line.last.and.arrowtriangle.forward"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case text_magnifyingglass = "text.magnifyingglass"
     case text_quote = "text.quote"
@@ -5396,12 +7055,16 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case text_redaction = "text.redaction"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case text_viewfinder = "text.viewfinder"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case text_word_spacing = "text.word.spacing"
     @available(iOS, deprecated: 15.0, renamed: "character_textbox")
     @available(macOS, deprecated: 12.0, renamed: "character_textbox")
     @available(tvOS, deprecated: 15.0, renamed: "character_textbox")
     @available(watchOS, deprecated: 8.0, renamed: "character_textbox")
     case textbox = "textbox"
     case textformat = "textformat"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case textformat_12 = "textformat.12"
     case textformat_123 = "textformat.123"
     case textformat_abc = "textformat.abc"
     case textformat_abc_dottedunderline = "textformat.abc.dottedunderline"
@@ -5413,6 +7076,10 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case textformat_size_smaller = "textformat.size.smaller"
     case textformat_subscript = "textformat.subscript"
     case textformat_superscript = "textformat.superscript"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case theatermask_and_paintbrush = "theatermask.and.paintbrush"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case theatermask_and_paintbrush_fill = "theatermask.and.paintbrush.fill"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case theatermasks = "theatermasks"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
@@ -5421,9 +7088,31 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case theatermasks_circle_fill = "theatermasks.circle.fill"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case theatermasks_fill = "theatermasks.fill"
+    @available(iOS, deprecated: 16.0, renamed: "thermometer_medium")
+    @available(macOS, deprecated: 13.0, renamed: "thermometer_medium")
+    @available(tvOS, deprecated: 16.0, renamed: "thermometer_medium")
+    @available(watchOS, deprecated: 9.0, renamed: "thermometer_medium")
     case thermometer = "thermometer"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case thermometer_brakesignal = "thermometer.brakesignal"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case thermometer_high = "thermometer.high"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case thermometer_low = "thermometer.low"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case thermometer_medium = "thermometer.medium"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case thermometer_medium_slash = "thermometer.medium.slash"
     case thermometer_snowflake = "thermometer.snowflake"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case thermometer_snowflake_circle = "thermometer.snowflake.circle"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case thermometer_snowflake_circle_fill = "thermometer.snowflake.circle.fill"
     case thermometer_sun = "thermometer.sun"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case thermometer_sun_circle = "thermometer.sun.circle"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case thermometer_sun_circle_fill = "thermometer.sun.circle.fill"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case thermometer_sun_fill = "thermometer.sun.fill"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
@@ -5434,11 +7123,23 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case timeline_selection = "timeline.selection"
     case timer = "timer"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case timer_circle = "timer.circle"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case timer_circle_fill = "timer.circle.fill"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case timer_square = "timer.square"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case togglepower = "togglepower"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case toilet = "toilet"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case toilet_fill = "toilet.fill"
     case tornado = "tornado"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case tornado_circle = "tornado.circle"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case tornado_circle_fill = "tornado.circle.fill"
     case tortoise = "tortoise"
     case tortoise_fill = "tortoise.fill"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
@@ -5529,16 +7230,32 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case triangle_righthalf_filled = "triangle.righthalf.filled"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case triangle_tophalf_filled = "triangle.tophalf.filled"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case trophy = "trophy"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case trophy_circle = "trophy.circle"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case trophy_circle_fill = "trophy.circle.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case trophy_fill = "trophy.fill"
     case tropicalstorm = "tropicalstorm"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case tropicalstorm_circle = "tropicalstorm.circle"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case tropicalstorm_circle_fill = "tropicalstorm.circle.fill"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case tshirt = "tshirt"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case tshirt_fill = "tshirt.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case tugriksign = "tugriksign"
     case tugriksign_circle = "tugriksign.circle"
     case tugriksign_circle_fill = "tugriksign.circle.fill"
     case tugriksign_square = "tugriksign.square"
     case tugriksign_square_fill = "tugriksign.square.fill"
     case tuningfork = "tuningfork"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case turkishlirasign = "turkishlirasign"
     case turkishlirasign_circle = "turkishlirasign.circle"
     case turkishlirasign_circle_fill = "turkishlirasign.circle.fill"
     case turkishlirasign_square = "turkishlirasign.square"
@@ -5548,6 +7265,8 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case tv_and_hifispeaker_fill = "tv.and.hifispeaker.fill"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case tv_and_mediabox = "tv.and.mediabox"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case tv_and_mediabox_fill = "tv.and.mediabox.fill"
     case tv_circle = "tv.circle"
     case tv_circle_fill = "tv.circle.fill"
     case tv_fill = "tv.fill"
@@ -5570,16 +7289,38 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case uiwindow_split_2x1 = "uiwindow.split.2x1"
     case umbrella = "umbrella"
     case umbrella_fill = "umbrella.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case umbrella_percent = "umbrella.percent"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case umbrella_percent_fill = "umbrella.percent.fill"
     case underline = "underline"
     case v_circle = "v.circle"
     case v_circle_fill = "v.circle.fill"
     case v_square = "v.square"
     case v_square_fill = "v.square.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case vial_viewfinder = "vial.viewfinder"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case video_doorbell = "video.doorbell"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case video_doorbell_fill = "video.doorbell.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case videoprojector = "videoprojector"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case videoprojector_fill = "videoprojector.fill"
     case view_2d = "view.2d"
     case view_3d = "view.3d"
     case viewfinder = "viewfinder"
     case viewfinder_circle = "viewfinder.circle"
     case viewfinder_circle_fill = "viewfinder.circle.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case volleyball = "volleyball"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case volleyball_circle = "volleyball.circle"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case volleyball_circle_fill = "volleyball.circle.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case volleyball_fill = "volleyball.fill"
     case w_circle = "w.circle"
     case w_circle_fill = "w.circle.fill"
     case w_square = "w.square"
@@ -5598,6 +7339,20 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case wand_and_rays_inverse = "wand.and.rays.inverse"
     case wand_and_stars = "wand.and.stars"
     case wand_and_stars_inverse = "wand.and.stars.inverse"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case washer = "washer"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case washer_fill = "washer.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case water_waves = "water.waves"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case water_waves_and_arrow_down = "water.waves.and.arrow.down"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case water_waves_and_arrow_down_trianglebadge_exclamationmark = "water.waves.and.arrow.down.trianglebadge.exclamationmark"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case water_waves_and_arrow_up = "water.waves.and.arrow.up"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case water_waves_slash = "water.waves.slash"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case wave_3_backward = "wave.3.backward"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
@@ -5643,28 +7398,94 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case waveform_path_ecg_rectangle = "waveform.path.ecg.rectangle"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case waveform_path_ecg_rectangle_fill = "waveform.path.ecg.rectangle.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case waveform_slash = "waveform.slash"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case web_camera = "web.camera"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case web_camera_fill = "web.camera.fill"
     case wifi = "wifi"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case wifi_circle = "wifi.circle"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case wifi_circle_fill = "wifi.circle.fill"
     case wifi_exclamationmark = "wifi.exclamationmark"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case wifi_router = "wifi.router"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case wifi_router_fill = "wifi.router.fill"
     case wifi_slash = "wifi.slash"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case wifi_square = "wifi.square"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case wifi_square_fill = "wifi.square.fill"
     case wind = "wind"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case wind_circle = "wind.circle"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case wind_circle_fill = "wind.circle.fill"
     case wind_snow = "wind.snow"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case wind_snow_circle = "wind.snow.circle"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case wind_snow_circle_fill = "wind.snow.circle.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case window_awning = "window.awning"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case window_awning_closed = "window.awning.closed"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case window_casement = "window.casement"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case window_casement_closed = "window.casement.closed"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case window_ceiling = "window.ceiling"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case window_ceiling_closed = "window.ceiling.closed"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case window_horizontal = "window.horizontal"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case window_horizontal_closed = "window.horizontal.closed"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case window_shade_closed = "window.shade.closed"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case window_shade_open = "window.shade.open"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case window_vertical_closed = "window.vertical.closed"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case window_vertical_open = "window.vertical.open"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case windshield_front_and_wiper = "windshield.front.and.wiper"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case windshield_front_and_wiper_and_drop = "windshield.front.and.wiper.and.drop"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case windshield_rear_and_wiper = "windshield.rear.and.wiper"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case wineglass = "wineglass"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case wineglass_fill = "wineglass.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case wonsign = "wonsign"
     case wonsign_circle = "wonsign.circle"
     case wonsign_circle_fill = "wonsign.circle.fill"
     case wonsign_square = "wonsign.square"
     case wonsign_square_fill = "wonsign.square.fill"
+    @available(iOS, deprecated: 16.0, renamed: "wrench_adjustable")
+    @available(macOS, deprecated: 13.0, renamed: "wrench_adjustable")
+    @available(tvOS, deprecated: 16.0, renamed: "wrench_adjustable")
+    @available(watchOS, deprecated: 9.0, renamed: "wrench_adjustable")
     case wrench = "wrench"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case wrench_adjustable = "wrench.adjustable"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case wrench_adjustable_fill = "wrench.adjustable.fill"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case wrench_and_screwdriver = "wrench.and.screwdriver"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case wrench_and_screwdriver_fill = "wrench.and.screwdriver.fill"
+    @available(iOS, deprecated: 16.0, renamed: "wrench_adjustable_fill")
+    @available(macOS, deprecated: 13.0, renamed: "wrench_adjustable_fill")
+    @available(tvOS, deprecated: 16.0, renamed: "wrench_adjustable_fill")
+    @available(watchOS, deprecated: 9.0, renamed: "wrench_adjustable_fill")
     case wrench_fill = "wrench.fill"
     case x_circle = "x.circle"
     case x_circle_fill = "x.circle.fill"
@@ -5708,6 +7529,8 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case y_circle_fill = "y.circle.fill"
     case y_square = "y.square"
     case y_square_fill = "y.square.fill"
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case yensign = "yensign"
     case yensign_circle = "yensign.circle"
     case yensign_circle_fill = "yensign.circle.fill"
     case yensign_square = "yensign.square"
@@ -5759,6 +7582,14 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case 🍏airplayvideo_circle_fill = "airplayvideo.circle.fill"
 
     // This symbol may not be modified and may only be used to refer to Apple's AirPods
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case 🍏airpod_gen3_left = "airpod.gen3.left"
+
+    // This symbol may not be modified and may only be used to refer to Apple's AirPods
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case 🍏airpod_gen3_right = "airpod.gen3.right"
+
+    // This symbol may not be modified and may only be used to refer to Apple's AirPods
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case 🍏airpod_left = "airpod.left"
 
@@ -5793,6 +7624,18 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     // This symbol may not be modified and may only be used to refer to Apple's AirPods
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case 🍏airpods_chargingcase_wireless_fill = "airpods.chargingcase.wireless.fill"
+
+    // This symbol may not be modified and may only be used to refer to Apple's AirPods
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case 🍏airpods_gen3 = "airpods.gen3"
+
+    // This symbol may not be modified and may only be used to refer to Apple's AirPods
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case 🍏airpods_gen3_chargingcase_wireless = "airpods.gen3.chargingcase.wireless"
+
+    // This symbol may not be modified and may only be used to refer to Apple's AirPods
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case 🍏airpods_gen3_chargingcase_wireless_fill = "airpods.gen3.chargingcase.wireless.fill"
 
     // This symbol may not be modified and may only be used to refer to Apple's AirPods Max
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
@@ -5843,7 +7686,14 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case 🍏appclip = "appclip"
 
     // This symbol may not be modified and may only be used to refer to Sign in with Apple
-    @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case 🍏apple_logo = "apple.logo"
+
+    // This symbol may not be modified and may only be used to refer to Apple
+    @available(iOS, deprecated: 16.0, renamed: "🍏apple_logo")
+    @available(macOS, deprecated: 13.0, renamed: "🍏apple_logo")
+    @available(tvOS, deprecated: 16.0, renamed: "🍏apple_logo")
+    @available(watchOS, deprecated: 9.0, renamed: "🍏apple_logo")
     case 🍏applelogo = "applelogo"
 
     // This symbol may not be modified and may only be used to refer to Apple Pencil
@@ -5968,6 +7818,14 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case 🍏arrow_down_left_video_fill = "arrow.down.left.video.fill"
 
     // This symbol may not be modified and may only be used to refer to Apple's Messages app
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case 🍏arrow_down_message = "arrow.down.message"
+
+    // This symbol may not be modified and may only be used to refer to Apple's Messages app
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case 🍏arrow_down_message_fill = "arrow.down.message.fill"
+
+    // This symbol may not be modified and may only be used to refer to Apple's Messages app
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case 🍏arrow_up_message = "arrow.up.message"
 
@@ -5984,6 +7842,26 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     // This symbol may not be modified and may only be used to refer to Beats Earphones
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case 🍏beats_earphones = "beats.earphones"
+
+    // This symbol may not be modified and may only be used to refer to Beats Fit Pro
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case 🍏beats_fit_pro = "beats.fit.pro"
+
+    // This symbol may not be modified and may only be used to refer to Beats Fit Pro
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case 🍏beats_fit_pro_chargingcase = "beats.fit.pro.chargingcase"
+
+    // This symbol may not be modified and may only be used to refer to Beats Fit Pro
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case 🍏beats_fit_pro_chargingcase_fill = "beats.fit.pro.chargingcase.fill"
+
+    // This symbol may not be modified and may only be used to refer to Beats Fit Pro
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case 🍏beats_fit_pro_left = "beats.fit.pro.left"
+
+    // This symbol may not be modified and may only be used to refer to Beats Fit Pro
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case 🍏beats_fit_pro_right = "beats.fit.pro.right"
 
     // This symbol may not be modified and may only be used to refer to Beats Headphones
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
@@ -6055,6 +7933,22 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case 🍏checkmark_icloud_fill = "checkmark.icloud.fill"
 
+    // This symbol may not be modified and may only be used to refer to Apple's Messages app
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case 🍏checkmark_message = "checkmark.message"
+
+    // This symbol may not be modified and may only be used to refer to Apple's Messages app
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case 🍏checkmark_message_fill = "checkmark.message.fill"
+
+    // This symbol may not be modified and may only be used to refer to Apple's Desk View
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case 🍏deskview = "deskview"
+
+    // This symbol may not be modified and may only be used to refer to Apple's Desk View
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case 🍏deskview_fill = "deskview.fill"
+
     // This symbol may not be modified and may only be used to refer to Apple's Digital Crown
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case 🍏digitalcrown_arrow_clockwise = "digitalcrown.arrow.clockwise"
@@ -6106,6 +8000,14 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     // This symbol may not be modified and may only be used to refer to Apple's EarPods
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case 🍏earpods = "earpods"
+
+    // This symbol may not be modified and may only be used to refer to Apple's Messages app
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case 🍏ellipsis_message = "ellipsis.message"
+
+    // This symbol may not be modified and may only be used to refer to Apple's Messages app
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case 🍏ellipsis_message_fill = "ellipsis.message.fill"
 
     // This symbol may not be modified and may only be used to refer to Apple Watch
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
@@ -6255,19 +8157,31 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case 🍏ipad_badge_play = "ipad.badge.play"
 
     // This symbol may not be modified and may only be used to refer to Apple's iPad
-    @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
+    @available(iOS, deprecated: 16.0,  message: "No replacement available")
+    @available(macOS, deprecated: 13.0,  message: "No replacement available")
+    @available(tvOS, deprecated: 16.0,  message: "No replacement available")
+    @available(watchOS, deprecated: 9.0,  message: "No replacement available")
     case 🍏ipad_homebutton = "ipad.homebutton"
 
     // This symbol may not be modified and may only be used to refer to Apple's iPad
-    @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
+    @available(iOS, deprecated: 16.0,  message: "No replacement available")
+    @available(macOS, deprecated: 13.0,  message: "No replacement available")
+    @available(tvOS, deprecated: 16.0,  message: "No replacement available")
+    @available(watchOS, deprecated: 9.0,  message: "No replacement available")
     case 🍏ipad_homebutton_badge_play = "ipad.homebutton.badge.play"
 
     // This symbol may not be modified and may only be used to refer to Apple's iPad
-    @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
+    @available(iOS, deprecated: 16.0,  message: "No replacement available")
+    @available(macOS, deprecated: 13.0,  message: "No replacement available")
+    @available(tvOS, deprecated: 16.0,  message: "No replacement available")
+    @available(watchOS, deprecated: 9.0,  message: "No replacement available")
     case 🍏ipad_homebutton_landscape = "ipad.homebutton.landscape"
 
     // This symbol may not be modified and may only be used to refer to Apple's iPad
-    @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
+    @available(iOS, deprecated: 16.0,  message: "No replacement available")
+    @available(macOS, deprecated: 13.0,  message: "No replacement available")
+    @available(tvOS, deprecated: 16.0,  message: "No replacement available")
+    @available(watchOS, deprecated: 9.0,  message: "No replacement available")
     case 🍏ipad_homebutton_landscape_badge_play = "ipad.homebutton.landscape.badge.play"
 
     // This symbol may not be modified and may only be used to refer to Apple's iPad
@@ -6295,47 +8209,80 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case 🍏iphone_circle_fill = "iphone.circle.fill"
 
     // This symbol may not be modified and may only be used to refer to Apple's iPhone
-    @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
+    @available(iOS, deprecated: 16.0,  message: "No replacement available")
+    @available(macOS, deprecated: 13.0,  message: "No replacement available")
+    @available(tvOS, deprecated: 16.0,  message: "No replacement available")
+    @available(watchOS, deprecated: 9.0,  message: "No replacement available")
     case 🍏iphone_homebutton = "iphone.homebutton"
 
     // This symbol may not be modified and may only be used to refer to Apple's iPhone
-    @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
+    @available(iOS, deprecated: 16.0,  message: "No replacement available")
+    @available(macOS, deprecated: 13.0,  message: "No replacement available")
+    @available(tvOS, deprecated: 16.0,  message: "No replacement available")
+    @available(watchOS, deprecated: 9.0,  message: "No replacement available")
     case 🍏iphone_homebutton_badge_play = "iphone.homebutton.badge.play"
 
     // This symbol may not be modified and may only be used to refer to Apple's iPhone
-    @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
+    @available(iOS, deprecated: 16.0,  message: "No replacement available")
+    @available(macOS, deprecated: 13.0,  message: "No replacement available")
+    @available(tvOS, deprecated: 16.0,  message: "No replacement available")
+    @available(watchOS, deprecated: 9.0,  message: "No replacement available")
     case 🍏iphone_homebutton_circle = "iphone.homebutton.circle"
 
     // This symbol may not be modified and may only be used to refer to Apple's iPhone
-    @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
+    @available(iOS, deprecated: 16.0,  message: "No replacement available")
+    @available(macOS, deprecated: 13.0,  message: "No replacement available")
+    @available(tvOS, deprecated: 16.0,  message: "No replacement available")
+    @available(watchOS, deprecated: 9.0,  message: "No replacement available")
     case 🍏iphone_homebutton_circle_fill = "iphone.homebutton.circle.fill"
 
     // This symbol may not be modified and may only be used to refer to Apple's iPhone
-    @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
+    @available(iOS, deprecated: 16.0,  message: "No replacement available")
+    @available(macOS, deprecated: 13.0,  message: "No replacement available")
+    @available(tvOS, deprecated: 16.0,  message: "No replacement available")
+    @available(watchOS, deprecated: 9.0,  message: "No replacement available")
     case 🍏iphone_homebutton_landscape = "iphone.homebutton.landscape"
 
     // This symbol may not be modified and may only be used to refer to Apple's iPhone
-    @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
+    @available(iOS, deprecated: 16.0,  message: "No replacement available")
+    @available(macOS, deprecated: 13.0,  message: "No replacement available")
+    @available(tvOS, deprecated: 16.0,  message: "No replacement available")
+    @available(watchOS, deprecated: 9.0,  message: "No replacement available")
     case 🍏iphone_homebutton_radiowaves_left_and_right = "iphone.homebutton.radiowaves.left.and.right"
 
     // This symbol may not be modified and may only be used to refer to Apple's iPhone
-    @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
+    @available(iOS, deprecated: 16.0,  message: "No replacement available")
+    @available(macOS, deprecated: 13.0,  message: "No replacement available")
+    @available(tvOS, deprecated: 16.0,  message: "No replacement available")
+    @available(watchOS, deprecated: 9.0,  message: "No replacement available")
     case 🍏iphone_homebutton_radiowaves_left_and_right_circle = "iphone.homebutton.radiowaves.left.and.right.circle"
 
     // This symbol may not be modified and may only be used to refer to Apple's iPhone
-    @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
+    @available(iOS, deprecated: 16.0,  message: "No replacement available")
+    @available(macOS, deprecated: 13.0,  message: "No replacement available")
+    @available(tvOS, deprecated: 16.0,  message: "No replacement available")
+    @available(watchOS, deprecated: 9.0,  message: "No replacement available")
     case 🍏iphone_homebutton_radiowaves_left_and_right_circle_fill = "iphone.homebutton.radiowaves.left.and.right.circle.fill"
 
     // This symbol may not be modified and may only be used to refer to Apple's iPhone
-    @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
+    @available(iOS, deprecated: 16.0,  message: "No replacement available")
+    @available(macOS, deprecated: 13.0,  message: "No replacement available")
+    @available(tvOS, deprecated: 16.0,  message: "No replacement available")
+    @available(watchOS, deprecated: 9.0,  message: "No replacement available")
     case 🍏iphone_homebutton_slash = "iphone.homebutton.slash"
 
     // This symbol may not be modified and may only be used to refer to Apple's iPhone
-    @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
+    @available(iOS, deprecated: 16.0,  message: "No replacement available")
+    @available(macOS, deprecated: 13.0,  message: "No replacement available")
+    @available(tvOS, deprecated: 16.0,  message: "No replacement available")
+    @available(watchOS, deprecated: 9.0,  message: "No replacement available")
     case 🍏iphone_homebutton_slash_circle = "iphone.homebutton.slash.circle"
 
     // This symbol may not be modified and may only be used to refer to Apple's iPhone
-    @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
+    @available(iOS, deprecated: 16.0,  message: "No replacement available")
+    @available(macOS, deprecated: 13.0,  message: "No replacement available")
+    @available(tvOS, deprecated: 16.0,  message: "No replacement available")
+    @available(watchOS, deprecated: 9.0,  message: "No replacement available")
     case 🍏iphone_homebutton_slash_circle_fill = "iphone.homebutton.slash.circle.fill"
 
     // This symbol may not be modified and may only be used to refer to Apple's iPhone
@@ -6415,7 +8362,10 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case 🍏key_icloud_fill = "key.icloud.fill"
 
     // This symbol may not be modified and may only be used to refer to Apple's iPhone
-    @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
+    @available(iOS, deprecated: 16.0,  message: "No replacement available")
+    @available(macOS, deprecated: 13.0,  message: "No replacement available")
+    @available(tvOS, deprecated: 16.0,  message: "No replacement available")
+    @available(watchOS, deprecated: 9.0,  message: "No replacement available")
     case 🍏laptopcomputer_and_iphone = "laptopcomputer.and.iphone"
 
     // This symbol may not be modified and may only be used to refer to Apple's iCloud Service
@@ -6452,11 +8402,17 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case 🍏lock_open_applewatch = "lock.open.applewatch"
 
     // This symbol may not be modified and may only be used to refer to Sony's Playstation
-    @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
+    @available(iOS, deprecated: 16.0, renamed: "🍏playstation_logo")
+    @available(macOS, deprecated: 13.0, renamed: "🍏playstation_logo")
+    @available(tvOS, deprecated: 16.0, renamed: "🍏playstation_logo")
+    @available(watchOS, deprecated: 9.0, renamed: "🍏playstation_logo")
     case 🍏logo_playstation = "logo.playstation"
 
     // This symbol may not be modified and may only be used to refer to Microsoft's Xbox
-    @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
+    @available(iOS, deprecated: 16.0, renamed: "🍏xbox_logo")
+    @available(macOS, deprecated: 13.0, renamed: "🍏xbox_logo")
+    @available(tvOS, deprecated: 16.0, renamed: "🍏xbox_logo")
+    @available(watchOS, deprecated: 9.0, renamed: "🍏xbox_logo")
     case 🍏logo_xbox = "logo.xbox"
 
     // This symbol may not be modified and may only be used to refer to Apple's Mac mini
@@ -6467,33 +8423,41 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case 🍏macmini_fill = "macmini.fill"
 
-    // This symbol may not be modified and may only be used to refer to Apple's Mac pro
+    // This symbol may not be modified and may only be used to refer to Apple's Mac Pro
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case 🍏macpro_gen1 = "macpro.gen1"
 
-    // This symbol may not be modified and may only be used to refer to Apple's Mac pro
+    // This symbol may not be modified and may only be used to refer to Apple's Mac Pro
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case 🍏macpro_gen1_fill = "macpro.gen1.fill"
 
-    // This symbol may not be modified and may only be used to refer to Apple's Mac pro
+    // This symbol may not be modified and may only be used to refer to Apple's Mac Pro
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case 🍏macpro_gen2 = "macpro.gen2"
 
-    // This symbol may not be modified and may only be used to refer to Apple's Mac pro
+    // This symbol may not be modified and may only be used to refer to Apple's Mac Pro
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case 🍏macpro_gen2_fill = "macpro.gen2.fill"
 
-    // This symbol may not be modified and may only be used to refer to Apple's Mac pro
+    // This symbol may not be modified and may only be used to refer to Apple's Mac Pro
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case 🍏macpro_gen3 = "macpro.gen3"
 
-    // This symbol may not be modified and may only be used to refer to Apple's Mac pro
+    // This symbol may not be modified and may only be used to refer to Apple's Mac Pro
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case 🍏macpro_gen3_fill = "macpro.gen3.fill"
 
-    // This symbol may not be modified and may only be used to refer to Apple's Mac pro
+    // This symbol may not be modified and may only be used to refer to Apple's Mac Pro
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case 🍏macpro_gen3_server = "macpro.gen3.server"
+
+    // This symbol may not be modified and may only be used to refer to Apple's Mac Studio
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case 🍏macstudio = "macstudio"
+
+    // This symbol may not be modified and may only be used to refer to Apple's Mac Studio
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case 🍏macstudio_fill = "macstudio.fill"
 
     // This symbol may not be modified and may only be used to refer to Apple's Magic Mouse
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
@@ -6523,6 +8487,26 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case 🍏message_and_waveform_fill = "message.and.waveform.fill"
 
     // This symbol may not be modified and may only be used to refer to Apple's Messages app
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case 🍏message_badge = "message.badge"
+
+    // This symbol may not be modified and may only be used to refer to Apple's Messages app
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case 🍏message_badge_circle = "message.badge.circle"
+
+    // This symbol may not be modified and may only be used to refer to Apple's Messages app
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case 🍏message_badge_circle_fill = "message.badge.circle.fill"
+
+    // This symbol may not be modified and may only be used to refer to Apple's Messages app
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case 🍏message_badge_fill = "message.badge.fill"
+
+    // This symbol may not be modified and may only be used to refer to Apple's Messages app
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case 🍏message_badge_filled_fill = "message.badge.filled.fill"
+
+    // This symbol may not be modified and may only be used to refer to Apple's Messages app
     case 🍏message_circle = "message.circle"
 
     // This symbol may not be modified and may only be used to refer to Apple's Messages app
@@ -6547,6 +8531,14 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     // This symbol may not be modified and may only be used to refer to Apple's Markup feature
     case 🍏pencil_tip_crop_circle_badge_plus = "pencil.tip.crop.circle.badge.plus"
 
+    // This symbol may not be modified and may only be used to refer to creating or signing in with a passkey
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case 🍏person_badge_key = "person.badge.key"
+
+    // This symbol may not be modified and may only be used to refer to creating or signing in with a passkey
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case 🍏person_badge_key_fill = "person.badge.key.fill"
+
     // This symbol may not be modified and may only be used to refer to Apple's iCloud Service
     case 🍏person_icloud = "person.icloud"
 
@@ -6569,6 +8561,10 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case 🍏platter_top_applewatch_case = "platter.top.applewatch.case"
 
+    // This symbol may not be modified and may only be used to refer to Sony's Playstation
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case 🍏playstation_logo = "playstation.logo"
+
     // This symbol may not be modified and may only be used to refer to Apple's Messages app
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case 🍏plus_message = "plus.message"
@@ -6589,6 +8585,14 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     // This symbol may not be modified and may only be used to refer to Apple's Safari browser
     case 🍏safari_fill = "safari.fill"
 
+    // This symbol may not be modified and may only be used to refer to Apple's Shared With You feature
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case 🍏shared_with_you = "shared.with.you"
+
+    // This symbol may not be modified and may only be used to refer to Apple's Shared With You feature
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case 🍏shared_with_you_slash = "shared.with.you.slash"
+
     // This symbol may not be modified and may only be used to refer to Apple's SharePlay
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case 🍏shareplay = "shareplay"
@@ -6596,6 +8600,14 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     // This symbol may not be modified and may only be used to refer to Apple's SharePlay
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case 🍏shareplay_slash = "shareplay.slash"
+
+    // This symbol may not be modified and may only be used to refer to Apple's Shazam
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case 🍏shazam_logo = "shazam.logo"
+
+    // This symbol may not be modified and may only be used to refer to Apple's Shazam
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case 🍏shazam_logo_fill = "shazam.logo.fill"
 
     // This symbol may not be modified and may only be used to refer to Apple's Swift programming language
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
@@ -6702,6 +8714,10 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     // This symbol may not be modified and may only be used to refer to Apple Watch
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case 🍏watchface_applewatch_case = "watchface.applewatch.case"
+
+    // This symbol may not be modified and may only be used to refer to Microsoft's Xbox
+    @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+    case 🍏xbox_logo = "xbox.logo"
 
     // This symbol may not be modified and may only be used to refer to Apple's iCloud Service
     case 🍏xmark_icloud = "xmark.icloud"
@@ -7520,9 +9536,6 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
         localAllCases.append(g_square_fill)
         localAllCases.append(gamecontroller)
         localAllCases.append(gamecontroller_fill)
-        localAllCases.append(gauge)
-        localAllCases.append(gauge_badge_minus)
-        localAllCases.append(gauge_badge_plus)
         localAllCases.append(gear)
         localAllCases.append(gift)
         localAllCases.append(gift_fill)
@@ -7696,7 +9709,6 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
         localAllCases.append(lock_open)
         localAllCases.append(lock_open_fill)
         localAllCases.append(lock_rotation)
-        localAllCases.append(lock_rotation_open)
         localAllCases.append(lock_shield)
         localAllCases.append(lock_shield_fill)
         localAllCases.append(lock_slash)
@@ -7858,9 +9870,6 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
         localAllCases.append(phone_down_circle_fill)
         localAllCases.append(phone_down_fill)
         localAllCases.append(phone_fill)
-        localAllCases.append(phone_fill_arrow_down_left)
-        localAllCases.append(phone_fill_arrow_right)
-        localAllCases.append(phone_fill_arrow_up_right)
         localAllCases.append(phone_fill_badge_plus)
         localAllCases.append(photo)
         localAllCases.append(photo_fill)
@@ -8133,7 +10142,6 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
         localAllCases.append(textformat_size)
         localAllCases.append(textformat_subscript)
         localAllCases.append(textformat_superscript)
-        localAllCases.append(thermometer)
         localAllCases.append(thermometer_snowflake)
         localAllCases.append(thermometer_sun)
         localAllCases.append(timelapse)
@@ -8222,8 +10230,6 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
         localAllCases.append(wonsign_circle_fill)
         localAllCases.append(wonsign_square)
         localAllCases.append(wonsign_square_fill)
-        localAllCases.append(wrench)
-        localAllCases.append(wrench_fill)
         localAllCases.append(x_circle)
         localAllCases.append(x_circle_fill)
         localAllCases.append(x_square)
@@ -8276,7 +10282,6 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
             localAllCases.append(🍏airport_extreme_tower)
             localAllCases.append(amplifier)
             localAllCases.append(🍏appclip)
-            localAllCases.append(🍏applelogo)
             localAllCases.append(🍏applescript)
             localAllCases.append(🍏applescript_fill)
             localAllCases.append(🍏appletv)
@@ -8569,10 +10574,6 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
             localAllCases.append(cylinder_split_1x2_fill)
             localAllCases.append(deskclock)
             localAllCases.append(deskclock_fill)
-            localAllCases.append(dial_max)
-            localAllCases.append(dial_max_fill)
-            localAllCases.append(dial_min)
-            localAllCases.append(dial_min_fill)
             localAllCases.append(diamond)
             localAllCases.append(diamond_fill)
             localAllCases.append(die_face_1)
@@ -8661,7 +10662,6 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
             localAllCases.append(face_dashed)
             localAllCases.append(face_dashed_fill)
             localAllCases.append(face_smiling)
-            localAllCases.append(face_smiling_fill)
             localAllCases.append(faxmachine)
             localAllCases.append(figure_stand)
             localAllCases.append(figure_stand_line_dotted_figure_stand)
@@ -8737,13 +10737,8 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
             localAllCases.append(internaldrive)
             localAllCases.append(internaldrive_fill)
             localAllCases.append(🍏ipad)
-            localAllCases.append(🍏ipad_homebutton)
-            localAllCases.append(🍏ipad_homebutton_landscape)
             localAllCases.append(🍏ipad_landscape)
             localAllCases.append(🍏iphone)
-            localAllCases.append(🍏iphone_homebutton)
-            localAllCases.append(🍏iphone_homebutton_radiowaves_left_and_right)
-            localAllCases.append(🍏iphone_homebutton_slash)
             localAllCases.append(🍏iphone_radiowaves_left_and_right)
             localAllCases.append(🍏iphone_slash)
             localAllCases.append(🍏ipod)
@@ -8774,7 +10769,6 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
             localAllCases.append(ladybug)
             localAllCases.append(ladybug_fill)
             localAllCases.append(laptopcomputer)
-            localAllCases.append(🍏laptopcomputer_and_iphone)
             localAllCases.append(latch_2_case)
             localAllCases.append(latch_2_case_fill)
             localAllCases.append(lb_rectangle_roundedbottom)
@@ -8903,7 +10897,6 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
             localAllCases.append(phone_bubble_left)
             localAllCases.append(phone_bubble_left_fill)
             localAllCases.append(phone_connection)
-            localAllCases.append(phone_fill_connection)
             localAllCases.append(photo_on_rectangle_angled)
             localAllCases.append(pianokeys)
             localAllCases.append(pianokeys_inverse)
@@ -9039,8 +11032,6 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
             localAllCases.append(speaker_wave_2_fill)
             localAllCases.append(speaker_wave_3)
             localAllCases.append(speaker_wave_3_fill)
-            localAllCases.append(square_2_stack_3d)
-            localAllCases.append(square_3_stack_3d)
             localAllCases.append(square_and_at_rectangle)
             localAllCases.append(square_circle)
             localAllCases.append(square_circle_fill)
@@ -9533,22 +11524,12 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
             localAllCases.append(ipad_and_arrow_forward)
             localAllCases.append(🍏ipad_and_iphone)
             localAllCases.append(🍏ipad_badge_play)
-            localAllCases.append(🍏ipad_homebutton_badge_play)
-            localAllCases.append(🍏ipad_homebutton_landscape_badge_play)
             localAllCases.append(🍏ipad_landscape_badge_play)
             localAllCases.append(ipad_rear_camera)
             localAllCases.append(iphone_and_arrow_forward)
             localAllCases.append(🍏iphone_badge_play)
             localAllCases.append(🍏iphone_circle)
             localAllCases.append(🍏iphone_circle_fill)
-            localAllCases.append(🍏iphone_homebutton_badge_play)
-            localAllCases.append(🍏iphone_homebutton_circle)
-            localAllCases.append(🍏iphone_homebutton_circle_fill)
-            localAllCases.append(🍏iphone_homebutton_landscape)
-            localAllCases.append(🍏iphone_homebutton_radiowaves_left_and_right_circle)
-            localAllCases.append(🍏iphone_homebutton_radiowaves_left_and_right_circle_fill)
-            localAllCases.append(🍏iphone_homebutton_slash_circle)
-            localAllCases.append(🍏iphone_homebutton_slash_circle_fill)
             localAllCases.append(🍏iphone_landscape)
             localAllCases.append(🍏iphone_radiowaves_left_and_right_circle)
             localAllCases.append(🍏iphone_radiowaves_left_and_right_circle_fill)
@@ -9614,8 +11595,6 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
             localAllCases.append(lock_open_ipad)
             localAllCases.append(lock_open_iphone)
             localAllCases.append(lock_open_laptopcomputer)
-            localAllCases.append(🍏logo_playstation)
-            localAllCases.append(🍏logo_xbox)
             localAllCases.append(🍏macpro_gen1_fill)
             localAllCases.append(🍏macpro_gen3_fill)
             localAllCases.append(magazine)
@@ -9899,11 +11878,6 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
             localAllCases.append(speaker_badge_exclamationmark_fill)
             localAllCases.append(speaker_circle)
             localAllCases.append(speaker_circle_fill)
-            localAllCases.append(square_2_stack_3d_bottom_filled)
-            localAllCases.append(square_2_stack_3d_top_filled)
-            localAllCases.append(square_3_stack_3d_bottom_filled)
-            localAllCases.append(square_3_stack_3d_middle_filled)
-            localAllCases.append(square_3_stack_3d_top_filled)
             localAllCases.append(square_and_arrow_up_circle)
             localAllCases.append(square_and_arrow_up_circle_fill)
             localAllCases.append(square_and_arrow_up_trianglebadge_exclamationmark)
@@ -10019,6 +11993,915 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
             localAllCases.append(text_justify_left)
             localAllCases.append(text_justify_right)
             localAllCases.append(text_justify_trailing)
+        }
+
+        if #available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *) {
+            localAllCases.append(abs_brakesignal)
+            localAllCases.append(air_conditioner_horizontal)
+            localAllCases.append(air_conditioner_horizontal_fill)
+            localAllCases.append(air_conditioner_vertical)
+            localAllCases.append(air_conditioner_vertical_fill)
+            localAllCases.append(air_purifier)
+            localAllCases.append(air_purifier_fill)
+            localAllCases.append(🍏airpod_gen3_left)
+            localAllCases.append(🍏airpod_gen3_right)
+            localAllCases.append(🍏airpods_gen3)
+            localAllCases.append(🍏airpods_gen3_chargingcase_wireless)
+            localAllCases.append(🍏airpods_gen3_chargingcase_wireless_fill)
+            localAllCases.append(alarm_waves_left_and_right)
+            localAllCases.append(alarm_waves_left_and_right_fill)
+            localAllCases.append(allergens_fill)
+            localAllCases.append(angle)
+            localAllCases.append(🍏apple_logo)
+            localAllCases.append(arrow_down_and_line_horizontal_and_arrow_up)
+            localAllCases.append(🍏arrow_down_message)
+            localAllCases.append(🍏arrow_down_message_fill)
+            localAllCases.append(arrow_left_and_line_vertical_and_arrow_right)
+            localAllCases.append(arrow_left_and_right_text_vertical)
+            localAllCases.append(arrow_right_and_line_vertical_and_arrow_left)
+            localAllCases.append(arrow_up_and_down_and_sparkles)
+            localAllCases.append(arrow_up_and_down_text_horizontal)
+            localAllCases.append(arrow_up_and_line_horizontal_and_arrow_down)
+            localAllCases.append(arrow_up_circle_badge_clock)
+            localAllCases.append(arrowshape_backward)
+            localAllCases.append(arrowshape_backward_fill)
+            localAllCases.append(arrowshape_forward)
+            localAllCases.append(arrowshape_forward_fill)
+            localAllCases.append(arrowshape_left)
+            localAllCases.append(arrowshape_left_fill)
+            localAllCases.append(arrowshape_right)
+            localAllCases.append(arrowshape_right_fill)
+            localAllCases.append(arrowshape_turn_up_backward_badge_clock)
+            localAllCases.append(arrowshape_turn_up_backward_badge_clock_fill)
+            localAllCases.append(australsign)
+            localAllCases.append(av_remote)
+            localAllCases.append(av_remote_fill)
+            localAllCases.append(backpack)
+            localAllCases.append(backpack_fill)
+            localAllCases.append(backward_end_circle)
+            localAllCases.append(backward_end_circle_fill)
+            localAllCases.append(bag_badge_questionmark)
+            localAllCases.append(bag_fill_badge_questionmark)
+            localAllCases.append(bahtsign)
+            localAllCases.append(balloon)
+            localAllCases.append(balloon_2)
+            localAllCases.append(balloon_2_fill)
+            localAllCases.append(balloon_fill)
+            localAllCases.append(baseball)
+            localAllCases.append(baseball_circle)
+            localAllCases.append(baseball_circle_fill)
+            localAllCases.append(baseball_diamond_bases)
+            localAllCases.append(baseball_fill)
+            localAllCases.append(basket)
+            localAllCases.append(basket_fill)
+            localAllCases.append(basketball)
+            localAllCases.append(basketball_circle)
+            localAllCases.append(basketball_circle_fill)
+            localAllCases.append(basketball_fill)
+            localAllCases.append(bathtub)
+            localAllCases.append(bathtub_fill)
+            localAllCases.append(battery_100_circle)
+            localAllCases.append(battery_100_circle_fill)
+            localAllCases.append(beach_umbrella)
+            localAllCases.append(beach_umbrella_fill)
+            localAllCases.append(🍏beats_fit_pro)
+            localAllCases.append(🍏beats_fit_pro_chargingcase)
+            localAllCases.append(🍏beats_fit_pro_chargingcase_fill)
+            localAllCases.append(🍏beats_fit_pro_left)
+            localAllCases.append(🍏beats_fit_pro_right)
+            localAllCases.append(bell_and_waves_left_and_right)
+            localAllCases.append(bell_and_waves_left_and_right_fill)
+            localAllCases.append(bird)
+            localAllCases.append(bird_fill)
+            localAllCases.append(birthday_cake)
+            localAllCases.append(birthday_cake_fill)
+            localAllCases.append(bitcoinsign)
+            localAllCases.append(blinds_horizontal_closed)
+            localAllCases.append(blinds_horizontal_open)
+            localAllCases.append(blinds_vertical_closed)
+            localAllCases.append(blinds_vertical_open)
+            localAllCases.append(bolt_badge_clock)
+            localAllCases.append(bolt_badge_clock_fill)
+            localAllCases.append(bolt_brakesignal)
+            localAllCases.append(box_truck)
+            localAllCases.append(box_truck_badge_clock)
+            localAllCases.append(box_truck_badge_clock_fill)
+            localAllCases.append(box_truck_fill)
+            localAllCases.append(brakesignal)
+            localAllCases.append(brakesignal_dashed)
+            localAllCases.append(brazilianrealsign)
+            localAllCases.append(bubbles_and_sparkles)
+            localAllCases.append(bubbles_and_sparkles_fill)
+            localAllCases.append(button_programmable)
+            localAllCases.append(button_programmable_square)
+            localAllCases.append(button_programmable_square_fill)
+            localAllCases.append(cabinet)
+            localAllCases.append(cabinet_fill)
+            localAllCases.append(camera_macro)
+            localAllCases.append(camera_macro_circle)
+            localAllCases.append(camera_macro_circle_fill)
+            localAllCases.append(carbon_dioxide_cloud)
+            localAllCases.append(carbon_dioxide_cloud_fill)
+            localAllCases.append(carbon_monoxide_cloud)
+            localAllCases.append(carbon_monoxide_cloud_fill)
+            localAllCases.append(carrot)
+            localAllCases.append(carrot_fill)
+            localAllCases.append(cart_badge_questionmark)
+            localAllCases.append(cart_fill_badge_questionmark)
+            localAllCases.append(cedisign)
+            localAllCases.append(cellularbars)
+            localAllCases.append(centsign)
+            localAllCases.append(chair)
+            localAllCases.append(chair_fill)
+            localAllCases.append(chair_lounge)
+            localAllCases.append(chair_lounge_fill)
+            localAllCases.append(chandelier)
+            localAllCases.append(chandelier_fill)
+            localAllCases.append(character_duployan)
+            localAllCases.append(character_phonetic)
+            localAllCases.append(character_sutton)
+            localAllCases.append(chart_line_downtrend_xyaxis)
+            localAllCases.append(chart_line_downtrend_xyaxis_circle)
+            localAllCases.append(chart_line_downtrend_xyaxis_circle_fill)
+            localAllCases.append(chart_line_flattrend_xyaxis)
+            localAllCases.append(chart_line_flattrend_xyaxis_circle)
+            localAllCases.append(chart_line_flattrend_xyaxis_circle_fill)
+            localAllCases.append(checklist_checked)
+            localAllCases.append(checklist_unchecked)
+            localAllCases.append(checkmark_circle_badge_questionmark)
+            localAllCases.append(checkmark_circle_badge_questionmark_fill)
+            localAllCases.append(checkmark_circle_badge_xmark)
+            localAllCases.append(checkmark_circle_badge_xmark_fill)
+            localAllCases.append(🍏checkmark_message)
+            localAllCases.append(🍏checkmark_message_fill)
+            localAllCases.append(chevron_backward_to_line)
+            localAllCases.append(chevron_forward_to_line)
+            localAllCases.append(chevron_left_to_line)
+            localAllCases.append(chevron_right_to_line)
+            localAllCases.append(circle_dashed_rectangle)
+            localAllCases.append(circle_filled_pattern_diagonalline_rectangle)
+            localAllCases.append(circle_rectangle_dashed)
+            localAllCases.append(circle_rectangle_filled_pattern_diagonalline)
+            localAllCases.append(clipboard)
+            localAllCases.append(clipboard_fill)
+            localAllCases.append(clock_badge)
+            localAllCases.append(clock_badge_fill)
+            localAllCases.append(clock_badge_questionmark)
+            localAllCases.append(clock_badge_questionmark_fill)
+            localAllCases.append(clock_badge_xmark)
+            localAllCases.append(clock_badge_xmark_fill)
+            localAllCases.append(cloud_bolt_circle)
+            localAllCases.append(cloud_bolt_circle_fill)
+            localAllCases.append(cloud_bolt_rain_circle)
+            localAllCases.append(cloud_bolt_rain_circle_fill)
+            localAllCases.append(cloud_circle)
+            localAllCases.append(cloud_circle_fill)
+            localAllCases.append(cloud_drizzle_circle)
+            localAllCases.append(cloud_drizzle_circle_fill)
+            localAllCases.append(cloud_fog_circle)
+            localAllCases.append(cloud_fog_circle_fill)
+            localAllCases.append(cloud_hail_circle)
+            localAllCases.append(cloud_hail_circle_fill)
+            localAllCases.append(cloud_heavyrain_circle)
+            localAllCases.append(cloud_heavyrain_circle_fill)
+            localAllCases.append(cloud_moon_bolt_circle)
+            localAllCases.append(cloud_moon_bolt_circle_fill)
+            localAllCases.append(cloud_moon_circle)
+            localAllCases.append(cloud_moon_circle_fill)
+            localAllCases.append(cloud_moon_rain_circle)
+            localAllCases.append(cloud_moon_rain_circle_fill)
+            localAllCases.append(cloud_rain_circle)
+            localAllCases.append(cloud_rain_circle_fill)
+            localAllCases.append(cloud_sleet_circle)
+            localAllCases.append(cloud_sleet_circle_fill)
+            localAllCases.append(cloud_snow_circle)
+            localAllCases.append(cloud_snow_circle_fill)
+            localAllCases.append(cloud_sun_bolt_circle)
+            localAllCases.append(cloud_sun_bolt_circle_fill)
+            localAllCases.append(cloud_sun_circle)
+            localAllCases.append(cloud_sun_circle_fill)
+            localAllCases.append(cloud_sun_rain_circle)
+            localAllCases.append(cloud_sun_rain_circle_fill)
+            localAllCases.append(coloncurrencysign)
+            localAllCases.append(compass_drawing)
+            localAllCases.append(contact_sensor)
+            localAllCases.append(contact_sensor_fill)
+            localAllCases.append(cooktop)
+            localAllCases.append(cooktop_fill)
+            localAllCases.append(creditcard_viewfinder)
+            localAllCases.append(cricket_ball)
+            localAllCases.append(cricket_ball_circle)
+            localAllCases.append(cricket_ball_circle_fill)
+            localAllCases.append(cricket_ball_fill)
+            localAllCases.append(cruzeirosign)
+            localAllCases.append(cursorarrow_square_fill)
+            localAllCases.append(curtains_closed)
+            localAllCases.append(curtains_open)
+            localAllCases.append(dehumidifier)
+            localAllCases.append(dehumidifier_fill)
+            localAllCases.append(🍏deskview)
+            localAllCases.append(🍏deskview_fill)
+            localAllCases.append(dial_high)
+            localAllCases.append(dial_high_fill)
+            localAllCases.append(dial_low)
+            localAllCases.append(dial_low_fill)
+            localAllCases.append(dial_medium)
+            localAllCases.append(dial_medium_fill)
+            localAllCases.append(dishwasher)
+            localAllCases.append(dishwasher_fill)
+            localAllCases.append(distribute_horizontal_center)
+            localAllCases.append(distribute_horizontal_center_fill)
+            localAllCases.append(distribute_horizontal_left)
+            localAllCases.append(distribute_horizontal_left_fill)
+            localAllCases.append(distribute_horizontal_right)
+            localAllCases.append(distribute_horizontal_right_fill)
+            localAllCases.append(distribute_vertical_bottom)
+            localAllCases.append(distribute_vertical_bottom_fill)
+            localAllCases.append(distribute_vertical_center)
+            localAllCases.append(distribute_vertical_center_fill)
+            localAllCases.append(distribute_vertical_top)
+            localAllCases.append(distribute_vertical_top_fill)
+            localAllCases.append(doc_badge_arrow_up)
+            localAllCases.append(doc_badge_arrow_up_fill)
+            localAllCases.append(dollarsign)
+            localAllCases.append(dollarsign_arrow_circlepath)
+            localAllCases.append(dongsign)
+            localAllCases.append(door_french_closed)
+            localAllCases.append(door_french_open)
+            localAllCases.append(door_garage_closed)
+            localAllCases.append(door_garage_closed_trianglebadge_exclamationmark)
+            localAllCases.append(door_garage_double_bay_closed)
+            localAllCases.append(door_garage_double_bay_closed_trianglebadge_exclamationmark)
+            localAllCases.append(door_garage_double_bay_open)
+            localAllCases.append(door_garage_double_bay_open_trianglebadge_exclamationmark)
+            localAllCases.append(door_garage_open)
+            localAllCases.append(door_garage_open_trianglebadge_exclamationmark)
+            localAllCases.append(door_left_hand_closed)
+            localAllCases.append(door_left_hand_open)
+            localAllCases.append(door_right_hand_closed)
+            localAllCases.append(door_right_hand_open)
+            localAllCases.append(door_sliding_left_hand_closed)
+            localAllCases.append(door_sliding_left_hand_open)
+            localAllCases.append(door_sliding_right_hand_closed)
+            localAllCases.append(door_sliding_right_hand_open)
+            localAllCases.append(dots_and_line_vertical_and_cursorarrow_rectangle)
+            localAllCases.append(drop_degreesign)
+            localAllCases.append(drop_degreesign_fill)
+            localAllCases.append(drop_degreesign_slash)
+            localAllCases.append(drop_degreesign_slash_fill)
+            localAllCases.append(drop_keypad_rectangle)
+            localAllCases.append(drop_keypad_rectangle_fill)
+            localAllCases.append(dryer)
+            localAllCases.append(dryer_fill)
+            localAllCases.append(dumbbell)
+            localAllCases.append(dumbbell_fill)
+            localAllCases.append(🍏ellipsis_message)
+            localAllCases.append(🍏ellipsis_message_fill)
+            localAllCases.append(entry_lever_keypad)
+            localAllCases.append(entry_lever_keypad_fill)
+            localAllCases.append(entry_lever_keypad_trianglebadge_exclamationmark)
+            localAllCases.append(entry_lever_keypad_trianglebadge_exclamationmark_fill)
+            localAllCases.append(envelope_open_badge_clock)
+            localAllCases.append(eraser)
+            localAllCases.append(eraser_fill)
+            localAllCases.append(eraser_line_dashed)
+            localAllCases.append(eraser_line_dashed_fill)
+            localAllCases.append(eurosign)
+            localAllCases.append(exclamationmark_brakesignal)
+            localAllCases.append(exclamationmark_lock)
+            localAllCases.append(exclamationmark_lock_fill)
+            localAllCases.append(exclamationmark_questionmark)
+            localAllCases.append(externaldrive_badge_exclamationmark)
+            localAllCases.append(externaldrive_badge_questionmark)
+            localAllCases.append(externaldrive_fill_badge_exclamationmark)
+            localAllCases.append(externaldrive_fill_badge_questionmark)
+            localAllCases.append(externaldrive_fill_trianglebadge_exclamationmark)
+            localAllCases.append(externaldrive_trianglebadge_exclamationmark)
+            localAllCases.append(face_smiling_inverse)
+            localAllCases.append(fan_and_light_ceiling)
+            localAllCases.append(fan_and_light_ceiling_fill)
+            localAllCases.append(fan_ceiling)
+            localAllCases.append(fan_ceiling_fill)
+            localAllCases.append(fan_desk)
+            localAllCases.append(fan_desk_fill)
+            localAllCases.append(fan_floor)
+            localAllCases.append(fan_floor_fill)
+            localAllCases.append(fan_oscillation)
+            localAllCases.append(fan_oscillation_fill)
+            localAllCases.append(fanblades_slash)
+            localAllCases.append(fanblades_slash_fill)
+            localAllCases.append(faxmachine_fill)
+            localAllCases.append(figure_2_and_child_holdinghands)
+            localAllCases.append(figure_2_arms_open)
+            localAllCases.append(figure_american_football)
+            localAllCases.append(figure_and_child_holdinghands)
+            localAllCases.append(figure_archery)
+            localAllCases.append(figure_arms_open)
+            localAllCases.append(figure_australian_football)
+            localAllCases.append(figure_badminton)
+            localAllCases.append(figure_barre)
+            localAllCases.append(figure_baseball)
+            localAllCases.append(figure_basketball)
+            localAllCases.append(figure_bowling)
+            localAllCases.append(figure_boxing)
+            localAllCases.append(figure_climbing)
+            localAllCases.append(figure_cooldown)
+            localAllCases.append(figure_core_training)
+            localAllCases.append(figure_cricket)
+            localAllCases.append(figure_cross_training)
+            localAllCases.append(figure_curling)
+            localAllCases.append(figure_dance)
+            localAllCases.append(figure_disc_sports)
+            localAllCases.append(figure_dress_line_vertical_figure)
+            localAllCases.append(figure_elliptical)
+            localAllCases.append(figure_equestrian_sports)
+            localAllCases.append(figure_fall)
+            localAllCases.append(figure_fall_circle)
+            localAllCases.append(figure_fall_circle_fill)
+            localAllCases.append(figure_fencing)
+            localAllCases.append(figure_fishing)
+            localAllCases.append(figure_flexibility)
+            localAllCases.append(figure_golf)
+            localAllCases.append(figure_gymnastics)
+            localAllCases.append(figure_hand_cycling)
+            localAllCases.append(figure_handball)
+            localAllCases.append(figure_highintensity_intervaltraining)
+            localAllCases.append(figure_hiking)
+            localAllCases.append(figure_hockey)
+            localAllCases.append(figure_hunting)
+            localAllCases.append(figure_indoor_cycle)
+            localAllCases.append(figure_jumprope)
+            localAllCases.append(figure_kickboxing)
+            localAllCases.append(figure_lacrosse)
+            localAllCases.append(figure_martial_arts)
+            localAllCases.append(figure_mind_and_body)
+            localAllCases.append(figure_mixed_cardio)
+            localAllCases.append(figure_open_water_swim)
+            localAllCases.append(figure_outdoor_cycle)
+            localAllCases.append(figure_pickleball)
+            localAllCases.append(figure_pilates)
+            localAllCases.append(figure_play)
+            localAllCases.append(figure_pool_swim)
+            localAllCases.append(figure_racquetball)
+            localAllCases.append(figure_roll_runningpace)
+            localAllCases.append(figure_rolling)
+            localAllCases.append(figure_rower)
+            localAllCases.append(figure_rugby)
+            localAllCases.append(figure_run)
+            localAllCases.append(figure_run_circle)
+            localAllCases.append(figure_run_circle_fill)
+            localAllCases.append(figure_sailing)
+            localAllCases.append(figure_skating)
+            localAllCases.append(figure_skiing_crosscountry)
+            localAllCases.append(figure_skiing_downhill)
+            localAllCases.append(figure_snowboarding)
+            localAllCases.append(figure_soccer)
+            localAllCases.append(figure_socialdance)
+            localAllCases.append(figure_softball)
+            localAllCases.append(figure_squash)
+            localAllCases.append(figure_stair_stepper)
+            localAllCases.append(figure_stairs)
+            localAllCases.append(figure_step_training)
+            localAllCases.append(figure_strengthtraining_functional)
+            localAllCases.append(figure_strengthtraining_traditional)
+            localAllCases.append(figure_surfing)
+            localAllCases.append(figure_table_tennis)
+            localAllCases.append(figure_taichi)
+            localAllCases.append(figure_tennis)
+            localAllCases.append(figure_track_and_field)
+            localAllCases.append(figure_volleyball)
+            localAllCases.append(figure_walk_arrival)
+            localAllCases.append(figure_walk_departure)
+            localAllCases.append(figure_walk_motion)
+            localAllCases.append(figure_water_fitness)
+            localAllCases.append(figure_waterpolo)
+            localAllCases.append(figure_wrestling)
+            localAllCases.append(figure_yoga)
+            localAllCases.append(film_stack)
+            localAllCases.append(film_stack_fill)
+            localAllCases.append(fireplace)
+            localAllCases.append(fireplace_fill)
+            localAllCases.append(firewall)
+            localAllCases.append(firewall_fill)
+            localAllCases.append(fish)
+            localAllCases.append(fish_fill)
+            localAllCases.append(flag_2_crossed_circle)
+            localAllCases.append(flag_2_crossed_circle_fill)
+            localAllCases.append(flag_checkered)
+            localAllCases.append(flag_checkered_2_crossed)
+            localAllCases.append(fleuron)
+            localAllCases.append(fleuron_fill)
+            localAllCases.append(florinsign)
+            localAllCases.append(fluid_brakesignal)
+            localAllCases.append(football)
+            localAllCases.append(football_circle)
+            localAllCases.append(football_circle_fill)
+            localAllCases.append(football_fill)
+            localAllCases.append(forward_end_circle)
+            localAllCases.append(forward_end_circle_fill)
+            localAllCases.append(fossil_shell)
+            localAllCases.append(fossil_shell_fill)
+            localAllCases.append(francsign)
+            localAllCases.append(frying_pan)
+            localAllCases.append(frying_pan_fill)
+            localAllCases.append(gauge_high)
+            localAllCases.append(gauge_low)
+            localAllCases.append(gauge_medium)
+            localAllCases.append(gauge_medium_badge_minus)
+            localAllCases.append(gauge_medium_badge_plus)
+            localAllCases.append(gear_badge)
+            localAllCases.append(gearshape_arrow_triangle_2_circlepath)
+            localAllCases.append(globe_central_south_asia)
+            localAllCases.append(globe_central_south_asia_fill)
+            localAllCases.append(globe_desk)
+            localAllCases.append(globe_desk_fill)
+            localAllCases.append(guaranisign)
+            localAllCases.append(hand_raised_fingers_spread)
+            localAllCases.append(hand_raised_fingers_spread_fill)
+            localAllCases.append(headlight_high_beam)
+            localAllCases.append(headlight_high_beam_fill)
+            localAllCases.append(headlight_low_beam)
+            localAllCases.append(headlight_low_beam_fill)
+            localAllCases.append(hearingdevice_and_signal_meter)
+            localAllCases.append(hearingdevice_and_signal_meter_fill)
+            localAllCases.append(hearingdevice_ear_fill)
+            localAllCases.append(heater_vertical)
+            localAllCases.append(heater_vertical_fill)
+            localAllCases.append(hifireceiver)
+            localAllCases.append(hifireceiver_fill)
+            localAllCases.append(hockey_puck)
+            localAllCases.append(hockey_puck_circle)
+            localAllCases.append(hockey_puck_circle_fill)
+            localAllCases.append(hockey_puck_fill)
+            localAllCases.append(hold_brakesignal)
+            localAllCases.append(hryvniasign)
+            localAllCases.append(humidifier)
+            localAllCases.append(humidifier_and_droplets)
+            localAllCases.append(humidifier_and_droplets_fill)
+            localAllCases.append(humidifier_fill)
+            localAllCases.append(hurricane_circle)
+            localAllCases.append(hurricane_circle_fill)
+            localAllCases.append(indianrupeesign)
+            localAllCases.append(info_bubble)
+            localAllCases.append(info_bubble_fill)
+            localAllCases.append(info_square)
+            localAllCases.append(info_square_fill)
+            localAllCases.append(key_viewfinder)
+            localAllCases.append(keyboard_badge_ellipsis_fill)
+            localAllCases.append(keyboard_badge_eye)
+            localAllCases.append(keyboard_badge_eye_fill)
+            localAllCases.append(keyboard_chevron_compact_down_fill)
+            localAllCases.append(keyboard_chevron_compact_left_fill)
+            localAllCases.append(keyboard_onehanded_left_fill)
+            localAllCases.append(keyboard_onehanded_right_fill)
+            localAllCases.append(kipsign)
+            localAllCases.append(lamp_ceiling)
+            localAllCases.append(lamp_ceiling_fill)
+            localAllCases.append(lamp_ceiling_inverse)
+            localAllCases.append(lamp_desk)
+            localAllCases.append(lamp_desk_fill)
+            localAllCases.append(lamp_floor)
+            localAllCases.append(lamp_floor_fill)
+            localAllCases.append(lamp_table)
+            localAllCases.append(lamp_table_fill)
+            localAllCases.append(larisign)
+            localAllCases.append(laurel_leading)
+            localAllCases.append(laurel_trailing)
+            localAllCases.append(light_beacon_max)
+            localAllCases.append(light_beacon_max_fill)
+            localAllCases.append(light_beacon_min)
+            localAllCases.append(light_beacon_min_fill)
+            localAllCases.append(light_cylindrical_ceiling)
+            localAllCases.append(light_cylindrical_ceiling_fill)
+            localAllCases.append(light_cylindrical_ceiling_inverse)
+            localAllCases.append(light_panel)
+            localAllCases.append(light_panel_fill)
+            localAllCases.append(light_recessed)
+            localAllCases.append(light_recessed_3)
+            localAllCases.append(light_recessed_3_fill)
+            localAllCases.append(light_recessed_3_inverse)
+            localAllCases.append(light_recessed_fill)
+            localAllCases.append(light_recessed_inverse)
+            localAllCases.append(light_ribbon)
+            localAllCases.append(light_ribbon_fill)
+            localAllCases.append(light_strip_2)
+            localAllCases.append(light_strip_2_fill)
+            localAllCases.append(lightbulb_2)
+            localAllCases.append(lightbulb_2_fill)
+            localAllCases.append(lightbulb_led)
+            localAllCases.append(lightbulb_led_fill)
+            localAllCases.append(lightbulb_led_wide)
+            localAllCases.append(lightbulb_led_wide_fill)
+            localAllCases.append(lightswitch_off)
+            localAllCases.append(lightswitch_off_fill)
+            localAllCases.append(lightswitch_off_square)
+            localAllCases.append(lightswitch_off_square_fill)
+            localAllCases.append(lightswitch_on)
+            localAllCases.append(lightswitch_on_fill)
+            localAllCases.append(lightswitch_on_square)
+            localAllCases.append(lightswitch_on_square_fill)
+            localAllCases.append(lirasign)
+            localAllCases.append(list_bullet_clipboard)
+            localAllCases.append(list_bullet_clipboard_fill)
+            localAllCases.append(list_clipboard)
+            localAllCases.append(list_clipboard_fill)
+            localAllCases.append(lizard)
+            localAllCases.append(lizard_fill)
+            localAllCases.append(location_slash_circle)
+            localAllCases.append(location_slash_circle_fill)
+            localAllCases.append(lock_open_trianglebadge_exclamationmark)
+            localAllCases.append(lock_open_trianglebadge_exclamationmark_fill)
+            localAllCases.append(lock_trianglebadge_exclamationmark)
+            localAllCases.append(lock_trianglebadge_exclamationmark_fill)
+            localAllCases.append(🍏macstudio)
+            localAllCases.append(🍏macstudio_fill)
+            localAllCases.append(manatsign)
+            localAllCases.append(medal)
+            localAllCases.append(medal_fill)
+            localAllCases.append(medical_thermometer)
+            localAllCases.append(medical_thermometer_fill)
+            localAllCases.append(🍏message_badge)
+            localAllCases.append(🍏message_badge_circle)
+            localAllCases.append(🍏message_badge_circle_fill)
+            localAllCases.append(🍏message_badge_fill)
+            localAllCases.append(🍏message_badge_filled_fill)
+            localAllCases.append(mic_and_signal_meter)
+            localAllCases.append(mic_and_signal_meter_fill)
+            localAllCases.append(mic_badge_xmark)
+            localAllCases.append(mic_fill_badge_xmark)
+            localAllCases.append(microbe)
+            localAllCases.append(microbe_circle)
+            localAllCases.append(microbe_circle_fill)
+            localAllCases.append(microbe_fill)
+            localAllCases.append(microwave)
+            localAllCases.append(microwave_fill)
+            localAllCases.append(millsign)
+            localAllCases.append(mirror_side_left)
+            localAllCases.append(mirror_side_right)
+            localAllCases.append(moon_haze)
+            localAllCases.append(moon_haze_circle)
+            localAllCases.append(moon_haze_circle_fill)
+            localAllCases.append(moon_haze_fill)
+            localAllCases.append(moon_stars_circle)
+            localAllCases.append(moon_stars_circle_fill)
+            localAllCases.append(moonphase_first_quarter)
+            localAllCases.append(moonphase_first_quarter_inverse)
+            localAllCases.append(moonphase_full_moon)
+            localAllCases.append(moonphase_full_moon_inverse)
+            localAllCases.append(moonphase_last_quarter)
+            localAllCases.append(moonphase_last_quarter_inverse)
+            localAllCases.append(moonphase_new_moon)
+            localAllCases.append(moonphase_new_moon_inverse)
+            localAllCases.append(moonphase_waning_crescent)
+            localAllCases.append(moonphase_waning_crescent_inverse)
+            localAllCases.append(moonphase_waning_gibbous)
+            localAllCases.append(moonphase_waning_gibbous_inverse)
+            localAllCases.append(moonphase_waxing_crescent)
+            localAllCases.append(moonphase_waxing_crescent_inverse)
+            localAllCases.append(moonphase_waxing_gibbous)
+            localAllCases.append(moonphase_waxing_gibbous_inverse)
+            localAllCases.append(nairasign)
+            localAllCases.append(nosign_app)
+            localAllCases.append(nosign_app_fill)
+            localAllCases.append(numbersign)
+            localAllCases.append(oar_2_crossed)
+            localAllCases.append(opticaldisc_fill)
+            localAllCases.append(oven)
+            localAllCases.append(oven_fill)
+            localAllCases.append(parkinglight)
+            localAllCases.append(parkinglight_fill)
+            localAllCases.append(parkingsign_brakesignal)
+            localAllCases.append(parkingsign_brakesignal_slash)
+            localAllCases.append(party_popper)
+            localAllCases.append(party_popper_fill)
+            localAllCases.append(pedestrian_gate_closed)
+            localAllCases.append(pedestrian_gate_open)
+            localAllCases.append(pencil_and_ruler)
+            localAllCases.append(pencil_and_ruler_fill)
+            localAllCases.append(pencil_line)
+            localAllCases.append(person_2_badge_gearshape)
+            localAllCases.append(person_2_badge_gearshape_fill)
+            localAllCases.append(person_2_gobackward)
+            localAllCases.append(person_2_slash)
+            localAllCases.append(person_2_slash_fill)
+            localAllCases.append(person_and_background_dotted)
+            localAllCases.append(🍏person_badge_key)
+            localAllCases.append(🍏person_badge_key_fill)
+            localAllCases.append(person_badge_shield_checkmark)
+            localAllCases.append(person_badge_shield_checkmark_fill)
+            localAllCases.append(person_bust)
+            localAllCases.append(person_bust_fill)
+            localAllCases.append(person_crop_rectangle_badge_plus)
+            localAllCases.append(person_crop_rectangle_badge_plus_fill)
+            localAllCases.append(person_line_dotted_person)
+            localAllCases.append(person_line_dotted_person_fill)
+            localAllCases.append(pesetasign)
+            localAllCases.append(pesosign)
+            localAllCases.append(phone_arrow_down_left_fill)
+            localAllCases.append(phone_arrow_right_fill)
+            localAllCases.append(phone_arrow_up_right_circle)
+            localAllCases.append(phone_arrow_up_right_circle_fill)
+            localAllCases.append(phone_arrow_up_right_fill)
+            localAllCases.append(phone_badge_checkmark)
+            localAllCases.append(phone_connection_fill)
+            localAllCases.append(phone_down_waves_left_and_right)
+            localAllCases.append(phone_fill_badge_checkmark)
+            localAllCases.append(photo_stack)
+            localAllCases.append(photo_stack_fill)
+            localAllCases.append(pill)
+            localAllCases.append(pill_circle)
+            localAllCases.append(pill_circle_fill)
+            localAllCases.append(pill_fill)
+            localAllCases.append(pipe_and_drop)
+            localAllCases.append(pipe_and_drop_fill)
+            localAllCases.append(play_desktopcomputer)
+            localAllCases.append(play_display)
+            localAllCases.append(play_laptopcomputer)
+            localAllCases.append(playpause_circle)
+            localAllCases.append(playpause_circle_fill)
+            localAllCases.append(🍏playstation_logo)
+            localAllCases.append(popcorn)
+            localAllCases.append(popcorn_circle)
+            localAllCases.append(popcorn_circle_fill)
+            localAllCases.append(popcorn_fill)
+            localAllCases.append(poweroutlet_strip)
+            localAllCases.append(poweroutlet_strip_fill)
+            localAllCases.append(poweroutlet_type_a)
+            localAllCases.append(poweroutlet_type_a_fill)
+            localAllCases.append(poweroutlet_type_a_square)
+            localAllCases.append(poweroutlet_type_a_square_fill)
+            localAllCases.append(poweroutlet_type_b)
+            localAllCases.append(poweroutlet_type_b_fill)
+            localAllCases.append(poweroutlet_type_b_square)
+            localAllCases.append(poweroutlet_type_b_square_fill)
+            localAllCases.append(poweroutlet_type_c)
+            localAllCases.append(poweroutlet_type_c_fill)
+            localAllCases.append(poweroutlet_type_c_square)
+            localAllCases.append(poweroutlet_type_c_square_fill)
+            localAllCases.append(poweroutlet_type_d)
+            localAllCases.append(poweroutlet_type_d_fill)
+            localAllCases.append(poweroutlet_type_d_square)
+            localAllCases.append(poweroutlet_type_d_square_fill)
+            localAllCases.append(poweroutlet_type_e)
+            localAllCases.append(poweroutlet_type_e_fill)
+            localAllCases.append(poweroutlet_type_e_square)
+            localAllCases.append(poweroutlet_type_e_square_fill)
+            localAllCases.append(poweroutlet_type_f)
+            localAllCases.append(poweroutlet_type_f_fill)
+            localAllCases.append(poweroutlet_type_f_square)
+            localAllCases.append(poweroutlet_type_f_square_fill)
+            localAllCases.append(poweroutlet_type_g)
+            localAllCases.append(poweroutlet_type_g_fill)
+            localAllCases.append(poweroutlet_type_g_square)
+            localAllCases.append(poweroutlet_type_g_square_fill)
+            localAllCases.append(poweroutlet_type_h)
+            localAllCases.append(poweroutlet_type_h_fill)
+            localAllCases.append(poweroutlet_type_h_square)
+            localAllCases.append(poweroutlet_type_h_square_fill)
+            localAllCases.append(poweroutlet_type_i)
+            localAllCases.append(poweroutlet_type_i_fill)
+            localAllCases.append(poweroutlet_type_i_square)
+            localAllCases.append(poweroutlet_type_i_square_fill)
+            localAllCases.append(poweroutlet_type_j)
+            localAllCases.append(poweroutlet_type_j_fill)
+            localAllCases.append(poweroutlet_type_j_square)
+            localAllCases.append(poweroutlet_type_j_square_fill)
+            localAllCases.append(poweroutlet_type_k)
+            localAllCases.append(poweroutlet_type_k_fill)
+            localAllCases.append(poweroutlet_type_k_square)
+            localAllCases.append(poweroutlet_type_k_square_fill)
+            localAllCases.append(poweroutlet_type_l)
+            localAllCases.append(poweroutlet_type_l_fill)
+            localAllCases.append(poweroutlet_type_l_square)
+            localAllCases.append(poweroutlet_type_l_square_fill)
+            localAllCases.append(poweroutlet_type_m)
+            localAllCases.append(poweroutlet_type_m_fill)
+            localAllCases.append(poweroutlet_type_m_square)
+            localAllCases.append(poweroutlet_type_m_square_fill)
+            localAllCases.append(poweroutlet_type_n)
+            localAllCases.append(poweroutlet_type_n_fill)
+            localAllCases.append(poweroutlet_type_n_square)
+            localAllCases.append(poweroutlet_type_n_square_fill)
+            localAllCases.append(poweroutlet_type_o)
+            localAllCases.append(poweroutlet_type_o_fill)
+            localAllCases.append(poweroutlet_type_o_square)
+            localAllCases.append(poweroutlet_type_o_square_fill)
+            localAllCases.append(questionmark_bubble)
+            localAllCases.append(questionmark_bubble_fill)
+            localAllCases.append(quotelevel)
+            localAllCases.append(recordingtape_circle)
+            localAllCases.append(recordingtape_circle_fill)
+            localAllCases.append(rectangle_leadinghalf_filled)
+            localAllCases.append(rectangle_portrait_and_arrow_forward)
+            localAllCases.append(rectangle_portrait_and_arrow_forward_fill)
+            localAllCases.append(rectangle_portrait_on_rectangle_portrait_angled)
+            localAllCases.append(rectangle_portrait_on_rectangle_portrait_angled_fill)
+            localAllCases.append(rectangle_trailinghalf_filled)
+            localAllCases.append(refrigerator)
+            localAllCases.append(refrigerator_fill)
+            localAllCases.append(road_lanes)
+            localAllCases.append(road_lanes_curved_left)
+            localAllCases.append(road_lanes_curved_right)
+            localAllCases.append(roller_shade_closed)
+            localAllCases.append(roller_shade_open)
+            localAllCases.append(roman_shade_closed)
+            localAllCases.append(roman_shade_open)
+            localAllCases.append(rublesign)
+            localAllCases.append(rupeesign)
+            localAllCases.append(sailboat)
+            localAllCases.append(sailboat_fill)
+            localAllCases.append(sensor)
+            localAllCases.append(sensor_fill)
+            localAllCases.append(🍏shared_with_you)
+            localAllCases.append(🍏shared_with_you_slash)
+            localAllCases.append(🍏shazam_logo)
+            localAllCases.append(🍏shazam_logo_fill)
+            localAllCases.append(shekelsign)
+            localAllCases.append(shippingbox_and_arrow_backward)
+            localAllCases.append(shippingbox_and_arrow_backward_fill)
+            localAllCases.append(shoeprints_fill)
+            localAllCases.append(shower)
+            localAllCases.append(shower_fill)
+            localAllCases.append(shower_handheld)
+            localAllCases.append(shower_handheld_fill)
+            localAllCases.append(shower_sidejet)
+            localAllCases.append(shower_sidejet_fill)
+            localAllCases.append(sink)
+            localAllCases.append(sink_fill)
+            localAllCases.append(slider_horizontal_2_gobackward)
+            localAllCases.append(slider_horizontal_2_square_badge_arrow_down)
+            localAllCases.append(slider_horizontal_2_square_on_square)
+            localAllCases.append(slider_horizontal_below_square_and_square_filled)
+            localAllCases.append(smoke_circle)
+            localAllCases.append(smoke_circle_fill)
+            localAllCases.append(soccerball)
+            localAllCases.append(soccerball_circle)
+            localAllCases.append(soccerball_circle_fill)
+            localAllCases.append(soccerball_circle_fill_inverse)
+            localAllCases.append(soccerball_circle_inverse)
+            localAllCases.append(soccerball_inverse)
+            localAllCases.append(sofa)
+            localAllCases.append(sofa_fill)
+            localAllCases.append(space)
+            localAllCases.append(speaker_minus)
+            localAllCases.append(speaker_minus_fill)
+            localAllCases.append(speaker_plus)
+            localAllCases.append(speaker_plus_fill)
+            localAllCases.append(speaker_square)
+            localAllCases.append(speaker_square_fill)
+            localAllCases.append(speaker_wave_2_bubble_left)
+            localAllCases.append(speaker_wave_2_bubble_left_fill)
+            localAllCases.append(spigot)
+            localAllCases.append(spigot_fill)
+            localAllCases.append(sportscourt_circle)
+            localAllCases.append(sportscourt_circle_fill)
+            localAllCases.append(sprinkler)
+            localAllCases.append(sprinkler_and_droplets)
+            localAllCases.append(sprinkler_and_droplets_fill)
+            localAllCases.append(sprinkler_fill)
+            localAllCases.append(square_2_layers_3d)
+            localAllCases.append(square_2_layers_3d_bottom_filled)
+            localAllCases.append(square_2_layers_3d_top_filled)
+            localAllCases.append(square_3_layers_3d)
+            localAllCases.append(square_3_layers_3d_bottom_filled)
+            localAllCases.append(square_3_layers_3d_down_left_slash)
+            localAllCases.append(square_3_layers_3d_down_right_slash)
+            localAllCases.append(square_3_layers_3d_middle_filled)
+            localAllCases.append(square_3_layers_3d_slash)
+            localAllCases.append(square_3_layers_3d_top_filled)
+            localAllCases.append(square_and_pencil_circle)
+            localAllCases.append(square_and_pencil_circle_fill)
+            localAllCases.append(square_bottomthird_inset_filled)
+            localAllCases.append(square_dotted)
+            localAllCases.append(square_leadingthird_inset_filled)
+            localAllCases.append(square_leftthird_inset_filled)
+            localAllCases.append(square_on_square_badge_person_crop)
+            localAllCases.append(square_on_square_badge_person_crop_fill)
+            localAllCases.append(square_on_square_intersection_dashed)
+            localAllCases.append(square_rightthird_inset_filled)
+            localAllCases.append(square_topthird_inset_filled)
+            localAllCases.append(square_trailingthird_inset_filled)
+            localAllCases.append(squares_leading_rectangle)
+            localAllCases.append(squareshape_dotted_split_2x2)
+            localAllCases.append(stairs)
+            localAllCases.append(star_square_on_square)
+            localAllCases.append(star_square_on_square_fill)
+            localAllCases.append(sterlingsign)
+            localAllCases.append(stove)
+            localAllCases.append(stove_fill)
+            localAllCases.append(sun_and_horizon_circle)
+            localAllCases.append(sun_and_horizon_circle_fill)
+            localAllCases.append(sun_dust_circle)
+            localAllCases.append(sun_dust_circle_fill)
+            localAllCases.append(sun_haze_circle)
+            localAllCases.append(sun_haze_circle_fill)
+            localAllCases.append(sun_max_trianglebadge_exclamationmark)
+            localAllCases.append(sun_max_trianglebadge_exclamationmark_fill)
+            localAllCases.append(sunrise_circle)
+            localAllCases.append(sunrise_circle_fill)
+            localAllCases.append(sunset_circle)
+            localAllCases.append(sunset_circle_fill)
+            localAllCases.append(swatchpalette)
+            localAllCases.append(swatchpalette_fill)
+            localAllCases.append(switch_programmable)
+            localAllCases.append(switch_programmable_fill)
+            localAllCases.append(switch_programmable_square)
+            localAllCases.append(switch_programmable_square_fill)
+            localAllCases.append(syringe)
+            localAllCases.append(syringe_fill)
+            localAllCases.append(table_furniture)
+            localAllCases.append(table_furniture_fill)
+            localAllCases.append(teddybear)
+            localAllCases.append(teddybear_fill)
+            localAllCases.append(tengesign)
+            localAllCases.append(tennis_racket)
+            localAllCases.append(tennis_racket_circle)
+            localAllCases.append(tennis_racket_circle_fill)
+            localAllCases.append(tennisball)
+            localAllCases.append(tennisball_circle)
+            localAllCases.append(tennisball_circle_fill)
+            localAllCases.append(tennisball_fill)
+            localAllCases.append(tent)
+            localAllCases.append(tent_fill)
+            localAllCases.append(text_line_first_and_arrowtriangle_forward)
+            localAllCases.append(text_line_last_and_arrowtriangle_forward)
+            localAllCases.append(text_word_spacing)
+            localAllCases.append(textformat_12)
+            localAllCases.append(theatermask_and_paintbrush)
+            localAllCases.append(theatermask_and_paintbrush_fill)
+            localAllCases.append(thermometer_brakesignal)
+            localAllCases.append(thermometer_high)
+            localAllCases.append(thermometer_low)
+            localAllCases.append(thermometer_medium)
+            localAllCases.append(thermometer_medium_slash)
+            localAllCases.append(thermometer_snowflake_circle)
+            localAllCases.append(thermometer_snowflake_circle_fill)
+            localAllCases.append(thermometer_sun_circle)
+            localAllCases.append(thermometer_sun_circle_fill)
+            localAllCases.append(timer_circle)
+            localAllCases.append(timer_circle_fill)
+            localAllCases.append(toilet)
+            localAllCases.append(toilet_fill)
+            localAllCases.append(tornado_circle)
+            localAllCases.append(tornado_circle_fill)
+            localAllCases.append(trophy)
+            localAllCases.append(trophy_circle)
+            localAllCases.append(trophy_circle_fill)
+            localAllCases.append(trophy_fill)
+            localAllCases.append(tropicalstorm_circle)
+            localAllCases.append(tropicalstorm_circle_fill)
+            localAllCases.append(tugriksign)
+            localAllCases.append(turkishlirasign)
+            localAllCases.append(tv_and_mediabox_fill)
+            localAllCases.append(umbrella_percent)
+            localAllCases.append(umbrella_percent_fill)
+            localAllCases.append(vial_viewfinder)
+            localAllCases.append(video_doorbell)
+            localAllCases.append(video_doorbell_fill)
+            localAllCases.append(videoprojector)
+            localAllCases.append(videoprojector_fill)
+            localAllCases.append(volleyball)
+            localAllCases.append(volleyball_circle)
+            localAllCases.append(volleyball_circle_fill)
+            localAllCases.append(volleyball_fill)
+            localAllCases.append(washer)
+            localAllCases.append(washer_fill)
+            localAllCases.append(water_waves)
+            localAllCases.append(water_waves_and_arrow_down)
+            localAllCases.append(water_waves_and_arrow_down_trianglebadge_exclamationmark)
+            localAllCases.append(water_waves_and_arrow_up)
+            localAllCases.append(water_waves_slash)
+            localAllCases.append(waveform_slash)
+            localAllCases.append(web_camera)
+            localAllCases.append(web_camera_fill)
+            localAllCases.append(wifi_router)
+            localAllCases.append(wifi_router_fill)
+            localAllCases.append(wind_circle)
+            localAllCases.append(wind_circle_fill)
+            localAllCases.append(wind_snow_circle)
+            localAllCases.append(wind_snow_circle_fill)
+            localAllCases.append(window_awning)
+            localAllCases.append(window_awning_closed)
+            localAllCases.append(window_casement)
+            localAllCases.append(window_casement_closed)
+            localAllCases.append(window_ceiling)
+            localAllCases.append(window_ceiling_closed)
+            localAllCases.append(window_horizontal)
+            localAllCases.append(window_horizontal_closed)
+            localAllCases.append(window_shade_closed)
+            localAllCases.append(window_shade_open)
+            localAllCases.append(window_vertical_closed)
+            localAllCases.append(window_vertical_open)
+            localAllCases.append(windshield_front_and_wiper)
+            localAllCases.append(windshield_front_and_wiper_and_drop)
+            localAllCases.append(windshield_rear_and_wiper)
+            localAllCases.append(wineglass)
+            localAllCases.append(wineglass_fill)
+            localAllCases.append(wonsign)
+            localAllCases.append(wrench_adjustable)
+            localAllCases.append(wrench_adjustable_fill)
+            localAllCases.append(🍏xbox_logo)
+            localAllCases.append(yensign)
         }
         localAllCases.sort()
         return localAllCases

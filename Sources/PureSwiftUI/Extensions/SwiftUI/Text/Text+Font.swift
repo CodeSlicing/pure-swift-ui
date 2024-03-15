@@ -12,9 +12,13 @@ import SwiftUI
 public extension Text {
   
     private func applyInternalFont(_ theFont: Font, _ color: Color? = nil, _ weight: Font.Weight? = nil) -> Text {
-        font(theFont)
-            .fontWeight(weight)
-            .foregroundColor(color)
+        if (weight != nil) {
+            self.font(theFont.weight(weight!))
+                .foregroundColorIf(color != nil, color!)
+        } else {
+            self.font(theFont)
+                .foregroundColorIf(color != nil, color!)
+        }
     }
     
     // BODY

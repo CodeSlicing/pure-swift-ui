@@ -11,7 +11,10 @@ import SwiftUI
 
 public extension Text {
     
-    func foregroundColorIf(_ condition: Bool, _ color: Color) -> Text {
-        foregroundColor(condition ? color : nil)
+    func foregroundColorIf(_ condition: Bool, _ color: @autoclosure () -> Color) -> Text {
+        if (condition) {
+            return foregroundColor(color())
+        }
+        return self
     }
 }
