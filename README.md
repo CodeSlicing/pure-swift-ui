@@ -524,7 +524,8 @@ This project adheres to a [semantic versioning](https://semver.org) paradigm, so
 - [2.3.0][tag-2.3.0] Update for SF Symbols 3, update preview devices, and add multi-platform support
 - [3.0.0][tag-3.0.0] Separate design elements into [PureSwifUIDesign][pure-swift-ui-design] package. Change orientation of angles to match native
 - [3.1.0][tag-3.1.0] Add SF Symbols 3.1
-- [4.0.0][tag-4.0.0] Add SF Symbols 4.0
+- [4.0.0][tag-4.0.0] Add SF Symbols 4.0 for iOS 16.0+, macOS 13.0+, tvOS 16.0+, watchOS 9.0+
+- [4.0.1][tag-4.0.1] Add SF Symbols 4.0 for iOS 16.1+, macOS 13.0+, tvOS 16.1+, watchOS 9.1+
 
 ## Licensing
 
@@ -600,6 +601,7 @@ version links:
 [tag-3.0.0]: https://github.com/CodeSlicing/pure-swift-ui/tree/3.0.0
 [tag-3.1.0]: https://github.com/CodeSlicing/pure-swift-ui/tree/3.1.0
 [tag-4.0.0]: https://github.com/CodeSlicing/pure-swift-ui/tree/4.0.0
+[tag-4.0.1]: https://github.com/CodeSlicing/pure-swift-ui/tree/4.0.1
 
 <!---
  local docs:
