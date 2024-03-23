@@ -3597,164 +3597,164 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case glowplug = "glowplug"
     case gobackward = "gobackward"
     case gobackward_10 = "gobackward.10"
-    @available(iOS, deprecated: 14.0,  message: "No replacement available")
-    @available(macOS, deprecated: 11.0,  message: "No replacement available")
-    @available(tvOS, deprecated: 14.0,  message: "No replacement available")
-    @available(watchOS, deprecated: 7.0,  message: "No replacement available")
+    @available(iOS, deprecated: 14.0, message: "No replacement available")
+    @available(macOS, deprecated: 11.0, message: "No replacement available")
+    @available(tvOS, deprecated: 14.0, message: "No replacement available")
+    @available(watchOS, deprecated: 7.0, message: "No replacement available")
     case gobackward_10_ar = "gobackward.10.ar"
-    @available(iOS, deprecated: 14.0,  message: "No replacement available")
-    @available(macOS, deprecated: 11.0,  message: "No replacement available")
-    @available(tvOS, deprecated: 14.0,  message: "No replacement available")
-    @available(watchOS, deprecated: 7.0,  message: "No replacement available")
+    @available(iOS, deprecated: 14.0, message: "No replacement available")
+    @available(macOS, deprecated: 11.0, message: "No replacement available")
+    @available(tvOS, deprecated: 14.0, message: "No replacement available")
+    @available(watchOS, deprecated: 7.0, message: "No replacement available")
     case gobackward_10_hi = "gobackward.10.hi"
     case gobackward_15 = "gobackward.15"
-    @available(iOS, deprecated: 14.0,  message: "No replacement available")
-    @available(macOS, deprecated: 11.0,  message: "No replacement available")
-    @available(tvOS, deprecated: 14.0,  message: "No replacement available")
-    @available(watchOS, deprecated: 7.0,  message: "No replacement available")
+    @available(iOS, deprecated: 14.0, message: "No replacement available")
+    @available(macOS, deprecated: 11.0, message: "No replacement available")
+    @available(tvOS, deprecated: 14.0, message: "No replacement available")
+    @available(watchOS, deprecated: 7.0, message: "No replacement available")
     case gobackward_15_ar = "gobackward.15.ar"
-    @available(iOS, deprecated: 14.0,  message: "No replacement available")
-    @available(macOS, deprecated: 11.0,  message: "No replacement available")
-    @available(tvOS, deprecated: 14.0,  message: "No replacement available")
-    @available(watchOS, deprecated: 7.0,  message: "No replacement available")
+    @available(iOS, deprecated: 14.0, message: "No replacement available")
+    @available(macOS, deprecated: 11.0, message: "No replacement available")
+    @available(tvOS, deprecated: 14.0, message: "No replacement available")
+    @available(watchOS, deprecated: 7.0, message: "No replacement available")
     case gobackward_15_hi = "gobackward.15.hi"
     case gobackward_30 = "gobackward.30"
-    @available(iOS, deprecated: 14.0,  message: "No replacement available")
-    @available(macOS, deprecated: 11.0,  message: "No replacement available")
-    @available(tvOS, deprecated: 14.0,  message: "No replacement available")
-    @available(watchOS, deprecated: 7.0,  message: "No replacement available")
+    @available(iOS, deprecated: 14.0, message: "No replacement available")
+    @available(macOS, deprecated: 11.0, message: "No replacement available")
+    @available(tvOS, deprecated: 14.0, message: "No replacement available")
+    @available(watchOS, deprecated: 7.0, message: "No replacement available")
     case gobackward_30_ar = "gobackward.30.ar"
-    @available(iOS, deprecated: 14.0,  message: "No replacement available")
-    @available(macOS, deprecated: 11.0,  message: "No replacement available")
-    @available(tvOS, deprecated: 14.0,  message: "No replacement available")
-    @available(watchOS, deprecated: 7.0,  message: "No replacement available")
+    @available(iOS, deprecated: 14.0, message: "No replacement available")
+    @available(macOS, deprecated: 11.0, message: "No replacement available")
+    @available(tvOS, deprecated: 14.0, message: "No replacement available")
+    @available(watchOS, deprecated: 7.0, message: "No replacement available")
     case gobackward_30_hi = "gobackward.30.hi"
     case gobackward_45 = "gobackward.45"
-    @available(iOS, deprecated: 14.0,  message: "No replacement available")
-    @available(macOS, deprecated: 11.0,  message: "No replacement available")
-    @available(tvOS, deprecated: 14.0,  message: "No replacement available")
-    @available(watchOS, deprecated: 7.0,  message: "No replacement available")
+    @available(iOS, deprecated: 14.0, message: "No replacement available")
+    @available(macOS, deprecated: 11.0, message: "No replacement available")
+    @available(tvOS, deprecated: 14.0, message: "No replacement available")
+    @available(watchOS, deprecated: 7.0, message: "No replacement available")
     case gobackward_45_ar = "gobackward.45.ar"
-    @available(iOS, deprecated: 14.0,  message: "No replacement available")
-    @available(macOS, deprecated: 11.0,  message: "No replacement available")
-    @available(tvOS, deprecated: 14.0,  message: "No replacement available")
-    @available(watchOS, deprecated: 7.0,  message: "No replacement available")
+    @available(iOS, deprecated: 14.0, message: "No replacement available")
+    @available(macOS, deprecated: 11.0, message: "No replacement available")
+    @available(tvOS, deprecated: 14.0, message: "No replacement available")
+    @available(watchOS, deprecated: 7.0, message: "No replacement available")
     case gobackward_45_hi = "gobackward.45.hi"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case gobackward_5 = "gobackward.5"
     case gobackward_60 = "gobackward.60"
-    @available(iOS, deprecated: 14.0,  message: "No replacement available")
-    @available(macOS, deprecated: 11.0,  message: "No replacement available")
-    @available(tvOS, deprecated: 14.0,  message: "No replacement available")
-    @available(watchOS, deprecated: 7.0,  message: "No replacement available")
+    @available(iOS, deprecated: 14.0, message: "No replacement available")
+    @available(macOS, deprecated: 11.0, message: "No replacement available")
+    @available(tvOS, deprecated: 14.0, message: "No replacement available")
+    @available(watchOS, deprecated: 7.0, message: "No replacement available")
     case gobackward_60_ar = "gobackward.60.ar"
-    @available(iOS, deprecated: 14.0,  message: "No replacement available")
-    @available(macOS, deprecated: 11.0,  message: "No replacement available")
-    @available(tvOS, deprecated: 14.0,  message: "No replacement available")
-    @available(watchOS, deprecated: 7.0,  message: "No replacement available")
+    @available(iOS, deprecated: 14.0, message: "No replacement available")
+    @available(macOS, deprecated: 11.0, message: "No replacement available")
+    @available(tvOS, deprecated: 14.0, message: "No replacement available")
+    @available(watchOS, deprecated: 7.0, message: "No replacement available")
     case gobackward_60_hi = "gobackward.60.hi"
     case gobackward_75 = "gobackward.75"
-    @available(iOS, deprecated: 14.0,  message: "No replacement available")
-    @available(macOS, deprecated: 11.0,  message: "No replacement available")
-    @available(tvOS, deprecated: 14.0,  message: "No replacement available")
-    @available(watchOS, deprecated: 7.0,  message: "No replacement available")
+    @available(iOS, deprecated: 14.0, message: "No replacement available")
+    @available(macOS, deprecated: 11.0, message: "No replacement available")
+    @available(tvOS, deprecated: 14.0, message: "No replacement available")
+    @available(watchOS, deprecated: 7.0, message: "No replacement available")
     case gobackward_75_ar = "gobackward.75.ar"
-    @available(iOS, deprecated: 14.0,  message: "No replacement available")
-    @available(macOS, deprecated: 11.0,  message: "No replacement available")
-    @available(tvOS, deprecated: 14.0,  message: "No replacement available")
-    @available(watchOS, deprecated: 7.0,  message: "No replacement available")
+    @available(iOS, deprecated: 14.0, message: "No replacement available")
+    @available(macOS, deprecated: 11.0, message: "No replacement available")
+    @available(tvOS, deprecated: 14.0, message: "No replacement available")
+    @available(watchOS, deprecated: 7.0, message: "No replacement available")
     case gobackward_75_hi = "gobackward.75.hi"
     case gobackward_90 = "gobackward.90"
-    @available(iOS, deprecated: 14.0,  message: "No replacement available")
-    @available(macOS, deprecated: 11.0,  message: "No replacement available")
-    @available(tvOS, deprecated: 14.0,  message: "No replacement available")
-    @available(watchOS, deprecated: 7.0,  message: "No replacement available")
+    @available(iOS, deprecated: 14.0, message: "No replacement available")
+    @available(macOS, deprecated: 11.0, message: "No replacement available")
+    @available(tvOS, deprecated: 14.0, message: "No replacement available")
+    @available(watchOS, deprecated: 7.0, message: "No replacement available")
     case gobackward_90_ar = "gobackward.90.ar"
-    @available(iOS, deprecated: 14.0,  message: "No replacement available")
-    @available(macOS, deprecated: 11.0,  message: "No replacement available")
-    @available(tvOS, deprecated: 14.0,  message: "No replacement available")
-    @available(watchOS, deprecated: 7.0,  message: "No replacement available")
+    @available(iOS, deprecated: 14.0, message: "No replacement available")
+    @available(macOS, deprecated: 11.0, message: "No replacement available")
+    @available(tvOS, deprecated: 14.0, message: "No replacement available")
+    @available(watchOS, deprecated: 7.0, message: "No replacement available")
     case gobackward_90_hi = "gobackward.90.hi"
     case gobackward_minus = "gobackward.minus"
     case goforward = "goforward"
     case goforward_10 = "goforward.10"
-    @available(iOS, deprecated: 14.0,  message: "No replacement available")
-    @available(macOS, deprecated: 11.0,  message: "No replacement available")
-    @available(tvOS, deprecated: 14.0,  message: "No replacement available")
-    @available(watchOS, deprecated: 7.0,  message: "No replacement available")
+    @available(iOS, deprecated: 14.0, message: "No replacement available")
+    @available(macOS, deprecated: 11.0, message: "No replacement available")
+    @available(tvOS, deprecated: 14.0, message: "No replacement available")
+    @available(watchOS, deprecated: 7.0, message: "No replacement available")
     case goforward_10_ar = "goforward.10.ar"
-    @available(iOS, deprecated: 14.0,  message: "No replacement available")
-    @available(macOS, deprecated: 11.0,  message: "No replacement available")
-    @available(tvOS, deprecated: 14.0,  message: "No replacement available")
-    @available(watchOS, deprecated: 7.0,  message: "No replacement available")
+    @available(iOS, deprecated: 14.0, message: "No replacement available")
+    @available(macOS, deprecated: 11.0, message: "No replacement available")
+    @available(tvOS, deprecated: 14.0, message: "No replacement available")
+    @available(watchOS, deprecated: 7.0, message: "No replacement available")
     case goforward_10_hi = "goforward.10.hi"
     case goforward_15 = "goforward.15"
-    @available(iOS, deprecated: 14.0,  message: "No replacement available")
-    @available(macOS, deprecated: 11.0,  message: "No replacement available")
-    @available(tvOS, deprecated: 14.0,  message: "No replacement available")
-    @available(watchOS, deprecated: 7.0,  message: "No replacement available")
+    @available(iOS, deprecated: 14.0, message: "No replacement available")
+    @available(macOS, deprecated: 11.0, message: "No replacement available")
+    @available(tvOS, deprecated: 14.0, message: "No replacement available")
+    @available(watchOS, deprecated: 7.0, message: "No replacement available")
     case goforward_15_ar = "goforward.15.ar"
-    @available(iOS, deprecated: 14.0,  message: "No replacement available")
-    @available(macOS, deprecated: 11.0,  message: "No replacement available")
-    @available(tvOS, deprecated: 14.0,  message: "No replacement available")
-    @available(watchOS, deprecated: 7.0,  message: "No replacement available")
+    @available(iOS, deprecated: 14.0, message: "No replacement available")
+    @available(macOS, deprecated: 11.0, message: "No replacement available")
+    @available(tvOS, deprecated: 14.0, message: "No replacement available")
+    @available(watchOS, deprecated: 7.0, message: "No replacement available")
     case goforward_15_hi = "goforward.15.hi"
     case goforward_30 = "goforward.30"
-    @available(iOS, deprecated: 14.0,  message: "No replacement available")
-    @available(macOS, deprecated: 11.0,  message: "No replacement available")
-    @available(tvOS, deprecated: 14.0,  message: "No replacement available")
-    @available(watchOS, deprecated: 7.0,  message: "No replacement available")
+    @available(iOS, deprecated: 14.0, message: "No replacement available")
+    @available(macOS, deprecated: 11.0, message: "No replacement available")
+    @available(tvOS, deprecated: 14.0, message: "No replacement available")
+    @available(watchOS, deprecated: 7.0, message: "No replacement available")
     case goforward_30_ar = "goforward.30.ar"
-    @available(iOS, deprecated: 14.0,  message: "No replacement available")
-    @available(macOS, deprecated: 11.0,  message: "No replacement available")
-    @available(tvOS, deprecated: 14.0,  message: "No replacement available")
-    @available(watchOS, deprecated: 7.0,  message: "No replacement available")
+    @available(iOS, deprecated: 14.0, message: "No replacement available")
+    @available(macOS, deprecated: 11.0, message: "No replacement available")
+    @available(tvOS, deprecated: 14.0, message: "No replacement available")
+    @available(watchOS, deprecated: 7.0, message: "No replacement available")
     case goforward_30_hi = "goforward.30.hi"
     case goforward_45 = "goforward.45"
-    @available(iOS, deprecated: 14.0,  message: "No replacement available")
-    @available(macOS, deprecated: 11.0,  message: "No replacement available")
-    @available(tvOS, deprecated: 14.0,  message: "No replacement available")
-    @available(watchOS, deprecated: 7.0,  message: "No replacement available")
+    @available(iOS, deprecated: 14.0, message: "No replacement available")
+    @available(macOS, deprecated: 11.0, message: "No replacement available")
+    @available(tvOS, deprecated: 14.0, message: "No replacement available")
+    @available(watchOS, deprecated: 7.0, message: "No replacement available")
     case goforward_45_ar = "goforward.45.ar"
-    @available(iOS, deprecated: 14.0,  message: "No replacement available")
-    @available(macOS, deprecated: 11.0,  message: "No replacement available")
-    @available(tvOS, deprecated: 14.0,  message: "No replacement available")
-    @available(watchOS, deprecated: 7.0,  message: "No replacement available")
+    @available(iOS, deprecated: 14.0, message: "No replacement available")
+    @available(macOS, deprecated: 11.0, message: "No replacement available")
+    @available(tvOS, deprecated: 14.0, message: "No replacement available")
+    @available(watchOS, deprecated: 7.0, message: "No replacement available")
     case goforward_45_hi = "goforward.45.hi"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case goforward_5 = "goforward.5"
     case goforward_60 = "goforward.60"
-    @available(iOS, deprecated: 14.0,  message: "No replacement available")
-    @available(macOS, deprecated: 11.0,  message: "No replacement available")
-    @available(tvOS, deprecated: 14.0,  message: "No replacement available")
-    @available(watchOS, deprecated: 7.0,  message: "No replacement available")
+    @available(iOS, deprecated: 14.0, message: "No replacement available")
+    @available(macOS, deprecated: 11.0, message: "No replacement available")
+    @available(tvOS, deprecated: 14.0, message: "No replacement available")
+    @available(watchOS, deprecated: 7.0, message: "No replacement available")
     case goforward_60_ar = "goforward.60.ar"
-    @available(iOS, deprecated: 14.0,  message: "No replacement available")
-    @available(macOS, deprecated: 11.0,  message: "No replacement available")
-    @available(tvOS, deprecated: 14.0,  message: "No replacement available")
-    @available(watchOS, deprecated: 7.0,  message: "No replacement available")
+    @available(iOS, deprecated: 14.0, message: "No replacement available")
+    @available(macOS, deprecated: 11.0, message: "No replacement available")
+    @available(tvOS, deprecated: 14.0, message: "No replacement available")
+    @available(watchOS, deprecated: 7.0, message: "No replacement available")
     case goforward_60_hi = "goforward.60.hi"
     case goforward_75 = "goforward.75"
-    @available(iOS, deprecated: 14.0,  message: "No replacement available")
-    @available(macOS, deprecated: 11.0,  message: "No replacement available")
-    @available(tvOS, deprecated: 14.0,  message: "No replacement available")
-    @available(watchOS, deprecated: 7.0,  message: "No replacement available")
+    @available(iOS, deprecated: 14.0, message: "No replacement available")
+    @available(macOS, deprecated: 11.0, message: "No replacement available")
+    @available(tvOS, deprecated: 14.0, message: "No replacement available")
+    @available(watchOS, deprecated: 7.0, message: "No replacement available")
     case goforward_75_ar = "goforward.75.ar"
-    @available(iOS, deprecated: 14.0,  message: "No replacement available")
-    @available(macOS, deprecated: 11.0,  message: "No replacement available")
-    @available(tvOS, deprecated: 14.0,  message: "No replacement available")
-    @available(watchOS, deprecated: 7.0,  message: "No replacement available")
+    @available(iOS, deprecated: 14.0, message: "No replacement available")
+    @available(macOS, deprecated: 11.0, message: "No replacement available")
+    @available(tvOS, deprecated: 14.0, message: "No replacement available")
+    @available(watchOS, deprecated: 7.0, message: "No replacement available")
     case goforward_75_hi = "goforward.75.hi"
     case goforward_90 = "goforward.90"
-    @available(iOS, deprecated: 14.0,  message: "No replacement available")
-    @available(macOS, deprecated: 11.0,  message: "No replacement available")
-    @available(tvOS, deprecated: 14.0,  message: "No replacement available")
-    @available(watchOS, deprecated: 7.0,  message: "No replacement available")
+    @available(iOS, deprecated: 14.0, message: "No replacement available")
+    @available(macOS, deprecated: 11.0, message: "No replacement available")
+    @available(tvOS, deprecated: 14.0, message: "No replacement available")
+    @available(watchOS, deprecated: 7.0, message: "No replacement available")
     case goforward_90_ar = "goforward.90.ar"
-    @available(iOS, deprecated: 14.0,  message: "No replacement available")
-    @available(macOS, deprecated: 11.0,  message: "No replacement available")
-    @available(tvOS, deprecated: 14.0,  message: "No replacement available")
-    @available(watchOS, deprecated: 7.0,  message: "No replacement available")
+    @available(iOS, deprecated: 14.0, message: "No replacement available")
+    @available(macOS, deprecated: 11.0, message: "No replacement available")
+    @available(tvOS, deprecated: 14.0, message: "No replacement available")
+    @available(watchOS, deprecated: 7.0, message: "No replacement available")
     case goforward_90_hi = "goforward.90.hi"
     case goforward_plus = "goforward.plus"
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
@@ -4599,10 +4599,10 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case lock_rectangle_stack_fill = "lock.rectangle.stack.fill"
     case lock_rotation = "lock.rotation"
-    @available(iOS, deprecated: 16.0, renamed: "lock_open_rotation")
+    @available(iOS, deprecated: 16.1, renamed: "lock_open_rotation")
     @available(macOS, deprecated: 13.0, renamed: "lock_open_rotation")
-    @available(tvOS, deprecated: 16.0, renamed: "lock_open_rotation")
-    @available(watchOS, deprecated: 9.0, renamed: "lock_open_rotation")
+    @available(tvOS, deprecated: 16.1, renamed: "lock_open_rotation")
+    @available(watchOS, deprecated: 9.1, renamed: "lock_open_rotation")
     case lock_rotation_open = "lock.rotation.open"
     case lock_shield = "lock.shield"
     case lock_shield_fill = "lock.shield.fill"
@@ -8771,31 +8771,31 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case 🍏ipad_gen2_landscape_badge_play = "ipad.gen2.landscape.badge.play"
 
     // This symbol may not be modified and may only be used to refer to Apple's iPad
-    @available(iOS, deprecated: 16.0,  message: "No replacement available")
-    @available(macOS, deprecated: 13.0,  message: "No replacement available")
-    @available(tvOS, deprecated: 16.0,  message: "No replacement available")
-    @available(watchOS, deprecated: 9.0,  message: "No replacement available")
+    @available(iOS, deprecated: 16.0, message: "No replacement available")
+    @available(macOS, deprecated: 13.0, message: "No replacement available")
+    @available(tvOS, deprecated: 16.0, message: "No replacement available")
+    @available(watchOS, deprecated: 9.0, message: "No replacement available")
     case 🍏ipad_homebutton = "ipad.homebutton"
 
     // This symbol may not be modified and may only be used to refer to Apple's iPad
-    @available(iOS, deprecated: 16.0,  message: "No replacement available")
-    @available(macOS, deprecated: 13.0,  message: "No replacement available")
-    @available(tvOS, deprecated: 16.0,  message: "No replacement available")
-    @available(watchOS, deprecated: 9.0,  message: "No replacement available")
+    @available(iOS, deprecated: 16.0, message: "No replacement available")
+    @available(macOS, deprecated: 13.0, message: "No replacement available")
+    @available(tvOS, deprecated: 16.0, message: "No replacement available")
+    @available(watchOS, deprecated: 9.0, message: "No replacement available")
     case 🍏ipad_homebutton_badge_play = "ipad.homebutton.badge.play"
 
     // This symbol may not be modified and may only be used to refer to Apple's iPad
-    @available(iOS, deprecated: 16.0,  message: "No replacement available")
-    @available(macOS, deprecated: 13.0,  message: "No replacement available")
-    @available(tvOS, deprecated: 16.0,  message: "No replacement available")
-    @available(watchOS, deprecated: 9.0,  message: "No replacement available")
+    @available(iOS, deprecated: 16.0, message: "No replacement available")
+    @available(macOS, deprecated: 13.0, message: "No replacement available")
+    @available(tvOS, deprecated: 16.0, message: "No replacement available")
+    @available(watchOS, deprecated: 9.0, message: "No replacement available")
     case 🍏ipad_homebutton_landscape = "ipad.homebutton.landscape"
 
     // This symbol may not be modified and may only be used to refer to Apple's iPad
-    @available(iOS, deprecated: 16.0,  message: "No replacement available")
-    @available(macOS, deprecated: 13.0,  message: "No replacement available")
-    @available(tvOS, deprecated: 16.0,  message: "No replacement available")
-    @available(watchOS, deprecated: 9.0,  message: "No replacement available")
+    @available(iOS, deprecated: 16.0, message: "No replacement available")
+    @available(macOS, deprecated: 13.0, message: "No replacement available")
+    @available(tvOS, deprecated: 16.0, message: "No replacement available")
+    @available(watchOS, deprecated: 9.0, message: "No replacement available")
     case 🍏ipad_homebutton_landscape_badge_play = "ipad.homebutton.landscape.badge.play"
 
     // This symbol may not be modified and may only be used to refer to Apple's iPad
@@ -8955,80 +8955,80 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case 🍏iphone_gen3_slash_circle_fill = "iphone.gen3.slash.circle.fill"
 
     // This symbol may not be modified and may only be used to refer to Apple's iPhone
-    @available(iOS, deprecated: 16.0,  message: "No replacement available")
-    @available(macOS, deprecated: 13.0,  message: "No replacement available")
-    @available(tvOS, deprecated: 16.0,  message: "No replacement available")
-    @available(watchOS, deprecated: 9.0,  message: "No replacement available")
+    @available(iOS, deprecated: 16.0, message: "No replacement available")
+    @available(macOS, deprecated: 13.0, message: "No replacement available")
+    @available(tvOS, deprecated: 16.0, message: "No replacement available")
+    @available(watchOS, deprecated: 9.0, message: "No replacement available")
     case 🍏iphone_homebutton = "iphone.homebutton"
 
     // This symbol may not be modified and may only be used to refer to Apple's iPhone
-    @available(iOS, deprecated: 16.0,  message: "No replacement available")
-    @available(macOS, deprecated: 13.0,  message: "No replacement available")
-    @available(tvOS, deprecated: 16.0,  message: "No replacement available")
-    @available(watchOS, deprecated: 9.0,  message: "No replacement available")
+    @available(iOS, deprecated: 16.0, message: "No replacement available")
+    @available(macOS, deprecated: 13.0, message: "No replacement available")
+    @available(tvOS, deprecated: 16.0, message: "No replacement available")
+    @available(watchOS, deprecated: 9.0, message: "No replacement available")
     case 🍏iphone_homebutton_badge_play = "iphone.homebutton.badge.play"
 
     // This symbol may not be modified and may only be used to refer to Apple's iPhone
-    @available(iOS, deprecated: 16.0,  message: "No replacement available")
-    @available(macOS, deprecated: 13.0,  message: "No replacement available")
-    @available(tvOS, deprecated: 16.0,  message: "No replacement available")
-    @available(watchOS, deprecated: 9.0,  message: "No replacement available")
+    @available(iOS, deprecated: 16.0, message: "No replacement available")
+    @available(macOS, deprecated: 13.0, message: "No replacement available")
+    @available(tvOS, deprecated: 16.0, message: "No replacement available")
+    @available(watchOS, deprecated: 9.0, message: "No replacement available")
     case 🍏iphone_homebutton_circle = "iphone.homebutton.circle"
 
     // This symbol may not be modified and may only be used to refer to Apple's iPhone
-    @available(iOS, deprecated: 16.0,  message: "No replacement available")
-    @available(macOS, deprecated: 13.0,  message: "No replacement available")
-    @available(tvOS, deprecated: 16.0,  message: "No replacement available")
-    @available(watchOS, deprecated: 9.0,  message: "No replacement available")
+    @available(iOS, deprecated: 16.0, message: "No replacement available")
+    @available(macOS, deprecated: 13.0, message: "No replacement available")
+    @available(tvOS, deprecated: 16.0, message: "No replacement available")
+    @available(watchOS, deprecated: 9.0, message: "No replacement available")
     case 🍏iphone_homebutton_circle_fill = "iphone.homebutton.circle.fill"
 
     // This symbol may not be modified and may only be used to refer to Apple's iPhone
-    @available(iOS, deprecated: 16.0,  message: "No replacement available")
-    @available(macOS, deprecated: 13.0,  message: "No replacement available")
-    @available(tvOS, deprecated: 16.0,  message: "No replacement available")
-    @available(watchOS, deprecated: 9.0,  message: "No replacement available")
+    @available(iOS, deprecated: 16.0, message: "No replacement available")
+    @available(macOS, deprecated: 13.0, message: "No replacement available")
+    @available(tvOS, deprecated: 16.0, message: "No replacement available")
+    @available(watchOS, deprecated: 9.0, message: "No replacement available")
     case 🍏iphone_homebutton_landscape = "iphone.homebutton.landscape"
 
     // This symbol may not be modified and may only be used to refer to Apple's iPhone
-    @available(iOS, deprecated: 16.0,  message: "No replacement available")
-    @available(macOS, deprecated: 13.0,  message: "No replacement available")
-    @available(tvOS, deprecated: 16.0,  message: "No replacement available")
-    @available(watchOS, deprecated: 9.0,  message: "No replacement available")
+    @available(iOS, deprecated: 16.0, message: "No replacement available")
+    @available(macOS, deprecated: 13.0, message: "No replacement available")
+    @available(tvOS, deprecated: 16.0, message: "No replacement available")
+    @available(watchOS, deprecated: 9.0, message: "No replacement available")
     case 🍏iphone_homebutton_radiowaves_left_and_right = "iphone.homebutton.radiowaves.left.and.right"
 
     // This symbol may not be modified and may only be used to refer to Apple's iPhone
-    @available(iOS, deprecated: 16.0,  message: "No replacement available")
-    @available(macOS, deprecated: 13.0,  message: "No replacement available")
-    @available(tvOS, deprecated: 16.0,  message: "No replacement available")
-    @available(watchOS, deprecated: 9.0,  message: "No replacement available")
+    @available(iOS, deprecated: 16.0, message: "No replacement available")
+    @available(macOS, deprecated: 13.0, message: "No replacement available")
+    @available(tvOS, deprecated: 16.0, message: "No replacement available")
+    @available(watchOS, deprecated: 9.0, message: "No replacement available")
     case 🍏iphone_homebutton_radiowaves_left_and_right_circle = "iphone.homebutton.radiowaves.left.and.right.circle"
 
     // This symbol may not be modified and may only be used to refer to Apple's iPhone
-    @available(iOS, deprecated: 16.0,  message: "No replacement available")
-    @available(macOS, deprecated: 13.0,  message: "No replacement available")
-    @available(tvOS, deprecated: 16.0,  message: "No replacement available")
-    @available(watchOS, deprecated: 9.0,  message: "No replacement available")
+    @available(iOS, deprecated: 16.0, message: "No replacement available")
+    @available(macOS, deprecated: 13.0, message: "No replacement available")
+    @available(tvOS, deprecated: 16.0, message: "No replacement available")
+    @available(watchOS, deprecated: 9.0, message: "No replacement available")
     case 🍏iphone_homebutton_radiowaves_left_and_right_circle_fill = "iphone.homebutton.radiowaves.left.and.right.circle.fill"
 
     // This symbol may not be modified and may only be used to refer to Apple's iPhone
-    @available(iOS, deprecated: 16.0,  message: "No replacement available")
-    @available(macOS, deprecated: 13.0,  message: "No replacement available")
-    @available(tvOS, deprecated: 16.0,  message: "No replacement available")
-    @available(watchOS, deprecated: 9.0,  message: "No replacement available")
+    @available(iOS, deprecated: 16.0, message: "No replacement available")
+    @available(macOS, deprecated: 13.0, message: "No replacement available")
+    @available(tvOS, deprecated: 16.0, message: "No replacement available")
+    @available(watchOS, deprecated: 9.0, message: "No replacement available")
     case 🍏iphone_homebutton_slash = "iphone.homebutton.slash"
 
     // This symbol may not be modified and may only be used to refer to Apple's iPhone
-    @available(iOS, deprecated: 16.0,  message: "No replacement available")
-    @available(macOS, deprecated: 13.0,  message: "No replacement available")
-    @available(tvOS, deprecated: 16.0,  message: "No replacement available")
-    @available(watchOS, deprecated: 9.0,  message: "No replacement available")
+    @available(iOS, deprecated: 16.0, message: "No replacement available")
+    @available(macOS, deprecated: 13.0, message: "No replacement available")
+    @available(tvOS, deprecated: 16.0, message: "No replacement available")
+    @available(watchOS, deprecated: 9.0, message: "No replacement available")
     case 🍏iphone_homebutton_slash_circle = "iphone.homebutton.slash.circle"
 
     // This symbol may not be modified and may only be used to refer to Apple's iPhone
-    @available(iOS, deprecated: 16.0,  message: "No replacement available")
-    @available(macOS, deprecated: 13.0,  message: "No replacement available")
-    @available(tvOS, deprecated: 16.0,  message: "No replacement available")
-    @available(watchOS, deprecated: 9.0,  message: "No replacement available")
+    @available(iOS, deprecated: 16.0, message: "No replacement available")
+    @available(macOS, deprecated: 13.0, message: "No replacement available")
+    @available(tvOS, deprecated: 16.0, message: "No replacement available")
+    @available(watchOS, deprecated: 9.0, message: "No replacement available")
     case 🍏iphone_homebutton_slash_circle_fill = "iphone.homebutton.slash.circle.fill"
 
     // This symbol may not be modified and may only be used to refer to Apple's iPhone
@@ -9108,10 +9108,10 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case 🍏key_icloud_fill = "key.icloud.fill"
 
     // This symbol may not be modified and may only be used to refer to Apple's iPhone
-    @available(iOS, deprecated: 16.0,  message: "No replacement available")
-    @available(macOS, deprecated: 13.0,  message: "No replacement available")
-    @available(tvOS, deprecated: 16.0,  message: "No replacement available")
-    @available(watchOS, deprecated: 9.0,  message: "No replacement available")
+    @available(iOS, deprecated: 16.0, message: "No replacement available")
+    @available(macOS, deprecated: 13.0, message: "No replacement available")
+    @available(tvOS, deprecated: 16.0, message: "No replacement available")
+    @available(watchOS, deprecated: 9.0, message: "No replacement available")
     case 🍏laptopcomputer_and_iphone = "laptopcomputer.and.iphone"
 
     // This symbol may not be modified and may only be used to refer to Apple's iCloud Service
