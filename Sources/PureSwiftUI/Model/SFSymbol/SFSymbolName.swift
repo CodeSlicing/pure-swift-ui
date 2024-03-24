@@ -9483,7 +9483,7 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
     case 🍏xserve = "xserve"
 
-    public static let allCases: [SFSymbolName] = {
+    public static var allCases: [SFSymbolName] {
 
         var localAllCases = [SFSymbolName]()
 
@@ -13995,7 +13995,7 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
         }
         localAllCases.sort()
         return localAllCases
-    }()
+    }
 
     public static func < (lhs: SFSymbolName, rhs: SFSymbolName) -> Bool {
         return lhs.rawValue < rhs.rawValue
