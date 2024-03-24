@@ -2604,7 +2604,11 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case chevron_backward_square_fill = "chevron.backward.square.fill"
     @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
     case chevron_backward_to_line = "chevron.backward.to.line"
+    @available(iOS 17.1, macOS 14.1, tvOS 17.1, watchOS 10.1, *)
+    case chevron_compact_backward = "chevron.compact.backward"
     case chevron_compact_down = "chevron.compact.down"
+    @available(iOS 17.1, macOS 14.1, tvOS 17.1, watchOS 10.1, *)
+    case chevron_compact_forward = "chevron.compact.forward"
     case chevron_compact_left = "chevron.compact.left"
     case chevron_compact_right = "chevron.compact.right"
     case chevron_compact_up = "chevron.compact.up"
@@ -6747,6 +6751,14 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case person_crop_rectangle_stack_fill = "person.crop.rectangle.stack.fill"
     case person_crop_square = "person.crop.square"
+    @available(iOS 17.1, macOS 14.1, tvOS 17.1, watchOS 10.1, *)
+    case person_crop_square_badge_camera = "person.crop.square.badge.camera"
+    @available(iOS 17.1, macOS 14.1, tvOS 17.1, watchOS 10.1, *)
+    case person_crop_square_badge_camera_fill = "person.crop.square.badge.camera.fill"
+    @available(iOS 17.1, macOS 14.1, tvOS 17.1, watchOS 10.1, *)
+    case person_crop_square_badge_video = "person.crop.square.badge.video"
+    @available(iOS 17.1, macOS 14.1, tvOS 17.1, watchOS 10.1, *)
+    case person_crop_square_badge_video_fill = "person.crop.square.badge.video.fill"
     case person_crop_square_fill = "person.crop.square.fill"
     @available(iOS, deprecated: 15.0, renamed: "person_crop_square_filled_and_at_rectangle")
     @available(macOS, deprecated: 12.0, renamed: "person_crop_square_filled_and_at_rectangle")
@@ -8710,6 +8722,10 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
     case square_and_arrow_down_on_square = "square.and.arrow.down.on.square"
     case square_and_arrow_down_on_square_fill = "square.and.arrow.down.on.square.fill"
     case square_and_arrow_up = "square.and.arrow.up"
+    @available(iOS 17.2, macOS 14.2, tvOS 17.2, watchOS 10.2, *)
+    case square_and_arrow_up_badge_clock = "square.and.arrow.up.badge.clock"
+    @available(iOS 17.2, macOS 14.2, tvOS 17.2, watchOS 10.2, *)
+    case square_and_arrow_up_badge_clock_fill = "square.and.arrow.up.badge.clock.fill"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     case square_and_arrow_up_circle = "square.and.arrow.up.circle"
     @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
@@ -17293,6 +17309,20 @@ public enum SFSymbolName: String, CaseIterable, Comparable {
             localAllCases.append(zl_button_roundedtop_horizontal_fill)
             localAllCases.append(zr_button_roundedtop_horizontal)
             localAllCases.append(zr_button_roundedtop_horizontal_fill)
+        }
+
+        if #available(iOS 17.1, macOS 14.1, tvOS 17.1, watchOS 10.1, *) {
+            localAllCases.append(chevron_compact_backward)
+            localAllCases.append(chevron_compact_forward)
+            localAllCases.append(person_crop_square_badge_camera)
+            localAllCases.append(person_crop_square_badge_camera_fill)
+            localAllCases.append(person_crop_square_badge_video)
+            localAllCases.append(person_crop_square_badge_video_fill)
+        }
+
+        if #available(iOS 17.2, macOS 14.2, tvOS 17.2, watchOS 10.2, *) {
+            localAllCases.append(square_and_arrow_up_badge_clock)
+            localAllCases.append(square_and_arrow_up_badge_clock_fill)
         }
         localAllCases.sort()
         return localAllCases

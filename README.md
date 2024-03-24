@@ -526,6 +526,7 @@ This project adheres to a [semantic versioning](https://semver.org) paradigm, so
 - [3.1.0][tag-3.1.0] Add SF Symbols 3.1
 - [4.0.0][tag-4.0.0] Add SF Symbols 4.0 - Improve build performance of SFSymbolName by using computed property for allCases rather than a constant resulting in close to 10x improvement
 - [5.0.0][tag-5.0.0] Add SF Symbols 5.0
+- [5.0.0][tag-5.1.0] Add SF Symbols 5.1
 
 ## Licensing
 
@@ -602,6 +603,7 @@ version links:
 [tag-3.1.0]: https://github.com/CodeSlicing/pure-swift-ui/tree/3.1.0
 [tag-4.0.0]: https://github.com/CodeSlicing/pure-swift-ui/tree/4.0.0
 [tag-5.0.0]: https://github.com/CodeSlicing/pure-swift-ui/tree/5.0.0
+[tag-5.1.0]: https://github.com/CodeSlicing/pure-swift-ui/tree/5.1.0
 
 <!---
  local docs:
